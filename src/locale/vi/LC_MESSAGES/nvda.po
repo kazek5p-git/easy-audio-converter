@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: vi\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...và {count} lỗi khác"
+
+msgid "A conversion is already in progress"
+msgstr "Một chuyển đổi đang được tiến hành"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "băng thông hẹp AMR"
+
+msgid "AMR wideband"
+msgstr "băng rộng AMR"
+
+msgid "Browse..."
+msgstr "Duyệt..."
+
+msgid "Cancel conversion"
+msgstr "Hủy chuyển đổi"
+
+msgid "Cancel the current audio conversion"
+msgstr "Hủy chuyển đổi âm thanh hiện tại"
+
+msgid "Canceling the conversion"
+msgstr "Hủy chuyển đổi"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Không thể mở trang hỗ trợ. Mở địa chỉ này theo cách thủ công: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Thay đổi chất lượng chuyển đổi"
+
+msgid "Change the target audio format"
+msgstr "Thay đổi định dạng âm thanh mục tiêu"
+
+msgid "Choose a folder to convert"
+msgstr "Chọn thư mục để chuyển đổi"
+
+msgid "Choose the destination folder"
+msgstr "Chọn thư mục đích"
+
+msgid "Confirm folder conversion"
+msgstr "Xác nhận chuyển đổi thư mục"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Đã hủy chuyển đổi. Đã hoàn thành {done} trong số {total} tệp."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Chuyển đổi hoàn tất: {done} đã thành công, {failed} không thành công."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Chuyển đổi tất cả các tệp âm thanh được hỗ trợ trong {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Chuyển đổi mọi tệp âm thanh được hỗ trợ trong thư mục hiện tại"
+
+msgid "Convert selected files or folders"
+msgstr "Chuyển đổi tập tin hoặc thư mục đã chọn"
+
+msgid "Convert the current folder"
+msgstr "Chuyển đổi thư mục hiện tại"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Đang chuyển đổi {index} của {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Thư mục đích:"
+
+msgid "Destination folder: {folder}"
+msgstr "Thư mục đích: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Chuyển đổi âm thanh dễ dàng"
+
+msgid "Economical"
+msgstr "tiết kiệm"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Đã tìm thấy tệp {count} để chuyển đổi"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Cao"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Nếu Easy Audio Converter hữu ích với bạn và bạn muốn hỗ trợ công việc của tôi, bạn có thể mua cho tôi một ly cà phê.\n\nBạn có muốn mở trang hỗ trợ ngay bây giờ không?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Bao gồm các thư mục con khi chuyển đổi thư mục"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Bộ mã hóa MP3:"
+
+msgid "No conversion is in progress"
+msgstr "Không có chuyển đổi nào đang diễn ra"
+
+msgid "No files or folders are selected"
+msgstr "Không có tập tin hoặc thư mục nào được chọn"
+
+msgid "No supported audio files were found"
+msgstr "Không tìm thấy tệp âm thanh được hỗ trợ"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Mở cài đặt Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Mở trang hỗ trợ tác giả"
+
+msgid "Opening the support page"
+msgstr "Mở trang hỗ trợ"
+
+msgid "Opus"
+msgstr "tác phẩm"
+
+msgid "Preparing the conversion"
+msgstr "Chuẩn bị chuyển đổi"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Bảo toàn cấu trúc thư mục nguồn ở đích"
+
+msgid "Quality:"
+msgstr "Chất lượng:"
+
+msgid "Quality: {quality}"
+msgstr "Chất lượng: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Chọn nhanh thư mục đích"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Chuyển đổi nhanh chóng các tập tin hoặc thư mục đã chọn"
+
+msgid "Report audio conversion status"
+msgstr "Báo cáo trạng thái chuyển đổi âm thanh"
+
+msgid "Report conversion status"
+msgstr "Báo cáo trạng thái chuyển đổi"
+
+msgid "Save converted files next to the source files"
+msgstr "Lưu các tệp đã chuyển đổi bên cạnh các tệp nguồn"
+
+msgid "Settings..."
+msgstr "Cài đặt..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Một số tệp không thể chuyển đổi được:\n\n{details}"
+
+msgid "Standard"
+msgstr "Tiêu chuẩn"
+
+msgid "Support Easy Audio Converter"
+msgstr "Hỗ trợ chuyển đổi âm thanh dễ dàng"
+
+msgid "Support the author"
+msgstr "Ủng hộ tác giả"
+
+msgid "Target format:"
+msgstr "Định dạng mục tiêu:"
+
+msgid "Target format: {format}"
+msgstr "Định dạng mục tiêu: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Thiếu thành phần FFmpeg đi kèm. Cài đặt lại Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Quá trình chuyển đổi không thể bắt đầu:\n{error}"
+
+msgid "Unknown error"
+msgstr "Lỗi không xác định"
+
+msgid "Very high"
+msgstr "Rất cao"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "loại trừ các thư mục con"
+
+msgid "including subfolders"
+msgstr "bao gồm các thư mục con"
+
+msgid "{count} selected folders"
+msgstr "{count} thư mục đã chọn"

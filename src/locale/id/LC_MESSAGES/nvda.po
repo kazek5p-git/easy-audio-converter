@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: id\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...dan {count} kesalahan lainnya"
+
+msgid "A conversion is already in progress"
+msgstr "Konversi sedang berlangsung"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Tanpa Rugi)"
+
+msgid "AMR narrowband"
+msgstr "pita sempit AMR"
+
+msgid "AMR wideband"
+msgstr "Pita lebar AMR"
+
+msgid "Browse..."
+msgstr "Jelajahi..."
+
+msgid "Cancel conversion"
+msgstr "Batalkan konversi"
+
+msgid "Cancel the current audio conversion"
+msgstr "Batalkan konversi audio saat ini"
+
+msgid "Canceling the conversion"
+msgstr "Membatalkan konversi"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Tidak dapat membuka halaman dukungan. Buka alamat ini secara manual: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Ubah kualitas konversi"
+
+msgid "Change the target audio format"
+msgstr "Ubah format audio target"
+
+msgid "Choose a folder to convert"
+msgstr "Pilih folder yang akan dikonversi"
+
+msgid "Choose the destination folder"
+msgstr "Pilih folder tujuan"
+
+msgid "Confirm folder conversion"
+msgstr "Konfirmasikan konversi folder"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Konversi dibatalkan. Menyelesaikan {done} dari {total} file."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Konversi selesai: {done} berhasil, {failed} gagal."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Konversikan semua file audio yang didukung di {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Konversikan setiap file audio yang didukung di folder saat ini"
+
+msgid "Convert selected files or folders"
+msgstr "Konversi file atau folder yang dipilih"
+
+msgid "Convert the current folder"
+msgstr "Konversikan folder saat ini"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Mengonversi {index} dari {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Folder tujuan:"
+
+msgid "Destination folder: {folder}"
+msgstr "Folder tujuan: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Konverter Audio Mudah"
+
+msgid "Economical"
+msgstr "Ekonomis"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Ditemukan file {count} untuk dikonversi"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Tinggi"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Jika Easy Audio Converter bermanfaat bagi Anda dan Anda ingin mendukung pekerjaan saya, Anda dapat membelikan saya kopi.\n\nApakah Anda ingin membuka halaman dukungan sekarang?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Sertakan subfolder saat mengonversi folder"
+
+msgid "LAME MP3"
+msgstr "MP3 LAMPU"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Pembuat enkode MP3:"
+
+msgid "No conversion is in progress"
+msgstr "Tidak ada konversi yang sedang berlangsung"
+
+msgid "No files or folders are selected"
+msgstr "Tidak ada file atau folder yang dipilih"
+
+msgid "No supported audio files were found"
+msgstr "Tidak ditemukan file audio yang didukung"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Buka pengaturan Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Buka halaman dukungan penulis"
+
+msgid "Opening the support page"
+msgstr "Membuka halaman dukungan"
+
+msgid "Opus"
+msgstr "Karya"
+
+msgid "Preparing the conversion"
+msgstr "Mempersiapkan konversi"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Pertahankan struktur folder sumber di tujuan"
+
+msgid "Quality:"
+msgstr "Kualitas:"
+
+msgid "Quality: {quality}"
+msgstr "Kualitas: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Pilih folder tujuan dengan cepat"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Konversi file atau folder yang dipilih dengan cepat"
+
+msgid "Report audio conversion status"
+msgstr "Laporkan status konversi audio"
+
+msgid "Report conversion status"
+msgstr "Laporkan status konversi"
+
+msgid "Save converted files next to the source files"
+msgstr "Simpan file yang dikonversi di sebelah file sumber"
+
+msgid "Settings..."
+msgstr "Pengaturan..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Beberapa file tidak dapat dikonversi:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standar"
+
+msgid "Support Easy Audio Converter"
+msgstr "Mendukung Konverter Audio Mudah"
+
+msgid "Support the author"
+msgstr "Dukung penulisnya"
+
+msgid "Target format:"
+msgstr "Format sasaran:"
+
+msgid "Target format: {format}"
+msgstr "Format sasaran: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Komponen FFmpeg yang dibundel tidak ada. Instal ulang Konverter Audio Mudah."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Konversi tidak dapat dimulai:\n{error}"
+
+msgid "Unknown error"
+msgstr "Kesalahan tidak diketahui"
+
+msgid "Very high"
+msgstr "Sangat tinggi"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "Paket Wav"
+
+msgid "excluding subfolders"
+msgstr "tidak termasuk subfolder"
+
+msgid "including subfolders"
+msgstr "termasuk subfolder"
+
+msgid "{count} selected folders"
+msgstr "{count} folder yang dipilih"

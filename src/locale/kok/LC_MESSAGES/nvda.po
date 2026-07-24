@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: kok\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... आनी {count} आनीक चुको"
+
+msgid "A conversion is already in progress"
+msgstr "रुपांतरण पयलींच चालू आसा"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (ऍपल लॉसलेस)"
+
+msgid "AMR narrowband"
+msgstr "AMR नॅरोबँड"
+
+msgid "AMR wideband"
+msgstr "AMR वाइडबँड"
+
+msgid "Browse..."
+msgstr "ब्राउझ करात..."
+
+msgid "Cancel conversion"
+msgstr "रुपांतरण रद्द करात"
+
+msgid "Cancel the current audio conversion"
+msgstr "सद्या ऑडियो रुपांतरण रद्द कर"
+
+msgid "Canceling the conversion"
+msgstr "रुपांतरण रद्द करप"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "आदार पान उगडूंक शकना. हो पत्तो मॅन्युअली उगडचो: {url}"
+
+msgid "Change the conversion quality"
+msgstr "रुपांतरणाचो दर्जो बदलचो"
+
+msgid "Change the target audio format"
+msgstr "टार्गेट ऑडिओ फॉरमॅट बदलचें"
+
+msgid "Choose a folder to convert"
+msgstr "रुपांतरीत करपाक फोल्डर निवडात"
+
+msgid "Choose the destination folder"
+msgstr "गंतव्य फोल्डर निवडात"
+
+msgid "Confirm folder conversion"
+msgstr "फोल्डर रुपांतरणाची खात्री कर"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "रुपांतरण रद्द केलें. {done} फायलींची {total} पुराय केली."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "रुपांतरण पुराय जालें: {done} येसस्वी जालें, {failed} अपेशी थारलें."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "सगळ्यो समर्थीत ऑडिओ फायली {folder}, {scope} हातूंत रुपांतरीत करात?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "सद्याच्या फोल्डरांतल्या दरेक समर्थीत ऑडिओ फायलीचें रुपांतर करात"
+
+msgid "Convert selected files or folders"
+msgstr "वेंचणुकेल्ली फायली वा फोल्डर रुपांतरीत करात"
+
+msgid "Convert the current folder"
+msgstr "सद्याचो फोल्डर रुपांतरीत करात"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Converting {index} of {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "गंतव्य फोल्डर:"
+
+msgid "Destination folder: {folder}"
+msgstr "Destination folder: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "सोंपें ऑडियो कन्व्हर्टर"
+
+msgid "Economical"
+msgstr "अर्थीक"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "रुपांतरीत करपाक {count} फायली सोदून काडल्यो"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "फ्राउनहोफर / विंडोज मिडिया फांउडेशन एमपी3"
+
+msgid "High"
+msgstr "उंचायेचेर"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "इझी ऑडिओ कन्व्हर्टर तुमकां उपेगी पडटा आनी तुमकां म्हज्या वावराक तेंको दिवपाचो आसत जाल्यार तुमी म्हाका एक कॉफी विकती घेवंक शकतात.\n\nतुमकां आतां आदार पान उगडपाक जाय?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "फोल्डर रुपांतरीत करतना सबफोल्डरांचो आस्पाव करचो"
+
+msgid "LAME MP3"
+msgstr "लंगडो एमपी3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 एन्कोडर:"
+
+msgid "No conversion is in progress"
+msgstr "खंयचेंच रुपांतरण प्रगतीपथाचेर ना"
+
+msgid "No files or folders are selected"
+msgstr "खंयचीच फायली वा फोल्डर वेंचून काडूंक ना"
+
+msgid "No supported audio files were found"
+msgstr "खंयचीच समर्थीत ऑडियो फायली मेळूंक ना"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "सोंपी ऑडियो कन्व्हर्टर सेटिंग्ज उगड"
+
+msgid "Open the author's support page"
+msgstr "लेखकाचें आदार पान उगडचें"
+
+msgid "Opening the support page"
+msgstr "आदार पान उगडप"
+
+msgid "Opus"
+msgstr "ओपस"
+
+msgid "Preparing the conversion"
+msgstr "रुपांतरणाची तयारी करप"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "गंतव्यांत स्रोत फोल्डर रचणूक सुरक्षीत दवर"
+
+msgid "Quality:"
+msgstr "दर्जो:"
+
+msgid "Quality: {quality}"
+msgstr "दर्जो: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "गंतव्यस्थान फोल्डर बेगीन निवडात"
+
+msgid "Quickly convert selected files or folders"
+msgstr "वेंचणुकेच्यो फायली वा फोल्डर बेगीन रुपांतरीत करात"
+
+msgid "Report audio conversion status"
+msgstr "ऑडियो रुपांतरण स्थितीचो कळाव दिवचो"
+
+msgid "Report conversion status"
+msgstr "रुपांतरण स्थितीचो अहवाल दिवचो"
+
+msgid "Save converted files next to the source files"
+msgstr "स्रोत फायलींच्या कुशीक रुपांतरीत फायली सांबाळ"
+
+msgid "Settings..."
+msgstr "सेटिंग्ज..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "कांय फायली रुपांतरीत करूंक शकल्यो नात:\n\n{details}"
+
+msgid "Standard"
+msgstr "मानक"
+
+msgid "Support Easy Audio Converter"
+msgstr "सोंपो ऑडियो कन्व्हर्टर सपोर्ट"
+
+msgid "Support the author"
+msgstr "लेखकाक तेंको दिवचो"
+
+msgid "Target format:"
+msgstr "टार्गेट फॉरमॅट:"
+
+msgid "Target format: {format}"
+msgstr "Target format: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "बंडल केल्लो FFmpeg घटक गहाळ आसा. सोंपें ऑडियो कन्व्हर्टर परतून स्थापीत करात."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "रुपांतरण सुरू जावंक शकलें ना:\n{error}"
+
+msgid "Unknown error"
+msgstr "अनवळखी त्रुटी"
+
+msgid "Very high"
+msgstr "खूब ऊंच"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "उपफोल्डरां वगळून"
+
+msgid "including subfolders"
+msgstr "सबफोल्डरां सयत"
+
+msgid "{count} selected folders"
+msgstr "{count} सिलेक्टेड फोल्डर्स"

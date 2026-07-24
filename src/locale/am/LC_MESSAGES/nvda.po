@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: am\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... እና {count} ተጨማሪ ስህተቶች"
+
+msgid "A conversion is already in progress"
+msgstr "ልወጣ አስቀድሞ በሂደት ላይ ነው"
+
+msgid "AAC"
+msgstr "ኤኤሲ"
+
+msgid "AC-3"
+msgstr "የ AC-3"
+
+msgid "AIFF"
+msgstr "አይኤፍኤፍ"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (አፕል ኪሳራ የሌለው)"
+
+msgid "AMR narrowband"
+msgstr "AMR ጠባብ ባንድ"
+
+msgid "AMR wideband"
+msgstr "AMR ሰፊ ባንድ"
+
+msgid "Browse..."
+msgstr "ያስሱ ..."
+
+msgid "Cancel conversion"
+msgstr "ልወጣ ሰርዝ"
+
+msgid "Cancel the current audio conversion"
+msgstr "የአሁኑን የድምጽ ልወጣ ሰርዝ"
+
+msgid "Canceling the conversion"
+msgstr "ልወጣውን በመሰረዝ ላይ"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "የድጋፍ ገጹን መክፈት አልተቻለም። ይህንን አድራሻ እራስዎ ይክፈቱ {url}"
+
+msgid "Change the conversion quality"
+msgstr "የልወጣ ጥራት ይቀይሩ"
+
+msgid "Change the target audio format"
+msgstr "የታለመውን የድምጽ ቅርጸት ይቀይሩ"
+
+msgid "Choose a folder to convert"
+msgstr "ለመለወጥ አቃፊ ይምረጡ"
+
+msgid "Choose the destination folder"
+msgstr "የመድረሻ አቃፊውን ይምረጡ"
+
+msgid "Confirm folder conversion"
+msgstr "የአቃፊ ልወጣን ያረጋግጡ"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ልወጣ ተሰርዟል። ተጠናቅቋል {done} የ{total} ፋይሎች።"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "ልወጣ ተጠናቅቋል {done} ተሳክቶለታል፣ {failed} አልተሳካም።"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "ሁሉንም የሚደገፉ የድምጽ ፋይሎችን በ{folder}፣ {scope} ይለውጡ?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "አሁን ባለው አቃፊ ውስጥ እያንዳንዱን የሚደገፍ የድምጽ ፋይል ይለውጡ"
+
+msgid "Convert selected files or folders"
+msgstr "የተመረጡ ፋይሎችን ወይም አቃፊዎችን ይለውጡ"
+
+msgid "Convert the current folder"
+msgstr "የአሁኑን አቃፊ ይለውጡ"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index} የ{total} {name} በመቀየር ላይ"
+
+msgid "Destination folder:"
+msgstr "የመድረሻ አቃፊ"
+
+msgid "Destination folder: {folder}"
+msgstr "የመድረሻ አቃፊ {folder}"
+
+msgid "E-AC-3"
+msgstr "ኢ-የ AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "ቀላል የድምጽ መለወጫ"
+
+msgid "Economical"
+msgstr "ኢኮኖሚያዊ"
+
+msgid "FLAC"
+msgstr "ኤፍላክ"
+
+msgid "Found {count} files to convert"
+msgstr "ተገኝቷል {count} ለመለወጥ ፋይሎች"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows ሚዲያ ፋውንዴሽን MP3"
+
+msgid "High"
+msgstr "ከፍ ያለ"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "ቀላል ኦዲዮ መለወጫ ለእርስዎ ጠቃሚ ከሆነ እና የእኔን ስራ ለመደገፍ ከፈለጉ, ቡና መግዛት ይችላሉ.\n\nየድጋፍ ገጹን አሁን መክፈት ይፈልጋሉ?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "አቃፊ ሲቀይሩ ንዑስ አቃፊዎችን ያካትቱ"
+
+msgid "LAME MP3"
+msgstr "አንካሳ MP3"
+
+msgid "M4A (AAC)"
+msgstr "ኤም 4 ኤ (ኤኤሲ)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 ኢንኮደር"
+
+msgid "No conversion is in progress"
+msgstr "ምንም ልወጣ በሂደት ላይ አይደለም"
+
+msgid "No files or folders are selected"
+msgstr "ምንም ፋይሎች ወይም አቃፊዎች አልተመረጡም"
+
+msgid "No supported audio files were found"
+msgstr "ምንም የሚደገፉ የድምጽ ፋይሎች አልተገኙም"
+
+msgid "Ogg Vorbis"
+msgstr "ኦግ ቮርቢስ"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "ቀላል የድምጽ መለወጫ ቅንብሮችን ይክፈቱ"
+
+msgid "Open the author's support page"
+msgstr "የደራሲውን የድጋፍ ገጽ ይክፈቱ"
+
+msgid "Opening the support page"
+msgstr "የድጋፍ ገጹን በመክፈት ላይ"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "ልወጣውን በማዘጋጀት ላይ"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "በመድረሻው ውስጥ ያለውን የምንጭ አቃፊ መዋቅር ይጠብቁ"
+
+msgid "Quality:"
+msgstr "ጥራት"
+
+msgid "Quality: {quality}"
+msgstr "ጥራት {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "የመድረሻ አቃፊውን በፍጥነት ይምረጡ"
+
+msgid "Quickly convert selected files or folders"
+msgstr "የተመረጡ ፋይሎችን ወይም አቃፊዎችን በፍጥነት ይለውጡ"
+
+msgid "Report audio conversion status"
+msgstr "የድምጽ ልወጣ ሁኔታን ሪፖርት አድርግ"
+
+msgid "Report conversion status"
+msgstr "የልወጣ ሁኔታን ሪፖርት አድርግ"
+
+msgid "Save converted files next to the source files"
+msgstr "የተቀየሩ ፋይሎችን ከምንጩ ፋይሎች ቀጥሎ ያስቀምጡ"
+
+msgid "Settings..."
+msgstr "ቅንብሮች..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "አንዳንድ ፋይሎች ሊለወጡ አልተቻለም -\n\n{details}"
+
+msgid "Standard"
+msgstr "መደበኛ"
+
+msgid "Support Easy Audio Converter"
+msgstr "ቀላል የድምጽ መለወጫን ይደግፉ"
+
+msgid "Support the author"
+msgstr "ደራሲውን ይደግፉ"
+
+msgid "Target format:"
+msgstr "የዒላማ አቀራረብ"
+
+msgid "Target format: {format}"
+msgstr "የዒላማ ቅርጸት {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "የተጠቀለለው የ FFmpeg አካል ጠፍቷል። ቀላል የድምጽ መለወጫን እንደገና ጫን።"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "ልወጣው ሊጀመር አልቻለም -\n{error}"
+
+msgid "Unknown error"
+msgstr "ያልታወቀ ስህተት"
+
+msgid "Very high"
+msgstr "በጣም ከፍተኛ"
+
+msgid "WAV"
+msgstr "ዋቭ"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "ዋቭፓክ"
+
+msgid "excluding subfolders"
+msgstr "ንዑስ አቃፊዎችን ሳይጨምር"
+
+msgid "including subfolders"
+msgstr "ንዑስ አቃፊዎችን ጨምሮ"
+
+msgid "{count} selected folders"
+msgstr "{count} የተመረጡ አቃፊዎች"

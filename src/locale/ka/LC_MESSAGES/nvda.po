@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ka\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...და {count} მეტი შეცდომა"
+
+msgid "A conversion is already in progress"
+msgstr "კონვერტაცია უკვე მიმდინარეობს"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR ვიწრო ზოლი"
+
+msgid "AMR wideband"
+msgstr "AMR ფართოზოლოვანი"
+
+msgid "Browse..."
+msgstr "დათვალიერება..."
+
+msgid "Cancel conversion"
+msgstr "კონვერტაციის გაუქმება"
+
+msgid "Cancel the current audio conversion"
+msgstr "გააუქმეთ მიმდინარე აუდიო კონვერტაცია"
+
+msgid "Canceling the conversion"
+msgstr "კონვერტაციის გაუქმება"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "მხარდაჭერის გვერდის გახსნა შეუძლებელია. გახსენით ეს მისამართი ხელით: {url}"
+
+msgid "Change the conversion quality"
+msgstr "შეცვალეთ კონვერტაციის ხარისხი"
+
+msgid "Change the target audio format"
+msgstr "შეცვალეთ სამიზნე აუდიო ფორმატი"
+
+msgid "Choose a folder to convert"
+msgstr "აირჩიეთ საქაღალდე კონვერტაციისთვის"
+
+msgid "Choose the destination folder"
+msgstr "აირჩიეთ დანიშნულების საქაღალდე"
+
+msgid "Confirm folder conversion"
+msgstr "დაადასტურეთ საქაღალდის კონვერტაცია"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "კონვერტაცია გაუქმდა. დასრულებულია {done} {total} ფაილიდან."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "კონვერტაცია დასრულდა: {done} წარმატებით დასრულდა, {failed} ვერ მოხერხდა."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "გადაიყვანეთ ყველა მხარდაჭერილი აუდიო ფაილი {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "ყველა მხარდაჭერილი აუდიო ფაილის კონვერტაცია მიმდინარე საქაღალდეში"
+
+msgid "Convert selected files or folders"
+msgstr "შერჩეული ფაილების ან საქაღალდეების კონვერტაცია"
+
+msgid "Convert the current folder"
+msgstr "მიმდინარე საქაღალდის კონვერტაცია"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index}-ის კონვერტაცია {total}-დან: {name}"
+
+msgid "Destination folder:"
+msgstr "დანიშნულების საქაღალდე:"
+
+msgid "Destination folder: {folder}"
+msgstr "დანიშნულების საქაღალდე: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "მარტივი აუდიო კონვერტორი"
+
+msgid "Economical"
+msgstr "ეკონომიური"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "ნაპოვნია {count} ფაილი კონვერტაციისთვის"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "მაღალი"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "თუ Easy Audio Converter გამოგადგებათ და გსურთ მხარი დაუჭიროთ ჩემს მუშაობას, შეგიძლიათ მიყიდოთ ყავა.\n\nგსურთ ახლავე გახსნათ მხარდაჭერის გვერდი?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "ჩართეთ ქვესაქაღალდეები საქაღალდის კონვერტაციისას"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 შიფრატორი:"
+
+msgid "No conversion is in progress"
+msgstr "კონვერტაცია არ მიმდინარეობს"
+
+msgid "No files or folders are selected"
+msgstr "არცერთი ფაილი ან საქაღალდე არ არის არჩეული"
+
+msgid "No supported audio files were found"
+msgstr "მხარდაჭერილი აუდიო ფაილები ვერ მოიძებნა"
+
+msgid "Ogg Vorbis"
+msgstr "ოგ ვორბისი"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "გახსენით Easy Audio Converter-ის პარამეტრები"
+
+msgid "Open the author's support page"
+msgstr "გახსენით ავტორის მხარდაჭერის გვერდი"
+
+msgid "Opening the support page"
+msgstr "მხარდაჭერის გვერდის გახსნა"
+
+msgid "Opus"
+msgstr "ოპუსი"
+
+msgid "Preparing the conversion"
+msgstr "კონვერტაციის მომზადება"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "შეინახეთ წყაროს საქაღალდის სტრუქტურა დანიშნულების ადგილზე"
+
+msgid "Quality:"
+msgstr "ხარისხი:"
+
+msgid "Quality: {quality}"
+msgstr "ხარისხი: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "სწრაფად აირჩიეთ დანიშნულების საქაღალდე"
+
+msgid "Quickly convert selected files or folders"
+msgstr "სწრაფად დააკონვერტიროთ არჩეული ფაილები ან საქაღალდეები"
+
+msgid "Report audio conversion status"
+msgstr "აუდიო კონვერტაციის სტატუსის შესახებ შეტყობინება"
+
+msgid "Report conversion status"
+msgstr "კონვერტაციის სტატუსის შესახებ შეტყობინება"
+
+msgid "Save converted files next to the source files"
+msgstr "შეინახეთ კონვერტირებული ფაილები წყაროს ფაილების გვერდით"
+
+msgid "Settings..."
+msgstr "პარამეტრები..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "ზოგიერთი ფაილის კონვერტაცია ვერ მოხერხდა:\n\n{details}"
+
+msgid "Standard"
+msgstr "სტანდარტული"
+
+msgid "Support Easy Audio Converter"
+msgstr "მარტივი აუდიო კონვერტორის მხარდაჭერა"
+
+msgid "Support the author"
+msgstr "მხარი დაუჭირეთ ავტორს"
+
+msgid "Target format:"
+msgstr "სამიზნე ფორმატი:"
+
+msgid "Target format: {format}"
+msgstr "სამიზნე ფორმატი: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "შეფუთული FFmpeg კომპონენტი აკლია. ხელახლა დააინსტალირე Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "კონვერტაცია ვერ დაიწყო:\n{error}"
+
+msgid "Unknown error"
+msgstr "უცნობი შეცდომა"
+
+msgid "Very high"
+msgstr "ძალიან მაღალი"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ქვესაქაღალდის გამოკლებით"
+
+msgid "including subfolders"
+msgstr "ქვესაქაღალდეების ჩათვლით"
+
+msgid "{count} selected folders"
+msgstr "{count} შერჩეული საქაღალდეები"

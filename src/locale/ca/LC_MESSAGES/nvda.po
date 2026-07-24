@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ca\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...i {count} més errors"
+
+msgid "A conversion is already in progress"
+msgstr "Una conversió ja està en curs"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR de banda estreta"
+
+msgid "AMR wideband"
+msgstr "AMR de banda ampla"
+
+msgid "Browse..."
+msgstr "Navega..."
+
+msgid "Cancel conversion"
+msgstr "Cancel·la la conversió"
+
+msgid "Cancel the current audio conversion"
+msgstr "Cancel·la la conversió d'àudio actual"
+
+msgid "Canceling the conversion"
+msgstr "Cancel·lació de la conversió"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "No es pot obrir la pàgina d'assistència. Obriu aquesta adreça manualment: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Canvieu la qualitat de la conversió"
+
+msgid "Change the target audio format"
+msgstr "Canvia el format d'àudio objectiu"
+
+msgid "Choose a folder to convert"
+msgstr "Trieu una carpeta per convertir"
+
+msgid "Choose the destination folder"
+msgstr "Trieu la carpeta de destinació"
+
+msgid "Confirm folder conversion"
+msgstr "Confirmeu la conversió de la carpeta"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "S'ha cancel·lat la conversió. S'han completat {done} dels fitxers {total}."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Conversió completada: {done} ha estat correcta, {failed} ha fallat."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Convertir tots els fitxers d'àudio compatibles a {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Converteix tots els fitxers d'àudio compatibles a la carpeta actual"
+
+msgid "Convert selected files or folders"
+msgstr "Converteix fitxers o carpetes seleccionats"
+
+msgid "Convert the current folder"
+msgstr "Converteix la carpeta actual"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Convertint {index} de {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Carpeta de destinació:"
+
+msgid "Destination folder: {folder}"
+msgstr "Carpeta de destinació: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Convertidor d'àudio fàcil"
+
+msgid "Economical"
+msgstr "Econòmic"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "S'han trobat fitxers {count} per convertir"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Alt"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Si Easy Audio Converter us és útil i voleu donar suport al meu treball, podeu comprar-me un cafè.\n\nVols obrir la pàgina d'assistència ara?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Inclou subcarpetes en convertir una carpeta"
+
+msgid "LAME MP3"
+msgstr "MP3 COIX"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Codificador MP3:"
+
+msgid "No conversion is in progress"
+msgstr "No hi ha cap conversió en curs"
+
+msgid "No files or folders are selected"
+msgstr "No hi ha cap fitxer ni carpete seleccionat"
+
+msgid "No supported audio files were found"
+msgstr "No s'han trobat fitxers d'àudio compatibles"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Obriu la configuració de Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Obriu la pàgina de suport de l'autor"
+
+msgid "Opening the support page"
+msgstr "Obrint la pàgina de suport"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Preparant la conversió"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Conserva l'estructura de carpetes d'origen a la destinació"
+
+msgid "Quality:"
+msgstr "Qualitat:"
+
+msgid "Quality: {quality}"
+msgstr "Qualitat: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Trieu ràpidament la carpeta de destinació"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Converteix ràpidament els fitxers o carpetes seleccionats"
+
+msgid "Report audio conversion status"
+msgstr "Informa de l'estat de conversió d'àudio"
+
+msgid "Report conversion status"
+msgstr "Informa de l'estat de conversió"
+
+msgid "Save converted files next to the source files"
+msgstr "Desa els fitxers convertits al costat dels fitxers font"
+
+msgid "Settings..."
+msgstr "Configuració..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Alguns fitxers no s'han pogut convertir:\n\n{details}"
+
+msgid "Standard"
+msgstr "Estàndard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Suport Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Donar suport a l'autor"
+
+msgid "Target format:"
+msgstr "Format objectiu:"
+
+msgid "Target format: {format}"
+msgstr "Format objectiu: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Falta el component FFmpeg inclòs. Torneu a instal·lar Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "La conversió no ha pogut començar:\n{error}"
+
+msgid "Unknown error"
+msgstr "Error desconegut"
+
+msgid "Very high"
+msgstr "Molt alt"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "excloent les subcarpetes"
+
+msgid "including subfolders"
+msgstr "incloent subcarpetes"
+
+msgid "{count} selected folders"
+msgstr "{count} carpetes seleccionades"

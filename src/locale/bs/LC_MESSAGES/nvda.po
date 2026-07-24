@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: bs\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...i {count} više grešaka"
+
+msgid "A conversion is already in progress"
+msgstr "Konverzija je već u toku"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR uskopojasni"
+
+msgid "AMR wideband"
+msgstr "AMR širokopojasni"
+
+msgid "Browse..."
+msgstr "Pregledaj..."
+
+msgid "Cancel conversion"
+msgstr "Otkaži konverziju"
+
+msgid "Cancel the current audio conversion"
+msgstr "Otkažite trenutnu audio konverziju"
+
+msgid "Canceling the conversion"
+msgstr "Otkazivanje konverzije"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Nije moguće otvoriti stranicu za podršku. Ručno otvorite ovu adresu: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Promijenite kvalitetu konverzije"
+
+msgid "Change the target audio format"
+msgstr "Promijenite ciljni audio format"
+
+msgid "Choose a folder to convert"
+msgstr "Odaberite folder za konverziju"
+
+msgid "Choose the destination folder"
+msgstr "Odaberite odredišni folder"
+
+msgid "Confirm folder conversion"
+msgstr "Potvrdite konverziju foldera"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Konverzija je otkazana. Završeno {done} od {total} fajlova."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Konverzija završena: {done} uspjela, {failed} nije uspjela."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Pretvoriti sve podržane audio datoteke u {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Konvertujte sve podržane audio datoteke u trenutnoj fascikli"
+
+msgid "Convert selected files or folders"
+msgstr "Konvertujte odabrane fajlove ili foldere"
+
+msgid "Convert the current folder"
+msgstr "Konvertujte trenutni folder"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Pretvaranje {index} od {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Odredišni folder:"
+
+msgid "Destination folder: {folder}"
+msgstr "Odredišni folder: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Jednostavan audio konverter"
+
+msgid "Economical"
+msgstr "Ekonomičan"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Pronađene datoteke {count} za konverziju"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Visoko"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Ako vam je Easy Audio Converter koristan i želite podržati moj rad, možete me častiti kafom.\n\nŽelite li sada otvoriti stranicu za podršku?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Uključite podfoldere prilikom konvertovanja fascikle"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 enkoder:"
+
+msgid "No conversion is in progress"
+msgstr "Nijedna konverzija nije u toku"
+
+msgid "No files or folders are selected"
+msgstr "Nije odabran nijedan fajl ili folder"
+
+msgid "No supported audio files were found"
+msgstr "Nisu pronađeni podržani audio fajlovi"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Otvorite postavke Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Otvorite stranicu za podršku autora"
+
+msgid "Opening the support page"
+msgstr "Otvaranje stranice za podršku"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Priprema konverzije"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Sačuvajte strukturu izvornog foldera na odredištu"
+
+msgid "Quality:"
+msgstr "kvaliteta:"
+
+msgid "Quality: {quality}"
+msgstr "Kvalitet: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Brzo odaberite odredišni folder"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Brzo konvertujte odabrane datoteke ili fascikle"
+
+msgid "Report audio conversion status"
+msgstr "Prijavi status audio konverzije"
+
+msgid "Report conversion status"
+msgstr "Prijavi status konverzije"
+
+msgid "Save converted files next to the source files"
+msgstr "Sačuvajte konvertovane datoteke pored izvornih datoteka"
+
+msgid "Settings..."
+msgstr "Postavke..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Neki fajlovi se ne mogu konvertovati:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Podrška Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Podržite autora"
+
+msgid "Target format:"
+msgstr "Ciljni format:"
+
+msgid "Target format: {format}"
+msgstr "Ciljni format: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Nedostaje komponenta FFmpeg u paketu. Ponovo instalirajte Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Konverzija nije mogla započeti:\n{error}"
+
+msgid "Unknown error"
+msgstr "Nepoznata greška"
+
+msgid "Very high"
+msgstr "Vrlo visoko"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "isključujući podmape"
+
+msgid "including subfolders"
+msgstr "uključujući podfoldere"
+
+msgid "{count} selected folders"
+msgstr "{count} odabrani folderi"

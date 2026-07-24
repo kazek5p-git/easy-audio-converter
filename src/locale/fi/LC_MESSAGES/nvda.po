@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: fi\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...ja {count} muita virheitä"
+
+msgid "A conversion is already in progress"
+msgstr "Muunnos on jo käynnissä"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR kapeakaistainen"
+
+msgid "AMR wideband"
+msgstr "AMR laajakaista"
+
+msgid "Browse..."
+msgstr "Selaa..."
+
+msgid "Cancel conversion"
+msgstr "Peruuta muunnos"
+
+msgid "Cancel the current audio conversion"
+msgstr "Peruuta nykyinen äänen muunnos"
+
+msgid "Canceling the conversion"
+msgstr "Muunnosta peruutetaan"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Tukisivua ei voi avata. Avaa tämä osoite manuaalisesti: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Muuta muunnoslaatua"
+
+msgid "Change the target audio format"
+msgstr "Muuta kohdeäänimuotoa"
+
+msgid "Choose a folder to convert"
+msgstr "Valitse muunnettava kansio"
+
+msgid "Choose the destination folder"
+msgstr "Valitse kohdekansio"
+
+msgid "Confirm folder conversion"
+msgstr "Vahvista kansion muuntaminen"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Muunnos peruttu. Valmiit {done} / {total} tiedostot."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Muunnos valmis: {done} onnistui, {failed} epäonnistui."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Muunnetaanko kaikki tuetut äänitiedostot tiedostoissa {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Muunna kaikki nykyisen kansion tuetut äänitiedostot"
+
+msgid "Convert selected files or folders"
+msgstr "Muunna valitut tiedostot tai kansiot"
+
+msgid "Convert the current folder"
+msgstr "Muunna nykyinen kansio"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Muunnetaan {index} / {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Kohdekansio:"
+
+msgid "Destination folder: {folder}"
+msgstr "Kohdekansio: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Helppo Audio Converter"
+
+msgid "Economical"
+msgstr "Taloudellinen"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Löytyi muunnettavia tiedostoja {count}"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Korkea"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Jos Easy Audio Converter on sinulle hyödyllinen ja haluat tukea työtäni, voit ostaa minulle kahvin.\n\nHaluatko avata tukisivun nyt?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Sisällytä alikansiot kansiota muuntaessasi"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3-kooderi:"
+
+msgid "No conversion is in progress"
+msgstr "Muunnosta ei ole meneillään"
+
+msgid "No files or folders are selected"
+msgstr "Tiedostoja tai kansioita ei ole valittu"
+
+msgid "No supported audio files were found"
+msgstr "Tuettuja äänitiedostoja ei löytynyt"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Avaa Easy Audio Converter -asetukset"
+
+msgid "Open the author's support page"
+msgstr "Avaa kirjoittajan tukisivu"
+
+msgid "Opening the support page"
+msgstr "Tukisivun avaaminen"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Konversion valmistelu"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Säilytä lähdekansiorakenne kohteessa"
+
+msgid "Quality:"
+msgstr "Laatu:"
+
+msgid "Quality: {quality}"
+msgstr "Laatu: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Valitse nopeasti kohdekansio"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Muunna valitut tiedostot tai kansiot nopeasti"
+
+msgid "Report audio conversion status"
+msgstr "Raportoi äänen muuntamisen tila"
+
+msgid "Report conversion status"
+msgstr "Raportoi muunnostila"
+
+msgid "Save converted files next to the source files"
+msgstr "Tallenna muunnetut tiedostot lähdetiedostojen viereen"
+
+msgid "Settings..."
+msgstr "Asetukset..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Joitakin tiedostoja ei voitu muuntaa:\n\n{details}"
+
+msgid "Standard"
+msgstr "Vakio"
+
+msgid "Support Easy Audio Converter"
+msgstr "Tuki Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Tue kirjoittajaa"
+
+msgid "Target format:"
+msgstr "Kohdemuoto:"
+
+msgid "Target format: {format}"
+msgstr "Kohdemuoto: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Mukana oleva FFmpeg-komponentti puuttuu. Asenna Easy Audio Converter uudelleen."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Muuntaminen ei voinut alkaa:\n{error}"
+
+msgid "Unknown error"
+msgstr "Tuntematon virhe"
+
+msgid "Very high"
+msgstr "Erittäin korkea"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "alikansioita lukuun ottamatta"
+
+msgid "including subfolders"
+msgstr "mukaan lukien alikansiot"
+
+msgid "{count} selected folders"
+msgstr "{count} valitut kansiot"

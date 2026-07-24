@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ga\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...agus {count} tuilleadh earráidí"
+
+msgid "A conversion is already in progress"
+msgstr "Tá tiontú ar siúl cheana féin"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "banda caol AMR"
+
+msgid "AMR wideband"
+msgstr "AMR leathanbhanda"
+
+msgid "Browse..."
+msgstr "Brabhsáil..."
+
+msgid "Cancel conversion"
+msgstr "Cealaigh comhshó"
+
+msgid "Cancel the current audio conversion"
+msgstr "Cealaigh an tiontú fuaime reatha"
+
+msgid "Canceling the conversion"
+msgstr "An tiontú a chur ar ceal"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Ní féidir an leathanach tacaíochta a oscailt. Oscail an seoladh seo de láimh: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Athraigh an caighdeán chomhshó"
+
+msgid "Change the target audio format"
+msgstr "Athraigh an sprioc formáid fuaime"
+
+msgid "Choose a folder to convert"
+msgstr "Roghnaigh fillteán le tiontú"
+
+msgid "Choose the destination folder"
+msgstr "Roghnaigh an fillteán ceann scríbe"
+
+msgid "Confirm folder conversion"
+msgstr "Deimhnigh comhshó fillteán"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Cealaíodh an comhshó. Comhlánaithe {done} de {total}."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Comhshó críochnaithe: {done} d'éirigh leis, {failed} theip."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Tiontaigh gach comhad fuaime a dtacaítear leis in {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Tiontaigh gach comhad fuaime tacaithe san fhillteán reatha"
+
+msgid "Convert selected files or folders"
+msgstr "Tiontaigh comhaid nó fillteáin roghnaithe"
+
+msgid "Convert the current folder"
+msgstr "Tiontaigh an fillteán reatha"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index} á thiontú de {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Fillteán sprice:"
+
+msgid "Destination folder: {folder}"
+msgstr "Fillteán sprice: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Tiontaire Fuaime Éasca"
+
+msgid "Economical"
+msgstr "eacnamaíoch"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Aimsíodh {count} comhaid le tiontú"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Ard"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Má tá Easy Audio Converter úsáideach duit agus gur mhaith leat tacú le mo chuid oibre, is féidir leat caife a cheannach dom.\n\nAr mhaith leat an leathanach tacaíochta a oscailt anois?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Cuir fofhillteáin san áireamh agus fillteán á thiontú"
+
+msgid "LAME MP3"
+msgstr "Lame MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Ionchódóir MP3:"
+
+msgid "No conversion is in progress"
+msgstr "Níl aon chomhshó ar siúl"
+
+msgid "No files or folders are selected"
+msgstr "Ní roghnaítear aon chomhaid nó fillteáin"
+
+msgid "No supported audio files were found"
+msgstr "Níor aimsíodh aon chomhaid fuaime a dtacaítear leo"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Oscail socruithe Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Oscail leathanach tacaíochta an údair"
+
+msgid "Opening the support page"
+msgstr "Ag oscailt an leathanach tacaíochta"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Ullmhú an chomhshó"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Caomhnaigh an struchtúr fillteán foinse sa cheann scríbe"
+
+msgid "Quality:"
+msgstr "Cáilíocht:"
+
+msgid "Quality: {quality}"
+msgstr "Cáilíocht: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Go tapa roghnaigh an fillteán ceann scríbe"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Tiontaigh go tapa comhaid nó fillteáin roghnaithe"
+
+msgid "Report audio conversion status"
+msgstr "Tuairiscigh stádas comhshó fuaime"
+
+msgid "Report conversion status"
+msgstr "Tuairiscigh stádas comhshó"
+
+msgid "Save converted files next to the source files"
+msgstr "Sábháil comhaid a chomhshó in aice leis na comhaid foinse"
+
+msgid "Settings..."
+msgstr "Socruithe..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Níorbh fhéidir roinnt comhad a thiontú:\n\n{details}"
+
+msgid "Standard"
+msgstr "Caighdeán"
+
+msgid "Support Easy Audio Converter"
+msgstr "Tacaíocht Tiontaire Fuaime Éasca"
+
+msgid "Support the author"
+msgstr "Tacaigh leis an údar"
+
+msgid "Target format:"
+msgstr "Formáid sprice:"
+
+msgid "Target format: {format}"
+msgstr "Formáid sprice: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Tá an chomhpháirt FFmpeg cuachta in easnamh. Athshuiteáil Tiontaire Fuaime Éasca."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Níorbh fhéidir an tiontú a thosú:\n{error}"
+
+msgid "Unknown error"
+msgstr "Earráid anaithnid"
+
+msgid "Very high"
+msgstr "An-ard"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "Pacáiste Wav"
+
+msgid "excluding subfolders"
+msgstr "gan fofhillteáin a áireamh"
+
+msgid "including subfolders"
+msgstr "lena n-áirítear fofhillteáin"
+
+msgid "{count} selected folders"
+msgstr "{count} fillteáin roghnaithe"

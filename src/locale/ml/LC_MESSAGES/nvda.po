@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ml\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...കൂടാതെ {count} കൂടുതൽ പിശകുകൾ"
+
+msgid "A conversion is already in progress"
+msgstr "ഒരു പരിവർത്തനം ഇതിനകം പുരോഗമിക്കുകയാണ്"
+
+msgid "AAC"
+msgstr "എ.എ.സി"
+
+msgid "AC-3"
+msgstr "എസി-3"
+
+msgid "AIFF"
+msgstr "എ.ഐ.എഫ്.എഫ്"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (ആപ്പിൾ നഷ്ടമില്ലാത്തത്)"
+
+msgid "AMR narrowband"
+msgstr "AMR നാരോബാൻഡ്"
+
+msgid "AMR wideband"
+msgstr "AMR വൈഡ്ബാൻഡ്"
+
+msgid "Browse..."
+msgstr "ബ്രൗസ് ചെയ്യുക..."
+
+msgid "Cancel conversion"
+msgstr "പരിവർത്തനം റദ്ദാക്കുക"
+
+msgid "Cancel the current audio conversion"
+msgstr "നിലവിലെ ഓഡിയോ പരിവർത്തനം റദ്ദാക്കുക"
+
+msgid "Canceling the conversion"
+msgstr "പരിവർത്തനം റദ്ദാക്കുന്നു"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "പിന്തുണ പേജ് തുറക്കാൻ കഴിയില്ല. ഈ വിലാസം നേരിട്ട് തുറക്കുക: {url}"
+
+msgid "Change the conversion quality"
+msgstr "പരിവർത്തന നിലവാരം മാറ്റുക"
+
+msgid "Change the target audio format"
+msgstr "ടാർഗെറ്റ് ഓഡിയോ ഫോർമാറ്റ് മാറ്റുക"
+
+msgid "Choose a folder to convert"
+msgstr "പരിവർത്തനം ചെയ്യാൻ ഒരു ഫോൾഡർ തിരഞ്ഞെടുക്കുക"
+
+msgid "Choose the destination folder"
+msgstr "ലക്ഷ്യസ്ഥാന ഫോൾഡർ തിരഞ്ഞെടുക്കുക"
+
+msgid "Confirm folder conversion"
+msgstr "ഫോൾഡർ പരിവർത്തനം സ്ഥിരീകരിക്കുക"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "പരിവർത്തനം റദ്ദാക്കി. {total} ഫയലുകളുടെ {done} പൂർത്തിയാക്കി."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "പരിവർത്തനം പൂർത്തിയായി: {done} വിജയിച്ചു, {failed} പരാജയപ്പെട്ടു."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "പിന്തുണയ്‌ക്കുന്ന എല്ലാ ഓഡിയോ ഫയലുകളും {folder}, {scope} എന്നതിലേക്ക് പരിവർത്തനം ചെയ്യണോ?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "നിലവിലെ ഫോൾഡറിൽ പിന്തുണയ്ക്കുന്ന എല്ലാ ഓഡിയോ ഫയലുകളും പരിവർത്തനം ചെയ്യുക"
+
+msgid "Convert selected files or folders"
+msgstr "തിരഞ്ഞെടുത്ത ഫയലുകൾ അല്ലെങ്കിൽ ഫോൾഡറുകൾ പരിവർത്തനം ചെയ്യുക"
+
+msgid "Convert the current folder"
+msgstr "നിലവിലെ ഫോൾഡർ പരിവർത്തനം ചെയ്യുക"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index} of {total}: {name} പരിവർത്തനം ചെയ്യുന്നു"
+
+msgid "Destination folder:"
+msgstr "ലക്ഷ്യസ്ഥാന ഫോൾഡർ:"
+
+msgid "Destination folder: {folder}"
+msgstr "ലക്ഷ്യസ്ഥാന ഫോൾഡർ: {folder}"
+
+msgid "E-AC-3"
+msgstr "ഇ-എസി-3"
+
+msgid "Easy Audio Converter"
+msgstr "എളുപ്പമുള്ള ഓഡിയോ കൺവെർട്ടർ"
+
+msgid "Economical"
+msgstr "സാമ്പത്തിക"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "പരിവർത്തനം ചെയ്യാൻ {count} ഫയലുകൾ കണ്ടെത്തി"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "ഉയർന്നത്"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "ഈസി ഓഡിയോ കൺവെർട്ടർ നിങ്ങൾക്ക് ഉപയോഗപ്രദമാണെങ്കിൽ, നിങ്ങൾ എൻ്റെ ജോലിയെ പിന്തുണയ്ക്കാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ, നിങ്ങൾക്ക് എനിക്ക് ഒരു കോഫി വാങ്ങാം.\n\nനിങ്ങൾക്ക് ഇപ്പോൾ പിന്തുണാ പേജ് തുറക്കണോ?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "ഒരു ഫോൾഡർ പരിവർത്തനം ചെയ്യുമ്പോൾ സബ്ഫോൾഡറുകൾ ഉൾപ്പെടുത്തുക"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 എൻകോഡർ:"
+
+msgid "No conversion is in progress"
+msgstr "പരിവർത്തനമൊന്നും നടക്കുന്നില്ല"
+
+msgid "No files or folders are selected"
+msgstr "ഫയലുകളോ ഫോൾഡറുകളോ തിരഞ്ഞെടുത്തിട്ടില്ല"
+
+msgid "No supported audio files were found"
+msgstr "പിന്തുണയ്‌ക്കുന്ന ഓഡിയോ ഫയലുകളൊന്നും കണ്ടെത്തിയില്ല"
+
+msgid "Ogg Vorbis"
+msgstr "ഓഗ് വോർബിസ്"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "ഈസി ഓഡിയോ കൺവെർട്ടർ ക്രമീകരണങ്ങൾ തുറക്കുക"
+
+msgid "Open the author's support page"
+msgstr "രചയിതാവിൻ്റെ പിന്തുണ പേജ് തുറക്കുക"
+
+msgid "Opening the support page"
+msgstr "പിന്തുണ പേജ് തുറക്കുന്നു"
+
+msgid "Opus"
+msgstr "ഒപ്പസ്"
+
+msgid "Preparing the conversion"
+msgstr "പരിവർത്തനം തയ്യാറാക്കുന്നു"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "ലക്ഷ്യസ്ഥാനത്ത് ഉറവിട ഫോൾഡർ ഘടന സംരക്ഷിക്കുക"
+
+msgid "Quality:"
+msgstr "ഗുണനിലവാരം:"
+
+msgid "Quality: {quality}"
+msgstr "ഗുണനിലവാരം: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "ലക്ഷ്യസ്ഥാന ഫോൾഡർ വേഗത്തിൽ തിരഞ്ഞെടുക്കുക"
+
+msgid "Quickly convert selected files or folders"
+msgstr "തിരഞ്ഞെടുത്ത ഫയലുകളോ ഫോൾഡറുകളോ വേഗത്തിൽ പരിവർത്തനം ചെയ്യുക"
+
+msgid "Report audio conversion status"
+msgstr "ഓഡിയോ പരിവർത്തന നില റിപ്പോർട്ടുചെയ്യുക"
+
+msgid "Report conversion status"
+msgstr "പരിവർത്തന നില റിപ്പോർട്ട് ചെയ്യുക"
+
+msgid "Save converted files next to the source files"
+msgstr "പരിവർത്തനം ചെയ്ത ഫയലുകൾ ഉറവിട ഫയലുകൾക്ക് അടുത്തായി സംരക്ഷിക്കുക"
+
+msgid "Settings..."
+msgstr "ക്രമീകരണങ്ങൾ..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "ചില ഫയലുകൾ പരിവർത്തനം ചെയ്യാൻ കഴിഞ്ഞില്ല:\n\n{details}"
+
+msgid "Standard"
+msgstr "സ്റ്റാൻഡേർഡ്"
+
+msgid "Support Easy Audio Converter"
+msgstr "ഈസി ഓഡിയോ കൺവെർട്ടറിനെ പിന്തുണയ്ക്കുക"
+
+msgid "Support the author"
+msgstr "രചയിതാവിനെ പിന്തുണയ്ക്കുക"
+
+msgid "Target format:"
+msgstr "ടാർഗെറ്റ് ഫോർമാറ്റ്:"
+
+msgid "Target format: {format}"
+msgstr "ടാർഗെറ്റ് ഫോർമാറ്റ്: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "ബണ്ടിൽ ചെയ്ത FFmpeg ഘടകം കാണുന്നില്ല. ഈസി ഓഡിയോ കൺവെർട്ടർ വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യുക."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "പരിവർത്തനം ആരംഭിക്കാൻ കഴിഞ്ഞില്ല:\n{error}"
+
+msgid "Unknown error"
+msgstr "അജ്ഞാത പിശക്"
+
+msgid "Very high"
+msgstr "വളരെ ഉയർന്നത്"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "ഡബ്ല്യുഎംഎ"
+
+msgid "WavPack"
+msgstr "വാവ്പാക്ക്"
+
+msgid "excluding subfolders"
+msgstr "സബ്ഫോൾഡറുകൾ ഒഴികെ"
+
+msgid "including subfolders"
+msgstr "സബ്ഫോൾഡറുകൾ ഉൾപ്പെടെ"
+
+msgid "{count} selected folders"
+msgstr "{count} തിരഞ്ഞെടുത്ത ഫോൾഡറുകൾ"

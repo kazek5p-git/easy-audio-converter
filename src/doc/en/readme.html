@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Easy Audio Converter</title>
+</head>
+<body>
+	<h1>Easy Audio Converter</h1>
+	<p>Author: Kazimierz Parzych. Version 1.0.0.</p>
+	<p>
+		Easy Audio Converter converts selected files and folders without leaving
+		Windows Explorer. Conversion runs in the background using the FFmpeg
+		component included with the add-on.
+	</p>
+
+	<h2>Using the add-on</h2>
+	<ol>
+		<li>Open Windows Explorer and select one or more audio files or folders.</li>
+		<li>
+			Open NVDA menu, Tools, Easy Audio Converter, and choose
+			“Convert selected files or folders”.
+		</li>
+		<li>
+			To convert the complete Explorer folder, choose
+			“Convert the current folder”.
+		</li>
+	</ol>
+	<p>
+		The Tools submenu also reports status, cancels a job, opens settings, and
+		opens the author's support page.
+	</p>
+
+	<h2>Settings</h2>
+	<p>
+		Open NVDA menu, Preferences, Settings, Easy Audio Converter. You can
+		select the target format, quality, MP3 encoder, destination behavior,
+		subfolder scanning, and folder-structure preservation.
+	</p>
+	<p>
+		When “Save converted files next to the source files” is enabled, every
+		result is placed beside its source. Otherwise, results are written below
+		the configured destination folder.
+	</p>
+	<p>
+		Existing files and source files are never overwritten. A numbered name is
+		created automatically when necessary.
+	</p>
+
+	<h2>Custom keyboard shortcuts</h2>
+	<p>
+		Open NVDA menu, Preferences, Input Gestures, then find the
+		“Easy Audio Converter” category. Custom gestures can be assigned to:
+	</p>
+	<ul>
+		<li>open settings;</li>
+		<li>quickly convert the current selection;</li>
+		<li>convert the current folder;</li>
+		<li>cycle the target format;</li>
+		<li>cycle quality;</li>
+		<li>choose the destination folder;</li>
+		<li>report status;</li>
+		<li>cancel conversion;</li>
+		<li>open the support page.</li>
+	</ul>
+
+	<h2>Supported output formats</h2>
+	<p>
+		MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC, AAC, WMA, ALAC, AIFF,
+		AC-3, E-AC-3, WavPack, MP2, AMR narrowband, and AMR wideband.
+	</p>
+	<p>
+		For MP3, LAME and the Windows Media Foundation MP3 encoder can be
+		selected. The latter is shown as the Fraunhofer/Windows option.
+	</p>
+
+	<h2>Notes</h2>
+	<ul>
+		<li>Only one conversion job runs at a time.</li>
+		<li>Folder jobs ask for confirmation before they start.</li>
+		<li>Video containers are accepted when they contain a readable audio track.</li>
+		<li>Encrypted or copy-protected media cannot be converted.</li>
+	</ul>
+</body>
+</html>

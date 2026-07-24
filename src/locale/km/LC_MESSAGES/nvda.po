@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: km\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... និង {count} កំហុសបន្ថែម"
+
+msgid "A conversion is already in progress"
+msgstr "ការបម្លែងកំពុងដំណើរការរួចហើយ"
+
+msgid "AAC"
+msgstr "អេស៊ី"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "អាយហ្វ"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "បន្ទាត់តូច AMR"
+
+msgid "AMR wideband"
+msgstr "AMR wideband"
+
+msgid "Browse..."
+msgstr "រុករក..."
+
+msgid "Cancel conversion"
+msgstr "បោះបង់ការបម្លែង"
+
+msgid "Cancel the current audio conversion"
+msgstr "បោះបង់ការបម្លែងសំឡេងបច្ចុប្បន្ន"
+
+msgid "Canceling the conversion"
+msgstr "បោះបង់ការបម្លែង"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "មិនអាចបើកទំព័រគាំទ្របានទេ។ បើកអាសយដ្ឋាននេះដោយដៃ៖ {url}"
+
+msgid "Change the conversion quality"
+msgstr "ផ្លាស់ប្តូរគុណភាពការបម្លែង"
+
+msgid "Change the target audio format"
+msgstr "ផ្លាស់ប្តូរទ្រង់ទ្រាយសំឡេងគោលដៅ"
+
+msgid "Choose a folder to convert"
+msgstr "ជ្រើសរើសថតមួយសម្រាប់បម្លែង"
+
+msgid "Choose the destination folder"
+msgstr "ជ្រើសរើសថតគោលដៅ"
+
+msgid "Confirm folder conversion"
+msgstr "បញ្ជាក់ការបម្លែងថត"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ការបម្លែងត្រូវបានបោះបង់។ បានបញ្ចប់ {done} នៃឯកសារ {total}។"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "ការបម្លែងបានបញ្ចប់៖ {done} ជោគជ័យ, {failed} បរាជ័យ។"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "បម្លែងឯកសារសំឡេងទាំងអស់ដែលគាំទ្រជា {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "បម្លែងឯកសារសំឡេងដែលគាំទ្រទាំងអស់នៅក្នុងថតបច្ចុប្បន្ន"
+
+msgid "Convert selected files or folders"
+msgstr "បម្លែងឯកសារ ឬថតដែលបានជ្រើស"
+
+msgid "Convert the current folder"
+msgstr "បម្លែងថតបច្ចុប្បន្ន"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "ការបម្លែង {index} នៃ {total}៖ {name}"
+
+msgid "Destination folder:"
+msgstr "ថតគោលដៅ៖"
+
+msgid "Destination folder: {folder}"
+msgstr "ថតគោលដៅ៖ {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "កម្មវិធីបម្លែងសំឡេងងាយស្រួល"
+
+msgid "Economical"
+msgstr "សន្សំសំចៃ"
+
+msgid "FLAC"
+msgstr "ហ្វ្លាក់"
+
+msgid "Found {count} files to convert"
+msgstr "បានរកឃើញឯកសារ {count} សម្រាប់បម្លែង"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "ខ្ពស់"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "បើ Easy Audio Converter មានប្រយោជន៍សម្រាប់អ្នក ហើយអ្នកចង់គាំទ្រការងាររបស់ខ្ញុំ អ្នកអាចទិញកាហ្វេមួយកែវឲ្យខ្ញុំ។\n\nតើអ្នកចង់បើកទំព័រគាំទ្រឥឡូវនេះទេ?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "រួមបញ្ចូលថតរងនៅពេលបម្លែងថត"
+
+msgid "LAME MP3"
+msgstr "MP3 មិនសូវល្អ"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "ឧបករណ៍បំលែង MP3៖"
+
+msgid "No conversion is in progress"
+msgstr "មិនមានការបម្លែងណាមួយកំពុងដំណើរការ"
+
+msgid "No files or folders are selected"
+msgstr "មិនមានឯកសារ ឬថតណាមួយត្រូវបានជ្រើសរើស"
+
+msgid "No supported audio files were found"
+msgstr "មិនមានឯកសារសំឡេងដែលគាំទ្រត្រូវបានរកឃើញ"
+
+msgid "Ogg Vorbis"
+msgstr "អុក វ័រប៊ីស"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "បើកការកំណត់ Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "បើកទំព័រគាំទ្ររបស់អ្នកនិពន្ធ"
+
+msgid "Opening the support page"
+msgstr "ការបើកទំព័រគាំទ្រ"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "ការរៀបចំការបម្លែង"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "រក្សាទុករចនាសម្ព័ន្ធថតប្រភពនៅក្នុងគោលដៅ"
+
+msgid "Quality:"
+msgstr "គុណភាព៖"
+
+msgid "Quality: {quality}"
+msgstr "គុណភាព៖ {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "ជ្រើសរើសថតគោលដៅយ៉ាងរហ័ស"
+
+msgid "Quickly convert selected files or folders"
+msgstr "បម្លែងឯកសារ ឬថតដែលបានជ្រើសយ៉ាងរហ័ស"
+
+msgid "Report audio conversion status"
+msgstr "រាយការណ៍ស្ថានភាពបម្លែងសំឡេង"
+
+msgid "Report conversion status"
+msgstr "រាយការណ៍ស្ថានភាពបម្លែង"
+
+msgid "Save converted files next to the source files"
+msgstr "រក្សាទុកឯកសារដែលបានបម្លែងនៅក្បែរឯកសារប្រភព"
+
+msgid "Settings..."
+msgstr "ការកំណត់..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "ឯកសារខ្លះមិនអាចបម្លែងបាន៖\n\n{details}"
+
+msgid "Standard"
+msgstr "ស្តង់ដារ"
+
+msgid "Support Easy Audio Converter"
+msgstr "គាំទ្រការបម្លែងសំឡេងងាយស្រួល"
+
+msgid "Support the author"
+msgstr "គាំទ្រអ្នកនិពន្ធ"
+
+msgid "Target format:"
+msgstr "ទ្រង់ទ្រាយគោលដៅ៖"
+
+msgid "Target format: {format}"
+msgstr "ទ្រង់ទ្រាយគោលដៅ៖ {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "ផ្នែក FFmpeg ដែលភ្ជាប់មកជាមួយគឺបាត់បង់។ ដំឡើង Easy Audio Converter ម្តងទៀត។"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "ការបម្លែងមិនអាចចាប់ផ្តើមបានទេ៖\n{error}"
+
+msgid "Unknown error"
+msgstr "កំហុសមិនស្គាល់"
+
+msgid "Very high"
+msgstr "ខ្ពស់ណាស់"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ការដកចេញថតរង"
+
+msgid "including subfolders"
+msgstr "រួមបញ្ចូលថតរង"
+
+msgid "{count} selected folders"
+msgstr "{count} ថតដែលបានជ្រើស"

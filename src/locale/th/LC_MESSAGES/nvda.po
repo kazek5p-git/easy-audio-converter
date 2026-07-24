@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: th\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...และ {count} ข้อผิดพลาดเพิ่มเติม"
+
+msgid "A conversion is already in progress"
+msgstr "การแปลงอยู่ในระหว่างดำเนินการ"
+
+msgid "AAC"
+msgstr "เอเอซี"
+
+msgid "AC-3"
+msgstr "เอซี-3"
+
+msgid "AIFF"
+msgstr "เอไอเอฟ"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (แอปเปิลลอสเลส)"
+
+msgid "AMR narrowband"
+msgstr "AMR แถบแคบ"
+
+msgid "AMR wideband"
+msgstr "AMR ไวด์แบนด์"
+
+msgid "Browse..."
+msgstr "เรียกดู..."
+
+msgid "Cancel conversion"
+msgstr "ยกเลิกการแปลง"
+
+msgid "Cancel the current audio conversion"
+msgstr "ยกเลิกการแปลงเสียงปัจจุบัน"
+
+msgid "Canceling the conversion"
+msgstr "การยกเลิกการแปลง"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "ไม่สามารถเปิดหน้าสนับสนุนได้ เปิดที่อยู่นี้ด้วยตนเอง: {url}"
+
+msgid "Change the conversion quality"
+msgstr "เปลี่ยนคุณภาพการแปลง"
+
+msgid "Change the target audio format"
+msgstr "เปลี่ยนรูปแบบเสียงเป้าหมาย"
+
+msgid "Choose a folder to convert"
+msgstr "เลือกโฟลเดอร์ที่จะแปลง"
+
+msgid "Choose the destination folder"
+msgstr "เลือกโฟลเดอร์ปลายทาง"
+
+msgid "Confirm folder conversion"
+msgstr "ยืนยันการแปลงโฟลเดอร์"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ยกเลิกการแปลงแล้ว เสร็จสิ้นไฟล์ {done} จาก {total}"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "การแปลงเสร็จสมบูรณ์: {done} สำเร็จ, {failed} ล้มเหลว"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "แปลงไฟล์เสียงที่รองรับทั้งหมดใน {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "แปลงไฟล์เสียงที่รองรับทุกไฟล์ในโฟลเดอร์ปัจจุบัน"
+
+msgid "Convert selected files or folders"
+msgstr "แปลงไฟล์หรือโฟลเดอร์ที่เลือก"
+
+msgid "Convert the current folder"
+msgstr "แปลงโฟลเดอร์ปัจจุบัน"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "กำลังแปลง {index} ของ {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "โฟลเดอร์ปลายทาง:"
+
+msgid "Destination folder: {folder}"
+msgstr "โฟลเดอร์ปลายทาง: {folder}"
+
+msgid "E-AC-3"
+msgstr "อี-เอซี-3"
+
+msgid "Easy Audio Converter"
+msgstr "แปลงเสียงอย่างง่าย"
+
+msgid "Economical"
+msgstr "ประหยัด"
+
+msgid "FLAC"
+msgstr "แฟลค"
+
+msgid "Found {count} files to convert"
+msgstr "พบไฟล์ {count} ที่จะแปลง"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "สูง"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "หาก Easy Audio Converter มีประโยชน์สำหรับคุณและคุณต้องการสนับสนุนงานของฉัน คุณสามารถซื้อกาแฟให้ฉันได้\n\nคุณต้องการเปิดหน้าสนับสนุนตอนนี้หรือไม่?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "รวมโฟลเดอร์ย่อยเมื่อแปลงโฟลเดอร์"
+
+msgid "LAME MP3"
+msgstr "ง่อย MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "เอ็มพี3"
+
+msgid "MP3 encoder:"
+msgstr "ตัวเข้ารหัส MP3:"
+
+msgid "No conversion is in progress"
+msgstr "ไม่มีการแปลงอยู่ระหว่างดำเนินการ"
+
+msgid "No files or folders are selected"
+msgstr "ไม่มีไฟล์หรือโฟลเดอร์ถูกเลือก"
+
+msgid "No supported audio files were found"
+msgstr "ไม่พบไฟล์เสียงที่รองรับ"
+
+msgid "Ogg Vorbis"
+msgstr "อ็อก วอร์บิส"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "เปิดการตั้งค่า Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "เปิดหน้าสนับสนุนของผู้เขียน"
+
+msgid "Opening the support page"
+msgstr "กำลังเปิดหน้าสนับสนุน"
+
+msgid "Opus"
+msgstr "บทประพันธ์"
+
+msgid "Preparing the conversion"
+msgstr "กำลังเตรียมการแปลง"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "รักษาโครงสร้างโฟลเดอร์ต้นทางไว้ในปลายทาง"
+
+msgid "Quality:"
+msgstr "คุณภาพ:"
+
+msgid "Quality: {quality}"
+msgstr "คุณภาพ: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "เลือกโฟลเดอร์ปลายทางอย่างรวดเร็ว"
+
+msgid "Quickly convert selected files or folders"
+msgstr "แปลงไฟล์หรือโฟลเดอร์ที่เลือกอย่างรวดเร็ว"
+
+msgid "Report audio conversion status"
+msgstr "รายงานสถานะการแปลงเสียง"
+
+msgid "Report conversion status"
+msgstr "รายงานสถานะการแปลง"
+
+msgid "Save converted files next to the source files"
+msgstr "บันทึกไฟล์ที่แปลงแล้วถัดจากไฟล์ต้นฉบับ"
+
+msgid "Settings..."
+msgstr "การตั้งค่า..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "ไฟล์บางไฟล์ไม่สามารถแปลงได้:\n\n{details}"
+
+msgid "Standard"
+msgstr "มาตรฐาน"
+
+msgid "Support Easy Audio Converter"
+msgstr "รองรับการแปลงเสียงอย่างง่าย"
+
+msgid "Support the author"
+msgstr "สนับสนุนผู้เขียน"
+
+msgid "Target format:"
+msgstr "รูปแบบเป้าหมาย:"
+
+msgid "Target format: {format}"
+msgstr "รูปแบบเป้าหมาย: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "คอมโพเนนต์ FFmpeg ที่รวมมาหายไป ติดตั้ง Easy Audio Converter อีกครั้ง"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "การแปลงไม่สามารถเริ่มต้นได้:\n{error}"
+
+msgid "Unknown error"
+msgstr "ข้อผิดพลาดที่ไม่รู้จัก"
+
+msgid "Very high"
+msgstr "สูงมาก"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ไม่รวมโฟลเดอร์ย่อย"
+
+msgid "including subfolders"
+msgstr "รวมถึงโฟลเดอร์ย่อยด้วย"
+
+msgid "{count} selected folders"
+msgstr "{count} โฟลเดอร์ที่เลือก"

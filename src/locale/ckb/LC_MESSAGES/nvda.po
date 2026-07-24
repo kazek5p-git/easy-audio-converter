@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ckb\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...و {count} هەڵەی زیاتر"
+
+msgid "A conversion is already in progress"
+msgstr "گۆڕانکارییەک لە ئێستاوە لە ئارادایە"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (ئەپڵ لۆسلێس)"
+
+msgid "AMR narrowband"
+msgstr "AMR narrowband"
+
+msgid "AMR wideband"
+msgstr "AMR پان باند"
+
+msgid "Browse..."
+msgstr "گەڕان بە..."
+
+msgid "Cancel conversion"
+msgstr "هەڵوەشاندنەوەی گۆڕانکاری"
+
+msgid "Cancel the current audio conversion"
+msgstr "گۆڕینی دەنگی ئێستا هەڵبوەشێنەرەوە"
+
+msgid "Canceling the conversion"
+msgstr "هەڵوەشاندنەوەی گۆڕانکارییەکە"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "ناتوانرێت لاپەڕەی پشتگیری بکرێتەوە. ئەم ناونیشانە بە دەست بکەرەوە: {url}"
+
+msgid "Change the conversion quality"
+msgstr "کوالیتی گۆڕینەکە بگۆڕە"
+
+msgid "Change the target audio format"
+msgstr "فۆرمات دەنگی ئامانج بگۆڕە"
+
+msgid "Choose a folder to convert"
+msgstr "فۆڵدەرێک هەڵبژێرە بۆ گۆڕینی"
+
+msgid "Choose the destination folder"
+msgstr "فۆڵدەری مەبەست هەڵبژێرە"
+
+msgid "Confirm folder conversion"
+msgstr "گۆڕینی فۆڵدەر پشتڕاست بکەرەوە"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "گۆڕینی هەڵوەشایەوە. {done} لە فایلەکانی {total} تەواو کراوە."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "بۆ ئەم مەبەستە.\nگۆڕینی تەواو بوو: {done} سەرکەوتوو بوو، {failed} شکستی هێنا."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "گۆڕینی هەموو فایلە دەنگییە پشتگیریکراوەکان بە {folder}، {scope}؟"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "هەموو فایلێکی دەنگی پشتگیریکراو لە فۆڵدەری ئێستادا بگۆڕە"
+
+msgid "Convert selected files or folders"
+msgstr "گۆڕینی فایل یان فۆڵدەری هەڵبژێردراو"
+
+msgid "Convert the current folder"
+msgstr "فۆڵدەری ئێستا بگۆڕە"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "گۆڕینی {index} لە {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "فۆڵدەری شوێنی مەبەست:"
+
+msgid "Destination folder: {folder}"
+msgstr "فۆڵدەری مەبەست: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "گۆڕینی دەنگی ئاسان"
+
+msgid "Economical"
+msgstr "بۆ ئەم مەبەستە.\nئابووری"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "دۆزرایەوە {count} فایلەکان بۆ گۆڕین"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "فراونهۆفەر / دامەزراوەی ویندۆز میدیا MP3"
+
+msgid "High"
+msgstr "بەرزە"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "ئەگەر Easy Audio Converter سوودی بۆ تۆ هەبێت و دەتەوێت پشتگیری کارەکانم بکەیت، دەتوانیت قاوەیەکم بۆ بکڕیت.\n\nئایا دەتەوێت ئێستا پەیجی پشتگیری بکەیتەوە؟"
+
+msgid "Include subfolders when converting a folder"
+msgstr "لە کاتی گۆڕینی فۆڵدەرێکدا ژێر فۆڵدەرەکان بخەرە ناوەوە"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "ئینکۆدەری MP3:"
+
+msgid "No conversion is in progress"
+msgstr "هیچ گۆڕانکارییەک لە ئارادا نییە"
+
+msgid "No files or folders are selected"
+msgstr "هیچ فایلێک یان فۆڵدەرێک هەڵنابژێردرێت"
+
+msgid "No supported audio files were found"
+msgstr "هیچ فایلێکی دەنگی پشتگیریکراو نەدۆزراوەتەوە"
+
+msgid "Ogg Vorbis"
+msgstr "ئۆگ ڤۆربیس"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "ڕێکخستنەکانی Easy Audio Converter بکەرەوە"
+
+msgid "Open the author's support page"
+msgstr "لاپەڕەی پشتگیری نووسەر بکەرەوە"
+
+msgid "Opening the support page"
+msgstr "کردنەوەی لاپەڕەی پشتگیری"
+
+msgid "Opus"
+msgstr "ئۆپوس"
+
+msgid "Preparing the conversion"
+msgstr "ئامادەکردنی گۆڕانکاری"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "پێکهاتەی فۆڵدەری سەرچاوە لە شوێنی مەبەستدا بپارێزە"
+
+msgid "Quality:"
+msgstr "کوالیتی: ١."
+
+msgid "Quality: {quality}"
+msgstr "کوالیتی: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "خێرا فۆڵدەری مەبەست هەڵبژێرە"
+
+msgid "Quickly convert selected files or folders"
+msgstr "بە خێرایی فایل یان فۆڵدەرە هەڵبژێردراوەکان بگۆڕە"
+
+msgid "Report audio conversion status"
+msgstr "ڕاپۆرتی دۆخی گۆڕینی دەنگ"
+
+msgid "Report conversion status"
+msgstr "ڕاپۆرتی دۆخی گۆڕانکاری بکە"
+
+msgid "Save converted files next to the source files"
+msgstr "فایلە گۆڕاوەکان لە تەنیشت فایلە سەرچاوەییەکانەوە هەڵبگرە"
+
+msgid "Settings..."
+msgstr "ڕێکخستنەکان..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "هەندێک فایل نەتوانرا بگۆڕدرێن:\n\n{details} ."
+
+msgid "Standard"
+msgstr "ستاندارد"
+
+msgid "Support Easy Audio Converter"
+msgstr "پشتگیری لە گۆڕینی دەنگی ئاسان"
+
+msgid "Support the author"
+msgstr "پشتگیری نووسەر بکەن"
+
+msgid "Target format:"
+msgstr "فۆرمات ئامانج:"
+
+msgid "Target format: {format}"
+msgstr "فۆرمات ئامانج: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "پێکهاتەی FFmpeg ی کۆکراوە نەماوە. دووبارە دامەزراندنەوەی گۆڕینی دەنگی ئاسان."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "گۆڕانکارییەکە نەیتوانی دەست پێ بکات:\n{error} ."
+
+msgid "Unknown error"
+msgstr "هەڵەیەکی نەناسراو"
+
+msgid "Very high"
+msgstr "زۆر بەرزە"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "بەبێ فۆڵدەری لاوەکی"
+
+msgid "including subfolders"
+msgstr "لەوانەش فۆڵدەری لاوەکی"
+
+msgid "{count} selected folders"
+msgstr "{count} فۆڵدەرە هەڵبژێردراوەکان"

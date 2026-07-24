@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>Easy Audio Converter</title>
+</head>
+<body>
+	<h1>Easy Audio Converter</h1>
+	<p>Autor: Kazimierz Parzych. Wersja 1.0.0.</p>
+	<p>
+		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
+		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
+		składnika FFmpeg dołączonego do dodatku.
+	</p>
+
+	<h2>Korzystanie z dodatku</h2>
+	<ol>
+		<li>Otwórz Eksplorator Windows i zaznacz pliki audio lub foldery.</li>
+		<li>
+			Otwórz menu NVDA, Narzędzia, Easy Audio Converter i wybierz
+			„Konwertuj zaznaczone pliki lub foldery”.
+		</li>
+		<li>
+			Aby przekonwertować cały bieżący folder, wybierz
+			„Konwertuj bieżący folder”.
+		</li>
+	</ol>
+	<p>
+		Podmenu Narzędzia pozwala także odczytać stan, anulować zadanie,
+		otworzyć ustawienia oraz stronę wsparcia autora.
+	</p>
+
+	<h2>Ustawienia</h2>
+	<p>
+		Otwórz menu NVDA, Ustawienia, Ustawienia, Easy Audio Converter.
+		Możesz wybrać format docelowy, jakość, kodek MP3, sposób zapisu,
+		przeszukiwanie podfolderów oraz zachowanie struktury katalogów.
+	</p>
+	<p>
+		Po zaznaczeniu opcji „Zapisuj przekonwertowane pliki obok plików
+		źródłowych” każdy wynik trafi obok źródła. W przeciwnym razie wyniki
+		zostaną zapisane w wybranym folderze docelowym.
+	</p>
+	<p>
+		Pliki źródłowe i istniejące wyniki nigdy nie są nadpisywane.
+		W razie konfliktu dodatek automatycznie tworzy nazwę z numerem.
+	</p>
+
+	<h2>Własne skróty klawiszowe</h2>
+	<p>
+		Otwórz menu NVDA, Ustawienia, Zdarzenia wejścia i znajdź kategorię
+		„Easy Audio Converter”. Własny skrót można przypisać do:
+	</p>
+	<ul>
+		<li>otwierania ustawień;</li>
+		<li>szybkiej konwersji zaznaczenia;</li>
+		<li>konwersji bieżącego folderu;</li>
+		<li>zmiany formatu docelowego;</li>
+		<li>zmiany jakości;</li>
+		<li>szybkiego wyboru folderu docelowego;</li>
+		<li>odczytu stanu;</li>
+		<li>anulowania konwersji;</li>
+		<li>otwierania strony wsparcia.</li>
+	</ul>
+
+	<h2>Obsługiwane formaty docelowe</h2>
+	<p>
+		MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC, AAC, WMA, ALAC, AIFF,
+		AC-3, E-AC-3, WavPack, MP2, AMR wąskopasmowy i AMR szerokopasmowy.
+	</p>
+	<p>
+		Dla MP3 można wybrać LAME albo kodek MP3 Windows Media Foundation.
+		Drugi jest opisany jako opcja Fraunhofer/Windows.
+	</p>
+
+	<h2>Uwagi</h2>
+	<ul>
+		<li>Jednocześnie może działać jedno zadanie konwersji.</li>
+		<li>Konwersja folderu wymaga potwierdzenia.</li>
+		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>
+		<li>Nie można konwertować mediów zaszyfrowanych lub zabezpieczonych DRM.</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: mni\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... ꯑꯃꯁꯨꯡ {count} ꯍꯦꯟꯅ ꯑꯁꯣꯏꯕꯁꯤꯡ"
+
+msgid "A conversion is already in progress"
+msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯑꯃ ꯍꯥꯟꯅꯅ ꯆꯠꯊꯔꯤ"
+
+msgid "AAC"
+msgstr "ꯑꯦ.ꯑꯦ.ꯁꯤ."
+
+msgid "AC-3"
+msgstr "ꯑꯦꯁꯤ-꯳"
+
+msgid "AIFF"
+msgstr "ꯑꯦ.ꯑꯥꯏ.ꯑꯦꯐ.ꯑꯦꯐ."
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ꯑꯦ.ꯑꯦꯜ.ꯑꯦ.ꯁꯤ. (ꯑꯦꯄꯜ ꯂꯣꯁꯂꯦꯁ)"
+
+msgid "AMR narrowband"
+msgstr "ꯑꯦ.ꯑꯦꯝ.ꯑꯥꯔ. ꯅꯦꯔꯣꯕꯦꯟꯗ"
+
+msgid "AMR wideband"
+msgstr "ꯑꯦ.ꯑꯦꯝ.ꯑꯥꯔ. ꯋꯥꯏꯗꯕꯦꯟꯗ"
+
+msgid "Browse..."
+msgstr "ꯕ꯭ꯔꯥꯎꯖ..."
+
+msgid "Cancel conversion"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯗꯨ ꯀꯛꯊꯠꯂꯨ"
+
+msgid "Cancel the current audio conversion"
+msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯁꯟ ꯇꯧꯕꯁꯤ ꯀꯛꯊꯠꯂꯨ"
+
+msgid "Canceling the conversion"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯗꯨ ꯀꯛꯊꯠꯄ"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "ꯁꯄꯣꯔꯠ ꯄꯦꯖ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯛꯄ ꯉꯝꯗꯦ꯫ ꯃꯁꯤꯒꯤ ꯂꯩꯐꯝ ꯑꯁꯤ ꯈꯨꯠꯅ ꯍꯥꯡꯗꯣꯛꯎ: {url}"
+
+msgid "Change the conversion quality"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯃꯒꯨꯟ ꯑꯗꯨ ꯍꯣꯡꯗꯣꯛꯎ"
+
+msgid "Change the target audio format"
+msgstr "ꯇꯥꯔꯒꯦꯠ ꯇꯧꯔꯤꯕ ꯑꯣꯗꯤꯌꯣ ꯐꯣꯔꯃꯦꯠ ꯑꯗꯨ ꯍꯣꯡꯗꯣꯛꯎ"
+
+msgid "Choose a folder to convert"
+msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯐꯣꯜꯗꯔ ꯑꯃ ꯈꯜꯂꯨ"
+
+msgid "Choose the destination folder"
+msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ ꯑꯗꯨ ꯈꯜꯂꯨ"
+
+msgid "Confirm folder conversion"
+msgstr "ꯐꯣꯜꯗꯔ ꯀꯟꯚꯔꯁꯟ ꯀꯟꯐꯔꯝ"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯗꯨ ꯀꯛꯊꯠꯈꯤ꯫ {total} ꯐꯥꯏꯜꯁꯤꯡꯒꯤ {done} ꯃꯄꯨꯡ ꯐꯥꯔꯦ꯫"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯃꯄꯨꯡ ꯐꯥꯕ: {done} ꯃꯥꯏ ꯄꯥꯛꯈꯤ, {failed} ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗꯦ ꯫"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "ꯁꯄꯣꯔꯇꯦꯗ ꯑꯣꯗꯤꯑꯣ ꯐꯥꯏꯜ ꯄꯨꯝꯅꯃꯛ {folder}, {scope} ꯗ ꯑꯣꯟꯊꯣꯛꯎ?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯣꯜꯗꯔꯗ ꯁꯄꯣꯔꯇꯦꯗ ꯑꯣꯗꯤꯑꯣ ꯐꯥꯏꯜ ꯈꯨꯗꯤꯡꯃꯛ ꯀꯟꯚꯔꯠ ꯇꯧ"
+
+msgid "Convert selected files or folders"
+msgstr "ꯈꯟꯒꯠꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔꯁꯤꯡ ꯑꯣꯟꯊꯣꯛꯎ"
+
+msgid "Convert the current folder"
+msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯣꯜꯗꯔ ꯑꯗꯨ ꯀꯟꯚꯔꯠ ꯇꯧ"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total} ꯒꯤ {index} ꯑꯣꯟꯊꯣꯛꯄ: {name}"
+
+msgid "Destination folder:"
+msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ:"
+
+msgid "Destination folder: {folder}"
+msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ: {folder}"
+
+msgid "E-AC-3"
+msgstr "ꯏ-ꯑꯦꯁꯤ-꯳"
+
+msgid "Easy Audio Converter"
+msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ"
+
+msgid "Economical"
+msgstr "ꯁꯦꯟꯃꯤꯠꯂꯣꯟ"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ {count} ꯐꯥꯏꯜꯁꯤꯡ ꯐꯪꯈꯤ"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "ꯐ꯭ꯔꯥꯎꯟꯍꯣꯐꯔ / ꯋꯤꯟꯗꯣꯁ ꯃꯤꯗꯤꯌꯥ ꯐꯥꯎꯟꯗꯦꯁꯟ MP3"
+
+msgid "High"
+msgstr "ꯑꯋꯥꯡꯕ"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "ꯀꯔꯤꯒꯨꯝꯕ ꯏꯖꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯁꯤ ꯑꯗꯣꯝꯗ ꯀꯥꯟꯅꯕ ꯑꯣꯏꯔꯕꯗꯤ ꯑꯃꯁꯨꯡ ꯅꯍꯥꯛꯅ ꯑꯩꯒꯤ ꯊꯕꯛꯇ ꯃꯇꯦꯡ ꯄꯥꯡꯕ ꯄꯥꯝꯂꯕꯗꯤ, ꯅꯍꯥꯛꯅ ꯑꯩꯒꯤ ꯀꯣꯐꯤ ꯑꯃ ꯂꯩꯕꯤꯕ ꯌꯥꯒꯅꯤ꯫\n\nꯁꯄꯣꯔꯠ ꯄꯦꯖ ꯑꯗꯨ ꯍꯧꯖꯤꯛ ꯍꯥꯡꯗꯣꯛꯄ ꯄꯥꯝꯕꯔꯥ?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "ꯐꯣꯜꯗꯔ ꯑꯃ ꯑꯣꯟꯊꯣꯛꯄ ꯃꯇꯝꯗ ꯁꯕꯐꯣꯜꯗꯔꯁꯤꯡ ꯌꯥꯎꯍꯟꯒꯅꯨ"
+
+msgid "LAME MP3"
+msgstr "ꯂꯦꯝ ꯑꯦꯝꯄꯤ꯳"
+
+msgid "M4A (AAC)"
+msgstr "ꯑꯦꯝ꯴ꯑꯦ (ꯑꯦꯑꯦꯁꯤ)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 encoder:"
+
+msgid "No conversion is in progress"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯊꯕꯛ ꯑꯃꯠꯇ ꯆꯠꯊꯗ꯭ꯔꯤ"
+
+msgid "No files or folders are selected"
+msgstr "ꯐꯥꯏꯜ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔ ꯑꯃꯠꯇ ꯈꯟꯒꯠꯇꯦ"
+
+msgid "No supported audio files were found"
+msgstr "ꯁꯄꯣꯔꯇꯦꯗ ꯑꯣꯗꯤꯑꯣ ꯐꯥꯏꯜ ꯑꯃꯠꯇ ꯐꯪꯈꯤꯗꯦ"
+
+msgid "Ogg Vorbis"
+msgstr "ꯑꯣꯒ ꯚꯣꯔꯕꯤꯁ"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "ꯏꯖꯤ ꯑꯣꯗꯤꯌꯣ ꯀꯟꯚꯔꯇꯔꯒꯤ ꯁꯦꯇꯤꯡꯁ ꯍꯥꯡꯗꯣꯛꯎ"
+
+msgid "Open the author's support page"
+msgstr "ꯑꯏꯕꯒꯤ ꯁꯧꯒꯠꯄꯒꯤ ꯂꯃꯥꯏ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯛꯎ"
+
+msgid "Opening the support page"
+msgstr "ꯁꯄꯣꯔꯠ ꯄꯦꯖ ꯍꯥꯡꯗꯣꯛꯄ"
+
+msgid "Opus"
+msgstr "ꯑꯣꯄꯁ"
+
+msgid "Preparing the conversion"
+msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯁꯦꯝ ꯁꯥꯕ"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "ꯄꯟꯊꯨꯡꯗ ꯁꯣꯔꯁ ꯐꯣꯜꯗꯔ ꯁ꯭ꯇ꯭ꯔꯛꯆꯔ ꯑꯗꯨ ꯉꯥꯛꯇꯨꯅ ꯊꯝꯃꯨ"
+
+msgid "Quality:"
+msgstr "ꯃꯒꯨꯟ:"
+
+msgid "Quality: {quality}"
+msgstr "ꯃꯒꯨꯟ: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ ꯑꯗꯨ ꯊꯨꯅ ꯈꯜꯂꯨ"
+
+msgid "Quickly convert selected files or folders"
+msgstr "ꯈꯟꯒꯠꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔꯁꯤꯡ ꯊꯨꯅ ꯑꯣꯟꯊꯣꯛꯎ"
+
+msgid "Report audio conversion status"
+msgstr "ꯑꯣꯗꯤꯌꯣ ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯁ꯭ꯇꯦꯇꯁ ꯔꯤꯄꯣꯔꯠ ꯇꯧ"
+
+msgid "Report conversion status"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯐꯤꯕꯝ ꯔꯤꯄꯣꯔꯠ ꯇꯧ"
+
+msgid "Save converted files next to the source files"
+msgstr "ꯑꯣꯟꯊꯣꯛꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯁꯣꯔꯁ ꯐꯥꯏꯜꯁꯤꯡꯒꯤ ꯃꯅꯥꯛꯇ ꯊꯝꯖꯤꯟꯂꯨ"
+
+msgid "Settings..."
+msgstr "ꯁꯦꯇꯤꯡꯁ..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "ꯐꯥꯏꯜ ꯈꯔꯗꯤ ꯑꯣꯟꯊꯣꯛꯄ ꯉꯝꯈꯤꯗꯦ:\n\n{details}"
+
+msgid "Standard"
+msgstr "ꯁ꯭ꯇꯦꯟꯗꯔꯗ"
+
+msgid "Support Easy Audio Converter"
+msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯁꯄꯣꯔꯠ ꯇꯧ"
+
+msgid "Support the author"
+msgstr "ꯑꯏꯕꯕꯨ ꯁꯧꯒꯠꯂꯨ"
+
+msgid "Target format:"
+msgstr "ꯇꯥꯔꯒꯦꯠ ꯐꯣꯔꯃꯦꯠ:"
+
+msgid "Target format: {format}"
+msgstr "ꯇꯥꯔꯒꯦꯠ ꯐꯣꯔꯃꯦꯠ: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "ꯄꯨꯟꯁꯤꯟꯂꯕ ꯑꯦꯐ.ꯑꯦꯐ.ꯑꯦꯝ.ꯄꯤ.ꯏ.ꯖꯤ. ꯃꯆꯥꯛ ꯑꯗꯨ ꯐꯪꯗꯦ꯫ ꯏꯖꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯃꯨꯛ ꯍꯟꯅ ꯏꯟꯁꯇꯣꯜ ꯇꯧ꯫"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄ ꯍꯧꯕ ꯉꯝꯈꯤꯗꯦ:\n{error}"
+
+msgid "Unknown error"
+msgstr "ꯈꯪꯗꯕ ꯑꯁꯣꯏꯕ"
+
+msgid "Very high"
+msgstr "ꯌꯥꯝꯅ ꯋꯥꯡꯕ"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "ꯗꯕꯜꯌꯨ.ꯑꯦꯝ.ꯑꯦ."
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ꯁꯕꯐꯣꯜꯗꯔꯁꯤꯡ ꯌꯥꯎꯗꯕ"
+
+msgid "including subfolders"
+msgstr "ꯁꯕꯐꯣꯜꯗꯔꯁꯤꯡ ꯌꯥꯎꯔꯒ"
+
+msgid "{count} selected folders"
+msgstr "{count} ꯈꯟꯒꯠꯂꯕ ꯐꯣꯜꯗꯔꯁꯤꯡ"

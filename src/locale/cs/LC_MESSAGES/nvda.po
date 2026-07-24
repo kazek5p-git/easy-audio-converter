@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: cs\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...a {count} další chyby"
+
+msgid "A conversion is already in progress"
+msgstr "Konverze již probíhá"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR úzkopásmové"
+
+msgid "AMR wideband"
+msgstr "AMR širokopásmové"
+
+msgid "Browse..."
+msgstr "Procházet..."
+
+msgid "Cancel conversion"
+msgstr "Zrušit konverzi"
+
+msgid "Cancel the current audio conversion"
+msgstr "Zrušte aktuální konverzi zvuku"
+
+msgid "Canceling the conversion"
+msgstr "Zrušení konverze"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Nelze otevřít stránku podpory. Otevřete tuto adresu ručně: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Změňte kvalitu převodu"
+
+msgid "Change the target audio format"
+msgstr "Změňte cílový formát zvuku"
+
+msgid "Choose a folder to convert"
+msgstr "Vyberte složku, kterou chcete převést"
+
+msgid "Choose the destination folder"
+msgstr "Vyberte cílovou složku"
+
+msgid "Confirm folder conversion"
+msgstr "Potvrďte převod složky"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Konverze zrušena. Dokončeno {done} z {total} souborů."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Převod dokončen: {done} byl úspěšný, {failed} se nezdařil."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Převést všechny podporované zvukové soubory do {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Převeďte všechny podporované zvukové soubory v aktuální složce"
+
+msgid "Convert selected files or folders"
+msgstr "Převeďte vybrané soubory nebo složky"
+
+msgid "Convert the current folder"
+msgstr "Převést aktuální složku"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Převod {index} z {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Cílová složka:"
+
+msgid "Destination folder: {folder}"
+msgstr "Cílová složka: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Snadný audio převodník"
+
+msgid "Economical"
+msgstr "Ekonomický"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Nalezeny soubory {count} ke konverzi"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Vysoká"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Pokud se vám Easy Audio Converter hodí a chcete podpořit mou práci, můžete mi koupit kávu.\n\nChcete nyní otevřít stránku podpory?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Při převodu složky zahrňte podsložky"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 kodér:"
+
+msgid "No conversion is in progress"
+msgstr "Neprobíhá žádná konverze"
+
+msgid "No files or folders are selected"
+msgstr "Nejsou vybrány žádné soubory ani složky"
+
+msgid "No supported audio files were found"
+msgstr "Nebyly nalezeny žádné podporované zvukové soubory"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Otevřete nastavení Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Otevřete stránku podpory autora"
+
+msgid "Opening the support page"
+msgstr "Otevření stránky podpory"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Příprava konverze"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Zachovat strukturu zdrojové složky v cíli"
+
+msgid "Quality:"
+msgstr "kvalita:"
+
+msgid "Quality: {quality}"
+msgstr "Kvalita: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Rychle vyberte cílovou složku"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Rychle převeďte vybrané soubory nebo složky"
+
+msgid "Report audio conversion status"
+msgstr "Nahlásit stav převodu zvuku"
+
+msgid "Report conversion status"
+msgstr "Nahlásit stav konverze"
+
+msgid "Save converted files next to the source files"
+msgstr "Uložte převedené soubory vedle zdrojových souborů"
+
+msgid "Settings..."
+msgstr "Nastavení..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Některé soubory nelze převést:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standardní"
+
+msgid "Support Easy Audio Converter"
+msgstr "Podpora Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Podpořte autora"
+
+msgid "Target format:"
+msgstr "Cílový formát:"
+
+msgid "Target format: {format}"
+msgstr "Cílový formát: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Chybí přibalená komponenta FFmpeg. Přeinstalujte Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Konverze nemohla začít:\n{error}"
+
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+
+msgid "Very high"
+msgstr "Velmi vysoká"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "kromě podsložek"
+
+msgid "including subfolders"
+msgstr "včetně podsložek"
+
+msgid "{count} selected folders"
+msgstr "{count} vybrané složky"

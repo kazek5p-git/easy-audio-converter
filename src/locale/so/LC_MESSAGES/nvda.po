@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: so\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... iyo {count} khaladaad dheeraad ah"
+
+msgid "A conversion is already in progress"
+msgstr "Beddelka ayaa horey u socday"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR narrowband-ka"
+
+msgid "AMR wideband"
+msgstr "AMR wideband-ka"
+
+msgid "Browse..."
+msgstr "Daawo..."
+
+msgid "Cancel conversion"
+msgstr "Joojinta beddelka"
+
+msgid "Cancel the current audio conversion"
+msgstr "Jooji beddelka codka ee hadda jira"
+
+msgid "Canceling the conversion"
+msgstr "Joojinta beddelka"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Ma furi karo bogga taageerada. Fur cinwaankan gacanta: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Beddel tayada beddelka"
+
+msgid "Change the target audio format"
+msgstr "Beddel qaabka codka bartilmaameedka"
+
+msgid "Choose a folder to convert"
+msgstr "Dooro galka si aad u beddesho"
+
+msgid "Choose the destination folder"
+msgstr "Dooro galka loo socdo"
+
+msgid "Confirm folder conversion"
+msgstr "Xaqiiji beddelka faylalka"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Beddelka waa la joojiyay. Waxaan dhameystiray {done} faylasha {total}."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Beddelka waa la dhammeeyay: {done} waa guuleystay, {failed} waa la guuldareystay."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Dhammaan faylasha codka la taageero ku beddel {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Beddel dhammaan faylasha codka ee la taageero ee ku jira faylka hadda jira"
+
+msgid "Convert selected files or folders"
+msgstr "Beddel faylasha ama faylasha la doortay"
+
+msgid "Convert the current folder"
+msgstr "Beddel faylka hadda jira"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Beddelidda {index} ee {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Faylka loo socdo:"
+
+msgid "Destination folder: {folder}"
+msgstr "Faylka loo socdo: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Easy Audio Converter"
+
+msgid "Economical"
+msgstr "Dhaqaale"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Waxaan helay faylasha {count} si loo beddelo"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Sare"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Haddii Easy Audio Converter uu kuu faa'iido leeyahay oo aad rabto inaad taageerto shaqadayda, waad i iibsan kartaa kafeega.\n\nMa rabtaa inaad hadda furto bogga taageerada?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Ku dar subfolders marka la beddelayo faylka"
+
+msgid "LAME MP3"
+msgstr "MP3 CAAJIS"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 encoder:"
+
+msgid "No conversion is in progress"
+msgstr "Wax beddel ah lama socdo"
+
+msgid "No files or folders are selected"
+msgstr "Faylal ama faylal lama doorto"
+
+msgid "No supported audio files were found"
+msgstr "Ma jirin faylal cod oo taageero ah lama helin"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Fur dejinta Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Fur bogga taageerada qoraaga"
+
+msgid "Opening the support page"
+msgstr "Furitaanka bogga taageerada"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Diyaarinta beddelka"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Ilaali qaab-dhismeedka faylka isha ee meesha loo socdo"
+
+msgid "Quality:"
+msgstr "Tayada:"
+
+msgid "Quality: {quality}"
+msgstr "Tayada: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Si dhaqso ah u dooro galka loo socdo"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Si degdeg ah u beddel faylasha ama faylasha la doortay"
+
+msgid "Report audio conversion status"
+msgstr "Warbixin xaaladda beddelka codka"
+
+msgid "Report conversion status"
+msgstr "Warbixinta xaaladda beddelka"
+
+msgid "Save converted files next to the source files"
+msgstr "Kaydi faylasha la beddelay agagaarka faylasha asalka ah"
+
+msgid "Settings..."
+msgstr "Dejinta..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Qaar ka mid ah faylasha lama beddeli karin:\n\n{details}"
+
+msgid "Standard"
+msgstr "Heerka"
+
+msgid "Support Easy Audio Converter"
+msgstr "Taageer Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Taageer qoraaga"
+
+msgid "Target format:"
+msgstr "Qaabka bartilmaameedka:"
+
+msgid "Target format: {format}"
+msgstr "Qaabka bartilmaameedka: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Qaybta la socota ee FFmpeg waa maqan tahay. Dib u rakib Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Beddelka ma bilaaban karo:\n{error}"
+
+msgid "Unknown error"
+msgstr "Khalad aan la garanayn"
+
+msgid "Very high"
+msgstr "Aad u sarreeya"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "Marka laga reebo subfolders"
+
+msgid "including subfolders"
+msgstr "oo ay ku jiraan subfolders"
+
+msgid "{count} selected folders"
+msgstr "{count} faylasha la xushay"

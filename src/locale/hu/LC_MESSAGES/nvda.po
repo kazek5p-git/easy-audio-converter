@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: hu\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...és {count} további hiba"
+
+msgid "A conversion is already in progress"
+msgstr "Egy átalakítás már folyamatban van"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR keskeny sáv"
+
+msgid "AMR wideband"
+msgstr "AMR szélessávú"
+
+msgid "Browse..."
+msgstr "Tallózás..."
+
+msgid "Cancel conversion"
+msgstr "Konverzió megszakítása"
+
+msgid "Cancel the current audio conversion"
+msgstr "Törölje az aktuális hangátalakítást"
+
+msgid "Canceling the conversion"
+msgstr "Az átalakítás megszakítása"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "A támogatási oldal nem nyitható meg. Nyissa meg ezt a címet manuálisan: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Módosítsa a konverzió minőségét"
+
+msgid "Change the target audio format"
+msgstr "Módosítsa a cél hangformátumot"
+
+msgid "Choose a folder to convert"
+msgstr "Válassza ki a konvertálni kívánt mappát"
+
+msgid "Choose the destination folder"
+msgstr "Válassza ki a célmappát"
+
+msgid "Confirm folder conversion"
+msgstr "Erősítse meg a mappakonverziót"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Az átalakítás megszakítva. {done}/{total} fájl elkészült."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "A konvertálás befejeződött: {done} sikerült, {failed} sikertelen."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Konvertálja az összes támogatott hangfájlt a következőben: {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Konvertálja az összes támogatott hangfájlt az aktuális mappában"
+
+msgid "Convert selected files or folders"
+msgstr "Konvertálja a kiválasztott fájlokat vagy mappákat"
+
+msgid "Convert the current folder"
+msgstr "Konvertálja az aktuális mappát"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index}/{total} konvertálása: {name}"
+
+msgid "Destination folder:"
+msgstr "Cél mappa:"
+
+msgid "Destination folder: {folder}"
+msgstr "Célmappa: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Easy Audio Converter"
+
+msgid "Economical"
+msgstr "Gazdaságos"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "A konvertálandó {count} fájlt találtuk"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Magas"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Ha az Easy Audio Converter hasznos az Ön számára, és szeretné támogatni a munkámat, vehet nekem egy kávét.\n\nSzeretné most megnyitni a támogatási oldalt?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Mappa konvertálásakor vegyen fel almappákat"
+
+msgid "LAME MP3"
+msgstr "BÁNTA MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 kódoló:"
+
+msgid "No conversion is in progress"
+msgstr "Nincs folyamatban átalakítás"
+
+msgid "No files or folders are selected"
+msgstr "Nincsenek kiválasztva fájlok vagy mappák"
+
+msgid "No supported audio files were found"
+msgstr "Nem található támogatott hangfájl"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Nyissa meg az Easy Audio Converter beállításait"
+
+msgid "Open the author's support page"
+msgstr "Nyissa meg a szerző támogatási oldalát"
+
+msgid "Opening the support page"
+msgstr "A támogatási oldal megnyitása"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Az átalakítás előkészítése"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Őrizze meg a forrásmappa szerkezetét a célhelyen"
+
+msgid "Quality:"
+msgstr "Minőség:"
+
+msgid "Quality: {quality}"
+msgstr "Minőség: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Gyorsan válassza ki a célmappát"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Gyorsan konvertálja a kiválasztott fájlokat vagy mappákat"
+
+msgid "Report audio conversion status"
+msgstr "Hangátalakítás állapotának jelentése"
+
+msgid "Report conversion status"
+msgstr "A konverziós állapot jelentése"
+
+msgid "Save converted files next to the source files"
+msgstr "Mentse a konvertált fájlokat a forrásfájlok mellé"
+
+msgid "Settings..."
+msgstr "Beállítások..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Néhány fájl nem konvertálható:\n\n{details}"
+
+msgid "Standard"
+msgstr "Szabványos"
+
+msgid "Support Easy Audio Converter"
+msgstr "Az Easy Audio Converter támogatása"
+
+msgid "Support the author"
+msgstr "Támogassa a szerzőt"
+
+msgid "Target format:"
+msgstr "Célformátum:"
+
+msgid "Target format: {format}"
+msgstr "Célformátum: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "A mellékelt FFmpeg komponens hiányzik. Telepítse újra az Easy Audio Converter programot."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Az átalakítás nem indulhat el:\n{error}"
+
+msgid "Unknown error"
+msgstr "Ismeretlen hiba"
+
+msgid "Very high"
+msgstr "Nagyon magas"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "almappák nélkül"
+
+msgid "including subfolders"
+msgstr "beleértve az almappákat is"
+
+msgid "{count} selected folders"
+msgstr "{count} kiválasztott mappák"

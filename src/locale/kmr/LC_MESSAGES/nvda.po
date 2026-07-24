@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: kmr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...û {count} xeletiyên din"
+
+msgid "A conversion is already in progress"
+msgstr "Veguherînek jixwe di pêş de ye"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR band teng"
+
+msgid "AMR wideband"
+msgstr "AMR firehband"
+
+msgid "Browse..."
+msgstr "Bigerin..."
+
+msgid "Cancel conversion"
+msgstr "Veguherînê betal bike"
+
+msgid "Cancel the current audio conversion"
+msgstr "Veguherîna dengî ya heyî betal bike"
+
+msgid "Canceling the conversion"
+msgstr "Betalkirina veguherînê"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Nikare rûpela piştgiriyê veke. Vê navnîşanê bi destan veke: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Kalîteya veguherînê biguherînin"
+
+msgid "Change the target audio format"
+msgstr "Biguherîne format audio hedef"
+
+msgid "Choose a folder to convert"
+msgstr "Peldankek ji bo veguhertinê hilbijêrin"
+
+msgid "Choose the destination folder"
+msgstr "Peldanka mebestê hilbijêrin"
+
+msgid "Confirm folder conversion"
+msgstr "Veguherîna peldankê piştrast bikin"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Veguhertin betal kirin. {done} ji {total} pelan qediya."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Veguhertin temam bû: {done} bi ser ket, {failed} têk çû."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Hemî pelên dengî yên piştgirîkirî di {folder}, {scope} de biguherînin?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Di peldanka heyî de her pelê bihîstwerê piştgirî biguherînin"
+
+msgid "Convert selected files or folders"
+msgstr "Pelên an peldankên hilbijartî veguherînin"
+
+msgid "Convert the current folder"
+msgstr "Peldanka heyî veguherînin"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Veguherandina {index} ya {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Peldanka mebestê:"
+
+msgid "Destination folder: {folder}"
+msgstr "Peldanka mebestê: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Converter Audio Easy"
+
+msgid "Economical"
+msgstr "Aborî"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Ji bo veguhertinê {count} pel hatin dîtin"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Weqfa Windows Media MP3"
+
+msgid "High"
+msgstr "Bilind"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Heke Easy Audio Converter ji we re bikêr e û hûn dixwazin piştgiriyê bidin xebata min, hûn dikarin ji min re qehweyek bikirin.\n\nMa hûn dixwazin niha rûpela piştgiriyê vekin?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Dema ku peldankek vediguhezînin binpeldankan têxin nav xwe"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Kodera MP3:"
+
+msgid "No conversion is in progress"
+msgstr "No veguhertin li pêş e"
+
+msgid "No files or folders are selected"
+msgstr "Tu pel an peldank nehatine hilbijartin"
+
+msgid "No supported audio files were found"
+msgstr "Pelên dengî yên piştgirî nehatin dîtin"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Mîhengên Veguhezkara Dengê Hêsan vekin"
+
+msgid "Open the author's support page"
+msgstr "Rûpelê piştgiriya nivîskarê vekin"
+
+msgid "Opening the support page"
+msgstr "Vekirina rûpela piştgiriyê"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Amadekirina veguherînê"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Struktura peldanka çavkaniyê di mebestê de biparêze"
+
+msgid "Quality:"
+msgstr "Quality:"
+
+msgid "Quality: {quality}"
+msgstr "Qalîteyê: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Zû peldanka mebestê hilbijêrin"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Zû pelan an peldankên hilbijartî veguherînin"
+
+msgid "Report audio conversion status"
+msgstr "Rewşa veguherîna dengî rapor bikin"
+
+msgid "Report conversion status"
+msgstr "Rewşa veguherînê rapor bikin"
+
+msgid "Save converted files next to the source files"
+msgstr "Pelên veguhartî li kêleka pelên çavkaniyê hilînin"
+
+msgid "Settings..."
+msgstr "Mîhengan..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Hin pel nehatin veguheztin:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Piştgiriya Veguherkera Dengê Hêsan"
+
+msgid "Support the author"
+msgstr "Piştgiriya nivîskar bikin"
+
+msgid "Target format:"
+msgstr "Forma armanc:"
+
+msgid "Target format: {format}"
+msgstr "Forma armanc: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Parçeya FFmpeg ya hevgirtî winda ye. Veguhezkara Dengê Hêsan ji nû ve saz bikin."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Veguhertin nekarî dest pê bike:\n{error}"
+
+msgid "Unknown error"
+msgstr "Çewtiya nenas"
+
+msgid "Very high"
+msgstr "Pir bilind"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ji binpeldankan derdixin"
+
+msgid "including subfolders"
+msgstr "di nav de binpeldankan"
+
+msgid "{count} selected folders"
+msgstr "{count} peldankên hilbijartî"

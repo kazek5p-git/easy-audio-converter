@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: bg\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...и {count} още грешки"
+
+msgid "A conversion is already in progress"
+msgstr "Преобразуването вече е в ход"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "АС-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR теснолентов"
+
+msgid "AMR wideband"
+msgstr "AMR широколентов"
+
+msgid "Browse..."
+msgstr "Преглед..."
+
+msgid "Cancel conversion"
+msgstr "Отмяна на преобразуването"
+
+msgid "Cancel the current audio conversion"
+msgstr "Отменете текущото аудио преобразуване"
+
+msgid "Canceling the conversion"
+msgstr "Анулиране на преобразуването"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Страницата за поддръжка не може да се отвори. Отворете този адрес ръчно: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Променете качеството на преобразуване"
+
+msgid "Change the target audio format"
+msgstr "Променете целевия аудио формат"
+
+msgid "Choose a folder to convert"
+msgstr "Изберете папка за конвертиране"
+
+msgid "Choose the destination folder"
+msgstr "Изберете целевата папка"
+
+msgid "Confirm folder conversion"
+msgstr "Потвърдете преобразуването на папка"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Преобразуването е отменено. Завършени {done} от {total} файлове."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Преобразуването завършено: {done} успешно, {failed} неуспешно."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Да конвертирате всички поддържани аудио файлове в {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Конвертирайте всеки поддържан аудио файл в текущата папка"
+
+msgid "Convert selected files or folders"
+msgstr "Конвертирайте избрани файлове или папки"
+
+msgid "Convert the current folder"
+msgstr "Преобразувайте текущата папка"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Конвертиране на {index} от {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Целева папка:"
+
+msgid "Destination folder: {folder}"
+msgstr "Целева папка: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Лесен аудио конвертор"
+
+msgid "Economical"
+msgstr "Икономичен"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Намерени {count} файлове за конвертиране"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "високо"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Ако Easy Audio Converter ви е полезен и искате да подкрепите работата ми, можете да ме почерпите с кафе.\n\nИскате ли да отворите страницата за поддръжка сега?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Включете подпапки, когато конвертирате папка"
+
+msgid "LAME MP3"
+msgstr "КУЦ MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 енкодер:"
+
+msgid "No conversion is in progress"
+msgstr "Не се извършва преобразуване"
+
+msgid "No files or folders are selected"
+msgstr "Не са избрани файлове или папки"
+
+msgid "No supported audio files were found"
+msgstr "Не бяха намерени поддържани аудио файлове"
+
+msgid "Ogg Vorbis"
+msgstr "Ог Ворбис"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Отворете настройките на Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Отворете страницата за поддръжка на автора"
+
+msgid "Opening the support page"
+msgstr "Отваряне на страницата за поддръжка"
+
+msgid "Opus"
+msgstr "Опус"
+
+msgid "Preparing the conversion"
+msgstr "Подготовка на преобразуването"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Запазете структурата на изходната папка в дестинацията"
+
+msgid "Quality:"
+msgstr "качество:"
+
+msgid "Quality: {quality}"
+msgstr "Качество: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Бързо изберете целевата папка"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Бързо конвертирайте избрани файлове или папки"
+
+msgid "Report audio conversion status"
+msgstr "Докладвайте състоянието на преобразуване на аудио"
+
+msgid "Report conversion status"
+msgstr "Докладвайте състоянието на преобразуването"
+
+msgid "Save converted files next to the source files"
+msgstr "Запазете конвертираните файлове до изходните файлове"
+
+msgid "Settings..."
+msgstr "Настройки..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Някои файлове не можаха да бъдат конвертирани:\n\n{details}"
+
+msgid "Standard"
+msgstr "Стандартен"
+
+msgid "Support Easy Audio Converter"
+msgstr "Поддържа Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Подкрепете автора"
+
+msgid "Target format:"
+msgstr "Целеви формат:"
+
+msgid "Target format: {format}"
+msgstr "Целеви формат: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Включеният компонент FFmpeg липсва. Преинсталирайте Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Преобразуването не можа да започне:\n{error}"
+
+msgid "Unknown error"
+msgstr "Неизвестна грешка"
+
+msgid "Very high"
+msgstr "Много високо"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "с изключение на подпапки"
+
+msgid "including subfolders"
+msgstr "включително подпапки"
+
+msgid "{count} selected folders"
+msgstr "{count} избрани папки"

@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ar\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...و {count} المزيد من الأخطاء"
+
+msgid "A conversion is already in progress"
+msgstr "هناك عملية تحويل قيد التقدم بالفعل"
+
+msgid "AAC"
+msgstr "الجميح للسيارات"
+
+msgid "AC-3"
+msgstr "ايه سي-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (أبل بلا فقدان)"
+
+msgid "AMR narrowband"
+msgstr "AMR ضيق النطاق"
+
+msgid "AMR wideband"
+msgstr "عمرو النطاق العريض"
+
+msgid "Browse..."
+msgstr "تصفح..."
+
+msgid "Cancel conversion"
+msgstr "إلغاء التحويل"
+
+msgid "Cancel the current audio conversion"
+msgstr "قم بإلغاء تحويل الصوت الحالي"
+
+msgid "Canceling the conversion"
+msgstr "إلغاء التحويل"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "لا يمكن فتح صفحة الدعم. افتح هذا العنوان يدويًا: {url}"
+
+msgid "Change the conversion quality"
+msgstr "تغيير جودة التحويل"
+
+msgid "Change the target audio format"
+msgstr "قم بتغيير تنسيق الصوت المستهدف"
+
+msgid "Choose a folder to convert"
+msgstr "اختر مجلدًا لتحويله"
+
+msgid "Choose the destination folder"
+msgstr "اختر المجلد الوجهة"
+
+msgid "Confirm folder conversion"
+msgstr "تأكيد تحويل المجلد"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "تم إلغاء التحويل. تم إكمال {done} من {total} من الملفات."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "اكتمل التحويل: {done} نجح، {failed} فشل."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "تحويل جميع الملفات الصوتية المدعومة إلى {folder}، {scope}؟"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "تحويل كل ملف صوتي مدعوم في المجلد الحالي"
+
+msgid "Convert selected files or folders"
+msgstr "تحويل الملفات أو المجلدات المحددة"
+
+msgid "Convert the current folder"
+msgstr "تحويل المجلد الحالي"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "تحويل {index} من {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "المجلد الوجهة:"
+
+msgid "Destination folder: {folder}"
+msgstr "المجلد الوجهة: {folder}"
+
+msgid "E-AC-3"
+msgstr "إي-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "محول الصوت السهل"
+
+msgid "Economical"
+msgstr "اقتصادية"
+
+msgid "FLAC"
+msgstr "فلك"
+
+msgid "Found {count} files to convert"
+msgstr "تم العثور على ملفات {count} لتحويلها"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "فراونهوفر / مؤسسة ويندوز ميديا MP3"
+
+msgid "High"
+msgstr "عالية"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "إذا كان برنامج Easy Audio Converter مفيدًا لك وترغب في دعم عملي، فيمكنك أن تشتري لي قهوة.\n\nهل تريد فتح صفحة الدعم الآن؟"
+
+msgid "Include subfolders when converting a folder"
+msgstr "تضمين المجلدات الفرعية عند تحويل مجلد"
+
+msgid "LAME MP3"
+msgstr "عرجاء MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "التشفير MP3:"
+
+msgid "No conversion is in progress"
+msgstr "لا يوجد تحويل قيد التقدم"
+
+msgid "No files or folders are selected"
+msgstr "لم يتم تحديد أي ملفات أو مجلدات"
+
+msgid "No supported audio files were found"
+msgstr "لم يتم العثور على ملفات صوتية مدعومة"
+
+msgid "Ogg Vorbis"
+msgstr "أوج فوربيس"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "افتح إعدادات Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "افتح صفحة دعم المؤلف"
+
+msgid "Opening the support page"
+msgstr "فتح صفحة الدعم"
+
+msgid "Opus"
+msgstr "التأليف"
+
+msgid "Preparing the conversion"
+msgstr "تحضير التحويل"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "احتفظ ببنية المجلد المصدر في الوجهة"
+
+msgid "Quality:"
+msgstr "الجودة:"
+
+msgid "Quality: {quality}"
+msgstr "الجودة: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "اختر المجلد الوجهة بسرعة"
+
+msgid "Quickly convert selected files or folders"
+msgstr "تحويل الملفات أو المجلدات المحددة بسرعة"
+
+msgid "Report audio conversion status"
+msgstr "الإبلاغ عن حالة تحويل الصوت"
+
+msgid "Report conversion status"
+msgstr "الإبلاغ عن حالة التحويل"
+
+msgid "Save converted files next to the source files"
+msgstr "احفظ الملفات المحولة بجوار الملفات المصدر"
+
+msgid "Settings..."
+msgstr "الإعدادات..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "لا يمكن تحويل بعض الملفات:\n\n{details}"
+
+msgid "Standard"
+msgstr "قياسي"
+
+msgid "Support Easy Audio Converter"
+msgstr "دعم محول الصوت السهل"
+
+msgid "Support the author"
+msgstr "دعم المؤلف"
+
+msgid "Target format:"
+msgstr "الشكل المستهدف:"
+
+msgid "Target format: {format}"
+msgstr "التنسيق المستهدف: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "مكون FFmpeg المجمع مفقود. أعد تثبيت برنامج Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "تعذر بدء التحويل:\n{error}"
+
+msgid "Unknown error"
+msgstr "خطأ غير معروف"
+
+msgid "Very high"
+msgstr "عالية جدا"
+
+msgid "WAV"
+msgstr "واف"
+
+msgid "WMA"
+msgstr "وما"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "باستثناء المجلدات الفرعية"
+
+msgid "including subfolders"
+msgstr "بما في ذلك المجلدات الفرعية"
+
+msgid "{count} selected folders"
+msgstr "{count} المجلدات المحددة"

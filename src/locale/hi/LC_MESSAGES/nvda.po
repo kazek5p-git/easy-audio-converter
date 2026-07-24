@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: hi\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...और {count} अधिक त्रुटियाँ"
+
+msgid "A conversion is already in progress"
+msgstr "एक रूपांतरण पहले से ही प्रगति पर है"
+
+msgid "AAC"
+msgstr "एएसी"
+
+msgid "AC-3"
+msgstr "एसी-3"
+
+msgid "AIFF"
+msgstr "एआईएफएफ"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple दोषरहित)"
+
+msgid "AMR narrowband"
+msgstr "एएमआर नैरोबैंड"
+
+msgid "AMR wideband"
+msgstr "एएमआर वाइडबैंड"
+
+msgid "Browse..."
+msgstr "ब्राउज़ करें..."
+
+msgid "Cancel conversion"
+msgstr "रूपांतरण रद्द करें"
+
+msgid "Cancel the current audio conversion"
+msgstr "वर्तमान ऑडियो रूपांतरण रद्द करें"
+
+msgid "Canceling the conversion"
+msgstr "रूपांतरण रद्द किया जा रहा है"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "सहायता पृष्ठ नहीं खुल सकता. इस पते को मैन्युअल रूप से खोलें: {url}"
+
+msgid "Change the conversion quality"
+msgstr "रूपांतरण गुणवत्ता बदलें"
+
+msgid "Change the target audio format"
+msgstr "लक्ष्य ऑडियो प्रारूप बदलें"
+
+msgid "Choose a folder to convert"
+msgstr "कनवर्ट करने के लिए एक फ़ोल्डर चुनें"
+
+msgid "Choose the destination folder"
+msgstr "गंतव्य फ़ोल्डर चुनें"
+
+msgid "Confirm folder conversion"
+msgstr "फ़ोल्डर रूपांतरण की पुष्टि करें"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "रूपांतरण रद्द किया गया. {total} फ़ाइलों में से {done} को पूरा किया गया।"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "रूपांतरण पूर्ण: {done} सफल, {failed} विफल।"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "सभी समर्थित ऑडियो फ़ाइलों को {folder}, {scope} में कनवर्ट करें?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "प्रत्येक समर्थित ऑडियो फ़ाइल को वर्तमान फ़ोल्डर में कनवर्ट करें"
+
+msgid "Convert selected files or folders"
+msgstr "चयनित फ़ाइलों या फ़ोल्डरों को कनवर्ट करें"
+
+msgid "Convert the current folder"
+msgstr "वर्तमान फ़ोल्डर को कनवर्ट करें"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total} में से {index} को परिवर्तित करना: {name}"
+
+msgid "Destination folder:"
+msgstr "गंतव्य फ़ोल्डर:"
+
+msgid "Destination folder: {folder}"
+msgstr "गंतव्य फ़ोल्डर: {folder}"
+
+msgid "E-AC-3"
+msgstr "ई-एसी-3"
+
+msgid "Easy Audio Converter"
+msgstr "आसान ऑडियो कनवर्टर"
+
+msgid "Economical"
+msgstr "किफायती"
+
+msgid "FLAC"
+msgstr "एफएलएसी"
+
+msgid "Found {count} files to convert"
+msgstr "कनवर्ट करने के लिए {count} फ़ाइलें मिलीं"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "फ्रौनहोफर/विंडोज मीडिया फाउंडेशन एमपी3"
+
+msgid "High"
+msgstr "ऊँचा"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "यदि ईज़ी ऑडियो कन्वर्टर आपके लिए उपयोगी है और आप मेरे काम का समर्थन करना चाहते हैं, तो आप मेरे लिए एक कॉफ़ी खरीद सकते हैं।\n\nक्या आप अभी सहायता पृष्ठ खोलना चाहते हैं?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "किसी फ़ोल्डर को परिवर्तित करते समय सबफ़ोल्डर शामिल करें"
+
+msgid "LAME MP3"
+msgstr "लंगड़ा एमपी3"
+
+msgid "M4A (AAC)"
+msgstr "एम4ए (एएसी)"
+
+msgid "MP2"
+msgstr "एमपी2"
+
+msgid "MP3"
+msgstr "एमपी3"
+
+msgid "MP3 encoder:"
+msgstr "एमपी3 एनकोडर:"
+
+msgid "No conversion is in progress"
+msgstr "कोई रूपांतरण प्रगति पर नहीं है"
+
+msgid "No files or folders are selected"
+msgstr "कोई फ़ाइल या फ़ोल्डर चयनित नहीं है"
+
+msgid "No supported audio files were found"
+msgstr "कोई समर्थित ऑडियो फ़ाइलें नहीं मिलीं"
+
+msgid "Ogg Vorbis"
+msgstr "ऑग वॉर्बिस"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "आसान ऑडियो कन्वर्टर सेटिंग्स खोलें"
+
+msgid "Open the author's support page"
+msgstr "लेखक का सहायता पृष्ठ खोलें"
+
+msgid "Opening the support page"
+msgstr "सहायता पृष्ठ खुल रहा है"
+
+msgid "Opus"
+msgstr "ओपस"
+
+msgid "Preparing the conversion"
+msgstr "रूपांतरण की तैयारी"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "गंतव्य में स्रोत फ़ोल्डर संरचना को सुरक्षित रखें"
+
+msgid "Quality:"
+msgstr "गुणवत्ता:"
+
+msgid "Quality: {quality}"
+msgstr "गुणवत्ता: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "शीघ्रता से गंतव्य फ़ोल्डर चुनें"
+
+msgid "Quickly convert selected files or folders"
+msgstr "चयनित फ़ाइलों या फ़ोल्डरों को त्वरित रूप से परिवर्तित करें"
+
+msgid "Report audio conversion status"
+msgstr "ऑडियो रूपांतरण स्थिति की रिपोर्ट करें"
+
+msgid "Report conversion status"
+msgstr "रूपांतरण स्थिति की रिपोर्ट करें"
+
+msgid "Save converted files next to the source files"
+msgstr "परिवर्तित फ़ाइलों को स्रोत फ़ाइलों के बगल में सहेजें"
+
+msgid "Settings..."
+msgstr "सेटिंग्स..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "कुछ फ़ाइलें परिवर्तित नहीं की जा सकीं:\n\n{details}"
+
+msgid "Standard"
+msgstr "मानक"
+
+msgid "Support Easy Audio Converter"
+msgstr "आसान ऑडियो कनवर्टर का समर्थन करें"
+
+msgid "Support the author"
+msgstr "लेखक का समर्थन करें"
+
+msgid "Target format:"
+msgstr "लक्ष्य प्रारूप:"
+
+msgid "Target format: {format}"
+msgstr "लक्ष्य प्रारूप: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "बंडल किया गया FFmpeg घटक गायब है। आसान ऑडियो कनवर्टर पुनः स्थापित करें।"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "रूपांतरण प्रारंभ नहीं हो सका:\n{error}"
+
+msgid "Unknown error"
+msgstr "अज्ञात त्रुटि"
+
+msgid "Very high"
+msgstr "बहुत ऊँचा"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "वेवपैक"
+
+msgid "excluding subfolders"
+msgstr "सबफ़ोल्डर को छोड़कर"
+
+msgid "including subfolders"
+msgstr "सबफ़ोल्डर सहित"
+
+msgid "{count} selected folders"
+msgstr "{count} चयनित फ़ोल्डर"

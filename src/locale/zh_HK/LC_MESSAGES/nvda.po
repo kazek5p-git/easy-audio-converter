@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: zh_HK\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "....以及 {count} 更多錯誤"
+
+msgid "A conversion is already in progress"
+msgstr "轉換已在進行中"
+
+msgid "AAC"
+msgstr "亞克力"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "亞洲電影節"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC（蘋果無損）"
+
+msgid "AMR narrowband"
+msgstr "AMR窄帶"
+
+msgid "AMR wideband"
+msgstr "AMR寬頻"
+
+msgid "Browse..."
+msgstr "瀏覽..."
+
+msgid "Cancel conversion"
+msgstr "取消轉換"
+
+msgid "Cancel the current audio conversion"
+msgstr "取消目前音訊轉換"
+
+msgid "Canceling the conversion"
+msgstr "取消轉換"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "無法開啟支援頁面。手動開啟此位址：{url}"
+
+msgid "Change the conversion quality"
+msgstr "更改轉換質量"
+
+msgid "Change the target audio format"
+msgstr "更改目標音訊格式"
+
+msgid "Choose a folder to convert"
+msgstr "選擇要轉換的資料夾"
+
+msgid "Choose the destination folder"
+msgstr "選擇目標資料夾"
+
+msgid "Confirm folder conversion"
+msgstr "確認資料夾轉換"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "轉換已取消。已完成 {done} 個文件，共 {total} 個文件。"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "轉換完成：{done}成功，{failed}失敗。"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "轉換{folder}、{scope}中所有支援的音訊檔案？"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "轉換當前資料夾中每個支援的音訊文件"
+
+msgid "Convert selected files or folders"
+msgstr "轉換選定的檔案或資料夾"
+
+msgid "Convert the current folder"
+msgstr "轉換目前資料夾"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "轉換 {total} 的 {index}：{name}"
+
+msgid "Destination folder:"
+msgstr "目標資料夾："
+
+msgid "Destination folder: {folder}"
+msgstr "目標資料夾：{folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "簡易音訊轉換器"
+
+msgid "Economical"
+msgstr "經濟型"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "找到要轉換的 {count} 文件"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "弗勞恩霍夫/Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "高"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "如果 Easy Audio Converter 對您有用並且您想支持我的工作，您可以請我喝杯咖啡。\n\n您想現在打開支援頁面嗎？"
+
+msgid "Include subfolders when converting a folder"
+msgstr "轉換資料夾時包括子資料夾"
+
+msgid "LAME MP3"
+msgstr "蹩腳MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3編碼器："
+
+msgid "No conversion is in progress"
+msgstr "沒有正在進行轉換"
+
+msgid "No files or folders are selected"
+msgstr "未選擇任何檔案或資料夾"
+
+msgid "No supported audio files were found"
+msgstr "未找到支援的音訊文件"
+
+msgid "Ogg Vorbis"
+msgstr "奧格·沃爾比斯"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "開啟 Easy Audio Converter 設定"
+
+msgid "Open the author's support page"
+msgstr "開啟作者的支援頁面"
+
+msgid "Opening the support page"
+msgstr "開啟支援頁面"
+
+msgid "Opus"
+msgstr "作品"
+
+msgid "Preparing the conversion"
+msgstr "準備轉換"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "在目標中保留來源資料夾結構"
+
+msgid "Quality:"
+msgstr "品質："
+
+msgid "Quality: {quality}"
+msgstr "品質：{quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "快速選擇目標資料夾"
+
+msgid "Quickly convert selected files or folders"
+msgstr "快速轉換選定的檔案或資料夾"
+
+msgid "Report audio conversion status"
+msgstr "報告音訊轉換狀態"
+
+msgid "Report conversion status"
+msgstr "報告轉換狀態"
+
+msgid "Save converted files next to the source files"
+msgstr "將轉換後的檔案保存在來源檔案旁邊"
+
+msgid "Settings..."
+msgstr "設定..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "某些文件無法轉換：\n\n{details}"
+
+msgid "Standard"
+msgstr "標準型"
+
+msgid "Support Easy Audio Converter"
+msgstr "支援簡易音訊轉換器"
+
+msgid "Support the author"
+msgstr "支持作者"
+
+msgid "Target format:"
+msgstr "目標格式："
+
+msgid "Target format: {format}"
+msgstr "目標格式：{format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "缺少捆綁的 FFmpeg 組件。重新安裝 Easy Audio Converter。"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "轉換無法開始：\n{error}"
+
+msgid "Unknown error"
+msgstr "未知錯誤"
+
+msgid "Very high"
+msgstr "非常高"
+
+msgid "WAV"
+msgstr "音訊格式"
+
+msgid "WMA"
+msgstr "世界音樂協會"
+
+msgid "WavPack"
+msgstr "波形包"
+
+msgid "excluding subfolders"
+msgstr "排除子資料夾"
+
+msgid "including subfolders"
+msgstr "包括子資料夾"
+
+msgid "{count} selected folders"
+msgstr "{count} 選定的資料夾"

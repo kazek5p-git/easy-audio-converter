@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: da\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...og {count} flere fejl"
+
+msgid "A conversion is already in progress"
+msgstr "En konvertering er allerede i gang"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR smalbånd"
+
+msgid "AMR wideband"
+msgstr "AMR bredbånd"
+
+msgid "Browse..."
+msgstr "Gennemse..."
+
+msgid "Cancel conversion"
+msgstr "Annuller konvertering"
+
+msgid "Cancel the current audio conversion"
+msgstr "Annuller den aktuelle lydkonvertering"
+
+msgid "Canceling the conversion"
+msgstr "Annullering af konverteringen"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Kan ikke åbne supportsiden. Åbn denne adresse manuelt: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Ændre konverteringskvaliteten"
+
+msgid "Change the target audio format"
+msgstr "Skift mållydformatet"
+
+msgid "Choose a folder to convert"
+msgstr "Vælg en mappe, der skal konverteres"
+
+msgid "Choose the destination folder"
+msgstr "Vælg destinationsmappen"
+
+msgid "Confirm folder conversion"
+msgstr "Bekræft mappekonvertering"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Konvertering annulleret. Fuldførte {done} af {total} filer."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Konvertering fuldført: {done} lykkedes, {failed} mislykkedes."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Vil du konvertere alle understøttede lydfiler i {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Konverter alle understøttede lydfiler i den aktuelle mappe"
+
+msgid "Convert selected files or folders"
+msgstr "Konverter valgte filer eller mapper"
+
+msgid "Convert the current folder"
+msgstr "Konverter den aktuelle mappe"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Konvertering af {index} af {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Destinationsmappe:"
+
+msgid "Destination folder: {folder}"
+msgstr "Destinationsmappe: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Nem lydkonverter"
+
+msgid "Economical"
+msgstr "Økonomisk"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Fandt {count} filer, der skal konverteres"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Høj"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Hvis Easy Audio Converter er nyttig for dig, og du vil støtte mit arbejde, kan du købe en kop kaffe til mig.\n\nVil du åbne supportsiden nu?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Inkluder undermapper, når du konverterer en mappe"
+
+msgid "LAME MP3"
+msgstr "LAM MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 encoder:"
+
+msgid "No conversion is in progress"
+msgstr "Ingen konvertering er i gang"
+
+msgid "No files or folders are selected"
+msgstr "Ingen filer eller mapper er valgt"
+
+msgid "No supported audio files were found"
+msgstr "Der blev ikke fundet nogen understøttede lydfiler"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Åbn indstillingerne for Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Åbn forfatterens supportside"
+
+msgid "Opening the support page"
+msgstr "Åbner supportsiden"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Forberedelse af konverteringen"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Bevar kildemappestrukturen i destinationen"
+
+msgid "Quality:"
+msgstr "Kvalitet:"
+
+msgid "Quality: {quality}"
+msgstr "Kvalitet: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Vælg hurtigt destinationsmappen"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Konverter hurtigt valgte filer eller mapper"
+
+msgid "Report audio conversion status"
+msgstr "Rapporter lydkonverteringsstatus"
+
+msgid "Report conversion status"
+msgstr "Rapportér konverteringsstatus"
+
+msgid "Save converted files next to the source files"
+msgstr "Gem konverterede filer ved siden af kildefilerne"
+
+msgid "Settings..."
+msgstr "Indstillinger..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Nogle filer kunne ikke konverteres:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Support Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Støt forfatteren"
+
+msgid "Target format:"
+msgstr "Målformat:"
+
+msgid "Target format: {format}"
+msgstr "Målformat: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Den medfølgende FFmpeg-komponent mangler. Geninstaller Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Konverteringen kunne ikke starte:\n{error}"
+
+msgid "Unknown error"
+msgstr "Ukendt fejl"
+
+msgid "Very high"
+msgstr "Meget høj"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ekskl. undermapper"
+
+msgid "including subfolders"
+msgstr "inklusive undermapper"
+
+msgid "{count} selected folders"
+msgstr "{count} valgte mapper"

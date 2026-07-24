@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: is\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...og {count} fleiri villur"
+
+msgid "A conversion is already in progress"
+msgstr "Umbreyting er þegar í gangi"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR mjóband"
+
+msgid "AMR wideband"
+msgstr "AMR breiðband"
+
+msgid "Browse..."
+msgstr "Skoða..."
+
+msgid "Cancel conversion"
+msgstr "Hætta við umbreytingu"
+
+msgid "Cancel the current audio conversion"
+msgstr "Hætta við núverandi hljóðbreytingu"
+
+msgid "Canceling the conversion"
+msgstr "Hætt við viðskiptin"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Get ekki opnað stuðningssíðuna. Opnaðu þetta heimilisfang handvirkt: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Breyttu viðskiptagæðum"
+
+msgid "Change the target audio format"
+msgstr "Breyttu markhljóðsniðinu"
+
+msgid "Choose a folder to convert"
+msgstr "Veldu möppu til að umbreyta"
+
+msgid "Choose the destination folder"
+msgstr "Veldu áfangamöppuna"
+
+msgid "Confirm folder conversion"
+msgstr "Staðfestu möppubreytingu"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Hætt við umbreytingu. Lokið {done} af {total} skrám."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Umbreytingu lokið: {done} tókst, {failed} mistókst."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Umbreyta öllum studdum hljóðskrám í {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Umbreyttu öllum studdum hljóðskrám í núverandi möppu"
+
+msgid "Convert selected files or folders"
+msgstr "Umbreyttu völdum skrám eða möppum"
+
+msgid "Convert the current folder"
+msgstr "Umbreyttu núverandi möppu"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Umbreytir {index} af {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Áfangamappa:"
+
+msgid "Destination folder: {folder}"
+msgstr "Áfangamappa: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Auðvelt hljóðbreytir"
+
+msgid "Economical"
+msgstr "Hagkvæmt"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Fann {count} skrár til að umbreyta"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Hátt"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Ef Easy Audio Converter er gagnlegt fyrir þig og þú vilt styrkja starf mitt geturðu keypt mér kaffi.\n\nViltu opna stuðningssíðuna núna?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Láttu undirmöppur fylgja með þegar þú umbreytir möppu"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 kóðari:"
+
+msgid "No conversion is in progress"
+msgstr "Engin umbreyting er í gangi"
+
+msgid "No files or folders are selected"
+msgstr "Engar skrár eða möppur eru valdar"
+
+msgid "No supported audio files were found"
+msgstr "Engar studdar hljóðskrár fundust"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Opnaðu stillingar Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Opnaðu stuðningssíðu höfundar"
+
+msgid "Opening the support page"
+msgstr "Að opna stuðningssíðuna"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Undirbúningur viðskipta"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Varðveittu upprunamöppuskipulagið á áfangastaðnum"
+
+msgid "Quality:"
+msgstr "Gæði:"
+
+msgid "Quality: {quality}"
+msgstr "Gæði: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Veldu fljótt áfangamöppuna"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Umbreyttu völdum skrám eða möppum fljótt"
+
+msgid "Report audio conversion status"
+msgstr "Tilkynna hljóðbreytingarstöðu"
+
+msgid "Report conversion status"
+msgstr "Tilkynna viðskiptastöðu"
+
+msgid "Save converted files next to the source files"
+msgstr "Vistaðu breyttar skrár við hlið upprunaskránna"
+
+msgid "Settings..."
+msgstr "Stillingar..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Ekki var hægt að breyta sumum skrám:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Styðja Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Styðjið höfundinn"
+
+msgid "Target format:"
+msgstr "Marksnið:"
+
+msgid "Target format: {format}"
+msgstr "Marksnið: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Búnt FFmpeg íhlutinn vantar. Settu aftur upp Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Umbreytingin gat ekki ræst:\n{error}"
+
+msgid "Unknown error"
+msgstr "Óþekkt villa"
+
+msgid "Very high"
+msgstr "Mjög hátt"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "að undanskildum undirmöppum"
+
+msgid "including subfolders"
+msgstr "þar á meðal undirmöppur"
+
+msgid "{count} selected folders"
+msgstr "{count} valdar möppur"

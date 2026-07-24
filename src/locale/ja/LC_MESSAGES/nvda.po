@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ja\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...さらに {count} エラーが発生しました"
+
+msgid "A conversion is already in progress"
+msgstr "変換はすでに進行中です"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (アップルロスレス)"
+
+msgid "AMR narrowband"
+msgstr "AMR ナローバンド"
+
+msgid "AMR wideband"
+msgstr "AMR ワイドバンド"
+
+msgid "Browse..."
+msgstr "閲覧..."
+
+msgid "Cancel conversion"
+msgstr "変換をキャンセルする"
+
+msgid "Cancel the current audio conversion"
+msgstr "現在のオーディオ変換をキャンセルします"
+
+msgid "Canceling the conversion"
+msgstr "変換をキャンセルする"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "サポートページが開けません。このアドレスを手動で開きます: {url}"
+
+msgid "Change the conversion quality"
+msgstr "変換品質を変更する"
+
+msgid "Change the target audio format"
+msgstr "ターゲットオーディオフォーマットを変更する"
+
+msgid "Choose a folder to convert"
+msgstr "変換するフォルダーを選択してください"
+
+msgid "Choose the destination folder"
+msgstr "宛先フォルダーを選択してください"
+
+msgid "Confirm folder conversion"
+msgstr "フォルダー変換を確認する"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "変換がキャンセルされました。 {total} ファイルの {done} が完成しました。"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "変換完了: {done} は成功、{failed} は失敗しました。"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "{folder}、{scope} でサポートされているすべてのオーディオ ファイルを変換しますか?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "現在のフォルダー内のサポートされているすべてのオーディオ ファイルを変換します"
+
+msgid "Convert selected files or folders"
+msgstr "選択したファイルまたはフォルダーを変換します"
+
+msgid "Convert the current folder"
+msgstr "現在のフォルダーを変換する"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total} の {index} を変換中: {name}"
+
+msgid "Destination folder:"
+msgstr "保存先フォルダー:"
+
+msgid "Destination folder: {folder}"
+msgstr "保存先フォルダー: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "簡単オーディオコンバーター"
+
+msgid "Economical"
+msgstr "経済的"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "変換する {count} ファイルが見つかりました"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "フラウンホーファー / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "高"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Easy Audio Converter が役に立ち、私の仕事をサポートしたい場合は、私にコーヒーを買ってきてください。\n\n今すぐサポート ページを開いてもよろしいですか?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "フォルダーの変換時にサブフォルダーを含める"
+
+msgid "LAME MP3"
+msgstr "ラメMP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3エンコーダ:"
+
+msgid "No conversion is in progress"
+msgstr "変換は進行中ではありません"
+
+msgid "No files or folders are selected"
+msgstr "ファイルまたはフォルダーが選択されていません"
+
+msgid "No supported audio files were found"
+msgstr "サポートされているオーディオ ファイルが見つかりませんでした"
+
+msgid "Ogg Vorbis"
+msgstr "オッグ・ヴォルビス"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Easy Audio Converter の設定を開く"
+
+msgid "Open the author's support page"
+msgstr "作者のサポートページを開く"
+
+msgid "Opening the support page"
+msgstr "サポートページを開く"
+
+msgid "Opus"
+msgstr "オーパス"
+
+msgid "Preparing the conversion"
+msgstr "変換の準備"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "コピー元のフォルダー構造をコピー先に保存する"
+
+msgid "Quality:"
+msgstr "品質:"
+
+msgid "Quality: {quality}"
+msgstr "品質: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "宛先フォルダーをすばやく選択する"
+
+msgid "Quickly convert selected files or folders"
+msgstr "選択したファイルまたはフォルダーをすばやく変換します"
+
+msgid "Report audio conversion status"
+msgstr "オーディオ変換ステータスをレポートする"
+
+msgid "Report conversion status"
+msgstr "変換ステータスのレポート"
+
+msgid "Save converted files next to the source files"
+msgstr "変換されたファイルをソースファイルの隣に保存します"
+
+msgid "Settings..."
+msgstr "設定..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "いくつかのファイルを変換できませんでした:\n\n{details}"
+
+msgid "Standard"
+msgstr "標準"
+
+msgid "Support Easy Audio Converter"
+msgstr "Easy Audio Converterをサポート"
+
+msgid "Support the author"
+msgstr "作者をサポートする"
+
+msgid "Target format:"
+msgstr "対象フォーマット:"
+
+msgid "Target format: {format}"
+msgstr "対象フォーマット: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "バンドルされている FFmpeg コンポーネントがありません。 Easy Audio Converter を再インストールします。"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "変換を開始できませんでした:\n{error}"
+
+msgid "Unknown error"
+msgstr "不明なエラー"
+
+msgid "Very high"
+msgstr "非常に高い"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "サブフォルダーを除く"
+
+msgid "including subfolders"
+msgstr "サブフォルダーを含む"
+
+msgid "{count} selected folders"
+msgstr "{count} 選択したフォルダー"

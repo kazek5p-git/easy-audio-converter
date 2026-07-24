@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: as\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... আৰু {count} অধিক ত্ৰুটি"
+
+msgid "A conversion is already in progress"
+msgstr "এটা পৰিবৰ্তন ইতিমধ্যে প্ৰগতিশীল"
+
+msgid "AAC"
+msgstr "এএচি"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "এআইএফএফ"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "এএমআৰ নেৰোবেণ্ড"
+
+msgid "AMR wideband"
+msgstr "AMR ৱাইডবেণ্ড"
+
+msgid "Browse..."
+msgstr "ব্ৰাউছ কৰক..."
+
+msgid "Cancel conversion"
+msgstr "পৰিবৰ্তন বাতিল কৰক"
+
+msgid "Cancel the current audio conversion"
+msgstr "বৰ্তমান অডিঅ' পৰিবৰ্তন বাতিল কৰক"
+
+msgid "Canceling the conversion"
+msgstr "ৰূপান্তৰ বাতিল কৰা হৈছে"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "সমৰ্থন পৃষ্ঠা খুলিব নোৱাৰি। এই ঠিকনাটো হস্তচালিতভাৱে খোলক: {url}"
+
+msgid "Change the conversion quality"
+msgstr "ৰূপান্তৰৰ গুণমান পৰিবৰ্তন কৰক"
+
+msgid "Change the target audio format"
+msgstr "লক্ষ্য অডিঅ' বিন্যাস পৰিবৰ্তন কৰক"
+
+msgid "Choose a folder to convert"
+msgstr "ৰূপান্তৰৰ বাবে ফোল্ডাৰ নিৰ্বাচন কৰক"
+
+msgid "Choose the destination folder"
+msgstr "গন্তব্য ফোল্ডাৰ বাছক"
+
+msgid "Confirm folder conversion"
+msgstr "ফোল্ডাৰ পৰিবৰ্তন সুনিশ্চিত কৰক"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ৰূপান্তৰ বাতিল কৰা হৈছে। {total} ফাইলৰ {done} সম্পূৰ্ণ কৰা হৈছে।"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "ৰূপান্তৰ সম্পূৰ্ণ: {done} সফল হৈছে, {failed} ব্যৰ্থ হল।"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "সকলো সমৰ্থিত অডিঅ' ফাইলক {folder}, {scope}ত ৰূপান্তৰ কৰিব নে?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "বৰ্তমান ফোল্ডাৰত প্ৰতিটো সমৰ্থিত অডিঅ' ফাইল ৰূপান্তৰ কৰক"
+
+msgid "Convert selected files or folders"
+msgstr "নিৰ্বাচিত ফাইল বা ফোল্ডাৰ ৰূপান্তৰ কৰক"
+
+msgid "Convert the current folder"
+msgstr "বৰ্তমান ফোল্ডাৰ ৰূপান্তৰ কৰক"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total}ৰ {index} ৰূপান্তৰ কৰা: {name}"
+
+msgid "Destination folder:"
+msgstr "গন্তব্য ফোল্ডাৰ:"
+
+msgid "Destination folder: {folder}"
+msgstr "গন্তব্য ফোল্ডাৰ: {folder}"
+
+msgid "E-AC-3"
+msgstr "ই-এচি-৩"
+
+msgid "Easy Audio Converter"
+msgstr "সহজ অডিঅ' কনভাৰ্টাৰ"
+
+msgid "Economical"
+msgstr "অৰ্থনৈতিক"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "ৰূপান্তৰ কৰিবলে {count} ফাইল পোৱা গল"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "ফ্ৰাউনহোফাৰ / উইণ্ডোচ মিডিয়া ফাউণ্ডেচন MP3"
+
+msgid "High"
+msgstr "উচ্চ"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "যদি ইজি অডিঅ' কনভাৰ্টাৰ আপোনাৰ বাবে উপযোগী হয় আৰু আপুনি মোৰ কামত সহায় কৰিব বিচাৰে, আপুনি মোক কফী এটা কিনি দিব পাৰে।\n\nআপুনি এতিয়া সমৰ্থন পৃষ্ঠা খুলিব বিচাৰে নেকি?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "ফোল্ডাৰ ৰুপান্তৰ কৰাৰ সময় সাবফোল্ডাৰ অন্তৰ্ভুক্ত কৰা হ'ব"
+
+msgid "LAME MP3"
+msgstr "লেম MP3"
+
+msgid "M4A (AAC)"
+msgstr "এম4এ (এএচি)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 এনক'ডাৰ:"
+
+msgid "No conversion is in progress"
+msgstr "কোনো পৰিবৰ্তন প্ৰগতিত নাই"
+
+msgid "No files or folders are selected"
+msgstr "কোনো ফাইল বা ফ'ল্ডাৰ বাছনি কৰা হোৱা নাই"
+
+msgid "No supported audio files were found"
+msgstr "কোনো সমৰ্থিত অডিঅ' ফাইল পোৱা নগল"
+
+msgid "Ogg Vorbis"
+msgstr "ওগ ভৰ্বিচ"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "সহজ অডিঅ' কনভাৰ্টাৰ ছেটিংছ খোলক"
+
+msgid "Open the author's support page"
+msgstr "লেখকৰ সমৰ্থন পৃষ্ঠা খোলক"
+
+msgid "Opening the support page"
+msgstr "সমৰ্থন পৃষ্ঠা খোলা হৈছে"
+
+msgid "Opus"
+msgstr "ওপাচ"
+
+msgid "Preparing the conversion"
+msgstr "ৰূপান্তৰ প্ৰস্তুত কৰা হৈছে"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "গন্তব্যত উৎস ফোল্ডাৰৰ গঠন সংৰক্ষণ কৰক"
+
+msgid "Quality:"
+msgstr "গুণমান:"
+
+msgid "Quality: {quality}"
+msgstr "গুণগত মানদণ্ড: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "গন্তব্য ফোল্ডাৰ দ্ৰুতভাৱে বাছক"
+
+msgid "Quickly convert selected files or folders"
+msgstr "চয়নিত ফাইল বা ফ'ল্ডাৰসমূহ ক্ষিপ্ৰতাৰে ৰূপান্তৰ কৰক"
+
+msgid "Report audio conversion status"
+msgstr "অডিঅ' ৰূপান্তৰণ অৱস্থাৰ প্ৰতিবেদন কৰক"
+
+msgid "Report conversion status"
+msgstr "ৰূপান্তৰণ অৱস্থা ৰিটিউট কৰক"
+
+msgid "Save converted files next to the source files"
+msgstr "পৰিৱৰ্তিত ফাইলসমূহ উৎস ফাইলৰ কাষত সংৰক্ষণ কৰক"
+
+msgid "Settings..."
+msgstr "সংহতিসমূহ..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "কিছুমান নথিপত্ৰ ৰূপান্তৰ কৰিব পৰা নগল:\n\n{details}"
+
+msgid "Standard"
+msgstr "প্ৰামাণিক"
+
+msgid "Support Easy Audio Converter"
+msgstr "সহজ অডিঅ' কনভাৰ্টাৰ সমৰ্থন কৰক"
+
+msgid "Support the author"
+msgstr "লেখকক সমৰ্থন কৰক"
+
+msgid "Target format:"
+msgstr "লক্ষ্য বিন্যাস:"
+
+msgid "Target format: {format}"
+msgstr "লক্ষ্য বিন্যাস: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "বাণ্ডল কৰা FFmpeg উপাদান সন্ধানহিন। ইজি অডিঅ' কনভাৰ্টাৰ পুনৰ ইনষ্টল কৰক।"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "ৰূপান্তৰ আৰম্ভ কৰিব পৰা নগল:\n{error}"
+
+msgid "Unknown error"
+msgstr "অজ্ঞাত ত্ৰুটি"
+
+msgid "Very high"
+msgstr "অতি উচ্চ"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "ডব্লিউএমএ"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "সাবফোল্ডাৰ বাদ দি"
+
+msgid "including subfolders"
+msgstr "সাবফোল্ডাৰ সহ"
+
+msgid "{count} selected folders"
+msgstr "{count} নিৰ্বাচিত ফোল্ডাৰ"

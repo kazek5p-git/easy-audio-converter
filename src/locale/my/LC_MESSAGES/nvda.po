@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: my\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...and {count} more errors"
+
+msgid "A conversion is already in progress"
+msgstr "ပြောင်းလဲခြင်းတစ်ခု လုပ်ဆောင်နေပြီဖြစ်သည်။"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR ကြိုးဝိုင်း"
+
+msgid "AMR wideband"
+msgstr "AMR အကျယ်အဝန်း"
+
+msgid "Browse..."
+msgstr "လှန်ကြည့်..."
+
+msgid "Cancel conversion"
+msgstr "ပြောင်းလဲခြင်းကို ပယ်ဖျက်ပါ။"
+
+msgid "Cancel the current audio conversion"
+msgstr "လက်ရှိ အသံပြောင်းလဲခြင်းကို ပယ်ဖျက်ပါ။"
+
+msgid "Canceling the conversion"
+msgstr "ပြောင်းလဲခြင်းအား ပယ်ဖျက်ခြင်း။"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "ပံ့ပိုးမှုစာမျက်နှာကို ဖွင့်၍မရပါ။ ဤလိပ်စာကို ကိုယ်တိုင်ဖွင့်ပါ- {url}"
+
+msgid "Change the conversion quality"
+msgstr "ပြောင်းလဲခြင်းအရည်အသွေးကို ပြောင်းလဲပါ။"
+
+msgid "Change the target audio format"
+msgstr "ပစ်မှတ်အသံဖော်မတ်ကို ပြောင်းပါ။"
+
+msgid "Choose a folder to convert"
+msgstr "ပြောင်းရန် ဖိုင်တွဲတစ်ခုကို ရွေးပါ။"
+
+msgid "Choose the destination folder"
+msgstr "ဦးတည်ရာဖိုင်တွဲကို ရွေးပါ။"
+
+msgid "Confirm folder conversion"
+msgstr "ဖိုင်တွဲပြောင်းလဲခြင်းကို အတည်ပြုပါ။"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ပြောင်းလဲမှုကို ပယ်ဖျက်လိုက်ပါပြီ။ {total} ဖိုင်များထဲမှ {done} ပြီးပါပြီ။"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "ပြောင်းလဲခြင်း ပြီးပါပြီ- {done} အောင်မြင်ခဲ့ပြီး၊ {failed} မအောင်မြင်ပါ။"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "{folder}၊ {scope} တွင် ပံ့ပိုးထားသော အသံဖိုင်အားလုံးကို ပြောင်းမလား။"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "လက်ရှိဖိုင်တွဲရှိ ပံ့ပိုးထားသော အသံဖိုင်တိုင်းကို ပြောင်းပါ။"
+
+msgid "Convert selected files or folders"
+msgstr "ရွေးချယ်ထားသောဖိုင်များ သို့မဟုတ် ဖိုင်တွဲများကို ပြောင်းပါ။"
+
+msgid "Convert the current folder"
+msgstr "လက်ရှိ folder ကိုပြောင်းပါ။"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Converting {index} of {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "ဦးတည်ရာဖိုင်တွဲ-"
+
+msgid "Destination folder: {folder}"
+msgstr "ဦးတည်ရာဖိုင်တွဲ- {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "လွယ်ကူသော Audio Converter"
+
+msgid "Economical"
+msgstr "စျေးသက်သာသည်။"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "ပြောင်းရန် {count} ဖိုင်များကို တွေ့ရှိခဲ့သည်။"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "မြင့်သည်။"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Easy Audio Converter သည် သင့်အတွက် အသုံးဝင်ပြီး ကျွန်ုပ်၏လုပ်ငန်းကို ပံ့ပိုးလိုပါက ကော်ဖီဝယ်နိုင်ပါသည်။\n\nပံ့ပိုးမှုစာမျက်နှာကို ယခုဖွင့်လိုပါသလား။"
+
+msgid "Include subfolders when converting a folder"
+msgstr "ဖိုင်တွဲတစ်ခုကို ပြောင်းသည့်အခါ ဖိုင်တွဲခွဲများ ထည့်သွင်းပါ။"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 ကုဒ်နံပါတ်-"
+
+msgid "No conversion is in progress"
+msgstr "ပြောင်းလဲခြင်း မလုပ်ဆောင်ပါ။"
+
+msgid "No files or folders are selected"
+msgstr "ဖိုင်များ သို့မဟုတ် ဖိုင်တွဲများကို ရွေးချယ်ထားခြင်းမရှိပါ။"
+
+msgid "No supported audio files were found"
+msgstr "ပံ့ပိုးပေးထားသည့် အသံဖိုင်များကို ရှာမတွေ့ပါ။"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Easy Audio Converter ဆက်တင်များကိုဖွင့်ပါ။"
+
+msgid "Open the author's support page"
+msgstr "စာရေးသူ၏ ပံ့ပိုးကူညီမှု စာမျက်နှာကို ဖွင့်ပါ။"
+
+msgid "Opening the support page"
+msgstr "ပံ့ပိုးမှုစာမျက်နှာကိုဖွင့်ပါ။"
+
+msgid "Opus"
+msgstr "အခွေ"
+
+msgid "Preparing the conversion"
+msgstr "ပြောင်းလဲခြင်းပြင်ဆင်ခြင်း။"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "အရင်းအမြစ်ဖိုင်တွဲကို ဦးတည်ရာနေရာတွင် ထိန်းသိမ်းပါ။"
+
+msgid "Quality:"
+msgstr "အရည်အသွေး-"
+
+msgid "Quality: {quality}"
+msgstr "အရည်အသွေး- {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "ဦးတည်ရာဖိုင်တွဲကို အမြန်ရွေးချယ်ပါ။"
+
+msgid "Quickly convert selected files or folders"
+msgstr "ရွေးချယ်ထားသောဖိုင်များ သို့မဟုတ် ဖိုင်တွဲများကို အမြန်ပြောင်းပါ။"
+
+msgid "Report audio conversion status"
+msgstr "အသံပြောင်းလဲခြင်း အခြေအနေကို သတင်းပို့ပါ။"
+
+msgid "Report conversion status"
+msgstr "ပြောင်းလဲခြင်းအခြေအနေကို သတင်းပို့ပါ။"
+
+msgid "Save converted files next to the source files"
+msgstr "အရင်းအမြစ်ဖိုင်များဘေးတွင် ပြောင်းထားသောဖိုင်များကို သိမ်းဆည်းပါ။"
+
+msgid "Settings..."
+msgstr "ဆက်တင်များ..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "အချို့ဖိုင်များကို ပြောင်း၍မရပါ\n\n{details}"
+
+msgid "Standard"
+msgstr "စံ"
+
+msgid "Support Easy Audio Converter"
+msgstr "လွယ်ကူသော Audio Converter ကို ပံ့ပိုးပါ။"
+
+msgid "Support the author"
+msgstr "စာရေးသူကိုထောက်ခံပါ။"
+
+msgid "Target format:"
+msgstr "ပစ်မှတ်ပုံစံ-"
+
+msgid "Target format: {format}"
+msgstr "ပစ်မှတ်ဖော်မတ်- {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "စုစည်းထားသော FFmpeg အစိတ်အပိုင်း ပျောက်ဆုံးနေပါသည်။ Easy Audio Converter ကို ပြန်လည်ထည့်သွင်းပါ။"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "ပြောင်းလဲခြင်း မစတင်နိုင်ပါ-\n{error}"
+
+msgid "Unknown error"
+msgstr "အမည်မသိ အမှား"
+
+msgid "Very high"
+msgstr "အရမ်းမြင့်တယ်။"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "ဖိုင်တွဲခွဲများ မပါဝင်ပါ။"
+
+msgid "including subfolders"
+msgstr "ဖိုင်တွဲခွဲများ အပါအဝင်"
+
+msgid "{count} selected folders"
+msgstr "{count} ရွေးချယ်ထားသော ဖိုင်တွဲများ"

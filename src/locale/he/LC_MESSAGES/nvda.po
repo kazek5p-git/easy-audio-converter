@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: he\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...ו-{count} שגיאות נוספות"
+
+msgid "A conversion is already in progress"
+msgstr "המרה כבר מתבצעת"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR צר פס"
+
+msgid "AMR wideband"
+msgstr "AMR פס רחב"
+
+msgid "Browse..."
+msgstr "עיין..."
+
+msgid "Cancel conversion"
+msgstr "בטל המרה"
+
+msgid "Cancel the current audio conversion"
+msgstr "בטל את המרת האודיו הנוכחית"
+
+msgid "Canceling the conversion"
+msgstr "ביטול ההמרה"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "לא ניתן לפתוח את דף התמיכה. פתח את הכתובת הזו באופן ידני: {url}"
+
+msgid "Change the conversion quality"
+msgstr "שנה את איכות ההמרה"
+
+msgid "Change the target audio format"
+msgstr "שנה את פורמט האודיו היעד"
+
+msgid "Choose a folder to convert"
+msgstr "בחר תיקיה להמרה"
+
+msgid "Choose the destination folder"
+msgstr "בחר את תיקיית היעד"
+
+msgid "Confirm folder conversion"
+msgstr "אשר המרת תיקיות"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "ההמרה בוטלה. הושלמו {done} מתוך קבצי {total}."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "ההמרה הושלמה: {done} הצליחה, {failed} נכשלה."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "האם להמיר את כל קבצי האודיו הנתמכים ב-{folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "המר כל קובץ שמע נתמך בתיקייה הנוכחית"
+
+msgid "Convert selected files or folders"
+msgstr "המר קבצים או תיקיות שנבחרו"
+
+msgid "Convert the current folder"
+msgstr "המר את התיקיה הנוכחית"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "המרת {index} מתוך {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "תיקיית יעד:"
+
+msgid "Destination folder: {folder}"
+msgstr "תיקיית יעד: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "ממיר אודיו קל"
+
+msgid "Economical"
+msgstr "חסכוני"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "נמצאו קבצי {count} להמרה"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "גבוה"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "אם Easy Audio Converter שימושי עבורך ואתה רוצה לתמוך בעבודה שלי, אתה יכול לקנות לי קפה.\n\nהאם אתה רוצה לפתוח את דף התמיכה עכשיו?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "כלול תיקיות משנה בעת המרת תיקיה"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "מקודד MP3:"
+
+msgid "No conversion is in progress"
+msgstr "לא מתבצעת המרה"
+
+msgid "No files or folders are selected"
+msgstr "לא נבחרו קבצים או תיקיות"
+
+msgid "No supported audio files were found"
+msgstr "לא נמצאו קבצי שמע נתמכים"
+
+msgid "Ogg Vorbis"
+msgstr "אוג וורביס"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "פתח את הגדרות Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "פתח את דף התמיכה של המחבר"
+
+msgid "Opening the support page"
+msgstr "פתיחת דף התמיכה"
+
+msgid "Opus"
+msgstr "אופוס"
+
+msgid "Preparing the conversion"
+msgstr "הכנת ההמרה"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "שמור על מבנה תיקיות המקור ביעד"
+
+msgid "Quality:"
+msgstr "איכות:"
+
+msgid "Quality: {quality}"
+msgstr "איכות: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "בחר במהירות את תיקיית היעד"
+
+msgid "Quickly convert selected files or folders"
+msgstr "המר במהירות קבצים או תיקיות שנבחרו"
+
+msgid "Report audio conversion status"
+msgstr "דווח על מצב המרת אודיו"
+
+msgid "Report conversion status"
+msgstr "דווח על סטטוס המרה"
+
+msgid "Save converted files next to the source files"
+msgstr "שמור קבצים שהומרו ליד קבצי המקור"
+
+msgid "Settings..."
+msgstr "הגדרות..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "לא ניתן היה להמיר חלק מהקבצים:\n\n{details}"
+
+msgid "Standard"
+msgstr "סטנדרטי"
+
+msgid "Support Easy Audio Converter"
+msgstr "תמיכה בממיר אודיו קל"
+
+msgid "Support the author"
+msgstr "תמכו בכותב"
+
+msgid "Target format:"
+msgstr "פורמט יעד:"
+
+msgid "Target format: {format}"
+msgstr "פורמט יעד: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "רכיב ה-FFmpeg המצורף חסר. התקן מחדש את Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "ההמרה לא הצליחה להתחיל:\n{error}"
+
+msgid "Unknown error"
+msgstr "שגיאה לא ידועה"
+
+msgid "Very high"
+msgstr "גבוה מאוד"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "לא כולל תיקיות משנה"
+
+msgid "including subfolders"
+msgstr "כולל תיקיות משנה"
+
+msgid "{count} selected folders"
+msgstr "{count} תיקיות נבחרות"

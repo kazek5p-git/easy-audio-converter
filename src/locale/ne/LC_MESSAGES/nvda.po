@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ne\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...र {count} थप त्रुटिहरू"
+
+msgid "A conversion is already in progress"
+msgstr "एक रूपान्तरण पहिले नै प्रगतिमा छ"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (एप्पल लसलेस)"
+
+msgid "AMR narrowband"
+msgstr "AMR संकीर्ण ब्यान्ड"
+
+msgid "AMR wideband"
+msgstr "AMR वाइडब्यान्ड"
+
+msgid "Browse..."
+msgstr "ब्राउज गर्नुहोस्..."
+
+msgid "Cancel conversion"
+msgstr "रूपान्तरण रद्द गर्नुहोस्"
+
+msgid "Cancel the current audio conversion"
+msgstr "हालको अडियो रूपान्तरण रद्द गर्नुहोस्"
+
+msgid "Canceling the conversion"
+msgstr "रूपान्तरण रद्द गर्दै"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "समर्थन पृष्ठ खोल्न सकिँदैन। यो ठेगाना म्यानुअल रूपमा खोल्नुहोस्: {url}"
+
+msgid "Change the conversion quality"
+msgstr "रूपान्तरण गुणस्तर परिवर्तन गर्नुहोस्"
+
+msgid "Change the target audio format"
+msgstr "लक्ष्य अडियो ढाँचा परिवर्तन गर्नुहोस्"
+
+msgid "Choose a folder to convert"
+msgstr "रूपान्तरण गर्न फोल्डर छान्नुहोस्"
+
+msgid "Choose the destination folder"
+msgstr "गन्तव्य फोल्डर छान्नुहोस्"
+
+msgid "Confirm folder conversion"
+msgstr "फोल्डर रूपान्तरण पुष्टि गर्नुहोस्"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "रूपान्तरण रद्द गरियो। {total} फाइलहरूको {done} पूरा भयो।"
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "रूपान्तरण पूरा भयो: {done} सफल, {failed} असफल।"
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "सबै समर्थित अडियो फाइलहरूलाई {folder}, {scope} मा रूपान्तरण गर्ने?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "हालको फोल्डरमा प्रत्येक समर्थित अडियो फाइल रूपान्तरण गर्नुहोस्"
+
+msgid "Convert selected files or folders"
+msgstr "चयन गरिएका फाइलहरू वा फोल्डरहरू रूपान्तरण गर्नुहोस्"
+
+msgid "Convert the current folder"
+msgstr "हालको फोल्डरलाई रूपान्तरण गर्नुहोस्"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total} को {index} रूपान्तरण गर्दै: {name}"
+
+msgid "Destination folder:"
+msgstr "गन्तव्य फोल्डर:"
+
+msgid "Destination folder: {folder}"
+msgstr "गन्तव्य फोल्डर: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "सजिलो अडियो कनवर्टर"
+
+msgid "Economical"
+msgstr "आर्थिक"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "रूपान्तरण गर्न {count} फाइलहरू फेला पर्यो"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "उच्च"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "यदि Easy Audio Converter तपाईंको लागि उपयोगी छ र तपाईं मेरो कामलाई समर्थन गर्न चाहनुहुन्छ भने, तपाईंले मलाई एउटा कफी किन्न सक्नुहुन्छ।\n\nके तपाई अहिले समर्थन पृष्ठ खोल्न चाहनुहुन्छ?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "फोल्डर रूपान्तरण गर्दा सबफोल्डरहरू समावेश गर्नुहोस्"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 एन्कोडर:"
+
+msgid "No conversion is in progress"
+msgstr "कुनै रूपान्तरण प्रगतिमा छैन"
+
+msgid "No files or folders are selected"
+msgstr "कुनै फाइल वा फोल्डरहरू चयन गरिएको छैन"
+
+msgid "No supported audio files were found"
+msgstr "कुनै पनि समर्थित अडियो फाइलहरू फेला परेनन्"
+
+msgid "Ogg Vorbis"
+msgstr "ओग भोर्बिस"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "सजिलो अडियो कन्भर्टर सेटिङहरू खोल्नुहोस्"
+
+msgid "Open the author's support page"
+msgstr "लेखकको समर्थन पृष्ठ खोल्नुहोस्"
+
+msgid "Opening the support page"
+msgstr "समर्थन पृष्ठ खोल्दै"
+
+msgid "Opus"
+msgstr "ओपस"
+
+msgid "Preparing the conversion"
+msgstr "रूपान्तरणको तयारी गर्दै"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "गन्तव्यमा स्रोत फोल्डर संरचना सुरक्षित गर्नुहोस्"
+
+msgid "Quality:"
+msgstr "गुणस्तर:"
+
+msgid "Quality: {quality}"
+msgstr "गुणस्तर: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "द्रुत रूपमा गन्तव्य फोल्डर छान्नुहोस्"
+
+msgid "Quickly convert selected files or folders"
+msgstr "चयन गरिएका फाइलहरू वा फोल्डरहरूलाई द्रुत रूपमा रूपान्तरण गर्नुहोस्"
+
+msgid "Report audio conversion status"
+msgstr "अडियो रूपान्तरण स्थिति रिपोर्ट गर्नुहोस्"
+
+msgid "Report conversion status"
+msgstr "रूपान्तरण स्थिति रिपोर्ट गर्नुहोस्"
+
+msgid "Save converted files next to the source files"
+msgstr "स्रोत फाइलहरूको छेउमा रूपान्तरित फाइलहरू बचत गर्नुहोस्"
+
+msgid "Settings..."
+msgstr "सेटिङहरू..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "केही फाइलहरू रूपान्तरण गर्न सकिएन:\n\n{details}"
+
+msgid "Standard"
+msgstr "मानक"
+
+msgid "Support Easy Audio Converter"
+msgstr "सजिलो अडियो कनवर्टर समर्थन गर्नुहोस्"
+
+msgid "Support the author"
+msgstr "लेखकलाई समर्थन गर्नुहोस्"
+
+msgid "Target format:"
+msgstr "लक्ष्य ढाँचा:"
+
+msgid "Target format: {format}"
+msgstr "लक्ष्य ढाँचा: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "बन्डल गरिएको FFmpeg कम्पोनेन्ट हराइरहेको छ। सजिलो अडियो कन्भर्टर पुन: स्थापना गर्नुहोस्।"
+
+msgid "The conversion could not start:\n{error}"
+msgstr "रूपान्तरण सुरु हुन सकेन:\n{error}"
+
+msgid "Unknown error"
+msgstr "अज्ञात त्रुटि"
+
+msgid "Very high"
+msgstr "धेरै उच्च"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "सबफोल्डरहरू बाहेक"
+
+msgid "including subfolders"
+msgstr "सबफोल्डरहरू सहित"
+
+msgid "{count} selected folders"
+msgstr "{count} चयन गरिएका फोल्डरहरू"

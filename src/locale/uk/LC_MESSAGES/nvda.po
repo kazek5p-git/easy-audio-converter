@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: uk\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...та ще {count} помилок"
+
+msgid "A conversion is already in progress"
+msgstr "Перетворення вже триває"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "АС-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR вузькосмуговий"
+
+msgid "AMR wideband"
+msgstr "AMR широкосмуговий"
+
+msgid "Browse..."
+msgstr "Огляд..."
+
+msgid "Cancel conversion"
+msgstr "Скасувати перетворення"
+
+msgid "Cancel the current audio conversion"
+msgstr "Скасувати поточне перетворення звуку"
+
+msgid "Canceling the conversion"
+msgstr "Скасування перетворення"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Не вдається відкрити сторінку підтримки. Відкрийте цю адресу вручну: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Змініть якість перетворення"
+
+msgid "Change the target audio format"
+msgstr "Змініть цільовий аудіоформат"
+
+msgid "Choose a folder to convert"
+msgstr "Виберіть папку для конвертації"
+
+msgid "Choose the destination folder"
+msgstr "Виберіть папку призначення"
+
+msgid "Confirm folder conversion"
+msgstr "Підтвердьте перетворення папки"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Перетворення скасовано. Завершено {done} з {total} файлів."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Перетворення завершено: {done} вдалося, {failed} не вдалося."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Перетворити всі підтримувані аудіофайли в {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Конвертуйте всі підтримувані аудіофайли в поточній папці"
+
+msgid "Convert selected files or folders"
+msgstr "Перетворення вибраних файлів або папок"
+
+msgid "Convert the current folder"
+msgstr "Перетворити поточну папку"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Перетворення {index} з {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Папка призначення:"
+
+msgid "Destination folder: {folder}"
+msgstr "Цільова папка: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Легкий аудіо конвертер"
+
+msgid "Economical"
+msgstr "Економний"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Знайдено файли {count} для конвертації"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Високий"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Якщо Easy Audio Converter стане в нагоді вам і ви хочете підтримати мою роботу, ви можете пригостити мене кавою.\n\nВідкрити сторінку підтримки?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Включайте вкладені папки під час перетворення папки"
+
+msgid "LAME MP3"
+msgstr "КУЛЬГИЙ MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 кодер:"
+
+msgid "No conversion is in progress"
+msgstr "Перетворення не виконується"
+
+msgid "No files or folders are selected"
+msgstr "Файли чи папки не вибрано"
+
+msgid "No supported audio files were found"
+msgstr "Не знайдено підтримуваних аудіофайлів"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Відкрийте налаштування Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Відкрийте сторінку підтримки автора"
+
+msgid "Opening the support page"
+msgstr "Відкриття сторінки підтримки"
+
+msgid "Opus"
+msgstr "Опус"
+
+msgid "Preparing the conversion"
+msgstr "Підготовка конвертації"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Збережіть структуру вихідної папки в цільовій папці"
+
+msgid "Quality:"
+msgstr "якість:"
+
+msgid "Quality: {quality}"
+msgstr "Якість: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Quickly choose the destination folder"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Quickly convert selected files or folders"
+
+msgid "Report audio conversion status"
+msgstr "Report audio conversion status"
+
+msgid "Report conversion status"
+msgstr "Повідомити про статус конверсії"
+
+msgid "Save converted files next to the source files"
+msgstr "Save converted files next to the source files"
+
+msgid "Settings..."
+msgstr "Налаштування..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Some files could not be converted:\n\n{details}"
+
+msgid "Standard"
+msgstr "Стандартний"
+
+msgid "Support Easy Audio Converter"
+msgstr "Support Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Підтримайте автора"
+
+msgid "Target format:"
+msgstr "Цільовий формат:"
+
+msgid "Target format: {format}"
+msgstr "Target format: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "The conversion could not start:\n{error}"
+
+msgid "Unknown error"
+msgstr "Невідома помилка"
+
+msgid "Very high"
+msgstr "Дуже високий"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "за винятком вкладених папок"
+
+msgid "including subfolders"
+msgstr "включаючи вкладені папки"
+
+msgid "{count} selected folders"
+msgstr "{count} selected folders"

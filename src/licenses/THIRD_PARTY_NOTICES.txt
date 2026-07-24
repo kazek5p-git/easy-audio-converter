@@ -1,0 +1,27 @@
+Easy Audio Converter includes FFmpeg 8.1.2, full static 64-bit Windows build
+from www.gyan.dev.
+
+Bundled binary:
+  globalPlugins/easyAudioConverter/bin/ffmpeg.exe
+
+SHA-256:
+  AD8F211BC894755E0061C55AB280AE00E8D3D4F15A8CC4372B24CFA247B5942E
+
+FFmpeg copyright:
+  Copyright (c) 2000-2026 the FFmpeg developers.
+
+The bundled build was configured with --enable-gpl and --enable-version3 and
+is distributed under GNU General Public License version 3 or later. It also
+contains separately authored libraries covered by their respective licenses.
+
+Sources and build information:
+  https://ffmpeg.org/download.html
+  https://ffmpeg.org/legal.html
+  https://www.gyan.dev/ffmpeg/builds/
+  https://github.com/GyanD/codexffmpeg
+
+The complete build configuration can be displayed by running:
+  ffmpeg.exe -version
+
+Easy Audio Converter invokes FFmpeg as a separate process. The FFmpeg project
+does not endorse this add-on.

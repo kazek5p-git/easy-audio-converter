@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: pt_PT\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...e {count} mais erros"
+
+msgid "A conversion is already in progress"
+msgstr "Uma conversão já está em andamento"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple sem perdas)"
+
+msgid "AMR narrowband"
+msgstr "banda estreita AMR"
+
+msgid "AMR wideband"
+msgstr "Banda larga AMR"
+
+msgid "Browse..."
+msgstr "Navegar..."
+
+msgid "Cancel conversion"
+msgstr "Cancelar conversão"
+
+msgid "Cancel the current audio conversion"
+msgstr "Cancelar a conversão de áudio atual"
+
+msgid "Canceling the conversion"
+msgstr "Cancelando a conversão"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Não é possível abrir a página de suporte. Abra este endereço manualmente: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Alterar a qualidade da conversão"
+
+msgid "Change the target audio format"
+msgstr "Alterar o formato de áudio de destino"
+
+msgid "Choose a folder to convert"
+msgstr "Escolha uma pasta para converter"
+
+msgid "Choose the destination folder"
+msgstr "Escolha a pasta de destino"
+
+msgid "Confirm folder conversion"
+msgstr "Confirme a conversão da pasta"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Conversão cancelada. {done} de arquivos {total} concluídos."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Conversão concluída: {done} bem-sucedida, {failed} falhou."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Converter todos os arquivos de áudio suportados em {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Converta todos os arquivos de áudio suportados na pasta atual"
+
+msgid "Convert selected files or folders"
+msgstr "Converta arquivos ou pastas selecionados"
+
+msgid "Convert the current folder"
+msgstr "Converta a pasta atual"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Convertendo {index} de {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Pasta de destino:"
+
+msgid "Destination folder: {folder}"
+msgstr "Pasta de destino: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Conversor de áudio fácil"
+
+msgid "Economical"
+msgstr "Econômico"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Foram encontrados arquivos {count} para converter"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer/Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Alto"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Se o Easy Audio Converter for útil para você e quiser apoiar meu trabalho, pode me pagar um café.\n\nDeseja abrir a página de suporte agora?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Incluir subpastas ao converter uma pasta"
+
+msgid "LAME MP3"
+msgstr "COCO MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Codificador MP3:"
+
+msgid "No conversion is in progress"
+msgstr "Nenhuma conversão está em andamento"
+
+msgid "No files or folders are selected"
+msgstr "Nenhum arquivo ou pasta está selecionado"
+
+msgid "No supported audio files were found"
+msgstr "Nenhum arquivo de áudio compatível foi encontrado"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Abra as configurações do Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Abra a página de suporte do autor"
+
+msgid "Opening the support page"
+msgstr "Abrindo a página de suporte"
+
+msgid "Opus"
+msgstr "obra"
+
+msgid "Preparing the conversion"
+msgstr "Preparando a conversão"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Preservar a estrutura da pasta de origem no destino"
+
+msgid "Quality:"
+msgstr "Qualidade:"
+
+msgid "Quality: {quality}"
+msgstr "Qualidade: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Escolha rapidamente a pasta de destino"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Converta rapidamente arquivos ou pastas selecionados"
+
+msgid "Report audio conversion status"
+msgstr "Informar o status da conversão de áudio"
+
+msgid "Report conversion status"
+msgstr "Informar status de conversão"
+
+msgid "Save converted files next to the source files"
+msgstr "Salve os arquivos convertidos ao lado dos arquivos de origem"
+
+msgid "Settings..."
+msgstr "Configurações..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Alguns arquivos não puderam ser convertidos:\n\n{details}"
+
+msgid "Standard"
+msgstr "Padrão"
+
+msgid "Support Easy Audio Converter"
+msgstr "Suporte ao conversor de áudio fácil"
+
+msgid "Support the author"
+msgstr "Apoie o autor"
+
+msgid "Target format:"
+msgstr "Formato de destino:"
+
+msgid "Target format: {format}"
+msgstr "Formato de destino: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "O componente FFmpeg incluído está faltando. Reinstale o Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "A conversão não pôde ser iniciada:\n{error}"
+
+msgid "Unknown error"
+msgstr "Erro desconhecido"
+
+msgid "Very high"
+msgstr "Muito alto"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "excluindo subpastas"
+
+msgid "including subfolders"
+msgstr "incluindo subpastas"
+
+msgid "{count} selected folders"
+msgstr "{count} pastas selecionadas"

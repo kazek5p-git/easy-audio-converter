@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: nl\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...en {count} meer fouten"
+
+msgid "A conversion is already in progress"
+msgstr "Er is al een conversie gaande"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple zonder verlies)"
+
+msgid "AMR narrowband"
+msgstr "AMR-smalband"
+
+msgid "AMR wideband"
+msgstr "AMR-breedband"
+
+msgid "Browse..."
+msgstr "Blader..."
+
+msgid "Cancel conversion"
+msgstr "Conversie annuleren"
+
+msgid "Cancel the current audio conversion"
+msgstr "Annuleer de huidige audioconversie"
+
+msgid "Canceling the conversion"
+msgstr "De conversie annuleren"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Kan de ondersteuningspagina niet openen. Open dit adres handmatig: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Wijzig de conversiekwaliteit"
+
+msgid "Change the target audio format"
+msgstr "Wijzig het doelaudioformaat"
+
+msgid "Choose a folder to convert"
+msgstr "Kies een map om te converteren"
+
+msgid "Choose the destination folder"
+msgstr "Kies de doelmap"
+
+msgid "Confirm folder conversion"
+msgstr "Bevestig de mapconversie"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Conversie geannuleerd. {done} van {total} bestanden voltooid."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Conversie voltooid: {done} geslaagd, {failed} mislukt."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Alle ondersteunde audiobestanden converteren naar {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Converteer elk ondersteund audiobestand in de huidige map"
+
+msgid "Convert selected files or folders"
+msgstr "Converteer geselecteerde bestanden of mappen"
+
+msgid "Convert the current folder"
+msgstr "Converteer de huidige map"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index} van {total} converteren: {name}"
+
+msgid "Destination folder:"
+msgstr "Bestemmingsmap:"
+
+msgid "Destination folder: {folder}"
+msgstr "Bestemmingsmap: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Eenvoudige audio-omzetter"
+
+msgid "Economical"
+msgstr "Economisch"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "{count} bestanden gevonden om te converteren"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Hoog"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Als Easy Audio Converter nuttig voor u is en u mijn werk wilt steunen, kunt u een kopje koffie voor mij kopen.\n\nWilt u de ondersteuningspagina nu openen?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Voeg submappen toe bij het converteren van een map"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3-encoder:"
+
+msgid "No conversion is in progress"
+msgstr "Er vindt geen conversie plaats"
+
+msgid "No files or folders are selected"
+msgstr "Er zijn geen bestanden of mappen geselecteerd"
+
+msgid "No supported audio files were found"
+msgstr "Er zijn geen ondersteunde audiobestanden gevonden"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Open de Easy Audio Converter-instellingen"
+
+msgid "Open the author's support page"
+msgstr "Open de ondersteuningspagina van de auteur"
+
+msgid "Opening the support page"
+msgstr "De ondersteuningspagina openen"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Het voorbereiden van de conversie"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Behoud de bronmapstructuur op de bestemming"
+
+msgid "Quality:"
+msgstr "Kwaliteit:"
+
+msgid "Quality: {quality}"
+msgstr "Kwaliteit: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Kies snel de doelmap"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Converteer snel geselecteerde bestanden of mappen"
+
+msgid "Report audio conversion status"
+msgstr "Rapporteer de audioconversiestatus"
+
+msgid "Report conversion status"
+msgstr "Conversiestatus rapporteren"
+
+msgid "Save converted files next to the source files"
+msgstr "Bewaar geconverteerde bestanden naast de bronbestanden"
+
+msgid "Settings..."
+msgstr "Instellingen..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Sommige bestanden konden niet worden geconverteerd:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standaard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Ondersteuning van Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Steun de auteur"
+
+msgid "Target format:"
+msgstr "Doelformaat:"
+
+msgid "Target format: {format}"
+msgstr "Doelformaat: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "De gebundelde FFmpeg-component ontbreekt. Installeer Easy Audio Converter opnieuw."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "De conversie kan niet starten:\n{error}"
+
+msgid "Unknown error"
+msgstr "Onbekende fout"
+
+msgid "Very high"
+msgstr "Zeer hoog"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "exclusief submappen"
+
+msgid "including subfolders"
+msgstr "inclusief submappen"
+
+msgid "{count} selected folders"
+msgstr "{count} geselecteerde mappen"

@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: sq\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...dhe {count} më shumë gabime"
+
+msgid "A conversion is already in progress"
+msgstr "Një konvertim është tashmë në proces"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "brez i ngushtë AMR"
+
+msgid "AMR wideband"
+msgstr "AMR brez i gjerë"
+
+msgid "Browse..."
+msgstr "Shfleto..."
+
+msgid "Cancel conversion"
+msgstr "Anulo konvertimin"
+
+msgid "Cancel the current audio conversion"
+msgstr "Anulo konvertimin aktual të audios"
+
+msgid "Canceling the conversion"
+msgstr "Anulimi i konvertimit"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Faqja e mbështetjes nuk mund të hapet. Hape këtë adresë me dorë: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Ndryshoni cilësinë e konvertimit"
+
+msgid "Change the target audio format"
+msgstr "Ndryshoni formatin e synuar të audios"
+
+msgid "Choose a folder to convert"
+msgstr "Zgjidhni një dosje për ta konvertuar"
+
+msgid "Choose the destination folder"
+msgstr "Zgjidhni dosjen e destinacionit"
+
+msgid "Confirm folder conversion"
+msgstr "Konfirmo konvertimin e dosjes"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Konvertimi u anulua. Përfunduar {done} nga {total} skedarë."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Konvertimi përfundoi: {done} dështoi, {failed} dështoi."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Të konvertohen të gjithë skedarët audio të mbështetur në {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Konvertoni çdo skedar audio të mbështetur në dosjen aktuale"
+
+msgid "Convert selected files or folders"
+msgstr "Konvertoni skedarët ose dosjet e zgjedhura"
+
+msgid "Convert the current folder"
+msgstr "Konvertoni dosjen aktuale"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Po konverton {index} nga {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Dosja e destinacionit:"
+
+msgid "Destination folder: {folder}"
+msgstr "Dosja e destinacionit: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Konvertues i lehtë audio"
+
+msgid "Economical"
+msgstr "Ekonomik"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "U gjetën {count} skedarë për t'u konvertuar"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Lartë"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Nëse Easy Audio Converter është i dobishëm për ju dhe dëshironi të mbështesni punën time, mund të më blini një kafe.\n\nDëshiron të hapësh faqen e mbështetjes tani?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Përfshini nëndosjet kur konvertoni një dosje"
+
+msgid "LAME MP3"
+msgstr "LAM MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "Enkoder MP3:"
+
+msgid "No conversion is in progress"
+msgstr "Asnjë konvertim nuk është në proces"
+
+msgid "No files or folders are selected"
+msgstr "Nuk është zgjedhur asnjë skedar apo dosje"
+
+msgid "No supported audio files were found"
+msgstr "Nuk u gjet asnjë skedar audio i mbështetur"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Hapni cilësimet e Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Hapni faqen e mbështetjes së autorit"
+
+msgid "Opening the support page"
+msgstr "Hapja e faqes së mbështetjes"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Përgatitja e konvertimit"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Ruani strukturën e dosjes burimore në destinacion"
+
+msgid "Quality:"
+msgstr "Cilësia:"
+
+msgid "Quality: {quality}"
+msgstr "Cilësia: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Zgjidhni shpejt dosjen e destinacionit"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Konvertoni shpejt skedarët ose dosjet e zgjedhura"
+
+msgid "Report audio conversion status"
+msgstr "Raportoni statusin e konvertimit audio"
+
+msgid "Report conversion status"
+msgstr "Raportoni statusin e konvertimit"
+
+msgid "Save converted files next to the source files"
+msgstr "Ruani skedarët e konvertuar pranë skedarëve burimor"
+
+msgid "Settings..."
+msgstr "Cilësimet..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Disa skedarë nuk mund të konvertoheshin:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Support Easy Audio Converter"
+msgstr "Mbështetni konvertuesin e lehtë audio"
+
+msgid "Support the author"
+msgstr "Mbështetni autorin"
+
+msgid "Target format:"
+msgstr "Formati i synuar:"
+
+msgid "Target format: {format}"
+msgstr "Formati i synuar: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Komponenti i paketuar FFmpeg mungon. Riinstaloni konvertuesin Easy Audio."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Konvertimi nuk mund të fillonte:\n{error}"
+
+msgid "Unknown error"
+msgstr "Gabim i panjohur"
+
+msgid "Very high"
+msgstr "Shumë e lartë"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "duke përjashtuar nëndosjet"
+
+msgid "including subfolders"
+msgstr "duke përfshirë nëndosjet"
+
+msgid "{count} selected folders"
+msgstr "{count} dosjet e zgjedhura"

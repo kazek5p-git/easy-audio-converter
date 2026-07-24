@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: sl\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...in {count} več napak"
+
+msgid "A conversion is already in progress"
+msgstr "Pretvorba je že v teku"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Lossless)"
+
+msgid "AMR narrowband"
+msgstr "AMR ozkopasovni"
+
+msgid "AMR wideband"
+msgstr "Širokopasovni AMR"
+
+msgid "Browse..."
+msgstr "Prebrskaj ..."
+
+msgid "Cancel conversion"
+msgstr "Prekliči pretvorbo"
+
+msgid "Cancel the current audio conversion"
+msgstr "Prekliči trenutno pretvorbo zvoka"
+
+msgid "Canceling the conversion"
+msgstr "Preklic pretvorbe"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Strani za podporo ni mogoče odpreti. Ročno odprite ta naslov: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Spremenite kakovost pretvorbe"
+
+msgid "Change the target audio format"
+msgstr "Spremenite ciljni zvočni format"
+
+msgid "Choose a folder to convert"
+msgstr "Izberite mapo za pretvorbo"
+
+msgid "Choose the destination folder"
+msgstr "Izberite ciljno mapo"
+
+msgid "Confirm folder conversion"
+msgstr "Potrdite pretvorbo mape"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Pretvorba preklicana. Dokončano {done} od {total} datotek."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Pretvorba končana: {done} uspela, {failed} ni uspela."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Pretvorite vse podprte zvočne datoteke v {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Pretvorite vse podprte zvočne datoteke v trenutni mapi"
+
+msgid "Convert selected files or folders"
+msgstr "Pretvorite izbrane datoteke ali mape"
+
+msgid "Convert the current folder"
+msgstr "Pretvori trenutno mapo"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Pretvarjanje {index} od {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Ciljna mapa:"
+
+msgid "Destination folder: {folder}"
+msgstr "Ciljna mapa: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Easy Audio Converter"
+
+msgid "Economical"
+msgstr "Varčno"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Najdene datoteke {count} za pretvorbo"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "visoko"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Če vam Easy Audio Converter koristi in želite podpreti moje delo, me lahko počastite s kavo.\n\nAli želite zdaj odpreti stran za podporo?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Pri pretvorbi mape vključite podmape"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 kodirnik:"
+
+msgid "No conversion is in progress"
+msgstr "Pretvorba ne poteka"
+
+msgid "No files or folders are selected"
+msgstr "Izbrana ni nobena datoteka ali mapa"
+
+msgid "No supported audio files were found"
+msgstr "Podprte zvočne datoteke niso bile najdene"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Odprite nastavitve Easy Audio Converter"
+
+msgid "Open the author's support page"
+msgstr "Odprite avtorjevo stran za podporo"
+
+msgid "Opening the support page"
+msgstr "Odpiranje strani za podporo"
+
+msgid "Opus"
+msgstr "Opus"
+
+msgid "Preparing the conversion"
+msgstr "Priprava pretvorbe"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Ohranite strukturo izvorne mape v ciljni mapi"
+
+msgid "Quality:"
+msgstr "Kakovost:"
+
+msgid "Quality: {quality}"
+msgstr "Kakovost: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Hitro izberite ciljno mapo"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Hitro pretvorite izbrane datoteke ali mape"
+
+msgid "Report audio conversion status"
+msgstr "Poročilo o stanju pretvorbe zvoka"
+
+msgid "Report conversion status"
+msgstr "Poročilo o stanju konverzije"
+
+msgid "Save converted files next to the source files"
+msgstr "Shranite pretvorjene datoteke poleg izvornih datotek"
+
+msgid "Settings..."
+msgstr "nastavitve ..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Nekaterih datotek ni bilo mogoče pretvoriti:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standardno"
+
+msgid "Support Easy Audio Converter"
+msgstr "Podpora Easy Audio Converter"
+
+msgid "Support the author"
+msgstr "Podprite avtorja"
+
+msgid "Target format:"
+msgstr "Ciljni format:"
+
+msgid "Target format: {format}"
+msgstr "Ciljni format: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Manjka priložena komponenta FFmpeg. Ponovno namestite Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Pretvorba se ni mogla začeti:\n{error}"
+
+msgid "Unknown error"
+msgstr "Neznana napaka"
+
+msgid "Very high"
+msgstr "Zelo visoko"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "brez podmap"
+
+msgid "including subfolders"
+msgstr "vključno s podmapami"
+
+msgid "{count} selected folders"
+msgstr "{count} izbrane mape"

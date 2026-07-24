@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: tr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...ve {count} daha fazla hata"
+
+msgid "A conversion is already in progress"
+msgstr "Bir dönüşüm zaten devam ediyor"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple Kayıpsız)"
+
+msgid "AMR narrowband"
+msgstr "AMR dar bant"
+
+msgid "AMR wideband"
+msgstr "AMR geniş bant"
+
+msgid "Browse..."
+msgstr "Göz at..."
+
+msgid "Cancel conversion"
+msgstr "Dönüşümü iptal et"
+
+msgid "Cancel the current audio conversion"
+msgstr "Mevcut ses dönüştürmeyi iptal et"
+
+msgid "Canceling the conversion"
+msgstr "Dönüşümün iptal edilmesi"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Destek sayfası açılamıyor. Bu adresi manuel olarak açın: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Dönüştürme kalitesini değiştirin"
+
+msgid "Change the target audio format"
+msgstr "Hedef ses formatını değiştirin"
+
+msgid "Choose a folder to convert"
+msgstr "Dönüştürülecek klasörü seçin"
+
+msgid "Choose the destination folder"
+msgstr "Hedef klasörü seçin"
+
+msgid "Confirm folder conversion"
+msgstr "Klasör dönüştürmeyi onayla"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Dönüşüm iptal edildi. {total} dosyalardan {done} tamamlandı."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Dönüşüm tamamlandı: {done} başarılı oldu, {failed} başarısız oldu."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Desteklenen tüm ses dosyalarını {folder}, {scope}'ye dönüştürün mü?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Geçerli klasördeki desteklenen her ses dosyasını dönüştürün"
+
+msgid "Convert selected files or folders"
+msgstr "Seçilen dosya veya klasörleri dönüştürün"
+
+msgid "Convert the current folder"
+msgstr "Geçerli klasörü dönüştür"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{index} / {total} dönüştürülüyor: {name}"
+
+msgid "Destination folder:"
+msgstr "Hedef klasör:"
+
+msgid "Destination folder: {folder}"
+msgstr "Hedef klasör: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Kolay Ses Dönüştürücü"
+
+msgid "Economical"
+msgstr "Ekonomik"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Dönüştürülecek {count} dosya bulundu"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Vakfı MP3"
+
+msgid "High"
+msgstr "Yüksek"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Easy Audio Converter işinize yararsa ve çalışmalarıma destek olmak istiyorsanız bana bir kahve ısmarlayabilirsiniz.\n\nDestek sayfasını şimdi açmak ister misiniz?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Bir klasörü dönüştürürken alt klasörleri dahil et"
+
+msgid "LAME MP3"
+msgstr "TOPAL MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 kodlayıcı:"
+
+msgid "No conversion is in progress"
+msgstr "Hiçbir dönüşüm devam etmiyor"
+
+msgid "No files or folders are selected"
+msgstr "Hiçbir dosya veya klasör seçilmedi"
+
+msgid "No supported audio files were found"
+msgstr "Desteklenen ses dosyası bulunamadı"
+
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Easy Audio Converter ayarlarını aç"
+
+msgid "Open the author's support page"
+msgstr "Yazarın destek sayfasını açın"
+
+msgid "Opening the support page"
+msgstr "Destek sayfasını açma"
+
+msgid "Opus"
+msgstr "Eser"
+
+msgid "Preparing the conversion"
+msgstr "Dönüşümün hazırlanması"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Hedefteki kaynak klasör yapısını koru"
+
+msgid "Quality:"
+msgstr "Kalite:"
+
+msgid "Quality: {quality}"
+msgstr "Kalite: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Hedef klasörü hızlıca seçin"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Seçilen dosya veya klasörleri hızla dönüştürün"
+
+msgid "Report audio conversion status"
+msgstr "Ses dönüştürme durumunu bildir"
+
+msgid "Report conversion status"
+msgstr "Dönüşüm durumunu bildir"
+
+msgid "Save converted files next to the source files"
+msgstr "Dönüştürülen dosyaları kaynak dosyaların yanına kaydedin"
+
+msgid "Settings..."
+msgstr "Ayarlar..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Bazı dosyalar dönüştürülemedi:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standart"
+
+msgid "Support Easy Audio Converter"
+msgstr "Kolay Ses Dönüştürücüyü Destekleyin"
+
+msgid "Support the author"
+msgstr "Yazarı destekleyin"
+
+msgid "Target format:"
+msgstr "Hedef formatı:"
+
+msgid "Target format: {format}"
+msgstr "Hedef formatı: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Birlikte verilen FFmpeg bileşeni eksik. Easy Audio Converter'ı yeniden yükleyin."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Dönüşüm başlatılamadı:\n{error}"
+
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+msgid "Very high"
+msgstr "Çok yüksek"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "alt klasörler hariç"
+
+msgid "including subfolders"
+msgstr "alt klasörler dahil"
+
+msgid "{count} selected folders"
+msgstr "{count} seçili klasörler"

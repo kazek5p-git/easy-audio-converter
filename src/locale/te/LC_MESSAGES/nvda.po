@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: te\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "... మరియు {count} మరిన్ని దోషాలు"
+
+msgid "A conversion is already in progress"
+msgstr "మార్పిడి ఇప్పటికే పురోగతిలో ఉంది"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "ఏఐఎఫ్ఎఫ్"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (ఆపిల్ లాస్ లెస్)"
+
+msgid "AMR narrowband"
+msgstr "ఏఎంఆర్ నారోబ్యాండ్"
+
+msgid "AMR wideband"
+msgstr "AMR వైడ్ బ్యాండ్"
+
+msgid "Browse..."
+msgstr "బ్రౌజ్ చేయండి..."
+
+msgid "Cancel conversion"
+msgstr "మార్పిడిని రద్దు చేయండి"
+
+msgid "Cancel the current audio conversion"
+msgstr "ప్రస్తుత ఆడియో మార్పిడిని రద్దు చేయండి"
+
+msgid "Canceling the conversion"
+msgstr "మార్పిడిని రద్దు చేయడం"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "మద్దతు పేజీని తెరవడం సాధ్యం కాదు. ఈ చిరునామాను మాన్యువల్ గా తెరవండి: {url}"
+
+msgid "Change the conversion quality"
+msgstr "మార్పిడి నాణ్యతను మార్చండి"
+
+msgid "Change the target audio format"
+msgstr "లక్ష్య ఆడియో ఫార్మాట్ మార్చండి"
+
+msgid "Choose a folder to convert"
+msgstr "మార్పిడి చేయడానికి ఒక సంచికను ఎంచుకోండి"
+
+msgid "Choose the destination folder"
+msgstr "గమ్య సంచికను ఎంచుకోండి"
+
+msgid "Confirm folder conversion"
+msgstr "ఫోల్డర్ మార్పిడిని నిర్ధారించు"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "మార్పిడి రద్దు చేయబడింది. {total} ఫైళ్ల యొక్క {done} పూర్తయింది."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "మార్పిడి పూర్తయింది: {done} విజయవంతమైంది, {failed} విఫలమైంది."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "మద్దతు ఇచ్చే అన్ని ఆడియో ఫైళ్లను {folder}, {scope}లో మార్చాలా?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "ప్రస్తుత ఫోల్డర్ లోని ప్రతి మద్దతు ఉన్న ఆడియో ఫైల్ ను మార్చండి"
+
+msgid "Convert selected files or folders"
+msgstr "ఎంచుకున్న ఫైళ్లు లేదా ఫోల్డర్ లను మార్పిడి చేయండి"
+
+msgid "Convert the current folder"
+msgstr "ప్రస్తుత సంచికను మార్చు"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total} యొక్క {index}: {name} ను మార్చడం"
+
+msgid "Destination folder:"
+msgstr "గమ్య సంచిక:"
+
+msgid "Destination folder: {folder}"
+msgstr "గమ్య ఫోల్డర్: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "ఈజీ ఆడియో కన్వర్టర్"
+
+msgid "Economical"
+msgstr "ఆర్థికంగా"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "కన్వర్ట్ చేయడానికి {count} ఫైళ్లు కనుగొనబడ్డాయి"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "విండోస్ మీడియా ఫౌండేషన్ MP3"
+
+msgid "High"
+msgstr "అధిక"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "ఈజీ ఆడియో కన్వర్టర్ మీకు ఉపయోగకరంగా ఉంటే మరియు మీరు నా పనికి మద్దతు ఇవ్వాలనుకుంటే, మీరు నాకు కాఫీ కొనవచ్చు.\n\nమీరు ఇప్పుడు మద్దతు పేజీని తెరవాలని అనుకుంటున్నారా?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "సంచికను మార్పిడి చేసేటప్పుడు ఉపసంచికలను చేర్చండి"
+
+msgid "LAME MP3"
+msgstr "కుంటి MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 ఎన్ కోడర్:"
+
+msgid "No conversion is in progress"
+msgstr "మార్పిడి పురోగతిలో లేదు"
+
+msgid "No files or folders are selected"
+msgstr "ఫైళ్లు లేదా ఫోల్డర్ లు ఏవీ ఎంచుకోబడలేదు"
+
+msgid "No supported audio files were found"
+msgstr "మద్దతు ఇచ్చే ఆడియో ఫైళ్లు ఏవీ కనుగొనబడలేదు"
+
+msgid "Ogg Vorbis"
+msgstr "ఓగ్ వోర్బిస్"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "సులభ ఆడియో కన్వర్టర్ సెట్టింగ్ లను తెరవండి"
+
+msgid "Open the author's support page"
+msgstr "రచయిత మద్దతు పేజీని తెరవండి"
+
+msgid "Opening the support page"
+msgstr "మద్దతు పేజీని తెరవడం"
+
+msgid "Opus"
+msgstr "ఓపస్"
+
+msgid "Preparing the conversion"
+msgstr "మార్పిడిని సిద్ధం చేస్తోంది"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "డెస్టినేషన్ లో సోర్స్ ఫోల్డర్ స్ట్రక్చర్ ని భద్రపరచండి."
+
+msgid "Quality:"
+msgstr "నాణ్యత:"
+
+msgid "Quality: {quality}"
+msgstr "నాణ్యత: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "గమ్యస్థాన ఫోల్డర్ ని వేగంగా ఎంచుకోండి"
+
+msgid "Quickly convert selected files or folders"
+msgstr "ఎంచుకున్న ఫైళ్లు లేదా ఫోల్డర్ లను వేగంగా మార్చండి"
+
+msgid "Report audio conversion status"
+msgstr "ఆడియో మార్పిడి స్థితిని నివేదించండి"
+
+msgid "Report conversion status"
+msgstr "మార్పిడి స్థితిని నివేదించండి"
+
+msgid "Save converted files next to the source files"
+msgstr "మార్పిడి చేసిన ఫైళ్లను మూల ఫైళ్ల పక్కన సేవ్ చేయండి"
+
+msgid "Settings..."
+msgstr "అమర్పులు..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "కొన్ని ఫైళ్లను మార్చడం సాధ్యం కాలేదు:\n\n{details}"
+
+msgid "Standard"
+msgstr "ప్రామాణిక"
+
+msgid "Support Easy Audio Converter"
+msgstr "ఈజీ ఆడియో కన్వర్టర్ కు సపోర్ట్ చేయండి"
+
+msgid "Support the author"
+msgstr "రచయితకు మద్దతు ఇవ్వండి"
+
+msgid "Target format:"
+msgstr "లక్ష్య ఆకృతి:"
+
+msgid "Target format: {format}"
+msgstr "టార్గెట్ ఫార్మాట్: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "బండిల్ చేయబడ్డ FFmpeg కాంపోనెంట్ మిస్ అయింది. ఈజీ ఆడియో కన్వర్టర్ ని తిరిగి ఇన్ స్టాల్ చేయండి."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "మార్పిడి ప్రారంభం కాలేదు:\n{error}"
+
+msgid "Unknown error"
+msgstr "తెలియని దోషం"
+
+msgid "Very high"
+msgstr "చాలా ఎక్కువ"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "వేవ్ ప్యాక్"
+
+msgid "excluding subfolders"
+msgstr "ఉప సంచికలు మినహాయించి"
+
+msgid "including subfolders"
+msgstr "ఉప సంచికాలతో సహా"
+
+msgid "{count} selected folders"
+msgstr "{count} ఎంపిక చేయబడ్డ ఫోల్డర్ లు"

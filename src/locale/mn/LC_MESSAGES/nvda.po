@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: mn\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...болон {count} бусад алдаа"
+
+msgid "A conversion is already in progress"
+msgstr "Хөрвүүлэлт аль хэдийн хийгдэж байна"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC (Apple-ийн алдагдалгүй)"
+
+msgid "AMR narrowband"
+msgstr "AMR нарийн зурвас"
+
+msgid "AMR wideband"
+msgstr "AMR өргөн зурвас"
+
+msgid "Browse..."
+msgstr "Үзэх..."
+
+msgid "Cancel conversion"
+msgstr "Хөрвүүлэлтийг цуцлах"
+
+msgid "Cancel the current audio conversion"
+msgstr "Одоогийн аудио хөрвүүлэлтийг цуцлах"
+
+msgid "Canceling the conversion"
+msgstr "Хөрвүүлэлтийг цуцалж байна"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Тусламжийн хуудсыг нээх боломжгүй байна. Энэ хаягийг гараар нээнэ үү: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Хөрвүүлэх чанарыг өөрчлөх"
+
+msgid "Change the target audio format"
+msgstr "Зорилтот аудио форматыг өөрчлөх"
+
+msgid "Choose a folder to convert"
+msgstr "Хөрвүүлэх хавтас сонгоно уу"
+
+msgid "Choose the destination folder"
+msgstr "Очих хавтасаа сонгоно уу"
+
+msgid "Confirm folder conversion"
+msgstr "Фолдер хөрвүүлэлтийг баталгаажуулна уу"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Хөрвүүлэлтийг цуцалсан. {total} файлын {done}-г дуусгасан."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Хөрвүүлэлт дууссан: {done} амжилттай, {failed} амжилтгүй болсон."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "{folder}, {scope}-д дэмжигдсэн бүх аудио файлыг хөрвүүлэх үү?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Одоогийн фолдерт дэмжигдсэн аудио файл бүрийг хөрвүүлэх"
+
+msgid "Convert selected files or folders"
+msgstr "Сонгосон файл эсвэл фолдерыг хөрвүүлэх"
+
+msgid "Convert the current folder"
+msgstr "Одоогийн фолдерыг хөрвүүлэх"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "{total}-ийн {index}-г хөрвүүлж байна: {name}"
+
+msgid "Destination folder:"
+msgstr "Очих хавтас:"
+
+msgid "Destination folder: {folder}"
+msgstr "Очих хавтас: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Хялбар аудио хөрвүүлэгч"
+
+msgid "Economical"
+msgstr "Эдийн засгийн"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Хөрвүүлэх {count} файлуудыг оллоо"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Фраунхофер / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Өндөр"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Easy Audio Converter танд хэрэгтэй бөгөөд миний ажлыг дэмжихийг хүсвэл надад кофе авч өгч болно.\n\nТа одоо тусламжийн хуудсыг нээхийг хүсч байна уу?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Фолдерыг хөрвүүлэхдээ дэд хавтаснуудыг оруулна уу"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 кодлогч:"
+
+msgid "No conversion is in progress"
+msgstr "Ямар ч хөрвүүлэлт хийгдээгүй байна"
+
+msgid "No files or folders are selected"
+msgstr "Ямар ч файл эсвэл хавтас сонгогдоогүй байна"
+
+msgid "No supported audio files were found"
+msgstr "Дэмжигдсэн аудио файл олдсонгүй"
+
+msgid "Ogg Vorbis"
+msgstr "Ог Ворбис"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Easy Audio Converter тохиргоог нээнэ үү"
+
+msgid "Open the author's support page"
+msgstr "Зохиогчийн дэмжлэгийн хуудсыг нээнэ үү"
+
+msgid "Opening the support page"
+msgstr "Дэмжлэгийн хуудсыг нээж байна"
+
+msgid "Opus"
+msgstr "Опус"
+
+msgid "Preparing the conversion"
+msgstr "Хөрвүүлэлтийг бэлдэж байна"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Очих газар дахь эх фолдерын бүтцийг хадгалах"
+
+msgid "Quality:"
+msgstr "Чанар:"
+
+msgid "Quality: {quality}"
+msgstr "Чанар: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Очих хавтасаа хурдан сонгоно уу"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Сонгосон файл эсвэл фолдерыг хурдан хөрвүүлэх"
+
+msgid "Report audio conversion status"
+msgstr "Аудио хувиргах төлөвийг мэдээлэх"
+
+msgid "Report conversion status"
+msgstr "Хөрвүүлэлтийн статусыг мэдээлэх"
+
+msgid "Save converted files next to the source files"
+msgstr "Хөрвүүлсэн файлуудыг эх файлуудын хажууд хадгал"
+
+msgid "Settings..."
+msgstr "Тохиргоо..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Зарим файлыг хөрвүүлж чадсангүй:\n\n{details}"
+
+msgid "Standard"
+msgstr "Стандарт"
+
+msgid "Support Easy Audio Converter"
+msgstr "Easy Audio Converter-ийг дэмжинэ"
+
+msgid "Support the author"
+msgstr "Зохиогчийг дэмжээрэй"
+
+msgid "Target format:"
+msgstr "Зорилтот формат:"
+
+msgid "Target format: {format}"
+msgstr "Зорилтот формат: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Багцлагдсан FFmpeg бүрэлдэхүүн хэсэг байхгүй байна. Easy Audio Converter-г дахин суулгана уу."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Хөрвүүлэлтийг эхлүүлж чадсангүй:\n{error}"
+
+msgid "Unknown error"
+msgstr "Үл мэдэгдэх алдаа"
+
+msgid "Very high"
+msgstr "Маш өндөр"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "дэд хавтаснаас бусад"
+
+msgid "including subfolders"
+msgstr "дэд хавтаснууд орно"
+
+msgid "{count} selected folders"
+msgstr "{count} сонгосон фолдерууд"

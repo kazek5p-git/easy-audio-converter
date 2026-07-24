@@ -1,0 +1,229 @@
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
+msgid ""
+msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: lt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "...and {count} more errors"
+msgstr "...ir {count} daugiau klaidų"
+
+msgid "A conversion is already in progress"
+msgstr "Konvertavimas jau vyksta"
+
+msgid "AAC"
+msgstr "AAC"
+
+msgid "AC-3"
+msgstr "AC-3"
+
+msgid "AIFF"
+msgstr "AIFF"
+
+msgid "ALAC (Apple Lossless)"
+msgstr "ALAC („Apple Lossless“)"
+
+msgid "AMR narrowband"
+msgstr "AMR siaurajuostis"
+
+msgid "AMR wideband"
+msgstr "AMR plačiajuostis ryšys"
+
+msgid "Browse..."
+msgstr "Naršyti..."
+
+msgid "Cancel conversion"
+msgstr "Atšaukti konversiją"
+
+msgid "Cancel the current audio conversion"
+msgstr "Atšaukite dabartinį garso konvertavimą"
+
+msgid "Canceling the conversion"
+msgstr "Konversijos atšaukimas"
+
+msgid "Cannot open the support page. Open this address manually: {url}"
+msgstr "Nepavyko atidaryti palaikymo puslapio. Atidarykite šį adresą rankiniu būdu: {url}"
+
+msgid "Change the conversion quality"
+msgstr "Pakeiskite konversijos kokybę"
+
+msgid "Change the target audio format"
+msgstr "Pakeiskite tikslinį garso formatą"
+
+msgid "Choose a folder to convert"
+msgstr "Pasirinkite aplanką, kurį norite konvertuoti"
+
+msgid "Choose the destination folder"
+msgstr "Pasirinkite paskirties aplanką"
+
+msgid "Confirm folder conversion"
+msgstr "Patvirtinkite aplanko konvertavimą"
+
+msgid "Conversion canceled. Completed {done} of {total} files."
+msgstr "Konversija atšaukta. Užbaigta {done} iš {total} failų."
+
+msgid "Conversion complete: {done} succeeded, {failed} failed."
+msgstr "Konvertavimas baigtas: {done} pavyko, {failed} nepavyko."
+
+msgid "Convert all supported audio files in {folder}, {scope}?"
+msgstr "Konvertuoti visus palaikomus garso failus {folder}, {scope}?"
+
+msgid "Convert every supported audio file in the current folder"
+msgstr "Konvertuokite kiekvieną palaikomą garso failą dabartiniame aplanke"
+
+msgid "Convert selected files or folders"
+msgstr "Konvertuoti pasirinktus failus ar aplankus"
+
+msgid "Convert the current folder"
+msgstr "Konvertuoti dabartinį aplanką"
+
+msgid "Converting {index} of {total}: {name}"
+msgstr "Konvertuojama {index} iš {total}: {name}"
+
+msgid "Destination folder:"
+msgstr "Paskirties aplankas:"
+
+msgid "Destination folder: {folder}"
+msgstr "Paskirties aplankas: {folder}"
+
+msgid "E-AC-3"
+msgstr "E-AC-3"
+
+msgid "Easy Audio Converter"
+msgstr "Lengvas garso keitiklis"
+
+msgid "Economical"
+msgstr "Ekonomiškas"
+
+msgid "FLAC"
+msgstr "FLAC"
+
+msgid "Found {count} files to convert"
+msgstr "Rasta {count} failų, kuriuos reikia konvertuoti"
+
+msgid "Fraunhofer / Windows Media Foundation MP3"
+msgstr "Fraunhofer / Windows Media Foundation MP3"
+
+msgid "High"
+msgstr "Aukštas"
+
+msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
+msgstr "Jei Easy Audio Converter jums naudinga ir norite paremti mano darbą, galite nupirkti man kavos.\n\nAr norite dabar atidaryti palaikymo puslapį?"
+
+msgid "Include subfolders when converting a folder"
+msgstr "Konvertuodami aplanką įtraukite poaplankius"
+
+msgid "LAME MP3"
+msgstr "LAME MP3"
+
+msgid "M4A (AAC)"
+msgstr "M4A (AAC)"
+
+msgid "MP2"
+msgstr "MP2"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "MP3 encoder:"
+msgstr "MP3 kodavimo įrenginys:"
+
+msgid "No conversion is in progress"
+msgstr "Jokia konversija nevykdoma"
+
+msgid "No files or folders are selected"
+msgstr "Nepasirinkta jokių failų ar aplankų"
+
+msgid "No supported audio files were found"
+msgstr "Nerasta jokių palaikomų garso failų"
+
+msgid "Ogg Vorbis"
+msgstr "Ogas Vorbis"
+
+msgid "Open Easy Audio Converter settings"
+msgstr "Atidarykite „Easy Audio Converter“ nustatymus"
+
+msgid "Open the author's support page"
+msgstr "Atidarykite autoriaus palaikymo puslapį"
+
+msgid "Opening the support page"
+msgstr "Palaikymo puslapio atidarymas"
+
+msgid "Opus"
+msgstr "Opusas"
+
+msgid "Preparing the conversion"
+msgstr "Konversijos paruošimas"
+
+msgid "Preserve the source folder structure in the destination"
+msgstr "Išsaugokite šaltinio aplanko struktūrą paskirties vietoje"
+
+msgid "Quality:"
+msgstr "Kokybė:"
+
+msgid "Quality: {quality}"
+msgstr "Kokybė: {quality}"
+
+msgid "Quickly choose the destination folder"
+msgstr "Greitai pasirinkite paskirties aplanką"
+
+msgid "Quickly convert selected files or folders"
+msgstr "Greitai konvertuokite pasirinktus failus ar aplankus"
+
+msgid "Report audio conversion status"
+msgstr "Pranešti apie garso konvertavimo būseną"
+
+msgid "Report conversion status"
+msgstr "Pranešti apie konversijos būseną"
+
+msgid "Save converted files next to the source files"
+msgstr "Išsaugokite konvertuotus failus šalia šaltinio failų"
+
+msgid "Settings..."
+msgstr "Nustatymai..."
+
+msgid "Some files could not be converted:\n\n{details}"
+msgstr "Kai kurių failų nepavyko konvertuoti:\n\n{details}"
+
+msgid "Standard"
+msgstr "Standartinis"
+
+msgid "Support Easy Audio Converter"
+msgstr "Palaikykite paprastą garso keitiklį"
+
+msgid "Support the author"
+msgstr "Palaikykite autorių"
+
+msgid "Target format:"
+msgstr "Tikslinis formatas:"
+
+msgid "Target format: {format}"
+msgstr "Tikslinis formatas: {format}"
+
+msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
+msgstr "Trūksta susieto FFmpeg komponento. Iš naujo įdiekite Easy Audio Converter."
+
+msgid "The conversion could not start:\n{error}"
+msgstr "Nepavyko pradėti konvertuoti:\n{error}"
+
+msgid "Unknown error"
+msgstr "Nežinoma klaida"
+
+msgid "Very high"
+msgstr "Labai aukštas"
+
+msgid "WAV"
+msgstr "WAV"
+
+msgid "WMA"
+msgstr "WMA"
+
+msgid "WavPack"
+msgstr "WavPack"
+
+msgid "excluding subfolders"
+msgstr "išskyrus poaplankius"
+
+msgid "including subfolders"
+msgstr "įskaitant poaplankius"
+
+msgid "{count} selected folders"
+msgstr "{count} pasirinktus aplankus"
