@@ -1,25 +1,25 @@
 # Easy Audio Converter translation.
 # Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.1.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:32+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: my\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.1.1\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 01:17+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: my\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1265
+#: src/globalPlugins/easyAudioConverter/__init__.py:1342
 msgid "...and {count} more errors"
 msgstr "... နှင့် {count} အမှားများ ပိုမိုဖြစ်ပေါ်ခြင်း"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "16 bit"
 msgstr "၁၆ ဘစ်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "24 bit"
 msgstr "၂၄ ဘစ်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "32 bit"
 msgstr "၃၂ ဘစ်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1083
+#: src/globalPlugins/easyAudioConverter/__init__.py:1159
 msgid "A conversion is already in progress"
 msgstr "ပြောင်းလဲခြင်းတစ်ခု လုပ်ဆောင်နေပြီဖြစ်သည်။"
 
@@ -47,7 +47,7 @@ msgstr "AMR ကြိုးဝိုင်း"
 msgid "AMR wideband"
 msgstr "AMR အကျယ်အဝန်း"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:825
+#: src/globalPlugins/easyAudioConverter/__init__.py:901
 msgid "Advanced codec settings..."
 msgstr "အဆင့်မြင့် codec ဆက်တင်များ..."
 
@@ -59,11 +59,11 @@ msgstr "အယ်လ်ဘမ်"
 msgid "Album artist"
 msgstr "အယ်လ်ဘမ်အနုပညာရှင်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:882
+#: src/globalPlugins/easyAudioConverter/__init__.py:958
 msgid "An update check is already in progress"
 msgstr "အပ်ဒိတ်စစ်ဆေးမှုတစ်ခု ရှိပြီးသားဖြစ်သည်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:974
+#: src/globalPlugins/easyAudioConverter/__init__.py:1050
 msgid "An update download is already in progress"
 msgstr "အပ်ဒိတ်ဒေါင်းလုပ်လုပ်နေပြီးသားဖြစ်သည်"
 
@@ -71,11 +71,11 @@ msgstr "အပ်ဒိတ်ဒေါင်းလုပ်လုပ်နေပ
 msgid "Artist"
 msgstr "အနုပညာရှင်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:399
+#: src/globalPlugins/easyAudioConverter/__init__.py:404
 msgid "Automatically check for add-on updates"
 msgstr "အပိုဆောင်းအပ်ဒိတ်များကို အလိုအလျောက် စစ်ဆေးပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:507
+#: src/globalPlugins/easyAudioConverter/__init__.py:514
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "kbps ဖြင့် bitrate (0 သည် အရည်အသွေး preset ကို အသုံးပြုသည်):"
 
@@ -83,19 +83,19 @@ msgstr "kbps ဖြင့် bitrate (0 သည် အရည်အသွေး pr
 msgid "Browse..."
 msgstr "လှန်ကြည့်..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:655 src/globalPlugins/easyAudioConverter/__init__.py:822
+#: src/globalPlugins/easyAudioConverter/__init__.py:802 src/globalPlugins/easyAudioConverter/__init__.py:718 src/globalPlugins/easyAudioConverter/__init__.py:898
 msgid "Cancel conversion"
 msgstr "ပြောင်းလဲခြင်းကို ပယ်ဖျက်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1424
+#: src/globalPlugins/easyAudioConverter/__init__.py:1501
 msgid "Cancel the current audio conversion"
 msgstr "လက်ရှိ အသံပြောင်းလဲခြင်းကို ပယ်ဖျက်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1432
+#: src/globalPlugins/easyAudioConverter/__init__.py:1509
 msgid "Canceling the conversion"
 msgstr "ပြောင်းလဲခြင်းအား ပယ်ဖျက်ခြင်း။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:737
+#: src/globalPlugins/easyAudioConverter/__init__.py:809
 msgid "Canceling..."
 msgstr "ပယ်ဖျက်နေပါတယ်..."
 
@@ -103,47 +103,47 @@ msgstr "ပယ်ဖျက်နေပါတယ်..."
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "ပံ့ပိုးမှုစာမျက်နှာကို ဖွင့်၍မရပါ။ ဤလိပ်စာကို ကိုယ်တိုင်ဖွင့်ပါ- {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1385
+#: src/globalPlugins/easyAudioConverter/__init__.py:1462
 msgid "Change the conversion quality"
 msgstr "ပြောင်းလဲခြင်းအရည်အသွေးကို ပြောင်းလဲပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1371
+#: src/globalPlugins/easyAudioConverter/__init__.py:1448
 msgid "Change the target audio format"
 msgstr "ပစ်မှတ်အသံဖော်မတ်ကို ပြောင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:520
+#: src/globalPlugins/easyAudioConverter/__init__.py:527
 msgid "Channels:"
 msgstr "ချန်နယ်များ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1494
+#: src/globalPlugins/easyAudioConverter/__init__.py:1571
 msgid "Check for Easy Audio Converter updates"
 msgstr "Easy Audio Converter အပ်ဒိတ်များကို စစ်ဆေးပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:826
+#: src/globalPlugins/easyAudioConverter/__init__.py:902
 msgid "Check for updates..."
 msgstr "အပ်ဒိတ်များကို စစ်ဆေးပါ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:885
+#: src/globalPlugins/easyAudioConverter/__init__.py:961
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Easy Audio Converter အပ်ဒိတ်များ စစ်ဆေးခြင်း"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1355
+#: src/globalPlugins/easyAudioConverter/__init__.py:1432
 msgid "Choose a folder to convert"
 msgstr "ပြောင်းရန် ဖိုင်တွဲတစ်ခုကို ရွေးပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:434 src/globalPlugins/easyAudioConverter/__init__.py:1406
+#: src/globalPlugins/easyAudioConverter/__init__.py:441 src/globalPlugins/easyAudioConverter/__init__.py:1483
 msgid "Choose the destination folder"
 msgstr "ဦးတည်ရာဖိုင်တွဲကို ရွေးပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:730
+#: src/globalPlugins/easyAudioConverter/__init__.py:799
 msgid "Close"
 msgstr "ပိတ်ပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:495
+#: src/globalPlugins/easyAudioConverter/__init__.py:502
 msgid "Codec profile to edit:"
 msgstr "တည်းဖြတ်ရန် Codec ပရိုဖိုင်:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Codec အထူးအဆင့် (-1 သည် preset ကို အသုံးပြုသည်):"
 
@@ -155,43 +155,43 @@ msgstr "မှတ်ချက်"
 msgid "Composer"
 msgstr "တေးရေးဆရာ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1294
+#: src/globalPlugins/easyAudioConverter/__init__.py:1371
 msgid "Confirm folder conversion"
 msgstr "ဖိုင်တွဲပြောင်းလဲခြင်းကို အတည်ပြုပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1238
+#: src/globalPlugins/easyAudioConverter/__init__.py:1315
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "ပြောင်းလဲမှုကို ပယ်ဖျက်လိုက်ပါပြီ။ {total} ဖိုင်များထဲမှ {done} ပြီးပါပြီ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1245
+#: src/globalPlugins/easyAudioConverter/__init__.py:1322
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "ပြောင်းလဲခြင်း ပြီးပါပြီ- {done} အောင်မြင်ခဲ့ပြီး၊ {failed} မအောင်မြင်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1291
+#: src/globalPlugins/easyAudioConverter/__init__.py:1368
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "{folder}၊ {scope} တွင် ပံ့ပိုးထားသော အသံဖိုင်အားလုံးကို ပြောင်းမလား။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1347
+#: src/globalPlugins/easyAudioConverter/__init__.py:1424
 msgid "Convert every supported audio file in the current folder"
 msgstr "လက်ရှိဖိုင်တွဲရှိ ပံ့ပိုးထားသော အသံဖိုင်တိုင်းကို ပြောင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:818
+#: src/globalPlugins/easyAudioConverter/__init__.py:894
 msgid "Convert selected files or folders"
 msgstr "ရွေးချယ်ထားသောဖိုင်များ သို့မဟုတ် ဖိုင်တွဲများကို ပြောင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:819
+#: src/globalPlugins/easyAudioConverter/__init__.py:895
 msgid "Convert the current folder"
 msgstr "လက်ရှိ folder ကိုပြောင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1119
+#: src/globalPlugins/easyAudioConverter/__init__.py:1196
 msgid "Converting {index} of {total}: {name}"
 msgstr "{index} ကို {total} မှ ပြောင်းလဲခြင်း - {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1468
+#: src/globalPlugins/easyAudioConverter/__init__.py:1545
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{total} ၏ {index} ကို ပြောင်းလဲခြင်း - {name}။ လက်ရှိဖိုင်အချိန် {processed}; ဖြတ်သွားသည် {elapsed}။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1479
+#: src/globalPlugins/easyAudioConverter/__init__.py:1556
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "{index} ကို {total} မှ ပြောင်းလဲခြင်း - {name}။ လက်ရှိဖိုင် {filePercent}%, စုစုပေါင်း {overallPercent}%, အသုံးပြုပြီးနောက် {elapsed}။"
 
@@ -207,27 +207,27 @@ msgstr "ရွေးချယ်ထားသော metadata ကွက်လပ�
 msgid "Copyright"
 msgstr "မူပိုင်ခွင့်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:914
+#: src/globalPlugins/easyAudioConverter/__init__.py:990
 msgid "Could not check for updates.\n\n{error}"
 msgstr "အပ်ဒိတ်များကို စစ်ဆေး၍ မရပါ။\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1068
+#: src/globalPlugins/easyAudioConverter/__init__.py:1144
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "NVDA add-on installer ကို ဖွင့်လို့မရပါ။ အပ်ဒိတ်ကို အောက်ပါအတိုင်း သိမ်းဆည်းထားသည်။\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:727
+#: src/globalPlugins/easyAudioConverter/__init__.py:797
 msgid "Current file progress: 100%"
 msgstr "လက်ရှိဖိုင်တိုးတက်မှု - ၁၀၀%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:643
+#: src/globalPlugins/easyAudioConverter/__init__.py:706
 msgid "Current file progress: waiting"
 msgstr "လက်ရှိဖိုင်တိုးတက်မှု - စောင့်ဆိုင်းနေသည်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:706
+#: src/globalPlugins/easyAudioConverter/__init__.py:776
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "လက်ရှိဖိုင်တိုးတက်မှု: {percent}% ({processed} ၏ {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:698
+#: src/globalPlugins/easyAudioConverter/__init__.py:768
 msgid "Current file time: {processed}"
 msgstr "လက်ရှိဖိုင်အချိန်: {processed}"
 
@@ -239,7 +239,7 @@ msgstr "ရက်စွဲ သို့မဟုတ် နှစ်"
 msgid "Destination folder:"
 msgstr "ဦးတည်ရာဖိုင်တွဲ-"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1420
+#: src/globalPlugins/easyAudioConverter/__init__.py:1497
 msgid "Destination folder: {folder}"
 msgstr "ဦးတည်ရာဖိုင်တွဲ- {folder}"
 
@@ -251,19 +251,19 @@ msgstr "ဒစ်စ်နံပါတ်"
 msgid "Do not copy metadata"
 msgstr "မီတာဒေတာ မကူးယူပါနှင့်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:954
+#: src/globalPlugins/easyAudioConverter/__init__.py:1030
 msgid "Download and install"
 msgstr "ဒေါင်းလုပ်လုပ်ပြီး တပ်ဆင်ပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1032
+#: src/globalPlugins/easyAudioConverter/__init__.py:1108
 msgid "Downloaded {done:.1f} MB"
 msgstr "ဒေါင်းလုပ်လုပ်ပြီး {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+#: src/globalPlugins/easyAudioConverter/__init__.py:1101
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "ဒေါင်းလုပ်လုပ်ပြီး {done:.1f} MB မှ {total:.1f}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:984
+#: src/globalPlugins/easyAudioConverter/__init__.py:1060
 msgid "Downloading Easy Audio Converter update"
 msgstr "Easy Audio Converter အပ်ဒိတ်ကို ဒေါင်းလုပ်လုပ်ခြင်း"
 
@@ -271,35 +271,35 @@ msgstr "Easy Audio Converter အပ်ဒိတ်ကို ဒေါင်း�
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:749 src/globalPlugins/easyAudioConverter/__init__.py:316 src/globalPlugins/easyAudioConverter/__init__.py:1226 src/globalPlugins/easyAudioConverter/__init__.py:840 src/globalPlugins/easyAudioConverter/__init__.py:1089 src/globalPlugins/easyAudioConverter/__init__.py:1269
+#: src/globalPlugins/easyAudioConverter/__init__.py:825 src/globalPlugins/easyAudioConverter/__init__.py:316 src/globalPlugins/easyAudioConverter/__init__.py:1303 src/globalPlugins/easyAudioConverter/__init__.py:916 src/globalPlugins/easyAudioConverter/__init__.py:1165 src/globalPlugins/easyAudioConverter/__init__.py:1346
 msgid "Easy Audio Converter"
 msgstr "လွယ်ကူသော Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:480
+#: src/globalPlugins/easyAudioConverter/__init__.py:487
 msgid "Easy Audio Converter - Advanced"
 msgstr "လွယ်ကူသော အသံပြောင်းလဲသူ - အဆင့်မြင့်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:925
+#: src/globalPlugins/easyAudioConverter/__init__.py:1001
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Easy Audio Converter သည် နောက်ဆုံးပေါ် ဖြစ်ပါသည်။ တပ်ဆင်ထားသော ဗားရှင်း: {version}။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:634
+#: src/globalPlugins/easyAudioConverter/__init__.py:695
 msgid "Easy Audio Converter progress"
 msgstr "လွယ်ကူသော အသံပြောင်းလဲမှု တိုးတက်မှု"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1058 src/globalPlugins/easyAudioConverter/__init__.py:917 src/globalPlugins/easyAudioConverter/__init__.py:928 src/globalPlugins/easyAudioConverter/__init__.py:1071
+#: src/globalPlugins/easyAudioConverter/__init__.py:1134 src/globalPlugins/easyAudioConverter/__init__.py:993 src/globalPlugins/easyAudioConverter/__init__.py:1004 src/globalPlugins/easyAudioConverter/__init__.py:1147
 msgid "Easy Audio Converter update"
 msgstr "လွယ်ကူသော အသံပြောင်းလဲမှု အပ်ဒိတ်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:965 src/globalPlugins/easyAudioConverter/__init__.py:950
+#: src/globalPlugins/easyAudioConverter/__init__.py:1041 src/globalPlugins/easyAudioConverter/__init__.py:1026
 msgid "Easy Audio Converter update available"
 msgstr "Easy Audio Converter အပ်ဒိတ် ရရှိနိုင်ပါသည်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:937
+#: src/globalPlugins/easyAudioConverter/__init__.py:1013
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Easy Audio Converter {newVersion} ရရှိနိုင်ပါသည်။ သင့်မှာ ဗားရှင်း {currentVersion} ရှိပါတယ်။\n\nအပ်ဒိတ်ကို ယခုဒေါင်းလုပ်လုပ်ပြီး တပ်ဆင်လိုပါသလား?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:961
+#: src/globalPlugins/easyAudioConverter/__init__.py:1037
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Easy Audio Converter {version} ရရှိနိုင်သော်လည်း၊ ထုတ်ဝေမှုတွင် တိုက်ရိုက် ထည့်သွင်းနိုင်သော ပက်ကေ့ချ် မပါဝင်ပါ။ ထုတ်ပြန်စာမျက်နှာကို ဖွင့်မလား?"
 
@@ -307,15 +307,15 @@ msgstr "Easy Audio Converter {version} ရရှိနိုင်သော်�
 msgid "Economical"
 msgstr "စျေးသက်သာသည်။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:651
+#: src/globalPlugins/easyAudioConverter/__init__.py:714
 msgid "Elapsed time: 0:00"
 msgstr "အချိန်ကုန်ဆုံးချိန် - 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:718
+#: src/globalPlugins/easyAudioConverter/__init__.py:788
 msgid "Elapsed time: {elapsed}"
 msgstr "ကုန်ဆုံးချိန်: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:503
+#: src/globalPlugins/easyAudioConverter/__init__.py:510
 msgid "Enable advanced overrides for this codec"
 msgstr "ဤ codec အတွက် အဆင့်မြင့် override များကို ဖွင့်ပါ"
 
@@ -323,31 +323,31 @@ msgstr "ဤ codec အတွက် အဆင့်မြင့် override မျ
 msgid "FLAC"
 msgstr "ဖလက်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:689
+#: src/globalPlugins/easyAudioConverter/__init__.py:759
 msgid "File {index} of {total}: {name}"
 msgstr "ဖိုင် {index} ၏ {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:595
+#: src/globalPlugins/easyAudioConverter/__init__.py:602
 msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
 msgstr "FLAC အတွက် အဆင့် 0 က အမြန်ဆုံးဖြစ်ပြီး အဆင့် 12 က အားကောင်းဆုံး compression ပေးတယ်။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:594
+#: src/globalPlugins/easyAudioConverter/__init__.py:601
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3 အတွက် အဆင့် 0 သည် အနှေးဆုံးနှင့် အယ်လဂိုရီသမ်အရည်အသွေးအမြင့်ဆုံးဖြစ်သည်။ ၉ က အမြန်ဆုံးပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:596
+#: src/globalPlugins/easyAudioConverter/__init__.py:603
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Ogg Vorbis အတွက် အဆင့် 0 မှ 10 အထိသည် bitrate အရည်အသွေးကို တိုးမြှင့်ရန် ရွေးချယ်သည်။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:597
+#: src/globalPlugins/easyAudioConverter/__init__.py:604
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Opus အတွက် အဆင့် 0 မှ 10 အထိသည် encoder ၏ ရှုပ်ထွေးမှု တိုးလာမှုကို ရွေးချယ်သည်။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:598
+#: src/globalPlugins/easyAudioConverter/__init__.py:605
 msgid "For WavPack, levels 0 to 8 select increasing compression effort."
 msgstr "WavPack အတွက် အဆင့် 0 မှ 8 အထိ ဖိအားတိုးမြှင့်မှုကို ရွေးချယ်သည်။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1110
+#: src/globalPlugins/easyAudioConverter/__init__.py:1187
 msgid "Found {count} files to convert"
 msgstr "ပြောင်းရန် {count} ဖိုင်များကို တွေ့ရှိခဲ့သည်။"
 
@@ -359,7 +359,7 @@ msgstr "Fraunhofer / Windows Media Foundation MP3"
 msgid "Genre"
 msgstr "အမျိုးအစား"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:656
+#: src/globalPlugins/easyAudioConverter/__init__.py:720
 msgid "Hide"
 msgstr "ဖုံးကွယ်ပါ"
 
@@ -375,11 +375,11 @@ msgstr "Easy Audio Converter သည် သင့်အတွက် အသုံ�
 msgid "Include subfolders when converting a folder"
 msgstr "ဖိုင်တွဲတစ်ခုကို ပြောင်းသည့်အခါ ဖိုင်တွဲခွဲများ ထည့်သွင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Keep the source channel count"
 msgstr "မူလချန်နယ်အရေအတွက်ကို ထိန်းသိမ်းပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:523
 msgid "Keep the source sample rate"
 msgstr "မူရင်းနမူနာနှုန်းကို ထိန်းသိမ်းပါ"
 
@@ -391,7 +391,7 @@ msgstr "အရမ်းမိုက်တဲ့ MP3"
 msgid "Language"
 msgstr "ဘာသာစကား"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:954
+#: src/globalPlugins/easyAudioConverter/__init__.py:1030
 msgid "Later"
 msgstr "နောက်ပိုင်း"
 
@@ -419,27 +419,27 @@ msgstr "MP3 ကုဒ်နံပါတ်-"
 msgid "Metadata export:"
 msgstr "မီတာဒေတာ ထုတ်ပေးခြင်း:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:390
+#: src/globalPlugins/easyAudioConverter/__init__.py:392
 msgid "Metadata fields to copy:"
 msgstr "မိတ္တူယူရန် မီတာဒေတာ အကွက်များ -"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Mono"
 msgstr "မိုနို"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1429 src/globalPlugins/easyAudioConverter/__init__.py:1452
+#: src/globalPlugins/easyAudioConverter/__init__.py:1506 src/globalPlugins/easyAudioConverter/__init__.py:1529
 msgid "No conversion is in progress"
 msgstr "ပြောင်းလဲခြင်း မလုပ်ဆောင်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1441
+#: src/globalPlugins/easyAudioConverter/__init__.py:1518
 msgid "No conversion progress is available"
 msgstr "ပြောင်းလဲမှု တိုးတက်မှု မရှိပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1332
+#: src/globalPlugins/easyAudioConverter/__init__.py:1409
 msgid "No files or folders are selected"
 msgstr "ဖိုင်များ သို့မဟုတ် ဖိုင်တွဲများကို ရွေးချယ်ထားခြင်းမရှိပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1243
+#: src/globalPlugins/easyAudioConverter/__init__.py:1320
 msgid "No supported audio files were found"
 msgstr "ပံ့ပိုးပေးထားသည့် အသံဖိုင်များကို ရှာမတွေ့ပါ။"
 
@@ -447,15 +447,15 @@ msgstr "ပံ့ပိုးပေးထားသည့် အသံဖို�
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1302
+#: src/globalPlugins/easyAudioConverter/__init__.py:1379
 msgid "Open Easy Audio Converter settings"
 msgstr "Easy Audio Converter ဆက်တင်များကိုဖွင့်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1314
+#: src/globalPlugins/easyAudioConverter/__init__.py:1391
 msgid "Open advanced codec settings"
 msgstr "အဆင့်မြင့် codec ဆက်တင်များကို ဖွင့်ပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1502
+#: src/globalPlugins/easyAudioConverter/__init__.py:1579
 msgid "Open the author's support page"
 msgstr "စာရေးသူ၏ ပံ့ပိုးကူညီမှု စာမျက်နှာကို ဖွင့်ပါ။"
 
@@ -467,23 +467,23 @@ msgstr "ပံ့ပိုးမှုစာမျက်နှာကိုဖွ
 msgid "Opus"
 msgstr "အခွေ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:728
+#: src/globalPlugins/easyAudioConverter/__init__.py:798
 msgid "Overall progress: 100%"
 msgstr "စုစုပေါင်း တိုးတက်မှု - ၁၀၀%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:647
+#: src/globalPlugins/easyAudioConverter/__init__.py:710
 msgid "Overall progress: waiting"
 msgstr "စုစုပေါင်း တိုးတက်မှု - စောင့်ဆိုင်းနေသည်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:715
+#: src/globalPlugins/easyAudioConverter/__init__.py:785
 msgid "Overall progress: {percent}%"
 msgstr "စုစုပေါင်း တိုးတက်မှု: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "PCM bit depth:"
 msgstr "PCM bit အနက်:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1106 src/globalPlugins/easyAudioConverter/__init__.py:641 src/globalPlugins/easyAudioConverter/__init__.py:1455
+#: src/globalPlugins/easyAudioConverter/__init__.py:1183 src/globalPlugins/easyAudioConverter/__init__.py:704 src/globalPlugins/easyAudioConverter/__init__.py:1532
 msgid "Preparing the conversion"
 msgstr "ပြောင်းလဲခြင်းပြင်ဆင်ခြင်း။"
 
@@ -499,31 +499,31 @@ msgstr "ထုတ်ဝေသူ"
 msgid "Quality:"
 msgstr "အရည်အသွေး-"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1395
+#: src/globalPlugins/easyAudioConverter/__init__.py:1472
 msgid "Quality: {quality}"
 msgstr "အရည်အသွေး- {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1399
+#: src/globalPlugins/easyAudioConverter/__init__.py:1476
 msgid "Quickly choose the destination folder"
 msgstr "ဦးတည်ရာဖိုင်တွဲကို အမြန်ရွေးချယ်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1326
+#: src/globalPlugins/easyAudioConverter/__init__.py:1403
 msgid "Quickly convert selected files or folders"
 msgstr "ရွေးချယ်ထားသောဖိုင်များ သို့မဟုတ် ဖိုင်တွဲများကို အမြန်ပြောင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:946
+#: src/globalPlugins/easyAudioConverter/__init__.py:1022
 msgid "Release notes:"
 msgstr "ထုတ်ဝေမှုမှတ်စုများ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1447
+#: src/globalPlugins/easyAudioConverter/__init__.py:1524
 msgid "Report audio conversion status"
 msgstr "အသံပြောင်းလဲခြင်း အခြေအနေကို သတင်းပို့ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:821
+#: src/globalPlugins/easyAudioConverter/__init__.py:719 src/globalPlugins/easyAudioConverter/__init__.py:897
 msgid "Report conversion status"
 msgstr "ပြောင်းလဲခြင်းအခြေအနေကို သတင်းပို့ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:514
+#: src/globalPlugins/easyAudioConverter/__init__.py:521
 msgid "Sample rate:"
 msgstr "နမူနာနှုန်း:"
 
@@ -531,19 +531,19 @@ msgstr "နမူနာနှုန်း:"
 msgid "Save converted files next to the source files"
 msgstr "အရင်းအမြစ်ဖိုင်များဘေးတွင် ပြောင်းထားသောဖိုင်များကို သိမ်းဆည်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:824
+#: src/globalPlugins/easyAudioConverter/__init__.py:900
 msgid "Settings..."
 msgstr "ဆက်တင်များ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:820
+#: src/globalPlugins/easyAudioConverter/__init__.py:896
 msgid "Show conversion progress"
 msgstr "ပြောင်းလဲမှု တိုးတက်မှုကို ပြပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1436
+#: src/globalPlugins/easyAudioConverter/__init__.py:1513
 msgid "Show the audio conversion progress window"
 msgstr "အသံပြောင်းလဲမှု တိုးတက်မှု ပြတင်းပေါက်ကို ပြပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+#: src/globalPlugins/easyAudioConverter/__init__.py:1345
 msgid "Some files could not be converted:\n\n{details}"
 msgstr "အချို့ဖိုင်များကို ပြောင်း၍မရပါ\n\n{details}"
 
@@ -551,11 +551,11 @@ msgstr "အချို့ဖိုင်များကို ပြောင�
 msgid "Standard"
 msgstr "စံ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:985
+#: src/globalPlugins/easyAudioConverter/__init__.py:1061
 msgid "Starting the download..."
 msgstr "ဒေါင်းလုဒ်ကို စတင်နေပါသည်..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Stereo"
 msgstr "စတီရီယို"
 
@@ -563,7 +563,7 @@ msgstr "စတီရီယို"
 msgid "Support Easy Audio Converter"
 msgstr "လွယ်ကူသော Audio Converter ကို ပံ့ပိုးပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:407 src/globalPlugins/easyAudioConverter/__init__.py:827
+#: src/globalPlugins/easyAudioConverter/__init__.py:412 src/globalPlugins/easyAudioConverter/__init__.py:903
 msgid "Support the author"
 msgstr "စာရေးသူကိုထောက်ခံပါ။"
 
@@ -571,31 +571,31 @@ msgstr "စာရေးသူကိုထောက်ခံပါ။"
 msgid "Target format:"
 msgstr "ပစ်မှတ်ပုံစံ-"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1381
+#: src/globalPlugins/easyAudioConverter/__init__.py:1458
 msgid "Target format: {format}"
 msgstr "ပစ်မှတ်ဖော်မတ်- {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1088
+#: src/globalPlugins/easyAudioConverter/__init__.py:1164
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "စုစည်းထားသော FFmpeg အစိတ်အပိုင်း ပျောက်ဆုံးနေပါသည်။ Easy Audio Converter ကို ပြန်လည်ထည့်သွင်းပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:603
+#: src/globalPlugins/easyAudioConverter/__init__.py:610
 msgid "The codec-specific level is not used by this format."
 msgstr "codec အထူးအဆင့်ကို ဤဖော်မတ်တွင် မသုံးပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1221
+#: src/globalPlugins/easyAudioConverter/__init__.py:1298
 msgid "The conversion could not start"
 msgstr "ပြောင်းလဲမှုကို စတင်၍ မရနိုင်ပါ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1225
+#: src/globalPlugins/easyAudioConverter/__init__.py:1302
 msgid "The conversion could not start:\n{error}"
 msgstr "ပြောင်းလဲခြင်း မစတင်နိုင်ပါ-\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1055
+#: src/globalPlugins/easyAudioConverter/__init__.py:1131
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "အပ်ဒိတ်ကို ဒေါင်းလုပ်လုပ်၍ မရနိုင်၊ အတည်ပြု၍ မရပါ။\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1063
+#: src/globalPlugins/easyAudioConverter/__init__.py:1139
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "အပ်ဒိတ် ပြင်ဆင်ပြီးပါပြီ။ NVDA add-on installer ကို ဖွင့်နေပါသည်။"
 
@@ -607,15 +607,15 @@ msgstr "ခေါင်းစဉ်"
 msgid "Track number"
 msgstr "လမ်းကြောင်းနံပါတ်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1056 src/globalPlugins/easyAudioConverter/__init__.py:915
+#: src/globalPlugins/easyAudioConverter/__init__.py:1338 src/globalPlugins/easyAudioConverter/__init__.py:1132 src/globalPlugins/easyAudioConverter/__init__.py:991
 msgid "Unknown error"
 msgstr "အမည်မသိ အမှား"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1051
+#: src/globalPlugins/easyAudioConverter/__init__.py:1127
 msgid "Update download canceled"
 msgstr "အပ်ဒိတ်ဒေါင်းလုဒ် ပယ်ဖျက်လိုက်သည်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "Use the quality preset"
 msgstr "အရည်အသွေး ကြိုတင်သတ်မှတ်ချက်ကို အသုံးပြုပါ"
 
@@ -635,14 +635,14 @@ msgstr "WMA"
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1288
+#: src/globalPlugins/easyAudioConverter/__init__.py:1365
 msgid "excluding subfolders"
 msgstr "ဖိုင်တွဲခွဲများ မပါဝင်ပါ။"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1286
+#: src/globalPlugins/easyAudioConverter/__init__.py:1363
 msgid "including subfolders"
 msgstr "ဖိုင်တွဲခွဲများ အပါအဝင်"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1339
+#: src/globalPlugins/easyAudioConverter/__init__.py:1416
 msgid "{count} selected folders"
 msgstr "{count} ရွေးချယ်ထားသော ဖိုင်တွဲများ"

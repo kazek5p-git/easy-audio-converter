@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.1
+
+- Replaced the metadata checklist with individually accessible check boxes
+  whose checked states are spoken correctly by NVDA.
+- Prevented visual progress bars from flooding speech with alternating
+  percentages during batch conversion.
+- Added a dedicated “Report conversion status” button to the progress window.
+- Kept spoken status synchronized with the newest worker progress snapshot.
+- Improved focus when opening, canceling, and completing a conversion.
+- Corrected the Polish completion summary and validated the complete live UI
+  with NVDA Speech Viewer.
+
 ## 1.1.0
 
 - Added an accessible modeless progress window with per-file and overall

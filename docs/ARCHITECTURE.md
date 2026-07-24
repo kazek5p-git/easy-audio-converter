@@ -21,7 +21,8 @@
 3. For each file, FFmpeg is queried for duration and, when needed, metadata.
 4. A collision-free output path is reserved.
 5. FFmpeg writes key/value progress to `pipe:1`; stderr is drained in parallel.
-6. NVDA receives throttled progress through `wx.CallAfter`.
+6. The worker stores the newest progress snapshot and updates the visual UI
+   through `wx.CallAfter`.
 7. Success is accepted only when FFmpeg exits with zero and creates a nonempty
    output. Failed or canceled partial outputs are removed.
 

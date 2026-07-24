@@ -64,7 +64,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.1.0"
+ADDON_VERSION = "1.1.1"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 CONFIG_SPEC = {
@@ -385,14 +385,19 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 		self.metadata_mode.SetSelection(METADATA_MODE_KEYS.index(settings.metadata_mode))
 
 		metadata_field_labels = _metadata_field_labels()
-		self.metadata_fields = helper.addLabeledControl(
-			# Translators: Label for the checkable list of metadata fields.
+		self.metadata_fields_sizer = wx.StaticBoxSizer(
+			wx.VERTICAL,
+			self,
+			# Translators: Label for the group of metadata field check boxes.
 			_("Metadata fields to copy:"),
-			wx.CheckListBox,
-			choices=[metadata_field_labels[key] for key in METADATA_FIELD_KEYS],
 		)
-		for index, field_name in enumerate(METADATA_FIELD_KEYS):
-			self.metadata_fields.Check(index, field_name in settings.metadata_fields)
+		self.metadata_fields = []
+		for field_name in METADATA_FIELD_KEYS:
+			checkbox = wx.CheckBox(self, label=metadata_field_labels[field_name])
+			checkbox.SetValue(field_name in settings.metadata_fields)
+			self.metadata_fields_sizer.Add(checkbox, 0, wx.BOTTOM, 3)
+			self.metadata_fields.append(checkbox)
+		helper.addItem(self.metadata_fields_sizer)
 
 		self.auto_check_updates = helper.addItem(
 			# Translators: Automatically query GitHub for a newer add-on release.
@@ -424,7 +429,9 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 		copy_selected_metadata = (
 			METADATA_MODE_KEYS[self.metadata_mode.GetSelection()] == "selected"
 		)
-		self.metadata_fields.Enable(copy_selected_metadata)
+		self.metadata_fields_sizer.GetStaticBox().Enable(copy_selected_metadata)
+		for checkbox in self.metadata_fields:
+			checkbox.Enable(copy_selected_metadata)
 
 	def _on_browse(self, event):
 		initial_path = self.output_folder.GetValue().strip() or _default_output_folder()
@@ -457,8 +464,8 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 		conf["metadataMode"] = METADATA_MODE_KEYS[self.metadata_mode.GetSelection()]
 		conf["metadataFields"] = [
 			field_name
-			for index, field_name in enumerate(METADATA_FIELD_KEYS)
-			if self.metadata_fields.IsChecked(index)
+			for field_name, checkbox in zip(METADATA_FIELD_KEYS, self.metadata_fields)
+			if checkbox.IsChecked()
 		]
 		conf["autoCheckUpdates"] = self.auto_check_updates.IsChecked()
 		config.conf.save()
@@ -625,36 +632,94 @@ def _format_elapsed(seconds: float | None) -> str:
 	return f"{minutes:d}:{seconds:02d}"
 
 
+class _VisualProgressBar(getattr(wx, "Panel", object)):
+	"""Draw a progress bar without exposing noisy native progress events."""
+
+	def __init__(self, parent, value_range: int = 1000):
+		super().__init__(parent, style=getattr(wx, "BORDER_SIMPLE", 0))
+		self._range = max(1, int(value_range))
+		self._value = 0
+		self.SetMinSize((-1, 14))
+		if hasattr(self, "DisableFocusFromKeyboard"):
+			self.DisableFocusFromKeyboard()
+		self.Bind(wx.EVT_PAINT, self._on_paint)
+		self.Bind(wx.EVT_SIZE, self._on_size)
+
+	def AcceptsFocus(self) -> bool:
+		return False
+
+	def AcceptsFocusFromKeyboard(self) -> bool:
+		return False
+
+	def SetValue(self, value: int) -> None:
+		value = max(0, min(self._range, int(value)))
+		if value != self._value:
+			self._value = value
+			self.Refresh(False)
+
+	def GetValue(self) -> int:
+		return self._value
+
+	def Pulse(self) -> None:
+		self.SetValue((self._value + max(1, self._range // 20)) % self._range)
+
+	def _on_size(self, event) -> None:
+		self.Refresh(False)
+		event.Skip()
+
+	def _on_paint(self, event) -> None:
+		dc = wx.PaintDC(self)
+		width, height = self.GetClientSize()
+		background = wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOW)
+		foreground = wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT)
+		dc.SetBackground(wx.Brush(background))
+		dc.Clear()
+		completed_width = int(width * self._value / self._range)
+		if completed_width > 0:
+			dc.SetPen(wx.Pen(foreground))
+			dc.SetBrush(wx.Brush(foreground))
+			dc.DrawRectangle(0, 0, completed_width, height)
+
+
 class ConversionProgressDialog(wx.Dialog):
 	"""Accessible modeless progress window for the active conversion job."""
 
-	def __init__(self, parent, on_cancel: Callable[[], None]):
+	def __init__(
+		self,
+		parent,
+		on_cancel: Callable[[], None],
+		on_report: Callable[[], None],
+	):
 		super().__init__(
 			parent,
 			title=_("Easy Audio Converter progress"),
 			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
 		)
 		self._on_cancel_callback = on_cancel
+		self._on_report_callback = on_report
 		self._running = True
+		self._cancel_requested = False
 		panel = wx.Panel(self)
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		self.current_file = wx.StaticText(panel, label=_("Preparing the conversion"))
 		sizer.Add(self.current_file, 0, wx.ALL | wx.EXPAND, 8)
 		self.file_status = wx.StaticText(panel, label=_("Current file progress: waiting"))
 		sizer.Add(self.file_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
-		self.file_gauge = wx.Gauge(panel, range=1000)
+		self.file_gauge = _VisualProgressBar(panel, value_range=1000)
 		sizer.Add(self.file_gauge, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 		self.overall_status = wx.StaticText(panel, label=_("Overall progress: waiting"))
 		sizer.Add(self.overall_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
-		self.overall_gauge = wx.Gauge(panel, range=1000)
+		self.overall_gauge = _VisualProgressBar(panel, value_range=1000)
 		sizer.Add(self.overall_gauge, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 		self.elapsed_status = wx.StaticText(panel, label=_("Elapsed time: 0:00"))
 		sizer.Add(self.elapsed_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
 		button_sizer = wx.BoxSizer(wx.HORIZONTAL)
 		self.cancel_button = wx.Button(panel, label=_("Cancel conversion"))
+		self.report_button = wx.Button(panel, label=_("Report conversion status"))
 		self.hide_button = wx.Button(panel, label=_("Hide"))
 		button_sizer.Add(self.cancel_button, 0, wx.RIGHT, 8)
+		button_sizer.Add(self.report_button, 0, wx.RIGHT, 8)
 		button_sizer.Add(self.hide_button, 0)
 		sizer.Add(button_sizer, 0, wx.ALL | wx.ALIGN_RIGHT, 8)
 		panel.SetSizer(sizer)
@@ -664,6 +729,7 @@ class ConversionProgressDialog(wx.Dialog):
 		self.SetMinSize((560, self.GetSize().height))
 		self.CentreOnParent()
 		self.cancel_button.Bind(wx.EVT_BUTTON, self._on_cancel)
+		self.report_button.Bind(wx.EVT_BUTTON, self._on_report)
 		self.hide_button.Bind(wx.EVT_BUTTON, self._on_hide)
 		self.Bind(wx.EVT_CLOSE, self._on_close)
 
@@ -671,6 +737,10 @@ class ConversionProgressDialog(wx.Dialog):
 		if not self.IsShown():
 			self.Show()
 		self.Raise()
+		if self._running:
+			self.cancel_button.SetFocus()
+		else:
+			self.hide_button.SetFocus()
 
 	def update_progress(
 		self,
@@ -726,16 +796,22 @@ class ConversionProgressDialog(wx.Dialog):
 			self.overall_gauge.SetValue(1000)
 			self.file_status.SetLabel(_("Current file progress: 100%"))
 			self.overall_status.SetLabel(_("Overall progress: 100%"))
-		self.cancel_button.Disable()
 		self.hide_button.SetLabel(_("Close"))
 		if self.IsShown():
 			self.hide_button.SetFocus()
+		self.cancel_button.SetLabel(_("Cancel conversion"))
+		self.cancel_button.Disable()
+		self.report_button.Disable()
 
 	def _on_cancel(self, event):
-		if self._running:
-			self.cancel_button.Disable()
+		if self._running and not self._cancel_requested:
+			self._cancel_requested = True
 			self.cancel_button.SetLabel(_("Canceling..."))
 			self._on_cancel_callback()
+
+	def _on_report(self, event):
+		if self._running:
+			self._on_report_callback()
 
 	def _on_hide(self, event):
 		self.Hide()
@@ -1101,6 +1177,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._progress_dialog = ConversionProgressDialog(
 			gui.mainFrame,
 			lambda: self.script_cancelConversion(None),
+			lambda: self.script_reportStatus(None),
 		)
 		self._progress_dialog.show_window()
 		ui.message(_("Preparing the conversion"))
@@ -1133,6 +1210,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			duration: float | None,
 		) -> None:
 			elapsed = max(0.0, time.monotonic() - self._job_started_at)
+			self._progress = (
+				index,
+				total,
+				source_name,
+				file_fraction,
+				overall_fraction,
+				processed_seconds,
+				duration,
+				elapsed,
+			)
 			wx.CallAfter(
 				self._set_progress,
 				converter,
@@ -1186,16 +1273,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	) -> None:
 		if self._terminated or converter is not self._converter:
 			return
-		self._progress = (
-			index,
-			total,
-			source_name,
-			file_fraction,
-			overall_fraction,
-			processed_seconds,
-			duration,
-			elapsed_seconds,
-		)
 		if self._progress_dialog is not None:
 			self._progress_dialog.update_progress(
 				index,

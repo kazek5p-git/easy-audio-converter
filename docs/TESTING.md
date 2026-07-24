@@ -38,6 +38,24 @@ the FFmpeg process stops and its partial result is removed.
 The file count can be raised to 5000 when sufficient time and disk space are
 available.
 
+## Interactive NVDA speech validation
+
+Automated tests do not replace testing the actual wx interface with NVDA:
+
+1. Open NVDA Speech Viewer.
+2. Open both Easy Audio Converter settings categories and traverse every
+   enabled control with Tab.
+3. Select “Copy selected metadata fields” and verify that every field is
+   announced as a check box with its checked state.
+4. Start a multi-file job and verify that visual progress does not flood
+   speech with automatic percentages.
+5. Test the report, hide, reopen, cancel, and close buttons in the progress
+   window.
+6. Test successful, empty-input, corrupt-input, and Explorer-selection jobs.
+7. Open and dismiss the destination selectors, folder confirmation, update
+   dialog, and support page.
+8. Review the NVDA log for add-on import, callback, and traceback errors.
+
 ## Translation validation
 
 ```powershell

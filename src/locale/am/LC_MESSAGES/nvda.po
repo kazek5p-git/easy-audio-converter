@@ -1,25 +1,25 @@
 # Easy Audio Converter translation.
 # Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.1.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:32+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: am\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.1.1\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 01:17+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: am\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1265
+#: src/globalPlugins/easyAudioConverter/__init__.py:1342
 msgid "...and {count} more errors"
 msgstr "... እና {count} ተጨማሪ ስህተቶች"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "16 bit"
 msgstr "16 ቢት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "24 bit"
 msgstr "24 ቢት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "32 bit"
 msgstr "32 ቢት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1083
+#: src/globalPlugins/easyAudioConverter/__init__.py:1159
 msgid "A conversion is already in progress"
 msgstr "ልወጣ አስቀድሞ በሂደት ላይ ነው"
 
@@ -47,7 +47,7 @@ msgstr "AMR ጠባብ ባንድ"
 msgid "AMR wideband"
 msgstr "AMR ሰፊ ባንድ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:825
+#: src/globalPlugins/easyAudioConverter/__init__.py:901
 msgid "Advanced codec settings..."
 msgstr "የላቁ የኮዴክ ቅንብሮች..."
 
@@ -59,11 +59,11 @@ msgstr "አልበም"
 msgid "Album artist"
 msgstr "የአልበም አርቲስት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:882
+#: src/globalPlugins/easyAudioConverter/__init__.py:958
 msgid "An update check is already in progress"
 msgstr "የዝማኔ ፍተሻ አስቀድሞ በሂደት ላይ ነው።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:974
+#: src/globalPlugins/easyAudioConverter/__init__.py:1050
 msgid "An update download is already in progress"
 msgstr "የዝማኔ ማውረድ አስቀድሞ በሂደት ላይ ነው።"
 
@@ -71,11 +71,11 @@ msgstr "የዝማኔ ማውረድ አስቀድሞ በሂደት ላይ ነው።"
 msgid "Artist"
 msgstr "አርቲስት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:399
+#: src/globalPlugins/easyAudioConverter/__init__.py:404
 msgid "Automatically check for add-on updates"
 msgstr "ተጨማሪ ዝመናዎችን በራስ-ሰር ያረጋግጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:507
+#: src/globalPlugins/easyAudioConverter/__init__.py:514
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "ቢትሬት በ kbps (0 የጥራት ቅድመ-ቅምጥን ይጠቀማል)"
 
@@ -83,19 +83,19 @@ msgstr "ቢትሬት በ kbps (0 የጥራት ቅድመ-ቅምጥን ይጠቀ�
 msgid "Browse..."
 msgstr "ያስሱ ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:655 src/globalPlugins/easyAudioConverter/__init__.py:822
+#: src/globalPlugins/easyAudioConverter/__init__.py:802 src/globalPlugins/easyAudioConverter/__init__.py:718 src/globalPlugins/easyAudioConverter/__init__.py:898
 msgid "Cancel conversion"
 msgstr "ልወጣ ሰርዝ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1424
+#: src/globalPlugins/easyAudioConverter/__init__.py:1501
 msgid "Cancel the current audio conversion"
 msgstr "የአሁኑን የድምጽ ልወጣ ሰርዝ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1432
+#: src/globalPlugins/easyAudioConverter/__init__.py:1509
 msgid "Canceling the conversion"
 msgstr "ልወጣውን በመሰረዝ ላይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:737
+#: src/globalPlugins/easyAudioConverter/__init__.py:809
 msgid "Canceling..."
 msgstr "በመሰረዝ ላይ..."
 
@@ -103,47 +103,47 @@ msgstr "በመሰረዝ ላይ..."
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "የድጋፍ ገጹን መክፈት አልተቻለም። ይህንን አድራሻ እራስዎ ይክፈቱ {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1385
+#: src/globalPlugins/easyAudioConverter/__init__.py:1462
 msgid "Change the conversion quality"
 msgstr "የልወጣ ጥራት ይቀይሩ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1371
+#: src/globalPlugins/easyAudioConverter/__init__.py:1448
 msgid "Change the target audio format"
 msgstr "የታለመውን የድምጽ ቅርጸት ይቀይሩ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:520
+#: src/globalPlugins/easyAudioConverter/__init__.py:527
 msgid "Channels:"
 msgstr "ቻናሎች"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1494
+#: src/globalPlugins/easyAudioConverter/__init__.py:1571
 msgid "Check for Easy Audio Converter updates"
 msgstr "ቀላል የድምጽ መለወጫ ዝመናዎችን ያረጋግጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:826
+#: src/globalPlugins/easyAudioConverter/__init__.py:902
 msgid "Check for updates..."
 msgstr "ዝማኔዎችን ይፈትሹ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:885
+#: src/globalPlugins/easyAudioConverter/__init__.py:961
 msgid "Checking for Easy Audio Converter updates"
 msgstr "ቀላል የድምጽ መለወጫ ዝመናዎችን በመፈተሽ ላይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1355
+#: src/globalPlugins/easyAudioConverter/__init__.py:1432
 msgid "Choose a folder to convert"
 msgstr "ለመለወጥ አቃፊ ይምረጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:434 src/globalPlugins/easyAudioConverter/__init__.py:1406
+#: src/globalPlugins/easyAudioConverter/__init__.py:441 src/globalPlugins/easyAudioConverter/__init__.py:1483
 msgid "Choose the destination folder"
 msgstr "የመድረሻ አቃፊውን ይምረጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:730
+#: src/globalPlugins/easyAudioConverter/__init__.py:799
 msgid "Close"
 msgstr "ይዝጉ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:495
+#: src/globalPlugins/easyAudioConverter/__init__.py:502
 msgid "Codec profile to edit:"
 msgstr "ለማርትዕ የኮዴክ መገለጫ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "ኮዴክ-ተኮር ደረጃ (-1 ቅድመ-ቅምጦችን ይጠቀማል)"
 
@@ -155,43 +155,43 @@ msgstr "አስተያየት"
 msgid "Composer"
 msgstr "የሙዚቃ አቀናባሪ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1294
+#: src/globalPlugins/easyAudioConverter/__init__.py:1371
 msgid "Confirm folder conversion"
 msgstr "የአቃፊ ልወጣን ያረጋግጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1238
+#: src/globalPlugins/easyAudioConverter/__init__.py:1315
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "ልወጣ ተሰርዟል። ተጠናቅቋል {done} የ{total} ፋይሎች።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1245
+#: src/globalPlugins/easyAudioConverter/__init__.py:1322
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "ልወጣ ተጠናቅቋል {done} ተሳክቶለታል፣ {failed} አልተሳካም።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1291
+#: src/globalPlugins/easyAudioConverter/__init__.py:1368
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "ሁሉንም የሚደገፉ የድምጽ ፋይሎችን በ{folder}፣ {scope} ይለውጡ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1347
+#: src/globalPlugins/easyAudioConverter/__init__.py:1424
 msgid "Convert every supported audio file in the current folder"
 msgstr "አሁን ባለው አቃፊ ውስጥ እያንዳንዱን የሚደገፍ የድምጽ ፋይል ይለውጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:818
+#: src/globalPlugins/easyAudioConverter/__init__.py:894
 msgid "Convert selected files or folders"
 msgstr "የተመረጡ ፋይሎችን ወይም አቃፊዎችን ይለውጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:819
+#: src/globalPlugins/easyAudioConverter/__init__.py:895
 msgid "Convert the current folder"
 msgstr "የአሁኑን አቃፊ ይለውጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1119
+#: src/globalPlugins/easyAudioConverter/__init__.py:1196
 msgid "Converting {index} of {total}: {name}"
 msgstr "{index} የ{total} {name} በመቀየር ላይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1468
+#: src/globalPlugins/easyAudioConverter/__init__.py:1545
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{index} የ{total} {name} በመቀየር ላይ። የአሁኑ የፋይል ጊዜ {processed}; አልፏል {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1479
+#: src/globalPlugins/easyAudioConverter/__init__.py:1556
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "{index} የ{total} {name} በመቀየር ላይ። የአሁኑ ፋይል {filePercent}%፣ በአጠቃላይ {overallPercent}%፣ ያለፈ {elapsed}።"
 
@@ -207,27 +207,27 @@ msgstr "የ ተወሰጠውን ሜታዳታ ሜዳታ ኮፒ ማድረጊያ"
 msgid "Copyright"
 msgstr "የቅጂ መብት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:914
+#: src/globalPlugins/easyAudioConverter/__init__.py:990
 msgid "Could not check for updates.\n\n{error}"
 msgstr "ዝማኔዎችን ማረጋገጥ አልተቻለም።\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1068
+#: src/globalPlugins/easyAudioConverter/__init__.py:1144
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "የNVDA ተጨማሪ ጫኚውን መክፈት አልተቻለም። ዝማኔው ተቀምጧል -\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:727
+#: src/globalPlugins/easyAudioConverter/__init__.py:797
 msgid "Current file progress: 100%"
 msgstr "የአሁኑ የፋይል ሂደት 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:643
+#: src/globalPlugins/easyAudioConverter/__init__.py:706
 msgid "Current file progress: waiting"
 msgstr "የአሁኑ የፋይል ሂደት በመጠባበቅ ላይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:706
+#: src/globalPlugins/easyAudioConverter/__init__.py:776
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "የአሁኑ የፋይል ሂደት {percent}% ({processed} የ {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:698
+#: src/globalPlugins/easyAudioConverter/__init__.py:768
 msgid "Current file time: {processed}"
 msgstr "የአሁኑ የፋይል ጊዜ {processed}"
 
@@ -239,7 +239,7 @@ msgstr "ቀን ወይንም አመት"
 msgid "Destination folder:"
 msgstr "የመድረሻ አቃፊ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1420
+#: src/globalPlugins/easyAudioConverter/__init__.py:1497
 msgid "Destination folder: {folder}"
 msgstr "የመድረሻ አቃፊ {folder}"
 
@@ -251,19 +251,19 @@ msgstr "የዲስክ ቁጥር"
 msgid "Do not copy metadata"
 msgstr "ሜታዳታ ኮፒ አታድርግ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:954
+#: src/globalPlugins/easyAudioConverter/__init__.py:1030
 msgid "Download and install"
 msgstr "ያውርዱ እና ይጫኑ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1032
+#: src/globalPlugins/easyAudioConverter/__init__.py:1108
 msgid "Downloaded {done:.1f} MB"
 msgstr "ወርዷል {done:.1f} ሜባ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+#: src/globalPlugins/easyAudioConverter/__init__.py:1101
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "ወርዷል {done:.1f} የ {total:.1f} ሜባ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:984
+#: src/globalPlugins/easyAudioConverter/__init__.py:1060
 msgid "Downloading Easy Audio Converter update"
 msgstr "ቀላል የድምጽ መለወጫ ዝመናን በማውረድ ላይ"
 
@@ -271,35 +271,35 @@ msgstr "ቀላል የድምጽ መለወጫ ዝመናን በማውረድ ላይ"
 msgid "E-AC-3"
 msgstr "ኢ-የ AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:749 src/globalPlugins/easyAudioConverter/__init__.py:316 src/globalPlugins/easyAudioConverter/__init__.py:1226 src/globalPlugins/easyAudioConverter/__init__.py:840 src/globalPlugins/easyAudioConverter/__init__.py:1089 src/globalPlugins/easyAudioConverter/__init__.py:1269
+#: src/globalPlugins/easyAudioConverter/__init__.py:825 src/globalPlugins/easyAudioConverter/__init__.py:316 src/globalPlugins/easyAudioConverter/__init__.py:1303 src/globalPlugins/easyAudioConverter/__init__.py:916 src/globalPlugins/easyAudioConverter/__init__.py:1165 src/globalPlugins/easyAudioConverter/__init__.py:1346
 msgid "Easy Audio Converter"
 msgstr "ቀላል የድምጽ መለወጫ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:480
+#: src/globalPlugins/easyAudioConverter/__init__.py:487
 msgid "Easy Audio Converter - Advanced"
 msgstr "ቀላል የድምጽ መለወጫ - የላቀ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:925
+#: src/globalPlugins/easyAudioConverter/__init__.py:1001
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "ቀላል ኦዲዮ መለወጫ ወቅታዊ ነው. የተጫነ ስሪት {version}።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:634
+#: src/globalPlugins/easyAudioConverter/__init__.py:695
 msgid "Easy Audio Converter progress"
 msgstr "ቀላል የድምጽ መለወጫ እድገት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1058 src/globalPlugins/easyAudioConverter/__init__.py:917 src/globalPlugins/easyAudioConverter/__init__.py:928 src/globalPlugins/easyAudioConverter/__init__.py:1071
+#: src/globalPlugins/easyAudioConverter/__init__.py:1134 src/globalPlugins/easyAudioConverter/__init__.py:993 src/globalPlugins/easyAudioConverter/__init__.py:1004 src/globalPlugins/easyAudioConverter/__init__.py:1147
 msgid "Easy Audio Converter update"
 msgstr "ቀላል የድምጽ መለወጫ ዝመና"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:965 src/globalPlugins/easyAudioConverter/__init__.py:950
+#: src/globalPlugins/easyAudioConverter/__init__.py:1041 src/globalPlugins/easyAudioConverter/__init__.py:1026
 msgid "Easy Audio Converter update available"
 msgstr "ቀላል የድምጽ መለወጫ ዝመና ይገኛል።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:937
+#: src/globalPlugins/easyAudioConverter/__init__.py:1013
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "ቀላል የድምጽ መለወጫ {newVersion} ይገኛል። ስሪት አለህ {currentVersion}.\n\nዝመናውን አሁን ማውረድ እና መጫን ይፈልጋሉ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:961
+#: src/globalPlugins/easyAudioConverter/__init__.py:1037
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "ቀላል የድምጽ መለወጫ {version} ይገኛል፣ ነገር ግን ልቀቱ ቀጥታ ተጨማሪ ጥቅል አልያዘም። የመልቀቂያ ገጹን ይክፈቱ?"
 
@@ -307,15 +307,15 @@ msgstr "ቀላል የድምጽ መለወጫ {version} ይገኛል፣ ነገር 
 msgid "Economical"
 msgstr "ኢኮኖሚያዊ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:651
+#: src/globalPlugins/easyAudioConverter/__init__.py:714
 msgid "Elapsed time: 0:00"
 msgstr "ያለፈበት ጊዜ 0 00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:718
+#: src/globalPlugins/easyAudioConverter/__init__.py:788
 msgid "Elapsed time: {elapsed}"
 msgstr "ያለፈበት ጊዜ {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:503
+#: src/globalPlugins/easyAudioConverter/__init__.py:510
 msgid "Enable advanced overrides for this codec"
 msgstr "ለዚህ ኮዴክ የላቀ መሻሪያዎችን አንቃ"
 
@@ -323,31 +323,31 @@ msgstr "ለዚህ ኮዴክ የላቀ መሻሪያዎችን አንቃ"
 msgid "FLAC"
 msgstr "ኤፍላክ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:689
+#: src/globalPlugins/easyAudioConverter/__init__.py:759
 msgid "File {index} of {total}: {name}"
 msgstr "ፋይል {index} የ {total} {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:595
+#: src/globalPlugins/easyAudioConverter/__init__.py:602
 msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
 msgstr "ለ FLAC, ደረጃ 0 በጣም ፈጣን ነው እና ደረጃ 12 በጣም ጠንካራውን መጭመቂያ ይሰጣል."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:594
+#: src/globalPlugins/easyAudioConverter/__init__.py:601
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "ለ LAME MP3, ደረጃ 0 በጣም ቀርፋፋ እና ከፍተኛው የአልጎሪዝም ጥራት ነው; 9 በጣም ፈጣን ነው."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:596
+#: src/globalPlugins/easyAudioConverter/__init__.py:603
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "ለ Ogg Vorbis፣ ከ0 እስከ 10 ያሉት ደረጃዎች ተለዋዋጭ-ቢትሬት ጥራት መጨመርን ይምረጡ።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:597
+#: src/globalPlugins/easyAudioConverter/__init__.py:604
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "ለኦፐስ፣ ከ0 እስከ 10 ያሉት ደረጃዎች የኢንኮደር ውስብስብነት መጨመርን ይምረጡ።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:598
+#: src/globalPlugins/easyAudioConverter/__init__.py:605
 msgid "For WavPack, levels 0 to 8 select increasing compression effort."
 msgstr "ለ WavPack፣ ከ0 እስከ 8 ያሉት ደረጃዎች የመጨመቂያ ጥረትን መጨመርን ይመርጣሉ።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1110
+#: src/globalPlugins/easyAudioConverter/__init__.py:1187
 msgid "Found {count} files to convert"
 msgstr "ተገኝቷል {count} ለመለወጥ ፋይሎች"
 
@@ -359,7 +359,7 @@ msgstr "Fraunhofer / Windows ሚዲያ ፋውንዴሽን MP3"
 msgid "Genre"
 msgstr "ዘውግ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:656
+#: src/globalPlugins/easyAudioConverter/__init__.py:720
 msgid "Hide"
 msgstr "መደበቅ"
 
@@ -375,11 +375,11 @@ msgstr "ቀላል ኦዲዮ መለወጫ ለእርስዎ ጠቃሚ ከሆነ እ
 msgid "Include subfolders when converting a folder"
 msgstr "አቃፊ ሲቀይሩ ንዑስ አቃፊዎችን ያካትቱ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Keep the source channel count"
 msgstr "የምንጭ ሰርጥ ቆጠራን ያቆዩ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:523
 msgid "Keep the source sample rate"
 msgstr "ምንጩን ያቆዩample መጠን"
 
@@ -391,7 +391,7 @@ msgstr "አንካሳ MP3"
 msgid "Language"
 msgstr "የጣቢያ ካርታ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:954
+#: src/globalPlugins/easyAudioConverter/__init__.py:1030
 msgid "Later"
 msgstr "በኋላ"
 
@@ -419,27 +419,27 @@ msgstr "MP3 ኢንኮደር"
 msgid "Metadata export:"
 msgstr "ሜታዳታ መላኪያ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:390
+#: src/globalPlugins/easyAudioConverter/__init__.py:392
 msgid "Metadata fields to copy:"
 msgstr "ሜታዳታ ሜዳታ ሜዳታ ለመቅዳት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Mono"
 msgstr "ሞኖ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1429 src/globalPlugins/easyAudioConverter/__init__.py:1452
+#: src/globalPlugins/easyAudioConverter/__init__.py:1506 src/globalPlugins/easyAudioConverter/__init__.py:1529
 msgid "No conversion is in progress"
 msgstr "ምንም ልወጣ በሂደት ላይ አይደለም"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1441
+#: src/globalPlugins/easyAudioConverter/__init__.py:1518
 msgid "No conversion progress is available"
 msgstr "ምንም የልወጣ ሂደት አይገኝም"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1332
+#: src/globalPlugins/easyAudioConverter/__init__.py:1409
 msgid "No files or folders are selected"
 msgstr "ምንም ፋይሎች ወይም አቃፊዎች አልተመረጡም"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1243
+#: src/globalPlugins/easyAudioConverter/__init__.py:1320
 msgid "No supported audio files were found"
 msgstr "ምንም የሚደገፉ የድምጽ ፋይሎች አልተገኙም"
 
@@ -447,15 +447,15 @@ msgstr "ምንም የሚደገፉ የድምጽ ፋይሎች አልተገኙም"
 msgid "Ogg Vorbis"
 msgstr "ኦግ ቮርቢስ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1302
+#: src/globalPlugins/easyAudioConverter/__init__.py:1379
 msgid "Open Easy Audio Converter settings"
 msgstr "ቀላል የድምጽ መለወጫ ቅንብሮችን ይክፈቱ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1314
+#: src/globalPlugins/easyAudioConverter/__init__.py:1391
 msgid "Open advanced codec settings"
 msgstr "የላቁ የኮዴክ ቅንብሮችን ይክፈቱ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1502
+#: src/globalPlugins/easyAudioConverter/__init__.py:1579
 msgid "Open the author's support page"
 msgstr "የደራሲውን የድጋፍ ገጽ ይክፈቱ"
 
@@ -467,23 +467,23 @@ msgstr "የድጋፍ ገጹን በመክፈት ላይ"
 msgid "Opus"
 msgstr "Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:728
+#: src/globalPlugins/easyAudioConverter/__init__.py:798
 msgid "Overall progress: 100%"
 msgstr "አጠቃላይ እድገት 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:647
+#: src/globalPlugins/easyAudioConverter/__init__.py:710
 msgid "Overall progress: waiting"
 msgstr "አጠቃላይ እድገት በመጠበቅ ላይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:715
+#: src/globalPlugins/easyAudioConverter/__init__.py:785
 msgid "Overall progress: {percent}%"
 msgstr "አጠቃላይ እድገት {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "PCM bit depth:"
 msgstr "ፒሲኤም ቢት ጥልቀት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1106 src/globalPlugins/easyAudioConverter/__init__.py:641 src/globalPlugins/easyAudioConverter/__init__.py:1455
+#: src/globalPlugins/easyAudioConverter/__init__.py:1183 src/globalPlugins/easyAudioConverter/__init__.py:704 src/globalPlugins/easyAudioConverter/__init__.py:1532
 msgid "Preparing the conversion"
 msgstr "ልወጣውን በማዘጋጀት ላይ"
 
@@ -499,31 +499,31 @@ msgstr "አታሚ"
 msgid "Quality:"
 msgstr "ጥራት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1395
+#: src/globalPlugins/easyAudioConverter/__init__.py:1472
 msgid "Quality: {quality}"
 msgstr "ጥራት {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1399
+#: src/globalPlugins/easyAudioConverter/__init__.py:1476
 msgid "Quickly choose the destination folder"
 msgstr "የመድረሻ አቃፊውን በፍጥነት ይምረጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1326
+#: src/globalPlugins/easyAudioConverter/__init__.py:1403
 msgid "Quickly convert selected files or folders"
 msgstr "የተመረጡ ፋይሎችን ወይም አቃፊዎችን በፍጥነት ይለውጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:946
+#: src/globalPlugins/easyAudioConverter/__init__.py:1022
 msgid "Release notes:"
 msgstr "የመልቀቂያ ማስታወሻዎች -"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1447
+#: src/globalPlugins/easyAudioConverter/__init__.py:1524
 msgid "Report audio conversion status"
 msgstr "የድምጽ ልወጣ ሁኔታን ሪፖርት አድርግ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:821
+#: src/globalPlugins/easyAudioConverter/__init__.py:719 src/globalPlugins/easyAudioConverter/__init__.py:897
 msgid "Report conversion status"
 msgstr "የልወጣ ሁኔታን ሪፖርት አድርግ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:514
+#: src/globalPlugins/easyAudioConverter/__init__.py:521
 msgid "Sample rate:"
 msgstr "የናሙና መጠን"
 
@@ -531,19 +531,19 @@ msgstr "የናሙና መጠን"
 msgid "Save converted files next to the source files"
 msgstr "የተቀየሩ ፋይሎችን ከምንጩ ፋይሎች ቀጥሎ ያስቀምጡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:824
+#: src/globalPlugins/easyAudioConverter/__init__.py:900
 msgid "Settings..."
 msgstr "ቅንብሮች..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:820
+#: src/globalPlugins/easyAudioConverter/__init__.py:896
 msgid "Show conversion progress"
 msgstr "የልወጣ ሂደት አሳይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1436
+#: src/globalPlugins/easyAudioConverter/__init__.py:1513
 msgid "Show the audio conversion progress window"
 msgstr "የድምጽ ልወጣ ሂደት መስኮቱን አሳይ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+#: src/globalPlugins/easyAudioConverter/__init__.py:1345
 msgid "Some files could not be converted:\n\n{details}"
 msgstr "አንዳንድ ፋይሎች ሊለወጡ አልተቻለም -\n\n{details}"
 
@@ -551,11 +551,11 @@ msgstr "አንዳንድ ፋይሎች ሊለወጡ አልተቻለም -\n\n{detai
 msgid "Standard"
 msgstr "መደበኛ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:985
+#: src/globalPlugins/easyAudioConverter/__init__.py:1061
 msgid "Starting the download..."
 msgstr "ማውረዱን በመጀመር ላይ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Stereo"
 msgstr "ስቴሪዮ"
 
@@ -563,7 +563,7 @@ msgstr "ስቴሪዮ"
 msgid "Support Easy Audio Converter"
 msgstr "ቀላል የድምጽ መለወጫን ይደግፉ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:407 src/globalPlugins/easyAudioConverter/__init__.py:827
+#: src/globalPlugins/easyAudioConverter/__init__.py:412 src/globalPlugins/easyAudioConverter/__init__.py:903
 msgid "Support the author"
 msgstr "ደራሲውን ይደግፉ"
 
@@ -571,31 +571,31 @@ msgstr "ደራሲውን ይደግፉ"
 msgid "Target format:"
 msgstr "የዒላማ አቀራረብ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1381
+#: src/globalPlugins/easyAudioConverter/__init__.py:1458
 msgid "Target format: {format}"
 msgstr "የዒላማ ቅርጸት {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1088
+#: src/globalPlugins/easyAudioConverter/__init__.py:1164
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "የተጠቀለለው የ FFmpeg አካል ጠፍቷል። ቀላል የድምጽ መለወጫን እንደገና ጫን።"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:603
+#: src/globalPlugins/easyAudioConverter/__init__.py:610
 msgid "The codec-specific level is not used by this format."
 msgstr "ኮዴክ-ተኮር ደረጃ በዚህ ቅርጸት ጥቅም ላይ አይውልም."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1221
+#: src/globalPlugins/easyAudioConverter/__init__.py:1298
 msgid "The conversion could not start"
 msgstr "ልወጣው ሊጀመር አልቻለም"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1225
+#: src/globalPlugins/easyAudioConverter/__init__.py:1302
 msgid "The conversion could not start:\n{error}"
 msgstr "ልወጣው ሊጀመር አልቻለም -\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1055
+#: src/globalPlugins/easyAudioConverter/__init__.py:1131
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "ዝማኔው ሊወርድ ወይም ሊረጋገጥ አልቻለም።\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1063
+#: src/globalPlugins/easyAudioConverter/__init__.py:1139
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "ዝማኔው ዝግጁ ነው። የ NVDA ተጨማሪ ጫኚን በመክፈት ላይ።"
 
@@ -607,15 +607,15 @@ msgstr "አርእስት"
 msgid "Track number"
 msgstr "የትራክ ቁጥር"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1056 src/globalPlugins/easyAudioConverter/__init__.py:915
+#: src/globalPlugins/easyAudioConverter/__init__.py:1338 src/globalPlugins/easyAudioConverter/__init__.py:1132 src/globalPlugins/easyAudioConverter/__init__.py:991
 msgid "Unknown error"
 msgstr "ያልታወቀ ስህተት"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1051
+#: src/globalPlugins/easyAudioConverter/__init__.py:1127
 msgid "Update download canceled"
 msgstr "ማውረዱን አዘምን ተሰርዟል"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "Use the quality preset"
 msgstr "የጥራት ቅድመ-ቅምጥ ይጠቀሙ"
 
@@ -635,14 +635,14 @@ msgstr "WMA"
 msgid "WavPack"
 msgstr "ዋቭፓክ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1288
+#: src/globalPlugins/easyAudioConverter/__init__.py:1365
 msgid "excluding subfolders"
 msgstr "ንዑስ አቃፊዎችን ሳይጨምር"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1286
+#: src/globalPlugins/easyAudioConverter/__init__.py:1363
 msgid "including subfolders"
 msgstr "ንዑስ አቃፊዎችን ጨምሮ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1339
+#: src/globalPlugins/easyAudioConverter/__init__.py:1416
 msgid "{count} selected folders"
 msgstr "{count} የተመረጡ አቃፊዎች"

@@ -177,7 +177,7 @@ POLISH = {
 		"Konwersja anulowana. Ukończono {done} z {total} plików."
 	),
 	"Conversion complete: {done} succeeded, {failed} failed.": (
-		"Konwersja zakończona: powodzenie dla {done}, błędy dla {failed}."
+		"Konwersja zakończona: ukończono {done}, błędy: {failed}."
 	),
 	"Convert all supported audio files in {folder}, {scope}?": (
 		"Przekonwertować wszystkie obsługiwane pliki audio w folderze {folder}, {scope}?"
@@ -589,7 +589,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.1.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.1.1\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-24 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-24 00:00+0200\n"
@@ -631,7 +631,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.1.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.1.1\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

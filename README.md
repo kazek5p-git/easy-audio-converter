@@ -16,8 +16,8 @@ installation is required.
 - saves next to each source or in a selected destination folder;
 - optionally includes subfolders and preserves their structure;
 - never overwrites source or existing destination files;
-- shows accessible per-file and overall progress while conversion runs in a
-  background thread;
+- shows quiet visual per-file and overall progress while conversion runs in a
+  background thread, with a dedicated button for spoken status;
 - copies all, selected, or no source text metadata;
 - stores independent advanced parameter profiles for each target codec;
 - checks GitHub releases for verified add-on updates;
