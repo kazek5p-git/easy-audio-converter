@@ -65,7 +65,9 @@ class PluginImportTests(unittest.TestCase):
 		ui.message = lambda message: None
 		install("ui", ui)
 
-		install("wx", types.ModuleType("wx"))
+		wx = types.ModuleType("wx")
+		wx.Dialog = type("Dialog", (), {})
+		install("wx", wx)
 
 		log_handler = types.ModuleType("logHandler")
 		log_handler.log = _Log()
@@ -101,14 +103,17 @@ class PluginImportTests(unittest.TestCase):
 	def test_all_script_actions_are_exposed(self):
 		expected = {
 			"script_openSettings",
+			"script_openAdvancedSettings",
 			"script_convertSelection",
 			"script_convertCurrentFolder",
 			"script_cycleTargetFormat",
 			"script_cycleQuality",
 			"script_chooseDestinationFolder",
 			"script_cancelConversion",
+			"script_showProgress",
 			"script_reportStatus",
 			"script_openSupportPage",
+			"script_checkForUpdates",
 		}
 		self.assertTrue(expected.issubset(set(dir(self.module.GlobalPlugin))))
 

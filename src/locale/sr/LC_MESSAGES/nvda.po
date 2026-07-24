@@ -1,229 +1,648 @@
-# Easy Audio Converter translation catalog.
-# Generated for NVDA; placeholders were validated automatically.
+# Easy Audio Converter translation.
+# Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.0.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: sr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.1.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:32+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: sr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1265
 msgid "...and {count} more errors"
 msgstr "... и {count} више грешака"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:535
+msgid "16 bit"
+msgstr "16-битни"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:535
+msgid "24 bit"
+msgstr "24-битни"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:535
+msgid "32 bit"
+msgstr "32-битни"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1083
 msgid "A conversion is already in progress"
 msgstr "Конверзија је већ у току"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:168
 msgid "AAC"
 msgstr "ААЦ"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:172
 msgid "AC-3"
 msgstr "АЦ-3"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:171
 msgid "AIFF"
 msgstr "АИФФ"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:170
 msgid "ALAC (Apple Lossless)"
 msgstr "АЛАЦ (јабука без губитака)"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:176
 msgid "AMR narrowband"
 msgstr "АМР ускопојасни"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:177
 msgid "AMR wideband"
 msgstr "АМР широкопојасни"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:825
+msgid "Advanced codec settings..."
+msgstr "Напредна подешавања кодека ..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:209
+msgid "Album"
+msgstr "Категорије"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:210
+msgid "Album artist"
+msgstr "Извођач албума"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:882
+msgid "An update check is already in progress"
+msgstr "Провера ажурирања је већ у току"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:974
+msgid "An update download is already in progress"
+msgstr "Преузимање ажурирања је већ у току"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:208
+msgid "Artist"
+msgstr "Уметник"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:399
+msgid "Automatically check for add-on updates"
+msgstr "Аутоматски проверите за ажурирања додатака"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:507
+msgid "Bitrate in kbps (0 uses the quality preset):"
+msgstr "Битрате у кбпс (0 користи квалитет унапред):"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:363
 msgid "Browse..."
 msgstr "Прегледај..."
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:655 src/globalPlugins/easyAudioConverter/__init__.py:822
 msgid "Cancel conversion"
 msgstr "Откажи конверзију"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1424
 msgid "Cancel the current audio conversion"
 msgstr "Откажи тренутну аудио конверзију"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1432
 msgid "Canceling the conversion"
 msgstr "Отказивање конверзије"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:737
+msgid "Canceling..."
+msgstr "Отказивање..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:233 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Не могу отворити страницу за подршку. Отворите ову адресу ручно: {url}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1385
 msgid "Change the conversion quality"
 msgstr "Промените квалитет конверзије"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1371
 msgid "Change the target audio format"
 msgstr "Промените циљни аудио формат"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:520
+msgid "Channels:"
+msgstr "Канали:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1494
+msgid "Check for Easy Audio Converter updates"
+msgstr "Проверите ажурирања Еаси Аудио Цонвертер"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:826
+msgid "Check for updates..."
+msgstr "Проверите ажурирања ..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:885
+msgid "Checking for Easy Audio Converter updates"
+msgstr "Провера ажурирања Еаси Аудио Цонвертер-а"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1355
 msgid "Choose a folder to convert"
 msgstr "Изаберите фасциклу за претварање"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:434 src/globalPlugins/easyAudioConverter/__init__.py:1406
 msgid "Choose the destination folder"
 msgstr "Изаберите одредишну фасциклу"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:730
+msgid "Close"
+msgstr "Догађаји"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:495
+msgid "Codec profile to edit:"
+msgstr "Кодек профил за уређивање:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:526
+msgid "Codec-specific level (-1 uses the preset):"
+msgstr "Кодек -специфичан ниво (-1 користи унапред подешено):"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:216
+msgid "Comment"
+msgstr "Напомена:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:211
+msgid "Composer"
+msgstr "Композитор"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1294
 msgid "Confirm folder conversion"
 msgstr "Потврдите конверзију фолдера"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1238
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Конверзија отказана. Завршен {done} од {total} фајлова."
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1245
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Конверзија завршена: {done} успео, {failed} није успео."
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1291
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Претворите све подржане аудио датотеке у {folder}, {scope}?"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1347
 msgid "Convert every supported audio file in the current folder"
 msgstr "Претворите сваки подржани аудио фајл у тренутној фасцикли"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:818
 msgid "Convert selected files or folders"
 msgstr "Претворите изабране датотеке или фасцикле"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:819
 msgid "Convert the current folder"
 msgstr "Претворите тренутну фасциклу"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1119
 msgid "Converting {index} of {total}: {name}"
 msgstr "Претварање {index} од {total}: {name}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1468
+msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
+msgstr "Претварање {index} од {total}: {name}. Тренутно време фајла {processed}; протекло {elapsed}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1479
+msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
+msgstr "Претварање {index} од {total}: {name}. Тренутна датотека {filePercent}%, укупно {overallPercent}%, протекло {elapsed}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:200
+msgid "Copy all text metadata"
+msgstr "Копирај све текстуалне метаподатке"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:201
+msgid "Copy selected metadata fields"
+msgstr "Копирајте изабрана поља метаподатака"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:217
+msgid "Copyright"
+msgstr "Ауторска права"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:914
+msgid "Could not check for updates.\n\n{error}"
+msgstr "Није могуће проверити ажурирања.\n\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1068
+msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
+msgstr "Не могу да отворим НВДА адд-он инсталатер. Ажурирање је сачувано у:\n{path}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:727
+msgid "Current file progress: 100%"
+msgstr "Тренутни напредак датотеке: 100%"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:643
+msgid "Current file progress: waiting"
+msgstr "Тренутни напредак датотеке: чекање"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:706
+msgid "Current file progress: {percent}% ({processed} of {duration})"
+msgstr "Тренутни напредак датотеке: {percent}% ({processed} од {duration})"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:698
+msgid "Current file time: {processed}"
+msgstr "Тренутно време фајла: {processed}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:213
+msgid "Date or year"
+msgstr "Датум или година"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:357
 msgid "Destination folder:"
 msgstr "Одредишна фасцикла:"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1420
 msgid "Destination folder: {folder}"
 msgstr "Одредишна фасцикла: {folder}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:215
+msgid "Disc number"
+msgstr "Број диска"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:199
+msgid "Do not copy metadata"
+msgstr "Не копирајте метаподатке"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:954
+msgid "Download and install"
+msgstr "Преузмите и инсталирајте"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1032
+msgid "Downloaded {done:.1f} MB"
+msgstr "Преузето {done:.1f} МБ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+msgid "Downloaded {done:.1f} of {total:.1f} MB"
+msgstr "Преузето {done:.1f} од {total:.1f} МБ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:984
+msgid "Downloading Easy Audio Converter update"
+msgstr "Преузимање ажурирања Еаси Аудио Цонвертер"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:173
 msgid "E-AC-3"
 msgstr "Е-АЦ-3"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:749 src/globalPlugins/easyAudioConverter/__init__.py:316 src/globalPlugins/easyAudioConverter/__init__.py:1226 src/globalPlugins/easyAudioConverter/__init__.py:840 src/globalPlugins/easyAudioConverter/__init__.py:1089 src/globalPlugins/easyAudioConverter/__init__.py:1269
 msgid "Easy Audio Converter"
 msgstr "Лако аудио конвертор"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:480
+msgid "Easy Audio Converter - Advanced"
+msgstr "Еаси Аудио Цонвертер - Напредна"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:925
+msgid "Easy Audio Converter is up to date. Installed version: {version}."
+msgstr "Еаси Аудио Цонвертер је ажуран. Инсталирана верзија: {version}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:634
+msgid "Easy Audio Converter progress"
+msgstr "Лако Аудио Цонвертер напредак"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1058 src/globalPlugins/easyAudioConverter/__init__.py:917 src/globalPlugins/easyAudioConverter/__init__.py:928 src/globalPlugins/easyAudioConverter/__init__.py:1071
+msgid "Easy Audio Converter update"
+msgstr "Еаси Аудио Цонвертер ажурирање"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:965 src/globalPlugins/easyAudioConverter/__init__.py:950
+msgid "Easy Audio Converter update available"
+msgstr "Доступно ажурирање Еаси Аудио Цонвертер"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:937
+msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
+msgstr "Доступан је Еаси Аудио Цонвертер {newVersion}. Имате верзију {currentVersion}.\n\nДа ли желите да преузмете и инсталирате ажурирање сада?"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:961
+msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
+msgstr "Еаси Аудио Цонвертер {version} је доступан, али издање не садржи директан пакет додатака. Отворите страницу издања?"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:183
 msgid "Economical"
 msgstr "Економичан"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:651
+msgid "Elapsed time: 0:00"
+msgstr "Протекло време:0:00"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:718
+msgid "Elapsed time: {elapsed}"
+msgstr "Протекло време: {elapsed}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:503
+msgid "Enable advanced overrides for this codec"
+msgstr "Омогућите напредне преписивања за овај кодек"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:164
 msgid "FLAC"
 msgstr "ФЛАЦ"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:689
+msgid "File {index} of {total}: {name}"
+msgstr "Фајл {index} од {total}: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:595
+msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
+msgstr "За ФЛАЦ, ниво 0 је најбржи, а ниво 12 даје најјачу компресију."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:594
+msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
+msgstr "За ЛАМЕ MP3, ниво 0 је најспорији и највиши квалитет алгоритма; 9 је најбржи."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:596
+msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
+msgstr "За Огг Ворбис, нивои 0 до 10 бирају повећање квалитета променљиве брзине пријеноса."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:597
+msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
+msgstr "За Опус, нивои од 0 до 10 бирају повећање сложености кодера."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:598
+msgid "For WavPack, levels 0 to 8 select increasing compression effort."
+msgstr "За ВавПацк, нивои 0 до 8 бирају повећање напора компресије."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1110
 msgid "Found {count} files to convert"
 msgstr "Пронађено {count} фајлова за конвертовање"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:193
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Фраунхофер / Wиндоwс Медиа Фоундатион MP3"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:212
+msgid "Genre"
+msgstr "Жанр"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:656
+msgid "Hide"
+msgstr "сакрити"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:185
 msgid "High"
 msgstr "Висок"
 
+#: src/installTasks.py:34
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Ако је Еаси Аудио Цонвертер користан за вас и желите да подржите мој рад, можете ми купити кафу.\n\nДа ли желите да отворите страницу за подршку сада?"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:368
 msgid "Include subfolders when converting a folder"
 msgstr "Укључите потфасцикле приликом претварања фасцикле"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:522
+msgid "Keep the source channel count"
+msgstr "Држите број изворних канала"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:516
+msgid "Keep the source sample rate"
+msgstr "Држите изворну брзину узорковања"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:192
 msgid "LAME MP3"
 msgstr "ЛАМЕ MP3"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:219
+msgid "Language"
+msgstr "Језик"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:954
+msgid "Later"
+msgstr "Касније"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:218
+msgid "Lyrics"
+msgstr "Текстови"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:167
 msgid "M4A (AAC)"
 msgstr "M4A (ААЦ)"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:175
 msgid "MP2"
 msgstr "MP2"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:162
 msgid "MP3"
 msgstr "MP3"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "MP3 encoder:"
 msgstr "MP3 енкодер:"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:381
+msgid "Metadata export:"
+msgstr "Извоз метаподатака:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:390
+msgid "Metadata fields to copy:"
+msgstr "Поља метаподатака за копирање:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:522
+msgid "Mono"
+msgstr "Моно"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1429 src/globalPlugins/easyAudioConverter/__init__.py:1452
 msgid "No conversion is in progress"
 msgstr "Ниједна конверзија није у току"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1441
+msgid "No conversion progress is available"
+msgstr "Нема напретка конверзије је доступан"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1332
 msgid "No files or folders are selected"
 msgstr "Нема фајлова или фолдера су изабрани"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1243
 msgid "No supported audio files were found"
 msgstr "Нису пронађени подржани аудио фајлови"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:165
 msgid "Ogg Vorbis"
 msgstr "Огг Ворбис"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1302
 msgid "Open Easy Audio Converter settings"
 msgstr "Отворите поставке Еаси Аудио Цонвертер"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1314
+msgid "Open advanced codec settings"
+msgstr "Отворите напредне поставке кодека"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1502
 msgid "Open the author's support page"
 msgstr "Отворите страницу за подршку аутора"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:231
 msgid "Opening the support page"
 msgstr "Отварање странице за подршку"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:166
 msgid "Opus"
 msgstr "Опус"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:728
+msgid "Overall progress: 100%"
+msgstr "Укупан напредак: 100%"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:647
+msgid "Overall progress: waiting"
+msgstr "Укупни напредак: чекање"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:715
+msgid "Overall progress: {percent}%"
+msgstr "Укупан напредак: {percent}%"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
+msgid "PCM bit depth:"
+msgstr "Дубина ПЦМ бита:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1106 src/globalPlugins/easyAudioConverter/__init__.py:641 src/globalPlugins/easyAudioConverter/__init__.py:1455
 msgid "Preparing the conversion"
 msgstr "Припрема конверзије"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:374
 msgid "Preserve the source folder structure in the destination"
 msgstr "Сачувајте структуру изворне фасцикле у одредишту"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:220
+msgid "Publisher"
+msgstr "Издавач"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:334
 msgid "Quality:"
 msgstr "Квалитет:"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1395
 msgid "Quality: {quality}"
 msgstr "Квалитет : {quality}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1399
 msgid "Quickly choose the destination folder"
 msgstr "Брзо изаберите одредишну фасциклу"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1326
 msgid "Quickly convert selected files or folders"
 msgstr "Брзо претворити изабране датотеке или фасцикле"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:946
+msgid "Release notes:"
+msgstr "Белешке о издању:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1447
 msgid "Report audio conversion status"
 msgstr "Пријави статус аудио конверзије"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:821
 msgid "Report conversion status"
 msgstr "Извештај о статусу конверзије"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:514
+msgid "Sample rate:"
+msgstr "Узорак стопа:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:351
 msgid "Save converted files next to the source files"
 msgstr "Сачувај конвертоване датотеке поред изворних фајлова"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:824
 msgid "Settings..."
 msgstr "Подешавања..."
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:820
+msgid "Show conversion progress"
+msgstr "Покажи напредак конверзије"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1436
+msgid "Show the audio conversion progress window"
+msgstr "Покажите прозор напретка аудио конверзије"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1268
 msgid "Some files could not be converted:\n\n{details}"
 msgstr "Неке датотеке се не могу конвертовати:\n\n{details}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:184
 msgid "Standard"
 msgstr "Категорије"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:985
+msgid "Starting the download..."
+msgstr "Покретање преузимања..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:522
+msgid "Stereo"
+msgstr "Стерео"
+
+#: src/installTasks.py:40 src/installTasks.py:58
 msgid "Support Easy Audio Converter"
 msgstr "Подршка Еаси Аудио Цонвертер"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:407 src/globalPlugins/easyAudioConverter/__init__.py:827
 msgid "Support the author"
 msgstr "Подржите аутора"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:325
 msgid "Target format:"
 msgstr "Циљни формат:"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1381
 msgid "Target format: {format}"
 msgstr "Циљни формат: {format}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1088
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Недостаје компонента у пакету ФФмпег. Поново инсталирајте Еаси Аудио Цонвертер."
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:603
+msgid "The codec-specific level is not used by this format."
+msgstr "Овај формат не користи ниво специфичан за кодек."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1221
+msgid "The conversion could not start"
+msgstr "Конверзија није могла да почне"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1225
 msgid "The conversion could not start:\n{error}"
 msgstr "Конверзија није могла да почне:\n{error}"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1055
+msgid "The update could not be downloaded or verified.\n\n{error}"
+msgstr "Ажурирање се није могло преузети или проверити.\n\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1063
+msgid "The update is ready. Opening the NVDA add-on installer."
+msgstr "Ажурирање је спремно. Отварање НВДА адд-он инсталатер."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:207
+msgid "Title"
+msgstr "Претрага"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:214
+msgid "Track number"
+msgstr "Број нумере"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1056 src/globalPlugins/easyAudioConverter/__init__.py:915
 msgid "Unknown error"
 msgstr "Непозната грешка"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1051
+msgid "Update download canceled"
+msgstr "Ажурирање преузимање отказано"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:535
+msgid "Use the quality preset"
+msgstr "Користите квалитет унапред подешен"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:186
 msgid "Very high"
 msgstr "Веома висок"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:163
 msgid "WAV"
 msgstr "ОМИЉЕНО"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:169
 msgid "WMA"
 msgstr "WМА"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:174
 msgid "WavPack"
 msgstr "Преузмите"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1288
 msgid "excluding subfolders"
 msgstr "Искључујући потфасцикле"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1286
 msgid "including subfolders"
 msgstr "укључујући потфасцикле"
 
+#: src/globalPlugins/easyAudioConverter/__init__.py:1339
 msgid "{count} selected folders"
 msgstr "{count} selected folders"

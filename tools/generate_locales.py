@@ -19,6 +19,13 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+try:
+	from .poedit_catalog import extract_messages as extract_message_references
+	from .poedit_catalog import parse_po
+except ImportError:
+	from poedit_catalog import extract_messages as extract_message_references
+	from poedit_catalog import parse_po
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = PROJECT_ROOT / "src"
@@ -120,7 +127,12 @@ TRANSLATE_TARGETS = {
 }
 
 EDGE_TARGETS = {
+	"af_ZA": "af",
 	"an": "es",
+	"ckb": "ku",
+	"de_CH": "de",
+	"es_CO": "es",
+	"kmr": "ku",
 	"kok": "gom",
 	"mni": "mni",
 	"nb": "nb",
@@ -239,6 +251,144 @@ POLISH = {
 	"excluding subfolders": "bez podfolderów",
 	"including subfolders": "wraz z podfolderami",
 	"{count} selected folders": "zaznaczone foldery: {count}",
+	"16 bit": "16 bitów",
+	"24 bit": "24 bity",
+	"32 bit": "32 bity",
+	"Advanced codec settings...": "Zaawansowane ustawienia kodeków...",
+	"Album": "Album",
+	"Album artist": "Wykonawca albumu",
+	"An update check is already in progress": "Sprawdzanie aktualizacji już trwa",
+	"An update download is already in progress": "Pobieranie aktualizacji już trwa",
+	"Artist": "Wykonawca",
+	"Automatically check for add-on updates": "Automatycznie sprawdzaj aktualizacje dodatku",
+	"Bitrate in kbps (0 uses the quality preset):": (
+		"Przepływność w kb/s (0 używa ustawienia jakości):"
+	),
+	"Canceling...": "Anulowanie...",
+	"Channels:": "Kanały:",
+	"Check for Easy Audio Converter updates": "Sprawdź aktualizacje Easy Audio Converter",
+	"Check for updates...": "Sprawdź aktualizacje...",
+	"Checking for Easy Audio Converter updates": "Sprawdzanie aktualizacji Easy Audio Converter",
+	"Close": "Zamknij",
+	"Codec profile to edit:": "Profil kodeka do edycji:",
+	"Codec-specific level (-1 uses the preset):": (
+		"Poziom właściwy dla kodeka (-1 używa ustawienia jakości):"
+	),
+	"Comment": "Komentarz",
+	"Composer": "Kompozytor",
+	"Converting {index} of {total}: {name}. "
+	"Current file time {processed}; elapsed {elapsed}.": (
+		"Konwertowanie {index} z {total}: {name}. "
+		"Czas bieżącego pliku {processed}; czas od rozpoczęcia {elapsed}."
+	),
+	"Converting {index} of {total}: {name}. "
+	"Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}.": (
+		"Konwertowanie {index} z {total}: {name}. "
+		"Bieżący plik {filePercent}%, łącznie {overallPercent}%, "
+		"czas od rozpoczęcia {elapsed}."
+	),
+	"Copy all text metadata": "Kopiuj wszystkie metadane tekstowe",
+	"Copy selected metadata fields": "Kopiuj wybrane pola metadanych",
+	"Copyright": "Prawa autorskie",
+	"Could not check for updates.\n\n{error}": (
+		"Nie udało się sprawdzić aktualizacji.\n\n{error}"
+	),
+	"Could not open the NVDA add-on installer. The update was saved to:\n{path}": (
+		"Nie udało się otworzyć instalatora dodatków NVDA. Aktualizację zapisano w:\n{path}"
+	),
+	"Current file progress: 100%": "Postęp bieżącego pliku: 100%",
+	"Current file progress: waiting": "Postęp bieżącego pliku: oczekiwanie",
+	"Current file progress: {percent}% ({processed} of {duration})": (
+		"Postęp bieżącego pliku: {percent}% ({processed} z {duration})"
+	),
+	"Current file time: {processed}": "Czas bieżącego pliku: {processed}",
+	"Date or year": "Data lub rok",
+	"Disc number": "Numer płyty",
+	"Do not copy metadata": "Nie kopiuj metadanych",
+	"Download and install": "Pobierz i zainstaluj",
+	"Downloaded {done:.1f} MB": "Pobrano {done:.1f} MB",
+	"Downloaded {done:.1f} of {total:.1f} MB": (
+		"Pobrano {done:.1f} z {total:.1f} MB"
+	),
+	"Downloading Easy Audio Converter update": "Pobieranie aktualizacji Easy Audio Converter",
+	"Easy Audio Converter - Advanced": "Easy Audio Converter — zaawansowane",
+	"Easy Audio Converter is up to date. Installed version: {version}.": (
+		"Easy Audio Converter jest aktualny. Zainstalowana wersja: {version}."
+	),
+	"Easy Audio Converter progress": "Postęp Easy Audio Converter",
+	"Easy Audio Converter update": "Aktualizacja Easy Audio Converter",
+	"Easy Audio Converter update available": "Dostępna aktualizacja Easy Audio Converter",
+	"Easy Audio Converter {newVersion} is available. "
+	"You have version {currentVersion}.\n\n"
+	"Do you want to download and install the update now?": (
+		"Dostępna jest wersja {newVersion} dodatku Easy Audio Converter. "
+		"Masz wersję {currentVersion}.\n\n"
+		"Czy chcesz teraz pobrać i zainstalować aktualizację?"
+	),
+	"Easy Audio Converter {version} is available, but the release "
+	"does not contain a direct add-on package. Open the release page?": (
+		"Dostępna jest wersja {version} dodatku Easy Audio Converter, ale wydanie "
+		"nie zawiera bezpośredniego pakietu dodatku. Otworzyć stronę wydania?"
+	),
+	"Elapsed time: 0:00": "Czas od rozpoczęcia: 0:00",
+	"Elapsed time: {elapsed}": "Czas od rozpoczęcia: {elapsed}",
+	"Enable advanced overrides for this codec": (
+		"Włącz zaawansowane ustawienia dla tego kodeka"
+	),
+	"File {index} of {total}: {name}": "Plik {index} z {total}: {name}",
+	"For FLAC, level 0 is fastest and level 12 gives the strongest compression.": (
+		"Dla FLAC poziom 0 jest najszybszy, a poziom 12 zapewnia najsilniejszą kompresję."
+	),
+	"For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest.": (
+		"Dla LAME MP3 poziom 0 jest najwolniejszy i daje najwyższą jakość algorytmu; "
+		"poziom 9 jest najszybszy."
+	),
+	"For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality.": (
+		"Dla Ogg Vorbis poziomy od 0 do 10 wybierają rosnącą jakość zmiennej przepływności."
+	),
+	"For Opus, levels 0 to 10 select increasing encoder complexity.": (
+		"Dla Opus poziomy od 0 do 10 wybierają rosnącą złożoność kodera."
+	),
+	"For WavPack, levels 0 to 8 select increasing compression effort.": (
+		"Dla WavPack poziomy od 0 do 8 wybierają rosnący stopień kompresji."
+	),
+	"Genre": "Gatunek",
+	"Hide": "Ukryj",
+	"Keep the source channel count": "Zachowaj liczbę kanałów źródła",
+	"Keep the source sample rate": "Zachowaj częstotliwość próbkowania źródła",
+	"Language": "Język",
+	"Later": "Później",
+	"Lyrics": "Tekst utworu",
+	"Metadata export:": "Eksport metadanych:",
+	"Metadata fields to copy:": "Pola metadanych do skopiowania:",
+	"Mono": "Mono",
+	"No conversion progress is available": "Brak dostępnych informacji o postępie konwersji",
+	"Open advanced codec settings": "Otwórz zaawansowane ustawienia kodeków",
+	"Overall progress: 100%": "Postęp całkowity: 100%",
+	"Overall progress: waiting": "Postęp całkowity: oczekiwanie",
+	"Overall progress: {percent}%": "Postęp całkowity: {percent}%",
+	"PCM bit depth:": "Głębia bitowa PCM:",
+	"Publisher": "Wydawca",
+	"Release notes:": "Informacje o wydaniu:",
+	"Sample rate:": "Częstotliwość próbkowania:",
+	"Show conversion progress": "Pokaż postęp konwersji",
+	"Show the audio conversion progress window": "Pokaż okno postępu konwersji audio",
+	"Starting the download...": "Rozpoczynanie pobierania...",
+	"Stereo": "Stereo",
+	"The codec-specific level is not used by this format.": (
+		"Ten format nie używa poziomu właściwego dla kodeka."
+	),
+	"The conversion could not start": "Nie można rozpocząć konwersji",
+	"The update could not be downloaded or verified.\n\n{error}": (
+		"Nie udało się pobrać lub zweryfikować aktualizacji.\n\n{error}"
+	),
+	"The update is ready. Opening the NVDA add-on installer.": (
+		"Aktualizacja jest gotowa. Otwieranie instalatora dodatków NVDA."
+	),
+	"Title": "Tytuł",
+	"Track number": "Numer utworu",
+	"Update download canceled": "Pobieranie aktualizacji anulowane",
+	"Use the quality preset": "Użyj ustawienia jakości",
 	MANIFEST_SUMMARY: "Easy Audio Converter",
 	MANIFEST_DESCRIPTION: (
 		"Dostępna konwersja pojedynczych plików i konwersja masowa audio "
@@ -400,7 +550,7 @@ def translate_messages_edge(messages: list[str], locale: str) -> dict[str, str]:
 		}
 	)
 	request = urllib.request.Request(
-		f"https://api-edge.cognitive.microsofttranslator.com/translate?{query}",
+		f"https://api.cognitive.microsofttranslator.com/translate?{query}",
 		data=json.dumps(
 			[{"Text": message} for message in protected_messages],
 			ensure_ascii=False,
@@ -439,8 +589,8 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.0.0\n"
-		"Report-Msgid-Bugs-To: \n"
+		"Project-Id-Version: Easy Audio Converter 1.1.0\n"
+		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-24 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-24 00:00+0200\n"
 		"Language-Team: generated\n"
@@ -449,6 +599,10 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 		"Content-Type: text/plain; charset=UTF-8\n"
 		"Content-Transfer-Encoding: 8bit\n"
 		"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+		"X-Generator: Easy Audio Converter generate_locales.py\n"
+		"X-Poedit-Basepath: ../../../..\n"
+		"X-Poedit-KeywordsList: _\n"
+		"X-Poedit-SearchPath-0: src\n"
 	)
 	lines = [
 		"# Easy Audio Converter translation catalog.",
@@ -457,7 +611,10 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 		f"msgstr {_po_quote(header)}",
 		"",
 	]
+	references = extract_message_references()
 	for message in messages:
+		if references.get(message):
+			lines.append("#: " + " ".join(references[message]))
 		lines.extend(
 			(
 				f"msgid {_po_quote(message)}",
@@ -474,7 +631,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.0.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.1.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"
@@ -546,38 +703,90 @@ def main() -> None:
 		default="auto",
 		help="Translation provider; auto falls back from Google to Edge.",
 	)
+	parser.add_argument(
+		"--retry-english",
+		action="store_true",
+		help="Retry entries whose translation is still identical to English.",
+	)
 	arguments = parser.parse_args()
 	selected_locales = tuple(arguments.locales) if arguments.locales else NVDA_LOCALES
 	runtime_messages = extract_messages()
-	all_messages = runtime_messages + [MANIFEST_DESCRIPTION]
 	failures: list[str] = []
 	edge_fallbacks: list[str] = []
 	for position, locale in enumerate(selected_locales, start=1):
+		po_path = LOCALE_ROOT / locale / "LC_MESSAGES" / "nvda.po"
+		try:
+			existing_catalog, _header = parse_po(po_path)
+		except (OSError, ValueError):
+			existing_catalog = {}
+		translations = {
+			message: existing_catalog.get(message, "")
+			for message in runtime_messages
+		}
+		missing_messages = [
+			message
+			for message in runtime_messages
+			if not translations.get(message)
+			or (
+				locale == "pl"
+				and message in POLISH
+				and translations.get(message) == message
+				and POLISH[message] != message
+			)
+			or (
+				arguments.retry_english
+				and translations.get(message) == message
+			)
+		]
 		if locale == "pl":
-			translations = {message: POLISH.get(message, message) for message in all_messages}
-		else:
+			manual = {
+				message: POLISH[message]
+				for message in missing_messages
+				if message in POLISH
+			}
+			translations.update(manual)
+			missing_messages = [
+				message
+				for message in missing_messages
+				if not translations.get(message)
+			]
+		if missing_messages:
 			try:
 				if arguments.provider == "edge":
-					translations = translate_messages_edge(all_messages, locale)
+					new_translations = translate_messages_edge(missing_messages, locale)
 				else:
 					target = TRANSLATE_TARGETS.get(locale, locale)
-					translations = translate_messages(all_messages, target)
+					new_translations = translate_messages(missing_messages, target)
 			except Exception:
 				if arguments.provider == "google":
-					translations = {message: message for message in all_messages}
+					new_translations = {message: message for message in missing_messages}
 					failures.append(locale)
 				else:
 					try:
-						translations = translate_messages_edge(all_messages, locale)
+						new_translations = translate_messages_edge(missing_messages, locale)
 						edge_fallbacks.append(locale)
 					except Exception:
-						translations = {message: message for message in all_messages}
+						new_translations = {message: message for message in missing_messages}
 						failures.append(locale)
-		runtime_catalog = {message: translations[message] for message in runtime_messages}
+			translations.update(new_translations)
+		runtime_catalog = {
+			message: translations.get(message) or message
+			for message in runtime_messages
+		}
 		write_po(locale, runtime_catalog, runtime_messages)
 		compile_mo(locale, runtime_catalog)
-		write_manifest(locale, translations)
-		print(f"[{position:02d}/{len(selected_locales)}] {locale}: {len(runtime_catalog)} messages")
+		if not (LOCALE_ROOT / locale / "manifest.ini").is_file():
+			write_manifest(
+				locale,
+				{
+					MANIFEST_SUMMARY: MANIFEST_SUMMARY,
+					MANIFEST_DESCRIPTION: MANIFEST_DESCRIPTION,
+				},
+			)
+		print(
+			f"[{position:02d}/{len(selected_locales)}] {locale}: "
+			f"{len(runtime_catalog)} messages, {len(missing_messages)} added"
+		)
 	if edge_fallbacks:
 		print("Edge translation fallback used for:", ", ".join(edge_fallbacks))
 	if failures:

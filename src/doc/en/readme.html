@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.0.0.</p>
+	<p>Author: Kazimierz Parzych. Version 1.1.0.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -27,14 +27,28 @@
 	</ol>
 	<p>
 		The Tools submenu also reports status, cancels a job, opens settings, and
-		opens the author's support page.
+		opens the progress window, update checker, and author's support page.
+	</p>
+
+	<h2>Conversion progress</h2>
+	<p>
+		A modeless progress window opens when a job starts. It reports the
+		current file, current-file percentage and time, overall percentage, and
+		elapsed job time. The window can be hidden without stopping conversion
+		and reopened from NVDA menu, Tools, Easy Audio Converter.
+	</p>
+	<p>
+		Use “Cancel conversion” in the window, Tools menu, or a custom gesture
+		to stop FFmpeg. An incomplete output created by the canceled operation
+		is removed.
 	</p>
 
 	<h2>Settings</h2>
 	<p>
 		Open NVDA menu, Preferences, Settings, Easy Audio Converter. You can
 		select the target format, quality, MP3 encoder, destination behavior,
-		subfolder scanning, and folder-structure preservation.
+		subfolder scanning, folder-structure preservation, metadata mode, and
+		automatic update checks.
 	</p>
 	<p>
 		When “Save converted files next to the source files” is enabled, every
@@ -44,6 +58,50 @@
 	<p>
 		Existing files and source files are never overwritten. A numbered name is
 		created automatically when necessary.
+	</p>
+
+	<h2>Metadata</h2>
+	<p>The metadata export list has three modes:</p>
+	<ul>
+		<li>do not copy source metadata;</li>
+		<li>copy all global text metadata;</li>
+		<li>
+			copy only checked fields such as title, artist, album, composer,
+			genre, date, track, disc, comment, copyright, lyrics, language, or
+			publisher.
+		</li>
+	</ul>
+	<p>
+		Cover artwork is a media stream, not a text field, and is not managed by
+		the metadata selector. Some containers support fewer text fields than
+		others.
+	</p>
+
+	<h2>Advanced codec settings</h2>
+	<p>
+		Open NVDA Settings, “Easy Audio Converter - Advanced”. Every target
+		codec has an independent profile. Enable its override and choose any
+		supported bitrate, source or fixed sample rate, source/mono/stereo
+		channels, codec-specific level, and PCM bit depth.
+	</p>
+	<p>
+		The codec level means LAME algorithm effort, Vorbis quality, Opus
+		complexity, or FLAC/WavPack compression depending on the selected
+		format. Controls that do not apply are disabled. A value of -1 or 0
+		where described keeps the normal quality preset.
+	</p>
+
+	<h2>Updates</h2>
+	<p>
+		The add-on can check the official GitHub releases when NVDA starts.
+		Automatic checks can be disabled in settings, and a manual check is
+		available from Tools and Input Gestures. No personal data is sent.
+	</p>
+	<p>
+		A downloaded package is checked for size, SHA-256 when GitHub provides
+		it, ZIP integrity, safe paths, add-on name, and version. The verified
+		file is then handed to NVDA's normal installer, which still asks for
+		confirmation and restart.
 	</p>
 
 	<h2>Custom keyboard shortcuts</h2>
@@ -58,8 +116,11 @@
 		<li>cycle the target format;</li>
 		<li>cycle quality;</li>
 		<li>choose the destination folder;</li>
+		<li>open advanced codec settings;</li>
+		<li>show the progress window;</li>
 		<li>report status;</li>
 		<li>cancel conversion;</li>
+		<li>check for updates;</li>
 		<li>open the support page.</li>
 	</ul>
 
@@ -79,6 +140,11 @@
 		<li>Folder jobs ask for confirmation before they start.</li>
 		<li>Video containers are accepted when they contain a readable audio track.</li>
 		<li>Encrypted or copy-protected media cannot be converted.</li>
+		<li>Advanced parameters unsupported by a format are ignored or disabled.</li>
+		<li>
+			If conversion fails, the warning lists up to eight files and FFmpeg
+			error details without overwriting any existing output.
+		</li>
 	</ul>
 </body>
 </html>

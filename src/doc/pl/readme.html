@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.0.0.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.1.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -27,14 +27,27 @@
 	</ol>
 	<p>
 		Podmenu Narzędzia pozwala także odczytać stan, anulować zadanie,
-		otworzyć ustawienia oraz stronę wsparcia autora.
+		otworzyć okno postępu, aktualizator, ustawienia oraz stronę wsparcia autora.
+	</p>
+
+	<h2>Postęp konwersji</h2>
+	<p>
+		Po rozpoczęciu zadania otwiera się niemodalne okno postępu. Pokazuje ono
+		bieżący plik, procent i czas bieżącego pliku, postęp całkowity oraz czas
+		od rozpoczęcia zadania. Okno można ukryć bez zatrzymywania konwersji,
+		a następnie otworzyć ponownie z menu NVDA, Narzędzia, Easy Audio Converter.
+	</p>
+	<p>
+		Przycisk „Anuluj konwersję”, polecenie z menu lub własny skrót zatrzymuje
+		FFmpeg. Niekompletny plik utworzony przez anulowaną operację jest usuwany.
 	</p>
 
 	<h2>Ustawienia</h2>
 	<p>
 		Otwórz menu NVDA, Ustawienia, Ustawienia, Easy Audio Converter.
 		Możesz wybrać format docelowy, jakość, kodek MP3, sposób zapisu,
-		przeszukiwanie podfolderów oraz zachowanie struktury katalogów.
+		przeszukiwanie podfolderów, zachowanie struktury katalogów, sposób
+		eksportu metadanych oraz automatyczne sprawdzanie aktualizacji.
 	</p>
 	<p>
 		Po zaznaczeniu opcji „Zapisuj przekonwertowane pliki obok plików
@@ -44,6 +57,52 @@
 	<p>
 		Pliki źródłowe i istniejące wyniki nigdy nie są nadpisywane.
 		W razie konfliktu dodatek automatycznie tworzy nazwę z numerem.
+	</p>
+
+	<h2>Metadane</h2>
+	<p>Lista eksportu metadanych udostępnia trzy tryby:</p>
+	<ul>
+		<li>bez kopiowania metadanych źródłowych;</li>
+		<li>kopiowanie wszystkich globalnych metadanych tekstowych;</li>
+		<li>
+			kopiowanie tylko zaznaczonych pól, takich jak tytuł, wykonawca,
+			album, kompozytor, gatunek, data, numer utworu i płyty, komentarz,
+			prawa autorskie, tekst utworu, język lub wydawca.
+		</li>
+	</ul>
+	<p>
+		Okładka jest strumieniem multimedialnym, a nie polem tekstowym, dlatego
+		nie podlega selektorowi metadanych. Niektóre kontenery obsługują mniej
+		pól tekstowych niż inne.
+	</p>
+
+	<h2>Zaawansowane ustawienia kodeków</h2>
+	<p>
+		Otwórz Ustawienia NVDA, „Easy Audio Converter — zaawansowane”. Każdy
+		format docelowy ma oddzielny profil. Po włączeniu ustawień można wybrać
+		przepływność, źródłową lub stałą częstotliwość próbkowania, źródłową
+		liczbę kanałów albo mono/stereo, poziom właściwy dla kodeka i głębię
+		bitową PCM.
+	</p>
+	<p>
+		Poziom kodeka oznacza jakość algorytmu LAME, jakość Vorbis, złożoność
+		Opus albo stopień kompresji FLAC/WavPack — zależnie od formatu.
+		Niepasujące kontrolki są wyłączane. Wartość -1 lub 0, zgodnie z opisem,
+		zachowuje zwykłe ustawienie jakości.
+	</p>
+
+	<h2>Aktualizacje</h2>
+	<p>
+		Dodatek może sprawdzać oficjalne wydania GitHub podczas uruchamiania
+		NVDA. Automatyczne sprawdzanie można wyłączyć w ustawieniach, a ręczne
+		polecenie jest dostępne w menu Narzędzia i Zdarzeniach wejścia.
+		Żadne dane osobowe nie są wysyłane.
+	</p>
+	<p>
+		Pobrany pakiet jest sprawdzany pod względem rozmiaru, sumy SHA-256, gdy
+		GitHub ją udostępnia, integralności ZIP, bezpiecznych ścieżek, nazwy
+		dodatku oraz wersji. Następnie zweryfikowany plik otwiera standardowy
+		instalator NVDA, który nadal prosi o potwierdzenie i restart.
 	</p>
 
 	<h2>Własne skróty klawiszowe</h2>
@@ -58,8 +117,11 @@
 		<li>zmiany formatu docelowego;</li>
 		<li>zmiany jakości;</li>
 		<li>szybkiego wyboru folderu docelowego;</li>
+		<li>otwierania zaawansowanych ustawień kodeków;</li>
+		<li>pokazywania okna postępu;</li>
 		<li>odczytu stanu;</li>
 		<li>anulowania konwersji;</li>
+		<li>sprawdzania aktualizacji;</li>
 		<li>otwierania strony wsparcia.</li>
 	</ul>
 
@@ -79,6 +141,11 @@
 		<li>Konwersja folderu wymaga potwierdzenia.</li>
 		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>
 		<li>Nie można konwertować mediów zaszyfrowanych lub zabezpieczonych DRM.</li>
+		<li>Parametry zaawansowane nieobsługiwane przez format są ignorowane lub wyłączone.</li>
+		<li>
+			Przy błędzie ostrzeżenie pokazuje maksymalnie osiem plików i szczegóły
+			FFmpeg, nie nadpisując żadnego istniejącego wyniku.
+		</li>
 	</ul>
 </body>
 </html>

@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import ctypes
+import json
 import os
 import threading
+import time
 import webbrowser
 from pathlib import Path
 from typing import Any, Callable
@@ -21,14 +23,33 @@ from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
 from logHandler import log
 from scriptHandler import script
 
+try:
+	import globalVars
+except Exception:
+	globalVars = None
+
 from .converter import (
+	ADVANCED_BIT_DEPTHS,
+	ADVANCED_CHANNEL_COUNTS,
+	ADVANCED_SAMPLE_RATES,
+	DEFAULT_METADATA_FIELDS,
 	FORMAT_KEYS,
+	METADATA_FIELD_KEYS,
+	METADATA_MODE_KEYS,
 	MP3_ENCODER_KEYS,
 	QUALITY_KEYS,
 	ConversionCallbacks,
 	ConversionSettings,
 	ConversionSummary,
 	Converter,
+)
+from .updater import (
+	GITHUB_REPOSITORY_URL,
+	ReleaseInfo,
+	UpdateCanceled,
+	download_release,
+	fetch_latest_release,
+	is_newer_version,
 )
 
 try:
@@ -43,6 +64,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
+ADDON_VERSION = "1.1.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 CONFIG_SPEC = {
@@ -53,6 +75,13 @@ CONFIG_SPEC = {
 	"outputFolder": "string(default='')",
 	"includeSubfolders": "boolean(default=True)",
 	"preserveFolderStructure": "boolean(default=True)",
+	"metadataMode": "string(default='all')",
+	"metadataFields": (
+		"string_list(default=list('title', 'artist', 'album', 'album_artist', "
+		"'composer', 'genre', 'date', 'track', 'disc'))"
+	),
+	"advancedProfiles": "string(default='{}')",
+	"autoCheckUpdates": "boolean(default=True)",
 }
 
 
@@ -69,17 +98,62 @@ def _validated_key(value: Any, allowed: tuple[str, ...], fallback: str) -> str:
 	return value if value in allowed else fallback
 
 
+def _load_advanced_profiles(value: Any = None) -> dict[str, dict[str, Any]]:
+	if value is None:
+		_ensure_config()
+		value = config.conf[CONFIG_SECTION].get("advancedProfiles", "{}")
+	try:
+		raw_profiles = json.loads(str(value or "{}"))
+	except (TypeError, ValueError):
+		return {}
+	if not isinstance(raw_profiles, dict):
+		return {}
+	profiles: dict[str, dict[str, Any]] = {}
+	for format_key, raw_profile in raw_profiles.items():
+		if format_key not in FORMAT_KEYS or not isinstance(raw_profile, dict):
+			continue
+		profiles[format_key] = {
+			"enabled": bool(raw_profile.get("enabled", False)),
+			"bitrate": _safe_int(raw_profile.get("bitrate"), 0),
+			"sampleRate": _safe_int(raw_profile.get("sampleRate"), 0),
+			"channels": _safe_int(raw_profile.get("channels"), 0),
+			"codecLevel": _safe_int(raw_profile.get("codecLevel"), -1),
+			"bitDepth": _safe_int(raw_profile.get("bitDepth"), 0),
+		}
+	return profiles
+
+
+def _safe_int(value: Any, default: int) -> int:
+	try:
+		return int(value)
+	except (TypeError, ValueError):
+		return default
+
+
 def _read_settings() -> ConversionSettings:
 	_ensure_config()
 	conf = config.conf[CONFIG_SECTION]
+	target_format = _validated_key(conf.get("targetFormat"), FORMAT_KEYS, "mp3")
+	metadata_fields = conf.get("metadataFields", DEFAULT_METADATA_FIELDS)
+	if isinstance(metadata_fields, str):
+		metadata_fields = [field.strip() for field in metadata_fields.split(",")]
+	metadata_fields = tuple(
+		field_name
+		for field_name in metadata_fields
+		if field_name in METADATA_FIELD_KEYS
+	)
+	profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
 	return ConversionSettings(
-		target_format=_validated_key(conf.get("targetFormat"), FORMAT_KEYS, "mp3"),
+		target_format=target_format,
 		quality=_validated_key(conf.get("quality"), QUALITY_KEYS, "high"),
 		mp3_encoder=_validated_key(conf.get("mp3Encoder"), MP3_ENCODER_KEYS, "lame"),
 		same_folder=bool(conf.get("sameFolder", True)),
 		output_folder=str(conf.get("outputFolder") or _default_output_folder()),
 		include_subfolders=bool(conf.get("includeSubfolders", True)),
 		preserve_folder_structure=bool(conf.get("preserveFolderStructure", True)),
+		metadata_mode=_validated_key(conf.get("metadataMode"), METADATA_MODE_KEYS, "all"),
+		metadata_fields=metadata_fields,
+		advanced_options=profiles.get(target_format, {}),
 	)
 
 
@@ -117,6 +191,33 @@ def _mp3_encoder_labels() -> dict[str, str]:
 	return {
 		"lame": _("LAME MP3"),
 		"fraunhofer": _("Fraunhofer / Windows Media Foundation MP3"),
+	}
+
+
+def _metadata_mode_labels() -> dict[str, str]:
+	return {
+		"none": _("Do not copy metadata"),
+		"all": _("Copy all text metadata"),
+		"selected": _("Copy selected metadata fields"),
+	}
+
+
+def _metadata_field_labels() -> dict[str, str]:
+	return {
+		"title": _("Title"),
+		"artist": _("Artist"),
+		"album": _("Album"),
+		"album_artist": _("Album artist"),
+		"composer": _("Composer"),
+		"genre": _("Genre"),
+		"date": _("Date or year"),
+		"track": _("Track number"),
+		"disc": _("Disc number"),
+		"comment": _("Comment"),
+		"copyright": _("Copyright"),
+		"lyrics": _("Lyrics"),
+		"language": _("Language"),
+		"publisher": _("Publisher"),
 	}
 
 
@@ -274,6 +375,33 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 		)
 		self.preserve_structure.SetValue(settings.preserve_folder_structure)
 
+		metadata_mode_labels = _metadata_mode_labels()
+		self.metadata_mode = helper.addLabeledControl(
+			# Translators: Label for choosing how source metadata is copied.
+			_("Metadata export:"),
+			wx.Choice,
+			choices=[metadata_mode_labels[key] for key in METADATA_MODE_KEYS],
+		)
+		self.metadata_mode.SetSelection(METADATA_MODE_KEYS.index(settings.metadata_mode))
+
+		metadata_field_labels = _metadata_field_labels()
+		self.metadata_fields = helper.addLabeledControl(
+			# Translators: Label for the checkable list of metadata fields.
+			_("Metadata fields to copy:"),
+			wx.CheckListBox,
+			choices=[metadata_field_labels[key] for key in METADATA_FIELD_KEYS],
+		)
+		for index, field_name in enumerate(METADATA_FIELD_KEYS):
+			self.metadata_fields.Check(index, field_name in settings.metadata_fields)
+
+		self.auto_check_updates = helper.addItem(
+			# Translators: Automatically query GitHub for a newer add-on release.
+			wx.CheckBox(self, label=_("Automatically check for add-on updates")),
+		)
+		self.auto_check_updates.SetValue(
+			bool(config.conf[CONFIG_SECTION].get("autoCheckUpdates", True))
+		)
+
 		self.support_button = helper.addItem(
 			# Translators: Opens the author's support page.
 			wx.Button(self, label=_("Support the author")),
@@ -281,6 +409,7 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 
 		self.target_format.Bind(wx.EVT_CHOICE, self._update_control_state)
 		self.same_folder.Bind(wx.EVT_CHECKBOX, self._update_control_state)
+		self.metadata_mode.Bind(wx.EVT_CHOICE, self._update_control_state)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
 		self.support_button.Bind(wx.EVT_BUTTON, self._on_support)
 		self._update_control_state()
@@ -292,6 +421,10 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 		self.output_folder.Enable(use_destination)
 		self.browse_button.Enable(use_destination)
 		self.preserve_structure.Enable(use_destination)
+		copy_selected_metadata = (
+			METADATA_MODE_KEYS[self.metadata_mode.GetSelection()] == "selected"
+		)
+		self.metadata_fields.Enable(copy_selected_metadata)
 
 	def _on_browse(self, event):
 		initial_path = self.output_folder.GetValue().strip() or _default_output_folder()
@@ -321,7 +454,296 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 		conf["outputFolder"] = self.output_folder.GetValue().strip() or _default_output_folder()
 		conf["includeSubfolders"] = self.include_subfolders.IsChecked()
 		conf["preserveFolderStructure"] = self.preserve_structure.IsChecked()
+		conf["metadataMode"] = METADATA_MODE_KEYS[self.metadata_mode.GetSelection()]
+		conf["metadataFields"] = [
+			field_name
+			for index, field_name in enumerate(METADATA_FIELD_KEYS)
+			if self.metadata_fields.IsChecked(index)
+		]
+		conf["autoCheckUpdates"] = self.auto_check_updates.IsChecked()
 		config.conf.save()
+
+
+def _default_advanced_profile() -> dict[str, Any]:
+	return {
+		"enabled": False,
+		"bitrate": 0,
+		"sampleRate": 0,
+		"channels": 0,
+		"codecLevel": -1,
+		"bitDepth": 0,
+	}
+
+
+class EasyAudioConverterAdvancedSettingsPanel(SettingsPanel):
+	# Translators: Title of the advanced codec settings category.
+	title = _("Easy Audio Converter - Advanced")
+
+	_BITRATE_FORMATS = {"mp3", "opus", "m4a", "aac", "wma", "ac3", "eac3", "mp2", "amr", "amrwb"}
+	_LEVEL_FORMATS = {"mp3", "flac", "ogg", "opus", "wavpack"}
+	_BIT_DEPTH_FORMATS = {"wav", "aiff"}
+
+	def makeSettings(self, settingsSizer):
+		_ensure_config()
+		conf = config.conf[CONFIG_SECTION]
+		self._profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
+		self._current_format = _validated_key(conf.get("targetFormat"), FORMAT_KEYS, "mp3")
+		helper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+		format_labels = _format_labels()
+		self.codec = helper.addLabeledControl(
+			# Translators: Advanced settings apply separately to each target codec.
+			_("Codec profile to edit:"),
+			wx.Choice,
+			choices=[format_labels[key] for key in FORMAT_KEYS],
+		)
+		self.codec.SetSelection(FORMAT_KEYS.index(self._current_format))
+
+		self.enabled = helper.addItem(
+			# Translators: Enables advanced overrides for the selected target codec.
+			wx.CheckBox(self, label=_("Enable advanced overrides for this codec")),
+		)
+		self.bitrate = helper.addLabeledControl(
+			# Translators: Zero keeps the bitrate selected by the quality preset.
+			_("Bitrate in kbps (0 uses the quality preset):"),
+			wx.SpinCtrl,
+			min=0,
+			max=1536,
+			initial=0,
+		)
+		self.sample_rate = helper.addLabeledControl(
+			_("Sample rate:"),
+			wx.Choice,
+			choices=[_("Keep the source sample rate")]
+			+ [f"{rate} Hz" for rate in ADVANCED_SAMPLE_RATES if rate],
+		)
+		self.channels = helper.addLabeledControl(
+			_("Channels:"),
+			wx.Choice,
+			choices=[_("Keep the source channel count"), _("Mono"), _("Stereo")],
+		)
+		self.codec_level = helper.addLabeledControl(
+			# Translators: The meaning is explained in the following help text.
+			_("Codec-specific level (-1 uses the preset):"),
+			wx.SpinCtrl,
+			min=-1,
+			max=12,
+			initial=-1,
+		)
+		self.bit_depth = helper.addLabeledControl(
+			_("PCM bit depth:"),
+			wx.Choice,
+			choices=[_("Use the quality preset"), _("16 bit"), _("24 bit"), _("32 bit")],
+		)
+		self.level_help = helper.addItem(wx.StaticText(self, label=""))
+
+		self.codec.Bind(wx.EVT_CHOICE, self._on_codec_changed)
+		self.enabled.Bind(wx.EVT_CHECKBOX, self._update_control_state)
+		self._load_profile(self._current_format)
+
+	def _profile(self, format_key: str) -> dict[str, Any]:
+		return dict(_default_advanced_profile(), **self._profiles.get(format_key, {}))
+
+	def _store_current_profile(self) -> None:
+		self._profiles[self._current_format] = {
+			"enabled": self.enabled.IsChecked(),
+			"bitrate": self.bitrate.GetValue(),
+			"sampleRate": ADVANCED_SAMPLE_RATES[self.sample_rate.GetSelection()],
+			"channels": ADVANCED_CHANNEL_COUNTS[self.channels.GetSelection()],
+			"codecLevel": self.codec_level.GetValue(),
+			"bitDepth": ADVANCED_BIT_DEPTHS[self.bit_depth.GetSelection()],
+		}
+
+	def _load_profile(self, format_key: str) -> None:
+		profile = self._profile(format_key)
+		self.enabled.SetValue(bool(profile["enabled"]))
+		self.bitrate.SetValue(max(0, min(1536, _safe_int(profile["bitrate"], 0))))
+		sample_rate = _safe_int(profile["sampleRate"], 0)
+		self.sample_rate.SetSelection(
+			ADVANCED_SAMPLE_RATES.index(sample_rate)
+			if sample_rate in ADVANCED_SAMPLE_RATES
+			else 0
+		)
+		channels = _safe_int(profile["channels"], 0)
+		self.channels.SetSelection(
+			ADVANCED_CHANNEL_COUNTS.index(channels)
+			if channels in ADVANCED_CHANNEL_COUNTS
+			else 0
+		)
+		self.codec_level.SetValue(max(-1, min(12, _safe_int(profile["codecLevel"], -1))))
+		bit_depth = _safe_int(profile["bitDepth"], 0)
+		self.bit_depth.SetSelection(
+			ADVANCED_BIT_DEPTHS.index(bit_depth)
+			if bit_depth in ADVANCED_BIT_DEPTHS
+			else 0
+		)
+		self._update_control_state()
+
+	def _on_codec_changed(self, event):
+		self._store_current_profile()
+		self._current_format = FORMAT_KEYS[self.codec.GetSelection()]
+		self._load_profile(self._current_format)
+
+	def _update_control_state(self, event=None):
+		enabled = self.enabled.IsChecked()
+		self.bitrate.Enable(enabled and self._current_format in self._BITRATE_FORMATS)
+		self.sample_rate.Enable(enabled and self._current_format not in {"amr", "amrwb", "opus"})
+		self.channels.Enable(enabled and self._current_format not in {"amr", "amrwb"})
+		self.codec_level.Enable(enabled and self._current_format in self._LEVEL_FORMATS)
+		self.bit_depth.Enable(enabled and self._current_format in self._BIT_DEPTH_FORMATS)
+		level_descriptions = {
+			"mp3": _("For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."),
+			"flac": _("For FLAC, level 0 is fastest and level 12 gives the strongest compression."),
+			"ogg": _("For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."),
+			"opus": _("For Opus, levels 0 to 10 select increasing encoder complexity."),
+			"wavpack": _("For WavPack, levels 0 to 8 select increasing compression effort."),
+		}
+		self.level_help.SetLabel(
+			level_descriptions.get(
+				self._current_format,
+				_("The codec-specific level is not used by this format."),
+			)
+		)
+		self.level_help.Wrap(max(300, self.GetClientSize().GetWidth() - 20))
+
+	def onSave(self):
+		self._store_current_profile()
+		config.conf[CONFIG_SECTION]["advancedProfiles"] = json.dumps(
+			self._profiles,
+			ensure_ascii=True,
+			sort_keys=True,
+			separators=(",", ":"),
+		)
+		config.conf.save()
+
+
+def _format_elapsed(seconds: float | None) -> str:
+	seconds = max(0, int(seconds or 0))
+	hours, remainder = divmod(seconds, 3600)
+	minutes, seconds = divmod(remainder, 60)
+	if hours:
+		return f"{hours:d}:{minutes:02d}:{seconds:02d}"
+	return f"{minutes:d}:{seconds:02d}"
+
+
+class ConversionProgressDialog(wx.Dialog):
+	"""Accessible modeless progress window for the active conversion job."""
+
+	def __init__(self, parent, on_cancel: Callable[[], None]):
+		super().__init__(
+			parent,
+			title=_("Easy Audio Converter progress"),
+			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
+		)
+		self._on_cancel_callback = on_cancel
+		self._running = True
+		panel = wx.Panel(self)
+		sizer = wx.BoxSizer(wx.VERTICAL)
+		self.current_file = wx.StaticText(panel, label=_("Preparing the conversion"))
+		sizer.Add(self.current_file, 0, wx.ALL | wx.EXPAND, 8)
+		self.file_status = wx.StaticText(panel, label=_("Current file progress: waiting"))
+		sizer.Add(self.file_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+		self.file_gauge = wx.Gauge(panel, range=1000)
+		sizer.Add(self.file_gauge, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+		self.overall_status = wx.StaticText(panel, label=_("Overall progress: waiting"))
+		sizer.Add(self.overall_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+		self.overall_gauge = wx.Gauge(panel, range=1000)
+		sizer.Add(self.overall_gauge, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+		self.elapsed_status = wx.StaticText(panel, label=_("Elapsed time: 0:00"))
+		sizer.Add(self.elapsed_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+
+		button_sizer = wx.BoxSizer(wx.HORIZONTAL)
+		self.cancel_button = wx.Button(panel, label=_("Cancel conversion"))
+		self.hide_button = wx.Button(panel, label=_("Hide"))
+		button_sizer.Add(self.cancel_button, 0, wx.RIGHT, 8)
+		button_sizer.Add(self.hide_button, 0)
+		sizer.Add(button_sizer, 0, wx.ALL | wx.ALIGN_RIGHT, 8)
+		panel.SetSizer(sizer)
+		outer_sizer = wx.BoxSizer(wx.VERTICAL)
+		outer_sizer.Add(panel, 1, wx.EXPAND)
+		self.SetSizerAndFit(outer_sizer)
+		self.SetMinSize((560, self.GetSize().height))
+		self.CentreOnParent()
+		self.cancel_button.Bind(wx.EVT_BUTTON, self._on_cancel)
+		self.hide_button.Bind(wx.EVT_BUTTON, self._on_hide)
+		self.Bind(wx.EVT_CLOSE, self._on_close)
+
+	def show_window(self) -> None:
+		if not self.IsShown():
+			self.Show()
+		self.Raise()
+
+	def update_progress(
+		self,
+		index: int,
+		total: int,
+		source_name: str,
+		file_fraction: float | None,
+		overall_fraction: float,
+		processed_seconds: float,
+		duration: float | None,
+		elapsed_seconds: float,
+	) -> None:
+		if not self._running:
+			return
+		self.current_file.SetLabel(
+			_("File {index} of {total}: {name}").format(
+				index=index,
+				total=total,
+				name=source_name,
+			)
+		)
+		if file_fraction is None:
+			self.file_gauge.Pulse()
+			self.file_status.SetLabel(
+				_("Current file time: {processed}").format(
+					processed=_format_elapsed(processed_seconds),
+				)
+			)
+		else:
+			file_percent = int(max(0.0, min(1.0, file_fraction)) * 100)
+			self.file_gauge.SetValue(file_percent * 10)
+			self.file_status.SetLabel(
+				_("Current file progress: {percent}% ({processed} of {duration})").format(
+					percent=file_percent,
+					processed=_format_elapsed(processed_seconds),
+					duration=_format_elapsed(duration),
+				)
+			)
+		overall_percent = int(max(0.0, min(1.0, overall_fraction)) * 100)
+		self.overall_gauge.SetValue(overall_percent * 10)
+		self.overall_status.SetLabel(
+			_("Overall progress: {percent}%").format(percent=overall_percent)
+		)
+		self.elapsed_status.SetLabel(
+			_("Elapsed time: {elapsed}").format(elapsed=_format_elapsed(elapsed_seconds))
+		)
+
+	def finish(self, message: str, completed: bool) -> None:
+		self._running = False
+		self.current_file.SetLabel(message)
+		if completed:
+			self.file_gauge.SetValue(1000)
+			self.overall_gauge.SetValue(1000)
+			self.file_status.SetLabel(_("Current file progress: 100%"))
+			self.overall_status.SetLabel(_("Overall progress: 100%"))
+		self.cancel_button.Disable()
+		self.hide_button.SetLabel(_("Close"))
+		if self.IsShown():
+			self.hide_button.SetFocus()
+
+	def _on_cancel(self, event):
+		if self._running:
+			self.cancel_button.Disable()
+			self.cancel_button.SetLabel(_("Canceling..."))
+			self._on_cancel_callback()
+
+	def _on_hide(self, event):
+		self.Hide()
+
+	def _on_close(self, event):
+		self.Hide()
+		if event.CanVeto():
+			event.Veto()
 
 
 SCRIPT_CATEGORY = _("Easy Audio Converter")
@@ -335,14 +757,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_ensure_config()
 		self._converter: Converter | None = None
 		self._worker: threading.Thread | None = None
-		self._progress: tuple[int, int, str] | None = None
+		self._progress: tuple[int, int, str, float | None, float, float, float | None, float] | None = None
+		self._progress_dialog: ConversionProgressDialog | None = None
+		self._job_started_at = 0.0
+		self._update_check_thread: threading.Thread | None = None
+		self._update_download_thread: threading.Thread | None = None
+		self._update_cancel_event: threading.Event | None = None
+		self._update_progress_dialog = None
+		self._update_timer = None
 		self._terminated = False
 		self._menu: wx.Menu | None = None
 		self._menu_root_item = None
 		self._menu_bindings: list[tuple[Any, Callable]] = []
 		if EasyAudioConverterSettingsPanel not in NVDASettingsDialog.categoryClasses:
 			NVDASettingsDialog.categoryClasses.append(EasyAudioConverterSettingsPanel)
+		if EasyAudioConverterAdvancedSettingsPanel not in NVDASettingsDialog.categoryClasses:
+			NVDASettingsDialog.categoryClasses.append(EasyAudioConverterAdvancedSettingsPanel)
 		self._install_menu()
+		if self._updates_allowed() and bool(
+			config.conf[CONFIG_SECTION].get("autoCheckUpdates", True)
+		):
+			self._update_timer = wx.CallLater(8000, self._start_update_check, True)
 
 	def terminate(self):
 		self._terminated = True
@@ -352,10 +787,25 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		worker = self._worker
 		if worker is not None and worker.is_alive():
 			worker.join(timeout=3)
+		if self._update_timer is not None:
+			try:
+				self._update_timer.Stop()
+			except Exception:
+				pass
+		if self._update_cancel_event is not None:
+			self._update_cancel_event.set()
 		try:
 			self._remove_menu()
 			if EasyAudioConverterSettingsPanel in NVDASettingsDialog.categoryClasses:
 				NVDASettingsDialog.categoryClasses.remove(EasyAudioConverterSettingsPanel)
+			if EasyAudioConverterAdvancedSettingsPanel in NVDASettingsDialog.categoryClasses:
+				NVDASettingsDialog.categoryClasses.remove(EasyAudioConverterAdvancedSettingsPanel)
+			if self._progress_dialog is not None:
+				self._progress_dialog.Destroy()
+				self._progress_dialog = None
+			if self._update_progress_dialog is not None:
+				self._update_progress_dialog.Destroy()
+				self._update_progress_dialog = None
 		finally:
 			super().terminate()
 
@@ -367,10 +817,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			entries: tuple[tuple[str | None, Callable | None], ...] = (
 				(_("Convert selected files or folders"), self.script_convertSelection),
 				(_("Convert the current folder"), self.script_convertCurrentFolder),
+				(_("Show conversion progress"), self.script_showProgress),
 				(_("Report conversion status"), self.script_reportStatus),
 				(_("Cancel conversion"), self.script_cancelConversion),
 				(None, None),
 				(_("Settings..."), self.script_openSettings),
+				(_("Advanced codec settings..."), self.script_openAdvancedSettings),
+				(_("Check for updates..."), self.script_checkForUpdates),
 				(_("Support the author"), self.script_openSupportPage),
 			)
 			for label, callback in entries:
@@ -410,7 +863,215 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		return Path(__file__).resolve().parent / "bin" / "ffmpeg.exe"
 
 	def _is_busy(self) -> bool:
-		return self._worker is not None and self._worker.is_alive()
+		return self._converter is not None
+
+	@staticmethod
+	def _updates_allowed() -> bool:
+		if globalVars is None:
+			return True
+		try:
+			return not bool(getattr(globalVars.appArgs, "secure", False))
+		except Exception:
+			return False
+
+	def _start_update_check(self, silent: bool = False) -> None:
+		if self._terminated or not self._updates_allowed():
+			return
+		if self._update_check_thread is not None and self._update_check_thread.is_alive():
+			if not silent:
+				ui.message(_("An update check is already in progress"))
+			return
+		if not silent:
+			ui.message(_("Checking for Easy Audio Converter updates"))
+
+		def check() -> None:
+			try:
+				release = fetch_latest_release()
+			except Exception as error:
+				wx.CallAfter(self._on_update_check_result, None, str(error), silent)
+			else:
+				wx.CallAfter(self._on_update_check_result, release, None, silent)
+
+		self._update_check_thread = threading.Thread(
+			target=check,
+			name="EasyAudioConverterUpdateCheck",
+			daemon=True,
+		)
+		self._update_check_thread.start()
+
+	def _on_update_check_result(
+		self,
+		release: ReleaseInfo | None,
+		error_message: str | None,
+		silent: bool,
+	) -> None:
+		self._update_check_thread = None
+		if self._terminated:
+			return
+		if release is None:
+			if not silent:
+				gui.messageBox(
+					_("Could not check for updates.\n\n{error}").format(
+						error=error_message or _("Unknown error"),
+					),
+					_("Easy Audio Converter update"),
+					wx.OK | wx.ICON_WARNING,
+					gui.mainFrame,
+				)
+			return
+		if not is_newer_version(release.version, ADDON_VERSION):
+			if not silent:
+				gui.messageBox(
+					_("Easy Audio Converter is up to date. Installed version: {version}.").format(
+						version=ADDON_VERSION,
+					),
+					_("Easy Audio Converter update"),
+					wx.OK | wx.ICON_INFORMATION,
+					gui.mainFrame,
+				)
+			return
+		notes = release.notes.strip()
+		if len(notes) > 1600:
+			notes = f"{notes[:1600]}\n..."
+		if release.download_url:
+			message = _(
+				"Easy Audio Converter {newVersion} is available. "
+				"You have version {currentVersion}.\n\n"
+				"Do you want to download and install the update now?",
+			).format(
+				newVersion=release.version,
+				currentVersion=ADDON_VERSION,
+			)
+			if notes:
+				message = f"{message}\n\n{_('Release notes:')}\n{notes}"
+			dialog = wx.MessageDialog(
+				gui.mainFrame,
+				message,
+				_("Easy Audio Converter update available"),
+				wx.YES_NO | wx.YES_DEFAULT | wx.ICON_INFORMATION,
+			)
+			try:
+				dialog.SetYesNoLabels(_("Download and install"), _("Later"))
+				if dialog.ShowModal() == wx.ID_YES:
+					self._start_update_download(release)
+			finally:
+				dialog.Destroy()
+			return
+		result = gui.messageBox(
+			_(
+				"Easy Audio Converter {version} is available, but the release "
+				"does not contain a direct add-on package. Open the release page?",
+			).format(version=release.version),
+			_("Easy Audio Converter update available"),
+			wx.YES_NO | wx.ICON_INFORMATION,
+			gui.mainFrame,
+		)
+		if result == wx.YES:
+			webbrowser.open(release.page_url or GITHUB_REPOSITORY_URL)
+
+	def _start_update_download(self, release: ReleaseInfo) -> None:
+		if self._update_download_thread is not None and self._update_download_thread.is_alive():
+			ui.message(_("An update download is already in progress"))
+			return
+		if globalVars is not None:
+			base_path = Path(globalVars.appArgs.configPath)
+		else:
+			base_path = Path(os.environ.get("APPDATA", str(Path.home()))) / "nvda"
+		file_name = Path(release.asset_name).name or f"easyAudioConverter-{release.version}.nvda-addon"
+		destination = base_path / "easyAudioConverterUpdates" / file_name
+		self._update_cancel_event = threading.Event()
+		self._update_progress_dialog = wx.ProgressDialog(
+			_("Downloading Easy Audio Converter update"),
+			_("Starting the download..."),
+			maximum=1000,
+			parent=gui.mainFrame,
+			style=wx.PD_CAN_ABORT | wx.PD_ELAPSED_TIME | wx.PD_REMAINING_TIME | wx.PD_SMOOTH,
+		)
+
+		def progress(bytes_read: int, total_size: int | None) -> None:
+			wx.CallAfter(self._update_download_progress, bytes_read, total_size)
+
+		def download() -> None:
+			try:
+				path = download_release(
+					release,
+					destination,
+					progress_callback=progress,
+					cancel_event=self._update_cancel_event,
+				)
+			except UpdateCanceled:
+				wx.CallAfter(self._on_update_download_complete, None, None, True)
+			except Exception as error:
+				wx.CallAfter(self._on_update_download_complete, None, str(error), False)
+			else:
+				wx.CallAfter(self._on_update_download_complete, path, None, False)
+
+		self._update_download_thread = threading.Thread(
+			target=download,
+			name="EasyAudioConverterUpdateDownload",
+			daemon=True,
+		)
+		self._update_download_thread.start()
+
+	def _update_download_progress(self, bytes_read: int, total_size: int | None) -> None:
+		if self._terminated or self._update_progress_dialog is None:
+			return
+		megabytes = bytes_read / (1024 * 1024)
+		if total_size:
+			value = int(max(0.0, min(1.0, bytes_read / total_size)) * 1000)
+			total_megabytes = total_size / (1024 * 1024)
+			result = self._update_progress_dialog.Update(
+				value,
+				_("Downloaded {done:.1f} of {total:.1f} MB").format(
+					done=megabytes,
+					total=total_megabytes,
+				),
+			)
+		else:
+			result = self._update_progress_dialog.Pulse(
+				_("Downloaded {done:.1f} MB").format(done=megabytes)
+			)
+		keep_going = result[0] if isinstance(result, tuple) else bool(result)
+		if not keep_going and self._update_cancel_event is not None:
+			self._update_cancel_event.set()
+
+	def _on_update_download_complete(
+		self,
+		path: Path | None,
+		error_message: str | None,
+		canceled: bool,
+	) -> None:
+		self._update_download_thread = None
+		if self._update_progress_dialog is not None:
+			self._update_progress_dialog.Destroy()
+			self._update_progress_dialog = None
+		if self._terminated:
+			return
+		if canceled:
+			ui.message(_("Update download canceled"))
+			return
+		if path is None:
+			gui.messageBox(
+				_("The update could not be downloaded or verified.\n\n{error}").format(
+					error=error_message or _("Unknown error"),
+				),
+				_("Easy Audio Converter update"),
+				wx.OK | wx.ICON_ERROR,
+				gui.mainFrame,
+			)
+			return
+		ui.message(_("The update is ready. Opening the NVDA add-on installer."))
+		try:
+			os.startfile(str(path))
+		except OSError:
+			gui.messageBox(
+				_("Could not open the NVDA add-on installer. The update was saved to:\n{path}").format(
+					path=path,
+				),
+				_("Easy Audio Converter update"),
+				wx.OK | wx.ICON_ERROR,
+				gui.mainFrame,
+			)
 
 	def _start_conversion(
 		self,
@@ -434,6 +1095,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		converter = Converter(ffmpeg_path)
 		self._converter = converter
 		self._progress = None
+		self._job_started_at = time.monotonic()
+		if self._progress_dialog is not None:
+			self._progress_dialog.Destroy()
+		self._progress_dialog = ConversionProgressDialog(
+			gui.mainFrame,
+			lambda: self.script_cancelConversion(None),
+		)
+		self._progress_dialog.show_window()
 		ui.message(_("Preparing the conversion"))
 
 		def on_collected(total: int, ignored: int) -> None:
@@ -441,7 +1110,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				wx.CallAfter(ui.message, _("Found {count} files to convert").format(count=total))
 
 		def on_file_start(index: int, total: int, source_name: str, output_name: str) -> None:
-			wx.CallAfter(self._set_progress, index, total, source_name)
 			percentage = int(index * 100 / max(1, total))
 			previous_percentage = int((index - 1) * 100 / max(1, total))
 			announce = total <= 10 or index in {1, total} or percentage // 10 > previous_percentage // 10
@@ -455,9 +1123,33 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					),
 				)
 
+		def on_progress(
+			index: int,
+			total: int,
+			source_name: str,
+			file_fraction: float | None,
+			overall_fraction: float,
+			processed_seconds: float,
+			duration: float | None,
+		) -> None:
+			elapsed = max(0.0, time.monotonic() - self._job_started_at)
+			wx.CallAfter(
+				self._set_progress,
+				converter,
+				index,
+				total,
+				source_name,
+				file_fraction,
+				overall_fraction,
+				processed_seconds,
+				duration,
+				elapsed,
+			)
+
 		callbacks = ConversionCallbacks(
 			on_collected=on_collected,
 			on_file_start=on_file_start,
+			on_progress=on_progress,
 		)
 
 		def run_job() -> None:
@@ -480,9 +1172,41 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		)
 		self._worker.start()
 
-	def _set_progress(self, index: int, total: int, source_name: str) -> None:
-		if not self._terminated:
-			self._progress = (index, total, source_name)
+	def _set_progress(
+		self,
+		converter: Converter,
+		index: int,
+		total: int,
+		source_name: str,
+		file_fraction: float | None,
+		overall_fraction: float,
+		processed_seconds: float,
+		duration: float | None,
+		elapsed_seconds: float,
+	) -> None:
+		if self._terminated or converter is not self._converter:
+			return
+		self._progress = (
+			index,
+			total,
+			source_name,
+			file_fraction,
+			overall_fraction,
+			processed_seconds,
+			duration,
+			elapsed_seconds,
+		)
+		if self._progress_dialog is not None:
+			self._progress_dialog.update_progress(
+				index,
+				total,
+				source_name,
+				file_fraction,
+				overall_fraction,
+				processed_seconds,
+				duration,
+				elapsed_seconds,
+			)
 
 	def _job_failed(self, converter: Converter, message: str) -> None:
 		if converter is not self._converter:
@@ -492,6 +1216,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._progress = None
 		if self._terminated:
 			return
+		if self._progress_dialog is not None:
+			self._progress_dialog.finish(
+				_("The conversion could not start"),
+				completed=False,
+			)
 		gui.messageBox(
 			_("The conversion could not start:\n{error}").format(error=message),
 			_("Easy Audio Converter"),
@@ -502,27 +1231,30 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _job_complete(self, converter: Converter, summary: ConversionSummary) -> None:
 		if converter is not self._converter:
 			return
+		if self._terminated:
+			return
+		message = ""
+		if summary.canceled:
+			message = _("Conversion canceled. Completed {done} of {total} files.").format(
+				done=summary.succeeded,
+				total=summary.total,
+			)
+		elif summary.total == 0:
+			message = _("No supported audio files were found")
+		else:
+			message = _("Conversion complete: {done} succeeded, {failed} failed.").format(
+				done=summary.succeeded,
+				failed=summary.failed,
+			)
+		ui.message(message)
+		if self._progress_dialog is not None:
+			self._progress_dialog.finish(
+				message,
+				completed=bool(summary.total and not summary.canceled),
+			)
 		self._converter = None
 		self._worker = None
 		self._progress = None
-		if self._terminated:
-			return
-		if summary.canceled:
-			ui.message(
-				_("Conversion canceled. Completed {done} of {total} files.").format(
-					done=summary.succeeded,
-					total=summary.total,
-				)
-			)
-		elif summary.total == 0:
-			ui.message(_("No supported audio files were found"))
-		else:
-			ui.message(
-				_("Conversion complete: {done} succeeded, {failed} failed.").format(
-					done=summary.succeeded,
-					failed=summary.failed,
-				)
-			)
 		if summary.failures:
 			lines = []
 			for failure in summary.failures[:8]:
@@ -575,6 +1307,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			gui.mainFrame.popupSettingsDialog,
 			NVDASettingsDialog,
 			EasyAudioConverterSettingsPanel,
+		)
+
+	@script(
+		# Translators: Input gesture description.
+		description=_("Open advanced codec settings"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_openAdvancedSettings(self, gesture):
+		wx.CallAfter(
+			gui.mainFrame.popupSettingsDialog,
+			NVDASettingsDialog,
+			EasyAudioConverterAdvancedSettingsPanel,
 		)
 
 	@script(
@@ -689,6 +1433,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@script(
 		# Translators: Input gesture description.
+		description=_("Show the audio conversion progress window"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_showProgress(self, gesture):
+		if self._progress_dialog is None:
+			ui.message(_("No conversion progress is available"))
+			return
+		self._progress_dialog.show_window()
+
+	@script(
+		# Translators: Input gesture description.
 		description=_("Report audio conversion status"),
 		category=SCRIPT_CATEGORY,
 	)
@@ -699,14 +1454,48 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self._progress is None:
 			ui.message(_("Preparing the conversion"))
 			return
-		index, total, source_name = self._progress
-		ui.message(
-			_("Converting {index} of {total}: {name}").format(
+		(
+			index,
+			total,
+			source_name,
+			file_fraction,
+			overall_fraction,
+			processed_seconds,
+			duration,
+			elapsed_seconds,
+		) = self._progress
+		if file_fraction is None:
+			message = _(
+				"Converting {index} of {total}: {name}. "
+				"Current file time {processed}; elapsed {elapsed}.",
+			).format(
 				index=index,
 				total=total,
 				name=source_name,
+				processed=_format_elapsed(processed_seconds),
+				elapsed=_format_elapsed(elapsed_seconds),
 			)
-		)
+		else:
+			message = _(
+				"Converting {index} of {total}: {name}. "
+				"Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}.",
+			).format(
+				index=index,
+				total=total,
+				name=source_name,
+				filePercent=int(file_fraction * 100),
+				overallPercent=int(overall_fraction * 100),
+				elapsed=_format_elapsed(elapsed_seconds),
+			)
+		ui.message(message)
+
+	@script(
+		# Translators: Input gesture description.
+		description=_("Check for Easy Audio Converter updates"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_checkForUpdates(self, gesture):
+		self._start_update_check(silent=False)
 
 	@script(
 		# Translators: Input gesture description.

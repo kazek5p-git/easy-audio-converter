@@ -49,7 +49,11 @@ def build() -> Path:
 		SOURCE_ROOT / "installTasks.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "__init__.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "converter.py",
+		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "updater.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "bin" / "ffmpeg.exe",
+		SOURCE_ROOT / "locale" / "EasyAudioConverter.pot",
+		SOURCE_ROOT / "doc" / "en" / "readme.html",
+		SOURCE_ROOT / "doc" / "pl" / "readme.html",
 		SOURCE_ROOT / "licenses" / "COPYING-GPL-3.txt",
 	)
 	missing = [str(path) for path in required if not path.is_file()]
@@ -86,7 +90,9 @@ def build() -> Path:
 			"installTasks.py",
 			"globalPlugins/easyAudioConverter/__init__.py",
 			"globalPlugins/easyAudioConverter/converter.py",
+			"globalPlugins/easyAudioConverter/updater.py",
 			"globalPlugins/easyAudioConverter/bin/ffmpeg.exe",
+			"locale/EasyAudioConverter.pot",
 		):
 			if expected not in names:
 				raise RuntimeError(f"Missing archive member: {expected}")

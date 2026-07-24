@@ -16,8 +16,13 @@ installation is required.
 - saves next to each source or in a selected destination folder;
 - optionally includes subfolders and preserves their structure;
 - never overwrites source or existing destination files;
-- runs conversion in a background thread and supports cancellation;
+- shows accessible per-file and overall progress while conversion runs in a
+  background thread;
+- copies all, selected, or no source text metadata;
+- stores independent advanced parameter profiles for each target codec;
+- checks GitHub releases for verified add-on updates;
 - exposes every action in NVDA's Input Gestures dialog for custom shortcuts;
+- ships standard PO, MO, and POT files compatible with Poedit;
 - includes the author's optional support prompt used by Sonic Pitch.
 
 The add-on is authored by Kazimierz Parzych.
@@ -27,8 +32,33 @@ The add-on is authored by Kazimierz Parzych.
 - `src` contains the installable add-on tree.
 - `tests` contains unit tests for the conversion core.
 - `tools/build_addon.py` creates the `.nvda-addon` package.
-- `tools/generate_locales.py` regenerates gettext catalogs.
+- `tools/poedit_catalog.py` creates the POT template, merges PO files,
+  validates placeholders, and compiles MO catalogs.
+- `tools/generate_locales.py` can fill missing translations while preserving
+  translations already edited by people.
 - `tools/validate_codecs.py` performs end-to-end checks with bundled FFmpeg.
+- `tools/stress_test.py` tests large recursive jobs and active cancellation.
+
+## Translating with Poedit
+
+The template is `src/locale/EasyAudioConverter.pot`. To add a language, open
+the POT in Poedit, create a translation, and save it as
+`src/locale/<language>/LC_MESSAGES/nvda.po`. Enable automatic MO compilation
+in Poedit or run:
+
+```powershell
+python tools/poedit_catalog.py compile
+```
+
+After changing source strings, update the template and merge existing
+catalogs without discarding translations:
+
+```powershell
+python tools/poedit_catalog.py pot
+python tools/poedit_catalog.py merge
+```
+
+See `docs/TRANSLATING.md` for the complete workflow.
 
 ## Build
 
@@ -40,3 +70,13 @@ python tools/build_addon.py
 ```
 
 The package is written to `dist`.
+
+Before a release, run:
+
+```powershell
+python -m unittest discover -s tests -v
+python tools/validate_codecs.py
+python tools/stress_test.py --files 250
+python tools/poedit_catalog.py validate
+python tools/build_addon.py
+```
