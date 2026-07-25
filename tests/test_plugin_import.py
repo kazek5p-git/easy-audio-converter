@@ -117,6 +117,78 @@ class PluginImportTests(unittest.TestCase):
 		}
 		self.assertTrue(expected.issubset(set(dir(self.module.GlobalPlugin))))
 
+	def test_stale_hidden_nvda_settings_dialog_is_destroyed(self):
+		class Dialog(self.module.NVDASettingsDialog):
+			def __init__(self, shown):
+				self.shown = shown
+				self.destroyed = False
+
+			def IsShown(self):
+				return self.shown
+
+			def Destroy(self):
+				self.destroyed = True
+
+		visible = Dialog(True)
+		hidden = Dialog(False)
+		wx_module = sys.modules["wx"]
+		original = getattr(wx_module, "GetTopLevelWindows", None)
+		wx_module.GetTopLevelWindows = lambda: (visible, hidden)
+		try:
+			self.assertEqual(1, self.module._destroy_hidden_nvda_settings_dialogs())
+		finally:
+			if original is None:
+				del wx_module.GetTopLevelWindows
+			else:
+				wx_module.GetTopLevelWindows = original
+		self.assertFalse(visible.destroyed)
+		self.assertTrue(hidden.destroyed)
+
+	def test_settings_recovery_retains_delayed_open_until_it_runs(self):
+		class Timer:
+			def Stop(self):
+				pass
+
+		timer = Timer()
+		callbacks = []
+		popup_calls = []
+		wx_module = sys.modules["wx"]
+		gui_module = sys.modules["gui"]
+		original_destroy = self.module._destroy_hidden_nvda_settings_dialogs
+		original_call_later = getattr(wx_module, "CallLater", None)
+		original_popup = getattr(gui_module.mainFrame, "popupSettingsDialog", None)
+		self.module._destroy_hidden_nvda_settings_dialogs = lambda: 1
+		wx_module.CallLater = lambda _delay, callback: callbacks.append(callback) or timer
+		gui_module.mainFrame.popupSettingsDialog = lambda *args: popup_calls.append(args)
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._settings_open_timer = None
+		plugin._terminated = False
+		try:
+			plugin._open_settings_panel(self.module.EasyAudioConverterSettingsPanel)
+			self.assertIs(timer, plugin._settings_open_timer)
+			self.assertEqual(1, len(callbacks))
+			callbacks[0]()
+			self.assertIsNone(plugin._settings_open_timer)
+			self.assertEqual(
+				[
+					(
+						self.module.NVDASettingsDialog,
+						self.module.EasyAudioConverterSettingsPanel,
+					)
+				],
+				popup_calls,
+			)
+		finally:
+			self.module._destroy_hidden_nvda_settings_dialogs = original_destroy
+			if original_call_later is None:
+				del wx_module.CallLater
+			else:
+				wx_module.CallLater = original_call_later
+			if original_popup is None:
+				del gui_module.mainFrame.popupSettingsDialog
+			else:
+				gui_module.mainFrame.popupSettingsDialog = original_popup
+
 
 if __name__ == "__main__":
 	unittest.main()

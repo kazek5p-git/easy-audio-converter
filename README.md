@@ -2,8 +2,8 @@
 
 Easy Audio Converter is an accessible NVDA add-on for converting one file,
 multiple selected files, selected folders, or the current Windows Explorer
-folder. It includes a 64-bit Windows build of FFmpeg, so no separate codec
-installation is required.
+folder. It includes the official 64-bit Windows FFmpeg Essentials build, so no
+separate codec installation is required.
 
 ## Main features
 
@@ -15,6 +15,9 @@ installation is required.
   encoder choices;
 - saves next to each source or in a selected destination folder;
 - optionally includes subfolders and preserves their structure;
+- skips files already using the target extension when scanning a folder,
+  while still allowing an explicitly selected same-format file to be
+  re-encoded;
 - never overwrites source or existing destination files;
 - shows quiet visual per-file and overall progress while conversion runs in a
   background thread, with a dedicated button for spoken status;
@@ -62,7 +65,7 @@ See `docs/TRANSLATING.md` for the complete workflow.
 
 ## Build
 
-Place `ffmpeg.exe` in
+Place the official Gyan FFmpeg release Essentials `ffmpeg.exe` in
 `src/globalPlugins/easyAudioConverter/bin/ffmpeg.exe`, then run:
 
 ```powershell

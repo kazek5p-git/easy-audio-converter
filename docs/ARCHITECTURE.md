@@ -17,7 +17,9 @@
 ## Conversion lifecycle
 
 1. The NVDA plug-in reads a snapshot of the settings.
-2. The worker collects supported input files before writing outputs.
+2. The worker collects supported input files before writing outputs. Folder
+   scans skip files whose extension already matches the target; an explicitly
+   selected file remains eligible for intentional same-format conversion.
 3. For each file, FFmpeg is queried for duration and, when needed, metadata.
 4. A collision-free output path is reserved.
 5. FFmpeg writes key/value progress to `pipe:1`; stderr is drained in parallel.
@@ -50,6 +52,21 @@ target format. Only validated values are converted into FFmpeg arguments:
 - PCM bit depth for WAV and AIFF.
 
 Raw command-line fragments are not accepted.
+
+## Settings-window recovery
+
+NVDA allows only one `NVDASettingsDialog` instance. Before opening either
+Easy Audio Converter category from the Tools menu, the add-on removes any
+stale hidden instance left in wx and then opens the requested category. A
+visible settings dialog is left untouched and receives NVDA's normal
+single-instance behavior.
+
+## Bundled FFmpeg
+
+The package uses Gyan's official FFmpeg 8.1.2 Essentials static build. It
+retains every decoder and encoder used by the add-on, including LAME, Media
+Foundation MP3, Vorbis, Opus, AMR-NB, and AMR-WB, without the many additional
+libraries present only in the full build.
 
 ## Update trust model
 

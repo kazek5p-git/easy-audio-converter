@@ -145,6 +145,7 @@ AUDIO_EXTENSIONS = frozenset(
 		".vob",
 		".voc",
 		".wav",
+		".wave",
 		".webm",
 		".wma",
 		".wmv",
@@ -237,31 +238,56 @@ def collect_audio_files(
 	*,
 	recursive: bool = True,
 	excluded_roots: Iterable[str | os.PathLike[str]] = (),
+	folder_excluded_extensions: Iterable[str] = (),
 ) -> tuple[list[Path], int]:
-	"""Collect supported files while avoiding duplicate paths and output trees."""
+	"""Collect supported files while avoiding duplicate paths and output trees.
+
+	Extensions in ``folder_excluded_extensions`` are skipped only when files
+	are discovered inside a folder. A file selected explicitly is always kept,
+	so an intentional same-format conversion remains possible.
+	"""
+	path_list = tuple(paths)
 	excluded = tuple(Path(path) for path in excluded_roots if str(path).strip())
+	folder_excluded = frozenset(
+		f".{str(extension).lstrip('.').lower()}"
+		for extension in folder_excluded_extensions
+		if str(extension).strip().lstrip(".")
+	)
+	explicit_files: set[str] = set()
+	for raw_path in path_list:
+		candidate = Path(raw_path)
+		try:
+			if candidate.is_file():
+				explicit_files.add(_normal_path(candidate))
+		except OSError:
+			continue
 	files: list[Path] = []
 	seen: set[str] = set()
 	ignored = 0
 
-	def add_file(candidate: Path) -> None:
+	def add_file(candidate: Path, *, from_folder: bool) -> None:
 		nonlocal ignored
 		if _is_below(candidate, excluded):
 			return
-		if candidate.suffix.lower() not in AUDIO_EXTENSIONS:
+		suffix = candidate.suffix.lower()
+		if suffix not in AUDIO_EXTENSIONS:
 			ignored += 1
 			return
 		key = _normal_path(candidate)
 		if key in seen:
 			return
+		if from_folder and suffix in folder_excluded and key not in explicit_files:
+			seen.add(key)
+			ignored += 1
+			return
 		seen.add(key)
 		files.append(candidate)
 
-	for raw_path in paths:
+	for raw_path in path_list:
 		candidate = Path(raw_path)
 		try:
 			if candidate.is_file():
-				add_file(candidate)
+				add_file(candidate, from_folder=False)
 				continue
 			if not candidate.is_dir():
 				ignored += 1
@@ -277,11 +303,11 @@ def collect_audio_files(
 						if not _is_below(root_path / name, excluded)
 					]
 					for file_name in file_names:
-						add_file(root_path / file_name)
+						add_file(root_path / file_name, from_folder=True)
 			else:
 				for child in candidate.iterdir():
 					if child.is_file():
-						add_file(child)
+						add_file(child, from_folder=True)
 		except OSError:
 			ignored += 1
 
@@ -661,6 +687,7 @@ class Converter:
 			path_list,
 			recursive=settings.include_subfolders,
 			excluded_roots=excluded_roots,
+			folder_excluded_extensions=(FORMAT_EXTENSIONS[settings.target_format],),
 		)
 		summary = ConversionSummary(total=len(files), ignored=ignored)
 		_safe_callback(callbacks.on_collected, summary.total, ignored)

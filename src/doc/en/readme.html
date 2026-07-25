@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.1.1.</p>
+	<p>Author: Kazimierz Parzych. Version 1.1.2.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -63,6 +63,12 @@
 	<p>
 		Existing files and source files are never overwritten. A numbered name is
 		created automatically when necessary.
+	</p>
+	<p>
+		When a folder is converted, files already using the target extension are
+		skipped. For example, an existing MP3 is left unchanged during a WAV-to-MP3
+		folder job. An MP3 selected directly can still be intentionally re-encoded;
+		its source remains untouched and the result receives a safe new name.
 	</p>
 
 	<h2>Metadata</h2>
@@ -143,6 +149,7 @@
 	<ul>
 		<li>Only one conversion job runs at a time.</li>
 		<li>Folder jobs ask for confirmation before they start.</li>
+		<li>WAV inputs may use either the .wav or .wave extension.</li>
 		<li>Video containers are accepted when they contain a readable audio track.</li>
 		<li>Encrypted or copy-protected media cannot be converted.</li>
 		<li>Advanced parameters unsupported by a format are ignored or disabled.</li>

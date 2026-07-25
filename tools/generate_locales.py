@@ -179,6 +179,10 @@ POLISH = {
 	"Conversion complete: {done} succeeded, {failed} failed.": (
 		"Konwersja zakończona: ukończono {done}, błędy: {failed}."
 	),
+	"Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}.": (
+		"Konwersja zakończona. Ukończone: {done}. Błędy: {failed}. "
+		"Pominięte: {skipped}."
+	),
 	"Convert all supported audio files in {folder}, {scope}?": (
 		"Przekonwertować wszystkie obsługiwane pliki audio w folderze {folder}, {scope}?"
 	),
@@ -194,6 +198,9 @@ POLISH = {
 	"Easy Audio Converter": "Easy Audio Converter",
 	"Economical": "Oszczędna",
 	"FLAC": "FLAC",
+	"Files to convert: {count}. Skipped: {skipped}.": (
+		"Pliki do konwersji: {count}. Pominięte: {skipped}."
+	),
 	"Found {count} files to convert": "Znaleziono pliki do konwersji: {count}",
 	"Fraunhofer / Windows Media Foundation MP3": "Fraunhofer / Windows Media Foundation MP3",
 	"High": "Wysoka",
@@ -211,6 +218,9 @@ POLISH = {
 	"MP3 encoder:": "Kodek MP3:",
 	"No conversion is in progress": "Nie trwa żadna konwersja",
 	"No files or folders are selected": "Nie zaznaczono plików ani folderów",
+	"No files need conversion. Skipped: {skipped}.": (
+		"Żadne pliki nie wymagają konwersji. Pominięte: {skipped}."
+	),
 	"No supported audio files were found": "Nie znaleziono obsługiwanych plików audio",
 	"Ogg Vorbis": "Ogg Vorbis",
 	"Open Easy Audio Converter settings": "Otwórz ustawienia Easy Audio Converter",
@@ -589,7 +599,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.1.1\n"
+		"Project-Id-Version: Easy Audio Converter 1.1.2\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-24 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-24 00:00+0200\n"
@@ -631,7 +641,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.1.1\n"
+		"Project-Id-Version: Easy Audio Converter 1.1.2\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

@@ -20,8 +20,9 @@ python tools/validate_codecs.py
 ```
 
 This generates a Unicode-named source and tests all 16 target formats plus
-both MP3 encoders. It also checks recursive output layout, same-format source
-protection, all/selected/no metadata modes, real FFmpeg progress, and advanced
+both MP3 encoders. It also checks recursive output layout, folder-level
+target-format skipping, explicitly selected same-format source protection,
+all/selected/no metadata modes, real FFmpeg progress, and advanced
 sample-rate/channel settings.
 
 ## Stress and extreme cases
@@ -43,8 +44,9 @@ available.
 Automated tests do not replace testing the actual wx interface with NVDA:
 
 1. Open NVDA Speech Viewer.
-2. Open both Easy Audio Converter settings categories and traverse every
-   enabled control with Tab.
+2. Press Insert+N, open Tools, Easy Audio Converter, and open both settings
+   categories. Verify that each command creates the requested visible window,
+   then traverse every enabled control with Tab.
 3. Select “Copy selected metadata fields” and verify that every field is
    announced as a check box with its checked state.
 4. Start a multi-file job and verify that visual progress does not flood
@@ -55,6 +57,9 @@ Automated tests do not replace testing the actual wx interface with NVDA:
 7. Open and dismiss the destination selectors, folder confirmation, update
    dialog, and support page.
 8. Review the NVDA log for add-on import, callback, and traceback errors.
+9. Hide an existing `NVDASettingsDialog` through the NVDA Python console and
+   verify that each add-on settings command discards it and opens the requested
+   category visibly.
 
 ## Translation validation
 

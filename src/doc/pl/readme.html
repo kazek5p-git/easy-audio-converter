@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.1.1.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.1.2.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -62,6 +62,13 @@
 	<p>
 		Pliki źródłowe i istniejące wyniki nigdy nie są nadpisywane.
 		W razie konfliktu dodatek automatycznie tworzy nazwę z numerem.
+	</p>
+	<p>
+		Podczas konwersji folderu pomijane są pliki, które już mają rozszerzenie
+		formatu docelowego. Przykładowo istniejący MP3 pozostanie bez zmian przy
+		folderowej konwersji WAV do MP3. MP3 zaznaczony bezpośrednio nadal można
+		świadomie przekodować; źródło pozostanie nietknięte, a wynik otrzyma
+		bezpieczną nową nazwę.
 	</p>
 
 	<h2>Metadane</h2>
@@ -144,6 +151,7 @@
 	<ul>
 		<li>Jednocześnie może działać jedno zadanie konwersji.</li>
 		<li>Konwersja folderu wymaga potwierdzenia.</li>
+		<li>Pliki WAV mogą mieć rozszerzenie .wav albo .wave.</li>
 		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>
 		<li>Nie można konwertować mediów zaszyfrowanych lub zabezpieczonych DRM.</li>
 		<li>Parametry zaawansowane nieobsługiwane przez format są ignorowane lub wyłączone.</li>

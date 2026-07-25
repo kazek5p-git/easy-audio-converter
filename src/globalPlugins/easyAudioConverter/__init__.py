@@ -64,7 +64,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.1.1"
+ADDON_VERSION = "1.1.2"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 CONFIG_SPEC = {
@@ -825,6 +825,30 @@ class ConversionProgressDialog(wx.Dialog):
 SCRIPT_CATEGORY = _("Easy Audio Converter")
 
 
+def _destroy_hidden_nvda_settings_dialogs() -> int:
+	"""Remove stale hidden settings windows which block a new visible dialog."""
+	try:
+		windows = tuple(wx.GetTopLevelWindows())
+	except Exception:
+		log.debugWarning(
+			"Easy Audio Converter: could not inspect NVDA settings windows",
+			exc_info=True,
+		)
+		return 0
+	destroyed = 0
+	for window in windows:
+		try:
+			if isinstance(window, NVDASettingsDialog) and not window.IsShown():
+				window.Destroy()
+				destroyed += 1
+		except Exception:
+			log.debugWarning(
+				"Easy Audio Converter: could not discard a hidden NVDA settings window",
+				exc_info=True,
+			)
+	return destroyed
+
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = SCRIPT_CATEGORY
 
@@ -841,6 +865,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._update_cancel_event: threading.Event | None = None
 		self._update_progress_dialog = None
 		self._update_timer = None
+		self._settings_open_timer = None
 		self._terminated = False
 		self._menu: wx.Menu | None = None
 		self._menu_root_item = None
@@ -868,6 +893,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._update_timer.Stop()
 			except Exception:
 				pass
+		if self._settings_open_timer is not None:
+			try:
+				self._settings_open_timer.Stop()
+			except Exception:
+				pass
+			self._settings_open_timer = None
 		if self._update_cancel_event is not None:
 			self._update_cancel_event.set()
 		try:
@@ -940,6 +971,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _is_busy(self) -> bool:
 		return self._converter is not None
+
+	def _open_settings_panel(self, panel_class: type[SettingsPanel]) -> None:
+		if self._settings_open_timer is not None:
+			try:
+				self._settings_open_timer.Stop()
+			except Exception:
+				pass
+			self._settings_open_timer = None
+		removed_hidden_dialog = bool(_destroy_hidden_nvda_settings_dialogs())
+
+		def open_dialog() -> None:
+			self._settings_open_timer = None
+			if self._terminated:
+				return
+			gui.mainFrame.popupSettingsDialog(
+				NVDASettingsDialog,
+				panel_class,
+			)
+
+		if removed_hidden_dialog:
+			# Let wx finish destroying the stale instance before constructing
+			# another NVDASettingsDialog of the same class.
+			self._settings_open_timer = wx.CallLater(100, open_dialog)
+		else:
+			open_dialog()
 
 	@staticmethod
 	def _updates_allowed() -> bool:
@@ -1184,7 +1240,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		def on_collected(total: int, ignored: int) -> None:
 			if total:
-				wx.CallAfter(ui.message, _("Found {count} files to convert").format(count=total))
+				if ignored:
+					message = _("Files to convert: {count}. Skipped: {skipped}.").format(
+						count=total,
+						skipped=ignored,
+					)
+				else:
+					message = _("Found {count} files to convert").format(count=total)
+				wx.CallAfter(ui.message, message)
 
 		def on_file_start(index: int, total: int, source_name: str, output_name: str) -> None:
 			percentage = int(index * 100 / max(1, total))
@@ -1316,8 +1379,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				done=summary.succeeded,
 				total=summary.total,
 			)
+		elif summary.total == 0 and summary.ignored:
+			message = _("No files need conversion. Skipped: {skipped}.").format(
+				skipped=summary.ignored,
+			)
 		elif summary.total == 0:
 			message = _("No supported audio files were found")
+		elif summary.ignored:
+			message = _(
+				"Conversion complete. Succeeded: {done}. Failed: {failed}. "
+				"Skipped: {skipped}.",
+			).format(
+				done=summary.succeeded,
+				failed=summary.failed,
+				skipped=summary.ignored,
+			)
 		else:
 			message = _("Conversion complete: {done} succeeded, {failed} failed.").format(
 				done=summary.succeeded,
@@ -1381,8 +1457,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_openSettings(self, gesture):
 		wx.CallAfter(
-			gui.mainFrame.popupSettingsDialog,
-			NVDASettingsDialog,
+			self._open_settings_panel,
 			EasyAudioConverterSettingsPanel,
 		)
 
@@ -1393,8 +1468,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_openAdvancedSettings(self, gesture):
 		wx.CallAfter(
-			gui.mainFrame.popupSettingsDialog,
-			NVDASettingsDialog,
+			self._open_settings_panel,
 			EasyAudioConverterAdvancedSettingsPanel,
 		)
 

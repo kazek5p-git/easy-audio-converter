@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.2
+
+- Folder jobs now skip files that already use the selected target extension,
+  while explicitly selected same-format files can still be re-encoded safely.
+- Added the `.wave` input extension.
+- Added spoken skipped-file counts to collection and completion summaries.
+- Recovered automatically from a stale hidden NVDA Settings window, so both
+  settings commands always produce a visible dialog from the NVDA Tools menu.
+- Replaced the 242.5 MB full FFmpeg executable with the official 101.9 MB
+  Essentials build while retaining every exposed input and output codec path.
+- Re-tested the NVDA menu, both settings pages, mixed WAV/MP3 folders, all
+  codecs, and error recovery with NVDA Speech Viewer.
+
 ## 1.1.1
 
 - Replaced the metadata checklist with individually accessible check boxes

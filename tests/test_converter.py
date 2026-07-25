@@ -147,6 +147,28 @@ class FileCollectionTests(unittest.TestCase):
 			)
 			self.assertEqual([source], files)
 
+	def test_folder_skips_target_extension_but_explicit_file_is_kept(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wave"
+			source.write_bytes(b"wave audio")
+			existing_target = root / "existing.mp3"
+			existing_target.write_bytes(b"mp3 audio")
+
+			files, ignored = collect_audio_files(
+				[root],
+				folder_excluded_extensions=(".mp3",),
+			)
+			self.assertEqual([source], files)
+			self.assertEqual(1, ignored)
+
+			files, ignored = collect_audio_files(
+				[root, existing_target],
+				folder_excluded_extensions=("mp3",),
+			)
+			self.assertEqual({source, existing_target}, set(files))
+			self.assertEqual(0, ignored)
+
 
 class OutputNamingTests(unittest.TestCase):
 	def test_same_format_does_not_overwrite_source(self):

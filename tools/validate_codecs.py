@@ -110,6 +110,23 @@ def main() -> int:
 		nested_source.mkdir(parents=True)
 		shutil.copy2(source, source_tree / "opening.wav")
 		shutil.copy2(source, nested_source / "track.wav")
+		existing_target = source_tree / "already mp3.mp3"
+		existing_target_command = [
+			str(ffmpeg),
+			"-nostdin",
+			"-hide_banner",
+			"-loglevel",
+			"error",
+			"-i",
+			str(source),
+			"-c:a",
+			"libmp3lame",
+			"-y",
+			str(existing_target),
+		]
+		if subprocess.run(existing_target_command, check=False).returncode != 0:
+			raise RuntimeError("Could not create the existing target-format file")
+		existing_target_contents = existing_target.read_bytes()
 		nested_output = source_tree / "converted"
 		nested_output.mkdir()
 		(nested_output / "old-result.mp3").write_bytes(b"existing output must be excluded")
@@ -131,12 +148,17 @@ def main() -> int:
 		if (
 			batch_summary.total != 2
 			or batch_summary.succeeded != 2
+			or batch_summary.ignored != 1
 			or not expected_nested_output.is_file()
+			or existing_target.read_bytes() != existing_target_contents
+			or (source_tree / "already mp3 - converted.mp3").exists()
 		):
-			failures.append("recursive batch: nested output exclusion or folder preservation failed")
+			failures.append(
+				"recursive batch: target-format skip, output exclusion, or folder preservation failed"
+			)
 			print("FAIL recursive batch")
 		else:
-			print("PASS recursive batch and folder preservation")
+			print("PASS recursive batch, target-format skip, and folder preservation")
 
 		same_folder_settings = ConversionSettings(
 			target_format="wav",
