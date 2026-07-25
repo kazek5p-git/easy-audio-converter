@@ -7,6 +7,8 @@
 - `converter.py` is independent of NVDA. It collects files, builds validated
   FFmpeg commands, parses duration/progress/metadata, handles output naming,
   and owns cancellation and partial-file cleanup.
+- `profiles.py` is independent of NVDA. It validates, bounds, versions, and
+  deterministically serializes complete named conversion snapshots.
 - `updater.py` is independent of NVDA. It reads GitHub release metadata,
   compares versions, downloads with bounded memory, verifies SHA-256 when
   GitHub supplies a digest, validates the ZIP and manifest, and rejects unsafe
@@ -27,8 +29,43 @@
    through `wx.CallAfter`.
 7. Success is accepted only when FFmpeg exits with zero and creates a nonempty
    output. Failed or canceled partial outputs are removed.
-8. When every planned file succeeds, NVDA plays the bundled completion sound
-   asynchronously through its configured sound output device.
+8. The summary retains bounded details for successful, failed, and skipped
+   inputs, including source paths required for a safe failed-file retry.
+9. When every planned file succeeds, NVDA applies the configured completion
+   notification mode and can play the bundled sound asynchronously through
+   its configured sound output device.
+
+## One-time jobs and named profiles
+
+Quick conversion continues to read the standard NVDA configuration. “Convert
+with options” instead creates an immutable settings snapshot for one job. It
+can optionally write that snapshot back as the future quick-conversion
+default.
+
+Named profiles use a versioned JSON object stored as one NVDA string setting.
+Each entry includes format, quality, MP3 encoder, destination policy,
+subfolder and structure behavior, metadata mode and fields, and the validated
+advanced codec options. Loading rejects unknown schema versions, invalid
+keys, duplicate or empty names, and values outside supported bounds. The list
+is limited to 50 profiles and names to 80 characters.
+
+## Results and retry
+
+The results window is modeless and retains the most recent summary. It lists
+successful outputs, failed sources with friendly error explanations, and up
+to 500 skipped-file details while preserving the full skipped count. A retry
+uses only stored failed source paths together with the immutable settings and
+source root from the original job. Existing outputs remain protected by the
+normal collision-free naming logic.
+
+## Progress and notifications
+
+Remaining time is estimated from elapsed time and bounded overall progress;
+very early or implausibly long estimates are reported as still calculating.
+Automatic speech can occur at milestones, for every file, or only when the
+user requests status. Successful completion supports speech and sound,
+speech only, sound only, or no completion notification. Failure and
+cancellation summaries remain spoken for safety.
 
 ## Metadata
 

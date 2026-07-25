@@ -49,6 +49,7 @@ def build() -> Path:
 		SOURCE_ROOT / "installTasks.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "__init__.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "converter.py",
+		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "profiles.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "updater.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "bin" / "ffmpeg.exe",
 		SOURCE_ROOT
@@ -95,6 +96,7 @@ def build() -> Path:
 			"installTasks.py",
 			"globalPlugins/easyAudioConverter/__init__.py",
 			"globalPlugins/easyAudioConverter/converter.py",
+			"globalPlugins/easyAudioConverter/profiles.py",
 			"globalPlugins/easyAudioConverter/updater.py",
 			"globalPlugins/easyAudioConverter/bin/ffmpeg.exe",
 			"globalPlugins/easyAudioConverter/sounds/notification_complete.wav",

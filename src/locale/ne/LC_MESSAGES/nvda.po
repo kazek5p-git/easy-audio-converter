@@ -1,377 +1,521 @@
 # Easy Audio Converter translation catalog.
 # Generated for NVDA; placeholders were validated automatically.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.1.3\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: ne\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.2.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: ne\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1497
-msgid "...and {count} more errors"
-msgstr "...र {count} थप त्रुटिहरू"
+#: src/globalPlugins/easyAudioConverter/__init__.py:1639
+msgid "...and {count} more skipped files"
+msgstr "... र {count} अधिक छोडिएका फाइलहरू"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "16 bit"
 msgstr "१६ बिट"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "24 bit"
 msgstr "२४ बिट"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "32 bit"
 msgstr "३२ बिट"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1292
+#: src/globalPlugins/easyAudioConverter/__init__.py:1230
+msgid "A built-in profile already uses this name."
+msgstr "एउटा निर्मित प्रोफाइलले पहिले नै यो नाम प्रयोग गर्दछ ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2266 src/globalPlugins/easyAudioConverter/__init__.py:2538 src/globalPlugins/easyAudioConverter/__init__.py:2622
 msgid "A conversion is already in progress"
 msgstr "एक रूपान्तरण पहिले नै प्रगतिमा छ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:170
+#: src/globalPlugins/easyAudioConverter/__init__.py:326
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:174
+#: src/globalPlugins/easyAudioConverter/__init__.py:330
 msgid "AC-3"
 msgstr "एसी-३"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:173
+#: src/globalPlugins/easyAudioConverter/__init__.py:329
 msgid "AIFF"
 msgstr "एआईएफएफ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:172
+#: src/globalPlugins/easyAudioConverter/__init__.py:328
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (एप्पल लसलेस)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:178
+#: src/globalPlugins/easyAudioConverter/__init__.py:334
 msgid "AMR narrowband"
 msgstr "AMR संकीर्ण ब्यान्ड"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:179
+#: src/globalPlugins/easyAudioConverter/__init__.py:335
 msgid "AMR wideband"
 msgstr "AMR वाइडब्यान्ड"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:996
+#: src/globalPlugins/easyAudioConverter/__init__.py:1591
+msgid "Access to the source or destination was denied."
+msgstr "स्रोत वा गन्तव्यमा पहुँच अस्वीकार गरियो ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1725
+msgid "Additional skipped files: {count}"
+msgstr "अतिरिक्त छोडिएका फाइलहरू: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1140
+msgid "Advanced codec overrides: disabled"
+msgstr "उन्नत कोडेक अधिक्रमण: अक्षम पारियो"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1138
+msgid "Advanced codec overrides: enabled"
+msgstr "उन्नत कोडेक अधिक्रमण: सक्षम पार्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1969
 msgid "Advanced codec settings..."
 msgstr "उन्नत कोडेक सेटिङहरू..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:488
+#: src/globalPlugins/easyAudioConverter/__init__.py:679
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:211
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "Album"
 msgstr "एल्बम"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:212
+#: src/globalPlugins/easyAudioConverter/__init__.py:368
 msgid "Album artist"
 msgstr "एल्बम कलाकार"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1091
+#: src/globalPlugins/easyAudioConverter/__init__.py:1603
+msgid "Already uses the target format"
+msgstr "पहिले नै लक्ष्य ढाँचा प्रयोग गर्दछ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2064
 msgid "An update check is already in progress"
 msgstr "एउटा अद्यावधिक जाँच पहिले नै प्रगतिमा छ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1183
+#: src/globalPlugins/easyAudioConverter/__init__.py:2156
 msgid "An update download is already in progress"
 msgstr "एउटा अद्यावधिक डाउनलोड पहिले नै प्रगतिमा छ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:210
+#: src/globalPlugins/easyAudioConverter/__init__.py:299
+msgid "Archive FLAC"
+msgstr "सङ्ग्रह FLAC"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:366
 msgid "Artist"
 msgstr "कलाकार"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:406
+#: src/globalPlugins/easyAudioConverter/__init__.py:236
+msgid "At every file"
+msgstr "प्रत्येक फाइलमा"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:235
+msgid "At progress milestones"
+msgstr "प्रगतिको माइलस्टोनमा"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:264
+msgid "Audiobook MP3"
+msgstr "अडियोबुक एमपी ३"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:576
+msgid "Automatic progress announcements:"
+msgstr "स्वचालित प्रगति घोषणाहरू:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:586
 msgid "Automatically check for add-on updates"
 msgstr "एड-अन अद्यावधिकका लागि स्वचालित रूपमा जाँच गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515
+#: src/globalPlugins/easyAudioConverter/__init__.py:706
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "केबीपीएसमा बिटरेट (० ले गुणस्तर प्रिसेट प्रयोग गर्दछ):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:365
+#: src/globalPlugins/easyAudioConverter/__init__.py:521 src/globalPlugins/easyAudioConverter/__init__.py:983
 msgid "Browse..."
 msgstr "ब्राउज गर्नुहोस्..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:870 src/globalPlugins/easyAudioConverter/__init__.py:786 src/globalPlugins/easyAudioConverter/__init__.py:993
+#: src/globalPlugins/easyAudioConverter/__init__.py:1558 src/globalPlugins/easyAudioConverter/__init__.py:1459 src/globalPlugins/easyAudioConverter/__init__.py:1966
 msgid "Cancel conversion"
 msgstr "रूपान्तरण रद्द गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1656
+#: src/globalPlugins/easyAudioConverter/__init__.py:2751
 msgid "Cancel the current audio conversion"
 msgstr "हालको अडियो रूपान्तरण रद्द गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1664
+#: src/globalPlugins/easyAudioConverter/__init__.py:2759
 msgid "Canceling the conversion"
 msgstr "रूपान्तरण रद्द गर्दै"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:877
+#: src/globalPlugins/easyAudioConverter/__init__.py:1566
 msgid "Canceling..."
 msgstr "रद्द गरिँदैछ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:235 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:391 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "समर्थन पृष्ठ खोल्न सकिँदैन। यो ठेगाना म्यानुअल रूपमा खोल्नुहोस्: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1617
+#: src/globalPlugins/easyAudioConverter/__init__.py:2712
 msgid "Change the conversion quality"
 msgstr "रूपान्तरण गुणस्तर परिवर्तन गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1603
+#: src/globalPlugins/easyAudioConverter/__init__.py:2698
 msgid "Change the target audio format"
 msgstr "लक्ष्य अडियो ढाँचा परिवर्तन गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:528
+#: src/globalPlugins/easyAudioConverter/__init__.py:719
 msgid "Channels:"
 msgstr "च्यानलहरू:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+#: src/globalPlugins/easyAudioConverter/__init__.py:2838
 msgid "Check for Easy Audio Converter updates"
 msgstr "सजिलो अडियो कनवर्टर अद्यावधिकहरूको लागि जाँच गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:997
+#: src/globalPlugins/easyAudioConverter/__init__.py:1970
 msgid "Check for updates..."
 msgstr "अद्यावधिकहरूका लागि जाँच गर्नुहोस्..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1094
+#: src/globalPlugins/easyAudioConverter/__init__.py:2067
 msgid "Checking for Easy Audio Converter updates"
 msgstr "सजिलो अडियो कनवर्टर अद्यावधिकहरूको लागि जाँच गर्दै"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1587
+#: src/globalPlugins/easyAudioConverter/__init__.py:2682
 msgid "Choose a folder to convert"
 msgstr "रूपान्तरण गर्न फोल्डर छान्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:443 src/globalPlugins/easyAudioConverter/__init__.py:1638
+#: src/globalPlugins/easyAudioConverter/__init__.py:870
+msgid "Choose metadata fields"
+msgstr "मेटाडेटा फिल्ड चयन गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1002
+msgid "Choose metadata fields..."
+msgstr "मेटाडेटा फाँटहरू रोज्नुहोस्..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1172 src/globalPlugins/easyAudioConverter/__init__.py:2733
 msgid "Choose the destination folder"
 msgstr "गन्तव्य फोल्डर छान्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:867
+#: src/globalPlugins/easyAudioConverter/__init__.py:1555 src/globalPlugins/easyAudioConverter/__init__.py:1754
 msgid "Close"
 msgstr "बन्द गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:503
+#: src/globalPlugins/easyAudioConverter/__init__.py:694
 msgid "Codec profile to edit:"
 msgstr "सम्पादन गरिने कोडेक प्रोफाइल:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:725
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "कोडेक-निर्दिष्ट तह (-1 ले प्रिसेट प्रयोग गर्दछ):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:218
+#: src/globalPlugins/easyAudioConverter/__init__.py:374
 msgid "Comment"
 msgstr "टिप्पणी गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:213
+#: src/globalPlugins/easyAudioConverter/__init__.py:369
 msgid "Composer"
 msgstr "रचनाकार"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1526
+#: src/globalPlugins/easyAudioConverter/__init__.py:2585
 msgid "Confirm folder conversion"
 msgstr "फोल्डर रूपान्तरण पुष्टि गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1455
+#: src/globalPlugins/easyAudioConverter/__init__.py:2462
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "रूपान्तरण रद्द गरियो। {total} फाइलहरूको {done} पूरा भयो।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1466
+#: src/globalPlugins/easyAudioConverter/__init__.py:2473
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "रूपान्तरण समाप्त भयो । सफल: {done}। असफल: {failed}. छोडियो: {skipped}।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1475
+#: src/globalPlugins/easyAudioConverter/__init__.py:2482
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "रूपान्तरण पूरा भयो: {done} सफल, {failed} असफल।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1523
+#: src/globalPlugins/easyAudioConverter/__init__.py:945
+msgid "Conversion profile:"
+msgstr "रूपान्तरण प्रोफाइल:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1842
+msgid "Conversion report copied"
+msgstr "रूपान्तरण प्रतिवेदन प्रतिलिपि गरियो"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1612
+msgid "Conversion results"
+msgstr "रूपान्तरण परिणामहरू"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+msgid "Convert"
+msgstr "रूपान्तरण गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2582
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "सबै समर्थित अडियो फाइलहरूलाई {folder}, {scope} मा रूपान्तरण गर्ने?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1579
+#: src/globalPlugins/easyAudioConverter/__init__.py:2674
 msgid "Convert every supported audio file in the current folder"
 msgstr "हालको फोल्डरमा प्रत्येक समर्थित अडियो फाइल रूपान्तरण गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:989
+#: src/globalPlugins/easyAudioConverter/__init__.py:1961
 msgid "Convert selected files or folders"
 msgstr "चयन गरिएका फाइलहरू वा फोल्डरहरू रूपान्तरण गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:990
+#: src/globalPlugins/easyAudioConverter/__init__.py:2617
+msgid "Convert selected files or folders with one-time options"
+msgstr "चयन गरिएका फाइल वा फोल्डरहरू एक-समय विकल्पसँग रूपान्तरण गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1960
+msgid "Convert selected files or folders with options..."
+msgstr "चयन गरिएका फाइल वा फोल्डरहरू विकल्पसँग रूपान्तरण गर्नुहोस्..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1962
 msgid "Convert the current folder"
 msgstr "हालको फोल्डरलाई रूपान्तरण गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1336
+#: src/globalPlugins/easyAudioConverter/__init__.py:923
+msgid "Convert with options"
+msgstr "विकल्पहरूसँग रूपान्तरण गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2340
 msgid "Converting {index} of {total}: {name}"
 msgstr "{total} को {index} रूपान्तरण गर्दै: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1700
+#: src/globalPlugins/easyAudioConverter/__init__.py:2803
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{total} को {index} रूपान्तरण गर्दै: {name}। हालको फाइल समय {processed}; बितेको {elapsed}।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1711
+#: src/globalPlugins/easyAudioConverter/__init__.py:2814
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "{total} को {index} रूपान्तरण गर्दै: {name}। हालको फाइल {filePercent}%, समग्र {overallPercent}%, समाप्त {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:202
+#: src/globalPlugins/easyAudioConverter/__init__.py:358
 msgid "Copy all text metadata"
 msgstr "सबै पाठ मेटाडेटा प्रतिलिपि बनाउनुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:203
+#: src/globalPlugins/easyAudioConverter/__init__.py:1753
+msgid "Copy report"
+msgstr "प्रतिवेदन प्रतिलिपि बनाउनुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:359
 msgid "Copy selected metadata fields"
 msgstr "चयन गरिएको मेटाडेटा फिल्ड प्रतिलिपि बनाउनुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:219
+#: src/globalPlugins/easyAudioConverter/__init__.py:375
 msgid "Copyright"
 msgstr "प्रतिलिपि अधिकार"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1123
+#: src/globalPlugins/easyAudioConverter/__init__.py:2096
 msgid "Could not check for updates.\n\n{error}"
 msgstr "अद्यावधिकका लागि जाँच गर्न सकेन ।\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1277
+#: src/globalPlugins/easyAudioConverter/__init__.py:1836
+msgid "Could not copy the conversion report."
+msgstr "रूपान्तरण प्रतिवेदन प्रतिलिपि बनाउन सकेन ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2250
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "NVDA एड-अन स्थापनाकर्ता खोल्न सकेन। अद्यावधिक यसमा बचत गरिएको थियो:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:865
+#: src/globalPlugins/easyAudioConverter/__init__.py:1823
+msgid "Could not open the output folder."
+msgstr "निर्गत फोल्डर खोल्न सकेन ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1553
 msgid "Current file progress: 100%"
 msgstr "हालको फाइल प्रगति: १००%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:774
+#: src/globalPlugins/easyAudioConverter/__init__.py:1442
 msgid "Current file progress: waiting"
 msgstr "हालको फाइल प्रगति: प्रतिक्षा गर्दैछ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:844
+#: src/globalPlugins/easyAudioConverter/__init__.py:1521
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "हालको फाइल प्रगति: {percent}% ({processed} को {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:836
+#: src/globalPlugins/easyAudioConverter/__init__.py:1513
 msgid "Current file time: {processed}"
 msgstr "हालको फाइल समय: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:215
+#: src/globalPlugins/easyAudioConverter/__init__.py:371
 msgid "Date or year"
 msgstr "मिति वा वर्ष"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/__init__.py:1279
+msgid "Delete conversion profile"
+msgstr "रूपान्तरण प्रोफाइल मेट्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:951
+msgid "Delete profile"
+msgstr "प्रोफाइल मेट्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1278
+msgid "Delete the profile “{name}”?"
+msgstr "प्रोफाइल मेट्नुहोस् \"{name}\"?"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:515 src/globalPlugins/easyAudioConverter/__init__.py:979
 msgid "Destination folder:"
 msgstr "गन्तव्य फोल्डर:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1652
+#: src/globalPlugins/easyAudioConverter/__init__.py:2747
 msgid "Destination folder: {folder}"
 msgstr "गन्तव्य फोल्डर: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:217
+#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+msgid "Details are limited to the first {limit} skipped files."
+msgstr "विवरणहरू पहिलो {limit} छोडिएका फाइलहरूमा सीमित छन्।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1739
+msgid "Details:"
+msgstr "विवरणहरू:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:373
 msgid "Disc number"
 msgstr "डिस्क नम्बर"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:201
+#: src/globalPlugins/easyAudioConverter/__init__.py:357
 msgid "Do not copy metadata"
 msgstr "मेटाडेटा प्रतिलिपि नगर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1163
+#: src/globalPlugins/easyAudioConverter/__init__.py:2136
 msgid "Download and install"
 msgstr "डाउनलोड गर्नुहोस् र स्थापना गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1241
+#: src/globalPlugins/easyAudioConverter/__init__.py:2214
 msgid "Downloaded {done:.1f} MB"
 msgstr "डाउनलोड {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1234
+#: src/globalPlugins/easyAudioConverter/__init__.py:2207
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "{done:.1f} को {total:.1f} MB डाउनलोड गरियो"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1193
+#: src/globalPlugins/easyAudioConverter/__init__.py:2166
 msgid "Downloading Easy Audio Converter update"
 msgstr "सजिलो अडियो कन्भर्टर अद्यावधिक डाउनलोड गर्दै"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:175
+#: src/globalPlugins/easyAudioConverter/__init__.py:331
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:893 src/globalPlugins/easyAudioConverter/__init__.py:637 src/globalPlugins/easyAudioConverter/__init__.py:1443 src/globalPlugins/easyAudioConverter/__init__.py:1011 src/globalPlugins/easyAudioConverter/__init__.py:1298 src/globalPlugins/easyAudioConverter/__init__.py:1501
+#: src/globalPlugins/easyAudioConverter/__init__.py:1853 src/globalPlugins/easyAudioConverter/__init__.py:828 src/globalPlugins/easyAudioConverter/__init__.py:2450 src/globalPlugins/easyAudioConverter/__init__.py:1223 src/globalPlugins/easyAudioConverter/__init__.py:1231 src/globalPlugins/easyAudioConverter/__init__.py:1984 src/globalPlugins/easyAudioConverter/__init__.py:2272 src/globalPlugins/easyAudioConverter/__init__.py:1197 src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1297 src/globalPlugins/easyAudioConverter/__init__.py:1824 src/globalPlugins/easyAudioConverter/__init__.py:1837 src/globalPlugins/easyAudioConverter/__init__.py:2283
 msgid "Easy Audio Converter"
 msgstr "सजिलो अडियो कनवर्टर"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1134
+#: src/globalPlugins/easyAudioConverter/__init__.py:2107
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "सजिलो अडियो कनवर्टर अद्यावधिक छ। स्थापित संस्करण: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:763
+#: src/globalPlugins/easyAudioConverter/__init__.py:1430
 msgid "Easy Audio Converter progress"
 msgstr "सजिलो अडियो कन्भर्टर प्रगति"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1267 src/globalPlugins/easyAudioConverter/__init__.py:1126 src/globalPlugins/easyAudioConverter/__init__.py:1137 src/globalPlugins/easyAudioConverter/__init__.py:1280
+#: src/globalPlugins/easyAudioConverter/__init__.py:1655
+msgid "Easy Audio Converter results"
+msgstr "सजिलो अडियो कन्भर्टर परिणामहरू"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2240 src/globalPlugins/easyAudioConverter/__init__.py:2099 src/globalPlugins/easyAudioConverter/__init__.py:2110 src/globalPlugins/easyAudioConverter/__init__.py:2253
 msgid "Easy Audio Converter update"
 msgstr "सजिलो अडियो कन्भर्टर अद्यावधिक"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1174 src/globalPlugins/easyAudioConverter/__init__.py:1159
+#: src/globalPlugins/easyAudioConverter/__init__.py:2147 src/globalPlugins/easyAudioConverter/__init__.py:2132
 msgid "Easy Audio Converter update available"
 msgstr "सजिलो अडियो कन्भर्टर अद्यावधिक उपलब्ध छ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1146
+#: src/globalPlugins/easyAudioConverter/__init__.py:2119
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "सजिलो अडियो कनवर्टर {newVersion} उपलब्ध छ। तपाईंसँग संस्करण {currentVersion} छ।\n\nतपाईँ अहिले अद्यावधिक डाउनलोड र स्थापना गर्न चाहनुहुन्छ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1170
+#: src/globalPlugins/easyAudioConverter/__init__.py:2143
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "सजिलो अडियो कनवर्टर {version} उपलब्ध छ, तर रिलीजले प्रत्यक्ष एड-अन प्याकेज समावेश गर्दैन। रिलीज पृष्ठ खोल्नुहुन्छ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:185
+#: src/globalPlugins/easyAudioConverter/__init__.py:341
 msgid "Economical"
 msgstr "आर्थिक"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:782
+#: src/globalPlugins/easyAudioConverter/__init__.py:1450
 msgid "Elapsed time: 0:00"
 msgstr "बितेको समय: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:856
+#: src/globalPlugins/easyAudioConverter/__init__.py:1533
 msgid "Elapsed time: {elapsed}"
 msgstr "बितेको समय: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:511
+#: src/globalPlugins/easyAudioConverter/__init__.py:702
 msgid "Enable advanced overrides for this codec"
 msgstr "यो कोडेकका लागि उन्नत अधिरोहण सक्षम पार्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:166
+#: src/globalPlugins/easyAudioConverter/__init__.py:1210
+msgid "Enter a name for this conversion profile:"
+msgstr "यो रूपान्तरण प्रोफाइलका लागि नाम प्रविष्ट गर्नुहोस्:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1549
+msgid "Estimated time remaining: 0:00"
+msgstr "बाँकी अनुमानित समय: 0:00"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1454
+msgid "Estimated time remaining: calculating"
+msgstr "बाँकी अनुमानित समय: गणना गर्दैछ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1537
+msgid "Estimated time remaining: {remaining}"
+msgstr "अनुमानित समय बाँकी छ: {remaining}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:322
 msgid "FLAC"
 msgstr "फ्लाक"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:827
+#: src/globalPlugins/easyAudioConverter/__init__.py:1628
+msgid "Failed files:"
+msgstr "असफल फाइलहरू:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1702
+msgid "Failed: {name}"
+msgstr "असफल: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1605
+msgid "File or folder is unavailable"
+msgstr "फाइल वा फोल्डर उपलब्ध छैन"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1504
 msgid "File {index} of {total}: {name}"
 msgstr "फाइल {index} को {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1321
+#: src/globalPlugins/easyAudioConverter/__init__.py:2316
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "रूपान्तरण गर्न फाइलहरू: {count}। छोडियो: {skipped}।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:603
+#: src/globalPlugins/easyAudioConverter/__init__.py:794
 msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
 msgstr "FLAC को लागि, स्तर 0 छिटो छ र स्तर 12 ले सबैभन्दा बलियो कम्प्रेसन दिन्छ।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:602
+#: src/globalPlugins/easyAudioConverter/__init__.py:793
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3 को लागि, स्तर ० सबैभन्दा ढिलो र उच्चतम एल्गोरिथ्म गुण हो; 9 सबैभन्दा छिटो छ।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:604
+#: src/globalPlugins/easyAudioConverter/__init__.py:795
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Ogg Vorbis को लागि, स्तर ० देखि १० ले चर-बिटरेट गुणस्तर बढाउँदै चयन गर्दछ।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:605
+#: src/globalPlugins/easyAudioConverter/__init__.py:796
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "ओपसको लागि, स्तर ० देखि १० ले बढ्दो एन्कोडर जटिलता चयन गर्दछ।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:606
+#: src/globalPlugins/easyAudioConverter/__init__.py:797
 msgid "For WavPack, levels 0 to 8 select increasing compression effort."
 msgstr "WavPack को लागि, स्तर ० देखि 8 सम्म बढ्दो कम्प्रेसन प्रयास चयन गर्नुहोस्।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1326
+#: src/globalPlugins/easyAudioConverter/__init__.py:2321
 msgid "Found {count} files to convert"
 msgstr "रूपान्तरण गर्न {count} फाइलहरू फेला पर्यो"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:195
+#: src/globalPlugins/easyAudioConverter/__init__.py:351
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "फ्राउनहोफर / विन्डोज मिडिया फाउन्डेसन MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:214
+#: src/globalPlugins/easyAudioConverter/__init__.py:370
 msgid "Genre"
 msgstr "विधा"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:788
+#: src/globalPlugins/easyAudioConverter/__init__.py:1462
 msgid "Hide"
 msgstr "लुकाउनुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:187
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "High"
 msgstr "उच्च"
 
@@ -379,286 +523,462 @@ msgstr "उच्च"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "यदि Easy Audio Converter तपाईंको लागि उपयोगी छ र तपाईं मेरो कामलाई समर्थन गर्न चाहनुहुन्छ भने, तपाईंले मलाई एउटा कफी किन्न सक्नुहुन्छ।\n\nके तपाई अहिले समर्थन पृष्ठ खोल्न चाहनुहुन्छ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:370
+#: src/globalPlugins/easyAudioConverter/__init__.py:526 src/globalPlugins/easyAudioConverter/__init__.py:986
 msgid "Include subfolders when converting a folder"
 msgstr "फोल्डर रूपान्तरण गर्दा सबफोल्डरहरू समावेश गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:721
 msgid "Keep the source channel count"
 msgstr "स्रोत च्यानल गणना राख्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:524
+#: src/globalPlugins/easyAudioConverter/__init__.py:715
 msgid "Keep the source sample rate"
 msgstr "स्रोत नमूना दर राख्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:194
+#: src/globalPlugins/easyAudioConverter/__init__.py:350
 msgid "LAME MP3"
 msgstr "लङ्गडो एमपी३"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:221
+#: src/globalPlugins/easyAudioConverter/__init__.py:377
 msgid "Language"
 msgstr "भाषा"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1163
+#: src/globalPlugins/easyAudioConverter/__init__.py:2136
 msgid "Later"
 msgstr "पछि"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:220
+#: src/globalPlugins/easyAudioConverter/__init__.py:376
 msgid "Lyrics"
 msgstr "गीतका शब्दहरू"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:169
+#: src/globalPlugins/easyAudioConverter/__init__.py:325
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:177
+#: src/globalPlugins/easyAudioConverter/__init__.py:333
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:164
+#: src/globalPlugins/easyAudioConverter/__init__.py:320
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:345
+#: src/globalPlugins/easyAudioConverter/__init__.py:501 src/globalPlugins/easyAudioConverter/__init__.py:970
 msgid "MP3 encoder:"
 msgstr "MP3 एन्कोडर:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:383
+#: src/globalPlugins/easyAudioConverter/__init__.py:539 src/globalPlugins/easyAudioConverter/__init__.py:997
 msgid "Metadata export:"
 msgstr "मेटाडेटा निर्यात:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:394
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Metadata fields to copy:"
 msgstr "प्रतिलिपि गरिने मेटाडेटा फाँट:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:721
 msgid "Mono"
 msgstr "मोनो"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1661 src/globalPlugins/easyAudioConverter/__init__.py:1684
+#: src/globalPlugins/easyAudioConverter/__init__.py:229
+msgid "No completion notification"
+msgstr "समाप्ति सूचना छैन"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2756 src/globalPlugins/easyAudioConverter/__init__.py:2787
 msgid "No conversion is in progress"
 msgstr "कुनै रूपान्तरण प्रगतिमा छैन"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1673
+#: src/globalPlugins/easyAudioConverter/__init__.py:2768
 msgid "No conversion progress is available"
 msgstr "रूपान्तरण प्रगति उपलब्ध छैन"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1460
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+msgid "No conversion results are available"
+msgstr "रूपान्तरण परिणाम उपलब्ध छैन"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2543 src/globalPlugins/easyAudioConverter/__init__.py:2553
+msgid "No failed files are available to retry"
+msgstr "पुन: प्रयास गर्न असफल फाइलहरू उपलब्ध छैनन्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1783
+msgid "No file details are available."
+msgstr "कुनै फाइल विवरण उपलब्ध छैन ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2467
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "कुनै पनि फाइललाई रूपान्तरण आवश्यक पर्दैन । छोडियो: {skipped}।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1564
+#: src/globalPlugins/easyAudioConverter/__init__.py:2626 src/globalPlugins/easyAudioConverter/__init__.py:2659
 msgid "No files or folders are selected"
 msgstr "कुनै फाइल वा फोल्डरहरू चयन गरिएको छैन"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1464
+#: src/globalPlugins/easyAudioConverter/__init__.py:2471
 msgid "No supported audio files were found"
 msgstr "कुनै पनि समर्थित अडियो फाइलहरू फेला परेनन्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:167
+#: src/globalPlugins/easyAudioConverter/__init__.py:323
 msgid "Ogg Vorbis"
 msgstr "ओग भोर्बिस"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1534
+#: src/globalPlugins/easyAudioConverter/__init__.py:1053
+msgid "One-time settings"
+msgstr "एक पटकको सेटिङ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:237
+msgid "Only on demand"
+msgstr "मागमा मात्र"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2593
 msgid "Open Easy Audio Converter settings"
 msgstr "सजिलो अडियो कन्भर्टर सेटिङहरू खोल्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1546
+#: src/globalPlugins/easyAudioConverter/__init__.py:2605
 msgid "Open advanced codec settings"
 msgstr "उन्नत कोडेक सेटिङ खोल्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1752
+msgid "Open output folder"
+msgstr "निर्गत फोल्डर खोल्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2846
 msgid "Open the author's support page"
 msgstr "लेखकको समर्थन पृष्ठ खोल्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:233
+#: src/globalPlugins/easyAudioConverter/__init__.py:389
 msgid "Opening the support page"
 msgstr "समर्थन पृष्ठ खोल्दै"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:168
+#: src/globalPlugins/easyAudioConverter/__init__.py:324
 msgid "Opus"
 msgstr "ओपस"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:866
+#: src/globalPlugins/easyAudioConverter/__init__.py:1626
+msgid "Output files:"
+msgstr "निर्गत फाइलहरू:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1694
+msgid "Output:\n{output}"
+msgstr "निर्गत:\n{output}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1554
 msgid "Overall progress: 100%"
 msgstr "समग्र प्रगति: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:778
+#: src/globalPlugins/easyAudioConverter/__init__.py:1446
 msgid "Overall progress: waiting"
 msgstr "समग्र प्रगति: प्रतिक्षा"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:853
+#: src/globalPlugins/easyAudioConverter/__init__.py:1530
 msgid "Overall progress: {percent}%"
 msgstr "समग्र प्रगति: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:732
 msgid "PCM bit depth:"
 msgstr "PCM बिट गहिराइ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1316 src/globalPlugins/easyAudioConverter/__init__.py:772 src/globalPlugins/easyAudioConverter/__init__.py:1687
+#: src/globalPlugins/easyAudioConverter/__init__.py:638
+msgid "Playing the completion sound"
+msgstr "समाप्ति ध्वनि बजाउँदै"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:282
+msgid "Podcast Opus"
+msgstr "पोडकास्ट ओपस"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2311 src/globalPlugins/easyAudioConverter/__init__.py:1440 src/globalPlugins/easyAudioConverter/__init__.py:2790
 msgid "Preparing the conversion"
 msgstr "रूपान्तरणको तयारी गर्दै"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:376
+#: src/globalPlugins/easyAudioConverter/__init__.py:532 src/globalPlugins/easyAudioConverter/__init__.py:991
 msgid "Preserve the source folder structure in the destination"
 msgstr "गन्तव्यमा स्रोत फोल्डर संरचना सुरक्षित गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:222
+#: src/globalPlugins/easyAudioConverter/__init__.py:1289
+msgid "Profile deleted"
+msgstr "प्रोफाइल मेटियो"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+msgid "Profile saved: {name}"
+msgstr "प्रोफाइल बचत गरियो: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:378
 msgid "Publisher"
 msgstr "प्रकाशक[सम्पादन गर्ने]"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:336
+#: src/globalPlugins/easyAudioConverter/__init__.py:492 src/globalPlugins/easyAudioConverter/__init__.py:964
 msgid "Quality:"
 msgstr "गुणस्तर:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1627
+#: src/globalPlugins/easyAudioConverter/__init__.py:2722
 msgid "Quality: {quality}"
 msgstr "गुणस्तर: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1631
+#: src/globalPlugins/easyAudioConverter/__init__.py:2726
 msgid "Quickly choose the destination folder"
 msgstr "द्रुत रूपमा गन्तव्य फोल्डर छान्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1558
+#: src/globalPlugins/easyAudioConverter/__init__.py:2653
 msgid "Quickly convert selected files or folders"
 msgstr "चयन गरिएका फाइलहरू वा फोल्डरहरूलाई द्रुत रूपमा रूपान्तरण गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1155
+#: src/globalPlugins/easyAudioConverter/__init__.py:2128
 msgid "Release notes:"
 msgstr "रिलीज नोटहरू:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1679
+#: src/globalPlugins/easyAudioConverter/__init__.py:1246
+msgid "Replace the existing profile “{name}”?"
+msgstr "अवस्थित प्रोफाइल \"{name}\" बदल्नुहोस्?"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2782
 msgid "Report audio conversion status"
 msgstr "अडियो रूपान्तरण स्थिति रिपोर्ट गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:787 src/globalPlugins/easyAudioConverter/__init__.py:992
+#: src/globalPlugins/easyAudioConverter/__init__.py:1460 src/globalPlugins/easyAudioConverter/__init__.py:1964
 msgid "Report conversion status"
 msgstr "रूपान्तरण स्थिति रिपोर्ट गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:1751
+msgid "Retry failed files"
+msgstr "असफल फाइलहरू पुन: प्रयास गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:713
 msgid "Sample rate:"
 msgstr "नमूना दर:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:353
+#: src/globalPlugins/easyAudioConverter/__init__.py:1211 src/globalPlugins/easyAudioConverter/__init__.py:1247
+msgid "Save conversion profile"
+msgstr "रूपान्तरण प्रोफाइल बचत गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:509 src/globalPlugins/easyAudioConverter/__init__.py:976
 msgid "Save converted files next to the source files"
 msgstr "स्रोत फाइलहरूको छेउमा रूपान्तरित फाइलहरू बचत गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:995
+#: src/globalPlugins/easyAudioConverter/__init__.py:950
+msgid "Save profile..."
+msgstr "प्रोफाइल बचत गर्नुहोस्..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:878
+msgid "Select the text metadata fields to copy for this conversion."
+msgstr "यो रूपान्तरणका लागि प्रतिलिपि गर्न पाठ मेटाडेटा फिल्ड चयन गर्नुहोस् ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:940
+msgid "Selected items: {count}"
+msgstr "चयन गरिएका वस्तुहरू: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1968
 msgid "Settings..."
 msgstr "सेटिङहरू..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:991
+#: src/globalPlugins/easyAudioConverter/__init__.py:1963
 msgid "Show conversion progress"
 msgstr "रूपान्तरण प्रगति देखाउनुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1668
+#: src/globalPlugins/easyAudioConverter/__init__.py:1965
+msgid "Show last conversion results"
+msgstr "अन्तिम रूपान्तरण परिणाम देखाउनुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1461
+msgid "Show results"
+msgstr "परिणाम देखाउनुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2763
 msgid "Show the audio conversion progress window"
 msgstr "अडियो रूपान्तरण प्रगति सञ्झ्याल देखाउनुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1500
-msgid "Some files could not be converted:\n\n{details}"
-msgstr "केही फाइलहरू रूपान्तरण गर्न सकिएन:\n\n{details}"
+#: src/globalPlugins/easyAudioConverter/__init__.py:2774
+msgid "Show the last audio conversion results"
+msgstr "अन्तिम अडियो रूपान्तरण परिणाम देखाउनुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:186
+#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+msgid "Skipped"
+msgstr "फड्काइएको"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1633
+msgid "Skipped files:"
+msgstr "फड्काइएका फाइलहरू:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1713
+msgid "Skipped: {name}"
+msgstr "छोडियो: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:228
+msgid "Sound only"
+msgstr "ध्वनि मात्र"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1703
+msgid "Source:\n{source}\n\nError:\n{error}"
+msgstr "स्रोत:\n{source}\n\nत्रुटि:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1680
+msgid "Source:\n{source}\n\nOutput:\n{output}"
+msgstr "स्रोत:\n{source}\n\nनिर्गत:\n{output}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+msgid "Source:\n{source}\n\nReason:\n{reason}"
+msgstr "स्रोत:\n{source}\n\nकारण:\n{reason}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:226
+msgid "Speech and sound"
+msgstr "बोली र ध्वनि"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:227
+msgid "Speech only"
+msgstr "वाचन मात्र"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:342
 msgid "Standard"
 msgstr "मानक"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:318
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1194
+#: src/globalPlugins/easyAudioConverter/__init__.py:2167
 msgid "Starting the download..."
 msgstr "डाउनलोड सुरु गर्दैछ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:721
 msgid "Stereo"
 msgstr "स्टेरियो"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1613 src/globalPlugins/easyAudioConverter/__init__.py:1666
+msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
+msgstr "सफल: {done}। असफल: {failed}. छोडिएको: {skipped}।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1679 src/globalPlugins/easyAudioConverter/__init__.py:1693
+msgid "Success: {name}"
+msgstr "सफलता: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:563
+msgid "Successful completion notification:"
+msgstr "सफलतापूर्वक समाप्ति सूचना:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1622
+msgid "Successful files:"
+msgstr "सफल फाइलहरू:"
 
 #: src/installTasks.py:40 src/installTasks.py:58
 msgid "Support Easy Audio Converter"
 msgstr "सजिलो अडियो कनवर्टर समर्थन गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:414 src/globalPlugins/easyAudioConverter/__init__.py:998
+#: src/globalPlugins/easyAudioConverter/__init__.py:594 src/globalPlugins/easyAudioConverter/__init__.py:1971
 msgid "Support the author"
 msgstr "लेखकलाई समर्थन गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:327
+#: src/globalPlugins/easyAudioConverter/__init__.py:483 src/globalPlugins/easyAudioConverter/__init__.py:958
 msgid "Target format:"
 msgstr "लक्ष्य ढाँचा:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1613
+#: src/globalPlugins/easyAudioConverter/__init__.py:2708
 msgid "Target format: {format}"
 msgstr "लक्ष्य ढाँचा: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1297
+#: src/globalPlugins/easyAudioConverter/__init__.py:571
+msgid "Test completion sound"
+msgstr "समाप्ति ध्वनि परीक्षण गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2271
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "बन्डल गरिएको FFmpeg कम्पोनेन्ट हराइरहेको छ। सजिलो अडियो कन्भर्टर पुन: स्थापना गर्नुहोस्।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:611
+#: src/globalPlugins/easyAudioConverter/__init__.py:802
 msgid "The codec-specific level is not used by this format."
 msgstr "कोडेक-निर्दिष्ट स्तर यो ढाँचाद्वारा प्रयोग गरिएको छैन।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1438
+#: src/globalPlugins/easyAudioConverter/__init__.py:2444
 msgid "The conversion could not start"
 msgstr "रूपान्तरण सुरु गर्न सकेन"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1442
+#: src/globalPlugins/easyAudioConverter/__init__.py:2449
 msgid "The conversion could not start:\n{error}"
 msgstr "रूपान्तरण सुरु हुन सकेन:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1264
+#: src/globalPlugins/easyAudioConverter/__init__.py:1620
+msgid "The conversion was canceled."
+msgstr "रूपान्तरण रद्द गरियो।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1597
+msgid "The input does not contain a readable audio stream."
+msgstr "आगतले पढ्नयोग्य अडियो प्रवाह समावेश गर्दैन ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1595
+msgid "The input file is damaged or uses an unsupported encoding."
+msgstr "आगत फाइल बिग्रिएको छ वा असमर्थित सङ्केतन प्रयोग गर्दछ ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1222
+msgid "The profile name cannot be empty."
+msgstr "प्रोफाइल नाम खाली हुन सक्दैन ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2237
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "अद्यावधिक डाउनलोड वा रुजु गर्न सकिएन ।\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1272
+#: src/globalPlugins/easyAudioConverter/__init__.py:2245
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "अद्यावधिक तयार छ। NVDA एड-अन स्थापनाकर्ता खोल्दैछ।"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:209
+#: src/globalPlugins/easyAudioConverter/__init__.py:1593
+msgid "There is not enough free disk space."
+msgstr "त्यहाँ पर्याप्त खाली डिस्क खाली स्थान छैन ।"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:365
 msgid "Title"
 msgstr "शीर्षक[सम्पादन गर्ने]"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:216
+#: src/globalPlugins/easyAudioConverter/__init__.py:372
 msgid "Track number"
 msgstr "ट्रयाक नम्बर"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1493 src/globalPlugins/easyAudioConverter/__init__.py:1265 src/globalPlugins/easyAudioConverter/__init__.py:1124
+#: src/globalPlugins/easyAudioConverter/__init__.py:1598 src/globalPlugins/easyAudioConverter/__init__.py:2238 src/globalPlugins/easyAudioConverter/__init__.py:2097
 msgid "Unknown error"
 msgstr "अज्ञात त्रुटि"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1260
+#: src/globalPlugins/easyAudioConverter/__init__.py:1604
+msgid "Unsupported file type"
+msgstr "असमर्थित फाइल प्रकार"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2233
 msgid "Update download canceled"
 msgstr "अद्यावधिक डाउनलोड रद्द गरियो"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "Use the quality preset"
 msgstr "गुणस्तर प्रिसेट प्रयोग गर्नुहोस्"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:188
+#: src/globalPlugins/easyAudioConverter/__init__.py:1008
+msgid "Use these settings for future quick conversions"
+msgstr "भविष्यका छिटो रूपान्तरणका लागि यी सेटिङ प्रयोग गर्नुहोस्"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:344
 msgid "Very high"
 msgstr "धेरै उच्च"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:165
+#: src/globalPlugins/easyAudioConverter/__init__.py:321
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:171
+#: src/globalPlugins/easyAudioConverter/__init__.py:327
 msgid "WMA"
 msgstr "डब्ल्युएमए"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:176
+#: src/globalPlugins/easyAudioConverter/__init__.py:332
 msgid "WavPack"
 msgstr "वेभप्याक"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1520
+#: src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:1541
+msgid "calculating"
+msgstr "गणना गर्दैछ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2579
 msgid "excluding subfolders"
 msgstr "सबफोल्डरहरू बाहेक"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1518
+#: src/globalPlugins/easyAudioConverter/__init__.py:2577
 msgid "including subfolders"
 msgstr "सबफोल्डरहरू सहित"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1571
+#: src/globalPlugins/easyAudioConverter/__init__.py:2641 src/globalPlugins/easyAudioConverter/__init__.py:2666
 msgid "{count} selected folders"
 msgstr "{count} चयन गरिएका फोल्डरहरू"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2826
+msgid "{status} Estimated time remaining {remaining}."
+msgstr "{status} अनुमानित समय बाँकी {remaining}।"

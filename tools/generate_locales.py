@@ -148,8 +148,8 @@ EDGE_TARGETS = {
 
 MANIFEST_SUMMARY = "Easy Audio Converter"
 MANIFEST_DESCRIPTION = (
-	"Accessible single-file and batch audio conversion from Windows Explorer, "
-	"powered by bundled FFmpeg."
+	"Accessible single-file and batch audio conversion with one-time options, "
+	"named profiles, detailed results, and bundled FFmpeg."
 )
 
 POLISH = {
@@ -404,9 +404,145 @@ POLISH = {
 	MANIFEST_SUMMARY: "Easy Audio Converter",
 	MANIFEST_DESCRIPTION: (
 		"Dostępna konwersja pojedynczych plików i konwersja masowa audio "
-		"z Eksploratora Windows przy użyciu dołączonego FFmpeg."
+		"z ustawieniami jednorazowymi, nazwanymi profilami, szczegółowymi "
+		"wynikami i dołączonym FFmpeg."
 	),
 }
+
+POLISH.update(
+	{
+		"...and {count} more skipped files": "...oraz {count} dalszych pominiętych plików",
+		"A built-in profile already uses this name.": (
+			"Profil wbudowany używa już tej nazwy."
+		),
+		"Access to the source or destination was denied.": (
+			"Odmówiono dostępu do źródła lub miejsca docelowego."
+		),
+		"Additional skipped files: {count}": "Dodatkowe pominięte pliki: {count}",
+		"Advanced codec overrides: disabled": (
+			"Zaawansowane ustawienia kodeka: wyłączone"
+		),
+		"Advanced codec overrides: enabled": (
+			"Zaawansowane ustawienia kodeka: włączone"
+		),
+		"Already uses the target format": "Plik ma już format docelowy",
+		"Archive FLAC": "Archiwum FLAC",
+		"At every file": "Przy każdym pliku",
+		"At progress milestones": "W kolejnych etapach postępu",
+		"Audiobook MP3": "Audiobook MP3",
+		"Automatic progress announcements:": "Automatyczne komunikaty o postępie:",
+		"Choose metadata fields": "Wybór pól metadanych",
+		"Choose metadata fields...": "Wybierz pola metadanych...",
+		"Conversion profile:": "Profil konwersji:",
+		"Conversion report copied": "Skopiowano raport konwersji",
+		"Conversion results": "Wyniki konwersji",
+		"Convert": "Konwertuj",
+		"Convert selected files or folders with one-time options": (
+			"Konwertuj zaznaczone pliki lub foldery z ustawieniami jednorazowymi"
+		),
+		"Convert selected files or folders with options...": (
+			"Konwertuj zaznaczone pliki lub foldery z opcjami..."
+		),
+		"Convert with options": "Konwertuj z opcjami",
+		"Copy report": "Kopiuj raport",
+		"Could not copy the conversion report.": (
+			"Nie udało się skopiować raportu konwersji."
+		),
+		"Could not open the output folder.": "Nie udało się otworzyć folderu wynikowego.",
+		"Delete conversion profile": "Usuń profil konwersji",
+		"Delete profile": "Usuń profil",
+		"Delete the profile “{name}”?": "Usunąć profil „{name}”?",
+		"Details are limited to the first {limit} skipped files.": (
+			"Szczegóły ograniczono do pierwszych {limit} pominiętych plików."
+		),
+		"Details:": "Szczegóły:",
+		"Easy Audio Converter results": "Wyniki Easy Audio Converter",
+		"Enter a name for this conversion profile:": (
+			"Wprowadź nazwę tego profilu konwersji:"
+		),
+		"Estimated time remaining: 0:00": "Szacowany czas do zakończenia: 0:00",
+		"Estimated time remaining: calculating": (
+			"Szacowany czas do zakończenia: obliczanie"
+		),
+		"Estimated time remaining: {remaining}": (
+			"Szacowany czas do zakończenia: {remaining}"
+		),
+		"Failed files:": "Pliki z błędami:",
+		"Failed: {name}": "Błąd: {name}",
+		"File or folder is unavailable": "Plik lub folder jest niedostępny",
+		"No completion notification": "Bez powiadomienia o zakończeniu",
+		"No conversion results are available": "Brak dostępnych wyników konwersji",
+		"No failed files are available to retry": (
+			"Brak plików z błędami, które można ponowić"
+		),
+		"No file details are available.": "Brak dostępnych szczegółów plików.",
+		"One-time settings": "Ustawienia jednorazowe",
+		"Only on demand": "Tylko na żądanie",
+		"Open output folder": "Otwórz folder wynikowy",
+		"Output files:": "Pliki wynikowe:",
+		"Output:\n{output}": "Wynik:\n{output}",
+		"Playing the completion sound": "Odtwarzanie dźwięku zakończenia",
+		"Podcast Opus": "Podcast Opus",
+		"Profile deleted": "Usunięto profil",
+		"Profile saved: {name}": "Zapisano profil: {name}",
+		"Replace the existing profile “{name}”?": (
+			"Zastąpić istniejący profil „{name}”?"
+		),
+		"Retry failed files": "Ponów pliki z błędami",
+		"Save conversion profile": "Zapisz profil konwersji",
+		"Save profile...": "Zapisz profil...",
+		"Select the text metadata fields to copy for this conversion.": (
+			"Wybierz tekstowe pola metadanych do skopiowania podczas tej konwersji."
+		),
+		"Selected items: {count}": "Zaznaczone elementy: {count}",
+		"Show last conversion results": "Pokaż wyniki ostatniej konwersji",
+		"Show results": "Pokaż wyniki",
+		"Show the last audio conversion results": (
+			"Pokaż wyniki ostatniej konwersji audio"
+		),
+		"Skipped": "Pominięto",
+		"Skipped files:": "Pominięte pliki:",
+		"Skipped: {name}": "Pominięto: {name}",
+		"Sound only": "Tylko dźwięk",
+		"Source:\n{source}\n\nError:\n{error}": (
+			"Źródło:\n{source}\n\nBłąd:\n{error}"
+		),
+		"Source:\n{source}\n\nOutput:\n{output}": (
+			"Źródło:\n{source}\n\nWynik:\n{output}"
+		),
+		"Source:\n{source}\n\nReason:\n{reason}": (
+			"Źródło:\n{source}\n\nPrzyczyna:\n{reason}"
+		),
+		"Speech and sound": "Mowa i dźwięk",
+		"Speech only": "Tylko mowa",
+		"Succeeded: {done}. Failed: {failed}. Skipped: {skipped}.": (
+			"Ukończone: {done}. Błędy: {failed}. Pominięte: {skipped}."
+		),
+		"Success: {name}": "Sukces: {name}",
+		"Successful completion notification:": (
+			"Powiadomienie po poprawnym zakończeniu:"
+		),
+		"Successful files:": "Poprawnie ukończone pliki:",
+		"Test completion sound": "Przetestuj dźwięk zakończenia",
+		"The conversion was canceled.": "Konwersja została anulowana.",
+		"The input does not contain a readable audio stream.": (
+			"Plik wejściowy nie zawiera możliwej do odczytania ścieżki audio."
+		),
+		"The input file is damaged or uses an unsupported encoding.": (
+			"Plik wejściowy jest uszkodzony lub używa nieobsługiwanego kodowania."
+		),
+		"The profile name cannot be empty.": "Nazwa profilu nie może być pusta.",
+		"There is not enough free disk space.": "Brak wystarczającego miejsca na dysku.",
+		"Unsupported file type": "Nieobsługiwany typ pliku",
+		"Use these settings for future quick conversions": (
+			"Używaj tych ustawień podczas przyszłych szybkich konwersji"
+		),
+		"calculating": "obliczanie",
+		"{status} Estimated time remaining {remaining}.": (
+			"{status} Szacowany czas do zakończenia: {remaining}."
+		),
+	}
+)
 
 PLACEHOLDER_PATTERN = re.compile(r"\{[^{}]+\}")
 
@@ -601,10 +737,10 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.1.3\n"
+		"Project-Id-Version: Easy Audio Converter 1.2.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
-		"POT-Creation-Date: 2026-07-24 00:00+0200\n"
-		"PO-Revision-Date: 2026-07-24 00:00+0200\n"
+		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
+		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
 		"Language-Team: generated\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
@@ -643,7 +779,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.1.3\n"
+		"Project-Id-Version: Easy Audio Converter 1.2.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

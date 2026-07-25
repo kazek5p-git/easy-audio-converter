@@ -10,8 +10,10 @@ python -m unittest discover -s tests -v
 
 The unit suite covers formats, metadata filtering and escaping, progress
 parsing, output collision handling, advanced overrides, updater version
-comparison, download cancellation, checksums, manifest validation, and ZIP
-path traversal rejection.
+comparison, complete profile serialization, skipped-file reasons, remaining
+time, results reports, notification modes, balanced NVDA popup state, download
+cancellation, checksums, manifest validation, and ZIP path traversal
+rejection.
 
 ## End-to-end codec validation
 
@@ -51,15 +53,25 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    and both tabs.
 3. Select “Copy selected metadata fields” and verify that every field is
    announced as a check box with its checked state.
-4. Start a multi-file job and verify that visual progress does not flood
+4. Open “Convert selected files or folders with options”. Traverse the
+   complete dialog, switch each built-in profile, save and remove a temporary
+   user profile, and verify that canceling does not change defaults.
+5. Test every successful-completion notification mode and the sound-test
+   button. Verify milestone, per-file, and on-demand progress announcement
+   modes.
+6. Start a multi-file job and verify that visual progress does not flood
    speech with automatic percentages.
-5. Test the report, hide, reopen, cancel, and close buttons in the progress
-   window.
-6. Test successful, empty-input, corrupt-input, and Explorer-selection jobs.
-7. Open and dismiss the destination selectors, folder confirmation, update
+7. Test the report, remaining-time estimate, hide, reopen, cancel, results,
+   and close buttons in the progress window.
+8. Run a mixed valid, corrupt, and already-target-format folder. Confirm that
+   the results window lists success, failure, and skip rows; copy its report;
+   open the output folder; then repair the corrupt source and retry only that
+   failed file.
+9. Test successful, empty-input, corrupt-input, and Explorer-selection jobs.
+10. Open and dismiss the destination selectors, folder confirmation, update
    dialog, and support page.
-8. Review the NVDA log for add-on import, callback, and traceback errors.
-9. Hide an existing `NVDASettingsDialog` through the NVDA Python console and
+11. Review the NVDA log for add-on import, callback, and traceback errors.
+12. Hide an existing `NVDASettingsDialog` through the NVDA Python console and
    verify that each add-on settings command discards it and opens the unified
    category on the requested tab.
 

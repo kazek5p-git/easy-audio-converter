@@ -77,6 +77,7 @@ class PluginImportTests(unittest.TestCase):
 			{"__init__": lambda self, window=None: setattr(self, "Window", window)},
 		)
 		wx.ACC_OK = 0
+		wx.ID_OK = 5100
 		install("wx", wx)
 
 		log_handler = types.ModuleType("logHandler")
@@ -97,7 +98,11 @@ class PluginImportTests(unittest.TestCase):
 	@classmethod
 	def tearDownClass(cls):
 		sys.path.remove(str(GLOBAL_PLUGINS))
-		for name in ("easyAudioConverter.converter", "easyAudioConverter"):
+		for name in (
+			"easyAudioConverter.profiles",
+			"easyAudioConverter.converter",
+			"easyAudioConverter",
+		):
 			sys.modules.pop(name, None)
 		for name, original in cls._original_modules.items():
 			if original is None:
@@ -107,6 +112,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
+		self.assertEqual("1.2.0", self.module.ADDON_VERSION)
 		self.assertEqual("Easy Audio Converter", self.module.EasyAudioConverterSettingsPanel.title)
 		self.assertEqual(0, self.module.EasyAudioConverterSettingsPanel.STANDARD_TAB)
 		self.assertEqual(1, self.module.EasyAudioConverterSettingsPanel.ADVANCED_TAB)
@@ -116,6 +122,7 @@ class PluginImportTests(unittest.TestCase):
 		expected = {
 			"script_openSettings",
 			"script_openAdvancedSettings",
+			"script_convertSelectionWithOptions",
 			"script_convertSelection",
 			"script_convertCurrentFolder",
 			"script_cycleTargetFormat",
@@ -123,6 +130,7 @@ class PluginImportTests(unittest.TestCase):
 			"script_chooseDestinationFolder",
 			"script_cancelConversion",
 			"script_showProgress",
+			"script_showResults",
 			"script_reportStatus",
 			"script_openSupportPage",
 			"script_checkForUpdates",
@@ -286,6 +294,114 @@ class PluginImportTests(unittest.TestCase):
 		finally:
 			self.module._play_completion_sound = original
 		self.assertEqual([True], sound_calls)
+
+	def test_remaining_time_estimate_is_bounded(self):
+		self.assertIsNone(self.module._estimate_remaining(1, 0.5))
+		self.assertIsNone(self.module._estimate_remaining(20, 0.001))
+		self.assertEqual(30.0, self.module._estimate_remaining(10, 0.25))
+		self.assertEqual(0.0, self.module._estimate_remaining(10, 1.0))
+
+	def test_options_dialog_balances_nvda_popup_state(self):
+		calls = []
+
+		class Dialog:
+			def ShowModal(self):
+				calls.append("show")
+				return self.module.wx.ID_OK
+
+			def get_settings(self):
+				calls.append("settings")
+				return "snapshot"
+
+			def Destroy(self):
+				calls.append("destroy")
+
+		dialog = Dialog()
+		dialog.module = self.module
+		gui_module = sys.modules["gui"]
+		original_pre = getattr(gui_module.mainFrame, "prePopup", None)
+		original_post = getattr(gui_module.mainFrame, "postPopup", None)
+		gui_module.mainFrame.prePopup = lambda: calls.append("pre")
+		gui_module.mainFrame.postPopup = lambda: calls.append("post")
+		try:
+			self.assertEqual(
+				"snapshot",
+				self.module._run_conversion_options_dialog(dialog),
+			)
+		finally:
+			if original_pre is None:
+				del gui_module.mainFrame.prePopup
+			else:
+				gui_module.mainFrame.prePopup = original_pre
+			if original_post is None:
+				del gui_module.mainFrame.postPopup
+			else:
+				gui_module.mainFrame.postPopup = original_post
+		self.assertEqual(
+			["pre", "show", "post", "settings", "destroy"],
+			calls,
+		)
+
+	def test_results_report_retains_paths_and_friendly_errors(self):
+		summary = self.module.ConversionSummary(
+			total=2,
+			succeeded=1,
+			failed=1,
+			ignored=1,
+			outputs=[r"D:\out\song.mp3"],
+			successes=[
+				self.module.converter.ConversionSuccess(
+					r"D:\in\song.wav",
+					r"D:\out\song.mp3",
+				)
+			],
+			failures=[
+				self.module.converter.ConversionFailure(
+					"broken.wav",
+					"Permission denied",
+					r"D:\in\broken.wav",
+				)
+			],
+			skipped_files=[
+				self.module.converter.SkippedFile(
+					r"D:\in\already.mp3",
+					"targetFormat",
+				)
+			],
+		)
+		report = self.module._build_results_report(summary)
+		self.assertIn(r"D:\in\song.wav -> D:\out\song.mp3", report)
+		self.assertIn(r"D:\in\broken.wav", report)
+		self.assertIn("Access to the source or destination was denied.", report)
+		self.assertIn(r"D:\in\already.mp3", report)
+
+	def test_sound_only_completion_does_not_speak(self):
+		sound_calls = []
+		spoken = []
+		original_sound = self.module._play_completion_sound
+		original_message = self.module.ui.message
+		self.module._play_completion_sound = lambda: sound_calls.append(True)
+		self.module.ui.message = spoken.append
+		try:
+			converter = object()
+			plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+			plugin._converter = converter
+			plugin._terminated = False
+			plugin._progress_dialog = None
+			plugin._worker = object()
+			plugin._progress = object()
+			plugin._job_settings = None
+			plugin._job_source_root = None
+			plugin._job_completion_mode = "soundOnly"
+			plugin._job_complete(
+				converter,
+				self.module.ConversionSummary(total=1, succeeded=1),
+			)
+		finally:
+			self.module._play_completion_sound = original_sound
+			self.module.ui.message = original_message
+		self.assertEqual([True], sound_calls)
+		self.assertEqual([], spoken)
 
 
 if __name__ == "__main__":

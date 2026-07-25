@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.2.0
+
+- Added an accessible “Convert with options” workflow for one-time format,
+  quality, destination, folder, metadata, and codec-profile choices without
+  changing quick-conversion defaults.
+- Added complete named conversion profiles with Audiobook MP3, Podcast Opus,
+  and Archive FLAC built-ins plus safe user profile save, replace, and delete
+  operations.
+- Added an accessible results window listing successful, failed, and skipped
+  files, with detailed reasons, a clipboard report, output-folder access, and
+  retry of only the failed source files using the original job settings.
+- Added friendly explanations for common permission, disk-space, damaged-file,
+  and missing-audio-stream errors.
+- Added configurable successful-completion notification modes: speech and
+  sound, speech only, sound only, or none, with a sound-test button.
+- Added automatic progress announcement modes for milestones, every file, or
+  on-demand reporting only.
+- Added estimated remaining time to the progress window and spoken status.
+- Preserved bounded skipped-file details while retaining accurate totals for
+  very large folder jobs.
+
 ## 1.1.3
 
 - Combined the standard and advanced options into one Easy Audio Converter

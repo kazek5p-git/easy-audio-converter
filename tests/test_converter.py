@@ -17,6 +17,7 @@ from converter import (  # noqa: E402
 	build_codec_arguments,
 	build_metadata_arguments,
 	collect_audio_files,
+	collect_audio_files_detailed,
 	make_unique_output_path,
 	parse_duration,
 	parse_ffmetadata,
@@ -168,6 +169,29 @@ class FileCollectionTests(unittest.TestCase):
 			)
 			self.assertEqual({source, existing_target}, set(files))
 			self.assertEqual(0, ignored)
+
+	def test_detailed_collection_records_skip_reasons(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"wav")
+			target = root / "existing.mp3"
+			target.write_bytes(b"mp3")
+			unsupported = root / "notes.txt"
+			unsupported.write_text("text", encoding="utf-8")
+			files, ignored, skipped = collect_audio_files_detailed(
+				[root],
+				folder_excluded_extensions=(".mp3",),
+			)
+			self.assertEqual([source], files)
+			self.assertEqual(2, ignored)
+			self.assertEqual(
+				{
+					(str(target), "targetFormat"),
+					(str(unsupported), "unsupported"),
+				},
+				{(item.source_path, item.reason) for item in skipped},
+			)
 
 
 class OutputNamingTests(unittest.TestCase):

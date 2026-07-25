@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.1.3.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.2.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -18,7 +18,12 @@
 		<li>Otwórz Eksplorator Windows i zaznacz pliki audio lub foldery.</li>
 		<li>
 			Otwórz menu NVDA, Narzędzia, Easy Audio Converter i wybierz
-			„Konwertuj zaznaczone pliki lub foldery”.
+			„Konwertuj zaznaczone pliki lub foldery”, aby od razu użyć
+			zapisanych ustawień.
+		</li>
+		<li>
+			Wybierz „Konwertuj zaznaczone pliki lub foldery z opcjami”, jeśli
+			chcesz użyć ustawień jednorazowych albo nazwanego profilu.
 		</li>
 		<li>
 			Aby przekonwertować cały bieżący folder, wybierz
@@ -26,15 +31,31 @@
 		</li>
 	</ol>
 	<p>
-		Podmenu Narzędzia pozwala także odczytać stan, anulować zadanie,
-		otworzyć okno postępu, aktualizator, ustawienia oraz stronę wsparcia autora.
+		Podmenu Narzędzia pozwala także odczytać stan, anulować zadanie, otworzyć
+		ostatnie wyniki, okno postępu, aktualizator, ustawienia oraz stronę
+		wsparcia autora.
+	</p>
+
+	<h2>Ustawienia jednorazowe i nazwane profile</h2>
+	<p>
+		Okno „Konwertuj z opcjami” pozwala wybrać dla jednego zadania format,
+		jakość, kodek MP3, miejsce docelowe, sposób obsługi folderów, metadane
+		oraz aktywne zaawansowane ustawienia kodeka. Zaznacz pole „Używaj tych
+		ustawień podczas przyszłych szybkich konwersji” tylko wtedy, gdy chcesz
+		także zastąpić zapisane ustawienia domyślne.
+	</p>
+	<p>
+		Dostępne są wbudowane profile Audiobook MP3, Podcast Opus i Archiwum
+		FLAC. Kompletne profile własne można zapisywać, zastępować i usuwać.
+		Nazwy oraz wartości są sprawdzane przed zapisaniem w konfiguracji NVDA.
 	</p>
 
 	<h2>Postęp konwersji</h2>
 	<p>
 		Po rozpoczęciu zadania otwiera się niemodalne okno postępu. Pokazuje ono
-		bieżący plik, procent i czas bieżącego pliku, postęp całkowity oraz czas
-		od rozpoczęcia zadania. Okno można ukryć bez zatrzymywania konwersji,
+		bieżący plik, procent i czas bieżącego pliku, postęp całkowity, czas
+		od rozpoczęcia zadania oraz szacowany czas do zakończenia. Okno można
+		ukryć bez zatrzymywania konwersji,
 		a następnie otworzyć ponownie z menu NVDA, Narzędzia, Easy Audio Converter.
 	</p>
 	<p>
@@ -47,9 +68,20 @@
 		FFmpeg. Niekompletny plik utworzony przez anulowaną operację jest usuwany.
 	</p>
 	<p>
-		Gdy wszystkie pliki w zadaniu zostaną poprawnie przekonwertowane, dodatek
-		odtworzy krótki dźwięk zakończenia. Dźwięk nie zostanie odtworzony po
-		anulowaniu ani po zadaniu zawierającym błędy.
+		Automatyczne komunikaty mogą występować w kolejnych etapach postępu, przy
+		każdym pliku albo tylko po ręcznym odczytaniu stanu. Po pełnym sukcesie
+		można wybrać mowę i dźwięk, tylko mowę, tylko dźwięk albo brak
+		powiadomienia. Błędy i anulowanie nadal są odczytywane ze względów
+		bezpieczeństwa.
+	</p>
+
+	<h2>Wyniki konwersji</h2>
+	<p>
+		Okno wyników zawiera poprawnie ukończone pliki, pliki z błędami oraz
+		pliki pominięte. Po wybraniu wiersza pokazuje pełne ścieżki i zrozumiałą
+		przyczynę błędu lub pominięcia. Można skopiować raport tekstowy, otworzyć
+		folder wynikowy albo ponowić tylko pliki z błędami z ustawieniami
+		pierwotnego zadania. Istniejące wyniki nadal nie są nadpisywane.
 	</p>
 
 	<h2>Ustawienia</h2>
@@ -58,8 +90,10 @@
 		W tej jednej kategorii znajdują się zakładki „Ustawienia standardowe”
 		i „Ustawienia zaawansowane”. Na pierwszej możesz wybrać format docelowy,
 		jakość, kodek MP3, sposób zapisu, przeszukiwanie podfolderów, zachowanie
-		struktury katalogów, sposób eksportu metadanych oraz automatyczne
-		sprawdzanie aktualizacji.
+		struktury katalogów, sposób eksportu metadanych, powiadomienie o
+		zakończeniu, automatyczne komunikaty o postępie oraz automatyczne
+		sprawdzanie aktualizacji. Na tej stronie można także przetestować
+		dźwięk zakończenia.
 	</p>
 	<p>
 		Po zaznaczeniu opcji „Zapisuj przekonwertowane pliki obok plików
@@ -131,6 +165,7 @@
 	</p>
 	<ul>
 		<li>otwierania ustawień;</li>
+		<li>konwersji zaznaczenia z ustawieniami jednorazowymi;</li>
 		<li>szybkiej konwersji zaznaczenia;</li>
 		<li>konwersji bieżącego folderu;</li>
 		<li>zmiany formatu docelowego;</li>
@@ -138,6 +173,7 @@
 		<li>szybkiego wyboru folderu docelowego;</li>
 		<li>otwierania zaawansowanych ustawień kodeków;</li>
 		<li>pokazywania okna postępu;</li>
+		<li>pokazywania wyników ostatniej konwersji;</li>
 		<li>odczytu stanu;</li>
 		<li>anulowania konwersji;</li>
 		<li>sprawdzania aktualizacji;</li>
@@ -162,10 +198,8 @@
 		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>
 		<li>Nie można konwertować mediów zaszyfrowanych lub zabezpieczonych DRM.</li>
 		<li>Parametry zaawansowane nieobsługiwane przez format są ignorowane lub wyłączone.</li>
-		<li>
-			Przy błędzie ostrzeżenie pokazuje maksymalnie osiem plików i szczegóły
-			FFmpeg, nie nadpisując żadnego istniejącego wyniku.
-		</li>
+		<li>Szczegóły obejmują do 500 pominiętych plików oraz pełną ich liczbę.</li>
+		<li>Typowe błędy FFmpeg i systemu plików są objaśniane w oknie wyników.</li>
 	</ul>
 </body>
 </html>

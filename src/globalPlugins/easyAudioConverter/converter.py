@@ -83,6 +83,7 @@ DEFAULT_METADATA_FIELDS = (
 ADVANCED_SAMPLE_RATES = (0, 8000, 11025, 16000, 22050, 32000, 44100, 48000, 88200, 96000, 192000)
 ADVANCED_CHANNEL_COUNTS = (0, 1, 2)
 ADVANCED_BIT_DEPTHS = (0, 16, 24, 32)
+MAX_SKIPPED_FILE_DETAILS = 500
 
 # Audio-only files and popular media containers from which FFmpeg can extract audio.
 AUDIO_EXTENSIONS = frozenset(
@@ -187,6 +188,19 @@ class ConversionSettings:
 class ConversionFailure:
 	source_name: str
 	message: str
+	source_path: str = ""
+
+
+@dataclass(frozen=True)
+class ConversionSuccess:
+	source_path: str
+	output_path: str
+
+
+@dataclass(frozen=True)
+class SkippedFile:
+	source_path: str
+	reason: str
 
 
 @dataclass
@@ -198,6 +212,8 @@ class ConversionSummary:
 	canceled: bool = False
 	outputs: list[str] = field(default_factory=list)
 	failures: list[ConversionFailure] = field(default_factory=list)
+	successes: list[ConversionSuccess] = field(default_factory=list)
+	skipped_files: list[SkippedFile] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -233,14 +249,14 @@ def _is_below(path: Path, roots: Sequence[Path]) -> bool:
 	return False
 
 
-def collect_audio_files(
+def _collect_audio_files(
 	paths: Iterable[str | os.PathLike[str]],
 	*,
 	recursive: bool = True,
 	excluded_roots: Iterable[str | os.PathLike[str]] = (),
 	folder_excluded_extensions: Iterable[str] = (),
-) -> tuple[list[Path], int]:
-	"""Collect supported files while avoiding duplicate paths and output trees.
+) -> tuple[list[Path], int, list[SkippedFile]]:
+	"""Collect supported files and bounded details about skipped inputs.
 
 	Extensions in ``folder_excluded_extensions`` are skipped only when files
 	are discovered inside a folder. A file selected explicitly is always kept,
@@ -264,21 +280,32 @@ def collect_audio_files(
 	files: list[Path] = []
 	seen: set[str] = set()
 	ignored = 0
+	skipped_files: list[SkippedFile] = []
+
+	def skip(candidate: Path, reason: str) -> None:
+		nonlocal ignored
+		ignored += 1
+		if len(skipped_files) < MAX_SKIPPED_FILE_DETAILS:
+			skipped_files.append(
+				SkippedFile(
+					source_path=str(candidate),
+					reason=reason,
+				)
+			)
 
 	def add_file(candidate: Path, *, from_folder: bool) -> None:
-		nonlocal ignored
 		if _is_below(candidate, excluded):
 			return
 		suffix = candidate.suffix.lower()
 		if suffix not in AUDIO_EXTENSIONS:
-			ignored += 1
+			skip(candidate, "unsupported")
 			return
 		key = _normal_path(candidate)
 		if key in seen:
 			return
 		if from_folder and suffix in folder_excluded and key not in explicit_files:
 			seen.add(key)
-			ignored += 1
+			skip(candidate, "targetFormat")
 			return
 		seen.add(key)
 		files.append(candidate)
@@ -290,7 +317,7 @@ def collect_audio_files(
 				add_file(candidate, from_folder=False)
 				continue
 			if not candidate.is_dir():
-				ignored += 1
+				skip(candidate, "unavailable")
 				continue
 			if _is_below(candidate, excluded):
 				continue
@@ -309,10 +336,43 @@ def collect_audio_files(
 					if child.is_file():
 						add_file(child, from_folder=True)
 		except OSError:
-			ignored += 1
+			skip(candidate, "unavailable")
 
 	files.sort(key=lambda path: _normal_path(path))
+	return files, ignored, skipped_files
+
+
+def collect_audio_files(
+	paths: Iterable[str | os.PathLike[str]],
+	*,
+	recursive: bool = True,
+	excluded_roots: Iterable[str | os.PathLike[str]] = (),
+	folder_excluded_extensions: Iterable[str] = (),
+) -> tuple[list[Path], int]:
+	"""Collect supported files while preserving the original public result."""
+	files, ignored, _skipped_files = _collect_audio_files(
+		paths,
+		recursive=recursive,
+		excluded_roots=excluded_roots,
+		folder_excluded_extensions=folder_excluded_extensions,
+	)
 	return files, ignored
+
+
+def collect_audio_files_detailed(
+	paths: Iterable[str | os.PathLike[str]],
+	*,
+	recursive: bool = True,
+	excluded_roots: Iterable[str | os.PathLike[str]] = (),
+	folder_excluded_extensions: Iterable[str] = (),
+) -> tuple[list[Path], int, list[SkippedFile]]:
+	"""Collect supported files with details suitable for the results window."""
+	return _collect_audio_files(
+		paths,
+		recursive=recursive,
+		excluded_roots=excluded_roots,
+		folder_excluded_extensions=folder_excluded_extensions,
+	)
 
 
 def _build_base_codec_arguments(target_format: str, quality: str, mp3_encoder: str) -> list[str]:
@@ -683,13 +743,17 @@ class Converter:
 				for directory in input_directories
 			):
 				excluded_roots = (output_root,)
-		files, ignored = collect_audio_files(
+		files, ignored, skipped_files = collect_audio_files_detailed(
 			path_list,
 			recursive=settings.include_subfolders,
 			excluded_roots=excluded_roots,
 			folder_excluded_extensions=(FORMAT_EXTENSIONS[settings.target_format],),
 		)
-		summary = ConversionSummary(total=len(files), ignored=ignored)
+		summary = ConversionSummary(
+			total=len(files),
+			ignored=ignored,
+			skipped_files=skipped_files,
+		)
 		_safe_callback(callbacks.on_collected, summary.total, ignored)
 		if not files or self._cancel_event.is_set():
 			summary.canceled = self._cancel_event.is_set()
@@ -716,7 +780,9 @@ class Converter:
 				)
 			except OSError as error:
 				summary.failed += 1
-				summary.failures.append(ConversionFailure(source.name, str(error)))
+				summary.failures.append(
+					ConversionFailure(source.name, str(error), str(source))
+				)
 				continue
 
 			_safe_callback(callbacks.on_file_start, index, summary.total, source.name, output.name)
@@ -799,6 +865,12 @@ class Converter:
 			if return_code == 0 and output.is_file() and output.stat().st_size > 0:
 				summary.succeeded += 1
 				summary.outputs.append(str(output))
+				summary.successes.append(
+					ConversionSuccess(
+						source_path=str(source),
+						output_path=str(output),
+					)
+				)
 				_safe_callback(
 					callbacks.on_progress,
 					index,
@@ -817,6 +889,7 @@ class Converter:
 				ConversionFailure(
 					source.name,
 					_redact_ffmpeg_error(error_message, source, output),
+					str(source),
 				)
 			)
 		return summary

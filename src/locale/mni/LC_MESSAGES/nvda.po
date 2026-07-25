@@ -1,377 +1,521 @@
 # Easy Audio Converter translation catalog.
 # Generated for NVDA; placeholders were validated automatically.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.1.3\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-24 00:00+0200\nPO-Revision-Date: 2026-07-24 00:00+0200\nLanguage-Team: generated\nLanguage: mni\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.2.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: mni\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1497
-msgid "...and {count} more errors"
-msgstr "... ꯑꯃꯁꯨꯡ {count} ꯍꯦꯟꯅ ꯑꯁꯣꯏꯕꯁꯤꯡ"
+#: src/globalPlugins/easyAudioConverter/__init__.py:1639
+msgid "...and {count} more skipped files"
+msgstr "... ꯑꯃꯁꯨꯡ {count} ꯍꯦꯟꯅ ꯊꯥꯗꯣꯛꯈꯤꯕ ꯐꯥꯏꯜꯁꯤꯡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "16 bit"
 msgstr "꯱꯶ ꯕꯤꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "24 bit"
 msgstr "꯲꯴ ꯕꯤꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "32 bit"
 msgstr "꯳꯲ ꯕꯤꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1292
+#: src/globalPlugins/easyAudioConverter/__init__.py:1230
+msgid "A built-in profile already uses this name."
+msgstr "ꯕꯤꯜꯠ-ꯏꯟ ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯑꯃꯅ ꯍꯥꯟꯅꯅ ꯃꯃꯤꯡ ꯑꯁꯤ ꯁꯤꯖꯤꯟꯅꯔꯦ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2266 src/globalPlugins/easyAudioConverter/__init__.py:2538 src/globalPlugins/easyAudioConverter/__init__.py:2622
 msgid "A conversion is already in progress"
 msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯑꯃ ꯍꯥꯟꯅꯅ ꯆꯠꯊꯔꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:170
+#: src/globalPlugins/easyAudioConverter/__init__.py:326
 msgid "AAC"
 msgstr "ꯑꯦ.ꯑꯦ.ꯁꯤ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:174
+#: src/globalPlugins/easyAudioConverter/__init__.py:330
 msgid "AC-3"
 msgstr "ꯑꯦꯁꯤ-꯳"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:173
+#: src/globalPlugins/easyAudioConverter/__init__.py:329
 msgid "AIFF"
 msgstr "ꯑꯦ.ꯑꯥꯏ.ꯑꯦꯐ.ꯑꯦꯐ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:172
+#: src/globalPlugins/easyAudioConverter/__init__.py:328
 msgid "ALAC (Apple Lossless)"
 msgstr "ꯑꯦ.ꯑꯦꯜ.ꯑꯦ.ꯁꯤ. (ꯑꯦꯄꯜ ꯂꯣꯁꯂꯦꯁ)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:178
+#: src/globalPlugins/easyAudioConverter/__init__.py:334
 msgid "AMR narrowband"
 msgstr "ꯑꯦ.ꯑꯦꯝ.ꯑꯥꯔ. ꯅꯦꯔꯣꯕꯦꯟꯗ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:179
+#: src/globalPlugins/easyAudioConverter/__init__.py:335
 msgid "AMR wideband"
 msgstr "ꯑꯦ.ꯑꯦꯝ.ꯑꯥꯔ. ꯋꯥꯏꯗꯕꯦꯟꯗ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:996
+#: src/globalPlugins/easyAudioConverter/__init__.py:1591
+msgid "Access to the source or destination was denied."
+msgstr "ꯍꯧꯔꯛꯐꯝ ꯅꯠꯇ꯭ꯔꯒ ꯄꯟꯊꯨꯡ ꯌꯧꯕ ꯌꯥꯈꯤꯗꯦ ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1725
+msgid "Additional skipped files: {count}"
+msgstr "ꯑꯍꯦꯟꯕ ꯊꯥꯗꯣꯛꯈꯤꯕ ꯐꯥꯏꯜꯁꯤꯡ: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1140
+msgid "Advanced codec overrides: disabled"
+msgstr "ꯍꯦꯟꯒꯠꯂꯕ ꯀꯣꯗꯦꯛ ꯑꯣꯚꯔꯔꯥꯏꯗꯁꯤꯡ: ꯗꯤꯁꯑꯦꯕꯜ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1138
+msgid "Advanced codec overrides: enabled"
+msgstr "Advanced codec overrides: enabled"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1969
 msgid "Advanced codec settings..."
 msgstr "ꯍꯦꯟꯒꯠꯂꯕ ꯀꯣꯗꯦꯛ ꯁꯦꯇꯤꯡꯁ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:488
+#: src/globalPlugins/easyAudioConverter/__init__.py:679
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:211
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "Album"
 msgstr "ꯑꯦꯜꯕꯝ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:212
+#: src/globalPlugins/easyAudioConverter/__init__.py:368
 msgid "Album artist"
 msgstr "ꯑꯦꯜꯕꯝ ꯑꯥꯔꯇꯤꯁ꯭ꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1091
+#: src/globalPlugins/easyAudioConverter/__init__.py:1603
+msgid "Already uses the target format"
+msgstr "ꯍꯥꯟꯅꯅ ꯇꯥꯔꯒꯦꯠ ꯐꯣꯔꯃꯦꯠ ꯁꯤꯖꯤꯟꯅꯔꯦ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2064
 msgid "An update check is already in progress"
 msgstr "ꯑꯞꯗꯦꯠ ꯆꯦꯛ ꯑꯃ ꯍꯥꯟꯅꯅ ꯆꯠꯊꯔꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1183
+#: src/globalPlugins/easyAudioConverter/__init__.py:2156
 msgid "An update download is already in progress"
 msgstr "ꯑꯞꯗꯦꯠ ꯗꯥꯎꯟꯂꯣꯗ ꯑꯃ ꯍꯥꯟꯅꯅ ꯆꯠꯊꯔꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:210
+#: src/globalPlugins/easyAudioConverter/__init__.py:299
+msgid "Archive FLAC"
+msgstr "ꯑꯥꯔꯀꯥꯢꯚ FLAC"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:366
 msgid "Artist"
 msgstr "ꯑꯥꯔꯇꯤꯁ꯭ꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:406
+#: src/globalPlugins/easyAudioConverter/__init__.py:236
+msgid "At every file"
+msgstr "ꯐꯥꯏꯜ ꯈꯨꯗꯤꯡꯃꯛꯇ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:235
+msgid "At progress milestones"
+msgstr "ꯆꯥꯎꯈꯠꯂꯛꯄꯒꯤ ꯃꯥꯏꯄꯥꯛꯄꯁꯤꯡꯗ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:264
+msgid "Audiobook MP3"
+msgstr "ꯑꯣꯗꯤꯑꯣꯕꯨꯛ MP3"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:576
+msgid "Automatic progress announcements:"
+msgstr "ꯃꯁꯥ ꯃꯊꯟꯇ ꯆꯥꯎꯈꯠꯂꯛꯄ ꯂꯥꯎꯊꯣꯛꯄꯁꯤꯡ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:586
 msgid "Automatically check for add-on updates"
 msgstr "ꯑꯦꯗ-ꯑꯣꯟ ꯑꯞꯗꯦꯠꯁꯤꯡ ꯃꯁꯥ ꯃꯊꯟꯇ ꯆꯦꯛ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515
+#: src/globalPlugins/easyAudioConverter/__init__.py:706
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "kbps ꯗ ꯕꯤꯠꯔꯦꯠ (0 ꯅ ꯀ꯭ꯋꯥꯂꯤꯇꯤ ꯄ꯭ꯔꯤꯁꯦꯠ ꯁꯤꯖꯤꯟꯅꯩ):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:365
+#: src/globalPlugins/easyAudioConverter/__init__.py:521 src/globalPlugins/easyAudioConverter/__init__.py:983
 msgid "Browse..."
 msgstr "ꯕ꯭ꯔꯥꯎꯖ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:870 src/globalPlugins/easyAudioConverter/__init__.py:786 src/globalPlugins/easyAudioConverter/__init__.py:993
+#: src/globalPlugins/easyAudioConverter/__init__.py:1558 src/globalPlugins/easyAudioConverter/__init__.py:1459 src/globalPlugins/easyAudioConverter/__init__.py:1966
 msgid "Cancel conversion"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯗꯨ ꯀꯛꯊꯠꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1656
+#: src/globalPlugins/easyAudioConverter/__init__.py:2751
 msgid "Cancel the current audio conversion"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯁꯟ ꯇꯧꯕꯁꯤ ꯀꯛꯊꯠꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1664
+#: src/globalPlugins/easyAudioConverter/__init__.py:2759
 msgid "Canceling the conversion"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯗꯨ ꯀꯛꯊꯠꯄ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:877
+#: src/globalPlugins/easyAudioConverter/__init__.py:1566
 msgid "Canceling..."
 msgstr "ꯀꯛꯊꯠꯂꯤ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:235 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:391 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "ꯁꯄꯣꯔꯠ ꯄꯦꯖ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯛꯄ ꯉꯝꯗꯦ꯫ ꯃꯁꯤꯒꯤ ꯂꯩꯐꯝ ꯑꯁꯤ ꯈꯨꯠꯅ ꯍꯥꯡꯗꯣꯛꯎ: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1617
+#: src/globalPlugins/easyAudioConverter/__init__.py:2712
 msgid "Change the conversion quality"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯃꯒꯨꯟ ꯑꯗꯨ ꯍꯣꯡꯗꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1603
+#: src/globalPlugins/easyAudioConverter/__init__.py:2698
 msgid "Change the target audio format"
 msgstr "ꯇꯥꯔꯒꯦꯠ ꯇꯧꯔꯤꯕ ꯑꯣꯗꯤꯌꯣ ꯐꯣꯔꯃꯦꯠ ꯑꯗꯨ ꯍꯣꯡꯗꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:528
+#: src/globalPlugins/easyAudioConverter/__init__.py:719
 msgid "Channels:"
 msgstr "ꯆꯦꯅꯦꯜꯁꯤꯡ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+#: src/globalPlugins/easyAudioConverter/__init__.py:2838
 msgid "Check for Easy Audio Converter updates"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔꯒꯤ ꯑꯞꯗꯦꯠꯁꯤꯡ ꯆꯦꯛ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:997
+#: src/globalPlugins/easyAudioConverter/__init__.py:1970
 msgid "Check for updates..."
 msgstr "ꯑꯞꯗꯦꯠꯁꯤꯡ ꯌꯦꯡꯕꯤꯌꯨ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1094
+#: src/globalPlugins/easyAudioConverter/__init__.py:2067
 msgid "Checking for Easy Audio Converter updates"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯞꯗꯦꯠꯁꯤꯡ ꯆꯦꯛ ꯇꯧꯋꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1587
+#: src/globalPlugins/easyAudioConverter/__init__.py:2682
 msgid "Choose a folder to convert"
 msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯐꯣꯜꯗꯔ ꯑꯃ ꯈꯜꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:443 src/globalPlugins/easyAudioConverter/__init__.py:1638
+#: src/globalPlugins/easyAudioConverter/__init__.py:870
+msgid "Choose metadata fields"
+msgstr "ꯃꯦꯇꯥꯗꯥꯇꯥ ꯐꯤꯜ꯭ꯗꯁꯤꯡ ꯈꯜꯂꯨ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1002
+msgid "Choose metadata fields..."
+msgstr "ꯃꯦꯇꯥꯗꯥꯇꯥ ꯐꯤꯜ꯭ꯗꯁꯤꯡ ꯈꯜꯂꯨ..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1172 src/globalPlugins/easyAudioConverter/__init__.py:2733
 msgid "Choose the destination folder"
 msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ ꯑꯗꯨ ꯈꯜꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:867
+#: src/globalPlugins/easyAudioConverter/__init__.py:1555 src/globalPlugins/easyAudioConverter/__init__.py:1754
 msgid "Close"
 msgstr "ꯀ꯭ꯂꯣꯁ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:503
+#: src/globalPlugins/easyAudioConverter/__init__.py:694
 msgid "Codec profile to edit:"
 msgstr "ꯑꯦꯗꯤꯠ ꯇꯧꯒꯗꯕ ꯀꯣꯗꯦꯛ ꯄ꯭ꯔꯣꯐꯥꯏꯜ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:725
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "ꯀꯣꯗꯦꯛ-ꯑꯈꯟꯅꯕ ꯊꯥꯛ (-1 ꯅ ꯄ꯭ꯔꯤꯁꯦꯠ ꯁꯤꯖꯤꯟꯅꯩ):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:218
+#: src/globalPlugins/easyAudioConverter/__init__.py:374
 msgid "Comment"
 msgstr "Comment"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:213
+#: src/globalPlugins/easyAudioConverter/__init__.py:369
 msgid "Composer"
 msgstr "ꯁꯩꯔꯥꯡꯕ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1526
+#: src/globalPlugins/easyAudioConverter/__init__.py:2585
 msgid "Confirm folder conversion"
 msgstr "ꯐꯣꯜꯗꯔ ꯀꯟꯚꯔꯁꯟ ꯀꯟꯐꯔꯝ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1455
+#: src/globalPlugins/easyAudioConverter/__init__.py:2462
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯗꯨ ꯀꯛꯊꯠꯈꯤ꯫ {total} ꯐꯥꯏꯜꯁꯤꯡꯒꯤ {done} ꯃꯄꯨꯡ ꯐꯥꯔꯦ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1466
+#: src/globalPlugins/easyAudioConverter/__init__.py:2473
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯊꯕꯛ ꯃꯄꯨꯡ ꯐꯥꯔꯦ꯫ ꯃꯥꯏ ꯄꯥꯛꯈꯤ: {done}. ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗꯦ: {failed}. ꯊꯥꯗꯣꯛꯈꯤꯕ: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1475
+#: src/globalPlugins/easyAudioConverter/__init__.py:2482
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯃꯄꯨꯡ ꯐꯥꯕ: {done} ꯃꯥꯏ ꯄꯥꯛꯈꯤ, {failed} ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗꯦ ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1523
+#: src/globalPlugins/easyAudioConverter/__init__.py:945
+msgid "Conversion profile:"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯄ꯭ꯔꯣꯐꯥꯏꯜ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1842
+msgid "Conversion report copied"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯊꯤꯖꯤꯟ ꯋꯥꯔꯣꯜ ꯀꯣꯄꯤ ꯇꯧꯈꯤ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1612
+msgid "Conversion results"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯐꯜꯁꯤꯡ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+msgid "Convert"
+msgstr "ꯑꯣꯟꯊꯣꯛꯎ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2582
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "ꯁꯄꯣꯔꯇꯦꯗ ꯑꯣꯗꯤꯑꯣ ꯐꯥꯏꯜ ꯄꯨꯝꯅꯃꯛ {folder}, {scope} ꯗ ꯑꯣꯟꯊꯣꯛꯎ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1579
+#: src/globalPlugins/easyAudioConverter/__init__.py:2674
 msgid "Convert every supported audio file in the current folder"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯣꯜꯗꯔꯗ ꯁꯄꯣꯔꯇꯦꯗ ꯑꯣꯗꯤꯑꯣ ꯐꯥꯏꯜ ꯈꯨꯗꯤꯡꯃꯛ ꯀꯟꯚꯔꯠ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:989
+#: src/globalPlugins/easyAudioConverter/__init__.py:1961
 msgid "Convert selected files or folders"
 msgstr "ꯈꯟꯒꯠꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔꯁꯤꯡ ꯑꯣꯟꯊꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:990
+#: src/globalPlugins/easyAudioConverter/__init__.py:2617
+msgid "Convert selected files or folders with one-time options"
+msgstr "ꯈꯟꯒꯠꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔꯁꯤꯡ ꯑꯗꯨ ꯑꯃꯨꯛꯇꯪꯒꯤ ꯑꯣꯞꯁꯟꯁꯤꯡ ꯌꯥꯎꯔꯒ ꯑꯣꯟꯊꯣꯛꯎ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1960
+msgid "Convert selected files or folders with options..."
+msgstr "ꯈꯟꯒꯠꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔꯁꯤꯡ ꯑꯗꯨ ꯑꯣꯞꯁꯟꯁꯤꯡꯒ ꯂꯣꯏꯅꯅ ꯑꯣꯟꯊꯣꯛꯎ..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1962
 msgid "Convert the current folder"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯣꯜꯗꯔ ꯑꯗꯨ ꯀꯟꯚꯔꯠ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1336
+#: src/globalPlugins/easyAudioConverter/__init__.py:923
+msgid "Convert with options"
+msgstr "ꯑꯣꯞꯁꯟꯁꯤꯡꯒ ꯂꯣꯏꯅꯅ ꯑꯣꯟꯊꯣꯛꯎ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2340
 msgid "Converting {index} of {total}: {name}"
 msgstr "{total} ꯒꯤ {index} ꯑꯣꯟꯊꯣꯛꯄ: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1700
+#: src/globalPlugins/easyAudioConverter/__init__.py:2803
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{total} ꯒꯤ {index} ꯑꯣꯟꯊꯣꯛꯄ: {name}. ꯍꯧꯖꯤꯛꯀꯤ ꯐꯥꯏꯜ ꯃꯇꯝ {processed}; ꯂꯣꯏꯈ꯭ꯔꯕ {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1711
+#: src/globalPlugins/easyAudioConverter/__init__.py:2814
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "{total} ꯒꯤ {index} ꯑꯣꯟꯊꯣꯛꯄ: {name}. ꯍꯧꯖꯤꯛꯀꯤ ꯐꯥꯏꯜ {filePercent}%, ꯑꯄꯨꯟꯕ {overallPercent}%, ꯂꯣꯏꯈ꯭ꯔꯦ {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:202
+#: src/globalPlugins/easyAudioConverter/__init__.py:358
 msgid "Copy all text metadata"
 msgstr "ꯇꯦꯛꯁ ꯃꯦꯇꯥꯗꯦꯇꯥ ꯄꯨꯝꯅꯃꯛ ꯀꯣꯄꯤ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:203
+#: src/globalPlugins/easyAudioConverter/__init__.py:1753
+msgid "Copy report"
+msgstr "ꯀꯣꯄꯤ ꯔꯤꯄꯣꯔ꯭ꯠ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:359
 msgid "Copy selected metadata fields"
 msgstr "ꯈꯟꯒꯠꯂꯕ ꯃꯦꯇꯥꯗꯦꯇꯥ ꯐꯤꯜꯗꯁꯤꯡ ꯀꯣꯄꯤ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:219
+#: src/globalPlugins/easyAudioConverter/__init__.py:375
 msgid "Copyright"
 msgstr "ꯀꯣꯄꯤꯔꯥꯏꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1123
+#: src/globalPlugins/easyAudioConverter/__init__.py:2096
 msgid "Could not check for updates.\n\n{error}"
 msgstr "ꯑꯞꯗꯦꯠꯁꯤꯡ ꯌꯦꯡꯕ ꯉꯝꯈꯤꯗꯦ꯫\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1277
+#: src/globalPlugins/easyAudioConverter/__init__.py:1836
+msgid "Could not copy the conversion report."
+msgstr "ꯀꯟꯚꯔꯁꯟ ꯔꯤꯄꯣꯔꯠ ꯑꯗꯨ ꯀꯣꯄꯤ ꯇꯧꯕ ꯉꯝꯈꯤꯗꯦ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2250
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "ꯑꯦꯟ.ꯚꯤ.ꯗꯤ.ꯑꯦ. ꯑꯦꯗ-ꯑꯣꯟ ꯏꯟꯁꯇꯣꯂꯔ ꯍꯥꯡꯗꯣꯛꯄ ꯉꯝꯈꯤꯗꯦ꯫ ꯑꯞꯗꯦꯠ ꯑꯗꯨ ꯃꯁꯤꯗ ꯊꯝꯖꯤꯟꯈꯤ:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:865
+#: src/globalPlugins/easyAudioConverter/__init__.py:1823
+msgid "Could not open the output folder."
+msgstr "ꯑꯥꯎꯠꯄꯨꯠ ꯐꯣꯜꯗꯔ ꯍꯥꯡꯗꯣꯛꯄ ꯉꯝꯈꯤꯗꯦ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1553
 msgid "Current file progress: 100%"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯥꯏꯜ ꯆꯥꯎꯈꯠꯂꯛꯄ: ꯱꯰꯰%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:774
+#: src/globalPlugins/easyAudioConverter/__init__.py:1442
 msgid "Current file progress: waiting"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯥꯏꯜ ꯆꯥꯎꯈꯠꯂꯛꯄ: ꯉꯥꯏꯔꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:844
+#: src/globalPlugins/easyAudioConverter/__init__.py:1521
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯥꯏꯜ ꯄ꯭ꯔꯣꯒ꯭ꯔꯦꯁ: {percent}% ({processed} of {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:836
+#: src/globalPlugins/easyAudioConverter/__init__.py:1513
 msgid "Current file time: {processed}"
 msgstr "ꯍꯧꯖꯤꯛꯀꯤ ꯐꯥꯏꯜꯒꯤ ꯃꯇꯝ: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:215
+#: src/globalPlugins/easyAudioConverter/__init__.py:371
 msgid "Date or year"
 msgstr "ꯇꯥꯡ ꯅꯠꯇ꯭ꯔꯒ ꯆꯍꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/__init__.py:1279
+msgid "Delete conversion profile"
+msgstr "ꯀꯟꯚꯔꯖꯟ ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯀꯛꯊꯠꯂꯨ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:951
+msgid "Delete profile"
+msgstr "ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯀꯛꯊꯠꯂꯨ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1278
+msgid "Delete the profile “{name}”?"
+msgstr "\"{name}\" ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯑꯗꯨ ꯀꯛꯊꯠꯀꯗꯕ?"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:515 src/globalPlugins/easyAudioConverter/__init__.py:979
 msgid "Destination folder:"
 msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1652
+#: src/globalPlugins/easyAudioConverter/__init__.py:2747
 msgid "Destination folder: {folder}"
 msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:217
+#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+msgid "Details are limited to the first {limit} skipped files."
+msgstr "ꯑꯀꯨꯞꯄ ꯃꯔꯣꯜꯁꯤꯡ ꯑꯁꯤ ꯑꯍꯥꯟꯕ {limit} ꯊꯥꯗꯣꯛꯈꯤꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯈꯛꯇꯗ ꯑꯣꯏ ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1739
+msgid "Details:"
+msgstr "ꯑꯀꯨꯞꯄ ꯃꯔꯣꯜꯁꯤꯡ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:373
 msgid "Disc number"
 msgstr "ꯗꯤꯁ꯭ꯛ ꯅꯝꯕꯔ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:201
+#: src/globalPlugins/easyAudioConverter/__init__.py:357
 msgid "Do not copy metadata"
 msgstr "ꯃꯦꯇꯥꯗꯦꯇꯥ ꯀꯣꯄꯤ ꯇꯧꯒꯅꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1163
+#: src/globalPlugins/easyAudioConverter/__init__.py:2136
 msgid "Download and install"
 msgstr "ꯗꯥꯎꯟꯂꯣꯗ ꯇꯧꯔꯒ ꯏꯟꯁꯇꯣꯜ ꯇꯧꯕꯤꯌꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1241
+#: src/globalPlugins/easyAudioConverter/__init__.py:2214
 msgid "Downloaded {done:.1f} MB"
 msgstr "ꯗꯥꯎꯟꯂꯣꯗ ꯇꯧꯈꯤꯕ {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1234
+#: src/globalPlugins/easyAudioConverter/__init__.py:2207
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "{done:.1f} ꯒꯤ {total:.1f} MB ꯗꯥꯎꯟꯂꯣꯗ ꯇꯧꯈꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1193
+#: src/globalPlugins/easyAudioConverter/__init__.py:2166
 msgid "Downloading Easy Audio Converter update"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯞꯗꯦꯠ ꯗꯥꯎꯟꯂꯣꯗ ꯇꯧꯕ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:175
+#: src/globalPlugins/easyAudioConverter/__init__.py:331
 msgid "E-AC-3"
 msgstr "ꯏ-ꯑꯦꯁꯤ-꯳"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:893 src/globalPlugins/easyAudioConverter/__init__.py:637 src/globalPlugins/easyAudioConverter/__init__.py:1443 src/globalPlugins/easyAudioConverter/__init__.py:1011 src/globalPlugins/easyAudioConverter/__init__.py:1298 src/globalPlugins/easyAudioConverter/__init__.py:1501
+#: src/globalPlugins/easyAudioConverter/__init__.py:1853 src/globalPlugins/easyAudioConverter/__init__.py:828 src/globalPlugins/easyAudioConverter/__init__.py:2450 src/globalPlugins/easyAudioConverter/__init__.py:1223 src/globalPlugins/easyAudioConverter/__init__.py:1231 src/globalPlugins/easyAudioConverter/__init__.py:1984 src/globalPlugins/easyAudioConverter/__init__.py:2272 src/globalPlugins/easyAudioConverter/__init__.py:1197 src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1297 src/globalPlugins/easyAudioConverter/__init__.py:1824 src/globalPlugins/easyAudioConverter/__init__.py:1837 src/globalPlugins/easyAudioConverter/__init__.py:2283
 msgid "Easy Audio Converter"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1134
+#: src/globalPlugins/easyAudioConverter/__init__.py:2107
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "ꯏꯖꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯁꯤ ꯃꯇꯝꯒ ꯆꯥꯟꯅꯅ ꯂꯩꯔꯦ꯫ ꯏꯟꯁꯇꯣꯜ ꯇꯧꯔꯕ ꯚꯔꯖꯟ: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:763
+#: src/globalPlugins/easyAudioConverter/__init__.py:1430
 msgid "Easy Audio Converter progress"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔꯒꯤ ꯆꯥꯎꯈꯠꯄ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1267 src/globalPlugins/easyAudioConverter/__init__.py:1126 src/globalPlugins/easyAudioConverter/__init__.py:1137 src/globalPlugins/easyAudioConverter/__init__.py:1280
+#: src/globalPlugins/easyAudioConverter/__init__.py:1655
+msgid "Easy Audio Converter results"
+msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔꯒꯤ ꯐꯜꯁꯤꯡ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2240 src/globalPlugins/easyAudioConverter/__init__.py:2099 src/globalPlugins/easyAudioConverter/__init__.py:2110 src/globalPlugins/easyAudioConverter/__init__.py:2253
 msgid "Easy Audio Converter update"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯞꯗꯦꯠ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1174 src/globalPlugins/easyAudioConverter/__init__.py:1159
+#: src/globalPlugins/easyAudioConverter/__init__.py:2147 src/globalPlugins/easyAudioConverter/__init__.py:2132
 msgid "Easy Audio Converter update available"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯞꯗꯦꯠ ꯐꯪꯉꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1146
+#: src/globalPlugins/easyAudioConverter/__init__.py:2119
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ {newVersion} ꯐꯪꯉꯤ꯫ ꯅꯈꯣꯏꯗ ꯚꯔꯖꯟ {currentVersion} ꯂꯩꯔꯦ꯫\n\nꯑꯞꯗꯦꯠ ꯑꯗꯨ ꯍꯧꯖꯤꯛ ꯗꯥꯎꯟꯂꯣꯗ ꯑꯃꯁꯨꯡ ꯏꯟꯁꯇꯣꯜ ꯇꯧꯕ ꯄꯥꯝꯕꯔꯥ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1170
+#: src/globalPlugins/easyAudioConverter/__init__.py:2143
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "ꯏꯖꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ {version} ꯐꯪꯉꯤ, ꯑꯗꯨꯕꯨ ꯔꯤꯂꯤꯖ ꯑꯗꯨꯗ ꯗꯥꯏꯔꯦꯛꯠ ꯑꯦꯗ-ꯑꯣꯟ ꯄꯦꯀꯦꯖ ꯌꯥꯎꯗꯦ꯫ ꯔꯤꯂꯤꯖ ꯄꯦꯖ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯛꯄ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:185
+#: src/globalPlugins/easyAudioConverter/__init__.py:341
 msgid "Economical"
 msgstr "ꯁꯦꯟꯃꯤꯠꯂꯣꯟ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:782
+#: src/globalPlugins/easyAudioConverter/__init__.py:1450
 msgid "Elapsed time: 0:00"
 msgstr "ꯂꯣꯏꯈ꯭ꯔꯕ ꯃꯇꯝ: ꯰:꯰꯰"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:856
+#: src/globalPlugins/easyAudioConverter/__init__.py:1533
 msgid "Elapsed time: {elapsed}"
 msgstr "ꯃꯥꯡꯈ꯭ꯔꯕ ꯃꯇꯝ: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:511
+#: src/globalPlugins/easyAudioConverter/__init__.py:702
 msgid "Enable advanced overrides for this codec"
 msgstr "ꯃꯁꯤꯒꯤ ꯀꯣꯗꯦꯛ ꯑꯁꯤꯒꯤꯗꯃꯛ ꯍꯦꯟꯒꯠꯂꯕ ꯑꯣꯚꯔꯔꯥꯏꯗꯁꯤꯡ ꯏꯅꯦꯕꯜ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:166
+#: src/globalPlugins/easyAudioConverter/__init__.py:1210
+msgid "Enter a name for this conversion profile:"
+msgstr "ꯃꯁꯤꯒꯤ ꯀꯟꯚꯔꯖꯟ ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯑꯁꯤꯒꯤ ꯃꯃꯤꯡ ꯑꯃ ꯍꯥꯞꯆꯤꯜꯂꯨ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1549
+msgid "Estimated time remaining: 0:00"
+msgstr "ꯂꯦꯝꯍꯧꯔꯤꯕ ꯆꯥꯎꯔꯥꯛꯅ ꯃꯇꯝ: ꯰:꯰꯰"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1454
+msgid "Estimated time remaining: calculating"
+msgstr "ꯂꯦꯝꯍꯧꯔꯤꯕ ꯆꯥꯎꯔꯥꯛꯅ ꯃꯇꯝ: ꯈꯣꯠꯇꯣꯛꯄꯒꯤ ꯆꯥꯡ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1537
+msgid "Estimated time remaining: {remaining}"
+msgstr "ꯂꯦꯝꯍꯧꯔꯤꯕ ꯆꯥꯎꯔꯥꯛꯅ ꯃꯇꯝ: {remaining}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:322
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:827
+#: src/globalPlugins/easyAudioConverter/__init__.py:1628
+msgid "Failed files:"
+msgstr "ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗ꯭ꯔꯕ ꯐꯥꯏꯜꯁꯤꯡ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1702
+msgid "Failed: {name}"
+msgstr "ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗꯦ: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1605
+msgid "File or folder is unavailable"
+msgstr "ꯐꯥꯏꯜ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔ ꯐꯪꯗꯦ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1504
 msgid "File {index} of {total}: {name}"
 msgstr "ꯐꯥꯏꯜ {index} of {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1321
+#: src/globalPlugins/easyAudioConverter/__init__.py:2316
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯐꯥꯏꯜꯁꯤꯡ: {count}. ꯊꯥꯗꯣꯛꯈꯤꯕ: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:603
+#: src/globalPlugins/easyAudioConverter/__init__.py:794
 msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
 msgstr "ꯑꯦꯐ.ꯑꯦꯜ.ꯑꯦ.ꯁꯤ.ꯒꯤ ꯑꯣꯏꯅꯗꯤ, ꯂꯦꯕꯦꯜ ꯰ ꯑꯁꯤ ꯈ꯭ꯋꯥꯏꯗꯒꯤ ꯌꯥꯡꯉꯤ ꯑꯃꯁꯨꯡ ꯂꯦꯕꯦꯜ ꯱꯲ꯅ ꯈ꯭ꯋꯥꯏꯗꯒꯤ ꯀꯟꯕ ꯀꯝꯄ꯭ꯔꯦꯁꯟ ꯄꯤ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:602
+#: src/globalPlugins/easyAudioConverter/__init__.py:793
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3 ꯒꯤꯗꯃꯛꯇ, ꯊꯥꯛ 0 ꯑꯁꯤ ꯈ꯭ꯋꯥꯏꯗꯒꯤ ꯇꯞꯊꯕ ꯑꯃꯁꯨꯡ ꯈ꯭ꯋꯥꯏꯗꯒꯤ ꯋꯥꯡꯕ ꯑꯜꯒꯣꯔꯤꯊꯝ ꯀ꯭ꯋꯥꯂꯤꯇꯤꯅꯤ; ꯹ ꯑꯁꯤ ꯈ꯭ꯋꯥꯏꯗꯒꯤ ꯌꯥꯡꯉꯤ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:604
+#: src/globalPlugins/easyAudioConverter/__init__.py:795
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "ꯑꯣꯒ ꯚꯣꯔꯕꯤꯁꯀꯤ ꯑꯣꯏꯅꯗꯤ, ꯊꯥꯛ ꯰ ꯗꯒꯤ ꯱꯰ ꯐꯥꯎꯕ ꯍꯦꯟꯒꯠꯂꯛꯂꯤꯕ ꯚꯦꯔꯤꯌꯦꯕꯜ-ꯕꯤꯠꯔꯦꯠ ꯀ꯭ꯋꯥꯂꯤꯇꯤ ꯈꯟꯒꯠꯂꯤ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:605
+#: src/globalPlugins/easyAudioConverter/__init__.py:796
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "ꯑꯣꯄꯁꯀꯤ ꯑꯣꯏꯅꯗꯤ, ꯊꯥꯛ ꯰ ꯗꯒꯤ ꯱꯰ ꯐꯥꯎꯕ ꯍꯦꯟꯒꯠꯂꯛꯂꯤꯕ ꯑꯦꯟꯀꯣꯗꯔ ꯑꯔꯨꯕ ꯈꯟꯒꯠꯂꯤ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:606
+#: src/globalPlugins/easyAudioConverter/__init__.py:797
 msgid "For WavPack, levels 0 to 8 select increasing compression effort."
 msgstr "ꯋꯦꯚꯄꯦꯛꯀꯤ ꯑꯣꯏꯅꯗꯤ, ꯊꯥꯛ ꯰ ꯗꯒꯤ ꯸ ꯐꯥꯎꯕ ꯍꯦꯟꯒꯠꯂꯛꯂꯤꯕ ꯀꯝꯄ꯭ꯔꯦꯁꯟ ꯍꯣꯠꯅꯕ ꯈꯟꯒꯠꯂꯨ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1326
+#: src/globalPlugins/easyAudioConverter/__init__.py:2321
 msgid "Found {count} files to convert"
 msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ {count} ꯐꯥꯏꯜꯁꯤꯡ ꯐꯪꯈꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:195
+#: src/globalPlugins/easyAudioConverter/__init__.py:351
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "ꯐ꯭ꯔꯥꯎꯟꯍꯣꯐꯔ / ꯋꯤꯟꯗꯣꯁ ꯃꯤꯗꯤꯌꯥ ꯐꯥꯎꯟꯗꯦꯁꯟ MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:214
+#: src/globalPlugins/easyAudioConverter/__init__.py:370
 msgid "Genre"
 msgstr "ꯃꯈꯜ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:788
+#: src/globalPlugins/easyAudioConverter/__init__.py:1462
 msgid "Hide"
 msgstr "ꯂꯣꯠꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:187
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "High"
 msgstr "ꯑꯋꯥꯡꯕ"
 
@@ -379,286 +523,462 @@ msgstr "ꯑꯋꯥꯡꯕ"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "ꯀꯔꯤꯒꯨꯝꯕ ꯏꯖꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯁꯤ ꯑꯗꯣꯝꯗ ꯀꯥꯟꯅꯕ ꯑꯣꯏꯔꯕꯗꯤ ꯑꯃꯁꯨꯡ ꯅꯍꯥꯛꯅ ꯑꯩꯒꯤ ꯊꯕꯛꯇ ꯃꯇꯦꯡ ꯄꯥꯡꯕ ꯄꯥꯝꯂꯕꯗꯤ, ꯅꯍꯥꯛꯅ ꯑꯩꯒꯤ ꯀꯣꯐꯤ ꯑꯃ ꯂꯩꯕꯤꯕ ꯌꯥꯒꯅꯤ꯫\n\nꯁꯄꯣꯔꯠ ꯄꯦꯖ ꯑꯗꯨ ꯍꯧꯖꯤꯛ ꯍꯥꯡꯗꯣꯛꯄ ꯄꯥꯝꯕꯔꯥ?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:370
+#: src/globalPlugins/easyAudioConverter/__init__.py:526 src/globalPlugins/easyAudioConverter/__init__.py:986
 msgid "Include subfolders when converting a folder"
 msgstr "ꯐꯣꯜꯗꯔ ꯑꯃ ꯑꯣꯟꯊꯣꯛꯄ ꯃꯇꯝꯗ ꯁꯕꯐꯣꯜꯗꯔꯁꯤꯡ ꯌꯥꯎꯍꯟꯒꯅꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:721
 msgid "Keep the source channel count"
 msgstr "ꯁꯣꯔꯁ ꯆꯦꯅꯦꯜꯒꯤ ꯃꯁꯤꯡ ꯑꯗꯨ ꯊꯝꯃꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:524
+#: src/globalPlugins/easyAudioConverter/__init__.py:715
 msgid "Keep the source sample rate"
 msgstr "ꯁꯣꯔꯁ ꯁꯥꯝꯄꯜ ꯔꯦꯠ ꯊꯝꯃꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:194
+#: src/globalPlugins/easyAudioConverter/__init__.py:350
 msgid "LAME MP3"
 msgstr "ꯂꯦꯝ ꯑꯦꯝꯄꯤ꯳"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:221
+#: src/globalPlugins/easyAudioConverter/__init__.py:377
 msgid "Language"
 msgstr "ꯂꯣꯟ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1163
+#: src/globalPlugins/easyAudioConverter/__init__.py:2136
 msgid "Later"
 msgstr "ꯀꯣꯟꯅ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:220
+#: src/globalPlugins/easyAudioConverter/__init__.py:376
 msgid "Lyrics"
 msgstr "ꯏꯁꯩ ꯃꯌꯦꯛꯁꯤꯡ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:169
+#: src/globalPlugins/easyAudioConverter/__init__.py:325
 msgid "M4A (AAC)"
 msgstr "ꯑꯦꯝ꯴ꯑꯦ (ꯑꯦꯑꯦꯁꯤ)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:177
+#: src/globalPlugins/easyAudioConverter/__init__.py:333
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:164
+#: src/globalPlugins/easyAudioConverter/__init__.py:320
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:345
+#: src/globalPlugins/easyAudioConverter/__init__.py:501 src/globalPlugins/easyAudioConverter/__init__.py:970
 msgid "MP3 encoder:"
 msgstr "MP3 encoder:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:383
+#: src/globalPlugins/easyAudioConverter/__init__.py:539 src/globalPlugins/easyAudioConverter/__init__.py:997
 msgid "Metadata export:"
 msgstr "ꯃꯦꯇꯥꯗꯥꯇꯥ ꯑꯦꯛꯁꯄꯣꯔꯠ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:394
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Metadata fields to copy:"
 msgstr "ꯀꯣꯄꯤ ꯇꯧꯒꯗꯕ ꯃꯦꯇꯥꯗꯥꯇꯥ ꯐꯤꯜꯗꯁꯤꯡ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:721
 msgid "Mono"
 msgstr "ꯃꯣꯅꯣ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1661 src/globalPlugins/easyAudioConverter/__init__.py:1684
+#: src/globalPlugins/easyAudioConverter/__init__.py:229
+msgid "No completion notification"
+msgstr "ꯂꯣꯏꯁꯤꯟꯕꯒꯤ ꯈꯪꯍꯟꯂꯛꯄ ꯂꯩꯇꯦ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2756 src/globalPlugins/easyAudioConverter/__init__.py:2787
 msgid "No conversion is in progress"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯊꯕꯛ ꯑꯃꯠꯇ ꯆꯠꯊꯗ꯭ꯔꯤ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1673
+#: src/globalPlugins/easyAudioConverter/__init__.py:2768
 msgid "No conversion progress is available"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯆꯥꯎꯈꯠꯂꯛꯄ ꯑꯃꯠꯇ ꯐꯪꯗꯦ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1460
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+msgid "No conversion results are available"
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯐꯜ ꯑꯃꯠꯇ ꯐꯪꯗꯦ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2543 src/globalPlugins/easyAudioConverter/__init__.py:2553
+msgid "No failed files are available to retry"
+msgstr "ꯑꯃꯨꯛ ꯍꯟꯅ ꯍꯣꯠꯅꯅꯕ ꯃꯥꯏ ꯄꯥꯛꯇꯕ ꯐꯥꯏꯜ ꯑꯃꯠꯇ ꯐꯪꯗꯦ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1783
+msgid "No file details are available."
+msgstr "ꯐꯥꯏꯜꯒꯤ ꯑꯀꯨꯞꯄ ꯃꯔꯣꯜ ꯑꯃꯠꯇ ꯐꯪꯗꯦ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2467
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "ꯐꯥꯏꯜ ꯑꯃꯠꯇ ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯃꯊꯧ ꯇꯥꯗꯦ꯫ ꯊꯥꯗꯣꯛꯈꯤꯕ: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1564
+#: src/globalPlugins/easyAudioConverter/__init__.py:2626 src/globalPlugins/easyAudioConverter/__init__.py:2659
 msgid "No files or folders are selected"
 msgstr "ꯐꯥꯏꯜ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔ ꯑꯃꯠꯇ ꯈꯟꯒꯠꯇꯦ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1464
+#: src/globalPlugins/easyAudioConverter/__init__.py:2471
 msgid "No supported audio files were found"
 msgstr "ꯁꯄꯣꯔꯇꯦꯗ ꯑꯣꯗꯤꯑꯣ ꯐꯥꯏꯜ ꯑꯃꯠꯇ ꯐꯪꯈꯤꯗꯦ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:167
+#: src/globalPlugins/easyAudioConverter/__init__.py:323
 msgid "Ogg Vorbis"
 msgstr "ꯑꯣꯒ ꯚꯣꯔꯕꯤꯁ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1534
+#: src/globalPlugins/easyAudioConverter/__init__.py:1053
+msgid "One-time settings"
+msgstr "ꯑꯃꯨꯛꯇꯪꯒꯤ ꯁꯦꯇꯤꯡꯁꯤꯡ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:237
+msgid "Only on demand"
+msgstr "ꯗꯤꯃꯥꯟꯗ ꯈꯛꯇ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2593
 msgid "Open Easy Audio Converter settings"
 msgstr "ꯏꯖꯤ ꯑꯣꯗꯤꯌꯣ ꯀꯟꯚꯔꯇꯔꯒꯤ ꯁꯦꯇꯤꯡꯁ ꯍꯥꯡꯗꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1546
+#: src/globalPlugins/easyAudioConverter/__init__.py:2605
 msgid "Open advanced codec settings"
 msgstr "ꯍꯦꯟꯖꯤꯜꯂꯕ ꯀꯣꯗꯦꯛ ꯁꯦꯇꯤꯡꯁ ꯍꯥꯡꯗꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1752
+msgid "Open output folder"
+msgstr "ꯑꯥꯎꯠꯄꯨꯠ ꯐꯣꯜꯗꯔ ꯍꯥꯡꯗꯣꯛꯎ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2846
 msgid "Open the author's support page"
 msgstr "ꯑꯏꯕꯒꯤ ꯁꯧꯒꯠꯄꯒꯤ ꯂꯃꯥꯏ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:233
+#: src/globalPlugins/easyAudioConverter/__init__.py:389
 msgid "Opening the support page"
 msgstr "ꯁꯄꯣꯔꯠ ꯄꯦꯖ ꯍꯥꯡꯗꯣꯛꯄ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:168
+#: src/globalPlugins/easyAudioConverter/__init__.py:324
 msgid "Opus"
 msgstr "ꯑꯣꯄꯁ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:866
+#: src/globalPlugins/easyAudioConverter/__init__.py:1626
+msgid "Output files:"
+msgstr "ꯑꯥꯎꯠꯄꯨꯠ ꯐꯥꯏꯜꯁꯤꯡ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1694
+msgid "Output:\n{output}"
+msgstr "ꯑꯥꯎꯠꯄꯨꯠ:\n{output}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1554
 msgid "Overall progress: 100%"
 msgstr "ꯑꯄꯨꯟꯕ ꯆꯥꯎꯈꯠꯂꯛꯄ: ꯱꯰꯰%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:778
+#: src/globalPlugins/easyAudioConverter/__init__.py:1446
 msgid "Overall progress: waiting"
 msgstr "ꯑꯄꯨꯟꯕ ꯆꯥꯎꯈꯠꯂꯛꯄ: ꯉꯥꯏꯗꯨꯅ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:853
+#: src/globalPlugins/easyAudioConverter/__init__.py:1530
 msgid "Overall progress: {percent}%"
 msgstr "ꯑꯄꯨꯟꯕ ꯆꯥꯎꯈꯠꯂꯛꯄ: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:732
 msgid "PCM bit depth:"
 msgstr "ꯄꯤ.ꯁꯤ.ꯑꯦꯝ. ꯕꯤꯠ ꯗꯦꯞꯊ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1316 src/globalPlugins/easyAudioConverter/__init__.py:772 src/globalPlugins/easyAudioConverter/__init__.py:1687
+#: src/globalPlugins/easyAudioConverter/__init__.py:638
+msgid "Playing the completion sound"
+msgstr "ꯂꯣꯏꯁꯤꯟꯕꯒꯤ ꯈꯣꯟꯖꯦꯜ ꯊꯥꯕ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:282
+msgid "Podcast Opus"
+msgstr "ꯄꯣꯗꯀꯥꯁ꯭ꯠ ꯑꯣꯄꯁ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2311 src/globalPlugins/easyAudioConverter/__init__.py:1440 src/globalPlugins/easyAudioConverter/__init__.py:2790
 msgid "Preparing the conversion"
 msgstr "ꯑꯣꯟꯊꯣꯛꯅꯕ ꯁꯦꯝ ꯁꯥꯕ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:376
+#: src/globalPlugins/easyAudioConverter/__init__.py:532 src/globalPlugins/easyAudioConverter/__init__.py:991
 msgid "Preserve the source folder structure in the destination"
 msgstr "ꯄꯟꯊꯨꯡꯗ ꯁꯣꯔꯁ ꯐꯣꯜꯗꯔ ꯁ꯭ꯇ꯭ꯔꯛꯆꯔ ꯑꯗꯨ ꯉꯥꯛꯇꯨꯅ ꯊꯝꯃꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:222
+#: src/globalPlugins/easyAudioConverter/__init__.py:1289
+msgid "Profile deleted"
+msgstr "ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯀꯛꯊꯠꯈ꯭ꯔꯦ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+msgid "Profile saved: {name}"
+msgstr "ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯁꯦꯚ ꯇꯧꯈꯤꯕ: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:378
 msgid "Publisher"
 msgstr "ꯄꯕ꯭ꯂꯤꯁꯔ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:336
+#: src/globalPlugins/easyAudioConverter/__init__.py:492 src/globalPlugins/easyAudioConverter/__init__.py:964
 msgid "Quality:"
 msgstr "ꯃꯒꯨꯟ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1627
+#: src/globalPlugins/easyAudioConverter/__init__.py:2722
 msgid "Quality: {quality}"
 msgstr "ꯃꯒꯨꯟ: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1631
+#: src/globalPlugins/easyAudioConverter/__init__.py:2726
 msgid "Quickly choose the destination folder"
 msgstr "ꯄꯟꯊꯨꯡ ꯐꯣꯜꯗꯔ ꯑꯗꯨ ꯊꯨꯅ ꯈꯜꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1558
+#: src/globalPlugins/easyAudioConverter/__init__.py:2653
 msgid "Quickly convert selected files or folders"
 msgstr "ꯈꯟꯒꯠꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯅꯠꯇ꯭ꯔꯒ ꯐꯣꯜꯗꯔꯁꯤꯡ ꯊꯨꯅ ꯑꯣꯟꯊꯣꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1155
+#: src/globalPlugins/easyAudioConverter/__init__.py:2128
 msgid "Release notes:"
 msgstr "ꯔꯤꯂꯤꯖ ꯅꯣꯠꯁꯤꯡ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1679
+#: src/globalPlugins/easyAudioConverter/__init__.py:1246
+msgid "Replace the existing profile “{name}”?"
+msgstr "ꯍꯧꯖꯤꯛ ꯂꯩꯔꯤꯕ ꯄ꯭ꯔꯣꯐꯥꯏꯜ \"{name}\" ꯑꯗꯨ ꯁꯤꯟꯗꯣꯛꯀꯗꯕ?"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2782
 msgid "Report audio conversion status"
 msgstr "ꯑꯣꯗꯤꯌꯣ ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯁ꯭ꯇꯦꯇꯁ ꯔꯤꯄꯣꯔꯠ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:787 src/globalPlugins/easyAudioConverter/__init__.py:992
+#: src/globalPlugins/easyAudioConverter/__init__.py:1460 src/globalPlugins/easyAudioConverter/__init__.py:1964
 msgid "Report conversion status"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯐꯤꯕꯝ ꯔꯤꯄꯣꯔꯠ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:1751
+msgid "Retry failed files"
+msgstr "ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗ꯭ꯔꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯑꯃꯨꯛ ꯍꯟꯅ ꯍꯣꯠꯅꯧ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:713
 msgid "Sample rate:"
 msgstr "ꯆꯥꯡꯌꯦꯡꯒꯤ ꯆꯥꯡ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:353
+#: src/globalPlugins/easyAudioConverter/__init__.py:1211 src/globalPlugins/easyAudioConverter/__init__.py:1247
+msgid "Save conversion profile"
+msgstr "ꯀꯟꯚꯔꯁꯟ ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯁꯦꯕ ꯇꯧ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:509 src/globalPlugins/easyAudioConverter/__init__.py:976
 msgid "Save converted files next to the source files"
 msgstr "ꯑꯣꯟꯊꯣꯛꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ ꯁꯣꯔꯁ ꯐꯥꯏꯜꯁꯤꯡꯒꯤ ꯃꯅꯥꯛꯇ ꯊꯝꯖꯤꯟꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:995
+#: src/globalPlugins/easyAudioConverter/__init__.py:950
+msgid "Save profile..."
+msgstr "ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯊꯝꯖꯤꯟꯂꯨ..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:878
+msgid "Select the text metadata fields to copy for this conversion."
+msgstr "ꯃꯁꯤꯒꯤ ꯀꯟꯚꯔꯖꯟ ꯑꯁꯤꯒꯤꯗꯃꯛ ꯀꯣꯄꯤ ꯇꯧꯅꯕ ꯇꯦꯛꯁ ꯃꯦꯇꯥꯗꯦꯇꯥ ꯐꯤꯜꯗꯁꯤꯡ ꯑꯗꯨ ꯈꯜꯂꯨ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:940
+msgid "Selected items: {count}"
+msgstr "ꯈꯟꯒꯠꯂꯕ ꯄꯣꯠꯂꯝꯁꯤꯡ: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1968
 msgid "Settings..."
 msgstr "ꯁꯦꯇꯤꯡꯁ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:991
+#: src/globalPlugins/easyAudioConverter/__init__.py:1963
 msgid "Show conversion progress"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯈꯣꯡꯆꯠ ꯎꯠꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1668
+#: src/globalPlugins/easyAudioConverter/__init__.py:1965
+msgid "Show last conversion results"
+msgstr "ꯂꯥꯁꯠ ꯀꯟꯚꯔꯖꯟ ꯔꯤꯖꯜꯠꯁꯤꯡ ꯎꯠꯂꯛꯎ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1461
+msgid "Show results"
+msgstr "ꯐꯜꯁꯤꯡ ꯎꯠꯂꯨ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2763
 msgid "Show the audio conversion progress window"
 msgstr "ꯑꯣꯗꯤꯑꯣ ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯄ꯭ꯔꯣꯒ꯭ꯔꯦꯁ ꯋꯤꯟꯗꯣ ꯎꯠꯂꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1500
-msgid "Some files could not be converted:\n\n{details}"
-msgstr "ꯐꯥꯏꯜ ꯈꯔꯗꯤ ꯑꯣꯟꯊꯣꯛꯄ ꯉꯝꯈꯤꯗꯦ:\n\n{details}"
+#: src/globalPlugins/easyAudioConverter/__init__.py:2774
+msgid "Show the last audio conversion results"
+msgstr "ꯏꯀꯣꯟ ꯀꯣꯟꯕ ꯑꯣꯗꯤꯑꯣ ꯑꯣꯟꯕꯒꯤ ꯐꯜꯁꯤꯡꯗꯨ ꯎꯠꯂꯛꯎ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:186
+#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+msgid "Skipped"
+msgstr "ꯊꯥꯗꯣꯛꯈꯤ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1633
+msgid "Skipped files:"
+msgstr "ꯊꯥꯗꯣꯛꯈꯤꯕ ꯐꯥꯏꯜꯁꯤꯡ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1713
+msgid "Skipped: {name}"
+msgstr "ꯊꯥꯗꯣꯛꯈꯤꯕ: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:228
+msgid "Sound only"
+msgstr "ꯈꯣꯟꯖꯦꯜ ꯈꯛꯇ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1703
+msgid "Source:\n{source}\n\nError:\n{error}"
+msgstr "ꯍꯧꯔꯛꯐꯝ:\n{source}\n\nꯑꯁꯣꯏꯕ:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1680
+msgid "Source:\n{source}\n\nOutput:\n{output}"
+msgstr "ꯍꯧꯔꯛꯐꯝ:\n{source}\n\nꯑꯥꯎꯠꯄꯨꯠ:\n{output}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+msgid "Source:\n{source}\n\nReason:\n{reason}"
+msgstr "ꯍꯧꯔꯛꯐꯝ:\n{source}\n\nꯃꯔꯝ:\n{reason}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:226
+msgid "Speech and sound"
+msgstr "ꯋꯥꯉꯥꯡ ꯑꯃꯁꯨꯡ ꯈꯣꯟꯖꯦꯜ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:227
+msgid "Speech only"
+msgstr "ꯋꯥꯉꯥꯡ ꯈꯛꯇ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:342
 msgid "Standard"
 msgstr "ꯁ꯭ꯇꯦꯟꯗꯔꯗ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:318
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1194
+#: src/globalPlugins/easyAudioConverter/__init__.py:2167
 msgid "Starting the download..."
 msgstr "ꯗꯥꯎꯟꯂꯣꯗ ꯍꯧꯕ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:721
 msgid "Stereo"
 msgstr "ꯁ꯭ꯇꯦꯔꯤꯑꯣ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1613 src/globalPlugins/easyAudioConverter/__init__.py:1666
+msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
+msgstr "ꯃꯥꯏ ꯄꯥꯛꯈꯤ: {done}. ꯃꯥꯏ ꯄꯥꯛꯈꯤꯗꯦ: {failed}. ꯊꯥꯗꯣꯛꯈꯤꯕ: {skipped}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1679 src/globalPlugins/easyAudioConverter/__init__.py:1693
+msgid "Success: {name}"
+msgstr "ꯃꯥꯏꯄꯥꯛꯄ: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:563
+msgid "Successful completion notification:"
+msgstr "ꯃꯥꯏ ꯄꯥꯛꯅ ꯂꯣꯏꯁꯤꯟꯕꯒꯤ ꯈꯪꯍꯟꯂꯛꯄ:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1622
+msgid "Successful files:"
+msgstr "ꯃꯥꯏ ꯄꯥꯛꯂꯕ ꯐꯥꯏꯜꯁꯤꯡ:"
 
 #: src/installTasks.py:40 src/installTasks.py:58
 msgid "Support Easy Audio Converter"
 msgstr "ꯑꯆꯝꯕ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯁꯄꯣꯔꯠ ꯇꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:414 src/globalPlugins/easyAudioConverter/__init__.py:998
+#: src/globalPlugins/easyAudioConverter/__init__.py:594 src/globalPlugins/easyAudioConverter/__init__.py:1971
 msgid "Support the author"
 msgstr "ꯑꯏꯕꯕꯨ ꯁꯧꯒꯠꯂꯨ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:327
+#: src/globalPlugins/easyAudioConverter/__init__.py:483 src/globalPlugins/easyAudioConverter/__init__.py:958
 msgid "Target format:"
 msgstr "ꯇꯥꯔꯒꯦꯠ ꯐꯣꯔꯃꯦꯠ:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1613
+#: src/globalPlugins/easyAudioConverter/__init__.py:2708
 msgid "Target format: {format}"
 msgstr "ꯇꯥꯔꯒꯦꯠ ꯐꯣꯔꯃꯦꯠ: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1297
+#: src/globalPlugins/easyAudioConverter/__init__.py:571
+msgid "Test completion sound"
+msgstr "ꯆꯥꯡꯌꯦꯡ ꯂꯣꯏꯁꯤꯟꯕꯒꯤ ꯈꯣꯟꯖꯦꯜ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2271
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "ꯄꯨꯟꯁꯤꯟꯂꯕ ꯑꯦꯐ.ꯑꯦꯐ.ꯑꯦꯝ.ꯄꯤ.ꯏ.ꯖꯤ. ꯃꯆꯥꯛ ꯑꯗꯨ ꯐꯪꯗꯦ꯫ ꯏꯖꯤ ꯑꯣꯗꯤꯑꯣ ꯀꯟꯚꯔꯇꯔ ꯑꯃꯨꯛ ꯍꯟꯅ ꯏꯟꯁꯇꯣꯜ ꯇꯧ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:611
+#: src/globalPlugins/easyAudioConverter/__init__.py:802
 msgid "The codec-specific level is not used by this format."
 msgstr "ꯀꯣꯗꯦꯛ-ꯑꯀꯛꯅꯕ ꯊꯥꯛ ꯑꯁꯤ ꯃꯁꯤꯒꯤ ꯃꯑꯣꯡ ꯑꯁꯤꯅ ꯁꯤꯖꯤꯟꯅꯗꯦ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1438
+#: src/globalPlugins/easyAudioConverter/__init__.py:2444
 msgid "The conversion could not start"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄ ꯍꯧꯕ ꯉꯝꯈꯤꯗꯦ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1442
+#: src/globalPlugins/easyAudioConverter/__init__.py:2449
 msgid "The conversion could not start:\n{error}"
 msgstr "ꯑꯣꯟꯊꯣꯛꯄ ꯍꯧꯕ ꯉꯝꯈꯤꯗꯦ:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1264
+#: src/globalPlugins/easyAudioConverter/__init__.py:1620
+msgid "The conversion was canceled."
+msgstr "ꯑꯣꯟꯊꯣꯛꯄꯒꯤ ꯊꯕꯛ ꯑꯗꯨ ꯇꯣꯛꯍꯟꯈꯤ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1597
+msgid "The input does not contain a readable audio stream."
+msgstr "ꯏꯟꯄꯨꯠ ꯑꯗꯨꯗ ꯄꯥꯕ ꯌꯥꯕ ꯑꯣꯗꯤꯑꯣ ꯁ꯭ꯇ꯭ꯔꯤꯝ ꯌꯥꯎꯗꯦ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1595
+msgid "The input file is damaged or uses an unsupported encoding."
+msgstr "ꯏꯟꯄꯨꯠ ꯐꯥꯏꯜ ꯑꯗꯨ ꯑꯃꯥꯡ-ꯑꯇꯥ ꯊꯣꯛꯂꯦ ꯅꯠꯇ꯭ꯔꯒ ꯁꯄꯣꯔꯠ ꯇꯧꯗꯕ ꯑꯦꯟꯀꯣꯗꯤꯡ ꯁꯤꯖꯤꯟꯅꯩ ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1222
+msgid "The profile name cannot be empty."
+msgstr "ꯄ꯭ꯔꯣꯐꯥꯏꯜꯒꯤ ꯃꯃꯤꯡ ꯑꯗꯨ ꯍꯥꯡꯕ ꯌꯥꯔꯣꯏ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2237
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "ꯑꯞꯗꯦꯠ ꯑꯗꯨ ꯗꯥꯎꯟꯂꯣꯗ ꯇꯧꯕ ꯅꯠꯇ꯭ꯔꯒ ꯚꯦꯔꯤꯐꯥꯏ ꯇꯧꯕ ꯉꯝꯈꯤꯗꯦ꯫\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1272
+#: src/globalPlugins/easyAudioConverter/__init__.py:2245
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "ꯑꯞꯗꯦꯠ ꯑꯗꯨ ꯁꯦꯝ ꯁꯥꯔꯦ꯫ ꯑꯦꯟ.ꯚꯤ.ꯗꯤ.ꯑꯦ. ꯑꯦꯗ-ꯑꯣꯟ ꯏꯟꯁꯇꯣꯂꯔ ꯍꯥꯡꯗꯣꯛꯄ꯫"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:209
+#: src/globalPlugins/easyAudioConverter/__init__.py:1593
+msgid "There is not enough free disk space."
+msgstr "ꯐ꯭ꯔꯤ ꯗꯤꯁ꯭ꯛ ꯁ꯭ꯄꯦꯁ ꯃꯔꯥꯡ ꯀꯥꯏꯅ ꯂꯩꯇꯦ꯫"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:365
 msgid "Title"
 msgstr "ꯃꯤꯡꯊꯣꯜ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:216
+#: src/globalPlugins/easyAudioConverter/__init__.py:372
 msgid "Track number"
 msgstr "ꯇ꯭ꯔꯦꯛ ꯅꯝꯕꯔ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1493 src/globalPlugins/easyAudioConverter/__init__.py:1265 src/globalPlugins/easyAudioConverter/__init__.py:1124
+#: src/globalPlugins/easyAudioConverter/__init__.py:1598 src/globalPlugins/easyAudioConverter/__init__.py:2238 src/globalPlugins/easyAudioConverter/__init__.py:2097
 msgid "Unknown error"
 msgstr "ꯈꯪꯗꯕ ꯑꯁꯣꯏꯕ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1260
+#: src/globalPlugins/easyAudioConverter/__init__.py:1604
+msgid "Unsupported file type"
+msgstr "ꯁꯄꯣꯔꯠ ꯇꯧꯗꯕ ꯐꯥꯏꯜ ꯃꯈꯜ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2233
 msgid "Update download canceled"
 msgstr "ꯑꯞꯗꯦꯠ ꯗꯥꯎꯟꯂꯣꯗ ꯀꯦꯟꯁꯦꯜ ꯇꯧꯔꯦ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:734
 msgid "Use the quality preset"
 msgstr "ꯀ꯭ꯋꯥꯂꯤꯇꯤ ꯄ꯭ꯔꯤꯁꯦꯠ ꯁꯤꯖꯤꯟꯅꯧ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:188
+#: src/globalPlugins/easyAudioConverter/__init__.py:1008
+msgid "Use these settings for future quick conversions"
+msgstr "ꯇꯨꯡꯗ ꯊꯨꯅ ꯑꯣꯟꯊꯣꯛꯅꯕꯒꯤꯗꯃꯛ ꯃꯁꯤꯒꯤ ꯁꯦꯇꯤꯡꯁꯤꯡ ꯑꯁꯤ ꯁꯤꯖꯤꯟꯅꯧ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:344
 msgid "Very high"
 msgstr "ꯌꯥꯝꯅ ꯋꯥꯡꯕ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:165
+#: src/globalPlugins/easyAudioConverter/__init__.py:321
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:171
+#: src/globalPlugins/easyAudioConverter/__init__.py:327
 msgid "WMA"
 msgstr "ꯗꯕꯜꯌꯨ.ꯑꯦꯝ.ꯑꯦ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:176
+#: src/globalPlugins/easyAudioConverter/__init__.py:332
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1520
+#: src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:1541
+msgid "calculating"
+msgstr "ꯈꯣꯠꯇꯣꯛꯄꯁꯤ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2579
 msgid "excluding subfolders"
 msgstr "ꯁꯕꯐꯣꯜꯗꯔꯁꯤꯡ ꯌꯥꯎꯗꯕ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1518
+#: src/globalPlugins/easyAudioConverter/__init__.py:2577
 msgid "including subfolders"
 msgstr "ꯁꯕꯐꯣꯜꯗꯔꯁꯤꯡ ꯌꯥꯎꯔꯒ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1571
+#: src/globalPlugins/easyAudioConverter/__init__.py:2641 src/globalPlugins/easyAudioConverter/__init__.py:2666
 msgid "{count} selected folders"
 msgstr "{count} ꯈꯟꯒꯠꯂꯕ ꯐꯣꯜꯗꯔꯁꯤꯡ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2826
+msgid "{status} Estimated time remaining {remaining}."
+msgstr "{status} ꯆꯥꯎꯔꯥꯛꯅ ꯃꯇꯝ ꯂꯦꯝꯍꯧꯕ {remaining}."

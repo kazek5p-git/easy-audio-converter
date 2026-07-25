@@ -19,9 +19,18 @@ separate codec installation is required.
   while still allowing an explicitly selected same-format file to be
   re-encoded;
 - never overwrites source or existing destination files;
+- offers both unchanged quick conversion and an accessible one-time options
+  dialog;
+- includes complete named job profiles, with three built-in profiles and
+  editable user profiles;
 - shows quiet visual per-file and overall progress while conversion runs in a
-  background thread, with a dedicated button for spoken status;
-- plays a notification sound when the complete job finishes without errors;
+  background thread, with spoken status and estimated remaining time;
+- lets the user choose milestone, per-file, or on-demand progress
+  announcements;
+- provides an accessible results window with details, report copying, output
+  folder access, and retry of failed files;
+- makes the successful-completion speech and sound independently
+  configurable;
 - copies all, selected, or no source text metadata;
 - stores independent advanced parameter profiles for each target codec;
 - checks GitHub releases for verified add-on updates;
@@ -35,6 +44,7 @@ The add-on is authored by Kazimierz Parzych.
 
 - `src` contains the installable add-on tree.
 - `tests` contains unit tests for the conversion core.
+- `profiles.py` validates and serializes complete named conversion profiles.
 - `tools/build_addon.py` creates the `.nvda-addon` package.
 - `tools/poedit_catalog.py` creates the POT template, merges PO files,
   validates placeholders, and compiles MO catalogs.
