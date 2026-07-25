@@ -21,6 +21,7 @@ separate codec installation is required.
 - never overwrites source or existing destination files;
 - shows quiet visual per-file and overall progress while conversion runs in a
   background thread, with a dedicated button for spoken status;
+- plays a notification sound when the complete job finishes without errors;
 - copies all, selected, or no source text metadata;
 - stores independent advanced parameter profiles for each target codec;
 - checks GitHub releases for verified add-on updates;

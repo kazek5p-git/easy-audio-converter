@@ -7,6 +7,8 @@
   tab directly.
 - Corrected the native notebook accessibility count so NVDA announces
   “1 of 2” and “2 of 2”, rather than an inflated number of tabs.
+- Added a completion notification sound that plays after a conversion job
+  finishes successfully without failed or canceled files.
 
 The unified settings category, both direct menu commands, tab navigation,
 enabled and disabled controls, Polish speech output, translations, and package

@@ -61,6 +61,10 @@ class PluginImportTests(unittest.TestCase):
 		gui.mainFrame = types.SimpleNamespace()
 		install("gui", gui)
 
+		nvwave = types.ModuleType("nvwave")
+		nvwave.playWaveFile = lambda *args, **kwargs: None
+		install("nvwave", nvwave)
+
 		ui = types.ModuleType("ui")
 		ui.message = lambda message: None
 		install("ui", ui)
@@ -231,6 +235,57 @@ class PluginImportTests(unittest.TestCase):
 		notebook = types.SimpleNamespace(GetPageCount=lambda: 2)
 		accessible = self.module._SettingsNotebookAccessible(notebook)
 		self.assertEqual((0, 2), accessible.GetChildCount())
+
+	def test_completion_sound_uses_the_bundled_wave_file(self):
+		calls = []
+		original = self.module.nvwave.playWaveFile
+		self.module.nvwave.playWaveFile = (
+			lambda path, asynchronous=True: calls.append((path, asynchronous))
+		)
+		try:
+			self.module._play_completion_sound()
+		finally:
+			self.module.nvwave.playWaveFile = original
+		self.assertEqual(
+			[(str(self.module.COMPLETION_SOUND_PATH), True)],
+			calls,
+		)
+		self.assertTrue(self.module.COMPLETION_SOUND_PATH.is_file())
+
+	def test_job_completion_sound_requires_every_file_to_succeed(self):
+		summaries = (
+			(self.module.ConversionSummary(total=2, succeeded=2), True),
+			(self.module.ConversionSummary(total=2, succeeded=1, failed=1), False),
+			(self.module.ConversionSummary(total=2, succeeded=1), False),
+			(self.module.ConversionSummary(total=2, succeeded=2, canceled=True), False),
+			(self.module.ConversionSummary(total=0, succeeded=0), False),
+		)
+		for summary, expected in summaries:
+			with self.subTest(summary=summary):
+				self.assertEqual(
+					expected,
+					self.module._conversion_completed_successfully(summary),
+				)
+
+	def test_successful_job_completion_triggers_the_sound(self):
+		sound_calls = []
+		original = self.module._play_completion_sound
+		self.module._play_completion_sound = lambda: sound_calls.append(True)
+		try:
+			converter = object()
+			plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+			plugin._converter = converter
+			plugin._terminated = False
+			plugin._progress_dialog = None
+			plugin._worker = object()
+			plugin._progress = object()
+			plugin._job_complete(
+				converter,
+				self.module.ConversionSummary(total=1, succeeded=1),
+			)
+		finally:
+			self.module._play_completion_sound = original
+		self.assertEqual([True], sound_calls)
 
 
 if __name__ == "__main__":

@@ -51,6 +51,11 @@ def build() -> Path:
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "converter.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "updater.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "bin" / "ffmpeg.exe",
+		SOURCE_ROOT
+		/ "globalPlugins"
+		/ "easyAudioConverter"
+		/ "sounds"
+		/ "notification_complete.wav",
 		SOURCE_ROOT / "locale" / "EasyAudioConverter.pot",
 		SOURCE_ROOT / "doc" / "en" / "readme.html",
 		SOURCE_ROOT / "doc" / "pl" / "readme.html",
@@ -92,6 +97,7 @@ def build() -> Path:
 			"globalPlugins/easyAudioConverter/converter.py",
 			"globalPlugins/easyAudioConverter/updater.py",
 			"globalPlugins/easyAudioConverter/bin/ffmpeg.exe",
+			"globalPlugins/easyAudioConverter/sounds/notification_complete.wav",
 			"locale/EasyAudioConverter.pot",
 		):
 			if expected not in names:

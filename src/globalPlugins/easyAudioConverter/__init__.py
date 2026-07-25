@@ -16,6 +16,7 @@ import api
 import config
 import globalPluginHandler
 import gui
+import nvwave
 import ui
 import wx
 from gui import guiHelper
@@ -67,6 +68,7 @@ ADDON_NAME = "Easy Audio Converter"
 ADDON_VERSION = "1.1.3"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
+COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
 CONFIG_SPEC = {
 	"targetFormat": "string(default='mp3')",
 	"quality": "string(default='high')",
@@ -675,6 +677,27 @@ def _format_elapsed(seconds: float | None) -> str:
 	if hours:
 		return f"{hours:d}:{minutes:02d}:{seconds:02d}"
 	return f"{minutes:d}:{seconds:02d}"
+
+
+def _conversion_completed_successfully(summary: ConversionSummary) -> bool:
+	"""Return whether every planned conversion completed without errors."""
+	return bool(
+		summary.total > 0
+		and summary.succeeded == summary.total
+		and summary.failed == 0
+		and not summary.canceled
+	)
+
+
+def _play_completion_sound() -> None:
+	"""Play the bundled success notification without blocking NVDA."""
+	try:
+		nvwave.playWaveFile(str(COMPLETION_SOUND_PATH), asynchronous=True)
+	except Exception:
+		log.debugWarning(
+			"Easy Audio Converter: failed to play the completion sound",
+			exc_info=True,
+		)
 
 
 class _VisualProgressBar(getattr(wx, "Panel", object)):
@@ -1462,6 +1485,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._converter = None
 		self._worker = None
 		self._progress = None
+		if _conversion_completed_successfully(summary):
+			_play_completion_sound()
 		if summary.failures:
 			lines = []
 			for failure in summary.failures[:8]:

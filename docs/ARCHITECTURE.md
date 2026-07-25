@@ -27,6 +27,8 @@
    through `wx.CallAfter`.
 7. Success is accepted only when FFmpeg exits with zero and creates a nonempty
    output. Failed or canceled partial outputs are removed.
+8. When every planned file succeeds, NVDA plays the bundled completion sound
+   asynchronously through its configured sound output device.
 
 ## Metadata
 

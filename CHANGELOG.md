@@ -6,6 +6,8 @@
   category in NVDA Settings, with separate accessible tabs.
 - Kept both Tools-menu commands: each opens the unified category on the
   corresponding tab.
+- Added a bundled notification sound that plays once when every file in a
+  conversion job finishes successfully.
 
 ## 1.1.2
 
