@@ -67,6 +67,12 @@ class PluginImportTests(unittest.TestCase):
 
 		wx = types.ModuleType("wx")
 		wx.Dialog = type("Dialog", (), {})
+		wx.Accessible = type(
+			"Accessible",
+			(),
+			{"__init__": lambda self, window=None: setattr(self, "Window", window)},
+		)
+		wx.ACC_OK = 0
 		install("wx", wx)
 
 		log_handler = types.ModuleType("logHandler")
@@ -98,6 +104,8 @@ class PluginImportTests(unittest.TestCase):
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
 		self.assertEqual("Easy Audio Converter", self.module.EasyAudioConverterSettingsPanel.title)
+		self.assertEqual(0, self.module.EasyAudioConverterSettingsPanel.STANDARD_TAB)
+		self.assertEqual(1, self.module.EasyAudioConverterSettingsPanel.ADVANCED_TAB)
 		self.assertEqual(16, len(self.module.FORMAT_KEYS))
 
 	def test_all_script_actions_are_exposed(self):
@@ -188,6 +196,41 @@ class PluginImportTests(unittest.TestCase):
 				del gui_module.mainFrame.popupSettingsDialog
 			else:
 				gui_module.mainFrame.popupSettingsDialog = original_popup
+
+	def test_advanced_settings_command_targets_the_unified_panel(self):
+		calls = []
+		wx_module = sys.modules["wx"]
+		original_call_after = getattr(wx_module, "CallAfter", None)
+		wx_module.CallAfter = lambda callback, *args: callback(*args)
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._open_settings_panel = lambda panel, tab: calls.append((panel, tab))
+		try:
+			plugin.script_openAdvancedSettings(None)
+		finally:
+			if original_call_after is None:
+				del wx_module.CallAfter
+			else:
+				wx_module.CallAfter = original_call_after
+		self.assertEqual(
+			[
+				(
+					self.module.EasyAudioConverterSettingsPanel,
+					self.module.EasyAudioConverterSettingsPanel.ADVANCED_TAB,
+				)
+			],
+			calls,
+		)
+
+	def test_advanced_tab_request_is_one_shot(self):
+		panel = self.module.EasyAudioConverterSettingsPanel
+		panel.requestInitialTab(panel.ADVANCED_TAB)
+		self.assertEqual(panel.ADVANCED_TAB, panel._takeInitialTab())
+		self.assertEqual(panel.STANDARD_TAB, panel._takeInitialTab())
+
+	def test_notebook_accessibility_reports_the_real_tab_count(self):
+		notebook = types.SimpleNamespace(GetPageCount=lambda: 2)
+		accessible = self.module._SettingsNotebookAccessible(notebook)
+		self.assertEqual((0, 2), accessible.GetChildCount())
 
 
 if __name__ == "__main__":

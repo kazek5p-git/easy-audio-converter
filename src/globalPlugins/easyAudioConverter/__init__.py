@@ -64,7 +64,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.1.2"
+ADDON_VERSION = "1.1.3"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 CONFIG_SPEC = {
@@ -311,9 +311,9 @@ def _focused_path(current_folder: str = "") -> str:
 	return ""
 
 
-class EasyAudioConverterSettingsPanel(SettingsPanel):
-	# Translators: Title of the add-on settings category.
-	title = _("Easy Audio Converter")
+class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
+	# Translators: Name of the standard settings tab.
+	title = _("Standard settings")
 
 	def makeSettings(self, settingsSizer):
 		settings = _read_settings()
@@ -468,7 +468,6 @@ class EasyAudioConverterSettingsPanel(SettingsPanel):
 			if checkbox.IsChecked()
 		]
 		conf["autoCheckUpdates"] = self.auto_check_updates.IsChecked()
-		config.conf.save()
 
 
 def _default_advanced_profile() -> dict[str, Any]:
@@ -482,9 +481,9 @@ def _default_advanced_profile() -> dict[str, Any]:
 	}
 
 
-class EasyAudioConverterAdvancedSettingsPanel(SettingsPanel):
-	# Translators: Title of the advanced codec settings category.
-	title = _("Easy Audio Converter - Advanced")
+class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
+	# Translators: Name of the advanced settings tab.
+	title = _("Advanced settings")
 
 	_BITRATE_FORMATS = {"mp3", "opus", "m4a", "aac", "wma", "ac3", "eac3", "mp2", "amr", "amrwb"}
 	_LEVEL_FORMATS = {"mp3", "flac", "ogg", "opus", "wavpack"}
@@ -620,6 +619,52 @@ class EasyAudioConverterAdvancedSettingsPanel(SettingsPanel):
 			sort_keys=True,
 			separators=(",", ":"),
 		)
+
+
+class _SettingsNotebookAccessible(wx.Accessible):
+	"""Correct wx.Notebook's inflated MSAA child count on Windows."""
+
+	def GetChildCount(self):
+		return (wx.ACC_OK, self.Window.GetPageCount())
+
+
+class EasyAudioConverterSettingsPanel(SettingsPanel):
+	"""Single NVDA settings category containing standard and advanced tabs."""
+
+	# Translators: Title of the add-on settings category.
+	title = _("Easy Audio Converter")
+	STANDARD_TAB = 0
+	ADVANCED_TAB = 1
+	_next_initial_tab = STANDARD_TAB
+
+	@classmethod
+	def requestInitialTab(cls, tab_index: int) -> None:
+		"""Choose the tab used by the next settings-panel instance."""
+		cls._next_initial_tab = (
+			cls.ADVANCED_TAB
+			if tab_index == cls.ADVANCED_TAB
+			else cls.STANDARD_TAB
+		)
+
+	@classmethod
+	def _takeInitialTab(cls) -> int:
+		tab_index = cls._next_initial_tab
+		cls._next_initial_tab = cls.STANDARD_TAB
+		return tab_index
+
+	def makeSettings(self, settingsSizer):
+		self.notebook = wx.Notebook(self)
+		self.standard_page = _EasyAudioConverterStandardSettingsPage(self.notebook)
+		self.advanced_page = _EasyAudioConverterAdvancedSettingsPage(self.notebook)
+		self.notebook.AddPage(self.standard_page, self.standard_page.title)
+		self.notebook.AddPage(self.advanced_page, self.advanced_page.title)
+		self.notebook.SetAccessible(_SettingsNotebookAccessible(self.notebook))
+		self.notebook.SetSelection(self._takeInitialTab())
+		settingsSizer.Add(self.notebook, proportion=1, flag=wx.EXPAND)
+
+	def onSave(self):
+		self.standard_page.onSave()
+		self.advanced_page.onSave()
 		config.conf.save()
 
 
@@ -872,8 +917,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._menu_bindings: list[tuple[Any, Callable]] = []
 		if EasyAudioConverterSettingsPanel not in NVDASettingsDialog.categoryClasses:
 			NVDASettingsDialog.categoryClasses.append(EasyAudioConverterSettingsPanel)
-		if EasyAudioConverterAdvancedSettingsPanel not in NVDASettingsDialog.categoryClasses:
-			NVDASettingsDialog.categoryClasses.append(EasyAudioConverterAdvancedSettingsPanel)
 		self._install_menu()
 		if self._updates_allowed() and bool(
 			config.conf[CONFIG_SECTION].get("autoCheckUpdates", True)
@@ -905,8 +948,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._remove_menu()
 			if EasyAudioConverterSettingsPanel in NVDASettingsDialog.categoryClasses:
 				NVDASettingsDialog.categoryClasses.remove(EasyAudioConverterSettingsPanel)
-			if EasyAudioConverterAdvancedSettingsPanel in NVDASettingsDialog.categoryClasses:
-				NVDASettingsDialog.categoryClasses.remove(EasyAudioConverterAdvancedSettingsPanel)
 			if self._progress_dialog is not None:
 				self._progress_dialog.Destroy()
 				self._progress_dialog = None
@@ -972,7 +1013,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _is_busy(self) -> bool:
 		return self._converter is not None
 
-	def _open_settings_panel(self, panel_class: type[SettingsPanel]) -> None:
+	def _open_settings_panel(
+		self,
+		panel_class: type[SettingsPanel],
+		initial_tab: int = EasyAudioConverterSettingsPanel.STANDARD_TAB,
+	) -> None:
 		if self._settings_open_timer is not None:
 			try:
 				self._settings_open_timer.Stop()
@@ -985,10 +1030,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._settings_open_timer = None
 			if self._terminated:
 				return
-			gui.mainFrame.popupSettingsDialog(
-				NVDASettingsDialog,
-				panel_class,
-			)
+			if panel_class is EasyAudioConverterSettingsPanel:
+				EasyAudioConverterSettingsPanel.requestInitialTab(initial_tab)
+			try:
+				gui.mainFrame.popupSettingsDialog(
+					NVDASettingsDialog,
+					panel_class,
+				)
+			finally:
+				# Avoid retaining an advanced-tab request if NVDA reused an
+				# already open settings dialog without constructing the panel.
+				EasyAudioConverterSettingsPanel.requestInitialTab(
+					EasyAudioConverterSettingsPanel.STANDARD_TAB
+				)
 
 		if removed_hidden_dialog:
 			# Let wx finish destroying the stale instance before constructing
@@ -1459,6 +1513,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		wx.CallAfter(
 			self._open_settings_panel,
 			EasyAudioConverterSettingsPanel,
+			EasyAudioConverterSettingsPanel.STANDARD_TAB,
 		)
 
 	@script(
@@ -1469,7 +1524,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_openAdvancedSettings(self, gesture):
 		wx.CallAfter(
 			self._open_settings_panel,
-			EasyAudioConverterAdvancedSettingsPanel,
+			EasyAudioConverterSettingsPanel,
+			EasyAudioConverterSettingsPanel.ADVANCED_TAB,
 		)
 
 	@script(

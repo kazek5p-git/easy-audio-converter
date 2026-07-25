@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.3
+
+- Combined the standard and advanced options into one Easy Audio Converter
+  category in NVDA Settings, with separate accessible tabs.
+- Kept both Tools-menu commands: each opens the unified category on the
+  corresponding tab.
+
 ## 1.1.2
 
 - Folder jobs now skip files that already use the selected target extension,

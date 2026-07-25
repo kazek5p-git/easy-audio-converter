@@ -44,9 +44,11 @@ available.
 Automated tests do not replace testing the actual wx interface with NVDA:
 
 1. Open NVDA Speech Viewer.
-2. Press Insert+N, open Tools, Easy Audio Converter, and open both settings
-   categories. Verify that each command creates the requested visible window,
-   then traverse every enabled control with Tab.
+2. Press Insert+N, open Tools, Easy Audio Converter, and use both settings
+   commands. Verify that each opens the same Easy Audio Converter category on
+   the requested standard or advanced tab. Confirm that NVDA Settings lists
+   only one Easy Audio Converter category, then traverse every enabled control
+   and both tabs.
 3. Select “Copy selected metadata fields” and verify that every field is
    announced as a check box with its checked state.
 4. Start a multi-file job and verify that visual progress does not flood
@@ -58,8 +60,8 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    dialog, and support page.
 8. Review the NVDA log for add-on import, callback, and traceback errors.
 9. Hide an existing `NVDASettingsDialog` through the NVDA Python console and
-   verify that each add-on settings command discards it and opens the requested
-   category visibly.
+   verify that each add-on settings command discards it and opens the unified
+   category on the requested tab.
 
 ## Translation validation
 

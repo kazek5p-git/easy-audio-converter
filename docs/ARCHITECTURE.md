@@ -56,8 +56,10 @@ Raw command-line fragments are not accepted.
 ## Settings-window recovery
 
 NVDA allows only one `NVDASettingsDialog` instance. Before opening either
-Easy Audio Converter category from the Tools menu, the add-on removes any
-stale hidden instance left in wx and then opens the requested category. A
+Easy Audio Converter settings command from the Tools menu, the add-on removes
+any stale hidden instance left in wx and then opens the single Easy Audio
+Converter category. A native notebook inside that category contains the
+standard and advanced pages, and the command selects the requested tab. A
 visible settings dialog is left untouched and receives NVDA's normal
 single-instance behavior.
 
