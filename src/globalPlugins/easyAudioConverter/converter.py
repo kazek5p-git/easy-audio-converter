@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import os
 import re
+import shutil
+import string
 import subprocess
 import threading
 from collections import deque
@@ -29,6 +32,8 @@ FORMAT_KEYS = (
 	"mp2",
 	"amr",
 	"amrwb",
+	"copyAudio",
+	"aacM4a",
 )
 
 FORMAT_EXTENSIONS = {
@@ -48,11 +53,63 @@ FORMAT_EXTENSIONS = {
 	"mp2": ".mp2",
 	"amr": ".amr",
 	"amrwb": ".awb",
+	# The actual copyAudio suffix is selected from the probed source codec.
+	"copyAudio": ".mka",
+	"aacM4a": ".m4a",
 }
 
 QUALITY_KEYS = ("economical", "standard", "high", "veryHigh")
 MP3_ENCODER_KEYS = ("lame", "fraunhofer")
 METADATA_MODE_KEYS = ("none", "all", "selected")
+ORIGINAL_AUDIO_COPY_FORMAT = "copyAudio"
+AAC_M4A_COPY_FORMAT = "aacM4a"
+STREAM_COPY_FORMATS = frozenset(
+	{ORIGINAL_AUDIO_COPY_FORMAT, AAC_M4A_COPY_FORMAT}
+)
+STREAM_COPY_CODEC_EXTENSIONS = {
+	"aac": ".aac",
+	"ac3": ".ac3",
+	"ac4": ".ac4",
+	"adpcm_ima_wav": ".wav",
+	"adpcm_ms": ".wav",
+	"alac": ".m4a",
+	"amr_nb": ".amr",
+	"amr_wb": ".awb",
+	"dts": ".dts",
+	"eac3": ".eac3",
+	"flac": ".flac",
+	"mlp": ".mlp",
+	"mp1": ".mp1",
+	"mp2": ".mp2",
+	"mp3": ".mp3",
+	"opus": ".opus",
+	"speex": ".spx",
+	"truehd": ".thd",
+	"tta": ".tta",
+	"vorbis": ".ogg",
+	"wavpack": ".wv",
+	"wmalossless": ".wma",
+	"wmapro": ".wma",
+	"wmav1": ".wma",
+	"wmav2": ".wma",
+	"wmavoice": ".wma",
+}
+LOUDNESS_PRESET_KEYS = ("off", "podcast", "music", "broadcast", "custom")
+LOUDNESS_PRESETS = {
+	"podcast": (-16.0, -1.5, 11.0),
+	"music": (-14.0, -1.0, 11.0),
+	"broadcast": (-23.0, -2.0, 7.0),
+}
+OUTPUT_NAME_FIELDS = (
+	"source",
+	"title",
+	"artist",
+	"album",
+	"track",
+	"disc",
+	"index",
+	"format",
+)
 METADATA_FIELD_KEYS = (
 	"title",
 	"artist",
@@ -84,6 +141,46 @@ ADVANCED_SAMPLE_RATES = (0, 8000, 11025, 16000, 22050, 32000, 44100, 48000, 8820
 ADVANCED_CHANNEL_COUNTS = (0, 1, 2)
 ADVANCED_BIT_DEPTHS = (0, 16, 24, 32)
 MAX_SKIPPED_FILE_DETAILS = 500
+MAX_OUTPUT_NAME_TEMPLATE_LENGTH = 240
+MAX_SAFE_FILENAME_LENGTH = 180
+ARTWORK_TARGET_FORMATS = frozenset({"mp3", "m4a", "alac", "flac", AAC_M4A_COPY_FORMAT})
+LOSSY_TARGET_FORMATS = frozenset(
+	{"mp3", "ogg", "opus", "m4a", "aac", "wma", "ac3", "eac3", "mp2", "amr", "amrwb"}
+)
+LOSSY_SOURCE_EXTENSIONS = frozenset(
+	{
+		".aac",
+		".ac3",
+		".amr",
+		".awb",
+		".eac3",
+		".m4a",
+		".m4b",
+		".mp2",
+		".mp3",
+		".mp4",
+		".oga",
+		".ogg",
+		".opus",
+		".ra",
+		".wma",
+	}
+)
+LOSSY_CODEC_NAMES = frozenset(
+	{
+		"aac",
+		"ac3",
+		"amr_nb",
+		"amr_wb",
+		"eac3",
+		"mp2",
+		"mp3",
+		"opus",
+		"vorbis",
+		"wmav1",
+		"wmav2",
+	}
+)
 
 # Audio-only files and popular media containers from which FFmpeg can extract audio.
 AUDIO_EXTENSIONS = frozenset(
@@ -156,6 +253,57 @@ AUDIO_EXTENSIONS = frozenset(
 )
 
 
+class StreamCopySourceError(ValueError):
+	"""A source cannot be used by the selected no-re-encoding mode."""
+
+	def __init__(self, reason: str, message: str):
+		super().__init__(message)
+		self.reason = reason
+
+
+def _normalized_codec_name(codec: str) -> str:
+	parts = str(codec or "").strip().casefold().split(maxsplit=1)
+	return parts[0].rstrip(",") if parts else ""
+
+
+def output_extension_for(target_format: str, source_codec: str = "") -> str:
+	"""Return the real output suffix, validating stream-copy compatibility."""
+	if target_format not in FORMAT_KEYS:
+		raise ValueError(f"Unsupported target format: {target_format}")
+	codec = _normalized_codec_name(source_codec)
+	if target_format == AAC_M4A_COPY_FORMAT:
+		if not codec:
+			raise StreamCopySourceError(
+				"noAudioStream",
+				"No readable audio stream was found",
+			)
+		if codec != "aac":
+			raise StreamCopySourceError(
+				"requiresAac",
+				"AAC audio is required for remuxing to M4A without re-encoding",
+			)
+		return ".m4a"
+	if target_format != ORIGINAL_AUDIO_COPY_FORMAT:
+		return FORMAT_EXTENSIONS[target_format]
+	if not codec:
+		raise StreamCopySourceError(
+			"noAudioStream",
+			"No readable audio stream was found",
+		)
+	if re.fullmatch(r"pcm_(?:[suf]\d+)(?:le|be)?", codec):
+		return ".aiff" if codec.endswith("be") else ".wav"
+	return STREAM_COPY_CODEC_EXTENSIONS.get(codec, ".mka")
+
+
+def output_format_name_for(target_format: str, source_codec: str = "") -> str:
+	"""Return a useful value for the ``{format}`` filename-template field."""
+	if target_format == ORIGINAL_AUDIO_COPY_FORMAT:
+		return _normalized_codec_name(source_codec) or "audio"
+	if target_format == AAC_M4A_COPY_FORMAT:
+		return "m4a"
+	return target_format
+
+
 @dataclass(frozen=True)
 class ConversionSettings:
 	target_format: str = "mp3"
@@ -168,6 +316,15 @@ class ConversionSettings:
 	metadata_mode: str = "all"
 	metadata_fields: tuple[str, ...] = DEFAULT_METADATA_FIELDS
 	advanced_options: Mapping[str, Any] = field(default_factory=dict)
+	output_name_template: str = "{source}"
+	loudness_preset: str = "off"
+	loudness_target_i: float = -16.0
+	loudness_target_tp: float = -1.5
+	loudness_target_lra: float = 11.0
+	copy_artwork: bool = False
+	copy_chapters: bool = True
+	verify_output: bool = False
+	show_preflight: bool = True
 
 	def validate(self) -> None:
 		if self.target_format not in FORMAT_KEYS:
@@ -182,6 +339,15 @@ class ConversionSettings:
 			raise ValueError("Unsupported metadata field")
 		if not self.same_folder and not str(self.output_folder).strip():
 			raise ValueError("A destination folder is required")
+		validate_output_name_template(self.output_name_template)
+		if self.loudness_preset not in LOUDNESS_PRESET_KEYS:
+			raise ValueError(f"Unsupported loudness preset: {self.loudness_preset}")
+		if not -70.0 <= float(self.loudness_target_i) <= -5.0:
+			raise ValueError("The loudness target must be between -70 and -5 LUFS")
+		if not -9.0 <= float(self.loudness_target_tp) <= 0.0:
+			raise ValueError("The true peak target must be between -9 and 0 dBTP")
+		if not 1.0 <= float(self.loudness_target_lra) <= 50.0:
+			raise ValueError("The loudness range target must be between 1 and 50 LU")
 
 
 @dataclass
@@ -210,10 +376,57 @@ class ConversionSummary:
 	failed: int = 0
 	ignored: int = 0
 	canceled: bool = False
+	stopped_after_current: bool = False
 	outputs: list[str] = field(default_factory=list)
 	failures: list[ConversionFailure] = field(default_factory=list)
 	successes: list[ConversionSuccess] = field(default_factory=list)
 	skipped_files: list[SkippedFile] = field(default_factory=list)
+
+
+@dataclass(frozen=True)
+class MediaInfo:
+	"""Audio properties reported by FFmpeg for one selected file."""
+
+	source_path: str
+	container: str = ""
+	codec: str = ""
+	duration: float | None = None
+	bitrate_kbps: int | None = None
+	channels: str = ""
+	sample_rate: int | None = None
+	size_bytes: int = 0
+	metadata: Mapping[str, str] = field(default_factory=dict)
+	has_artwork: bool = False
+	chapter_count: int = 0
+
+
+@dataclass(frozen=True)
+class ConversionPlanItem:
+	source_path: str
+	output_path: str
+	duration: float | None
+	input_size: int
+	estimated_output_size: int | None
+	metadata: Mapping[str, str] = field(default_factory=dict)
+	has_artwork: bool = False
+	codec: str = ""
+
+
+@dataclass(frozen=True)
+class ConversionPlan:
+	items: tuple[ConversionPlanItem, ...]
+	ignored: int
+	skipped_files: tuple[SkippedFile, ...]
+	input_bytes: int
+	estimated_output_bytes: int | None
+	total_duration: float | None
+	destination: str
+	free_space_bytes: int | None
+	lossy_to_lossy_count: int
+
+	@property
+	def total(self) -> int:
+		return len(self.items)
 
 
 @dataclass(frozen=True)
@@ -222,6 +435,7 @@ class ConversionCallbacks:
 	on_file_start: Callable[[int, int, str, str], None] | None = None
 	on_progress: Callable[[int, int, str, float | None, float, float, float | None], None] | None = None
 	on_file_done: Callable[[int, int, str, str], None] | None = None
+	on_stage: Callable[[int, int, str, str], None] | None = None
 
 
 def _safe_callback(callback: Callable | None, *args) -> None:
@@ -385,6 +599,8 @@ def _build_base_codec_arguments(target_format: str, quality: str, mp3_encoder: s
 		raise ValueError(f"Unsupported MP3 encoder: {mp3_encoder}")
 	index = QUALITY_KEYS.index(quality)
 
+	if target_format in STREAM_COPY_FORMATS:
+		return ["-c:a", "copy"]
 	if target_format == "mp3":
 		codec = "libmp3lame" if mp3_encoder == "lame" else "mp3_mf"
 		return ["-c:a", codec, "-b:a", ("96k", "160k", "224k", "320k")[index], "-write_xing", "1"]
@@ -479,6 +695,8 @@ def apply_advanced_codec_arguments(
 ) -> list[str]:
 	"""Apply validated per-codec overrides without accepting raw command text."""
 	arguments = list(arguments)
+	if target_format in STREAM_COPY_FORMATS:
+		return arguments
 	if not options or not bool(options.get("enabled", False)):
 		return arguments
 
@@ -557,6 +775,22 @@ def build_codec_arguments(
 
 
 _DURATION_PATTERN = re.compile(r"Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)")
+_INPUT_FORMAT_PATTERN = re.compile(r"Input #\d+,\s*([^,]+(?:,[^,]+)*?),\s+from ", re.IGNORECASE)
+_AUDIO_STREAM_PATTERN = re.compile(r"Audio:\s*([^,\s]+)(.*)", re.IGNORECASE)
+_SAMPLE_RATE_PATTERN = re.compile(r"(\d+)\s+Hz", re.IGNORECASE)
+_BITRATE_PATTERN = re.compile(r"(\d+)\s+kb/s", re.IGNORECASE)
+_CHANNEL_WORDS = (
+	"mono",
+	"stereo",
+	"2.1",
+	"3.0",
+	"4.0",
+	"5.0",
+	"5.1",
+	"6.1",
+	"7.1",
+)
+_LOUDNORM_JSON_PATTERN = re.compile(r"\{[^{}]*\"input_i\"[^{}]*\}", re.DOTALL)
 _METADATA_ALIASES = {
 	"album artist": "album_artist",
 	"albumartist": "album_artist",
@@ -581,6 +815,118 @@ def parse_progress_time(value: str) -> float | None:
 		return int(hours) * 3600 + int(minutes) * 60 + float(seconds)
 	except (TypeError, ValueError):
 		return None
+
+
+def parse_media_info(
+	text: str,
+	*,
+	source_path: str = "",
+	size_bytes: int = 0,
+	metadata: Mapping[str, str] | None = None,
+) -> MediaInfo:
+	"""Parse stable, user-facing audio properties from FFmpeg probe output."""
+	text = text or ""
+	container_match = _INPUT_FORMAT_PATTERN.search(text)
+	container = container_match.group(1).strip() if container_match else ""
+	audio_match = _AUDIO_STREAM_PATTERN.search(text)
+	codec = ""
+	stream_details = ""
+	if audio_match:
+		codec = audio_match.group(1).strip()
+		stream_details = audio_match.group(2)
+	sample_rate_match = _SAMPLE_RATE_PATTERN.search(stream_details)
+	sample_rate = int(sample_rate_match.group(1)) if sample_rate_match else None
+	bitrate_matches = _BITRATE_PATTERN.findall(stream_details)
+	if not bitrate_matches:
+		bitrate_matches = _BITRATE_PATTERN.findall(text)
+	bitrate_kbps = int(bitrate_matches[-1]) if bitrate_matches else None
+	details_casefold = stream_details.casefold()
+	channels = next((word for word in _CHANNEL_WORDS if word in details_casefold), "")
+	if not channels:
+		channel_match = re.search(r"\b(\d+)\s+channels?\b", stream_details, re.IGNORECASE)
+		if channel_match:
+			channels = channel_match.group(1)
+	has_artwork = "attached pic" in text.casefold()
+	chapter_count = len(re.findall(r"^\s*Chapter #", text, re.MULTILINE))
+	return MediaInfo(
+		source_path=source_path,
+		container=container,
+		codec=codec,
+		duration=parse_duration(text),
+		bitrate_kbps=bitrate_kbps,
+		channels=channels,
+		sample_rate=sample_rate,
+		size_bytes=max(0, int(size_bytes)),
+		metadata=dict(metadata or {}),
+		has_artwork=has_artwork,
+		chapter_count=chapter_count,
+	)
+
+
+def parse_loudnorm_measurement(text: str) -> dict[str, float]:
+	"""Extract and validate the JSON block emitted by FFmpeg's loudnorm filter."""
+	for match in reversed(tuple(_LOUDNORM_JSON_PATTERN.finditer(text or ""))):
+		try:
+			raw = json.loads(match.group(0))
+			values = {
+				name: float(raw[name])
+				for name in (
+					"input_i",
+					"input_tp",
+					"input_lra",
+					"input_thresh",
+					"target_offset",
+				)
+			}
+		except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+			continue
+		if all(value == value and abs(value) != float("inf") for value in values.values()):
+			return values
+	raise ValueError("FFmpeg did not return valid loudness measurements")
+
+
+def loudness_targets(settings: ConversionSettings) -> tuple[float, float, float] | None:
+	"""Return the selected EBU R128 targets, or ``None`` when disabled."""
+	if settings.loudness_preset == "off":
+		return None
+	if settings.loudness_preset in LOUDNESS_PRESETS:
+		return LOUDNESS_PRESETS[settings.loudness_preset]
+	return (
+		float(settings.loudness_target_i),
+		float(settings.loudness_target_tp),
+		float(settings.loudness_target_lra),
+	)
+
+
+def build_loudnorm_filter(
+	settings: ConversionSettings,
+	measurement: Mapping[str, float] | None = None,
+) -> str:
+	"""Build first- or second-pass loudnorm arguments from validated settings."""
+	targets = loudness_targets(settings)
+	if targets is None:
+		return ""
+	target_i, target_tp, target_lra = targets
+	options = [
+		f"I={target_i:g}",
+		f"TP={target_tp:g}",
+		f"LRA={target_lra:g}",
+	]
+	if measurement is None:
+		options.append("print_format=json")
+	else:
+		options.extend(
+			(
+				f"measured_I={float(measurement['input_i']):g}",
+				f"measured_TP={float(measurement['input_tp']):g}",
+				f"measured_LRA={float(measurement['input_lra']):g}",
+				f"measured_thresh={float(measurement['input_thresh']):g}",
+				f"offset={float(measurement['target_offset']):g}",
+				"linear=true",
+				"print_format=summary",
+			)
+		)
+	return f"loudnorm={':'.join(options)}"
 
 
 def _is_escaped(value: str, index: int) -> bool:
@@ -661,15 +1007,88 @@ def build_metadata_arguments(
 	return arguments
 
 
+def validate_output_name_template(template: str) -> None:
+	"""Reject malformed or unbounded filename templates before conversion."""
+	template = str(template or "")
+	if not template.strip():
+		raise ValueError("The output name template cannot be empty")
+	if len(template) > MAX_OUTPUT_NAME_TEMPLATE_LENGTH:
+		raise ValueError("The output name template is too long")
+	try:
+		parts = tuple(string.Formatter().parse(template))
+	except ValueError as error:
+		raise ValueError("The output name template contains unmatched braces") from error
+	for _literal, field_name, format_spec, conversion in parts:
+		if field_name is None:
+			continue
+		if field_name not in OUTPUT_NAME_FIELDS:
+			raise ValueError(f"Unsupported output name field: {field_name}")
+		if format_spec or conversion:
+			raise ValueError("Output name fields do not support format specifiers")
+
+
+def sanitize_windows_filename(
+	value: str,
+	*,
+	fallback: str = "converted",
+	max_length: int = MAX_SAFE_FILENAME_LENGTH,
+) -> str:
+	"""Return a safe filename stem without changing directories or extensions."""
+	value = re.sub(r'[\x00-\x1f<>:"/\\|?*]', "_", str(value or ""))
+	value = re.sub(r"\s+", " ", value).strip().rstrip(". ")
+	value = re.sub(r"_+", "_", value)
+	if not value:
+		value = fallback
+	reserved_names = {
+		"con",
+		"prn",
+		"aux",
+		"nul",
+		*(f"com{number}" for number in range(1, 10)),
+		*(f"lpt{number}" for number in range(1, 10)),
+	}
+	if value.split(".", 1)[0].casefold() in reserved_names:
+		value = f"_{value}"
+	if len(value) > max(1, int(max_length)):
+		value = value[: max(1, int(max_length))].rstrip(". ")
+	return value or fallback
+
+
+def render_output_name(
+	template: str,
+	source: Path,
+	target_format: str,
+	metadata: Mapping[str, str] | None = None,
+	*,
+	index: int = 1,
+) -> str:
+	"""Render a validated metadata-aware output filename stem."""
+	validate_output_name_template(template)
+	metadata = metadata or {}
+	values = {
+		"source": source.stem,
+		"title": metadata.get("title") or source.stem,
+		"artist": metadata.get("artist") or "",
+		"album": metadata.get("album") or "",
+		"track": metadata.get("track") or "",
+		"disc": metadata.get("disc") or "",
+		"index": str(max(1, int(index))),
+		"format": target_format,
+	}
+	return sanitize_windows_filename(template.format_map(values), fallback=source.stem)
+
+
 def make_unique_output_path(
 	source: Path,
 	output_directory: Path,
 	target_extension: str,
 	reserved: set[str] | None = None,
+	*,
+	base_name: str | None = None,
 ) -> Path:
 	"""Choose a non-destructive output name, including same-format conversions."""
 	reserved = reserved if reserved is not None else set()
-	base_name = source.stem
+	base_name = sanitize_windows_filename(base_name or source.stem, fallback=source.stem)
 	candidate = output_directory / f"{base_name}{target_extension}"
 	if _normal_path(candidate) == _normal_path(source):
 		base_name = f"{base_name} - converted"
@@ -680,6 +1099,66 @@ def make_unique_output_path(
 		number += 1
 	reserved.add(_normal_path(candidate))
 	return candidate
+
+
+def _output_directory(
+	source: Path,
+	settings: ConversionSettings,
+	source_root: Path | None,
+) -> Path:
+	if settings.same_folder:
+		return source.parent
+	output_directory = Path(settings.output_folder)
+	if settings.preserve_folder_structure:
+		output_directory /= _relative_parent(source, source_root)
+	return output_directory
+
+
+def _estimated_output_size(
+	source_size: int,
+	duration: float | None,
+	settings: ConversionSettings,
+	audio_bitrate_kbps: int | None = None,
+) -> int | None:
+	"""Estimate output bytes using the effective codec preset and duration."""
+	source_size = max(0, int(source_size))
+	if settings.target_format in STREAM_COPY_FORMATS:
+		if duration and duration > 0 and audio_bitrate_kbps and audio_bitrate_kbps > 0:
+			return max(
+				1,
+				int(duration * int(audio_bitrate_kbps) * 1000 / 8 * 1.02),
+			)
+		return None
+	if not duration or duration <= 0:
+		return source_size or None
+	arguments = build_codec_arguments(
+		settings.target_format,
+		settings.quality,
+		settings.mp3_encoder,
+		settings.advanced_options,
+	)
+	try:
+		bitrate_value = arguments[arguments.index("-b:a") + 1].lower().rstrip("k")
+		bitrate_kbps = float(bitrate_value)
+	except (ValueError, IndexError):
+		bitrate_kbps = 0.0
+	if bitrate_kbps > 0:
+		return max(1, int(duration * bitrate_kbps * 1000 / 8 * 1.02))
+
+	options = settings.advanced_options if settings.advanced_options.get("enabled", False) else {}
+	sample_rate = _integer_option(options, "sampleRate") or 44100
+	channels = _integer_option(options, "channels") or 2
+	bit_depth = _integer_option(options, "bitDepth")
+	quality_index = QUALITY_KEYS.index(settings.quality)
+	if settings.target_format in {"wav", "aiff"}:
+		if not bit_depth:
+			bit_depth = (16, 16, 24, 32)[quality_index]
+		return max(1, int(duration * sample_rate * channels * bit_depth / 8 + 65536))
+	if settings.target_format in {"flac", "alac", "wavpack"}:
+		pcm_depth = bit_depth or (16, 16, 24, 24)[quality_index]
+		pcm_size = duration * sample_rate * channels * pcm_depth / 8
+		return max(1, int(pcm_size * 0.62))
+	return source_size or None
 
 
 def _relative_parent(source: Path, source_root: Path | None) -> Path:
@@ -706,6 +1185,7 @@ class Converter:
 	def __init__(self, ffmpeg_path: str | os.PathLike[str]):
 		self.ffmpeg_path = Path(ffmpeg_path)
 		self._cancel_event = threading.Event()
+		self._stop_after_current_event = threading.Event()
 		self._process_lock = threading.Lock()
 		self._process: subprocess.Popen[str] | None = None
 
@@ -719,6 +1199,135 @@ class Converter:
 			except OSError:
 				pass
 
+	def stop_after_current(self) -> None:
+		"""Finish the active file, then stop this conversion job."""
+		self._stop_after_current_event.set()
+
+	@property
+	def is_canceled(self) -> bool:
+		return self._cancel_event.is_set()
+
+	def create_plan(
+		self,
+		paths: Iterable[str | os.PathLike[str]],
+		settings: ConversionSettings,
+		*,
+		source_root: str | os.PathLike[str] | None = None,
+		callbacks: ConversionCallbacks | None = None,
+	) -> ConversionPlan:
+		"""Probe inputs and return a non-destructive conversion preview."""
+		settings.validate()
+		self._require_ffmpeg()
+		path_list = tuple(paths)
+		callbacks = callbacks or ConversionCallbacks()
+		root = Path(source_root) if source_root else None
+		files, ignored, skipped_files = self._collect_job_files(path_list, settings)
+		_safe_callback(callbacks.on_collected, len(files), ignored)
+		reserved_outputs: set[str] = set()
+		items: list[ConversionPlanItem] = []
+		input_bytes = 0
+		output_estimates: list[int | None] = []
+		durations: list[float | None] = []
+		lossy_to_lossy_count = 0
+		include_metadata = self._requires_source_metadata(settings)
+
+		for index, source in enumerate(files, start=1):
+			if self._cancel_event.is_set():
+				break
+			_safe_callback(callbacks.on_stage, index, len(files), source.name, "planning")
+			info = self._probe_media_info(source, include_metadata=include_metadata)
+			try:
+				target_extension = output_extension_for(
+					settings.target_format,
+					info.codec,
+				)
+			except StreamCopySourceError as error:
+				ignored += 1
+				if len(skipped_files) < MAX_SKIPPED_FILE_DETAILS:
+					skipped_files.append(
+						SkippedFile(
+							source_path=str(source),
+							reason=error.reason,
+						)
+					)
+				continue
+			try:
+				source_size = source.stat().st_size
+			except OSError:
+				source_size = 0
+			output_directory = _output_directory(source, settings, root)
+			base_name = render_output_name(
+				settings.output_name_template,
+				source,
+				output_format_name_for(settings.target_format, info.codec),
+				info.metadata,
+				index=index,
+			)
+			output = make_unique_output_path(
+				source,
+				output_directory,
+				target_extension,
+				reserved_outputs,
+				base_name=base_name,
+			)
+			estimate = _estimated_output_size(
+				source_size,
+				info.duration,
+				settings,
+				info.bitrate_kbps,
+			)
+			items.append(
+				ConversionPlanItem(
+					source_path=str(source),
+					output_path=str(output),
+					duration=info.duration,
+					input_size=source_size,
+					estimated_output_size=estimate,
+					metadata=dict(info.metadata),
+					has_artwork=info.has_artwork,
+					codec=info.codec,
+				)
+			)
+			input_bytes += source_size
+			output_estimates.append(estimate)
+			durations.append(info.duration)
+			source_is_lossy = (
+				info.codec.casefold() in LOSSY_CODEC_NAMES
+				if info.codec
+				else source.suffix.casefold() in LOSSY_SOURCE_EXTENSIONS
+			)
+			if source_is_lossy and settings.target_format in LOSSY_TARGET_FORMATS:
+				lossy_to_lossy_count += 1
+
+		destination, free_space = self._plan_destination(items, settings)
+		return ConversionPlan(
+			items=tuple(items),
+			ignored=ignored,
+			skipped_files=tuple(skipped_files),
+			input_bytes=input_bytes,
+			estimated_output_bytes=(
+				sum(value for value in output_estimates if value is not None)
+				if output_estimates and all(value is not None for value in output_estimates)
+				else None
+			),
+			total_duration=(
+				sum(value for value in durations if value is not None)
+				if durations and all(value is not None for value in durations)
+				else None
+			),
+			destination=destination,
+			free_space_bytes=free_space,
+			lossy_to_lossy_count=lossy_to_lossy_count,
+		)
+
+	def probe_media_info(self, source: str | os.PathLike[str]) -> MediaInfo:
+		"""Return complete technical and metadata information for one file."""
+		self._require_ffmpeg()
+		path = Path(source)
+		if not path.is_file():
+			raise FileNotFoundError(str(path))
+		return self._probe_media_info(path, include_metadata=True)
+
 	def run(
 		self,
 		paths: Iterable[str | os.PathLike[str]],
@@ -726,29 +1335,29 @@ class Converter:
 		*,
 		source_root: str | os.PathLike[str] | None = None,
 		callbacks: ConversionCallbacks | None = None,
+		plan: ConversionPlan | None = None,
 	) -> ConversionSummary:
 		settings.validate()
-		if not self.ffmpeg_path.is_file():
-			raise FileNotFoundError("The bundled FFmpeg executable is missing")
+		self._require_ffmpeg()
 		path_list = tuple(paths)
 		callbacks = callbacks or ConversionCallbacks()
 		root = Path(source_root) if source_root else None
-		excluded_roots: tuple[Path, ...] = ()
-		if not settings.same_folder and settings.output_folder:
-			output_root = Path(settings.output_folder)
-			output_normalized = _normal_path(output_root)
-			input_directories = [Path(path) for path in path_list if Path(path).is_dir()]
-			if any(
-				output_normalized.startswith(_normal_path(directory).rstrip("\\/") + os.sep)
-				for directory in input_directories
-			):
-				excluded_roots = (output_root,)
-		files, ignored, skipped_files = collect_audio_files_detailed(
-			path_list,
-			recursive=settings.include_subfolders,
-			excluded_roots=excluded_roots,
-			folder_excluded_extensions=(FORMAT_EXTENSIONS[settings.target_format],),
-		)
+		if plan is None and settings.target_format in STREAM_COPY_FORMATS:
+			# Copy modes must probe before choosing a container and, for M4A,
+			# must reject non-AAC sources even when preflight UI is disabled.
+			plan = self.create_plan(
+				path_list,
+				settings,
+				source_root=source_root,
+			)
+		if plan is None:
+			files, ignored, skipped_files = self._collect_job_files(path_list, settings)
+			plan_items: Sequence[ConversionPlanItem] | None = None
+		else:
+			files = [Path(item.source_path) for item in plan.items]
+			ignored = plan.ignored
+			skipped_files = list(plan.skipped_files)
+			plan_items = plan.items
 		summary = ConversionSummary(
 			total=len(files),
 			ignored=ignored,
@@ -764,38 +1373,86 @@ class Converter:
 			if self._cancel_event.is_set():
 				summary.canceled = True
 				break
-			if settings.same_folder:
-				output_directory = source.parent
+			if self._stop_after_current_event.is_set() and index > 1:
+				summary.stopped_after_current = True
+				break
+			planned_item = plan_items[index - 1] if plan_items is not None else None
+			metadata: dict[str, str] = {}
+			duration: float | None = None
+			has_artwork = False
+			source_codec = ""
+			if planned_item is not None:
+				metadata = dict(planned_item.metadata)
+				duration = planned_item.duration
+				has_artwork = planned_item.has_artwork
+				source_codec = planned_item.codec
+				output_directory = Path(planned_item.output_path).parent
+				output = Path(planned_item.output_path)
+				reserved_outputs.add(_normal_path(output))
 			else:
-				output_directory = Path(settings.output_folder)
-				if settings.preserve_folder_structure:
-					output_directory /= _relative_parent(source, root)
-			try:
-				output_directory.mkdir(parents=True, exist_ok=True)
+				_safe_callback(callbacks.on_stage, index, summary.total, source.name, "probing")
+				info = self._probe_media_info(
+					source,
+					include_metadata=self._requires_source_metadata(settings),
+				)
+				metadata = dict(info.metadata)
+				duration = info.duration
+				has_artwork = info.has_artwork
+				source_codec = info.codec
+				output_directory = _output_directory(source, settings, root)
+				base_name = render_output_name(
+					settings.output_name_template,
+					source,
+					output_format_name_for(settings.target_format, info.codec),
+					metadata,
+					index=index,
+				)
 				output = make_unique_output_path(
 					source,
 					output_directory,
-					FORMAT_EXTENSIONS[settings.target_format],
+					output_extension_for(settings.target_format, info.codec),
 					reserved_outputs,
+					base_name=base_name,
 				)
+			try:
+				output_directory.mkdir(parents=True, exist_ok=True)
 			except OSError as error:
-				summary.failed += 1
-				summary.failures.append(
-					ConversionFailure(source.name, str(error), str(source))
-				)
+				self._record_failure(summary, source, str(error))
+				if self._finish_at_boundary(summary):
+					break
 				continue
 
 			_safe_callback(callbacks.on_file_start, index, summary.total, source.name, output.name)
-			duration = self._probe_duration(source)
 			if self._cancel_event.is_set():
 				summary.canceled = True
 				break
-			source_metadata: dict[str, str] = {}
-			if settings.metadata_mode == "selected" and settings.metadata_fields:
-				source_metadata = self._probe_metadata(source)
-				if self._cancel_event.is_set():
-					summary.canceled = True
-					break
+			loudnorm_filter = ""
+			if (
+				settings.target_format not in STREAM_COPY_FORMATS
+				and settings.loudness_preset != "off"
+			):
+				_safe_callback(
+					callbacks.on_stage,
+					index,
+					summary.total,
+					source.name,
+					"analyzingLoudness",
+				)
+				try:
+					measurement = self._analyze_loudness(source, settings)
+					loudnorm_filter = (
+						build_loudnorm_filter(settings, measurement)
+						if measurement
+						else build_loudnorm_filter(settings)
+					)
+				except (OSError, ValueError) as error:
+					if self._cancel_event.is_set():
+						summary.canceled = True
+						break
+					self._record_failure(summary, source, str(error))
+					if self._finish_at_boundary(summary):
+						break
+					continue
 			start_overall_fraction = (index - 1) / max(1, summary.total)
 			_safe_callback(
 				callbacks.on_progress,
@@ -807,6 +1464,11 @@ class Converter:
 				0.0,
 				duration,
 			)
+			_safe_callback(callbacks.on_stage, index, summary.total, source.name, "converting")
+			stream_arguments = self._stream_mapping_arguments(
+				settings,
+				has_artwork=has_artwork,
+			)
 			command = [
 				str(self.ffmpeg_path),
 				"-nostdin",
@@ -816,16 +1478,18 @@ class Converter:
 				"-n",
 				"-i",
 				str(source),
-				"-map",
-				"0:a:0?",
-				"-vn",
-				"-sn",
-				"-dn",
-				*build_metadata_arguments(
-					settings.metadata_mode,
-					settings.metadata_fields,
-					source_metadata,
+				*stream_arguments,
+				*self._metadata_arguments(settings, metadata),
+				"-map_chapters",
+				(
+					"0"
+					if (
+						settings.copy_chapters
+						and settings.target_format != ORIGINAL_AUDIO_COPY_FORMAT
+					)
+					else "-1"
 				),
+				*(["-af", loudnorm_filter] if loudnorm_filter else []),
 				*build_codec_arguments(
 					settings.target_format,
 					settings.quality,
@@ -862,7 +1526,40 @@ class Converter:
 				summary.canceled = True
 				self._remove_partial_output(output)
 				break
-			if return_code == 0 and output.is_file() and output.stat().st_size > 0:
+			valid_output = False
+			if return_code == 0:
+				try:
+					valid_output = output.is_file() and output.stat().st_size > 0
+				except OSError as error:
+					error_message = str(error)
+			if valid_output:
+				if settings.verify_output:
+					_safe_callback(
+						callbacks.on_stage,
+						index,
+						summary.total,
+						source.name,
+						"verifying",
+					)
+					verified, verification_error = self._verify_output(
+						output,
+						duration,
+						expected_codec=(
+							source_codec
+							if settings.target_format in STREAM_COPY_FORMATS
+							else ""
+						),
+					)
+					if self._cancel_event.is_set():
+						summary.canceled = True
+						self._remove_partial_output(output)
+						break
+					if not verified:
+						self._remove_partial_output(output)
+						self._record_failure(summary, source, verification_error)
+						if self._finish_at_boundary(summary):
+							break
+						continue
 				summary.succeeded += 1
 				summary.outputs.append(str(output))
 				summary.successes.append(
@@ -882,17 +1579,134 @@ class Converter:
 					duration,
 				)
 				_safe_callback(callbacks.on_file_done, index, summary.total, source.name, output.name)
+				if self._finish_at_boundary(summary):
+					break
 				continue
 			self._remove_partial_output(output)
-			summary.failed += 1
-			summary.failures.append(
-				ConversionFailure(
-					source.name,
-					_redact_ffmpeg_error(error_message, source, output),
-					str(source),
+			self._record_failure(
+				summary,
+				source,
+				_redact_ffmpeg_error(error_message, source, output),
+			)
+			if self._finish_at_boundary(summary):
+				break
+		return summary
+
+	def _require_ffmpeg(self) -> None:
+		if not self.ffmpeg_path.is_file():
+			raise FileNotFoundError("The bundled FFmpeg executable is missing")
+
+	def _collect_job_files(
+		self,
+		path_list: Sequence[str | os.PathLike[str]],
+		settings: ConversionSettings,
+	) -> tuple[list[Path], int, list[SkippedFile]]:
+		excluded_roots: tuple[Path, ...] = ()
+		if not settings.same_folder and settings.output_folder:
+			output_root = Path(settings.output_folder)
+			output_normalized = _normal_path(output_root)
+			input_directories = [Path(path) for path in path_list if Path(path).is_dir()]
+			if any(
+				output_normalized.startswith(_normal_path(directory).rstrip("\\/") + os.sep)
+				for directory in input_directories
+			):
+				excluded_roots = (output_root,)
+		return collect_audio_files_detailed(
+			path_list,
+			recursive=settings.include_subfolders,
+			excluded_roots=excluded_roots,
+			folder_excluded_extensions=(
+				()
+				if settings.target_format == ORIGINAL_AUDIO_COPY_FORMAT
+				else (FORMAT_EXTENSIONS[settings.target_format],)
+			),
+		)
+
+	@staticmethod
+	def _requires_source_metadata(settings: ConversionSettings) -> bool:
+		if (
+			settings.target_format != ORIGINAL_AUDIO_COPY_FORMAT
+			and settings.metadata_mode == "selected"
+			and settings.metadata_fields
+		):
+			return True
+		return any(
+			f"{{{field_name}}}" in settings.output_name_template
+			for field_name in ("title", "artist", "album", "track", "disc")
+		)
+
+	@staticmethod
+	def _metadata_arguments(
+		settings: ConversionSettings,
+		metadata: Mapping[str, str],
+	) -> list[str]:
+		if settings.target_format == ORIGINAL_AUDIO_COPY_FORMAT:
+			return ["-map_metadata", "-1"]
+		return build_metadata_arguments(
+			settings.metadata_mode,
+			settings.metadata_fields,
+			metadata,
+		)
+
+	@staticmethod
+	def _record_failure(summary: ConversionSummary, source: Path, message: str) -> None:
+		summary.failed += 1
+		summary.failures.append(ConversionFailure(source.name, message, str(source)))
+
+	def _finish_at_boundary(self, summary: ConversionSummary) -> bool:
+		if not self._stop_after_current_event.is_set():
+			return False
+		summary.stopped_after_current = True
+		return True
+
+	@staticmethod
+	def _stream_mapping_arguments(
+		settings: ConversionSettings,
+		*,
+		has_artwork: bool,
+	) -> list[str]:
+		audio_stream = "0:a:0" if settings.target_format in STREAM_COPY_FORMATS else "0:a:0?"
+		arguments = ["-map", audio_stream, "-sn", "-dn"]
+		if settings.copy_artwork and has_artwork and settings.target_format in ARTWORK_TARGET_FORMATS:
+			arguments.extend(
+				(
+					"-map",
+					"0:v:disp:attached_pic?",
+					"-c:v",
+					"copy",
+					"-disposition:v:0",
+					"attached_pic",
 				)
 			)
-		return summary
+		else:
+			arguments.append("-vn")
+		return arguments
+
+	@staticmethod
+	def _plan_destination(
+		items: Sequence[ConversionPlanItem],
+		settings: ConversionSettings,
+	) -> tuple[str, int | None]:
+		if not items:
+			return (settings.output_folder if not settings.same_folder else ""), None
+		if settings.same_folder:
+			directories = tuple(dict.fromkeys(str(Path(item.output_path).parent) for item in items))
+			if len(directories) == 1:
+				destination = directories[0]
+			else:
+				try:
+					destination = os.path.commonpath(directories)
+				except ValueError:
+					destination = directories[0]
+		else:
+			destination = settings.output_folder
+		probe = Path(destination)
+		while not probe.exists() and probe.parent != probe:
+			probe = probe.parent
+		try:
+			return destination, shutil.disk_usage(probe).free
+		except OSError:
+			return destination, None
 
 	def _start_process(self, command: list[str], **kwargs) -> subprocess.Popen[str]:
 		creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
@@ -923,7 +1737,7 @@ class Converter:
 		self,
 		command: list[str],
 		*,
-		timeout: float = 15,
+		timeout: float | None = 15,
 	) -> tuple[int, str, str]:
 		process = self._start_process(
 			command,
@@ -947,18 +1761,31 @@ class Converter:
 		finally:
 			self._clear_process(process)
 
-	def _probe_duration(self, source: Path) -> float | None:
+	def _probe_media_info(self, source: Path, *, include_metadata: bool) -> MediaInfo:
 		if self._cancel_event.is_set():
-			return None
-		_command = [
+			return MediaInfo(source_path=str(source))
+		command = [
 			str(self.ffmpeg_path),
 			"-nostdin",
 			"-hide_banner",
 			"-i",
 			str(source),
 		]
-		_return_code, _stdout, stderr = self._capture_process(_command)
-		return parse_duration(stderr)
+		_return_code, _stdout, stderr = self._capture_process(command)
+		metadata = self._probe_metadata(source) if include_metadata else {}
+		try:
+			size_bytes = source.stat().st_size
+		except OSError:
+			size_bytes = 0
+		return parse_media_info(
+			stderr,
+			source_path=str(source),
+			size_bytes=size_bytes,
+			metadata=metadata,
+		)
+
+	def _probe_duration(self, source: Path) -> float | None:
+		return self._probe_media_info(source, include_metadata=False).duration
 
 	def _probe_metadata(self, source: Path) -> dict[str, str]:
 		if self._cancel_event.is_set():
@@ -979,6 +1806,98 @@ class Converter:
 		]
 		_return_code, stdout, _stderr = self._capture_process(command)
 		return parse_ffmetadata(stdout)
+
+	def _analyze_loudness(
+		self,
+		source: Path,
+		settings: ConversionSettings,
+	) -> dict[str, float]:
+		first_pass_filter = build_loudnorm_filter(settings)
+		if not first_pass_filter:
+			return {}
+		command = [
+			str(self.ffmpeg_path),
+			"-nostdin",
+			"-hide_banner",
+			"-loglevel",
+			"info",
+			"-i",
+			str(source),
+			"-map",
+			"0:a:0?",
+			"-vn",
+			"-sn",
+			"-dn",
+			"-af",
+			first_pass_filter,
+			"-f",
+			"null",
+			os.devnull,
+		]
+		return_code, _stdout, stderr = self._capture_process(command, timeout=None)
+		if self._cancel_event.is_set():
+			raise OSError("Loudness analysis was canceled")
+		if return_code != 0:
+			raise OSError(_redact_ffmpeg_error(stderr, source, Path(os.devnull)))
+		try:
+			return parse_loudnorm_measurement(stderr)
+		except ValueError:
+			if re.search(r'"input_i"\s*:\s*"-inf"', stderr, re.IGNORECASE):
+				# Silence cannot produce finite first-pass measurements.
+				# FFmpeg's dynamic loudnorm mode remains safe and preserves silence.
+				return {}
+			raise
+
+	def _verify_output(
+		self,
+		output: Path,
+		source_duration: float | None,
+		*,
+		expected_codec: str = "",
+	) -> tuple[bool, str]:
+		command = [
+			str(self.ffmpeg_path),
+			"-nostdin",
+			"-hide_banner",
+			"-loglevel",
+			"error",
+			"-xerror",
+			"-i",
+			str(output),
+			"-map",
+			"0:a:0?",
+			"-f",
+			"null",
+			os.devnull,
+		]
+		return_code, _stdout, stderr = self._capture_process(command, timeout=None)
+		if return_code != 0:
+			return False, _redact_ffmpeg_error(stderr, output, Path(os.devnull))
+		output_info = self._probe_media_info(output, include_metadata=False)
+		if (
+			expected_codec
+			and _normalized_codec_name(output_info.codec)
+			!= _normalized_codec_name(expected_codec)
+		):
+			return (
+				False,
+				(
+					"Output audio codec differs from the copied source stream "
+					f"({output_info.codec or 'unknown'} versus {expected_codec})"
+				),
+			)
+		output_duration = output_info.duration
+		if source_duration and output_duration is not None:
+			tolerance = max(2.0, source_duration * 0.02)
+			if abs(output_duration - source_duration) > tolerance:
+				return (
+					False,
+					(
+						"Output duration differs from the source "
+						f"({output_duration:.2f} versus {source_duration:.2f} seconds)"
+					),
+				)
+		return True, ""
 
 	def _run_process(
 		self,

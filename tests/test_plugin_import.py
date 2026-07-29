@@ -4,6 +4,7 @@ import importlib
 import sys
 import types
 import unittest
+from collections import deque
 from pathlib import Path
 
 
@@ -13,6 +14,9 @@ GLOBAL_PLUGINS = PROJECT_ROOT / "src" / "globalPlugins"
 
 class _Log:
 	def debugWarning(self, *args, **kwargs):
+		pass
+
+	def error(self, *args, **kwargs):
 		pass
 
 
@@ -80,6 +84,14 @@ class PluginImportTests(unittest.TestCase):
 		wx.ID_OK = 5100
 		install("wx", wx)
 
+		wx_lib = types.ModuleType("wx.lib")
+		scrolledpanel = types.ModuleType("wx.lib.scrolledpanel")
+		scrolledpanel.ScrolledPanel = type("ScrolledPanel", (), {})
+		wx_lib.scrolledpanel = scrolledpanel
+		wx.lib = wx_lib
+		install("wx.lib", wx_lib)
+		install("wx.lib.scrolledpanel", scrolledpanel)
+
 		log_handler = types.ModuleType("logHandler")
 		log_handler.log = _Log()
 		install("logHandler", log_handler)
@@ -112,11 +124,21 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.2.0", self.module.ADDON_VERSION)
-		self.assertEqual("Easy Audio Converter", self.module.EasyAudioConverterSettingsPanel.title)
-		self.assertEqual(0, self.module.EasyAudioConverterSettingsPanel.STANDARD_TAB)
-		self.assertEqual(1, self.module.EasyAudioConverterSettingsPanel.ADVANCED_TAB)
-		self.assertEqual(16, len(self.module.FORMAT_KEYS))
+		self.assertEqual("1.3.0", self.module.ADDON_VERSION)
+		dialog = self.module.EasyAudioConverterSettingsDialog
+		self.assertEqual("Easy Audio Converter settings", dialog.title)
+		self.assertEqual(0, dialog.STANDARD_TAB)
+		self.assertEqual(1, dialog.ADVANCED_TAB)
+		self.assertEqual(2, dialog.PROCESSING_TAB)
+		self.assertEqual(18, len(self.module.FORMAT_KEYS))
+		self.assertEqual(
+			"Extract original audio stream (no re-encoding)",
+			self.module._format_labels()[self.module.ORIGINAL_AUDIO_COPY_FORMAT],
+		)
+		self.assertEqual(
+			"Remux AAC to M4A (no re-encoding)",
+			self.module._format_labels()[self.module.AAC_M4A_COPY_FORMAT],
+		)
 
 	def test_all_script_actions_are_exposed(self):
 		expected = {
@@ -129,6 +151,10 @@ class PluginImportTests(unittest.TestCase):
 			"script_cycleQuality",
 			"script_chooseDestinationFolder",
 			"script_cancelConversion",
+			"script_stopAfterCurrent",
+			"script_reportQueue",
+			"script_clearQueue",
+			"script_showSelectedAudioInfo",
 			"script_showProgress",
 			"script_showResults",
 			"script_reportStatus",
@@ -137,86 +163,89 @@ class PluginImportTests(unittest.TestCase):
 		}
 		self.assertTrue(expected.issubset(set(dir(self.module.GlobalPlugin))))
 
-	def test_stale_hidden_nvda_settings_dialog_is_destroyed(self):
-		class Dialog(self.module.NVDASettingsDialog):
-			def __init__(self, shown):
-				self.shown = shown
-				self.destroyed = False
+	def test_plugin_does_not_register_a_category_in_nvda_preferences(self):
+		settings_dialogs = sys.modules["gui.settingsDialogs"]
+		settings_dialogs.NVDASettingsDialog.categoryClasses.clear()
+		original_ensure = self.module._ensure_config
+		original_install_menu = self.module.GlobalPlugin._install_menu
+		original_updates_allowed = self.module.GlobalPlugin._updates_allowed
+		self.module._ensure_config = lambda: None
+		self.module.GlobalPlugin._install_menu = lambda plugin: None
+		self.module.GlobalPlugin._updates_allowed = staticmethod(lambda: False)
+		try:
+			plugin = self.module.GlobalPlugin()
+		finally:
+			self.module._ensure_config = original_ensure
+			self.module.GlobalPlugin._install_menu = original_install_menu
+			self.module.GlobalPlugin._updates_allowed = original_updates_allowed
+		self.assertEqual([], settings_dialogs.NVDASettingsDialog.categoryClasses)
+		self.assertIsNone(plugin._settings_dialog)
 
-			def IsShown(self):
-				return self.shown
+	def test_standalone_settings_dialog_has_balanced_popup_lifecycle(self):
+		calls = []
+		gui_module = sys.modules["gui"]
+		original_dialog = self.module.EasyAudioConverterSettingsDialog
+		original_main_frame = gui_module.mainFrame
+
+		class Dialog:
+			def __init__(self, parent, initial_tab):
+				calls.append(("create", parent, initial_tab))
+
+			def ShowModal(self):
+				calls.append(("show",))
+				return 0
 
 			def Destroy(self):
-				self.destroyed = True
+				calls.append(("destroy",))
 
-		visible = Dialog(True)
-		hidden = Dialog(False)
-		wx_module = sys.modules["wx"]
-		original = getattr(wx_module, "GetTopLevelWindows", None)
-		wx_module.GetTopLevelWindows = lambda: (visible, hidden)
-		try:
-			self.assertEqual(1, self.module._destroy_hidden_nvda_settings_dialogs())
-		finally:
-			if original is None:
-				del wx_module.GetTopLevelWindows
-			else:
-				wx_module.GetTopLevelWindows = original
-		self.assertFalse(visible.destroyed)
-		self.assertTrue(hidden.destroyed)
-
-	def test_settings_recovery_retains_delayed_open_until_it_runs(self):
-		class Timer:
-			def Stop(self):
-				pass
-
-		timer = Timer()
-		callbacks = []
-		popup_calls = []
-		wx_module = sys.modules["wx"]
-		gui_module = sys.modules["gui"]
-		original_destroy = self.module._destroy_hidden_nvda_settings_dialogs
-		original_call_later = getattr(wx_module, "CallLater", None)
-		original_popup = getattr(gui_module.mainFrame, "popupSettingsDialog", None)
-		self.module._destroy_hidden_nvda_settings_dialogs = lambda: 1
-		wx_module.CallLater = lambda _delay, callback: callbacks.append(callback) or timer
-		gui_module.mainFrame.popupSettingsDialog = lambda *args: popup_calls.append(args)
+		main_frame = types.SimpleNamespace(
+			prePopup=lambda: calls.append(("pre",)),
+			postPopup=lambda: calls.append(("post",)),
+		)
+		gui_module.mainFrame = main_frame
+		self.module.EasyAudioConverterSettingsDialog = Dialog
 		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
-		plugin._settings_open_timer = None
+		plugin._settings_dialog = None
 		plugin._terminated = False
 		try:
-			plugin._open_settings_panel(self.module.EasyAudioConverterSettingsPanel)
-			self.assertIs(timer, plugin._settings_open_timer)
-			self.assertEqual(1, len(callbacks))
-			callbacks[0]()
-			self.assertIsNone(plugin._settings_open_timer)
-			self.assertEqual(
-				[
-					(
-						self.module.NVDASettingsDialog,
-						self.module.EasyAudioConverterSettingsPanel,
-					)
-				],
-				popup_calls,
-			)
+			plugin._open_settings_dialog(original_dialog.ADVANCED_TAB)
 		finally:
-			self.module._destroy_hidden_nvda_settings_dialogs = original_destroy
-			if original_call_later is None:
-				del wx_module.CallLater
-			else:
-				wx_module.CallLater = original_call_later
-			if original_popup is None:
-				del gui_module.mainFrame.popupSettingsDialog
-			else:
-				gui_module.mainFrame.popupSettingsDialog = original_popup
+			self.module.EasyAudioConverterSettingsDialog = original_dialog
+			gui_module.mainFrame = original_main_frame
+		self.assertEqual(
+			[
+				("pre",),
+				("create", main_frame, original_dialog.ADVANCED_TAB),
+				("show",),
+				("destroy",),
+				("post",),
+			],
+			calls,
+		)
+		self.assertIsNone(plugin._settings_dialog)
 
-	def test_advanced_settings_command_targets_the_unified_panel(self):
+	def test_existing_settings_dialog_is_focused_instead_of_duplicated(self):
+		calls = []
+		dialog = types.SimpleNamespace(
+			Raise=lambda: calls.append("raise"),
+			SetFocus=lambda: calls.append("focus"),
+		)
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._settings_dialog = dialog
+		plugin._terminated = False
+		plugin._open_settings_dialog()
+		self.assertEqual(["raise", "focus"], calls)
+		self.assertIs(dialog, plugin._settings_dialog)
+
+	def test_settings_commands_target_the_requested_standalone_tabs(self):
 		calls = []
 		wx_module = sys.modules["wx"]
 		original_call_after = getattr(wx_module, "CallAfter", None)
 		wx_module.CallAfter = lambda callback, *args: callback(*args)
 		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
-		plugin._open_settings_panel = lambda panel, tab: calls.append((panel, tab))
+		plugin._open_settings_dialog = lambda tab: calls.append(tab)
 		try:
+			plugin.script_openSettings(None)
 			plugin.script_openAdvancedSettings(None)
 		finally:
 			if original_call_after is None:
@@ -225,24 +254,166 @@ class PluginImportTests(unittest.TestCase):
 				wx_module.CallAfter = original_call_after
 		self.assertEqual(
 			[
-				(
-					self.module.EasyAudioConverterSettingsPanel,
-					self.module.EasyAudioConverterSettingsPanel.ADVANCED_TAB,
-				)
+				self.module.EasyAudioConverterSettingsDialog.STANDARD_TAB,
+				self.module.EasyAudioConverterSettingsDialog.ADVANCED_TAB,
 			],
 			calls,
 		)
 
-	def test_advanced_tab_request_is_one_shot(self):
-		panel = self.module.EasyAudioConverterSettingsPanel
-		panel.requestInitialTab(panel.ADVANCED_TAB)
-		self.assertEqual(panel.ADVANCED_TAB, panel._takeInitialTab())
-		self.assertEqual(panel.STANDARD_TAB, panel._takeInitialTab())
+	def test_settings_ok_validates_then_saves_all_tabs(self):
+		calls = []
+
+		class Page:
+			def __init__(self, name, valid=True):
+				self.name = name
+				self.valid = valid
+
+			def isValid(self):
+				calls.append(("validate", self.name))
+				return self.valid
+
+			def onSave(self):
+				calls.append(("save", self.name))
+
+		dialog = self.module.EasyAudioConverterSettingsDialog.__new__(
+			self.module.EasyAudioConverterSettingsDialog
+		)
+		dialog.standard_page = Page("standard")
+		dialog.advanced_page = Page("advanced")
+		dialog.processing_page = Page("processing")
+		dialog.EndModal = lambda result: calls.append(("close", result))
+		conf = sys.modules["config"].conf
+		original_save = getattr(conf, "save", None)
+		conf.save = lambda: calls.append(("save", "configuration"))
+		try:
+			dialog._on_ok(None)
+		finally:
+			if original_save is None:
+				del conf.save
+			else:
+				conf.save = original_save
+		self.assertEqual(
+			[
+				("validate", "standard"),
+				("save", "standard"),
+				("save", "advanced"),
+				("save", "processing"),
+				("save", "configuration"),
+				("close", sys.modules["wx"].ID_OK),
+			],
+			calls,
+		)
+
+	def test_invalid_settings_stay_open_on_the_standard_tab(self):
+		calls = []
+		wx_module = sys.modules["wx"]
+		original_call_after = getattr(wx_module, "CallAfter", None)
+		wx_module.CallAfter = lambda callback, *args: callback(*args)
+		dialog = self.module.EasyAudioConverterSettingsDialog.__new__(
+			self.module.EasyAudioConverterSettingsDialog
+		)
+		dialog.standard_page = types.SimpleNamespace(
+			isValid=lambda: False,
+			output_name_template=types.SimpleNamespace(
+				SetFocus=lambda: calls.append("focus")
+			),
+			onSave=lambda: calls.append("save standard"),
+		)
+		dialog.advanced_page = types.SimpleNamespace(
+			onSave=lambda: calls.append("save advanced")
+		)
+		dialog.processing_page = types.SimpleNamespace(
+			onSave=lambda: calls.append("save processing")
+		)
+		dialog.notebook = types.SimpleNamespace(
+			SetSelection=lambda tab: calls.append(("tab", tab))
+		)
+		dialog.EndModal = lambda result: calls.append(("close", result))
+		try:
+			dialog._on_ok(None)
+		finally:
+			if original_call_after is None:
+				del wx_module.CallAfter
+			else:
+				wx_module.CallAfter = original_call_after
+		self.assertEqual(
+			[
+				("tab", self.module.EasyAudioConverterSettingsDialog.STANDARD_TAB),
+				"focus",
+			],
+			calls,
+		)
 
 	def test_notebook_accessibility_reports_the_real_tab_count(self):
 		notebook = types.SimpleNamespace(GetPageCount=lambda: 2)
 		accessible = self.module._SettingsNotebookAccessible(notebook)
 		self.assertEqual((0, 2), accessible.GetChildCount())
+
+	def test_decimal_spin_control_has_an_explicit_accessible_name(self):
+		class Sizer:
+			def __init__(self, orientation):
+				self.orientation = orientation
+				self.items = []
+
+			def Add(self, item, proportion, flags=0, border=0):
+				self.items.append((item, proportion, flags, border))
+
+		class StaticText:
+			def __init__(self, parent, label):
+				self.parent = parent
+				self.label = label
+
+		class SpinCtrlDouble:
+			def __init__(self, parent, **kwargs):
+				self.parent = parent
+				self.kwargs = kwargs
+				self.digits = None
+				self.name = ""
+
+			def SetDigits(self, digits):
+				self.digits = digits
+
+			def SetName(self, name):
+				self.name = name
+
+		wx_module = sys.modules["wx"]
+		missing = object()
+		replacements = {
+			"BoxSizer": Sizer,
+			"StaticText": StaticText,
+			"SpinCtrlDouble": SpinCtrlDouble,
+			"HORIZONTAL": 1,
+			"ALIGN_CENTER_VERTICAL": 2,
+			"RIGHT": 4,
+		}
+		originals = {
+			name: getattr(wx_module, name, missing)
+			for name in replacements
+		}
+		for name, value in replacements.items():
+			setattr(wx_module, name, value)
+		added = []
+		helper = types.SimpleNamespace(addItem=added.append)
+		try:
+			control = self.module._add_labeled_spin_double(
+				helper,
+				object(),
+				"&Custom loudness:",
+				minimum=-70.0,
+				maximum=-5.0,
+				initial=-16.0,
+				increment=0.5,
+			)
+		finally:
+			for name, original in originals.items():
+				if original is missing:
+					delattr(wx_module, name)
+				else:
+					setattr(wx_module, name, original)
+		self.assertEqual("Custom loudness", control.name)
+		self.assertEqual(1, control.digits)
+		self.assertEqual(1, len(added))
+		self.assertEqual(-16.0, control.kwargs["initial"])
 
 	def test_completion_sound_uses_the_bundled_wave_file(self):
 		calls = []
@@ -259,6 +430,82 @@ class PluginImportTests(unittest.TestCase):
 			calls,
 		)
 		self.assertTrue(self.module.COMPLETION_SOUND_PATH.is_file())
+		self.assertTrue(self.module.ERROR_SOUND_PATH.is_file())
+		self.assertTrue(self.module.CANCEL_SOUND_PATH.is_file())
+
+	def test_busy_conversion_is_queued_with_an_immutable_snapshot(self):
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._converter = object()
+		plugin._job_queue = deque()
+		plugin._progress_dialog = None
+		settings = self.module.ConversionSettings(
+			target_format="opus",
+			advanced_options={"enabled": True, "bitrate": 96},
+		)
+		plugin._start_conversion([r"D:\input.wav"], settings=settings)
+		self.assertEqual(1, len(plugin._job_queue))
+		job = plugin._job_queue[0]
+		self.assertEqual((r"D:\input.wav",), job.paths)
+		self.assertEqual("opus", job.settings.target_format)
+		self.assertIsNot(job.settings.advanced_options, settings.advanced_options)
+
+	def test_next_queued_job_starts_after_current_job_releases(self):
+		started = []
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._terminated = False
+		plugin._converter = None
+		job = self.module._ConversionJob(
+			("input.wav",),
+			self.module.ConversionSettings(),
+		)
+		plugin._job_queue = deque([job])
+		plugin._launch_conversion_job = started.append
+		plugin._launch_next_queued_job()
+		self.assertEqual([job], started)
+		self.assertEqual(0, len(plugin._job_queue))
+
+	def test_missing_ffmpeg_clears_jobs_that_cannot_run(self):
+		job = self.module._ConversionJob(
+			("input.wav",),
+			self.module.ConversionSettings(),
+		)
+		queue_counts = []
+		messages = []
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._job_queue = deque([job, job])
+		plugin._progress_dialog = types.SimpleNamespace(
+			set_queue_count=queue_counts.append,
+		)
+		plugin._ffmpeg_path = lambda: Path(r"Z:\missing-easy-audio-converter-ffmpeg.exe")
+		gui_module = sys.modules["gui"]
+		wx_module = sys.modules["wx"]
+		original_message_box = getattr(gui_module, "messageBox", None)
+		original_ui_message = self.module.ui.message
+		original_ok = getattr(wx_module, "OK", None)
+		original_icon_error = getattr(wx_module, "ICON_ERROR", None)
+		gui_module.messageBox = lambda *args, **kwargs: None
+		self.module.ui.message = messages.append
+		wx_module.OK = 1
+		wx_module.ICON_ERROR = 2
+		try:
+			plugin._launch_conversion_job(job)
+		finally:
+			if original_message_box is None:
+				del gui_module.messageBox
+			else:
+				gui_module.messageBox = original_message_box
+			self.module.ui.message = original_ui_message
+			if original_ok is None:
+				del wx_module.OK
+			else:
+				wx_module.OK = original_ok
+			if original_icon_error is None:
+				del wx_module.ICON_ERROR
+			else:
+				wx_module.ICON_ERROR = original_icon_error
+		self.assertEqual(0, len(plugin._job_queue))
+		self.assertEqual([0], queue_counts)
+		self.assertEqual(["Cleared 2 queued conversion jobs"], messages)
 
 	def test_job_completion_sound_requires_every_file_to_succeed(self):
 		summaries = (

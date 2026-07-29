@@ -19,9 +19,11 @@
 ## Conversion lifecycle
 
 1. The NVDA plug-in reads a snapshot of the settings.
-2. The worker collects supported input files before writing outputs. Folder
-   scans skip files whose extension already matches the target; an explicitly
-   selected file remains eligible for intentional same-format conversion.
+2. The worker collects supported input files before writing outputs. For
+   encoded targets, folder scans skip files whose extension already matches
+   the target; an explicitly selected file remains eligible for intentional
+   same-format conversion. Original-stream extraction has no fixed target
+   extension, so every supported source remains eligible.
 3. For each file, FFmpeg is queried for duration and, when needed, metadata.
 4. A collision-free output path is reserved.
 5. FFmpeg writes key/value progress to `pipe:1`; stderr is drained in parallel.
@@ -79,6 +81,26 @@ The three modes are:
 Artwork is a media stream rather than text metadata and is intentionally not
 included by the metadata selector.
 
+## Stream-copy modes
+
+Both no-re-encoding modes probe the first audio stream during planning, map
+exactly `0:a:0`, and pass `-c:a copy` to FFmpeg. They never apply quality
+presets, loudness filters, resampling, channel conversion, or advanced codec
+overrides.
+
+Original-stream extraction chooses an output extension from the detected
+codec, including AAC, MP3, Opus, Vorbis, FLAC, ALAC, WAV PCM, and AIFF PCM.
+An uncommon stream that has no dedicated raw extension is placed in `.mka`,
+which is the safe generic audio-container fallback. This mode deliberately
+strips text metadata, artwork, video, and chapters so the result contains only
+the unchanged first audio stream.
+
+AAC-to-M4A remuxing accepts only a detected AAC first stream. Other codecs and
+files without audio become explicit preflight skips instead of failed FFmpeg
+jobs. M4A metadata, artwork, and chapters can follow the normal preservation
+settings because the target container is known. Deep verification checks both
+decodability/duration and that the output codec still matches the source.
+
 ## Advanced codec profiles
 
 Profiles are stored as JSON in the NVDA configuration, separately for each
@@ -91,16 +113,21 @@ target format. Only validated values are converted into FFmpeg arguments:
 - PCM bit depth for WAV and AIFF.
 
 Raw command-line fragments are not accepted.
+Stream-copy modes always disable these overrides.
 
-## Settings-window recovery
+## Standalone settings window
 
-NVDA allows only one `NVDASettingsDialog` instance. Before opening either
-Easy Audio Converter settings command from the Tools menu, the add-on removes
-any stale hidden instance left in wx and then opens the single Easy Audio
-Converter category. A native notebook inside that category contains the
-standard and advanced pages, and the command selects the requested tab. A
-visible settings dialog is left untouched and receives NVDA's normal
-single-instance behavior.
+The add-on does not register a category in
+`NVDASettingsDialog.categoryClasses`. Both settings commands live under
+Tools, Easy Audio Converter and open one standalone modal `wx.Dialog`. Its
+native notebook contains scrollable Standard, Advanced settings, and
+Processing and notifications pages; the command selects the requested tab.
+The notebook exposes its real three-page count to MSAA.
+
+OK validates the filename template, saves all three pages, and persists the
+NVDA configuration. Cancel or Escape closes the dialog without calling any
+page's save method. A retained dialog reference prevents duplicates, and
+NVDA's `prePopup` and `postPopup` lifecycle calls remain balanced.
 
 ## Bundled FFmpeg
 

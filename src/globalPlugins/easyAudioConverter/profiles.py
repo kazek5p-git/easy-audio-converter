@@ -11,6 +11,7 @@ from .converter import (
 	ADVANCED_CHANNEL_COUNTS,
 	ADVANCED_SAMPLE_RATES,
 	FORMAT_KEYS,
+	LOUDNESS_PRESET_KEYS,
 	METADATA_FIELD_KEYS,
 	METADATA_MODE_KEYS,
 	MP3_ENCODER_KEYS,
@@ -22,6 +23,7 @@ from .converter import (
 PROFILE_SCHEMA_VERSION = 1
 MAX_USER_PROFILES = 50
 MAX_PROFILE_NAME_LENGTH = 80
+MAX_PROFILE_DOCUMENT_BYTES = 256 * 1024
 
 
 @dataclass(frozen=True)
@@ -51,6 +53,16 @@ def _safe_int(value: Any, fallback: int) -> int:
 		return int(value)
 	except (TypeError, ValueError):
 		return fallback
+
+
+def _safe_float(value: Any, fallback: float, minimum: float, maximum: float) -> float:
+	try:
+		result = float(value)
+	except (TypeError, ValueError):
+		return fallback
+	if result != result or not minimum <= result <= maximum:
+		return fallback
+	return result
 
 
 def _advanced_options_from_mapping(
@@ -94,6 +106,15 @@ def conversion_settings_to_mapping(settings: ConversionSettings) -> dict[str, An
 		"metadataMode": settings.metadata_mode,
 		"metadataFields": list(settings.metadata_fields),
 		"advancedOptions": _advanced_options_from_mapping(settings.advanced_options, {}),
+		"outputNameTemplate": settings.output_name_template,
+		"loudnessPreset": settings.loudness_preset,
+		"loudnessTargetI": settings.loudness_target_i,
+		"loudnessTargetTP": settings.loudness_target_tp,
+		"loudnessTargetLRA": settings.loudness_target_lra,
+		"copyArtwork": settings.copy_artwork,
+		"copyChapters": settings.copy_chapters,
+		"verifyOutput": settings.verify_output,
+		"showPreflight": settings.show_preflight,
 	}
 
 
@@ -151,6 +172,36 @@ def conversion_settings_from_mapping(
 			raw.get("advancedOptions"),
 			base.advanced_options,
 		),
+		output_name_template=str(
+			raw.get("outputNameTemplate") or base.output_name_template
+		)[:240],
+		loudness_preset=_validated_key(
+			raw.get("loudnessPreset"),
+			LOUDNESS_PRESET_KEYS,
+			base.loudness_preset,
+		),
+		loudness_target_i=_safe_float(
+			raw.get("loudnessTargetI"),
+			base.loudness_target_i,
+			-70.0,
+			-5.0,
+		),
+		loudness_target_tp=_safe_float(
+			raw.get("loudnessTargetTP"),
+			base.loudness_target_tp,
+			-9.0,
+			0.0,
+		),
+		loudness_target_lra=_safe_float(
+			raw.get("loudnessTargetLRA"),
+			base.loudness_target_lra,
+			1.0,
+			50.0,
+		),
+		copy_artwork=_validated_bool(raw.get("copyArtwork"), base.copy_artwork),
+		copy_chapters=_validated_bool(raw.get("copyChapters"), base.copy_chapters),
+		verify_output=_validated_bool(raw.get("verifyOutput"), base.verify_output),
+		show_preflight=_validated_bool(raw.get("showPreflight"), base.show_preflight),
 	)
 	settings.validate()
 	return settings
@@ -162,8 +213,11 @@ def load_user_profiles(
 	fallback: ConversionSettings | None = None,
 ) -> list[NamedConversionProfile]:
 	"""Load the bounded, versioned profile list from an NVDA config value."""
+	document = str(value or "{}")
+	if len(document.encode("utf-8", errors="replace")) > MAX_PROFILE_DOCUMENT_BYTES:
+		return []
 	try:
-		payload = json.loads(str(value or "{}"))
+		payload = json.loads(document)
 	except (TypeError, ValueError):
 		return []
 	if not isinstance(payload, Mapping):
@@ -258,3 +312,14 @@ def remove_user_profile(
 		for profile in profiles
 		if normalize_profile_name(profile.name).casefold() != name_key
 	]
+
+
+def merge_user_profiles(
+	current: Iterable[NamedConversionProfile],
+	imported: Iterable[NamedConversionProfile],
+) -> list[NamedConversionProfile]:
+	"""Merge imported profiles, replacing same-name entries deterministically."""
+	result = list(current)
+	for profile in imported:
+		result = upsert_user_profile(result, profile)
+	return result

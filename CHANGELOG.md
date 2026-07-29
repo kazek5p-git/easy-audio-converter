@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.3.0
+
+- Added an accessible preflight plan with actual output names, skipped counts,
+  destination, total duration, estimated output size, free disk space, and a
+  lossy-to-lossy quality warning.
+- Added metadata-aware output filename templates with Windows-safe
+  sanitization, collision protection, and previews.
+- Added selected-file technical information for codec, container, duration,
+  bitrate, channels, sample rate, size, metadata, artwork, and chapters.
+- Added professional two-pass EBU R128 loudness normalization with podcast,
+  music/streaming, broadcast, and custom targets.
+- Added optional embedded-cover and chapter copying plus deep output
+  verification by full decode and duration comparison.
+- Added a sequential job queue, queue reporting/clearing, and “stop after the
+  current file” alongside immediate cancellation.
+- Added safe JSON import and export for complete named profiles.
+- Added separate configurable and testable success, error, and cancellation
+  sounds.
+- Added extraction of the first original audio stream without re-encoding,
+  with automatic codec-aware output extensions and a safe Matroska fallback.
+- Added direct AAC-to-M4A remuxing without re-encoding; non-AAC sources are
+  identified and skipped before FFmpeg starts.
+- Moved add-on settings out of the main NVDA Preferences list into one
+  standalone, resizable window under Tools, with three accessible tabs and
+  standard OK and Cancel buttons. Both settings commands open the requested
+  tab in this same window.
+
 ## 1.2.0
 
 - Added an accessible “Convert with options” workflow for one-time format,

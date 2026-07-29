@@ -148,8 +148,9 @@ EDGE_TARGETS = {
 
 MANIFEST_SUMMARY = "Easy Audio Converter"
 MANIFEST_DESCRIPTION = (
-	"Accessible single-file and batch audio conversion with one-time options, "
-	"named profiles, detailed results, and bundled FFmpeg."
+	"Accessible queued audio conversion and no-re-encoding stream extraction "
+	"and remuxing with planning, filename templates, loudness normalization, "
+	"verification, profiles, and bundled FFmpeg."
 )
 
 POLISH = {
@@ -403,9 +404,9 @@ POLISH = {
 	"Use the quality preset": "Użyj ustawienia jakości",
 	MANIFEST_SUMMARY: "Easy Audio Converter",
 	MANIFEST_DESCRIPTION: (
-		"Dostępna konwersja pojedynczych plików i konwersja masowa audio "
-		"z ustawieniami jednorazowymi, nazwanymi profilami, szczegółowymi "
-		"wynikami i dołączonym FFmpeg."
+		"Dostępna kolejkowana konwersja audio oraz wyodrębnianie i remuksowanie "
+		"strumieni bez ponownego kodowania, z planowaniem, szablonami nazw, "
+		"normalizacją głośności, weryfikacją, profilami i dołączonym FFmpeg."
 	),
 }
 
@@ -540,6 +541,253 @@ POLISH.update(
 		"calculating": "obliczanie",
 		"{status} Estimated time remaining {remaining}.": (
 			"{status} Szacowany czas do zakończenia: {remaining}."
+		),
+	}
+)
+
+POLISH.update(
+	{
+		"...and {count} more files": "...oraz {count} dalszych plików",
+		"Analyzing loudness, first pass": "Analizowanie głośności, pierwszy przebieg",
+		"Audio codec: {value}": "Kodek audio: {value}",
+		"Audio file information": "Informacje o pliku audio",
+		"Audio information copied": "Skopiowano informacje o pliku audio",
+		"Audio information is already being read": "Informacje o pliku audio są już odczytywane",
+		"Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}.": (
+			"Informacje o pliku audio są gotowe. Kodek {codec}, czas {duration}, "
+			"częstotliwość próbkowania {sampleRate}."
+		),
+		"Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}.": (
+			"Dostępne pola: {source}, {title}, {artist}, {album}, {track}, "
+			"{disc}, {index}, {format}."
+		),
+		"Bitrate: {value}": "Przepływność: {value}",
+		"Broadcast: -23 LUFS, -2 dBTP": "Emisja: -23 LUFS, -2 dBTP",
+		"Building the conversion plan": "Tworzenie planu konwersji",
+		"Channels: {value}": "Kanały: {value}",
+		"Chapters: {value}": "Rozdziały: {value}",
+		"Clear queued conversion jobs": "Wyczyść oczekujące zadania konwersji",
+		"Clear queued jobs": "Wyczyść oczekujące zadania",
+		"Cleared {count} queued conversion jobs": (
+			"Wyczyszczono oczekujące zadania konwersji: {count}"
+		),
+		"Container: {value}": "Kontener: {value}",
+		"Conversion job added to the queue. Queue position: {position}.": (
+			"Dodano zadanie konwersji do kolejki. Pozycja w kolejce: {position}."
+		),
+		"Conversion plan": "Plan konwersji",
+		"Conversion profiles exported": "Wyeksportowano profile konwersji",
+		"Converting audio, second pass": "Konwertowanie dźwięku, drugi przebieg",
+		"Copy chapter markers": "Kopiuj znaczniki rozdziałów",
+		"Copy embedded cover artwork when supported": (
+			"Kopiuj osadzoną okładkę, jeśli format ją obsługuje"
+		),
+		"Copy embedded cover artwork when the target supports it": (
+			"Kopiuj osadzoną okładkę, jeśli obsługuje ją format docelowy"
+		),
+		"Copy information": "Kopiuj informacje",
+		"Could not copy the audio information": (
+			"Nie udało się skopiować informacji o pliku audio"
+		),
+		"Could not export profiles:\n{error}": "Nie udało się wyeksportować profili:\n{error}",
+		"Could not import profiles:\n{error}": "Nie udało się zaimportować profili:\n{error}",
+		"Could not read audio information:\n{error}": (
+			"Nie udało się odczytać informacji o pliku audio:\n{error}"
+		),
+		"Custom EBU R128 target": "Własny poziom docelowy EBU R128",
+		"Custom integrated loudness in LUFS:": "Własna głośność zintegrowana w LUFS:",
+		"Custom loudness range in LU:": "Własny zakres głośności w LU:",
+		"Custom true peak in dBTP:": "Własny szczyt rzeczywisty w dBTP:",
+		"Deeply verify every output file": "Dokładnie weryfikuj każdy plik wynikowy",
+		"Deeply verify output by decoding it and comparing duration": (
+			"Dokładnie weryfikuj wynik przez dekodowanie i porównanie czasu"
+		),
+		"Destination: {destination}": "Miejsce docelowe: {destination}",
+		"Disabled": "Wyłączona",
+		"Duration: {value}": "Czas: {value}",
+		"Embedded artwork: {value}": "Osadzona okładka: {value}",
+		"Estimated output size: {size}": "Szacowany rozmiar wyników: {size}",
+		"Example album": "Przykładowy album",
+		"Example artist": "Przykładowy wykonawca",
+		"Example filename: {name}": "Przykładowa nazwa pliku: {name}",
+		"Example title": "Przykładowy tytuł",
+		"Export conversion profiles": "Eksport profili konwersji",
+		"Export profiles...": "Eksportuj profile...",
+		"File size: {value}": "Rozmiar pliku: {value}",
+		"Filename preview: {name}": "Podgląd nazwy pliku: {name}",
+		"Files to convert: {count}": "Pliki do konwersji: {count}",
+		"Free disk space: {size}": "Wolne miejsce na dysku: {size}",
+		"GB": "GB",
+		"Import conversion profiles": "Import profili konwersji",
+		"Import profiles...": "Importuj profile...",
+		"Imported {count} conversion profiles": "Zaimportowano profile konwersji: {count}",
+		"Information about the selected audio file...": (
+			"Informacje o zaznaczonym pliku audio..."
+		),
+		"Input size: {size}": "Rozmiar źródeł: {size}",
+		"Invalid filename template: {error}": "Nieprawidłowy szablon nazwy: {error}",
+		"JSON profile files (*.json)|*.json|All files (*.*)|*.*": (
+			"Pliki profili JSON (*.json)|*.json|Wszystkie pliki (*.*)|*.*"
+		),
+		"KB": "KB",
+		"Loudness normalization:": "Normalizacja głośności:",
+		"MB": "MB",
+		"Metadata:": "Metadane:",
+		"Music and streaming: -14 LUFS, -1 dBTP": (
+			"Muzyka i streaming: -14 LUFS, -1 dBTP"
+		),
+		"One conversion is active. Queued jobs: {count}.": (
+			"Jedna konwersja jest aktywna. Oczekujące zadania: {count}."
+		),
+		"Output filename template:": "Szablon nazwy pliku wynikowego:",
+		"Output verification failed because its duration differs from the source.": (
+			"Weryfikacja wyniku nie powiodła się, ponieważ jego czas różni się od źródła."
+		),
+		"Path: {path}": "Ścieżka: {path}",
+		"Planned output files:": "Planowane pliki wynikowe:",
+		"Play a sound when a conversion fails": "Odtwarzaj dźwięk po błędzie konwersji",
+		"Play a sound when a conversion is canceled or stopped": (
+			"Odtwarzaj dźwięk po anulowaniu lub zatrzymaniu konwersji"
+		),
+		"Podcast: -16 LUFS, -1.5 dBTP": "Podcast: -16 LUFS, -1,5 dBTP",
+		"Processing and notifications": "Przetwarzanie i powiadomienia",
+		"Processing options": "Opcje przetwarzania",
+		"Processing options...": "Opcje przetwarzania...",
+		"Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}.": (
+			"Przetwarzanie: głośność {loudness}; okładka {artwork}; "
+			"rozdziały {chapters}; weryfikacja {verification}."
+		),
+		"Queued conversion jobs: {count}.": "Oczekujące zadania konwersji: {count}.",
+		"Queued jobs: 0": "Oczekujące zadania: 0",
+		"Queued jobs: {count}": "Oczekujące zadania: {count}",
+		"Reading audio file information": "Odczytywanie informacji o pliku audio",
+		"Reading audio information": "Odczytywanie informacji o dźwięku",
+		"Report queued conversion jobs": "Odczytaj oczekujące zadania konwersji",
+		"Review conversion plan": "Sprawdź plan konwersji",
+		"Review the plan below. Size estimates are approximate. No source file will be overwritten.": (
+			"Sprawdź poniższy plan. Rozmiary są przybliżone. "
+			"Żaden plik źródłowy nie zostanie nadpisany."
+		),
+		"Sample rate: {value}": "Częstotliwość próbkowania: {value}",
+		"Select exactly one audio file": "Zaznacz dokładnie jeden plik audio",
+		"Show a conversion plan before starting": "Pokazuj plan konwersji przed rozpoczęciem",
+		"Show technical information about the selected audio file": (
+			"Pokaż informacje techniczne o zaznaczonym pliku audio"
+		),
+		"Show the conversion plan before starting": (
+			"Pokaż plan konwersji przed rozpoczęciem"
+		),
+		"Skipped inputs: {count}": "Pominięte źródła: {count}",
+		"Start conversion": "Rozpocznij konwersję",
+		"Starting the next queued conversion. Jobs remaining: {count}.": (
+			"Rozpoczynanie kolejnej konwersji z kolejki. Pozostałe zadania: {count}."
+		),
+		"Stop after current file": "Zatrzymaj po bieżącym pliku",
+		"Stop after the current file": "Zatrzymaj po bieżącym pliku",
+		"Stop the conversion after the current file": (
+			"Zatrzymaj konwersję po bieżącym pliku"
+		),
+		"Stopped after the current file. Completed {done} of {total} files.": (
+			"Zatrzymano po bieżącym pliku. Ukończono {done} z {total} plików."
+		),
+		"Stopping after this file...": "Zatrzymywanie po tym pliku...",
+		"TB": "TB",
+		"Test cancel sound": "Testuj dźwięk anulowania",
+		"Test error sound": "Testuj dźwięk błędu",
+		"Test success sound": "Testuj dźwięk sukcesu",
+		"The conversion queue is empty": "Kolejka konwersji jest pusta",
+		"The conversion will stop after the current file": (
+			"Konwersja zatrzyma się po bieżącym pliku"
+		),
+		"The file does not contain valid conversion profiles.": (
+			"Plik nie zawiera prawidłowych profili konwersji."
+		),
+		"The job was stopped after the current file.": (
+			"Zadanie zatrzymano po bieżącym pliku."
+		),
+		"The profile file is too large.": "Plik profili jest zbyt duży.",
+		"There are no user profiles to export": "Brak profili użytkownika do eksportu",
+		"Total audio duration: {duration}": "Łączny czas nagrań: {duration}",
+		"Verifying the output by decoding it": "Weryfikowanie wyniku przez dekodowanie",
+		"Warning: the estimated output is larger than the available disk space.": (
+			"Ostrzeżenie: szacowany rozmiar wyników przekracza wolne miejsce na dysku."
+		),
+		"Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality.": (
+			"Ostrzeżenie: pliki w liczbie {count} zostaną przekonwertowane z formatu "
+			"stratnego do innego formatu stratnego, co może obniżyć jakość."
+		),
+		"bytes": "bajtów",
+		"no": "nie",
+		"off": "wyłączone",
+		"on": "włączone",
+		"source folders": "foldery źródłowe",
+		"unknown": "nieznane",
+		"yes": "tak",
+		"{stage}. File {index} of {total}: {name}": (
+			"{stage}. Plik {index} z {total}: {name}"
+		),
+		"{stage}. Queued jobs: {count}.": "{stage}. Oczekujące zadania: {count}.",
+		"{stage}. {status} Queued jobs: {count}.": (
+			"{stage}. {status} Oczekujące zadania: {count}."
+		),
+		"{value} Hz": "{value} Hz",
+		"{value} kbps": "{value} kb/s",
+	}
+)
+
+POLISH.update(
+	{
+		"Could not open Easy Audio Converter settings. See the NVDA log for details.": (
+			"Nie udało się otworzyć ustawień Easy Audio Converter. "
+			"Szczegóły znajdują się w dzienniku NVDA."
+		),
+		"Could not save Easy Audio Converter settings. See the NVDA log for details.": (
+			"Nie udało się zapisać ustawień Easy Audio Converter. "
+			"Szczegóły znajdują się w dzienniku NVDA."
+		),
+		"Easy Audio Converter settings": "Ustawienia Easy Audio Converter",
+		"Advanced codec overrides are not used for stream copy": (
+			"Zaawansowane ustawienia kodeka nie są używane podczas kopiowania strumienia"
+		),
+		"Extract original audio stream (no re-encoding)": (
+			"Wyodrębnij oryginalny strumień audio (bez ponownego kodowania)"
+		),
+		"No advanced codec settings are used because the audio stream is copied without re-encoding.": (
+			"Ustawienia zaawansowane kodeka nie są używane, ponieważ strumień "
+			"audio jest kopiowany bez ponownego kodowania."
+		),
+		"No re-encoding: quality, loudness, and advanced codec settings are not used.": (
+			"Bez ponownego kodowania: jakość, normalizacja głośności i "
+			"zaawansowane ustawienia kodeka nie są używane."
+		),
+		"No re-encoding: quality, loudness, metadata, artwork, chapters, and advanced codec settings are not used.": (
+			"Bez ponownego kodowania: jakość, normalizacja głośności, metadane, "
+			"okładki, rozdziały i zaawansowane ustawienia kodeka nie są używane."
+		),
+		"No readable audio stream was found": (
+			"Nie znaleziono możliwego do odczytania strumienia audio"
+		),
+		"Quality is not used when copying audio without re-encoding": (
+			"Jakość nie jest używana podczas kopiowania audio bez ponownego kodowania"
+		),
+		"Remux AAC to M4A (no re-encoding)": (
+			"Remuksuj AAC do M4A (bez ponownego kodowania)"
+		),
+		"The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped.": (
+			"Pierwszy strumień audio AAC zostanie przepakowany do M4A bez "
+			"ponownego kodowania. Źródła, których pierwszy strumień audio nie "
+			"jest AAC, zostaną pominięte."
+		),
+		"The first audio stream is not AAC, so it cannot be remuxed to M4A": (
+			"Pierwszy strumień audio nie jest AAC, więc nie można go przepakować do M4A"
+		),
+		"The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically.": (
+			"Pierwszy strumień audio zostanie wyodrębniony bez ponownego "
+			"kodowania. Jego kodek i jakość pozostaną bez zmian, a rozszerzenie "
+			"wyniku zostanie dobrane automatycznie."
+		),
+		"{name} (extension selected from the source audio codec)": (
+			"{name} (rozszerzenie dobrane do kodeka źródłowego strumienia audio)"
 		),
 	}
 )
@@ -737,7 +985,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.2.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.3.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -779,7 +1027,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.2.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.3.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"
@@ -889,13 +1137,13 @@ def main() -> None:
 		if locale == "pl":
 			manual = {
 				message: POLISH[message]
-				for message in missing_messages
+				for message in runtime_messages
 				if message in POLISH
 			}
 			translations.update(manual)
 			missing_messages = [
 				message
-				for message in missing_messages
+				for message in runtime_messages
 				if not translations.get(message)
 			]
 		if missing_messages:

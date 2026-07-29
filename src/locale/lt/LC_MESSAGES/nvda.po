@@ -1,521 +1,741 @@
-# Easy Audio Converter translation catalog.
-# Generated for NVDA; placeholders were validated automatically.
+# Easy Audio Converter translation.
+# Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.2.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: lt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.3.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-29 19:49+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: lt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1639
+#: src/globalPlugins/easyAudioConverter/__init__.py:2103
+msgid "...and {count} more files"
+msgstr "...ir {count} daugiau failų"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2633
 msgid "...and {count} more skipped files"
 msgstr "... ir {count} daugiau praleistų failų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "16 bit"
 msgstr "16 bitų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "24 bit"
 msgstr "24 bitų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "32 bit"
 msgstr "32 bitų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1230
+#: src/globalPlugins/easyAudioConverter/__init__.py:1955
 msgid "A built-in profile already uses this name."
 msgstr "Įmontuotas profilis jau naudoja šį pavadinimą."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2266 src/globalPlugins/easyAudioConverter/__init__.py:2538 src/globalPlugins/easyAudioConverter/__init__.py:2622
-msgid "A conversion is already in progress"
-msgstr "Konvertavimas jau vyksta"
-
-#: src/globalPlugins/easyAudioConverter/__init__.py:326
+#: src/globalPlugins/easyAudioConverter/__init__.py:393
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:330
+#: src/globalPlugins/easyAudioConverter/__init__.py:397
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:329
+#: src/globalPlugins/easyAudioConverter/__init__.py:396
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:328
+#: src/globalPlugins/easyAudioConverter/__init__.py:395
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC („Apple Lossless“)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:334
+#: src/globalPlugins/easyAudioConverter/__init__.py:401
 msgid "AMR narrowband"
 msgstr "AMR siaurajuostis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:335
+#: src/globalPlugins/easyAudioConverter/__init__.py:402
 msgid "AMR wideband"
 msgstr "AMR plačiajuostis ryšys"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1591
+#: src/globalPlugins/easyAudioConverter/__init__.py:2577
 msgid "Access to the source or destination was denied."
 msgstr "Prieiga prie šaltinio ar paskirties buvo uždrausta."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1725
+#: src/globalPlugins/easyAudioConverter/__init__.py:2719
 msgid "Additional skipped files: {count}"
 msgstr "Papildomi praleisti failai: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1140
+#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+msgid "Advanced codec overrides are not used for stream copy"
+msgstr "Išplėstiniai kodeko nepaisymai nenaudojami srautiniam kopijavimui"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1719
 msgid "Advanced codec overrides: disabled"
 msgstr "Išplėstiniai kodekų perrašymai: išjungti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1138
+#: src/globalPlugins/easyAudioConverter/__init__.py:1717
 msgid "Advanced codec overrides: enabled"
 msgstr "Išplėstiniai kodekų perrašymai: įjungti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1969
+#: src/globalPlugins/easyAudioConverter/__init__.py:2964
 msgid "Advanced codec settings..."
 msgstr "Išplėstiniai kodeko nustatymai..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:679
+#: src/globalPlugins/easyAudioConverter/__init__.py:1029
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:367
+#: src/globalPlugins/easyAudioConverter/__init__.py:471
 msgid "Album"
 msgstr "Albumas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:368
+#: src/globalPlugins/easyAudioConverter/__init__.py:472
 msgid "Album artist"
 msgstr "Albumo atlikėjas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1603
+#: src/globalPlugins/easyAudioConverter/__init__.py:2591
 msgid "Already uses the target format"
 msgstr "Jau naudoja tikslinį formatą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2064
+#: src/globalPlugins/easyAudioConverter/__init__.py:3070
 msgid "An update check is already in progress"
 msgstr "Atnaujinimo patikra jau vyksta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2156
+#: src/globalPlugins/easyAudioConverter/__init__.py:3162
 msgid "An update download is already in progress"
 msgstr "Atnaujinimo atsisiuntimas jau vyksta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:299
+#: src/globalPlugins/easyAudioConverter/__init__.py:2306
+msgid "Analyzing loudness, first pass"
+msgstr "Analizuojamas garsumas, pirmasis praėjimas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:362
 msgid "Archive FLAC"
 msgstr "Archyvas FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:366
+#: src/globalPlugins/easyAudioConverter/__init__.py:470
 msgid "Artist"
 msgstr "Menininkas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:236
+#: src/globalPlugins/easyAudioConverter/__init__.py:291
 msgid "At every file"
 msgstr "Kiekviename faile"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:235
+#: src/globalPlugins/easyAudioConverter/__init__.py:290
 msgid "At progress milestones"
 msgstr "Progreso etapuose"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:264
+#: src/globalPlugins/easyAudioConverter/__init__.py:2160
+msgid "Audio codec: {value}"
+msgstr "Garso kodekas: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2199
+msgid "Audio file information"
+msgstr "Informacija apie garso failą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2236
+msgid "Audio information copied"
+msgstr "Garso informacija nukopijuota"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3898
+msgid "Audio information is already being read"
+msgstr "Garsinė informacija jau skaitoma"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3943
+msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
+msgstr "Paruošta garso informacija. Kodekas {codec}, trukmė {duration}, atrankos dažnis {sampleRate}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:319
 msgid "Audiobook MP3"
 msgstr "Audioknyga MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:576
+#: src/globalPlugins/easyAudioConverter/__init__.py:918
 msgid "Automatic progress announcements:"
 msgstr "Automatiniai pažangos pranešimai:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:586
+#: src/globalPlugins/easyAudioConverter/__init__.py:926
 msgid "Automatically check for add-on updates"
 msgstr "Automatiškai tikrinti papildomus atnaujinimus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:706
+#: src/globalPlugins/easyAudioConverter/__init__.py:664
+msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
+msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1056
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Bitreitas kbps (0 naudoja kokybės nustatymą):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:521 src/globalPlugins/easyAudioConverter/__init__.py:983
+#: src/globalPlugins/easyAudioConverter/__init__.py:2164
+msgid "Bitrate: {value}"
+msgstr "Bitų sparta: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:462
+msgid "Broadcast: -23 LUFS, -2 dBTP"
+msgstr "Transliacija: -23 LUFS, -2 dBTP"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:654 src/globalPlugins/easyAudioConverter/__init__.py:1523
 msgid "Browse..."
 msgstr "Naršyti..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1558 src/globalPlugins/easyAudioConverter/__init__.py:1459 src/globalPlugins/easyAudioConverter/__init__.py:1966
+#: src/globalPlugins/easyAudioConverter/__init__.py:2304
+msgid "Building the conversion plan"
+msgstr "Konversijos plano kūrimas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2532 src/globalPlugins/easyAudioConverter/__init__.py:2408 src/globalPlugins/easyAudioConverter/__init__.py:2959
 msgid "Cancel conversion"
 msgstr "Atšaukti konversiją"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2751
+#: src/globalPlugins/easyAudioConverter/__init__.py:4022
 msgid "Cancel the current audio conversion"
 msgstr "Atšaukite dabartinį garso konvertavimą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2759
+#: src/globalPlugins/easyAudioConverter/__init__.py:4030
 msgid "Canceling the conversion"
 msgstr "Konversijos atšaukimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1566
+#: src/globalPlugins/easyAudioConverter/__init__.py:2542
 msgid "Canceling..."
 msgstr "Atšaukiu..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:391 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:523 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Nepavyko atidaryti palaikymo puslapio. Atidarykite šį adresą rankiniu būdu: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2712
+#: src/globalPlugins/easyAudioConverter/__init__.py:3977
 msgid "Change the conversion quality"
 msgstr "Pakeiskite konversijos kokybę"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2698
+#: src/globalPlugins/easyAudioConverter/__init__.py:3963
 msgid "Change the target audio format"
 msgstr "Pakeiskite tikslinį garso formatą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:719
+#: src/globalPlugins/easyAudioConverter/__init__.py:1069
 msgid "Channels:"
 msgstr "Kanalai:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2838
+#: src/globalPlugins/easyAudioConverter/__init__.py:2171
+msgid "Channels: {value}"
+msgstr "Kanalai: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2183
+msgid "Chapters: {value}"
+msgstr "Skyriai: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4162
 msgid "Check for Easy Audio Converter updates"
 msgstr "Patikrinkite Easy Audio Converter atnaujinimus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1970
+#: src/globalPlugins/easyAudioConverter/__init__.py:2965
 msgid "Check for updates..."
 msgstr "Patikrinkite naujienas..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2067
+#: src/globalPlugins/easyAudioConverter/__init__.py:3073
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Tikrinama, ar yra Easy Audio Converter atnaujinimų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2682
+#: src/globalPlugins/easyAudioConverter/__init__.py:3872
 msgid "Choose a folder to convert"
 msgstr "Pasirinkite aplanką, kurį norite konvertuoti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:870
+#: src/globalPlugins/easyAudioConverter/__init__.py:1281
 msgid "Choose metadata fields"
 msgstr "Pasirinkite metaduomenų laukus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1002
+#: src/globalPlugins/easyAudioConverter/__init__.py:1547
 msgid "Choose metadata fields..."
 msgstr "Pasirinkite metaduomenų laukus..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1172 src/globalPlugins/easyAudioConverter/__init__.py:2733
+#: src/globalPlugins/easyAudioConverter/__init__.py:774 src/globalPlugins/easyAudioConverter/__init__.py:1795 src/globalPlugins/easyAudioConverter/__init__.py:4004
 msgid "Choose the destination folder"
 msgstr "Pasirinkite paskirties aplanką"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1555 src/globalPlugins/easyAudioConverter/__init__.py:1754
+#: src/globalPlugins/easyAudioConverter/__init__.py:4059 src/globalPlugins/easyAudioConverter/__init__.py:2961
+msgid "Clear queued conversion jobs"
+msgstr "Išvalyti eilėje esančias konversijos užduotis"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2410
+msgid "Clear queued jobs"
+msgstr "Išvalyti eilėje esančius darbus"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4072 src/globalPlugins/easyAudioConverter/__init__.py:3321
+msgid "Cleared {count} queued conversion jobs"
+msgstr "Išvalytos {count} eilėje esančios konversijos užduotys"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213 src/globalPlugins/easyAudioConverter/__init__.py:2529 src/globalPlugins/easyAudioConverter/__init__.py:2748
 msgid "Close"
 msgstr "Uždaryti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:694
+#: src/globalPlugins/easyAudioConverter/__init__.py:1044
 msgid "Codec profile to edit:"
 msgstr "Kodeko profilis redagavimui:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:725
+#: src/globalPlugins/easyAudioConverter/__init__.py:1075
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Kodekui specifinis lygis (-1 naudoja išankstinį nustatymą):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:374
+#: src/globalPlugins/easyAudioConverter/__init__.py:478
 msgid "Comment"
 msgstr "Komentaras"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:369
+#: src/globalPlugins/easyAudioConverter/__init__.py:473
 msgid "Composer"
 msgstr "Kompozitorius"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2585
+#: src/globalPlugins/easyAudioConverter/__init__.py:3763
 msgid "Confirm folder conversion"
 msgstr "Patvirtinkite aplanko konvertavimą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2462
+#: src/globalPlugins/easyAudioConverter/__init__.py:2159
+msgid "Container: {value}"
+msgstr "Konteineris: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3591
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Konversija atšaukta. Užbaigta {done} iš {total} failų."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2473
+#: src/globalPlugins/easyAudioConverter/__init__.py:3609
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Konversija baigta. Sėkmingai: {done}. Nepavyko: {failed}. Praleista: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2482
+#: src/globalPlugins/easyAudioConverter/__init__.py:3618
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Konvertavimas baigtas: {done} pavyko, {failed} nepavyko."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:945
+#: src/globalPlugins/easyAudioConverter/__init__.py:3294
+msgid "Conversion job added to the queue. Queue position: {position}."
+msgstr "Konversijos užduotis įtraukta į eilę. Padėtis eilėje: {position}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2063
+msgid "Conversion plan"
+msgstr "Konversijos planas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1481
 msgid "Conversion profile:"
 msgstr "Konversijos profilis:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1842
+#: src/globalPlugins/easyAudioConverter/__init__.py:1914
+msgid "Conversion profiles exported"
+msgstr "Konversijos profiliai eksportuoti"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2836
 msgid "Conversion report copied"
 msgstr "Konvertavimo ataskaita nukopijuota"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1612
+#: src/globalPlugins/easyAudioConverter/__init__.py:2604
 msgid "Conversion results"
 msgstr "Konversijos rezultatai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+#: src/globalPlugins/easyAudioConverter/__init__.py:1574
 msgid "Convert"
 msgstr "Konvertavimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2582
+#: src/globalPlugins/easyAudioConverter/__init__.py:3760
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Konvertuoti visus palaikomus garso failus {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2674
+#: src/globalPlugins/easyAudioConverter/__init__.py:3864
 msgid "Convert every supported audio file in the current folder"
 msgstr "Konvertuokite kiekvieną palaikomą garso failą dabartiniame aplanke"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1961
+#: src/globalPlugins/easyAudioConverter/__init__.py:2952
 msgid "Convert selected files or folders"
 msgstr "Konvertuoti pasirinktus failus ar aplankus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2617
+#: src/globalPlugins/easyAudioConverter/__init__.py:3793
 msgid "Convert selected files or folders with one-time options"
 msgstr "Konvertuokite pasirinktus failus ar aplankus naudodami vienkartines parinktis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1960
+#: src/globalPlugins/easyAudioConverter/__init__.py:2951
 msgid "Convert selected files or folders with options..."
 msgstr "Konvertuokite pasirinktus failus ar aplankus su parinktimis..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1962
+#: src/globalPlugins/easyAudioConverter/__init__.py:2953
 msgid "Convert the current folder"
 msgstr "Konvertuoti dabartinį aplanką"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:923
+#: src/globalPlugins/easyAudioConverter/__init__.py:1457
 msgid "Convert with options"
 msgstr "Konvertuokite su opcionais"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2340
+#: src/globalPlugins/easyAudioConverter/__init__.py:2307
+msgid "Converting audio, second pass"
+msgstr "Garso konvertavimas, antrasis praėjimas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3377
 msgid "Converting {index} of {total}: {name}"
 msgstr "Konvertuojama {index} iš {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2803
+#: src/globalPlugins/easyAudioConverter/__init__.py:4122
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "Konvertuojant {index} iš {total}: {name}. Dabartinis failo laikas {processed}; praėjo {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2814
+#: src/globalPlugins/easyAudioConverter/__init__.py:4133
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Konvertuojant {index} iš {total}: {name}. Dabartinis failas {filePercent}%, bendras {overallPercent}%, praėjęs {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:358
+#: src/globalPlugins/easyAudioConverter/__init__.py:452
 msgid "Copy all text metadata"
 msgstr "Kopijuoti visą teksto metaduomenis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1753
+#: src/globalPlugins/easyAudioConverter/__init__.py:872 src/globalPlugins/easyAudioConverter/__init__.py:1380
+msgid "Copy chapter markers"
+msgstr "Nukopijuokite skyrių žymeklius"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1376
+msgid "Copy embedded cover artwork when supported"
+msgstr "Nukopijuokite įdėto viršelio iliustraciją, kai ji palaikoma"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:868
+msgid "Copy embedded cover artwork when the target supports it"
+msgstr "Nukopijuokite įdėto viršelio iliustraciją, kai taikinys jį palaiko"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2212
+msgid "Copy information"
+msgstr "Nukopijuokite informaciją"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2747
 msgid "Copy report"
 msgstr "Kopijuok ataskaitą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/__init__.py:453
 msgid "Copy selected metadata fields"
 msgstr "Kopijuoti pasirinktus metaduomenų laukus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:375
+#: src/globalPlugins/easyAudioConverter/__init__.py:479
 msgid "Copyright"
 msgstr "Autorių teisės"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2096
+#: src/globalPlugins/easyAudioConverter/__init__.py:3102
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Negalėjau patikrinti atnaujinimų.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1836
+#: src/globalPlugins/easyAudioConverter/__init__.py:2234
+msgid "Could not copy the audio information"
+msgstr "Nepavyko nukopijuoti garso informacijos"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2830
 msgid "Could not copy the conversion report."
 msgstr "Nepavyko nukopijuoti konversijos ataskaitos."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2250
+#: src/globalPlugins/easyAudioConverter/__init__.py:1908
+msgid "Could not export profiles:\n{error}"
+msgstr "Nepavyko eksportuoti profilių:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1870
+msgid "Could not import profiles:\n{error}"
+msgstr "Nepavyko importuoti profilių:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3039
+msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
+msgstr "Nepavyko atidaryti Easy Audio Converter nustatymų. Daugiau informacijos rasite NVDA žurnale."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3256
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Nepavyko atidaryti NVDA papildomo diegimo programos. Atnaujinimas buvo išsaugotas:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1823
+#: src/globalPlugins/easyAudioConverter/__init__.py:2817
 msgid "Could not open the output folder."
 msgstr "Nepavyko atidaryti išvesties aplanko."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1553
+#: src/globalPlugins/easyAudioConverter/__init__.py:3928
+msgid "Could not read audio information:\n{error}"
+msgstr "Nepavyko perskaityti garso informacijos:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1266
+msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
+msgstr "Nepavyko išsaugoti Easy Audio Converter nustatymų. Daugiau informacijos rasite NVDA žurnale."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2527
 msgid "Current file progress: 100%"
 msgstr "Dabartinė failo pažanga: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1442
+#: src/globalPlugins/easyAudioConverter/__init__.py:2389
 msgid "Current file progress: waiting"
 msgstr "Dabartinė failo eiga: laukiu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1521
+#: src/globalPlugins/easyAudioConverter/__init__.py:2477
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Dabartinė failo eiga: {percent}% ({processed} iš {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1513
+#: src/globalPlugins/easyAudioConverter/__init__.py:2469
 msgid "Current file time: {processed}"
 msgstr "Dabartinis failo laikas: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:371
+#: src/globalPlugins/easyAudioConverter/__init__.py:463
+msgid "Custom EBU R128 target"
+msgstr "Pasirinktinis EBU R128 taikinys"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:842 src/globalPlugins/easyAudioConverter/__init__.py:1351
+msgid "Custom integrated loudness in LUFS:"
+msgstr "Pasirinktinis integruotas garsumas LUFS:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:860 src/globalPlugins/easyAudioConverter/__init__.py:1369
+msgid "Custom loudness range in LU:"
+msgstr "Pasirinktinis garsumo diapazonas LU:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:851 src/globalPlugins/easyAudioConverter/__init__.py:1360
+msgid "Custom true peak in dBTP:"
+msgstr "Pasirinktinis tikrasis maksimumas dBTP:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:475
 msgid "Date or year"
 msgstr "Data arba metai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1279
+#: src/globalPlugins/easyAudioConverter/__init__.py:1384
+msgid "Deeply verify every output file"
+msgstr "Giliai patikrinkite kiekvieną išvesties failą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:878
+msgid "Deeply verify output by decoding it and comparing duration"
+msgstr "Giliai patikrinkite išvestį dekoduodami ją ir palygindami trukmę"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2004
 msgid "Delete conversion profile"
 msgstr "Ištrinti konvertavimo profilį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:951
+#: src/globalPlugins/easyAudioConverter/__init__.py:1487
 msgid "Delete profile"
 msgstr "Ištrinti profilį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1278
+#: src/globalPlugins/easyAudioConverter/__init__.py:2003
 msgid "Delete the profile “{name}”?"
 msgstr "Ištrinti profilį \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515 src/globalPlugins/easyAudioConverter/__init__.py:979
+#: src/globalPlugins/easyAudioConverter/__init__.py:648 src/globalPlugins/easyAudioConverter/__init__.py:1519
 msgid "Destination folder:"
 msgstr "Paskirties aplankas:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2747
+#: src/globalPlugins/easyAudioConverter/__init__.py:4018
 msgid "Destination folder: {folder}"
 msgstr "Paskirties aplankas: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+#: src/globalPlugins/easyAudioConverter/__init__.py:2066
+msgid "Destination: {destination}"
+msgstr "Paskirtis: {destination}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2720
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "Detalės apsiriboja pirmaisiais {limit} praleistais failais."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1739
+#: src/globalPlugins/easyAudioConverter/__init__.py:2733
 msgid "Details:"
 msgstr "Išsamiau:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:373
+#: src/globalPlugins/easyAudioConverter/__init__.py:459
+msgid "Disabled"
+msgstr "Išjungta"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:477
 msgid "Disc number"
 msgstr "Disko numeris"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:357
+#: src/globalPlugins/easyAudioConverter/__init__.py:451
 msgid "Do not copy metadata"
 msgstr "Nekopijuokite metaduomenų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2136
+#: src/globalPlugins/easyAudioConverter/__init__.py:3142
 msgid "Download and install"
 msgstr "Atsisiųskite ir įdiekite"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2214
+#: src/globalPlugins/easyAudioConverter/__init__.py:3220
 msgid "Downloaded {done:.1f} MB"
 msgstr "Atsisiųsta {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2207
+#: src/globalPlugins/easyAudioConverter/__init__.py:3213
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Atsisiųsta {done:.1f} iš {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2166
+#: src/globalPlugins/easyAudioConverter/__init__.py:3172
 msgid "Downloading Easy Audio Converter update"
 msgstr "Atsisiunčiamas Easy Audio Converter atnaujinimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:331
+#: src/globalPlugins/easyAudioConverter/__init__.py:2161
+msgid "Duration: {value}"
+msgstr "Trukmė: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:398
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1853 src/globalPlugins/easyAudioConverter/__init__.py:828 src/globalPlugins/easyAudioConverter/__init__.py:2450 src/globalPlugins/easyAudioConverter/__init__.py:1223 src/globalPlugins/easyAudioConverter/__init__.py:1231 src/globalPlugins/easyAudioConverter/__init__.py:1984 src/globalPlugins/easyAudioConverter/__init__.py:2272 src/globalPlugins/easyAudioConverter/__init__.py:1197 src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1297 src/globalPlugins/easyAudioConverter/__init__.py:1824 src/globalPlugins/easyAudioConverter/__init__.py:1837 src/globalPlugins/easyAudioConverter/__init__.py:2283
+#: src/globalPlugins/easyAudioConverter/__init__.py:2854 src/globalPlugins/easyAudioConverter/__init__.py:3576 src/globalPlugins/easyAudioConverter/__init__.py:1948 src/globalPlugins/easyAudioConverter/__init__.py:1956 src/globalPlugins/easyAudioConverter/__init__.py:2979 src/globalPlugins/easyAudioConverter/__init__.py:3309 src/globalPlugins/easyAudioConverter/__init__.py:3931 src/globalPlugins/easyAudioConverter/__init__.py:790 src/globalPlugins/easyAudioConverter/__init__.py:1267 src/globalPlugins/easyAudioConverter/__init__.py:1820 src/globalPlugins/easyAudioConverter/__init__.py:1871 src/globalPlugins/easyAudioConverter/__init__.py:1909 src/globalPlugins/easyAudioConverter/__init__.py:1922 src/globalPlugins/easyAudioConverter/__init__.py:1986 src/globalPlugins/easyAudioConverter/__init__.py:2022 src/globalPlugins/easyAudioConverter/__init__.py:2818 src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:3040 src/globalPlugins/easyAudioConverter/__init__.py:3277
 msgid "Easy Audio Converter"
 msgstr "Lengvas garso keitiklis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2107
+#: src/globalPlugins/easyAudioConverter/__init__.py:3113
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Easy Audio Converter yra atnaujintas. Įdiegta versija: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1430
+#: src/globalPlugins/easyAudioConverter/__init__.py:2375
 msgid "Easy Audio Converter progress"
 msgstr "Lengvas garso keitiklio progresas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1655
+#: src/globalPlugins/easyAudioConverter/__init__.py:2649
 msgid "Easy Audio Converter results"
 msgstr "Easy Audio Converter rezultatai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2240 src/globalPlugins/easyAudioConverter/__init__.py:2099 src/globalPlugins/easyAudioConverter/__init__.py:2110 src/globalPlugins/easyAudioConverter/__init__.py:2253
+#: src/globalPlugins/easyAudioConverter/__init__.py:1190
+msgid "Easy Audio Converter settings"
+msgstr "Lengvi garso keitiklio nustatymai"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3246 src/globalPlugins/easyAudioConverter/__init__.py:3105 src/globalPlugins/easyAudioConverter/__init__.py:3116 src/globalPlugins/easyAudioConverter/__init__.py:3259
 msgid "Easy Audio Converter update"
 msgstr "Easy Audio Converter atnaujinimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2147 src/globalPlugins/easyAudioConverter/__init__.py:2132
+#: src/globalPlugins/easyAudioConverter/__init__.py:3153 src/globalPlugins/easyAudioConverter/__init__.py:3138
 msgid "Easy Audio Converter update available"
 msgstr "Prieinamas Easy Audio Converter atnaujinimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2119
+#: src/globalPlugins/easyAudioConverter/__init__.py:3125
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Yra prieinamas Easy Audio Converter {newVersion}. Turi versiją {currentVersion}.\n\nAr norite dabar atsisiųsti ir įdiegti atnaujinimą?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2143
+#: src/globalPlugins/easyAudioConverter/__init__.py:3149
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Easy Audio Converter {version} yra prieinamas, tačiau leidimas neturi tiesioginio papildomo paketo. Atidaryti išleidimo puslapį?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:341
+#: src/globalPlugins/easyAudioConverter/__init__.py:435
 msgid "Economical"
 msgstr "Ekonomiškas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1450
+#: src/globalPlugins/easyAudioConverter/__init__.py:2397
 msgid "Elapsed time: 0:00"
 msgstr "Praėjo laikas: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1533
+#: src/globalPlugins/easyAudioConverter/__init__.py:2489
 msgid "Elapsed time: {elapsed}"
 msgstr "Praėjęs laikas: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:702
+#: src/globalPlugins/easyAudioConverter/__init__.py:2180
+msgid "Embedded artwork: {value}"
+msgstr "Įterptasis meno kūrinys: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1052
 msgid "Enable advanced overrides for this codec"
 msgstr "Įjunkite išplėstinius perrašymus šiam kodekui"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1210
+#: src/globalPlugins/easyAudioConverter/__init__.py:1935
 msgid "Enter a name for this conversion profile:"
 msgstr "Įveskite pavadinimą šiam konversijos profiliui:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1549
+#: src/globalPlugins/easyAudioConverter/__init__.py:2070
+msgid "Estimated output size: {size}"
+msgstr "Numatomas išvesties dydis: {size}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2523
 msgid "Estimated time remaining: 0:00"
 msgstr "Numatomas likęs laikas: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1454
+#: src/globalPlugins/easyAudioConverter/__init__.py:2401
 msgid "Estimated time remaining: calculating"
 msgstr "Numatomas likęs laikas: skaičiavimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1537
+#: src/globalPlugins/easyAudioConverter/__init__.py:2493
 msgid "Estimated time remaining: {remaining}"
 msgstr "Numatomas likęs laikas: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:322
+#: src/globalPlugins/easyAudioConverter/__init__.py:752
+msgid "Example album"
+msgstr "Albumo pavyzdys"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:751
+msgid "Example artist"
+msgstr "Menininko pavyzdys"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:758
+msgid "Example filename: {name}"
+msgstr "Failo pavadinimo pavyzdys: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:750
+msgid "Example title"
+msgstr "Pavadinimo pavyzdys"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1889
+msgid "Export conversion profiles"
+msgstr "Eksportuoti konversijos profilius"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1489
+msgid "Export profiles..."
+msgstr "Eksportuoti profilius..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:403
+msgid "Extract original audio stream (no re-encoding)"
+msgstr "Išskleiskite originalų garso srautą (be pakartotinio kodavimo)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:389
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1628
+#: src/globalPlugins/easyAudioConverter/__init__.py:2622
 msgid "Failed files:"
 msgstr "Nepavykę failai:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1702
+#: src/globalPlugins/easyAudioConverter/__init__.py:2696
 msgid "Failed: {name}"
 msgstr "Nepavyko: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1605
+#: src/globalPlugins/easyAudioConverter/__init__.py:2593
 msgid "File or folder is unavailable"
 msgstr "Failas ar aplankas nepasiekiami"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1504
+#: src/globalPlugins/easyAudioConverter/__init__.py:2179
+msgid "File size: {value}"
+msgstr "Failo dydis: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2460
 msgid "File {index} of {total}: {name}"
 msgstr "Failas {index} iš {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2316
+#: src/globalPlugins/easyAudioConverter/__init__.py:1730
+msgid "Filename preview: {name}"
+msgstr "Failo vardo peržiūra: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2064
+msgid "Files to convert: {count}"
+msgstr "Konvertuotini failai: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3353
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Failai konvertavimui: {count}. Praleista: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:794
+#: src/globalPlugins/easyAudioConverter/__init__.py:1151
 msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
 msgstr "FLAC atveju 0 lygis yra greičiausias, o 12 lygis suteikia stipriausią suspaudimą."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:793
+#: src/globalPlugins/easyAudioConverter/__init__.py:1150
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3 lygis 0 yra lėčiausias ir aukščiausios kokybės algoritmas; 9 yra greičiausias."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:795
+#: src/globalPlugins/easyAudioConverter/__init__.py:1152
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Ogg Vorbis atveju lygiai nuo 0 iki 10 pasirenka didėjančią kintamo bitreito kokybę."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:796
+#: src/globalPlugins/easyAudioConverter/__init__.py:1153
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Opus lygiuose nuo 0 iki 10 pasirenkamas didėjantis koduotojo sudėtingumas."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:797
+#: src/globalPlugins/easyAudioConverter/__init__.py:1154
 msgid "For WavPack, levels 0 to 8 select increasing compression effort."
 msgstr "WavPack atveju lygiai nuo 0 iki 8 pasirenka, kad padidintų suspaudimo pastangas."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2321
+#: src/globalPlugins/easyAudioConverter/__init__.py:3358
 msgid "Found {count} files to convert"
 msgstr "Rasta {count} failų, kuriuos reikia konvertuoti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:351
+#: src/globalPlugins/easyAudioConverter/__init__.py:445
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:370
+#: src/globalPlugins/easyAudioConverter/__init__.py:2073
+msgid "Free disk space: {size}"
+msgstr "Laisvos vietos diske: {size}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+msgid "GB"
+msgstr "GB"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "Genre"
 msgstr "Žanras"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1462
+#: src/globalPlugins/easyAudioConverter/__init__.py:2413
 msgid "Hide"
 msgstr "Slėpkis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:437
 msgid "High"
 msgstr "Aukštas"
 
@@ -523,335 +743,535 @@ msgstr "Aukštas"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Jei Easy Audio Converter jums naudinga ir norite paremti mano darbą, galite nupirkti man kavos.\n\nAr norite dabar atidaryti palaikymo puslapį?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526 src/globalPlugins/easyAudioConverter/__init__.py:986
+#: src/globalPlugins/easyAudioConverter/__init__.py:1838
+msgid "Import conversion profiles"
+msgstr "Importuoti konversijos profilius"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1488
+msgid "Import profiles..."
+msgstr "Importuoti profilius..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1880
+msgid "Imported {count} conversion profiles"
+msgstr "Importuoti {count} konversijos profiliai"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:674 src/globalPlugins/easyAudioConverter/__init__.py:1531
 msgid "Include subfolders when converting a folder"
 msgstr "Konvertuodami aplanką įtraukite poaplankius"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:721
+#: src/globalPlugins/easyAudioConverter/__init__.py:2954
+msgid "Information about the selected audio file..."
+msgstr "Informacija apie pasirinktą garso failą..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2069
+msgid "Input size: {size}"
+msgstr "Įvesties dydis: {size}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:764 src/globalPlugins/easyAudioConverter/__init__.py:1736
+msgid "Invalid filename template: {error}"
+msgstr "Neteisingas failo pavadinimo šablonas: {error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1839 src/globalPlugins/easyAudioConverter/__init__.py:1891
+msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
+msgstr "JSON profilio failai (*.json)|*.json|Visi failai (*.*)|*.*"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+msgid "KB"
+msgstr "KB"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Keep the source channel count"
 msgstr "Išlaikykite šaltinio kanalų skaičių"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:715
+#: src/globalPlugins/easyAudioConverter/__init__.py:1065
 msgid "Keep the source sample rate"
 msgstr "Išlaikyk šaltinio mėginių ėmimo dažnį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:350
+#: src/globalPlugins/easyAudioConverter/__init__.py:444
 msgid "LAME MP3"
 msgstr "LAME MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:377
+#: src/globalPlugins/easyAudioConverter/__init__.py:481
 msgid "Language"
 msgstr "Kalba"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2136
+#: src/globalPlugins/easyAudioConverter/__init__.py:3142
 msgid "Later"
 msgstr "Vėliau"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:376
+#: src/globalPlugins/easyAudioConverter/__init__.py:832 src/globalPlugins/easyAudioConverter/__init__.py:1341
+msgid "Loudness normalization:"
+msgstr "Garsumo normalizavimas:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:480
 msgid "Lyrics"
 msgstr "Žodžiai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:325
+#: src/globalPlugins/easyAudioConverter/__init__.py:392
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:333
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+msgid "MB"
+msgstr "MB"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:400
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:320
+#: src/globalPlugins/easyAudioConverter/__init__.py:387
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:501 src/globalPlugins/easyAudioConverter/__init__.py:970
+#: src/globalPlugins/easyAudioConverter/__init__.py:633 src/globalPlugins/easyAudioConverter/__init__.py:1510
 msgid "MP3 encoder:"
 msgstr "MP3 kodavimo įrenginys:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:539 src/globalPlugins/easyAudioConverter/__init__.py:997
+#: src/globalPlugins/easyAudioConverter/__init__.py:687 src/globalPlugins/easyAudioConverter/__init__.py:1542
 msgid "Metadata export:"
 msgstr "Metaduomenų eksportas:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:550
+#: src/globalPlugins/easyAudioConverter/__init__.py:698
 msgid "Metadata fields to copy:"
 msgstr "Metaduomenų laukai kopijavimui:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:721
+#: src/globalPlugins/easyAudioConverter/__init__.py:2186
+msgid "Metadata:"
+msgstr "Metaduomenys:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Mono"
 msgstr "Mono"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:229
+#: src/globalPlugins/easyAudioConverter/__init__.py:461
+msgid "Music and streaming: -14 LUFS, -1 dBTP"
+msgstr "Muzika ir srautinis perdavimas: -14 LUFS, -1 dBTP"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1157
+msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
+msgstr "Išplėstiniai kodeko nustatymai nenaudojami, nes garso srautas nukopijuojamas be pakartotinio kodavimo."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:284
 msgid "No completion notification"
 msgstr "Nėra pranešimo apie užbaigimą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2756 src/globalPlugins/easyAudioConverter/__init__.py:2787
+#: src/globalPlugins/easyAudioConverter/__init__.py:4027 src/globalPlugins/easyAudioConverter/__init__.py:4038 src/globalPlugins/easyAudioConverter/__init__.py:4101
 msgid "No conversion is in progress"
 msgstr "Jokia konversija nevykdoma"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2768
+#: src/globalPlugins/easyAudioConverter/__init__.py:4082
 msgid "No conversion progress is available"
 msgstr "Konvertavimo progresas nėra prieinamas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+#: src/globalPlugins/easyAudioConverter/__init__.py:3700
 msgid "No conversion results are available"
 msgstr "Konvertavimo rezultatų nėra."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2543 src/globalPlugins/easyAudioConverter/__init__.py:2553
+#: src/globalPlugins/easyAudioConverter/__init__.py:3721 src/globalPlugins/easyAudioConverter/__init__.py:3731
 msgid "No failed files are available to retry"
 msgstr "Nėra jokių nepavykusių failų, kuriuos būtų galima bandyti dar kartą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1783
+#: src/globalPlugins/easyAudioConverter/__init__.py:2777
 msgid "No file details are available."
 msgstr "Failo duomenų nėra."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2467
+#: src/globalPlugins/easyAudioConverter/__init__.py:3603
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Jokių failų nereikia konvertuoti. Praleista: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2626 src/globalPlugins/easyAudioConverter/__init__.py:2659
+#: src/globalPlugins/easyAudioConverter/__init__.py:3799 src/globalPlugins/easyAudioConverter/__init__.py:3839
 msgid "No files or folders are selected"
 msgstr "Nepasirinkta jokių failų ar aplankų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2471
+#: src/globalPlugins/easyAudioConverter/__init__.py:1745
+msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
+msgstr "Jokio pakartotinio kodavimo: kokybė, garsumas ir išplėstiniai kodeko nustatymai nenaudojami."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1740
+msgid "No re-encoding: quality, loudness, metadata, artwork, chapters, and advanced codec settings are not used."
+msgstr "Jokio pakartotinio kodavimo: kokybė, garsumas, metaduomenys, meno kūriniai, skyriai ir išplėstiniai kodeko nustatymai nenaudojami."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2594
+msgid "No readable audio stream was found"
+msgstr "Nerastas skaitomas garso srautas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3607
 msgid "No supported audio files were found"
 msgstr "Nerasta jokių palaikomų garso failų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:323
+#: src/globalPlugins/easyAudioConverter/__init__.py:390
 msgid "Ogg Vorbis"
 msgstr "Ogas Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1053
+#: src/globalPlugins/easyAudioConverter/__init__.py:4051
+msgid "One conversion is active. Queued jobs: {count}."
+msgstr "Viena konversija aktyvi. Eilėje esantys darbai: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1606
 msgid "One-time settings"
 msgstr "Vienkartiniai nustatymai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:237
+#: src/globalPlugins/easyAudioConverter/__init__.py:292
 msgid "Only on demand"
 msgstr "Tik pagal poreikį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2593
+#: src/globalPlugins/easyAudioConverter/__init__.py:3771
 msgid "Open Easy Audio Converter settings"
 msgstr "Atidarykite „Easy Audio Converter“ nustatymus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2605
+#: src/globalPlugins/easyAudioConverter/__init__.py:3782
 msgid "Open advanced codec settings"
 msgstr "Atidarykite išplėstinius kodeko nustatymus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1752
+#: src/globalPlugins/easyAudioConverter/__init__.py:2746
 msgid "Open output folder"
 msgstr "Atidaryti išvesties aplanką"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2846
+#: src/globalPlugins/easyAudioConverter/__init__.py:4170
 msgid "Open the author's support page"
 msgstr "Atidarykite autoriaus palaikymo puslapį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:389
+#: src/globalPlugins/easyAudioConverter/__init__.py:521
 msgid "Opening the support page"
 msgstr "Palaikymo puslapio atidarymas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:324
+#: src/globalPlugins/easyAudioConverter/__init__.py:391
 msgid "Opus"
 msgstr "Opusas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1626
+#: src/globalPlugins/easyAudioConverter/__init__.py:657 src/globalPlugins/easyAudioConverter/__init__.py:1526
+msgid "Output filename template:"
+msgstr "Išvesties failo pavadinimo šablonas:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2620
 msgid "Output files:"
 msgstr "Išvesties failai:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1694
+#: src/globalPlugins/easyAudioConverter/__init__.py:2585
+msgid "Output verification failed because its duration differs from the source."
+msgstr "Išvesties patvirtinimas nepavyko, nes jo trukmė skiriasi nuo šaltinio."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2688
 msgid "Output:\n{output}"
 msgstr "Rezultatas:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1554
+#: src/globalPlugins/easyAudioConverter/__init__.py:2528
 msgid "Overall progress: 100%"
 msgstr "Bendras progresas: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1446
+#: src/globalPlugins/easyAudioConverter/__init__.py:2393
 msgid "Overall progress: waiting"
 msgstr "Bendras progresas: laukimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1530
+#: src/globalPlugins/easyAudioConverter/__init__.py:2486
 msgid "Overall progress: {percent}%"
 msgstr "Bendras progresas: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:732
+#: src/globalPlugins/easyAudioConverter/__init__.py:1082
 msgid "PCM bit depth:"
 msgstr "PCM bitų gylis:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:638
-msgid "Playing the completion sound"
-msgstr "Užbaigimo garso grojimas"
+#: src/globalPlugins/easyAudioConverter/__init__.py:2158
+msgid "Path: {path}"
+msgstr "Kelias: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:282
+#: src/globalPlugins/easyAudioConverter/__init__.py:2098
+msgid "Planned output files:"
+msgstr "Planuojami išvesties failai:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:902
+msgid "Play a sound when a conversion fails"
+msgstr "Leisti garsą, kai nepavyksta konvertuoti"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:909
+msgid "Play a sound when a conversion is canceled or stopped"
+msgstr "Leisti garsą, kai konversija atšaukiama arba sustabdoma"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:341
 msgid "Podcast Opus"
 msgstr "Podcast Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2311 src/globalPlugins/easyAudioConverter/__init__.py:1440 src/globalPlugins/easyAudioConverter/__init__.py:2790
+#: src/globalPlugins/easyAudioConverter/__init__.py:460
+msgid "Podcast: -16 LUFS, -1.5 dBTP"
+msgstr "Podcast: -16 LUFS, -1,5 dBTP"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2309 src/globalPlugins/easyAudioConverter/__init__.py:3348 src/globalPlugins/easyAudioConverter/__init__.py:2387
 msgid "Preparing the conversion"
 msgstr "Konversijos paruošimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532 src/globalPlugins/easyAudioConverter/__init__.py:991
+#: src/globalPlugins/easyAudioConverter/__init__.py:680 src/globalPlugins/easyAudioConverter/__init__.py:1536
 msgid "Preserve the source folder structure in the destination"
 msgstr "Išsaugokite šaltinio aplanko struktūrą paskirties vietoje"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1289
+#: src/globalPlugins/easyAudioConverter/__init__.py:820
+msgid "Processing and notifications"
+msgstr "Apdorojimas ir pranešimai"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1328
+msgid "Processing options"
+msgstr "Apdorojimo parinktys"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1552
+msgid "Processing options..."
+msgstr "Apdorojimo parinktys..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1755
+msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
+msgstr "Apdorojimas: garsumas {loudness}; meno kūrinys {artwork}; skyriai {chapters}; patikrinimas {verification}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2014
 msgid "Profile deleted"
 msgstr "Profilis ištrintas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+#: src/globalPlugins/easyAudioConverter/__init__.py:1993
 msgid "Profile saved: {name}"
 msgstr "Išsaugotas profilis: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:378
+#: src/globalPlugins/easyAudioConverter/__init__.py:482
 msgid "Publisher"
 msgstr "Leidėjas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:492 src/globalPlugins/easyAudioConverter/__init__.py:964
+#: src/globalPlugins/easyAudioConverter/__init__.py:3986
+msgid "Quality is not used when copying audio without re-encoding"
+msgstr "Kokybė nenaudojama kopijuojant garsą be pakartotinio kodavimo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1504
 msgid "Quality:"
 msgstr "Kokybė:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2722
+#: src/globalPlugins/easyAudioConverter/__init__.py:3993
 msgid "Quality: {quality}"
 msgstr "Kokybė: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2726
+#: src/globalPlugins/easyAudioConverter/__init__.py:4054
+msgid "Queued conversion jobs: {count}."
+msgstr "Eilėje esantys konvertavimo darbai: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2404
+msgid "Queued jobs: 0"
+msgstr "Darbų eilėje: 0"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2517
+msgid "Queued jobs: {count}"
+msgstr "Eilėje esantys darbai: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3997
 msgid "Quickly choose the destination folder"
 msgstr "Greitai pasirinkite paskirties aplanką"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2653
+#: src/globalPlugins/easyAudioConverter/__init__.py:3833
 msgid "Quickly convert selected files or folders"
 msgstr "Greitai konvertuokite pasirinktus failus ar aplankus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2128
+#: src/globalPlugins/easyAudioConverter/__init__.py:3901
+msgid "Reading audio file information"
+msgstr "Skaityti garso failo informaciją"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2305
+msgid "Reading audio information"
+msgstr "Garsinės informacijos skaitymas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3134
 msgid "Release notes:"
 msgstr "Išleidimo pastabos:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1246
+#: src/globalPlugins/easyAudioConverter/__init__.py:406
+msgid "Remux AAC to M4A (no re-encoding)"
+msgstr "Remux AAC į M4A (be pakartotinio kodavimo)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1971
 msgid "Replace the existing profile “{name}”?"
 msgstr "Pakeisti esamą profilį \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2782
+#: src/globalPlugins/easyAudioConverter/__init__.py:4096
 msgid "Report audio conversion status"
 msgstr "Pranešti apie garso konvertavimo būseną"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1460 src/globalPlugins/easyAudioConverter/__init__.py:1964
+#: src/globalPlugins/easyAudioConverter/__init__.py:2411 src/globalPlugins/easyAudioConverter/__init__.py:2956
 msgid "Report conversion status"
 msgstr "Pranešti apie konversijos būseną"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1751
+#: src/globalPlugins/easyAudioConverter/__init__.py:4044 src/globalPlugins/easyAudioConverter/__init__.py:2960
+msgid "Report queued conversion jobs"
+msgstr "Pranešti apie eilėje esančias konversijos užduotis"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2745
 msgid "Retry failed files"
 msgstr "Bandymas iš naujo nepavykus failams"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:713
+#: src/globalPlugins/easyAudioConverter/__init__.py:2114
+msgid "Review conversion plan"
+msgstr "Peržiūrėkite konversijos planą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2122
+msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
+msgstr "Peržiūrėkite toliau pateiktą planą. Dydžių įvertinimai yra apytiksliai. Joks šaltinio failas nebus perrašytas."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1063
 msgid "Sample rate:"
 msgstr "Mėginių ėmimo dažnis:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1211 src/globalPlugins/easyAudioConverter/__init__.py:1247
+#: src/globalPlugins/easyAudioConverter/__init__.py:2172
+msgid "Sample rate: {value}"
+msgstr "Mėginio dažnis: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1936 src/globalPlugins/easyAudioConverter/__init__.py:1972
 msgid "Save conversion profile"
 msgstr "Išsaugoti konversijos profilį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:509 src/globalPlugins/easyAudioConverter/__init__.py:976
+#: src/globalPlugins/easyAudioConverter/__init__.py:642 src/globalPlugins/easyAudioConverter/__init__.py:1516
 msgid "Save converted files next to the source files"
 msgstr "Išsaugokite konvertuotus failus šalia šaltinio failų"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:950
+#: src/globalPlugins/easyAudioConverter/__init__.py:1486
 msgid "Save profile..."
 msgstr "Išsaugoti profilį..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:878
+#: src/globalPlugins/easyAudioConverter/__init__.py:3895
+msgid "Select exactly one audio file"
+msgstr "Pasirinkite tiksliai vieną garso failą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1289
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Pasirinkite teksto metaduomenų laukus, kuriuos kopijuosite šiam konvertavimui."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:940
+#: src/globalPlugins/easyAudioConverter/__init__.py:1476
 msgid "Selected items: {count}"
 msgstr "Pasirinkti elementai: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1968
+#: src/globalPlugins/easyAudioConverter/__init__.py:2963
 msgid "Settings..."
 msgstr "Nustatymai..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1963
+#: src/globalPlugins/easyAudioConverter/__init__.py:883
+msgid "Show a conversion plan before starting"
+msgstr "Prieš pradėdami, parodykite konversijos planą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2955
 msgid "Show conversion progress"
 msgstr "Rodyti konversijos eigą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1965
+#: src/globalPlugins/easyAudioConverter/__init__.py:2957
 msgid "Show last conversion results"
 msgstr "Rodyti paskutinio konvertavimo rezultatus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1461
+#: src/globalPlugins/easyAudioConverter/__init__.py:2412
 msgid "Show results"
 msgstr "Parodos rezultatai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2763
+#: src/globalPlugins/easyAudioConverter/__init__.py:3888
+msgid "Show technical information about the selected audio file"
+msgstr "Rodyti techninę informaciją apie pasirinktą garso failą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4077
 msgid "Show the audio conversion progress window"
 msgstr "Rodyti garso konvertavimo pažangos langą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2774
+#: src/globalPlugins/easyAudioConverter/__init__.py:1388
+msgid "Show the conversion plan before starting"
+msgstr "Prieš pradėdami, parodykite konversijos planą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4088
 msgid "Show the last audio conversion results"
 msgstr "Rodyti paskutinius garso konvertavimo rezultatus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+#: src/globalPlugins/easyAudioConverter/__init__.py:2598
 msgid "Skipped"
 msgstr "Praleista"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1633
+#: src/globalPlugins/easyAudioConverter/__init__.py:2627
 msgid "Skipped files:"
 msgstr "Praleisti failai:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1713
+#: src/globalPlugins/easyAudioConverter/__init__.py:2065
+msgid "Skipped inputs: {count}"
+msgstr "Praleistos įvestys: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2707
 msgid "Skipped: {name}"
 msgstr "Praleista: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:228
+#: src/globalPlugins/easyAudioConverter/__init__.py:283
 msgid "Sound only"
 msgstr "Tik garsas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1703
+#: src/globalPlugins/easyAudioConverter/__init__.py:2697
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Šaltinis:\n{source}\n\nKlaida:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1680
+#: src/globalPlugins/easyAudioConverter/__init__.py:2674
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Šaltinis:\n{source}\n\nRezultatas:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+#: src/globalPlugins/easyAudioConverter/__init__.py:2708
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Šaltinis:\n{source}\n\nPriežastis:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:226
+#: src/globalPlugins/easyAudioConverter/__init__.py:281
 msgid "Speech and sound"
 msgstr "Kalba ir garsas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:227
+#: src/globalPlugins/easyAudioConverter/__init__.py:282
 msgid "Speech only"
 msgstr "Tik kalbos"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:342
+#: src/globalPlugins/easyAudioConverter/__init__.py:436
 msgid "Standard"
 msgstr "Standartinis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:474
+#: src/globalPlugins/easyAudioConverter/__init__.py:606
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2167
+#: src/globalPlugins/easyAudioConverter/__init__.py:2138
+msgid "Start conversion"
+msgstr "Pradėti konvertavimą"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3173
 msgid "Starting the download..."
 msgstr "Pradedu atsisiuntimą..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:721
+#: src/globalPlugins/easyAudioConverter/__init__.py:3691
+msgid "Starting the next queued conversion. Jobs remaining: {count}."
+msgstr "Pradedama kita eilėje esanti konversija. Likusios darbo vietos: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Stereo"
 msgstr "Stereo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1613 src/globalPlugins/easyAudioConverter/__init__.py:1666
+#: src/globalPlugins/easyAudioConverter/__init__.py:2409
+msgid "Stop after current file"
+msgstr "Sustabdyti po esamo failo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2958
+msgid "Stop after the current file"
+msgstr "Sustabdyti po dabartinio failo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4033
+msgid "Stop the conversion after the current file"
+msgstr "Sustabdykite konvertavimą po dabartinio failo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3596
+msgid "Stopped after the current file. Completed {done} of {total} files."
+msgstr "Sustabdoma po dabartinio failo. Užbaigta {done} iš {total} failų."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2547
+msgid "Stopping after this file..."
+msgstr "Sustabdoma po šio failo..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2605 src/globalPlugins/easyAudioConverter/__init__.py:2660
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Sėkmingai: {done}. Nepavyko: {failed}. Praleista: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1679 src/globalPlugins/easyAudioConverter/__init__.py:1693
+#: src/globalPlugins/easyAudioConverter/__init__.py:2673 src/globalPlugins/easyAudioConverter/__init__.py:2687
 msgid "Success: {name}"
 msgstr "Sėkmė: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:563
+#: src/globalPlugins/easyAudioConverter/__init__.py:890
 msgid "Successful completion notification:"
 msgstr "Sėkmingo užbaigimo pranešimas:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1622
+#: src/globalPlugins/easyAudioConverter/__init__.py:2616
 msgid "Successful files:"
 msgstr "Sėkmingi failai:"
 
@@ -859,126 +1279,242 @@ msgstr "Sėkmingi failai:"
 msgid "Support Easy Audio Converter"
 msgstr "Palaikykite paprastą garso keitiklį"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:594 src/globalPlugins/easyAudioConverter/__init__.py:1971
+#: src/globalPlugins/easyAudioConverter/__init__.py:930 src/globalPlugins/easyAudioConverter/__init__.py:2966
 msgid "Support the author"
 msgstr "Palaikykite autorių"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:483 src/globalPlugins/easyAudioConverter/__init__.py:958
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054 src/globalPlugins/easyAudioConverter/__init__.py:2055
+msgid "TB"
+msgstr "TB"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:615 src/globalPlugins/easyAudioConverter/__init__.py:1498
 msgid "Target format:"
 msgstr "Tikslinis formatas:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2708
+#: src/globalPlugins/easyAudioConverter/__init__.py:3973
 msgid "Target format: {format}"
 msgstr "Tikslinis formatas: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:571
-msgid "Test completion sound"
-msgstr "Testo užbaigimo garsas"
+#: src/globalPlugins/easyAudioConverter/__init__.py:913
+msgid "Test cancel sound"
+msgstr "Bandomasis atšaukimo garsas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2271
+#: src/globalPlugins/easyAudioConverter/__init__.py:906
+msgid "Test error sound"
+msgstr "Bandymo klaidos garsas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:898
+msgid "Test success sound"
+msgstr "Bandymo sėkmės garsas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3308
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Trūksta susieto FFmpeg komponento. Iš naujo įdiekite Easy Audio Converter."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:802
+#: src/globalPlugins/easyAudioConverter/__init__.py:1164
 msgid "The codec-specific level is not used by this format."
 msgstr "Šiame formate kodekui specifinis lygis nenaudojamas."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2444
+#: src/globalPlugins/easyAudioConverter/__init__.py:3570
 msgid "The conversion could not start"
 msgstr "Konversija neprasidėjo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2449
+#: src/globalPlugins/easyAudioConverter/__init__.py:3575
 msgid "The conversion could not start:\n{error}"
 msgstr "Nepavyko pradėti konvertuoti:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1620
+#: src/globalPlugins/easyAudioConverter/__init__.py:4065 src/globalPlugins/easyAudioConverter/__init__.py:4056
+msgid "The conversion queue is empty"
+msgstr "Konversijos eilė tuščia"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2612
 msgid "The conversion was canceled."
 msgstr "Konvertavimas buvo atšauktas."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1597
+#: src/globalPlugins/easyAudioConverter/__init__.py:4041
+msgid "The conversion will stop after the current file"
+msgstr "Konvertavimas sustos po dabartinio failo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1866
+msgid "The file does not contain valid conversion profiles."
+msgstr "Faile nėra galiojančių konversijos profilių."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:418
+msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
+msgstr "Pirmasis AAC garso srautas bus permaišytas į M4A be pakartotinio kodavimo. Šaltiniai, kurių pirmasis garso srautas nėra AAC, praleidžiami."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2595
+msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
+msgstr "Pirmasis garso srautas nėra AAC, todėl jo negalima permaišyti į M4A"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:412
+msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
+msgstr "Pirmasis garso srautas bus išgautas be pakartotinio kodavimo. Jo kodekas ir kokybė išlieka nepakitę, o išvesties plėtinys pasirenkamas automatiškai."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2583
 msgid "The input does not contain a readable audio stream."
 msgstr "Įėjimas neturi skaitomo garso srauto."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1595
+#: src/globalPlugins/easyAudioConverter/__init__.py:2581
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "Įvesties failas yra pažeistas arba naudoja nepalaikomą kodavimą."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1222
+#: src/globalPlugins/easyAudioConverter/__init__.py:2614
+msgid "The job was stopped after the current file."
+msgstr "Darbas buvo sustabdytas po dabartinio failo."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1850
+msgid "The profile file is too large."
+msgstr "Profilio failas per didelis."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1947
 msgid "The profile name cannot be empty."
 msgstr "Profilio pavadinimas negali būti tuščias."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2237
+#: src/globalPlugins/easyAudioConverter/__init__.py:3243
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "Atnaujinimo nebuvo galima atsisiųsti ar patikrinti.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2245
+#: src/globalPlugins/easyAudioConverter/__init__.py:3251
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "Atnaujinimas paruoštas. Atidarau NVDA papildomą diegimo programą."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1593
+#: src/globalPlugins/easyAudioConverter/__init__.py:1885
+msgid "There are no user profiles to export"
+msgstr "Nėra eksportuojamų naudotojų profilių"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2579
 msgid "There is not enough free disk space."
 msgstr "Nėra pakankamai laisvos disko vietos."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:365
+#: src/globalPlugins/easyAudioConverter/__init__.py:469
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:372
+#: src/globalPlugins/easyAudioConverter/__init__.py:2074
+msgid "Total audio duration: {duration}"
+msgstr "Bendra garso trukmė: {duration}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:476
 msgid "Track number"
 msgstr "Kūrinio numeris"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1598 src/globalPlugins/easyAudioConverter/__init__.py:2238 src/globalPlugins/easyAudioConverter/__init__.py:2097
+#: src/globalPlugins/easyAudioConverter/__init__.py:2586 src/globalPlugins/easyAudioConverter/__init__.py:3244 src/globalPlugins/easyAudioConverter/__init__.py:3929 src/globalPlugins/easyAudioConverter/__init__.py:3103
 msgid "Unknown error"
 msgstr "Nežinoma klaida"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1604
+#: src/globalPlugins/easyAudioConverter/__init__.py:2592
 msgid "Unsupported file type"
 msgstr "Nepalaikomas failo tipas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2233
+#: src/globalPlugins/easyAudioConverter/__init__.py:3239
 msgid "Update download canceled"
 msgstr "Atnaujinimų atsisiuntimas atšauktas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "Use the quality preset"
 msgstr "Naudokite kokybės nustatymą"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1008
+#: src/globalPlugins/easyAudioConverter/__init__.py:1557
 msgid "Use these settings for future quick conversions"
 msgstr "Naudokite šiuos nustatymus greitoms konversijoms ateityje"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:2308
+msgid "Verifying the output by decoding it"
+msgstr "Išvesties patikrinimas ją dekoduojant"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:438
 msgid "Very high"
 msgstr "Labai aukštas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:321
+#: src/globalPlugins/easyAudioConverter/__init__.py:388
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:327
+#: src/globalPlugins/easyAudioConverter/__init__.py:394
 msgid "WMA"
 msgstr "WMA"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:332
+#: src/globalPlugins/easyAudioConverter/__init__.py:2095
+msgid "Warning: the estimated output is larger than the available disk space."
+msgstr "Įspėjimas: apskaičiuota išvestis yra didesnė nei laisvos vietos diske."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2084
+msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
+msgstr "Įspėjimas: {count} failai bus konvertuojami iš nuostolingo formato į kitą nuostolingą formatą, todėl gali pablogėti kokybė."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:399
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:1541
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054 src/globalPlugins/easyAudioConverter/__init__.py:2056
+msgid "bytes"
+msgstr "baitų"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4150 src/globalPlugins/easyAudioConverter/__init__.py:2497
 msgid "calculating"
 msgstr "Skaičiavimas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2579
+#: src/globalPlugins/easyAudioConverter/__init__.py:3757
 msgid "excluding subfolders"
 msgstr "išskyrus poaplankius"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2577
+#: src/globalPlugins/easyAudioConverter/__init__.py:3755
 msgid "including subfolders"
 msgstr "įskaitant poaplankius"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2641 src/globalPlugins/easyAudioConverter/__init__.py:2666
+#: src/globalPlugins/easyAudioConverter/__init__.py:2181
+msgid "no"
+msgstr "ne"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1760 src/globalPlugins/easyAudioConverter/__init__.py:1761 src/globalPlugins/easyAudioConverter/__init__.py:1762
+msgid "off"
+msgstr "išjungti"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1760 src/globalPlugins/easyAudioConverter/__init__.py:1761 src/globalPlugins/easyAudioConverter/__init__.py:1762
+msgid "on"
+msgstr "įjungta"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2067
+msgid "source folders"
+msgstr "šaltinio aplankai"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2052 src/globalPlugins/easyAudioConverter/__init__.py:2078 src/globalPlugins/easyAudioConverter/__init__.py:2159 src/globalPlugins/easyAudioConverter/__init__.py:2160 src/globalPlugins/easyAudioConverter/__init__.py:2162 src/globalPlugins/easyAudioConverter/__init__.py:2168 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2176 src/globalPlugins/easyAudioConverter/__init__.py:3947 src/globalPlugins/easyAudioConverter/__init__.py:3951 src/globalPlugins/easyAudioConverter/__init__.py:3956
+msgid "unknown"
+msgstr "nežinomas"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2181
+msgid "yes"
+msgstr "taip"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3818 src/globalPlugins/easyAudioConverter/__init__.py:3847
 msgid "{count} selected folders"
 msgstr "{count} pasirinktus aplankus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2826
+#: src/globalPlugins/easyAudioConverter/__init__.py:427
+msgid "{name} (extension selected from the source audio codec)"
+msgstr "{name} (plėtinys pasirinktas iš šaltinio garso kodeko)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2507
+msgid "{stage}. File {index} of {total}: {name}"
+msgstr "{stage}. Failas {index} iš {total}: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4105
+msgid "{stage}. Queued jobs: {count}."
+msgstr "{stage}. Eilėje esantys darbai: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4153
+msgid "{stage}. {status} Queued jobs: {count}."
+msgstr "{stage}. {status} Eilėje esantys darbai: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4145
 msgid "{status} Estimated time remaining {remaining}."
 msgstr "{status} Numatomas likęs laikas {remaining}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2174 src/globalPlugins/easyAudioConverter/__init__.py:3954
+msgid "{value} Hz"
+msgstr "{value} Hz"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2166
+msgid "{value} kbps"
+msgstr "{value} kbps"

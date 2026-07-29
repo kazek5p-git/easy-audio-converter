@@ -8,8 +8,11 @@ separate codec installation is required.
 ## Main features
 
 - converts popular audio and media inputs supported by FFmpeg;
-- produces MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC, AAC, WMA, ALAC,
-  AIFF, AC-3, E-AC-3, WavPack, MP2, AMR-NB, and AMR-WB;
+- produces 16 encoded formats: MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC,
+  AAC, WMA, ALAC, AIFF, AC-3, E-AC-3, WavPack, MP2, AMR-NB, and AMR-WB;
+- extracts the first original audio stream from a video or other media file
+  without re-encoding, automatically choosing a safe extension for its codec;
+- remuxes an AAC stream directly to M4A without changing its encoded audio;
 - offers economical, standard, high, and very high quality presets;
 - provides LAME and Windows Media Foundation (Fraunhofer-compatible) MP3
   encoder choices;
@@ -19,20 +22,37 @@ separate codec installation is required.
   while still allowing an explicitly selected same-format file to be
   re-encoded;
 - never overwrites source or existing destination files;
+- previews folder and one-time jobs with exact input/output paths, skipped
+  counts, destination, duration, estimated size, free space, and
+  lossy-to-lossy warnings;
+- builds safe output names from metadata templates such as
+  `{artist} - {title}`, including literal prefixes and suffixes;
 - offers both unchanged quick conversion and an accessible one-time options
   dialog;
 - includes complete named job profiles, with three built-in profiles and
-  editable user profiles;
+  editable user profiles that can be imported and exported as bounded,
+  versioned JSON;
+- provides professional two-pass EBU R128 loudness normalization presets for
+  podcasts, music/streaming, broadcast, and custom targets;
+- can preserve embedded cover artwork and chapters when the target container
+  supports them;
+- can deeply verify each output by decoding it and comparing its duration;
+- queues additional conversion jobs for sequential processing and supports
+  both immediate cancellation and stopping after the current file;
+- reports codec, container, duration, bitrate, channels, sample rate, size,
+  tags, artwork, and chapters for one selected file;
 - shows quiet visual per-file and overall progress while conversion runs in a
   background thread, with spoken status and estimated remaining time;
 - lets the user choose milestone, per-file, or on-demand progress
   announcements;
 - provides an accessible results window with details, report copying, output
   folder access, and retry of failed files;
-- makes the successful-completion speech and sound independently
-  configurable;
+- makes success speech/sound configurable and provides separate optional
+  sounds for errors and cancellation;
 - copies all, selected, or no source text metadata;
 - stores independent advanced parameter profiles for each target codec;
+- provides one standalone, resizable settings window under NVDA's Tools menu,
+  with three accessible tabs and standard OK and Cancel buttons;
 - checks GitHub releases for verified add-on updates;
 - exposes every action in NVDA's Input Gestures dialog for custom shortcuts;
 - ships standard PO, MO, and POT files compatible with Poedit;

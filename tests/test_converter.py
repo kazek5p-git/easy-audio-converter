@@ -10,18 +10,31 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src" / "globalPlugins" / "easyAudioConverter"))
 
 from converter import (  # noqa: E402
+	AAC_M4A_COPY_FORMAT,
 	FORMAT_KEYS,
+	ORIGINAL_AUDIO_COPY_FORMAT,
 	QUALITY_KEYS,
+	STREAM_COPY_FORMATS,
 	ConversionSettings,
+	ConversionCallbacks,
+	Converter,
+	MediaInfo,
+	StreamCopySourceError,
 	apply_advanced_codec_arguments,
 	build_codec_arguments,
+	build_loudnorm_filter,
 	build_metadata_arguments,
 	collect_audio_files,
 	collect_audio_files_detailed,
 	make_unique_output_path,
+	output_extension_for,
 	parse_duration,
 	parse_ffmetadata,
+	parse_loudnorm_measurement,
+	parse_media_info,
 	parse_progress_time,
+	render_output_name,
+	sanitize_windows_filename,
 )
 
 
@@ -40,6 +53,10 @@ class ConversionSettingsTests(unittest.TestCase):
 	def test_invalid_settings_are_rejected(self):
 		with self.assertRaises(ValueError):
 			ConversionSettings(target_format="invalid").validate()
+		with self.assertRaises(ValueError):
+			ConversionSettings(output_name_template="{unknown}").validate()
+		with self.assertRaises(ValueError):
+			ConversionSettings(loudness_preset="invalid").validate()
 
 	def test_advanced_codec_overrides_are_validated_and_applied(self):
 		arguments = build_codec_arguments(
@@ -76,6 +93,43 @@ class ConversionSettingsTests(unittest.TestCase):
 			{"enabled": False, "codecLevel": 12},
 		)
 		self.assertEqual(base, advanced)
+
+	def test_stream_copy_never_applies_encoder_overrides(self):
+		for target_format in STREAM_COPY_FORMATS:
+			with self.subTest(target_format=target_format):
+				arguments = build_codec_arguments(
+					target_format,
+					"veryHigh",
+					"fraunhofer",
+					{
+						"enabled": True,
+						"bitrate": 512,
+						"sampleRate": 16000,
+						"channels": 1,
+						"codecLevel": 9,
+						"bitDepth": 24,
+					},
+				)
+				self.assertEqual(["-c:a", "copy"], arguments)
+
+
+class StreamCopyFormatTests(unittest.TestCase):
+	def test_original_stream_extension_follows_the_audio_codec(self):
+		self.assertEqual(".aac", output_extension_for(ORIGINAL_AUDIO_COPY_FORMAT, "aac"))
+		self.assertEqual(".mp3", output_extension_for(ORIGINAL_AUDIO_COPY_FORMAT, "mp3"))
+		self.assertEqual(".opus", output_extension_for(ORIGINAL_AUDIO_COPY_FORMAT, "opus"))
+		self.assertEqual(".aiff", output_extension_for(ORIGINAL_AUDIO_COPY_FORMAT, "pcm_s24be"))
+		self.assertEqual(".wav", output_extension_for(ORIGINAL_AUDIO_COPY_FORMAT, "pcm_s24le"))
+		self.assertEqual(".mka", output_extension_for(ORIGINAL_AUDIO_COPY_FORMAT, "unknown_codec"))
+
+	def test_aac_m4a_remux_rejects_other_codecs(self):
+		self.assertEqual(".m4a", output_extension_for(AAC_M4A_COPY_FORMAT, "aac"))
+		with self.assertRaises(StreamCopySourceError) as context:
+			output_extension_for(AAC_M4A_COPY_FORMAT, "mp3")
+		self.assertEqual("requiresAac", context.exception.reason)
+		with self.assertRaises(StreamCopySourceError) as context:
+			output_extension_for(AAC_M4A_COPY_FORMAT, "")
+		self.assertEqual("noAudioStream", context.exception.reason)
 
 
 class MetadataTests(unittest.TestCase):
@@ -117,6 +171,58 @@ class ProgressParsingTests(unittest.TestCase):
 	def test_progress_time_parser(self):
 		self.assertEqual(62.25, parse_progress_time("00:01:02.250000"))
 		self.assertIsNone(parse_progress_time("invalid"))
+
+
+class MediaInfoTests(unittest.TestCase):
+	def test_media_info_parser_reports_audio_properties(self):
+		info = parse_media_info(
+			"Input #0, mp3, from 'song.mp3':\n"
+			"  Duration: 00:03:02.50, start: 0.0, bitrate: 193 kb/s\n"
+			"  Chapter #0:0: start 0.000000, end 60.000000\n"
+			"  Stream #0:0: Audio: mp3, 48000 Hz, stereo, fltp, 192 kb/s\n"
+			"  Stream #0:1: Video: mjpeg (attached pic)\n",
+			source_path="song.mp3",
+			size_bytes=123,
+			metadata={"artist": "Artist"},
+		)
+		self.assertEqual("mp3", info.container)
+		self.assertEqual("mp3", info.codec)
+		self.assertEqual(182.5, info.duration)
+		self.assertEqual(192, info.bitrate_kbps)
+		self.assertEqual(48000, info.sample_rate)
+		self.assertEqual("stereo", info.channels)
+		self.assertTrue(info.has_artwork)
+		self.assertEqual(1, info.chapter_count)
+
+	def test_two_pass_loudness_filter_uses_measurements(self):
+		settings = ConversionSettings(loudness_preset="podcast")
+		first_pass = build_loudnorm_filter(settings)
+		self.assertIn("I=-16", first_pass)
+		self.assertIn("print_format=json", first_pass)
+		measurement = parse_loudnorm_measurement(
+			'[Parsed_loudnorm_0]\n{\n'
+			' "input_i" : "-20.10",\n'
+			' "input_tp" : "-2.30",\n'
+			' "input_lra" : "4.20",\n'
+			' "input_thresh" : "-30.00",\n'
+			' "target_offset" : "0.10"\n'
+			"}\n"
+		)
+		second_pass = build_loudnorm_filter(settings, measurement)
+		self.assertIn("measured_I=-20.1", second_pass)
+		self.assertIn("linear=true", second_pass)
+
+	def test_artwork_mapping_is_limited_to_compatible_targets(self):
+		mp3 = Converter._stream_mapping_arguments(
+			ConversionSettings(target_format="mp3", copy_artwork=True),
+			has_artwork=True,
+		)
+		self.assertIn("0:v:disp:attached_pic?", mp3)
+		wav = Converter._stream_mapping_arguments(
+			ConversionSettings(target_format="wav", copy_artwork=True),
+			has_artwork=True,
+		)
+		self.assertIn("-vn", wav)
 
 
 class FileCollectionTests(unittest.TestCase):
@@ -211,6 +317,179 @@ class OutputNamingTests(unittest.TestCase):
 			(root / "track.mp3").write_bytes(b"existing")
 			output = make_unique_output_path(source, root, ".mp3")
 			self.assertEqual("track (2).mp3", output.name)
+
+	def test_metadata_template_is_rendered_and_sanitized(self):
+		name = render_output_name(
+			"{artist} - {title}",
+			Path("source.wav"),
+			"mp3",
+			{"artist": "AC/DC", "title": "A:Song?"},
+		)
+		self.assertEqual("AC_DC - A_Song_", name)
+
+	def test_windows_reserved_names_and_traversal_are_safe(self):
+		self.assertEqual("_CON", sanitize_windows_filename("CON"))
+		self.assertEqual("_COM1.notes", sanitize_windows_filename("COM1.notes"))
+		self.assertNotIn("\\", sanitize_windows_filename("..\\outside"))
+
+
+class _FakeConverter(Converter):
+	def __init__(self, ffmpeg_path, *, codec="", bitrate_kbps=None):
+		super().__init__(ffmpeg_path)
+		self.codec = codec
+		self.bitrate_kbps = bitrate_kbps
+		self.commands = []
+
+	def _require_ffmpeg(self):
+		pass
+
+	def _probe_media_info(self, source, *, include_metadata):
+		return MediaInfo(
+			source_path=str(source),
+			codec=self.codec,
+			duration=10.0,
+			bitrate_kbps=self.bitrate_kbps,
+			size_bytes=source.stat().st_size,
+			metadata={"artist": "Artist", "title": source.stem},
+		)
+
+	def _run_process(self, command, on_progress=None):
+		self.commands.append(list(command))
+		output = Path(command[-1])
+		output.write_bytes(b"converted")
+		if on_progress is not None:
+			on_progress(10.0)
+		return 0, ""
+
+
+class ConversionPlanningTests(unittest.TestCase):
+	def test_plan_contains_actual_names_sizes_and_lossy_warning(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.mp3"
+			source.write_bytes(b"x" * 100)
+			settings = ConversionSettings(
+				target_format="opus",
+				same_folder=False,
+				output_folder=str(root / "out"),
+				output_name_template="{artist} - {title}",
+			)
+			plan = _FakeConverter(root / "missing.exe").create_plan([source], settings)
+			self.assertEqual(1, plan.total)
+			self.assertEqual(100, plan.input_bytes)
+			self.assertEqual(1, plan.lossy_to_lossy_count)
+			self.assertEqual("Artist - source.opus", Path(plan.items[0].output_path).name)
+			self.assertGreater(plan.estimated_output_bytes, 0)
+
+	def test_original_stream_plan_uses_codec_suffix_and_audio_bitrate(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "video.mp4"
+			source.write_bytes(b"x" * 2_000_000)
+			converter = _FakeConverter(
+				root / "missing.exe",
+				codec="aac",
+				bitrate_kbps=128,
+			)
+			plan = converter.create_plan(
+				[source],
+				ConversionSettings(
+					target_format=ORIGINAL_AUDIO_COPY_FORMAT,
+					same_folder=False,
+					output_folder=str(root / "out"),
+				),
+			)
+			self.assertEqual("video.aac", Path(plan.items[0].output_path).name)
+			self.assertLess(plan.items[0].estimated_output_size, source.stat().st_size)
+			self.assertEqual(163_200, plan.items[0].estimated_output_size)
+			self.assertEqual(0, plan.lossy_to_lossy_count)
+
+	def test_aac_m4a_plan_skips_a_non_aac_source(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "video.mkv"
+			source.write_bytes(b"video")
+			plan = _FakeConverter(
+				root / "missing.exe",
+				codec="mp3",
+				bitrate_kbps=192,
+			).create_plan(
+				[source],
+				ConversionSettings(
+					target_format=AAC_M4A_COPY_FORMAT,
+					same_folder=False,
+					output_folder=str(root / "out"),
+				),
+			)
+			self.assertEqual(0, plan.total)
+			self.assertEqual(1, plan.ignored)
+			self.assertEqual("requiresAac", plan.skipped_files[0].reason)
+
+	def test_original_stream_command_copies_only_audio_without_filters(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "video.mp4"
+			source.write_bytes(b"video")
+			converter = _FakeConverter(
+				root / "missing.exe",
+				codec="aac",
+				bitrate_kbps=128,
+			)
+			summary = converter.run(
+				[source],
+				ConversionSettings(
+					target_format=ORIGINAL_AUDIO_COPY_FORMAT,
+					same_folder=False,
+					output_folder=str(root / "out"),
+					metadata_mode="all",
+					loudness_preset="podcast",
+					copy_artwork=True,
+					copy_chapters=True,
+					advanced_options={
+						"enabled": True,
+						"bitrate": 64,
+						"sampleRate": 16000,
+						"channels": 1,
+					},
+				),
+			)
+			self.assertEqual(1, summary.succeeded)
+			self.assertEqual(".aac", Path(summary.outputs[0]).suffix)
+			command = converter.commands[0]
+			self.assertEqual("copy", command[command.index("-c:a") + 1])
+			self.assertIn("0:a:0", command)
+			self.assertNotIn("0:a:0?", command)
+			self.assertIn("-vn", command)
+			self.assertNotIn("-af", command)
+			self.assertNotIn("-ar", command)
+			self.assertNotIn("-ac", command)
+			self.assertEqual("-1", command[command.index("-map_metadata") + 1])
+			self.assertEqual("-1", command[command.index("-map_chapters") + 1])
+
+	def test_stop_after_current_finishes_exactly_one_file(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			first = root / "first.wav"
+			second = root / "second.wav"
+			first.write_bytes(b"one")
+			second.write_bytes(b"two")
+			converter = _FakeConverter(root / "missing.exe")
+			callbacks = ConversionCallbacks(
+				on_file_start=lambda *args: converter.stop_after_current()
+			)
+			summary = converter.run(
+				[first, second],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+				),
+				callbacks=callbacks,
+			)
+			self.assertEqual(2, summary.total)
+			self.assertEqual(1, summary.succeeded)
+			self.assertTrue(summary.stopped_after_current)
+			self.assertFalse(summary.canceled)
 
 
 if __name__ == "__main__":

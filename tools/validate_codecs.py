@@ -14,12 +14,64 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src" / "globalPlugins" / "easyAudioConverter"))
 
 from converter import (  # noqa: E402
+	AAC_M4A_COPY_FORMAT,
 	FORMAT_KEYS,
+	ORIGINAL_AUDIO_COPY_FORMAT,
+	STREAM_COPY_FORMATS,
 	ConversionCallbacks,
 	ConversionSettings,
 	Converter,
 	parse_ffmetadata,
 )
+
+
+def probe_text(ffmpeg: Path, path: Path) -> str:
+	return subprocess.run(
+		[str(ffmpeg), "-nostdin", "-hide_banner", "-i", str(path)],
+		stdout=subprocess.DEVNULL,
+		stderr=subprocess.PIPE,
+		text=True,
+		encoding="utf-8",
+		errors="replace",
+		check=False,
+	).stderr
+
+
+def copied_packet_hash(
+	ffmpeg: Path,
+	path: Path,
+	*,
+	strip_aac_adts: bool = False,
+) -> str:
+	bitstream_filter = ["-bsf:a", "aac_adtstoasc"] if strip_aac_adts else []
+	result = subprocess.run(
+		[
+			str(ffmpeg),
+			"-nostdin",
+			"-hide_banner",
+			"-loglevel",
+			"error",
+			"-i",
+			str(path),
+			"-map",
+			"0:a:0",
+			"-c:a",
+			"copy",
+			*bitstream_filter,
+			"-f",
+			"hash",
+			"-hash",
+			"sha256",
+			"-",
+		],
+		stdout=subprocess.PIPE,
+		stderr=subprocess.PIPE,
+		text=True,
+		encoding="utf-8",
+		errors="replace",
+		check=False,
+	)
+	return result.stdout.strip() if result.returncode == 0 else ""
 
 
 def read_metadata(ffmpeg: Path, path: Path) -> dict[str, str]:
@@ -85,7 +137,11 @@ def main() -> int:
 		if subprocess.run(create_command, check=False).returncode != 0:
 			raise RuntimeError("Could not create the synthetic test source")
 
-		cases = [(format_key, "lame") for format_key in FORMAT_KEYS]
+		cases = [
+			(format_key, "lame")
+			for format_key in FORMAT_KEYS
+			if format_key not in STREAM_COPY_FORMATS
+		]
 		cases.append(("mp3", "fraunhofer"))
 		for number, (format_key, encoder) in enumerate(cases, start=1):
 			output_folder = root / f"case-{number:02d}-{format_key}-{encoder}"
@@ -104,6 +160,131 @@ def main() -> int:
 			else:
 				output = Path(summary.outputs[0])
 				print(f"PASS {format_key}/{encoder}: {output.stat().st_size} bytes")
+
+		aac_video = root / "video with AAC.mp4"
+		mp3_video = root / "video with MP3.mkv"
+		for output, codec_arguments in (
+			(aac_video, ["-c:a", "aac", "-b:a", "128k"]),
+			(mp3_video, ["-c:a", "libmp3lame", "-b:a", "160k"]),
+		):
+			create_video_command = [
+				str(ffmpeg),
+				"-nostdin",
+				"-hide_banner",
+				"-loglevel",
+				"error",
+				"-f",
+				"lavfi",
+				"-i",
+				"color=c=navy:s=96x64:d=0.35",
+				"-i",
+				str(source),
+				"-map",
+				"0:v:0",
+				"-map",
+				"1:a:0",
+				"-c:v",
+				"mpeg4",
+				*codec_arguments,
+				"-shortest",
+				"-y",
+				str(output),
+			]
+			if subprocess.run(create_video_command, check=False).returncode != 0:
+				raise RuntimeError(f"Could not create stream-copy source: {output.name}")
+
+		for source_video, expected_suffix, expected_codec in (
+			(aac_video, ".aac", "aac"),
+			(mp3_video, ".mp3", "mp3"),
+		):
+			summary = Converter(ffmpeg).run(
+				[source_video],
+				ConversionSettings(
+					target_format=ORIGINAL_AUDIO_COPY_FORMAT,
+					same_folder=False,
+					output_folder=str(root / f"copy-{expected_codec}"),
+					loudness_preset="podcast",
+					advanced_options={
+						"enabled": True,
+						"sampleRate": 16000,
+						"channels": 1,
+					},
+				),
+			)
+			output = Path(summary.outputs[0]) if summary.succeeded else None
+			source_hash = copied_packet_hash(ffmpeg, source_video)
+			output_hash = (
+				copied_packet_hash(
+					ffmpeg,
+					output,
+					strip_aac_adts=expected_codec == "aac",
+				)
+				if output is not None
+				else ""
+			)
+			if (
+				output is None
+				or output.suffix.casefold() != expected_suffix
+				or Converter(ffmpeg).probe_media_info(output).codec.casefold() != expected_codec
+				or "Video:" in probe_text(ffmpeg, output)
+				or not source_hash
+				or source_hash != output_hash
+			):
+				failures.append(f"original {expected_codec} stream extraction failed")
+				print(f"FAIL original {expected_codec} stream extraction")
+			else:
+				print(f"PASS original {expected_codec} stream extraction without re-encoding")
+
+		aac_m4a_summary = Converter(ffmpeg).run(
+			[aac_video],
+			ConversionSettings(
+				target_format=AAC_M4A_COPY_FORMAT,
+				same_folder=False,
+				output_folder=str(root / "aac-remux"),
+			),
+		)
+		aac_m4a_output = (
+			Path(aac_m4a_summary.outputs[0])
+			if aac_m4a_summary.succeeded
+			else None
+		)
+		aac_source_hash = copied_packet_hash(ffmpeg, aac_video)
+		aac_m4a_hash = (
+			copied_packet_hash(ffmpeg, aac_m4a_output)
+			if aac_m4a_output is not None
+			else ""
+		)
+		if (
+			aac_m4a_output is None
+			or aac_m4a_output.suffix.casefold() != ".m4a"
+			or Converter(ffmpeg).probe_media_info(aac_m4a_output).codec.casefold() != "aac"
+			or "Video:" in probe_text(ffmpeg, aac_m4a_output)
+			or not aac_source_hash
+			or aac_source_hash != aac_m4a_hash
+		):
+			failures.append("AAC-to-M4A remux failed")
+			print("FAIL AAC-to-M4A remux")
+		else:
+			print("PASS AAC-to-M4A remux without re-encoding")
+
+		non_aac_summary = Converter(ffmpeg).run(
+			[mp3_video],
+			ConversionSettings(
+				target_format=AAC_M4A_COPY_FORMAT,
+				same_folder=False,
+				output_folder=str(root / "invalid-aac-remux"),
+			),
+		)
+		if (
+			non_aac_summary.total != 0
+			or non_aac_summary.ignored != 1
+			or not non_aac_summary.skipped_files
+			or non_aac_summary.skipped_files[0].reason != "requiresAac"
+		):
+			failures.append("non-AAC M4A remux input was not rejected")
+			print("FAIL non-AAC M4A remux rejection")
+		else:
+			print("PASS non-AAC M4A remux rejection")
 
 		source_tree = root / "album source"
 		nested_source = source_tree / "Disc 1"
@@ -320,7 +501,7 @@ def main() -> int:
 		for failure in failures:
 			print(f"- {failure}", file=sys.stderr)
 		return 1
-	print(f"\nAll {len(cases)} codec paths passed.")
+	print(f"\nAll {len(cases)} encoder paths and four stream-copy checks passed.")
 	return 0
 
 

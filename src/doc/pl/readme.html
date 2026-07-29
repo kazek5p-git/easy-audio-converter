@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.2.0.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.3.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -39,15 +39,32 @@
 	<h2>Ustawienia jednorazowe i nazwane profile</h2>
 	<p>
 		Okno „Konwertuj z opcjami” pozwala wybrać dla jednego zadania format,
-		jakość, kodek MP3, miejsce docelowe, sposób obsługi folderów, metadane
-		oraz aktywne zaawansowane ustawienia kodeka. Zaznacz pole „Używaj tych
+		jakość, kodek MP3, miejsce docelowe, sposób obsługi folderów, metadane,
+		szablon nazwy wyniku oraz aktywne ustawienia przetwarzania i kodeka.
+		Zaznacz pole „Używaj tych
 		ustawień podczas przyszłych szybkich konwersji” tylko wtedy, gdy chcesz
 		także zastąpić zapisane ustawienia domyślne.
 	</p>
 	<p>
 		Dostępne są wbudowane profile Audiobook MP3, Podcast Opus i Archiwum
-		FLAC. Kompletne profile własne można zapisywać, zastępować i usuwać.
+		FLAC. Kompletne profile własne można zapisywać, zastępować, usuwać,
+		importować i eksportować do bezpiecznego pliku JSON.
 		Nazwy oraz wartości są sprawdzane przed zapisaniem w konfiguracji NVDA.
+	</p>
+
+	<h2>Plan i nazwy wyników</h2>
+	<p>
+		Przed zadaniem folderowym lub uruchamianym z opcjami dodatek może
+		pokazać plan: liczbę plików i pominięć, folder docelowy, łączny czas,
+		rozmiar źródeł, przybliżony rozmiar wyników, wolne miejsce oraz
+		rzeczywiste pary ścieżek źródło–wynik. Ostrzega również przed ponowną
+		kompresją stratną i przewidywanym brakiem miejsca.
+	</p>
+	<p>
+		Szablon nazwy obsługuje pola {source}, {title}, {artist}, {album},
+		{track}, {disc}, {index} i {format}. Zwykły tekst w szablonie pełni
+		rolę prefiksu lub sufiksu. Niedozwolone znaki i zastrzeżone nazwy
+		Windows są automatycznie zabezpieczane.
 	</p>
 
 	<h2>Postęp konwersji</h2>
@@ -66,6 +83,14 @@
 	<p>
 		Przycisk „Anuluj konwersję”, polecenie z menu lub własny skrót zatrzymuje
 		FFmpeg. Niekompletny plik utworzony przez anulowaną operację jest usuwany.
+		Przycisk „Zatrzymaj po bieżącym pliku” pozwala dokończyć aktualny plik,
+		a następnie bezpiecznie zakończyć zadanie.
+	</p>
+	<p>
+		Kolejne polecenia konwersji wydane podczas pracy trafiają do kolejki i
+		są wykonywane po kolei. Okno postępu oraz menu pozwalają odczytać liczbę
+		oczekujących zadań i wyczyścić wyłącznie kolejkę, bez przerywania
+		aktywnego pliku.
 	</p>
 	<p>
 		Automatyczne komunikaty mogą występować w kolejnych etapach postępu, przy
@@ -86,14 +111,18 @@
 
 	<h2>Ustawienia</h2>
 	<p>
-		Otwórz menu NVDA, Ustawienia, Ustawienia, Easy Audio Converter.
-		W tej jednej kategorii znajdują się zakładki „Ustawienia standardowe”
-		i „Ustawienia zaawansowane”. Na pierwszej możesz wybrać format docelowy,
+		Otwórz menu NVDA, Narzędzia, Easy Audio Converter, Ustawienia.
+		W tym samodzielnym oknie o zmiennym rozmiarze znajdują się zakładki
+		„Ustawienia standardowe”, „Ustawienia zaawansowane” i „Przetwarzanie i
+		powiadomienia”. Przycisk OK sprawdza i zapisuje wszystkie trzy zakładki,
+		a Anuluj lub Escape odrzuca zmiany. Dodatek nie umieszcza już pozycji na
+		głównej liście Ustawień NVDA. Na pierwszej zakładce możesz wybrać format docelowy,
 		jakość, kodek MP3, sposób zapisu, przeszukiwanie podfolderów, zachowanie
-		struktury katalogów, sposób eksportu metadanych, powiadomienie o
-		zakończeniu, automatyczne komunikaty o postępie oraz automatyczne
-		sprawdzanie aktualizacji. Na tej stronie można także przetestować
-		dźwięk zakończenia.
+		struktury katalogów, sposób eksportu metadanych oraz szablon nazwy.
+		Trzecia zakładka zawiera normalizację głośności, kopiowanie okładek i
+		rozdziałów, weryfikację wyniku, plan przed startem, komunikaty postępu,
+		aktualizacje i osobne dźwięki sukcesu, błędu oraz anulowania. Każdy
+		dźwięk można przetestować.
 	</p>
 	<p>
 		Po zaznaczeniu opcji „Zapisuj przekonwertowane pliki obok plików
@@ -112,6 +141,25 @@
 		bezpieczną nową nazwę.
 	</p>
 
+	<h2>Wyodrębnianie oryginalnego strumienia i remuksowanie AAC</h2>
+	<p>
+		„Wyodrębnij oryginalny strumień audio” kopiuje pierwszy strumień audio
+		z pliku wideo lub innego pliku multimedialnego bez ponownego kodowania.
+		Kodek i jakość nie zmieniają się. Dodatek automatycznie dobiera
+		rozszerzenie, na przykład .aac, .mp3, .opus, .ogg, .flac, .m4a, .wav
+		lub .aiff; dla nietypowego kodeka używa bezpiecznego kontenera .mka.
+		Obraz wideo, metadane, okładki i rozdziały nie trafiają do wyniku.
+	</p>
+	<p>
+		„Remuksuj AAC do M4A” umieszcza pierwszy strumień AAC w kontenerze M4A
+		bez ponownego kodowania. Plik, którego pierwszy strumień audio nie jest
+		AAC albo nie zawiera możliwego do odczytania dźwięku, jest zgłaszany i
+		pomijany przed rozpoczęciem operacji. Metadane, okładki i rozdziały M4A
+		mogą nadal korzystać ze zwykłych ustawień kopiowania. Żaden z dwóch
+		trybów kopiowania strumienia nie używa ustawień jakości, normalizacji
+		głośności, próbkowania, kanałów ani zaawansowanego kodeka.
+	</p>
+
 	<h2>Metadane</h2>
 	<p>Lista eksportu metadanych udostępnia trzy tryby:</p>
 	<ul>
@@ -124,18 +172,42 @@
 		</li>
 	</ul>
 	<p>
-		Okładka jest strumieniem multimedialnym, a nie polem tekstowym, dlatego
-		nie podlega selektorowi metadanych. Niektóre kontenery obsługują mniej
-		pól tekstowych niż inne.
+		Okładka jest strumieniem multimedialnym, a nie polem tekstowym. Może być
+		kopiowana oddzielną opcją do MP3, M4A/ALAC i FLAC, jeśli źródło i
+		kontener docelowy ją obsługują. Znaczniki rozdziałów również mają
+		oddzielną opcję.
+	</p>
+
+	<h2>Głośność i weryfikacja</h2>
+	<p>
+		Profesjonalna normalizacja EBU R128 działa w dwóch przebiegach: najpierw
+		mierzy cały plik, a następnie koduje z użyciem wyników pomiaru. Dostępne
+		są ustawienia Podcast -16 LUFS, Muzyka i streaming -14 LUFS, Emisja
+		-23 LUFS oraz własne wartości LUFS, dBTP i LRA.
+	</p>
+	<p>
+		Głęboka weryfikacja po konwersji dekoduje cały wynik i porównuje jego
+		czas ze źródłem. Niepoprawny wynik jest usuwany i zgłaszany jako błąd.
+		Wbudowany profil Archiwum FLAC włącza weryfikację oraz kopiowanie
+		okładek i rozdziałów.
+	</p>
+
+	<h2>Informacje o pliku</h2>
+	<p>
+		Polecenie „Informacje o zaznaczonym pliku audio” odczytuje i pokazuje
+		kontener, kodek, czas, przepływność, kanały, częstotliwość próbkowania,
+		rozmiar, metadane, obecność okładki i liczbę rozdziałów. Raport można
+		skopiować.
 	</p>
 
 	<h2>Zaawansowane ustawienia kodeków</h2>
 	<p>
-		Otwórz kategorię „Easy Audio Converter” w Ustawieniach NVDA i wybierz
-		zakładkę „Ustawienia zaawansowane”. Każdy format docelowy ma oddzielny
-		profil. Po włączeniu ustawień można wybrać przepływność, źródłową lub
-		stałą częstotliwość próbkowania, źródłową liczbę kanałów albo mono/stereo,
-		poziom właściwy dla kodeka i głębię bitową PCM.
+		Otwórz menu NVDA, Narzędzia, Easy Audio Converter, Zaawansowane
+		ustawienia kodeków albo otwórz główne okno ustawień dodatku i wybierz
+		zakładkę „Ustawienia zaawansowane”. Każdy kodowany format docelowy ma
+		oddzielny profil. Po włączeniu ustawień można wybrać przepływność,
+		źródłową lub stałą częstotliwość próbkowania, źródłową liczbę kanałów
+		albo mono/stereo, poziom właściwy dla kodeka i głębię bitową PCM.
 	</p>
 	<p>
 		Poziom kodeka oznacza jakość algorytmu LAME, jakość Vorbis, złożoność
@@ -168,6 +240,7 @@
 		<li>konwersji zaznaczenia z ustawieniami jednorazowymi;</li>
 		<li>szybkiej konwersji zaznaczenia;</li>
 		<li>konwersji bieżącego folderu;</li>
+		<li>informacji o zaznaczonym pliku audio;</li>
 		<li>zmiany formatu docelowego;</li>
 		<li>zmiany jakości;</li>
 		<li>szybkiego wyboru folderu docelowego;</li>
@@ -176,14 +249,18 @@
 		<li>pokazywania wyników ostatniej konwersji;</li>
 		<li>odczytu stanu;</li>
 		<li>anulowania konwersji;</li>
+		<li>zatrzymania po bieżącym pliku;</li>
+		<li>odczytu i czyszczenia kolejki zadań;</li>
 		<li>sprawdzania aktualizacji;</li>
 		<li>otwierania strony wsparcia.</li>
 	</ul>
 
 	<h2>Obsługiwane formaty docelowe</h2>
 	<p>
-		MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC, AAC, WMA, ALAC, AIFF,
-		AC-3, E-AC-3, WavPack, MP2, AMR wąskopasmowy i AMR szerokopasmowy.
+		Formaty kodowania to MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC, AAC,
+		WMA, ALAC, AIFF, AC-3, E-AC-3, WavPack, MP2, AMR wąskopasmowy i AMR
+		szerokopasmowy. Dwa dodatkowe tryby wyodrębniają oryginalny strumień
+		audio albo remuksują AAC do M4A bez ponownego kodowania.
 	</p>
 	<p>
 		Dla MP3 można wybrać LAME albo kodek MP3 Windows Media Foundation.
@@ -192,10 +269,11 @@
 
 	<h2>Uwagi</h2>
 	<ul>
-		<li>Jednocześnie może działać jedno zadanie konwersji.</li>
-		<li>Konwersja folderu wymaga potwierdzenia.</li>
+		<li>Jednocześnie działa jedno zadanie, a kolejne czekają w kolejce.</li>
+		<li>Konwersja folderu wymaga zatwierdzenia planu lub potwierdzenia.</li>
 		<li>Pliki WAV mogą mieć rozszerzenie .wav albo .wave.</li>
 		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>
+		<li>Tryby kopiowania zawsze używają pierwszego czytelnego strumienia audio.</li>
 		<li>Nie można konwertować mediów zaszyfrowanych lub zabezpieczonych DRM.</li>
 		<li>Parametry zaawansowane nieobsługiwane przez format są ignorowane lub wyłączone.</li>
 		<li>Szczegóły obejmują do 500 pominiętych plików oraz pełną ich liczbę.</li>

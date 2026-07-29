@@ -1,521 +1,741 @@
-# Easy Audio Converter translation catalog.
-# Generated for NVDA; placeholders were validated automatically.
+# Easy Audio Converter translation.
+# Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.2.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: ta\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.3.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-29 19:49+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: ta\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1639
+#: src/globalPlugins/easyAudioConverter/__init__.py:2103
+msgid "...and {count} more files"
+msgstr "... மற்றும் {count} மேலும் கோப்புகள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2633
 msgid "...and {count} more skipped files"
 msgstr "... மற்றும் {count} மேலும் தவிர்க்கப்பட்ட கோப்புகள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "16 bit"
 msgstr "16 பிட்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "24 bit"
 msgstr "24 பிட்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "32 bit"
 msgstr "32 பிட்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1230
+#: src/globalPlugins/easyAudioConverter/__init__.py:1955
 msgid "A built-in profile already uses this name."
 msgstr "உள்ளமைக்கப்பட்ட சுயவிவரம் ஏற்கனவே இந்த பெயரைப் பயன்படுத்துகிறது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2266 src/globalPlugins/easyAudioConverter/__init__.py:2538 src/globalPlugins/easyAudioConverter/__init__.py:2622
-msgid "A conversion is already in progress"
-msgstr "ஒரு மாற்றம் ஏற்கனவே நடந்து கொண்டிருக்கிறது"
-
-#: src/globalPlugins/easyAudioConverter/__init__.py:326
+#: src/globalPlugins/easyAudioConverter/__init__.py:393
 msgid "AAC"
 msgstr "ஏஏசி"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:330
+#: src/globalPlugins/easyAudioConverter/__init__.py:397
 msgid "AC-3"
 msgstr "ஏசி-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:329
+#: src/globalPlugins/easyAudioConverter/__init__.py:396
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:328
+#: src/globalPlugins/easyAudioConverter/__init__.py:395
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (ஆப்பிள் லாஸ்லெஸ்)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:334
+#: src/globalPlugins/easyAudioConverter/__init__.py:401
 msgid "AMR narrowband"
 msgstr "AMR குறுகிய பட்டை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:335
+#: src/globalPlugins/easyAudioConverter/__init__.py:402
 msgid "AMR wideband"
 msgstr "AMR வைட்பேண்ட்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1591
+#: src/globalPlugins/easyAudioConverter/__init__.py:2577
 msgid "Access to the source or destination was denied."
 msgstr "மூல அல்லது இலக்குக்கான அணுகல் மறுக்கப்பட்டது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1725
+#: src/globalPlugins/easyAudioConverter/__init__.py:2719
 msgid "Additional skipped files: {count}"
 msgstr "தவிர்த்த கூடுதல் கோப்புகள்: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1140
+#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+msgid "Advanced codec overrides are not used for stream copy"
+msgstr "மேம்பட்ட கோடெக் மேலெழுதல்கள் ஸ்ட்ரீம் நகலுக்கு பயன்படுத்தப்படுவதில்லை"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1719
 msgid "Advanced codec overrides: disabled"
 msgstr "மேம்பட்ட கோடெக் மேலெழுதுகிறது: முடக்கப்பட்டது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1138
+#: src/globalPlugins/easyAudioConverter/__init__.py:1717
 msgid "Advanced codec overrides: enabled"
 msgstr "மேம்பட்ட கோடெக் மேலெழுதுகிறது: இயக்கப்பட்டது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1969
+#: src/globalPlugins/easyAudioConverter/__init__.py:2964
 msgid "Advanced codec settings..."
 msgstr "மேம்பட்ட கோடெக் அமைப்புகள்..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:679
+#: src/globalPlugins/easyAudioConverter/__init__.py:1029
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:367
+#: src/globalPlugins/easyAudioConverter/__init__.py:471
 msgid "Album"
 msgstr "ஆல்பம்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:368
+#: src/globalPlugins/easyAudioConverter/__init__.py:472
 msgid "Album artist"
 msgstr "ஆல்பம் கலைஞர்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1603
+#: src/globalPlugins/easyAudioConverter/__init__.py:2591
 msgid "Already uses the target format"
 msgstr "ஏற்கனவே இலக்கு வடிவமைப்பைப் பயன்படுத்துகிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2064
+#: src/globalPlugins/easyAudioConverter/__init__.py:3070
 msgid "An update check is already in progress"
 msgstr "ஒரு புதுப்பித்தல் சரிபார்ப்பு ஏற்கனவே செயல்பாட்டில் உள்ளது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2156
+#: src/globalPlugins/easyAudioConverter/__init__.py:3162
 msgid "An update download is already in progress"
 msgstr "புதுப்பித்தல் பதிவிறக்கம் ஏற்கனவே நடந்து வருகிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:299
+#: src/globalPlugins/easyAudioConverter/__init__.py:2306
+msgid "Analyzing loudness, first pass"
+msgstr "சத்தத்தை பகுப்பாய்வு செய்தல், முதல் பாஸ்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:362
 msgid "Archive FLAC"
 msgstr "FLAC காப்பகம்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:366
+#: src/globalPlugins/easyAudioConverter/__init__.py:470
 msgid "Artist"
 msgstr "கலைஞர்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:236
+#: src/globalPlugins/easyAudioConverter/__init__.py:291
 msgid "At every file"
 msgstr "ஒவ்வொரு கோப்பிலும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:235
+#: src/globalPlugins/easyAudioConverter/__init__.py:290
 msgid "At progress milestones"
 msgstr "முன்னேற்ற மைல்கற்களில்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:264
+#: src/globalPlugins/easyAudioConverter/__init__.py:2160
+msgid "Audio codec: {value}"
+msgstr "ஆடியோ கோடெக்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2199
+msgid "Audio file information"
+msgstr "ஆடியோ கோப்பு தகவல்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2236
+msgid "Audio information copied"
+msgstr "ஆடியோ தகவல் நகலெடுக்கப்பட்டது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3898
+msgid "Audio information is already being read"
+msgstr "ஆடியோ தகவல் ஏற்கனவே படிக்கப்படுகிறது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3943
+msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
+msgstr "ஆடியோ தகவல் தயாராக உள்ளது. கோடெக் {codec}, காலம் {duration}, மாதிரி விகிதம் {sampleRate}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:319
 msgid "Audiobook MP3"
 msgstr "ஆடியோபுக் MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:576
+#: src/globalPlugins/easyAudioConverter/__init__.py:918
 msgid "Automatic progress announcements:"
 msgstr "தானியங்கி முன்னேற்ற அறிவிப்புகள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:586
+#: src/globalPlugins/easyAudioConverter/__init__.py:926
 msgid "Automatically check for add-on updates"
 msgstr "துணை நிரல் புதுப்பிப்புகளை தானாகவே சரிபார்க்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:706
+#: src/globalPlugins/easyAudioConverter/__init__.py:664
+msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
+msgstr "கிடைக்கக்கூடிய புலங்கள்: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1056
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "kbps இல் பிட்ரேட் (0 தர முன்னமைவைப் பயன்படுத்துகிறது):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:521 src/globalPlugins/easyAudioConverter/__init__.py:983
+#: src/globalPlugins/easyAudioConverter/__init__.py:2164
+msgid "Bitrate: {value}"
+msgstr "பிட்ரேட்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:462
+msgid "Broadcast: -23 LUFS, -2 dBTP"
+msgstr "ஒளிபரப்பு: -23 LUFS, -2 dBTP"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:654 src/globalPlugins/easyAudioConverter/__init__.py:1523
 msgid "Browse..."
 msgstr "உலாவுக..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1558 src/globalPlugins/easyAudioConverter/__init__.py:1459 src/globalPlugins/easyAudioConverter/__init__.py:1966
+#: src/globalPlugins/easyAudioConverter/__init__.py:2304
+msgid "Building the conversion plan"
+msgstr "மாற்று திட்டத்தை உருவாக்குதல்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2532 src/globalPlugins/easyAudioConverter/__init__.py:2408 src/globalPlugins/easyAudioConverter/__init__.py:2959
 msgid "Cancel conversion"
 msgstr "மாற்றத்தை ரத்துசெய்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2751
+#: src/globalPlugins/easyAudioConverter/__init__.py:4022
 msgid "Cancel the current audio conversion"
 msgstr "தற்போதைய ஆடியோ மாற்றத்தை ரத்துசெய்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2759
+#: src/globalPlugins/easyAudioConverter/__init__.py:4030
 msgid "Canceling the conversion"
 msgstr "மாற்றத்தை ரத்து செய்தல்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1566
+#: src/globalPlugins/easyAudioConverter/__init__.py:2542
 msgid "Canceling..."
 msgstr "ரத்து செய்கிறது..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:391 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:523 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "ஆதரவுப் பக்கத்தைத் திறக்க முடியவில்லை. இந்த முகவரியை கைமுறையாகத் திறக்கவும்: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2712
+#: src/globalPlugins/easyAudioConverter/__init__.py:3977
 msgid "Change the conversion quality"
 msgstr "மாற்று தரத்தை மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2698
+#: src/globalPlugins/easyAudioConverter/__init__.py:3963
 msgid "Change the target audio format"
 msgstr "இலக்கு ஆடியோ வடிவமைப்பை மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:719
+#: src/globalPlugins/easyAudioConverter/__init__.py:1069
 msgid "Channels:"
 msgstr "சேனல்கள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2838
+#: src/globalPlugins/easyAudioConverter/__init__.py:2171
+msgid "Channels: {value}"
+msgstr "சேனல்கள்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2183
+msgid "Chapters: {value}"
+msgstr "அத்தியாயங்கள்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4162
 msgid "Check for Easy Audio Converter updates"
 msgstr "எளிதான ஆடியோ மாற்றி புதுப்பிப்புகளைச் சரிபார்க்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1970
+#: src/globalPlugins/easyAudioConverter/__init__.py:2965
 msgid "Check for updates..."
 msgstr "புதுப்பிப்புகளைச் சரிபார்க்கவும்..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2067
+#: src/globalPlugins/easyAudioConverter/__init__.py:3073
 msgid "Checking for Easy Audio Converter updates"
 msgstr "எளிதான ஆடியோ மாற்றி புதுப்பிப்புகளை சரிபார்க்கிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2682
+#: src/globalPlugins/easyAudioConverter/__init__.py:3872
 msgid "Choose a folder to convert"
 msgstr "மாற்றுவதற்கு ஒரு கோப்புறையைத் தேர்ந்தெடுக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:870
+#: src/globalPlugins/easyAudioConverter/__init__.py:1281
 msgid "Choose metadata fields"
 msgstr "மெட்டாடேட்டா புலங்களைத் தேர்வுசெய்க"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1002
+#: src/globalPlugins/easyAudioConverter/__init__.py:1547
 msgid "Choose metadata fields..."
 msgstr "மெட்டாடேட்டா புலங்களை தேர்வு செய்யவும்..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1172 src/globalPlugins/easyAudioConverter/__init__.py:2733
+#: src/globalPlugins/easyAudioConverter/__init__.py:774 src/globalPlugins/easyAudioConverter/__init__.py:1795 src/globalPlugins/easyAudioConverter/__init__.py:4004
 msgid "Choose the destination folder"
 msgstr "இலக்கு கோப்புறையைத் தேர்ந்தெடுக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1555 src/globalPlugins/easyAudioConverter/__init__.py:1754
+#: src/globalPlugins/easyAudioConverter/__init__.py:4059 src/globalPlugins/easyAudioConverter/__init__.py:2961
+msgid "Clear queued conversion jobs"
+msgstr "வரிசையில் உள்ள மாற்று வேலைகளை அழிக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2410
+msgid "Clear queued jobs"
+msgstr "வரிசையில் உள்ள வேலைகளை அழிக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4072 src/globalPlugins/easyAudioConverter/__init__.py:3321
+msgid "Cleared {count} queued conversion jobs"
+msgstr "அழிக்கப்பட்டது {count} வரிசையில் மாற்று வேலைகள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213 src/globalPlugins/easyAudioConverter/__init__.py:2529 src/globalPlugins/easyAudioConverter/__init__.py:2748
 msgid "Close"
 msgstr "மூடவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:694
+#: src/globalPlugins/easyAudioConverter/__init__.py:1044
 msgid "Codec profile to edit:"
 msgstr "திருத்த கோடெக் சுயவிவரம்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:725
+#: src/globalPlugins/easyAudioConverter/__init__.py:1075
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "கோடெக்-குறிப்பிட்ட நிலை (-1 முன்னமைவைப் பயன்படுத்துகிறது):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:374
+#: src/globalPlugins/easyAudioConverter/__init__.py:478
 msgid "Comment"
 msgstr "கருத்துரை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:369
+#: src/globalPlugins/easyAudioConverter/__init__.py:473
 msgid "Composer"
 msgstr "இசையமைப்பாளர்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2585
+#: src/globalPlugins/easyAudioConverter/__init__.py:3763
 msgid "Confirm folder conversion"
 msgstr "கோப்புறை மாற்றத்தை உறுதிப்படுத்தவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2462
+#: src/globalPlugins/easyAudioConverter/__init__.py:2159
+msgid "Container: {value}"
+msgstr "கொள்கலன்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3591
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "மாற்றம் ரத்து செய்யப்பட்டது. {total} கோப்புகளில் {done} முடிந்தது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2473
+#: src/globalPlugins/easyAudioConverter/__init__.py:3609
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "மாற்றம் முடிந்தது. வெற்றி: {done}. தோல்வி: {failed}. தவிர்க்கப்பட்டது: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2482
+#: src/globalPlugins/easyAudioConverter/__init__.py:3618
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "மாற்றம் முடிந்தது: {done} வெற்றியடைந்தது, {failed} தோல்வியடைந்தது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:945
+#: src/globalPlugins/easyAudioConverter/__init__.py:3294
+msgid "Conversion job added to the queue. Queue position: {position}."
+msgstr "மாற்று வேலை வரிசையில் சேர்க்கப்பட்டது. வரிசை நிலை: {position}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2063
+msgid "Conversion plan"
+msgstr "மாற்று திட்டம்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1481
 msgid "Conversion profile:"
 msgstr "மாற்று சுயவிவரம்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1842
+#: src/globalPlugins/easyAudioConverter/__init__.py:1914
+msgid "Conversion profiles exported"
+msgstr "மாற்று சுயவிவரங்கள் ஏற்றுமதி செய்யப்பட்டன"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2836
 msgid "Conversion report copied"
 msgstr "மாற்று அறிக்கை நகலெடுக்கப்பட்டது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1612
+#: src/globalPlugins/easyAudioConverter/__init__.py:2604
 msgid "Conversion results"
 msgstr "மாற்று முடிவுகள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1025
+#: src/globalPlugins/easyAudioConverter/__init__.py:1574
 msgid "Convert"
 msgstr "மாற்று"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2582
+#: src/globalPlugins/easyAudioConverter/__init__.py:3760
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "ஆதரிக்கப்படும் அனைத்து ஆடியோ கோப்புகளையும் {folder}, {scope} இல் மாற்றவா?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2674
+#: src/globalPlugins/easyAudioConverter/__init__.py:3864
 msgid "Convert every supported audio file in the current folder"
 msgstr "தற்போதைய கோப்புறையில் ஆதரிக்கப்படும் ஒவ்வொரு ஆடியோ கோப்பையும் மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1961
+#: src/globalPlugins/easyAudioConverter/__init__.py:2952
 msgid "Convert selected files or folders"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்புகள் அல்லது கோப்புறைகளை மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2617
+#: src/globalPlugins/easyAudioConverter/__init__.py:3793
 msgid "Convert selected files or folders with one-time options"
 msgstr "தேர்ந்தெடுத்த கோப்புகள் அல்லது கோப்புறைகளை ஒரு முறை விருப்பங்களுடன் மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1960
+#: src/globalPlugins/easyAudioConverter/__init__.py:2951
 msgid "Convert selected files or folders with options..."
 msgstr "தேர்ந்தெடுத்த கோப்புகள் அல்லது கோப்புறைகளை விருப்பங்களுடன் மாற்றவும்..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1962
+#: src/globalPlugins/easyAudioConverter/__init__.py:2953
 msgid "Convert the current folder"
 msgstr "தற்போதைய கோப்புறையை மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:923
+#: src/globalPlugins/easyAudioConverter/__init__.py:1457
 msgid "Convert with options"
 msgstr "விருப்பங்களுடன் மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2340
+#: src/globalPlugins/easyAudioConverter/__init__.py:2307
+msgid "Converting audio, second pass"
+msgstr "ஆடியோவை மாற்றுதல், இரண்டாவது பாஸ்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3377
 msgid "Converting {index} of {total}: {name}"
 msgstr "மாற்றுகிறது {index} of {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2803
+#: src/globalPlugins/easyAudioConverter/__init__.py:4122
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{total} இன் {index} ஐ மாற்றுகிறது: {name}. தற்போதைய கோப்பு நேரம் {processed}; கழிந்தது {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2814
+#: src/globalPlugins/easyAudioConverter/__init__.py:4133
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:358
+#: src/globalPlugins/easyAudioConverter/__init__.py:452
 msgid "Copy all text metadata"
 msgstr "அனைத்து உரை மெட்டாடேட்டாவையும் நகலெடுக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1753
+#: src/globalPlugins/easyAudioConverter/__init__.py:872 src/globalPlugins/easyAudioConverter/__init__.py:1380
+msgid "Copy chapter markers"
+msgstr "அத்தியாய குறிப்பான்களை நகலெடுக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1376
+msgid "Copy embedded cover artwork when supported"
+msgstr "உட்பொதிக்கப்பட்ட அட்டை கலைப்படைப்புகளை ஆதரிக்கும்போது நகலெடுக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:868
+msgid "Copy embedded cover artwork when the target supports it"
+msgstr "இலக்கு அதை ஆதரிக்கும் போது உட்பொதிக்கப்பட்ட அட்டை கலைப்படைப்பை நகலெடுக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2212
+msgid "Copy information"
+msgstr "தகவலை நகலெடுக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2747
 msgid "Copy report"
 msgstr "அறிக்கையை நகலெடுக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/__init__.py:453
 msgid "Copy selected metadata fields"
 msgstr "தேர்ந்தெடுத்த மெட்டாடேட்டா புலங்களை நகலெடுக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:375
+#: src/globalPlugins/easyAudioConverter/__init__.py:479
 msgid "Copyright"
 msgstr "பதிப்புரிமை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2096
+#: src/globalPlugins/easyAudioConverter/__init__.py:3102
 msgid "Could not check for updates.\n\n{error}"
 msgstr "புதுப்பித்தல்களை சரிபார்க்க இயலவில்லை.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1836
+#: src/globalPlugins/easyAudioConverter/__init__.py:2234
+msgid "Could not copy the audio information"
+msgstr "ஆடியோ தகவலை நகலெடுக்க முடியவில்லை"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2830
 msgid "Could not copy the conversion report."
 msgstr "மாற்று அறிக்கையை நகலெடுக்க இயலவில்லை."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2250
+#: src/globalPlugins/easyAudioConverter/__init__.py:1908
+msgid "Could not export profiles:\n{error}"
+msgstr "சுயவிவரங்களை ஏற்றுமதி செய்ய இயலவில்லை:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1870
+msgid "Could not import profiles:\n{error}"
+msgstr "சுயவிவரங்களை இறக்குமதி செய்ய இயலவில்லை:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3039
+msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
+msgstr "எளிதான ஆடியோ மாற்றி அமைப்புகளை திறக்க இயலவில்லை. விவரங்களுக்கு NVDA பதிவைப் பார்க்கவும்."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3256
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "NVDA துணை நிரல் நிறுவியை திறக்க இயலவில்லை. புதுப்பித்தல் இதற்கு சேமிக்கப்பட்டது:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1823
+#: src/globalPlugins/easyAudioConverter/__init__.py:2817
 msgid "Could not open the output folder."
 msgstr "வெளியீட்டு கோப்புறையை திறக்க இயலவில்லை."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1553
+#: src/globalPlugins/easyAudioConverter/__init__.py:3928
+msgid "Could not read audio information:\n{error}"
+msgstr "ஆடியோ தகவலை படிக்க இயலவில்லை:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1266
+msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
+msgstr "எளிதான ஆடியோ மாற்றி அமைப்புகளை சேமிக்க இயலவில்லை. விவரங்களுக்கு NVDA பதிவைப் பார்க்கவும்."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2527
 msgid "Current file progress: 100%"
 msgstr "தற்போதைய கோப்பு முன்னேற்றம்: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1442
+#: src/globalPlugins/easyAudioConverter/__init__.py:2389
 msgid "Current file progress: waiting"
 msgstr "நடப்பு கோப்பு முன்னேற்றம்: காத்திருக்கிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1521
+#: src/globalPlugins/easyAudioConverter/__init__.py:2477
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "நடப்பு கோப்பு முன்னேற்றம்: {percent}% ({duration} இன் {processed})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1513
+#: src/globalPlugins/easyAudioConverter/__init__.py:2469
 msgid "Current file time: {processed}"
 msgstr "நடப்பு கோப்பு நேரம்: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:371
+#: src/globalPlugins/easyAudioConverter/__init__.py:463
+msgid "Custom EBU R128 target"
+msgstr "தனிப்பயன் EBU R128 இலக்கு"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:842 src/globalPlugins/easyAudioConverter/__init__.py:1351
+msgid "Custom integrated loudness in LUFS:"
+msgstr "LUFS இல் தனிப்பயன் ஒருங்கிணைந்த சத்தம்:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:860 src/globalPlugins/easyAudioConverter/__init__.py:1369
+msgid "Custom loudness range in LU:"
+msgstr "LU இல் தனிப்பயன் சத்த வரம்பு:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:851 src/globalPlugins/easyAudioConverter/__init__.py:1360
+msgid "Custom true peak in dBTP:"
+msgstr "dBTP இல் தனிப்பயன் உண்மையான உச்சம்:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:475
 msgid "Date or year"
 msgstr "தேதி அல்லது ஆண்டு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1279
+#: src/globalPlugins/easyAudioConverter/__init__.py:1384
+msgid "Deeply verify every output file"
+msgstr "ஒவ்வொரு வெளியீட்டு கோப்பையும் ஆழமாக சரிபார்க்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:878
+msgid "Deeply verify output by decoding it and comparing duration"
+msgstr "வெளியீட்டை டிகோடிங் செய்வதன் மூலமும், கால அளவை ஒப்பிடுவதன் மூலமும் ஆழமாக சரிபார்க்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2004
 msgid "Delete conversion profile"
 msgstr "மாற்று சுயவிவரத்தை நீக்கு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:951
+#: src/globalPlugins/easyAudioConverter/__init__.py:1487
 msgid "Delete profile"
 msgstr "சுயவிவரத்தை நீக்கு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1278
+#: src/globalPlugins/easyAudioConverter/__init__.py:2003
 msgid "Delete the profile “{name}”?"
 msgstr "\"{name}\" சுயவிவரத்தை நீக்கவா?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515 src/globalPlugins/easyAudioConverter/__init__.py:979
+#: src/globalPlugins/easyAudioConverter/__init__.py:648 src/globalPlugins/easyAudioConverter/__init__.py:1519
 msgid "Destination folder:"
 msgstr "இலக்கு கோப்புறை:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2747
+#: src/globalPlugins/easyAudioConverter/__init__.py:4018
 msgid "Destination folder: {folder}"
 msgstr "இலக்கு கோப்புறை: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+#: src/globalPlugins/easyAudioConverter/__init__.py:2066
+msgid "Destination: {destination}"
+msgstr "இலக்கு: {destination}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2720
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "விவரங்கள் முதல் {limit} தவிர்க்கப்பட்ட கோப்புகளுக்கு மட்டுப்படுத்தப்பட்டுள்ளன."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1739
+#: src/globalPlugins/easyAudioConverter/__init__.py:2733
 msgid "Details:"
 msgstr "விவரங்கள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:373
+#: src/globalPlugins/easyAudioConverter/__init__.py:459
+msgid "Disabled"
+msgstr "முடக்கப்பட்டது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:477
 msgid "Disc number"
 msgstr "வட்டு எண்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:357
+#: src/globalPlugins/easyAudioConverter/__init__.py:451
 msgid "Do not copy metadata"
 msgstr "மெட்டாடேட்டாவை நகலெடுக்க வேண்டாம்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2136
+#: src/globalPlugins/easyAudioConverter/__init__.py:3142
 msgid "Download and install"
 msgstr "பதிவிறக்கம் செய்து நிறுவவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2214
+#: src/globalPlugins/easyAudioConverter/__init__.py:3220
 msgid "Downloaded {done:.1f} MB"
 msgstr "பதிவிறக்கம் செய்யப்பட்டது {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2207
+#: src/globalPlugins/easyAudioConverter/__init__.py:3213
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "பதிவிறக்கம் செய்யப்பட்டது {done:.1f} of {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2166
+#: src/globalPlugins/easyAudioConverter/__init__.py:3172
 msgid "Downloading Easy Audio Converter update"
 msgstr "எளிதான ஆடியோ மாற்றி புதுப்பிப்பைப் பதிவிறக்குகிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:331
+#: src/globalPlugins/easyAudioConverter/__init__.py:2161
+msgid "Duration: {value}"
+msgstr "காலம்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:398
 msgid "E-AC-3"
 msgstr "இ-ஏசி-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1853 src/globalPlugins/easyAudioConverter/__init__.py:828 src/globalPlugins/easyAudioConverter/__init__.py:2450 src/globalPlugins/easyAudioConverter/__init__.py:1223 src/globalPlugins/easyAudioConverter/__init__.py:1231 src/globalPlugins/easyAudioConverter/__init__.py:1984 src/globalPlugins/easyAudioConverter/__init__.py:2272 src/globalPlugins/easyAudioConverter/__init__.py:1197 src/globalPlugins/easyAudioConverter/__init__.py:1261 src/globalPlugins/easyAudioConverter/__init__.py:1297 src/globalPlugins/easyAudioConverter/__init__.py:1824 src/globalPlugins/easyAudioConverter/__init__.py:1837 src/globalPlugins/easyAudioConverter/__init__.py:2283
+#: src/globalPlugins/easyAudioConverter/__init__.py:2854 src/globalPlugins/easyAudioConverter/__init__.py:3576 src/globalPlugins/easyAudioConverter/__init__.py:1948 src/globalPlugins/easyAudioConverter/__init__.py:1956 src/globalPlugins/easyAudioConverter/__init__.py:2979 src/globalPlugins/easyAudioConverter/__init__.py:3309 src/globalPlugins/easyAudioConverter/__init__.py:3931 src/globalPlugins/easyAudioConverter/__init__.py:790 src/globalPlugins/easyAudioConverter/__init__.py:1267 src/globalPlugins/easyAudioConverter/__init__.py:1820 src/globalPlugins/easyAudioConverter/__init__.py:1871 src/globalPlugins/easyAudioConverter/__init__.py:1909 src/globalPlugins/easyAudioConverter/__init__.py:1922 src/globalPlugins/easyAudioConverter/__init__.py:1986 src/globalPlugins/easyAudioConverter/__init__.py:2022 src/globalPlugins/easyAudioConverter/__init__.py:2818 src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:3040 src/globalPlugins/easyAudioConverter/__init__.py:3277
 msgid "Easy Audio Converter"
 msgstr "எளிதான ஆடியோ மாற்றி"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2107
+#: src/globalPlugins/easyAudioConverter/__init__.py:3113
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "எளிதான ஆடியோ மாற்றி புதுப்பித்த நிலையில் உள்ளது. நிறுவப்பட்ட பதிப்பு: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1430
+#: src/globalPlugins/easyAudioConverter/__init__.py:2375
 msgid "Easy Audio Converter progress"
 msgstr "எளிதான ஆடியோ மாற்றி முன்னேற்றம்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1655
+#: src/globalPlugins/easyAudioConverter/__init__.py:2649
 msgid "Easy Audio Converter results"
 msgstr "எளிதான ஆடியோ மாற்றி முடிவுகள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2240 src/globalPlugins/easyAudioConverter/__init__.py:2099 src/globalPlugins/easyAudioConverter/__init__.py:2110 src/globalPlugins/easyAudioConverter/__init__.py:2253
+#: src/globalPlugins/easyAudioConverter/__init__.py:1190
+msgid "Easy Audio Converter settings"
+msgstr "எளிதான ஆடியோ மாற்றி அமைப்புகள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3246 src/globalPlugins/easyAudioConverter/__init__.py:3105 src/globalPlugins/easyAudioConverter/__init__.py:3116 src/globalPlugins/easyAudioConverter/__init__.py:3259
 msgid "Easy Audio Converter update"
 msgstr "எளிதான ஆடியோ மாற்றி புதுப்பிப்பு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2147 src/globalPlugins/easyAudioConverter/__init__.py:2132
+#: src/globalPlugins/easyAudioConverter/__init__.py:3153 src/globalPlugins/easyAudioConverter/__init__.py:3138
 msgid "Easy Audio Converter update available"
 msgstr "எளிதான ஆடியோ மாற்றி புதுப்பிப்பு கிடைக்கிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2119
+#: src/globalPlugins/easyAudioConverter/__init__.py:3125
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "எளிதான ஆடியோ மாற்றி {newVersion} கிடைக்கிறது. உங்களிடம் பதிப்பு {currentVersion} உள்ளது.\n\nபுதுப்பிப்பை இப்போது பதிவிறக்கம் செய்து நிறுவ விரும்புகிறீர்களா?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2143
+#: src/globalPlugins/easyAudioConverter/__init__.py:3149
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "எளிதான ஆடியோ மாற்றி {version} கிடைக்கிறது, ஆனால் வெளியீட்டில் நேரடி துணை நிரல் தொகுப்பு இல்லை. வெளியீட்டு பக்கத்தைத் திறக்கவா?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:341
+#: src/globalPlugins/easyAudioConverter/__init__.py:435
 msgid "Economical"
 msgstr "பொருளாதாரம்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1450
+#: src/globalPlugins/easyAudioConverter/__init__.py:2397
 msgid "Elapsed time: 0:00"
 msgstr "கழிந்த நேரம்: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1533
+#: src/globalPlugins/easyAudioConverter/__init__.py:2489
 msgid "Elapsed time: {elapsed}"
 msgstr "கழிந்த நேரம்: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:702
+#: src/globalPlugins/easyAudioConverter/__init__.py:2180
+msgid "Embedded artwork: {value}"
+msgstr "உட்பொதிக்கப்பட்ட கலைப்படைப்புகள்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1052
 msgid "Enable advanced overrides for this codec"
 msgstr "இந்த கோடெக்கிற்கான மேம்பட்ட மேலெழுதல்களை இயக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1210
+#: src/globalPlugins/easyAudioConverter/__init__.py:1935
 msgid "Enter a name for this conversion profile:"
 msgstr "இந்த மாற்று சுயவிவரத்திற்கு ஒரு பெயரை உள்ளிடவும்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1549
+#: src/globalPlugins/easyAudioConverter/__init__.py:2070
+msgid "Estimated output size: {size}"
+msgstr "மதிப்பிடப்பட்ட வெளியீட்டு அளவு: {size}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2523
 msgid "Estimated time remaining: 0:00"
 msgstr "மீதமுள்ள மதிப்பிடப்பட்ட நேரம்: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1454
+#: src/globalPlugins/easyAudioConverter/__init__.py:2401
 msgid "Estimated time remaining: calculating"
 msgstr "மீதமுள்ள மதிப்பிடப்பட்ட நேரம்: கணக்கிடுதல்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1537
+#: src/globalPlugins/easyAudioConverter/__init__.py:2493
 msgid "Estimated time remaining: {remaining}"
 msgstr "மீதமுள்ள மதிப்பிடப்பட்ட நேரம்: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:322
+#: src/globalPlugins/easyAudioConverter/__init__.py:752
+msgid "Example album"
+msgstr "உதாரணம் ஆல்பம்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:751
+msgid "Example artist"
+msgstr "உதாரணம் கலைஞர்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:758
+msgid "Example filename: {name}"
+msgstr "எடுத்துக்காட்டு கோப்பு பெயர்: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:750
+msgid "Example title"
+msgstr "எடுத்துக்காட்டு தலைப்பு"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1889
+msgid "Export conversion profiles"
+msgstr "மாற்று சுயவிவரங்களை ஏற்றுமதி செய்யுங்கள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1489
+msgid "Export profiles..."
+msgstr "சுயவிவரங்களை ஏற்றுமதி செய்க..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:403
+msgid "Extract original audio stream (no re-encoding)"
+msgstr "அசல் ஆடியோ ஸ்ட்ரீமைப் பிரித்தெடுக்கவும் (மறு குறியாக்கம் இல்லை)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:389
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1628
+#: src/globalPlugins/easyAudioConverter/__init__.py:2622
 msgid "Failed files:"
 msgstr "தோல்வியுற்ற கோப்புகள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1702
+#: src/globalPlugins/easyAudioConverter/__init__.py:2696
 msgid "Failed: {name}"
 msgstr "தோல்வியுற்றது: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1605
+#: src/globalPlugins/easyAudioConverter/__init__.py:2593
 msgid "File or folder is unavailable"
 msgstr "கோப்பு அல்லது கோப்புறை கிடைக்கப்பெறவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1504
+#: src/globalPlugins/easyAudioConverter/__init__.py:2179
+msgid "File size: {value}"
+msgstr "கோப்பின் அளவு: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2460
 msgid "File {index} of {total}: {name}"
 msgstr "கோப்பு {index} இன் {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2316
+#: src/globalPlugins/easyAudioConverter/__init__.py:1730
+msgid "Filename preview: {name}"
+msgstr "கோப்பு பெயர் முன்னோட்டம்: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2064
+msgid "Files to convert: {count}"
+msgstr "மாற்ற வேண்டிய கோப்புகள்: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3353
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "மாற்ற கோப்புகள்: {count}. தவிர்க்கப்பட்டது: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:794
+#: src/globalPlugins/easyAudioConverter/__init__.py:1151
 msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
 msgstr "FLAC க்கு, நிலை 0 வேகமானது மற்றும் நிலை 12 வலுவான சுருக்கத்தை வழங்குகிறது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:793
+#: src/globalPlugins/easyAudioConverter/__init__.py:1150
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3 க்கு, நிலை 0 என்பது மெதுவான மற்றும் மிக உயர்ந்த அல்காரிதம் தரமாகும்; 9 வேகமானது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:795
+#: src/globalPlugins/easyAudioConverter/__init__.py:1152
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Ogg Vorbis-க்கு, நிலைகள் 0 முதல் 10 வரை அதிகரிக்கும் மாறி-பிட்ரேட் தரத்தைத் தேர்ந்தெடுக்கவும்."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:796
+#: src/globalPlugins/easyAudioConverter/__init__.py:1153
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "ஓபஸைப் பொறுத்தவரை, நிலைகள் 0 முதல் 10 வரை அதிகரிக்கும் குறியாக்க சிக்கலைத் தேர்ந்தெடுக்கவும்."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:797
+#: src/globalPlugins/easyAudioConverter/__init__.py:1154
 msgid "For WavPack, levels 0 to 8 select increasing compression effort."
 msgstr "WavPack க்கு, நிலைகள் 0 முதல் 8 வரை அதிகரிக்கும் சுருக்க முயற்சியைத் தேர்ந்தெடுக்கவும்."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2321
+#: src/globalPlugins/easyAudioConverter/__init__.py:3358
 msgid "Found {count} files to convert"
 msgstr "மாற்றுவதற்கு {count} கோப்புகள் உள்ளன"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:351
+#: src/globalPlugins/easyAudioConverter/__init__.py:445
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / விண்டோஸ் மீடியா அறக்கட்டளை MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:370
+#: src/globalPlugins/easyAudioConverter/__init__.py:2073
+msgid "Free disk space: {size}"
+msgstr "இலவச வட்டு இடம்: {size}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+msgid "GB"
+msgstr "ஜிபி"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "Genre"
 msgstr "வகை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1462
+#: src/globalPlugins/easyAudioConverter/__init__.py:2413
 msgid "Hide"
 msgstr "மறை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:437
 msgid "High"
 msgstr "உயர்"
 
@@ -523,335 +743,535 @@ msgstr "உயர்"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Easy Audio Converter உங்களுக்கு பயனுள்ளதாக இருந்தால், நீங்கள் எனது வேலையை ஆதரிக்க விரும்பினால், நீங்கள் எனக்கு ஒரு காபி வாங்கலாம்.\n\nஇப்போது ஆதரவுப் பக்கத்தைத் திறக்க விரும்புகிறீர்களா?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526 src/globalPlugins/easyAudioConverter/__init__.py:986
+#: src/globalPlugins/easyAudioConverter/__init__.py:1838
+msgid "Import conversion profiles"
+msgstr "மாற்று சுயவிவரங்களை இறக்குமதி செய்யவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1488
+msgid "Import profiles..."
+msgstr "சுயவிவரங்களை இறக்குமதி செய்..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1880
+msgid "Imported {count} conversion profiles"
+msgstr "{count} மாற்று சுயவிவரங்களை இறக்குமதி செய்தது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:674 src/globalPlugins/easyAudioConverter/__init__.py:1531
 msgid "Include subfolders when converting a folder"
 msgstr "ஒரு கோப்புறையை மாற்றும்போது துணை கோப்புறைகளைச் சேர்க்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:721
+#: src/globalPlugins/easyAudioConverter/__init__.py:2954
+msgid "Information about the selected audio file..."
+msgstr "தேர்ந்தெடுத்த ஆடியோ கோப்பு பற்றிய தகவல்..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2069
+msgid "Input size: {size}"
+msgstr "உள்ளீட்டு அளவு: {size}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:764 src/globalPlugins/easyAudioConverter/__init__.py:1736
+msgid "Invalid filename template: {error}"
+msgstr "செல்லுபடியாகாத கோப்பு பெயர் வார்ப்புரு: {error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1839 src/globalPlugins/easyAudioConverter/__init__.py:1891
+msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
+msgstr "JSON சுயவிவரக் கோப்புகள் (*.json)|*.json|அனைத்து கோப்புகளும் (*.*)|*.*"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+msgid "KB"
+msgstr "KB"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Keep the source channel count"
 msgstr "மூல சேனல் எண்ணிக்கையை வைத்திருங்கள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:715
+#: src/globalPlugins/easyAudioConverter/__init__.py:1065
 msgid "Keep the source sample rate"
 msgstr "மூல மாதிரி விகிதத்தை வைத்திருங்கள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:350
+#: src/globalPlugins/easyAudioConverter/__init__.py:444
 msgid "LAME MP3"
 msgstr "நொண்டி MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:377
+#: src/globalPlugins/easyAudioConverter/__init__.py:481
 msgid "Language"
 msgstr "மொழி"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2136
+#: src/globalPlugins/easyAudioConverter/__init__.py:3142
 msgid "Later"
 msgstr "பின்னர்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:376
+#: src/globalPlugins/easyAudioConverter/__init__.py:832 src/globalPlugins/easyAudioConverter/__init__.py:1341
+msgid "Loudness normalization:"
+msgstr "சத்தம் இயல்பாக்கம்:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:480
 msgid "Lyrics"
 msgstr "பாடல் வரிகள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:325
+#: src/globalPlugins/easyAudioConverter/__init__.py:392
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:333
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+msgid "MB"
+msgstr "எம்பி"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:400
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:320
+#: src/globalPlugins/easyAudioConverter/__init__.py:387
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:501 src/globalPlugins/easyAudioConverter/__init__.py:970
+#: src/globalPlugins/easyAudioConverter/__init__.py:633 src/globalPlugins/easyAudioConverter/__init__.py:1510
 msgid "MP3 encoder:"
 msgstr "MP3 குறியாக்கி:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:539 src/globalPlugins/easyAudioConverter/__init__.py:997
+#: src/globalPlugins/easyAudioConverter/__init__.py:687 src/globalPlugins/easyAudioConverter/__init__.py:1542
 msgid "Metadata export:"
 msgstr "மெட்டாடேட்டா ஏற்றுமதி:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:550
+#: src/globalPlugins/easyAudioConverter/__init__.py:698
 msgid "Metadata fields to copy:"
 msgstr "நகலெடுக்க வேண்டிய மெட்டாடேட்டா புலங்கள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:721
+#: src/globalPlugins/easyAudioConverter/__init__.py:2186
+msgid "Metadata:"
+msgstr "மெட்டாடேட்டா:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Mono"
 msgstr "மோனோ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:229
+#: src/globalPlugins/easyAudioConverter/__init__.py:461
+msgid "Music and streaming: -14 LUFS, -1 dBTP"
+msgstr "இசை மற்றும் ஸ்ட்ரீமிங்: -14 LUFS, -1 dBTP"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1157
+msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
+msgstr "மேம்பட்ட கோடெக் அமைப்புகள் எதுவும் பயன்படுத்தப்படவில்லை, ஏனெனில் ஆடியோ ஸ்ட்ரீம் மறு குறியாக்கம் இல்லாமல் நகலெடுக்கப்படுகிறது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:284
 msgid "No completion notification"
 msgstr "நிறைவு அறிவிப்பு இல்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2756 src/globalPlugins/easyAudioConverter/__init__.py:2787
+#: src/globalPlugins/easyAudioConverter/__init__.py:4027 src/globalPlugins/easyAudioConverter/__init__.py:4038 src/globalPlugins/easyAudioConverter/__init__.py:4101
 msgid "No conversion is in progress"
 msgstr "எந்த மாற்றமும் நடைபெறவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2768
+#: src/globalPlugins/easyAudioConverter/__init__.py:4082
 msgid "No conversion progress is available"
 msgstr "மாற்று முன்னேற்றம் ஏதும் கிடைக்கப்பெறவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+#: src/globalPlugins/easyAudioConverter/__init__.py:3700
 msgid "No conversion results are available"
 msgstr "மாற்று முடிவுகள் எதுவும் கிடைக்கவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2543 src/globalPlugins/easyAudioConverter/__init__.py:2553
+#: src/globalPlugins/easyAudioConverter/__init__.py:3721 src/globalPlugins/easyAudioConverter/__init__.py:3731
 msgid "No failed files are available to retry"
 msgstr "மீண்டும் முயற்சிக்க தோல்வியுற்ற கோப்புகள் எதுவும் கிடைக்கவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1783
+#: src/globalPlugins/easyAudioConverter/__init__.py:2777
 msgid "No file details are available."
 msgstr "கோப்பு விவரங்கள் எதுவும் கிடைக்கப்பெறவில்லை."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2467
+#: src/globalPlugins/easyAudioConverter/__init__.py:3603
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "எந்த கோப்புகளுக்கும் மாற்றம் தேவையில்லை. தவிர்க்கப்பட்டது: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2626 src/globalPlugins/easyAudioConverter/__init__.py:2659
+#: src/globalPlugins/easyAudioConverter/__init__.py:3799 src/globalPlugins/easyAudioConverter/__init__.py:3839
 msgid "No files or folders are selected"
 msgstr "கோப்புகள் அல்லது கோப்புறைகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2471
+#: src/globalPlugins/easyAudioConverter/__init__.py:1745
+msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
+msgstr "மறு குறியாக்கம் இல்லை: தரம், சத்தம் மற்றும் மேம்பட்ட கோடெக் அமைப்புகள் பயன்படுத்தப்படவில்லை."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1740
+msgid "No re-encoding: quality, loudness, metadata, artwork, chapters, and advanced codec settings are not used."
+msgstr "மறுகுறியாக்கம் இல்லை: தரம், சத்தம், மெட்டாடேட்டா, கலைப்படைப்புகள், அத்தியாயங்கள் மற்றும் மேம்பட்ட கோடெக் அமைப்புகள் பயன்படுத்தப்படவில்லை."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2594
+msgid "No readable audio stream was found"
+msgstr "படிக்கக்கூடிய ஆடியோ ஸ்ட்ரீம் எதுவும் காணப்படவில்லை"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3607
 msgid "No supported audio files were found"
 msgstr "ஆதரிக்கப்படும் ஆடியோ கோப்புகள் எதுவும் இல்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:323
+#: src/globalPlugins/easyAudioConverter/__init__.py:390
 msgid "Ogg Vorbis"
 msgstr "ஓக் வோர்பிஸ்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1053
+#: src/globalPlugins/easyAudioConverter/__init__.py:4051
+msgid "One conversion is active. Queued jobs: {count}."
+msgstr "ஒரு மாற்றம் செயலில் உள்ளது. வரிசையில் வேலைகள்: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1606
 msgid "One-time settings"
 msgstr "ஒரு முறை அமைப்புகள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:237
+#: src/globalPlugins/easyAudioConverter/__init__.py:292
 msgid "Only on demand"
 msgstr "தேவைக்கேற்ப மட்டுமே"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2593
+#: src/globalPlugins/easyAudioConverter/__init__.py:3771
 msgid "Open Easy Audio Converter settings"
 msgstr "எளிதான ஆடியோ மாற்றி அமைப்புகளைத் திறக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2605
+#: src/globalPlugins/easyAudioConverter/__init__.py:3782
 msgid "Open advanced codec settings"
 msgstr "மேம்பட்ட கோடெக் அமைப்புகளைத் திறக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1752
+#: src/globalPlugins/easyAudioConverter/__init__.py:2746
 msgid "Open output folder"
 msgstr "வெளியீட்டு கோப்புறையைத் திறக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2846
+#: src/globalPlugins/easyAudioConverter/__init__.py:4170
 msgid "Open the author's support page"
 msgstr "ஆசிரியரின் ஆதரவுப் பக்கத்தைத் திறக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:389
+#: src/globalPlugins/easyAudioConverter/__init__.py:521
 msgid "Opening the support page"
 msgstr "ஆதரவு பக்கத்தைத் திறக்கிறது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:324
+#: src/globalPlugins/easyAudioConverter/__init__.py:391
 msgid "Opus"
 msgstr "ஓபஸ்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1626
+#: src/globalPlugins/easyAudioConverter/__init__.py:657 src/globalPlugins/easyAudioConverter/__init__.py:1526
+msgid "Output filename template:"
+msgstr "வெளியீட்டு கோப்பு பெயர் வார்ப்புரு:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2620
 msgid "Output files:"
 msgstr "வெளியீட்டு கோப்புகள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1694
+#: src/globalPlugins/easyAudioConverter/__init__.py:2585
+msgid "Output verification failed because its duration differs from the source."
+msgstr "வெளியீட்டு சரிபார்ப்பு தோல்வியடைந்தது, ஏனெனில் அதன் கால அளவு மூலத்திலிருந்து வேறுபடுகிறது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2688
 msgid "Output:\n{output}"
 msgstr "வெளியீடு:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1554
+#: src/globalPlugins/easyAudioConverter/__init__.py:2528
 msgid "Overall progress: 100%"
 msgstr "ஒட்டுமொத்த முன்னேற்றம்: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1446
+#: src/globalPlugins/easyAudioConverter/__init__.py:2393
 msgid "Overall progress: waiting"
 msgstr "ஒட்டுமொத்த முன்னேற்றம்: காத்திருப்பு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1530
+#: src/globalPlugins/easyAudioConverter/__init__.py:2486
 msgid "Overall progress: {percent}%"
 msgstr "ஒட்டுமொத்த முன்னேற்றம்: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:732
+#: src/globalPlugins/easyAudioConverter/__init__.py:1082
 msgid "PCM bit depth:"
 msgstr "பிசிஎம் பிட் ஆழம்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:638
-msgid "Playing the completion sound"
-msgstr "நிறைவு ஒலியை இயக்குகிறது"
+#: src/globalPlugins/easyAudioConverter/__init__.py:2158
+msgid "Path: {path}"
+msgstr "பாதை: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:282
+#: src/globalPlugins/easyAudioConverter/__init__.py:2098
+msgid "Planned output files:"
+msgstr "திட்டமிடப்பட்ட வெளியீட்டு கோப்புகள்:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:902
+msgid "Play a sound when a conversion fails"
+msgstr "மாற்றம் தோல்வியடையும் போது ஒலியை இயக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:909
+msgid "Play a sound when a conversion is canceled or stopped"
+msgstr "மாற்றம் ரத்து செய்யப்படும் போது அல்லது நிறுத்தப்படும்போது ஒலியை இயக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:341
 msgid "Podcast Opus"
 msgstr "பாட்காஸ்ட் ஓபஸ்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2311 src/globalPlugins/easyAudioConverter/__init__.py:1440 src/globalPlugins/easyAudioConverter/__init__.py:2790
+#: src/globalPlugins/easyAudioConverter/__init__.py:460
+msgid "Podcast: -16 LUFS, -1.5 dBTP"
+msgstr "பாட்காஸ்ட்: -16 LUFS, -1.5 dBTP"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2309 src/globalPlugins/easyAudioConverter/__init__.py:3348 src/globalPlugins/easyAudioConverter/__init__.py:2387
 msgid "Preparing the conversion"
 msgstr "மாற்றத்தை தயார் செய்தல்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532 src/globalPlugins/easyAudioConverter/__init__.py:991
+#: src/globalPlugins/easyAudioConverter/__init__.py:680 src/globalPlugins/easyAudioConverter/__init__.py:1536
 msgid "Preserve the source folder structure in the destination"
 msgstr "சேருமிடத்தில் மூலக் கோப்புறை அமைப்பைப் பாதுகாக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1289
+#: src/globalPlugins/easyAudioConverter/__init__.py:820
+msgid "Processing and notifications"
+msgstr "செயலாக்கம் மற்றும் அறிவிப்புகள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1328
+msgid "Processing options"
+msgstr "செயலாக்க விருப்பங்கள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1552
+msgid "Processing options..."
+msgstr "செயலாக்க விருப்பங்கள்..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1755
+msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
+msgstr "செயலாக்கம்: சத்தம் {loudness}; கலைப்படைப்பு {artwork}; அத்தியாயங்கள் {chapters}; சரிபார்ப்பு {verification}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2014
 msgid "Profile deleted"
 msgstr "சுயவிவரம் நீக்கப்பட்டது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+#: src/globalPlugins/easyAudioConverter/__init__.py:1993
 msgid "Profile saved: {name}"
 msgstr "சுயவிவரம் சேமிக்கப்பட்டது: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:378
+#: src/globalPlugins/easyAudioConverter/__init__.py:482
 msgid "Publisher"
 msgstr "வெளியீட்டாளர்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:492 src/globalPlugins/easyAudioConverter/__init__.py:964
+#: src/globalPlugins/easyAudioConverter/__init__.py:3986
+msgid "Quality is not used when copying audio without re-encoding"
+msgstr "மறுகுறியாக்கம் இல்லாமல் ஆடியோவை நகலெடுக்கும்போது தரம் பயன்படுத்தப்படாது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1504
 msgid "Quality:"
 msgstr "தரம்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2722
+#: src/globalPlugins/easyAudioConverter/__init__.py:3993
 msgid "Quality: {quality}"
 msgstr "தரம்: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2726
+#: src/globalPlugins/easyAudioConverter/__init__.py:4054
+msgid "Queued conversion jobs: {count}."
+msgstr "வரிசையில் மாற்றும் வேலைகள்: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2404
+msgid "Queued jobs: 0"
+msgstr "வரிசையில் வேலைகள்: 0"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2517
+msgid "Queued jobs: {count}"
+msgstr "வரிசையில் வேலைகள்: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3997
 msgid "Quickly choose the destination folder"
 msgstr "இலக்கு கோப்புறையை விரைவாக தேர்வு செய்யவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2653
+#: src/globalPlugins/easyAudioConverter/__init__.py:3833
 msgid "Quickly convert selected files or folders"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்புகள் அல்லது கோப்புறைகளை விரைவாக மாற்றவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2128
+#: src/globalPlugins/easyAudioConverter/__init__.py:3901
+msgid "Reading audio file information"
+msgstr "ஆடியோ கோப்பு தகவலைப் படித்தல்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2305
+msgid "Reading audio information"
+msgstr "ஆடியோ தகவலைப் படித்தல்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3134
 msgid "Release notes:"
 msgstr "வெளியீட்டு குறிப்புகள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1246
+#: src/globalPlugins/easyAudioConverter/__init__.py:406
+msgid "Remux AAC to M4A (no re-encoding)"
+msgstr "M4A க்கு Remux AAC (மறு குறியாக்கம் இல்லை)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1971
 msgid "Replace the existing profile “{name}”?"
 msgstr "தற்போதுள்ள சுயவிவரம் \"{name}\" ஐ மாற்றவா?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2782
+#: src/globalPlugins/easyAudioConverter/__init__.py:4096
 msgid "Report audio conversion status"
 msgstr "ஆடியோ மாற்ற நிலையைப் புகாரளிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1460 src/globalPlugins/easyAudioConverter/__init__.py:1964
+#: src/globalPlugins/easyAudioConverter/__init__.py:2411 src/globalPlugins/easyAudioConverter/__init__.py:2956
 msgid "Report conversion status"
 msgstr "மாற்ற நிலையைப் புகாரளிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1751
+#: src/globalPlugins/easyAudioConverter/__init__.py:4044 src/globalPlugins/easyAudioConverter/__init__.py:2960
+msgid "Report queued conversion jobs"
+msgstr "வரிசையில் உள்ள மாற்று வேலைகளைப் புகாரளிக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2745
 msgid "Retry failed files"
 msgstr "தோல்வியுற்ற கோப்புகளை மீண்டும் முயற்சிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:713
+#: src/globalPlugins/easyAudioConverter/__init__.py:2114
+msgid "Review conversion plan"
+msgstr "மாற்று திட்டத்தை மதிப்பாய்வு செய்யவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2122
+msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
+msgstr "கீழே உள்ள திட்டத்தை மதிப்பாய்வு செய்யவும். அளவு மதிப்பீடுகள் தோராயமானவை. மூலக் கோப்பு எதுவும் மேலெழுதப்படாது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1063
 msgid "Sample rate:"
 msgstr "மாதிரி விகிதம்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1211 src/globalPlugins/easyAudioConverter/__init__.py:1247
+#: src/globalPlugins/easyAudioConverter/__init__.py:2172
+msgid "Sample rate: {value}"
+msgstr "மாதிரி விகிதம்: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1936 src/globalPlugins/easyAudioConverter/__init__.py:1972
 msgid "Save conversion profile"
 msgstr "மாற்று சுயவிவரத்தைச் சேமிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:509 src/globalPlugins/easyAudioConverter/__init__.py:976
+#: src/globalPlugins/easyAudioConverter/__init__.py:642 src/globalPlugins/easyAudioConverter/__init__.py:1516
 msgid "Save converted files next to the source files"
 msgstr "மாற்றப்பட்ட கோப்புகளை மூல கோப்புகளுக்கு அடுத்ததாக சேமிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:950
+#: src/globalPlugins/easyAudioConverter/__init__.py:1486
 msgid "Save profile..."
 msgstr "சுயவிவரத்தைச் சேமி..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:878
+#: src/globalPlugins/easyAudioConverter/__init__.py:3895
+msgid "Select exactly one audio file"
+msgstr "சரியாக ஒரு ஆடியோ கோப்பைத் தேர்ந்தெடுக்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1289
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "இந்த மாற்றத்திற்கு நகலெடுக்க உரை மெட்டாடேட்டா புலங்களைத் தேர்ந்தெடுக்கவும்."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:940
+#: src/globalPlugins/easyAudioConverter/__init__.py:1476
 msgid "Selected items: {count}"
 msgstr "தேர்ந்தெடுத்த உருப்படிகள்: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1968
+#: src/globalPlugins/easyAudioConverter/__init__.py:2963
 msgid "Settings..."
 msgstr "அமைப்புகள்..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1963
+#: src/globalPlugins/easyAudioConverter/__init__.py:883
+msgid "Show a conversion plan before starting"
+msgstr "தொடங்குவதற்கு முன் மாற்றுத் திட்டத்தைக் காட்டு"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2955
 msgid "Show conversion progress"
 msgstr "மாற்று முன்னேற்றத்தைக் காட்டு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1965
+#: src/globalPlugins/easyAudioConverter/__init__.py:2957
 msgid "Show last conversion results"
 msgstr "கடைசி மாற்று முடிவுகளைக் காட்டு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1461
+#: src/globalPlugins/easyAudioConverter/__init__.py:2412
 msgid "Show results"
 msgstr "முடிவுகளைக் காட்டு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2763
+#: src/globalPlugins/easyAudioConverter/__init__.py:3888
+msgid "Show technical information about the selected audio file"
+msgstr "தேர்ந்தெடுத்த ஆடியோ கோப்பு பற்றிய தொழில்நுட்ப தகவலை காண்பி"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4077
 msgid "Show the audio conversion progress window"
 msgstr "ஆடியோ மாற்ற முன்னேற்ற சாளரத்தை காட்டு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2774
+#: src/globalPlugins/easyAudioConverter/__init__.py:1388
+msgid "Show the conversion plan before starting"
+msgstr "தொடங்குவதற்கு முன் மாற்றுத் திட்டத்தைக் காட்டு"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4088
 msgid "Show the last audio conversion results"
 msgstr "கடைசி ஆடியோ மாற்று முடிவுகளைக் காட்டு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+#: src/globalPlugins/easyAudioConverter/__init__.py:2598
 msgid "Skipped"
 msgstr "தவிர்க்கப்பட்டது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1633
+#: src/globalPlugins/easyAudioConverter/__init__.py:2627
 msgid "Skipped files:"
 msgstr "தவிர்க்கப்பட்ட கோப்புகள்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1713
+#: src/globalPlugins/easyAudioConverter/__init__.py:2065
+msgid "Skipped inputs: {count}"
+msgstr "தவிர்க்கப்பட்ட உள்ளீடுகள்: {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2707
 msgid "Skipped: {name}"
 msgstr "தவிர்த்தது: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:228
+#: src/globalPlugins/easyAudioConverter/__init__.py:283
 msgid "Sound only"
 msgstr "ஒலி மட்டும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1703
+#: src/globalPlugins/easyAudioConverter/__init__.py:2697
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "ஆதாரம்:\n{source}\n\nபிழை:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1680
+#: src/globalPlugins/easyAudioConverter/__init__.py:2674
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "ஆதாரம்:\n{source}\n\nவெளியீடு:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+#: src/globalPlugins/easyAudioConverter/__init__.py:2708
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "ஆதாரம்:\n{source}\n\nகாரணம்:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:226
+#: src/globalPlugins/easyAudioConverter/__init__.py:281
 msgid "Speech and sound"
 msgstr "பேச்சு மற்றும் ஒலி"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:227
+#: src/globalPlugins/easyAudioConverter/__init__.py:282
 msgid "Speech only"
 msgstr "பேச்சு மட்டும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:342
+#: src/globalPlugins/easyAudioConverter/__init__.py:436
 msgid "Standard"
 msgstr "தரநிலை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:474
+#: src/globalPlugins/easyAudioConverter/__init__.py:606
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2167
+#: src/globalPlugins/easyAudioConverter/__init__.py:2138
+msgid "Start conversion"
+msgstr "மாற்றத்தைத் தொடங்கவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3173
 msgid "Starting the download..."
 msgstr "பதிவிறக்கத்தைத் தொடங்குகிறது..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:721
+#: src/globalPlugins/easyAudioConverter/__init__.py:3691
+msgid "Starting the next queued conversion. Jobs remaining: {count}."
+msgstr "அடுத்த வரிசை மாற்றத்தைத் தொடங்குகிறது. மீதமுள்ள வேலைகள்: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Stereo"
 msgstr "ஸ்டீரியோ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1613 src/globalPlugins/easyAudioConverter/__init__.py:1666
+#: src/globalPlugins/easyAudioConverter/__init__.py:2409
+msgid "Stop after current file"
+msgstr "நடப்பு கோப்புக்குப் பிறகு நிறுத்து"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2958
+msgid "Stop after the current file"
+msgstr "நடப்பு கோப்புக்குப் பிறகு நிறுத்து"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4033
+msgid "Stop the conversion after the current file"
+msgstr "தற்போதைய கோப்புக்குப் பிறகு மாற்றத்தை நிறுத்தவும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3596
+msgid "Stopped after the current file. Completed {done} of {total} files."
+msgstr "நடப்பு கோப்பிற்குப் பிறகு நிறுத்தப்பட்டது. {total} கோப்புகளின் {done} நிறைவடைந்தது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2547
+msgid "Stopping after this file..."
+msgstr "இந்தக் கோப்புக்குப் பிறகு நிறுத்தப்படுகிறது..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2605 src/globalPlugins/easyAudioConverter/__init__.py:2660
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "வெற்றி: {done}. தோல்வியுற்றது: {failed}. தவிர்க்கப்பட்டது: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1679 src/globalPlugins/easyAudioConverter/__init__.py:1693
+#: src/globalPlugins/easyAudioConverter/__init__.py:2673 src/globalPlugins/easyAudioConverter/__init__.py:2687
 msgid "Success: {name}"
 msgstr "வெற்றி: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:563
+#: src/globalPlugins/easyAudioConverter/__init__.py:890
 msgid "Successful completion notification:"
 msgstr "வெற்றிகரமான நிறைவு அறிவிப்பு:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1622
+#: src/globalPlugins/easyAudioConverter/__init__.py:2616
 msgid "Successful files:"
 msgstr "வெற்றிகரமான கோப்புகள்:"
 
@@ -859,126 +1279,242 @@ msgstr "வெற்றிகரமான கோப்புகள்:"
 msgid "Support Easy Audio Converter"
 msgstr "எளிதான ஆடியோ மாற்றியை ஆதரிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:594 src/globalPlugins/easyAudioConverter/__init__.py:1971
+#: src/globalPlugins/easyAudioConverter/__init__.py:930 src/globalPlugins/easyAudioConverter/__init__.py:2966
 msgid "Support the author"
 msgstr "ஆசிரியரை ஆதரிக்கவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:483 src/globalPlugins/easyAudioConverter/__init__.py:958
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054 src/globalPlugins/easyAudioConverter/__init__.py:2055
+msgid "TB"
+msgstr "காசநோய்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:615 src/globalPlugins/easyAudioConverter/__init__.py:1498
 msgid "Target format:"
 msgstr "இலக்கு வடிவம்:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2708
+#: src/globalPlugins/easyAudioConverter/__init__.py:3973
 msgid "Target format: {format}"
 msgstr "இலக்கு வடிவம்: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:571
-msgid "Test completion sound"
-msgstr "சோதனை நிறைவு ஒலி"
+#: src/globalPlugins/easyAudioConverter/__init__.py:913
+msgid "Test cancel sound"
+msgstr "சோதனை ரத்து ஒலி"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2271
+#: src/globalPlugins/easyAudioConverter/__init__.py:906
+msgid "Test error sound"
+msgstr "சோதனை பிழை ஒலி"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:898
+msgid "Test success sound"
+msgstr "சோதனை வெற்றி ஒலி"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3308
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "தொகுக்கப்பட்ட FFmpeg கூறு காணவில்லை. எளிதான ஆடியோ மாற்றியை மீண்டும் நிறுவவும்."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:802
+#: src/globalPlugins/easyAudioConverter/__init__.py:1164
 msgid "The codec-specific level is not used by this format."
 msgstr "கோடெக்-குறிப்பிட்ட நிலை இந்த வடிவமைப்பால் பயன்படுத்தப்படவில்லை."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2444
+#: src/globalPlugins/easyAudioConverter/__init__.py:3570
 msgid "The conversion could not start"
 msgstr "மாற்றத்தை தொடங்க முடியவில்லை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2449
+#: src/globalPlugins/easyAudioConverter/__init__.py:3575
 msgid "The conversion could not start:\n{error}"
 msgstr "மாற்றத்தைத் தொடங்க முடியவில்லை:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1620
+#: src/globalPlugins/easyAudioConverter/__init__.py:4065 src/globalPlugins/easyAudioConverter/__init__.py:4056
+msgid "The conversion queue is empty"
+msgstr "மாற்று வரிசை காலியாக உள்ளது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2612
 msgid "The conversion was canceled."
 msgstr "மாற்றம் ரத்து செய்யப்பட்டது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1597
+#: src/globalPlugins/easyAudioConverter/__init__.py:4041
+msgid "The conversion will stop after the current file"
+msgstr "தற்போதைய கோப்புக்குப் பிறகு மாற்றம் நிறுத்தப்படும்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1866
+msgid "The file does not contain valid conversion profiles."
+msgstr "கோப்பில் செல்லுபடியாகும் மாற்று சுயவிவரங்கள் இல்லை."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:418
+msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
+msgstr "முதல் AAC ஆடியோ ஸ்ட்ரீம் மறு குறியாக்கம் இல்லாமல் M4A இல் மறுசீரமைக்கப்படும். முதல் ஆடியோ ஸ்ட்ரீம் AAC இல்லாத ஆதாரங்கள் தவிர்க்கப்படுகின்றன."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2595
+msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
+msgstr "முதல் ஆடியோ ஸ்ட்ரீம் AAC அல்ல, எனவே அதை M4A க்கு மாற்ற முடியாது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:412
+msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
+msgstr "முதல் ஆடியோ ஸ்ட்ரீம் மறு குறியாக்கம் இல்லாமல் பிரித்தெடுக்கப்படும். அதன் கோடெக் மற்றும் தரம் மாறாமல் இருக்கும், மேலும் வெளியீட்டு நீட்டிப்பு தானாகவே தேர்ந்தெடுக்கப்படுகிறது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2583
 msgid "The input does not contain a readable audio stream."
 msgstr "உள்ளீட்டில் படிக்கக்கூடிய ஆடியோ ஸ்ட்ரீம் இல்லை."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1595
+#: src/globalPlugins/easyAudioConverter/__init__.py:2581
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "உள்ளீட்டு கோப்பு சேதமடைந்துள்ளது அல்லது ஆதரிக்கப்படாத குறியாக்கத்தை பயன்படுத்துகிறது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1222
+#: src/globalPlugins/easyAudioConverter/__init__.py:2614
+msgid "The job was stopped after the current file."
+msgstr "நடப்பு கோப்பிற்குப் பிறகு பணி நிறுத்தப்பட்டது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1850
+msgid "The profile file is too large."
+msgstr "சுயவிவரக் கோப்பு மிகப் பெரியது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1947
 msgid "The profile name cannot be empty."
 msgstr "சுயவிவரப் பெயர் காலியாக இருக்க முடியாது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2237
+#: src/globalPlugins/easyAudioConverter/__init__.py:3243
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "புதுப்பித்தலை பதிவிறக்கம் செய்யவோ அல்லது சரிபார்க்கவோ இயலாது.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2245
+#: src/globalPlugins/easyAudioConverter/__init__.py:3251
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "அப்டேட் தயாராக உள்ளது. NVDA துணை நிரல் நிறுவியைத் திறக்கிறது."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1593
+#: src/globalPlugins/easyAudioConverter/__init__.py:1885
+msgid "There are no user profiles to export"
+msgstr "ஏற்றுமதி செய்ய பயனர் சுயவிவரங்கள் எதுவும் இல்லை"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2579
 msgid "There is not enough free disk space."
 msgstr "போதுமான காலி வட்டு இடம் இல்லை."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:365
+#: src/globalPlugins/easyAudioConverter/__init__.py:469
 msgid "Title"
 msgstr "தலைப்பு"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:372
+#: src/globalPlugins/easyAudioConverter/__init__.py:2074
+msgid "Total audio duration: {duration}"
+msgstr "மொத்த ஆடியோ காலம்: {duration}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:476
 msgid "Track number"
 msgstr "டிராக் எண்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1598 src/globalPlugins/easyAudioConverter/__init__.py:2238 src/globalPlugins/easyAudioConverter/__init__.py:2097
+#: src/globalPlugins/easyAudioConverter/__init__.py:2586 src/globalPlugins/easyAudioConverter/__init__.py:3244 src/globalPlugins/easyAudioConverter/__init__.py:3929 src/globalPlugins/easyAudioConverter/__init__.py:3103
 msgid "Unknown error"
 msgstr "அறியப்படாத பிழை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1604
+#: src/globalPlugins/easyAudioConverter/__init__.py:2592
 msgid "Unsupported file type"
 msgstr "ஆதரிக்கப்படாத கோப்பு வகை"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2233
+#: src/globalPlugins/easyAudioConverter/__init__.py:3239
 msgid "Update download canceled"
 msgstr "புதுப்பித்தல் பதிவிறக்கம் ரத்து செய்யப்பட்டது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:734
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
 msgid "Use the quality preset"
 msgstr "தர முன்னமைவைப் பயன்படுத்தவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1008
+#: src/globalPlugins/easyAudioConverter/__init__.py:1557
 msgid "Use these settings for future quick conversions"
 msgstr "எதிர்கால விரைவான மாற்றங்களுக்கு இந்த அமைப்புகளைப் பயன்படுத்தவும்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:2308
+msgid "Verifying the output by decoding it"
+msgstr "வெளியீட்டை டிகோடிங் செய்வதன் மூலம் சரிபார்க்கிறது"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:438
 msgid "Very high"
 msgstr "மிக உயர்ந்தது"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:321
+#: src/globalPlugins/easyAudioConverter/__init__.py:388
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:327
+#: src/globalPlugins/easyAudioConverter/__init__.py:394
 msgid "WMA"
 msgstr "டபிள்யூ.எம்.ஏ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:332
+#: src/globalPlugins/easyAudioConverter/__init__.py:2095
+msgid "Warning: the estimated output is larger than the available disk space."
+msgstr "எச்சரிக்கை: மதிப்பிடப்பட்ட வெளியீடு கிடைக்கக்கூடிய வட்டு இடத்தை விட பெரியது."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2084
+msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
+msgstr "எச்சரிக்கை: {count} கோப்புகள் இழப்பு வடிவத்திலிருந்து மற்றொரு இழப்பு வடிவத்திற்கு மாற்றப்படும், இது தரத்தைக் குறைக்கும்."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:399
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:1541
+#: src/globalPlugins/easyAudioConverter/__init__.py:2054 src/globalPlugins/easyAudioConverter/__init__.py:2056
+msgid "bytes"
+msgstr "பைட்டுகள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4150 src/globalPlugins/easyAudioConverter/__init__.py:2497
 msgid "calculating"
 msgstr "கணக்கிடுதல்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2579
+#: src/globalPlugins/easyAudioConverter/__init__.py:3757
 msgid "excluding subfolders"
 msgstr "துணைக் கோப்புறைகளைத் தவிர்த்து"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2577
+#: src/globalPlugins/easyAudioConverter/__init__.py:3755
 msgid "including subfolders"
 msgstr "துணை கோப்புறைகள் உட்பட"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2641 src/globalPlugins/easyAudioConverter/__init__.py:2666
+#: src/globalPlugins/easyAudioConverter/__init__.py:2181
+msgid "no"
+msgstr "இல்லை"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1760 src/globalPlugins/easyAudioConverter/__init__.py:1761 src/globalPlugins/easyAudioConverter/__init__.py:1762
+msgid "off"
+msgstr "ஆஃப்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1760 src/globalPlugins/easyAudioConverter/__init__.py:1761 src/globalPlugins/easyAudioConverter/__init__.py:1762
+msgid "on"
+msgstr "ஆன்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2067
+msgid "source folders"
+msgstr "மூல கோப்புறைகள்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2052 src/globalPlugins/easyAudioConverter/__init__.py:2078 src/globalPlugins/easyAudioConverter/__init__.py:2159 src/globalPlugins/easyAudioConverter/__init__.py:2160 src/globalPlugins/easyAudioConverter/__init__.py:2162 src/globalPlugins/easyAudioConverter/__init__.py:2168 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2176 src/globalPlugins/easyAudioConverter/__init__.py:3947 src/globalPlugins/easyAudioConverter/__init__.py:3951 src/globalPlugins/easyAudioConverter/__init__.py:3956
+msgid "unknown"
+msgstr "தெரியவில்லை"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2181
+msgid "yes"
+msgstr "ஆம்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3818 src/globalPlugins/easyAudioConverter/__init__.py:3847
 msgid "{count} selected folders"
 msgstr "{count} தேர்ந்தெடுக்கப்பட்ட கோப்புறைகள்"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2826
+#: src/globalPlugins/easyAudioConverter/__init__.py:427
+msgid "{name} (extension selected from the source audio codec)"
+msgstr "{name} (மூல ஆடியோ கோடெக்கிலிருந்து நீட்டிப்பு தேர்ந்தெடுக்கப்பட்டது)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2507
+msgid "{stage}. File {index} of {total}: {name}"
+msgstr "{stage}. கோப்பு {index} இன் {total}: {name}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4105
+msgid "{stage}. Queued jobs: {count}."
+msgstr "{stage}. வரிசையில் வேலைகள்: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4153
+msgid "{stage}. {status} Queued jobs: {count}."
+msgstr "{stage}. {status} வரிசையில் வேலைகள்: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4145
 msgid "{status} Estimated time remaining {remaining}."
 msgstr "{status} மதிப்பிடப்பட்ட நேரம் மீதமுள்ள {remaining}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2174 src/globalPlugins/easyAudioConverter/__init__.py:3954
+msgid "{value} Hz"
+msgstr "{value} ஹெர்ட்ஸ்"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2166
+msgid "{value} kbps"
+msgstr "{value} kbps"

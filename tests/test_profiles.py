@@ -59,6 +59,12 @@ class ProfileSerializationTests(unittest.TestCase):
 				"codecLevel": 10,
 				"bitDepth": 24,
 			},
+			output_name_template="{artist} - {title}",
+			loudness_preset="podcast",
+			copy_artwork=True,
+			copy_chapters=False,
+			verify_output=True,
+			show_preflight=False,
 		)
 		named = profiles.NamedConversionProfile("  Podcast   mono  ", settings)
 		payload = profiles.dump_user_profiles([named])
@@ -132,6 +138,27 @@ class ProfileSerializationTests(unittest.TestCase):
 		loaded = profiles.load_user_profiles(payload)
 		self.assertEqual(1, len(loaded))
 		self.assertEqual("flac", loaded[0].settings.target_format)
+
+	def test_import_merge_replaces_names_and_rejects_oversized_documents(self):
+		current = [
+			profiles.NamedConversionProfile(
+				"Speech",
+				converter.ConversionSettings(target_format="mp3"),
+			)
+		]
+		imported = [
+			profiles.NamedConversionProfile(
+				"speech",
+				converter.ConversionSettings(target_format="opus"),
+			),
+			profiles.NamedConversionProfile(
+				"Archive",
+				converter.ConversionSettings(target_format="flac"),
+			),
+		]
+		merged = profiles.merge_user_profiles(current, imported)
+		self.assertEqual(["speech", "Archive"], [item.name for item in merged])
+		self.assertEqual([], profiles.load_user_profiles("x" * (256 * 1024 + 1)))
 
 
 if __name__ == "__main__":
