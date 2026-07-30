@@ -102,13 +102,24 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    the results window lists success, failure, and skip rows; copy its report;
    open the output folder; then repair the corrupt source and retry only that
    failed file.
-18. Test successful, empty-input, corrupt-input, and Explorer-selection jobs.
+18. Przetestuj zadania zakończone sukcesem, bez danych wejściowych, z
+    uszkodzonym plikiem oraz z zaznaczeniem w Eksploratorze. Otwórz menu
+    Narzędzia NVDA po zaznaczeniu pliku i sprawdź, czy zapamiętane zaznaczenie
+    zostaje przekazane do konwersji. Gdy zaznaczenia nie da się odzyskać, oba
+    polecenia dotyczące zaznaczonych elementów mają otworzyć standardowe okno
+    wyboru wielu plików. Sprawdź również osobne polecenia wyboru plików i
+    folderu. NVDA ma odczytać odpowiednio „Wybierz pliki do konwersji” oraz
+    „Wybierz folder do konwersji” wraz z aktywną kontrolką, bez wpisu o
+    zamrożeniu w dzienniku.
 19. Open and dismiss the destination selectors, folder confirmation, update
    dialog, and support page.
 20. While the standalone settings window is already open, invoke its input
     gesture again and verify that focus returns to the existing window instead
     of creating a duplicate.
 21. Review the NVDA log for add-on import, callback, and traceback errors.
+22. Zamknij NVDA skrótem Insert+Q i przetestuj polecenie Uruchom ponownie
+    NVDA. Dziennik ma kończyć się wpisem `NVDA exit`, bez zdarzenia `APPCRASH`
+    ani informacji o uszkodzeniu sterty.
 
 ## Translation validation
 

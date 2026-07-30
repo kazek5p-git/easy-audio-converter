@@ -16,7 +16,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = PROJECT_ROOT / "src"
 LOCALE_ROOT = SOURCE_ROOT / "locale"
 POT_PATH = LOCALE_ROOT / "EasyAudioConverter.pot"
-VERSION = "1.3.0"
+VERSION = "1.3.1"
 PLACEHOLDER_PATTERN = re.compile(r"\{[^{}]+\}")
 
 

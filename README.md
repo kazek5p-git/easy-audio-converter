@@ -8,6 +8,8 @@ separate codec installation is required.
 ## Main features
 
 - converts popular audio and media inputs supported by FFmpeg;
+- keeps the Explorer selection available after the NVDA Tools menu opens and
+  falls back to a native multiple-file picker when no selection can be found;
 - produces 16 encoded formats: MP3, WAV, FLAC, Ogg Vorbis, Opus, M4A/AAC,
   AAC, WMA, ALAC, AIFF, AC-3, E-AC-3, WavPack, MP2, AMR-NB, and AMR-WB;
 - extracts the first original audio stream from a video or other media file
@@ -53,6 +55,8 @@ separate codec installation is required.
 - stores independent advanced parameter profiles for each target codec;
 - provides one standalone, resizable settings window under NVDA's Tools menu,
   with three accessible tabs and standard OK and Cancel buttons;
+- provides direct Tools-menu commands for choosing multiple files or one
+  folder through standard Windows dialogs;
 - checks GitHub releases for verified add-on updates;
 - exposes every action in NVDA's Input Gestures dialog for custom shortcuts;
 - ships standard PO, MO, and POT files compatible with Poedit;

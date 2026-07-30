@@ -87,7 +87,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.3.0"
+ADDON_VERSION = "1.3.1"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
@@ -523,14 +523,75 @@ def _open_support_page() -> None:
 		ui.message(_("Cannot open the support page. Open this address manually: {url}").format(url=SUPPORT_URL))
 
 
+def _top_level_window_handle(window_handle: int) -> int:
+	"""Zwróć okno główne dla uchwytu, zachowując użyteczną wartość awaryjną."""
+	if not window_handle:
+		return 0
+	try:
+		user32 = ctypes.windll.user32
+		user32.GetAncestor.argtypes = (ctypes.c_void_p, ctypes.c_uint)
+		user32.GetAncestor.restype = ctypes.c_void_p
+		root = int(user32.GetAncestor(int(window_handle), 2) or 0)
+	except Exception:
+		root = 0
+	return root or int(window_handle)
+
+
 def _top_level_foreground_window() -> int:
 	user32 = ctypes.windll.user32
 	user32.GetForegroundWindow.restype = ctypes.c_void_p
-	user32.GetAncestor.argtypes = (ctypes.c_void_p, ctypes.c_uint)
-	user32.GetAncestor.restype = ctypes.c_void_p
 	foreground = int(user32.GetForegroundWindow() or 0)
-	root = int(user32.GetAncestor(foreground, 2) or 0)
-	return root or foreground
+	return _top_level_window_handle(foreground)
+
+
+def _remembered_focus_objects() -> tuple[Any, ...]:
+	"""Zwróć bieżący fokus oraz fokus zapamiętany przed otwarciem menu NVDA."""
+	objects: list[Any] = []
+	seen: set[int] = set()
+
+	def add(obj: Any) -> None:
+		if obj is None or id(obj) in seen:
+			return
+		seen.add(id(obj))
+		objects.append(obj)
+
+	try:
+		add(api.getFocusObject())
+	except Exception:
+		pass
+	main_frame = getattr(gui, "mainFrame", None)
+	try:
+		add(getattr(main_frame, "prevFocus", None))
+	except Exception:
+		pass
+	try:
+		ancestors = tuple(getattr(main_frame, "prevFocusAncestors", ()) or ())
+	except Exception:
+		ancestors = ()
+	for ancestor in reversed(ancestors):
+		add(ancestor)
+	return tuple(objects)
+
+
+def _explorer_candidate_window_handles() -> tuple[int, ...]:
+	"""Zwróć okna, do których może należeć zaznaczenie ukryte za menu NVDA."""
+	handles: list[int] = []
+
+	def add(handle: int) -> None:
+		handle = int(handle or 0)
+		if handle and handle not in handles:
+			handles.append(handle)
+
+	try:
+		add(_top_level_foreground_window())
+	except Exception:
+		pass
+	for obj in _remembered_focus_objects():
+		try:
+			add(_top_level_window_handle(int(getattr(obj, "windowHandle", 0) or 0)))
+		except Exception:
+			continue
+	return tuple(handles)
 
 
 def _explorer_context() -> tuple[list[str], str]:
@@ -538,15 +599,17 @@ def _explorer_context() -> tuple[list[str], str]:
 	try:
 		from comtypes.client import CreateObject
 
-		foreground = _top_level_foreground_window()
+		candidate_handles = _explorer_candidate_window_handles()
+		if not candidate_handles:
+			return [], ""
 		shell = CreateObject("Shell.Application", dynamic=True)
 		windows = shell.Windows()
-		best_selection: list[str] = []
-		best_folder = ""
+		matches: dict[int, tuple[list[str], str]] = {}
 		for index in range(int(windows.Count)):
 			window = windows.Item(index)
 			try:
-				if int(window.HWND) != foreground:
+				window_handle = _top_level_window_handle(int(window.HWND))
+				if window_handle not in candidate_handles:
 					continue
 				document = window.Document
 				folder = str(document.Folder.Self.Path or "")
@@ -560,44 +623,42 @@ def _explorer_context() -> tuple[list[str], str]:
 					# Windows 11 Explorer tabs can share a top-level window.
 					# Prefer a matching tab with a real selection and keep the
 					# last such tab, which ShellWindows exposes as the active one.
-					best_selection = selection
-					best_folder = folder
-				elif not best_folder:
-					best_folder = folder
+					matches[window_handle] = (selection, folder)
+				elif window_handle not in matches:
+					matches[window_handle] = ([], folder)
 			except Exception:
 				continue
-		if best_folder:
-			return best_selection, best_folder
+		for window_handle in candidate_handles:
+			selection, folder = matches.get(window_handle, ([], ""))
+			if folder:
+				return selection, folder
 	except Exception:
 		pass
 	return [], ""
 
 
 def _focused_path(current_folder: str = "") -> str:
-	"""Best-effort fallback for a focused item outside Explorer's COM selection."""
-	try:
-		obj = api.getFocusObject()
-	except Exception:
-		return ""
-	values = []
-	for attribute in ("value", "name"):
-		try:
-			values.append(getattr(obj, attribute, ""))
-		except Exception:
-			continue
-	for value in values:
-		if not value:
-			continue
-		try:
-			candidate = os.path.expandvars(os.path.expanduser(str(value).strip('"')))
-			if os.path.exists(candidate):
-				return candidate
-			if current_folder:
-				candidate = os.path.join(current_folder, str(value))
+	"""Spróbuj odtworzyć ścieżkę z bieżącego lub zapamiętanego fokusu."""
+	for obj in _remembered_focus_objects():
+		values = []
+		for attribute in ("value", "name"):
+			try:
+				values.append(getattr(obj, attribute, ""))
+			except Exception:
+				continue
+		for value in values:
+			if not value:
+				continue
+			try:
+				candidate = os.path.expandvars(os.path.expanduser(str(value).strip('"')))
 				if os.path.exists(candidate):
 					return candidate
-		except OSError:
-			continue
+				if current_folder:
+					candidate = os.path.join(current_folder, str(value))
+					if os.path.exists(candidate):
+						return candidate
+			except OSError:
+				continue
 	return ""
 
 
@@ -2950,6 +3011,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			entries: tuple[tuple[str | None, Callable | None], ...] = (
 				(_("Convert selected files or folders with options..."), self.script_convertSelectionWithOptions),
 				(_("Convert selected files or folders"), self.script_convertSelection),
+				(_("Choose files to convert") + "...", self.script_chooseFilesForConversion),
+				(_("Choose a folder to convert") + "...", self.script_chooseFolderForConversion),
 				(_("Convert the current folder"), self.script_convertCurrentFolder),
 				(_("Information about the selected audio file..."), self.script_showSelectedAudioInfo),
 				(_("Show conversion progress"), self.script_showProgress),
@@ -2972,7 +3035,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				item = self._menu.Append(wx.ID_ANY, label)
 
 				def handler(event, action=callback):
-					action(None)
+					# Poczekaj, aż wx zamknie menu Narzędzia i przywróci fokus.
+					# Modalny dialog otwarty wewnątrz EVT_MENU bywa zgłaszany
+					# przez NVDA jako „nieznane”.
+					wx.CallAfter(action, None)
 
 				tray.Bind(wx.EVT_MENU, handler, item)
 				self._menu_bindings.append((item, handler))
@@ -2988,8 +3054,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			for item, handler in self._menu_bindings:
 				tray.Unbind(wx.EVT_MENU, handler=handler, source=item)
 			if self._menu_root_item is not None:
-				tray.toolsMenu.Remove(self._menu_root_item)
-			self._menu.Destroy()
+				# DestroyItem niszczy również podmenu. Późniejsze wywołanie
+				# Menu.Destroy uszkadza stertę wx podczas zamykania NVDA.
+				tray.toolsMenu.DestroyItem(self._menu_root_item)
+			else:
+				self._menu.Destroy()
 		except Exception:
 			log.debugWarning("Easy Audio Converter: could not remove the Tools menu", exc_info=True)
 		finally:
@@ -3736,14 +3805,140 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			settings=settings,
 		)
 
-	def _selection_for_conversion(self) -> tuple[list[str], str | None]:
+	def _resume_after_script_picker(
+		self,
+		callback: Callable[[Any], None],
+		value: Any,
+	) -> None:
+		"""Przywróć stan okien NVDA po zniszczeniu natywnego dialogu."""
+		try:
+			gui.mainFrame.postPopup()
+		except Exception:
+			log.debugWarning(
+				"Easy Audio Converter: nie można przywrócić fokusu po oknie wyboru",
+				exc_info=True,
+			)
+		if not getattr(self, "_terminated", False):
+			callback(value)
+
+	def _run_script_picker_dialog(
+		self,
+		dialog: wx.Dialog,
+		completed: Callable[[int], None],
+	) -> None:
+		"""Pokaż dialog dopiero po zakończeniu bieżącego skryptu NVDA."""
+		gui.mainFrame.prePopup()
+
+		def show() -> None:
+			try:
+				try:
+					result = dialog.ShowModal()
+				except Exception:
+					log.error(
+						"Easy Audio Converter: nie można wyświetlić okna wyboru",
+						exc_info=True,
+					)
+					result = getattr(wx, "ID_CANCEL", 0)
+				completed(result)
+			finally:
+				dialog.Destroy()
+
+		try:
+			wx.CallAfter(show)
+		except Exception:
+			try:
+				dialog.Destroy()
+			finally:
+				gui.mainFrame.postPopup()
+			raise
+
+	def _choose_files_for_conversion(
+		self,
+		callback: Callable[[list[str]], None],
+		default_folder: str = "",
+	) -> None:
+		default_directory = default_folder if os.path.isdir(default_folder) else str(Path.home())
+		dialog = wx.FileDialog(
+			gui.mainFrame,
+			_("Choose files to convert"),
+			defaultDir=default_directory,
+			style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST | wx.FD_MULTIPLE,
+		)
+
+		def completed(result: int) -> None:
+			paths: list[str] = []
+			try:
+				if result == wx.ID_OK:
+					paths = list(
+						dict.fromkeys(
+							path
+							for path in dialog.GetPaths()
+							if path and os.path.isfile(path)
+						)
+					)
+			except Exception:
+				log.error(
+					"Easy Audio Converter: nie można odczytać wyniku wyboru plików",
+					exc_info=True,
+				)
+			finally:
+				# runScriptModalDialog niszczy dialog po powrocie z callbacku.
+				wx.CallAfter(self._resume_after_script_picker, callback, paths)
+
+		# Wywołanie z kolejki pozwala skryptowi NVDA zakończyć się przed
+		# wejściem do natywnej pętli modalnej. Dzięki temu NVDA czyta dialog
+		# i nie zgłasza zamrożenia własnego wątku.
+		self._run_script_picker_dialog(dialog, completed)
+
+	def _show_folder_picker(
+		self,
+		title: str,
+		default_folder: str,
+		callback: Callable[[str], None],
+	) -> None:
+		default_path = default_folder if os.path.isdir(default_folder) else str(Path.home())
+		dialog = wx.DirDialog(
+			gui.mainFrame,
+			title,
+			defaultPath=default_path,
+			style=wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST,
+		)
+
+		def completed(result: int) -> None:
+			folder = ""
+			try:
+				if result == wx.ID_OK:
+					path = dialog.GetPath()
+					folder = path if os.path.isdir(path) else ""
+			except Exception:
+				log.error(
+					"Easy Audio Converter: nie można odczytać wyniku wyboru folderu",
+					exc_info=True,
+				)
+			finally:
+				wx.CallAfter(self._resume_after_script_picker, callback, folder)
+
+		self._run_script_picker_dialog(dialog, completed)
+
+	def _choose_folder_for_conversion(
+		self,
+		callback: Callable[[str], None],
+		default_folder: str = "",
+	) -> None:
+		self._show_folder_picker(
+			_("Choose a folder to convert"),
+			default_folder,
+			callback,
+		)
+
+	def _selection_for_conversion(self) -> tuple[list[str], str | None, str]:
 		selection, current_folder = _explorer_context()
 		if not selection:
 			focused = _focused_path(current_folder)
 			if focused:
 				selection = [focused]
 		source_root = selection[0] if len(selection) == 1 and os.path.isdir(selection[0]) else None
-		return selection, source_root
+		return selection, source_root, current_folder
 
 	def _confirm_folder_conversion(
 		self,
@@ -3766,38 +3961,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		)
 		return result == wx.YES
 
-	@script(
-		# Translators: Input gesture description.
-		description=_("Open Easy Audio Converter settings"),
-		category=SCRIPT_CATEGORY,
-	)
-	def script_openSettings(self, gesture):
-		wx.CallAfter(
-			self._open_settings_dialog,
-			EasyAudioConverterSettingsDialog.STANDARD_TAB,
-		)
-
-	@script(
-		# Translators: Input gesture description.
-		description=_("Open advanced codec settings"),
-		category=SCRIPT_CATEGORY,
-	)
-	def script_openAdvancedSettings(self, gesture):
-		wx.CallAfter(
-			self._open_settings_dialog,
-			EasyAudioConverterSettingsDialog.ADVANCED_TAB,
-		)
-
-	@script(
-		# Translators: Input gesture description.
-		description=_("Convert selected files or folders with one-time options"),
-		category=SCRIPT_CATEGORY,
-	)
-	def script_convertSelectionWithOptions(self, gesture):
-		selection, source_root = self._selection_for_conversion()
-		if not selection:
-			ui.message(_("No files or folders are selected"))
-			return
+	def _convert_paths_with_options(
+		self,
+		selection: list[str],
+		*,
+		source_root: str | None = None,
+	) -> None:
 		dialog = ConversionOptionsDialog(
 			gui.mainFrame,
 			item_count=len(selection),
@@ -3828,16 +3997,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			settings=settings,
 		)
 
-	@script(
-		# Translators: Input gesture description.
-		description=_("Quickly convert selected files or folders"),
-		category=SCRIPT_CATEGORY,
-	)
-	def script_convertSelection(self, gesture):
-		selection, source_root = self._selection_for_conversion()
-		if not selection:
-			ui.message(_("No files or folders are selected"))
-			return
+	def _quick_convert_paths(
+		self,
+		selection: list[str],
+		*,
+		source_root: str | None = None,
+	) -> None:
 		selected_folders = [path for path in selection if os.path.isdir(path)]
 		settings = _read_settings()
 		if selected_folders:
@@ -3851,7 +4016,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				settings,
 			):
 				return
-		elif not selected_folders:
+		else:
 			settings = replace(settings, show_preflight=False)
 		self._start_conversion(
 			selection,
@@ -3861,35 +4026,120 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@script(
 		# Translators: Input gesture description.
+		description=_("Open Easy Audio Converter settings"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_openSettings(self, gesture):
+		wx.CallAfter(
+			self._open_settings_dialog,
+			EasyAudioConverterSettingsDialog.STANDARD_TAB,
+		)
+
+	@script(
+		# Translators: Input gesture description.
+		description=_("Open advanced codec settings"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_openAdvancedSettings(self, gesture):
+		wx.CallAfter(
+			self._open_settings_dialog,
+			EasyAudioConverterSettingsDialog.ADVANCED_TAB,
+		)
+
+	@script(
+		# Translators: Input gesture description.
+		description=_("Convert selected files or folders with one-time options"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_convertSelectionWithOptions(self, gesture):
+		selection, source_root, current_folder = self._selection_for_conversion()
+		if selection:
+			wx.CallAfter(
+				self._convert_paths_with_options,
+				selection,
+				source_root=source_root,
+			)
+			return
+
+		def convert(chosen: list[str]) -> None:
+			if chosen:
+				self._convert_paths_with_options(chosen)
+
+		self._choose_files_for_conversion(convert, current_folder)
+
+	@script(
+		# Translators: Input gesture description.
+		description=_("Quickly convert selected files or folders"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_convertSelection(self, gesture):
+		selection, source_root, current_folder = self._selection_for_conversion()
+		if selection:
+			wx.CallAfter(
+				self._quick_convert_paths,
+				selection,
+				source_root=source_root,
+			)
+			return
+
+		def convert(chosen: list[str]) -> None:
+			if chosen:
+				self._quick_convert_paths(chosen)
+
+		self._choose_files_for_conversion(convert, current_folder)
+
+	@script(
+		description=_("Choose files to convert"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_chooseFilesForConversion(self, gesture):
+		def convert(selection: list[str]) -> None:
+			if selection:
+				self._quick_convert_paths(selection)
+
+		self._choose_files_for_conversion(convert)
+
+	@script(
+		description=_("Choose a folder to convert"),
+		category=SCRIPT_CATEGORY,
+	)
+	def script_chooseFolderForConversion(self, gesture):
+		def convert(folder: str) -> None:
+			if folder:
+				self._quick_convert_paths([folder], source_root=folder)
+
+		self._choose_folder_for_conversion(convert)
+
+	@script(
+		# Translators: Input gesture description.
 		description=_("Convert every supported audio file in the current folder"),
 		category=SCRIPT_CATEGORY,
 	)
 	def script_convertCurrentFolder(self, gesture):
 		_selection, folder = _explorer_context()
-		if not folder or not os.path.isdir(folder):
-			dialog = wx.DirDialog(
-				gui.mainFrame,
-				_("Choose a folder to convert"),
-				defaultPath=str(Path.home()),
-				style=wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST,
+		if folder and os.path.isdir(folder):
+			wx.CallAfter(
+				self._quick_convert_paths,
+				[folder],
+				source_root=folder,
 			)
-			try:
-				if dialog.ShowModal() != wx.ID_OK:
-					return
-				folder = dialog.GetPath()
-			finally:
-				dialog.Destroy()
-		description = os.path.basename(folder.rstrip("\\/")) or folder
-		settings = _read_settings()
-		if settings.show_preflight or self._confirm_folder_conversion(description, settings):
-			self._start_conversion([folder], source_root=folder, settings=settings)
+			return
+
+		def convert(chosen_folder: str) -> None:
+			if chosen_folder:
+				self._quick_convert_paths(
+					[chosen_folder],
+					source_root=chosen_folder,
+				)
+
+		self._choose_folder_for_conversion(convert)
 
 	@script(
 		description=_("Show technical information about the selected audio file"),
 		category=SCRIPT_CATEGORY,
 	)
 	def script_showSelectedAudioInfo(self, gesture):
-		selection, _source_root = self._selection_for_conversion()
+		selection, _source_root, _current_folder = self._selection_for_conversion()
 		files = [path for path in selection if os.path.isfile(path)]
 		if len(files) != 1:
 			ui.message(_("Select exactly one audio file"))
@@ -3999,23 +4249,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_chooseDestinationFolder(self, gesture):
 		settings = _read_settings()
-		dialog = wx.DirDialog(
-			gui.mainFrame,
-			_("Choose the destination folder"),
-			defaultPath=settings.output_folder,
-			style=wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST,
-		)
-		try:
-			if dialog.ShowModal() != wx.ID_OK:
+
+		def save_destination(path: str) -> None:
+			if not path:
 				return
-			path = dialog.GetPath()
-		finally:
-			dialog.Destroy()
-		conf = config.conf[CONFIG_SECTION]
-		conf["outputFolder"] = path
-		conf["sameFolder"] = False
-		config.conf.save()
-		ui.message(_("Destination folder: {folder}").format(folder=path))
+			conf = config.conf[CONFIG_SECTION]
+			conf["outputFolder"] = path
+			conf["sameFolder"] = False
+			config.conf.save()
+			ui.message(_("Destination folder: {folder}").format(folder=path))
+
+		self._show_folder_picker(
+			_("Choose the destination folder"),
+			settings.output_folder,
+			save_destination,
+		)
 
 	@script(
 		# Translators: Input gesture description.

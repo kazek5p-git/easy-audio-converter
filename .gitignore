@@ -1,4 +1,5 @@
 __pycache__/
+_tymczasowe/
 *.py[cod]
 *.log
 .coverage

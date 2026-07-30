@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.3.1
+
+- Usunięto awarię NVDA podczas zamykania lub ponownego uruchamiania: podmenu
+  dodatku jest teraz niszczone dokładnie raz.
+- Przywrócono wykrywanie zaznaczenia w Eksploratorze po otwarciu menu NVDA,
+  korzystając z fokusu zapamiętanego przed wejściem do menu.
+- Gdy nie można odnaleźć zaznaczenia, polecenia konwersji otwierają standardowe
+  okno Windows pozwalające wybrać wiele plików.
+- Natywne okna wyboru plików, folderu i folderu docelowego są uruchamiane po
+  zakończeniu skryptu wejściowego. NVDA odczytuje ich tytuły i kontrolki bez
+  zgłaszania zamrożenia własnego wątku.
+- Dodano osobne polecenia „Wybierz pliki do konwersji...” i „Wybierz folder do
+  konwersji...” w menu Narzędzia oraz w Zdarzeniach wejścia NVDA.
+
 ## 1.3.0
 
 - Added an accessible preflight plan with actual output names, skipped counts,

@@ -124,7 +124,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.3.0", self.module.ADDON_VERSION)
+		self.assertEqual("1.3.1", self.module.ADDON_VERSION)
 		dialog = self.module.EasyAudioConverterSettingsDialog
 		self.assertEqual("Easy Audio Converter settings", dialog.title)
 		self.assertEqual(0, dialog.STANDARD_TAB)
@@ -146,6 +146,8 @@ class PluginImportTests(unittest.TestCase):
 			"script_openAdvancedSettings",
 			"script_convertSelectionWithOptions",
 			"script_convertSelection",
+			"script_chooseFilesForConversion",
+			"script_chooseFolderForConversion",
 			"script_convertCurrentFolder",
 			"script_cycleTargetFormat",
 			"script_cycleQuality",
@@ -236,6 +238,427 @@ class PluginImportTests(unittest.TestCase):
 		plugin._open_settings_dialog()
 		self.assertEqual(["raise", "focus"], calls)
 		self.assertIs(dialog, plugin._settings_dialog)
+
+	def test_tools_menu_defers_action_until_the_menu_has_closed(self):
+		calls = []
+		bindings = []
+		deferred = []
+
+		class Menu:
+			def Append(self, item_id, label):
+				item = (item_id, label)
+				calls.append(("append", item))
+				return item
+
+			def AppendSeparator(self):
+				calls.append(("separator",))
+
+		class ToolsMenu:
+			def AppendSubMenu(self, menu, label):
+				calls.append(("submenu", menu, label))
+				return object()
+
+		tray = types.SimpleNamespace(
+			toolsMenu=ToolsMenu(),
+			Bind=lambda event, handler, item: bindings.append((event, handler, item)),
+		)
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._menu = None
+		plugin._menu_root_item = None
+		plugin._menu_bindings = []
+		plugin.script_convertSelectionWithOptions = lambda gesture: calls.append(
+			("action", gesture)
+		)
+
+		gui_module = sys.modules["gui"]
+		wx_module = sys.modules["wx"]
+		original_main_frame = gui_module.mainFrame
+		missing = object()
+		replacements = {
+			"Menu": Menu,
+			"ID_ANY": -1,
+			"EVT_MENU": object(),
+			"CallAfter": lambda callback, *args: deferred.append((callback, args)),
+		}
+		originals = {
+			name: getattr(wx_module, name, missing)
+			for name in replacements
+		}
+		gui_module.mainFrame = types.SimpleNamespace(sysTrayIcon=tray)
+		for name, value in replacements.items():
+			setattr(wx_module, name, value)
+		try:
+			plugin._install_menu()
+			bindings[0][1](None)
+			self.assertFalse(any(call[0] == "action" for call in calls))
+			self.assertEqual(1, len(deferred))
+			callback, arguments = deferred.pop()
+			callback(*arguments)
+		finally:
+			gui_module.mainFrame = original_main_frame
+			for name, original in originals.items():
+				if original is missing:
+					delattr(wx_module, name)
+				else:
+					setattr(wx_module, name, original)
+		self.assertIn(("action", None), calls)
+
+	def test_tools_submenu_is_destroyed_exactly_once(self):
+		calls = []
+		item = object()
+		handler = object()
+		root_item = object()
+
+		class Submenu:
+			def Destroy(self):
+				calls.append(("destroy submenu",))
+
+		class ToolsMenu:
+			def DestroyItem(self, source):
+				calls.append(("destroy item", source))
+
+		tray = types.SimpleNamespace(
+			toolsMenu=ToolsMenu(),
+			Unbind=lambda event, *, handler, source: calls.append(
+				("unbind", event, handler, source)
+			),
+		)
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._menu = Submenu()
+		plugin._menu_root_item = root_item
+		plugin._menu_bindings = [(item, handler)]
+
+		gui_module = sys.modules["gui"]
+		wx_module = sys.modules["wx"]
+		original_main_frame = gui_module.mainFrame
+		missing = object()
+		original_event = getattr(wx_module, "EVT_MENU", missing)
+		event = object()
+		gui_module.mainFrame = types.SimpleNamespace(sysTrayIcon=tray)
+		wx_module.EVT_MENU = event
+		try:
+			plugin._remove_menu()
+		finally:
+			gui_module.mainFrame = original_main_frame
+			if original_event is missing:
+				del wx_module.EVT_MENU
+			else:
+				wx_module.EVT_MENU = original_event
+		self.assertEqual(
+			[
+				("unbind", event, handler, item),
+				("destroy item", root_item),
+			],
+			calls,
+		)
+		self.assertIsNone(plugin._menu)
+		self.assertIsNone(plugin._menu_root_item)
+		self.assertEqual([], plugin._menu_bindings)
+
+	def test_explorer_candidates_include_focus_saved_before_nvda_menu(self):
+		current_focus = types.SimpleNamespace(windowHandle=20)
+		previous_focus = types.SimpleNamespace(windowHandle=30)
+		previous_ancestor = types.SimpleNamespace(windowHandle=31)
+		api_module = sys.modules["api"]
+		gui_module = sys.modules["gui"]
+		original_get_focus = api_module.getFocusObject
+		original_main_frame = gui_module.mainFrame
+		original_foreground = self.module._top_level_foreground_window
+		original_root = self.module._top_level_window_handle
+		api_module.getFocusObject = lambda: current_focus
+		gui_module.mainFrame = types.SimpleNamespace(
+			prevFocus=previous_focus,
+			prevFocusAncestors=(previous_ancestor,),
+		)
+		self.module._top_level_foreground_window = lambda: 10
+		self.module._top_level_window_handle = lambda handle: {
+			20: 10,
+			30: 300,
+			31: 300,
+		}.get(handle, handle)
+		try:
+			self.assertEqual(
+				(10, 300),
+				self.module._explorer_candidate_window_handles(),
+			)
+		finally:
+			api_module.getFocusObject = original_get_focus
+			gui_module.mainFrame = original_main_frame
+			self.module._top_level_foreground_window = original_foreground
+			self.module._top_level_window_handle = original_root
+
+	def test_explorer_context_uses_the_window_saved_before_nvda_menu(self):
+		selected_path = r"C:\Media\nagranie.wav"
+		selected_items = types.SimpleNamespace(
+			Count=1,
+			Item=lambda index: types.SimpleNamespace(Path=selected_path),
+		)
+		document = types.SimpleNamespace(
+			Folder=types.SimpleNamespace(Self=types.SimpleNamespace(Path=r"C:\Media")),
+			SelectedItems=lambda: selected_items,
+		)
+		explorer_window = types.SimpleNamespace(HWND=300, Document=document)
+		windows = types.SimpleNamespace(Count=1, Item=lambda index: explorer_window)
+		shell = types.SimpleNamespace(Windows=lambda: windows)
+		client = types.ModuleType("comtypes.client")
+		client.CreateObject = lambda name, dynamic=True: shell
+		comtypes = types.ModuleType("comtypes")
+		comtypes.client = client
+
+		original_comtypes = sys.modules.get("comtypes")
+		original_client = sys.modules.get("comtypes.client")
+		original_candidates = self.module._explorer_candidate_window_handles
+		original_root = self.module._top_level_window_handle
+		original_exists = self.module.os.path.exists
+		sys.modules["comtypes"] = comtypes
+		sys.modules["comtypes.client"] = client
+		self.module._explorer_candidate_window_handles = lambda: (10, 300)
+		self.module._top_level_window_handle = lambda handle: handle
+		self.module.os.path.exists = lambda path: path == selected_path
+		try:
+			self.assertEqual(
+				([selected_path], r"C:\Media"),
+				self.module._explorer_context(),
+			)
+		finally:
+			if original_comtypes is None:
+				sys.modules.pop("comtypes", None)
+			else:
+				sys.modules["comtypes"] = original_comtypes
+			if original_client is None:
+				sys.modules.pop("comtypes.client", None)
+			else:
+				sys.modules["comtypes.client"] = original_client
+			self.module._explorer_candidate_window_handles = original_candidates
+			self.module._top_level_window_handle = original_root
+			self.module.os.path.exists = original_exists
+
+	def test_focused_path_uses_focus_saved_before_nvda_menu(self):
+		api_module = sys.modules["api"]
+		gui_module = sys.modules["gui"]
+		original_get_focus = api_module.getFocusObject
+		original_main_frame = gui_module.mainFrame
+		original_exists = self.module.os.path.exists
+		expected = self.module.os.path.join(r"C:\Media", "nagranie.wav")
+		api_module.getFocusObject = lambda: types.SimpleNamespace(name="Nieznane")
+		gui_module.mainFrame = types.SimpleNamespace(
+			prevFocus=types.SimpleNamespace(name="nagranie.wav", value=""),
+			prevFocusAncestors=(),
+		)
+		self.module.os.path.exists = lambda path: path == expected
+		try:
+			self.assertEqual(expected, self.module._focused_path(r"C:\Media"))
+		finally:
+			api_module.getFocusObject = original_get_focus
+			gui_module.mainFrame = original_main_frame
+			self.module.os.path.exists = original_exists
+
+	def test_missing_explorer_selection_opens_async_file_picker(self):
+		chosen = [r"C:\Media\jeden.wav", r"C:\Media\dwa.mp4"]
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._terminated = False
+		calls = []
+
+		def choose(callback, folder=""):
+			calls.append(("picker", folder))
+			callback(chosen)
+
+		plugin._choose_files_for_conversion = choose
+		plugin._quick_convert_paths = lambda paths, source_root=None: calls.append(
+			("convert", paths, source_root)
+		)
+		original_context = self.module._explorer_context
+		original_focused_path = self.module._focused_path
+		self.module._explorer_context = lambda: ([], r"C:\Media")
+		self.module._focused_path = lambda folder="": ""
+		try:
+			plugin.script_convertSelection(None)
+		finally:
+			self.module._explorer_context = original_context
+			self.module._focused_path = original_focused_path
+		self.assertEqual(
+			[("picker", r"C:\Media"), ("convert", chosen, None)],
+			calls,
+		)
+
+	def test_existing_selection_is_deferred_until_the_nvda_script_returns(self):
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		chosen = [r"C:\Media\jeden.wav"]
+		calls = []
+		deferred = []
+		plugin._selection_for_conversion = lambda: (chosen, None, r"C:\Media")
+		plugin._quick_convert_paths = lambda paths, source_root=None: calls.append(
+			("convert", paths, source_root)
+		)
+		wx_module = sys.modules["wx"]
+		original_call_after = getattr(wx_module, "CallAfter", None)
+		wx_module.CallAfter = lambda callback, *args, **kwargs: deferred.append(
+			(callback, args, kwargs)
+		)
+		try:
+			plugin.script_convertSelection(None)
+			self.assertEqual([], calls)
+			callback, arguments, keywords = deferred.pop()
+			callback(*arguments, **keywords)
+		finally:
+			if original_call_after is None:
+				del wx_module.CallAfter
+			else:
+				wx_module.CallAfter = original_call_after
+		self.assertEqual([("convert", chosen, None)], calls)
+
+	def test_file_picker_accepts_multiple_existing_files_and_closes(self):
+		calls = []
+		deferred = []
+		chosen = [
+			r"C:\Media\jeden.wav",
+			r"C:\Media\dwa.mp4",
+			r"C:\Media\jeden.wav",
+			r"C:\Media\brak.wav",
+		]
+
+		class Dialog:
+			def __init__(self, parent, message, **kwargs):
+				calls.append(("create", parent, message, kwargs))
+
+			def ShowModal(self):
+				calls.append(("show",))
+				return 5100
+
+			def GetPaths(self):
+				return chosen
+
+			def Destroy(self):
+				calls.append(("destroy",))
+
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._terminated = False
+		wx_module = sys.modules["wx"]
+		gui_module = sys.modules["gui"]
+		missing = object()
+		replacements = {
+			"FileDialog": Dialog,
+			"FD_OPEN": 1,
+			"FD_FILE_MUST_EXIST": 2,
+			"FD_MULTIPLE": 4,
+			"CallAfter": lambda callback, *args: deferred.append((callback, args)),
+		}
+		originals = {
+			name: getattr(wx_module, name, missing)
+			for name in replacements
+		}
+		original_isdir = self.module.os.path.isdir
+		original_isfile = self.module.os.path.isfile
+		original_main_frame = gui_module.mainFrame
+		main_frame = types.SimpleNamespace(
+			prePopup=lambda: calls.append(("pre",)),
+			postPopup=lambda: calls.append(("post",)),
+		)
+		for name, value in replacements.items():
+			setattr(wx_module, name, value)
+		gui_module.mainFrame = main_frame
+		self.module.os.path.isdir = lambda path: path == r"C:\Media"
+		self.module.os.path.isfile = lambda path: path != r"C:\Media\brak.wav"
+		try:
+			plugin._choose_files_for_conversion(
+				lambda paths: calls.append(("selected", paths)),
+				r"C:\Media",
+			)
+			self.assertEqual(["create", "pre"], [call[0] for call in calls])
+			callback, arguments = deferred.pop(0)
+			callback(*arguments)
+			callback, arguments = deferred.pop()
+			callback(*arguments)
+		finally:
+			for name, original in originals.items():
+				if original is missing:
+					delattr(wx_module, name)
+				else:
+					setattr(wx_module, name, original)
+			self.module.os.path.isdir = original_isdir
+			self.module.os.path.isfile = original_isfile
+			gui_module.mainFrame = original_main_frame
+		self.assertEqual("create", calls[0][0])
+		self.assertIs(main_frame, calls[0][1])
+		self.assertEqual(r"C:\Media", calls[0][3]["defaultDir"])
+		self.assertEqual(7, calls[0][3]["style"])
+		self.assertEqual(("pre",), calls[1])
+		self.assertEqual(("show",), calls[2])
+		self.assertEqual(("destroy",), calls[3])
+		self.assertEqual(("post",), calls[4])
+		self.assertEqual(("selected", chosen[:2]), calls[5])
+
+	def test_folder_picker_cancel_is_async_and_restores_popup_state(self):
+		calls = []
+		deferred = []
+
+		class Dialog:
+			def __init__(self, parent, message, **kwargs):
+				calls.append(("create", parent, message, kwargs))
+
+			def ShowModal(self):
+				calls.append(("show",))
+				return 5101
+
+			def GetPath(self):
+				raise AssertionError("Anulowany dialog nie może zwrócić folderu")
+
+			def Destroy(self):
+				calls.append(("destroy",))
+
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._terminated = False
+		wx_module = sys.modules["wx"]
+		gui_module = sys.modules["gui"]
+		missing = object()
+		replacements = {
+			"DirDialog": Dialog,
+			"DD_DEFAULT_STYLE": 1,
+			"DD_DIR_MUST_EXIST": 2,
+			"ID_CANCEL": 5101,
+			"CallAfter": lambda callback, *args: deferred.append((callback, args)),
+		}
+		originals = {
+			name: getattr(wx_module, name, missing)
+			for name in replacements
+		}
+		original_isdir = self.module.os.path.isdir
+		original_main_frame = gui_module.mainFrame
+		main_frame = types.SimpleNamespace(
+			prePopup=lambda: calls.append(("pre",)),
+			postPopup=lambda: calls.append(("post",)),
+		)
+		for name, value in replacements.items():
+			setattr(wx_module, name, value)
+		gui_module.mainFrame = main_frame
+		self.module.os.path.isdir = lambda path: path == r"C:\Media"
+		try:
+			plugin._choose_folder_for_conversion(
+				lambda folder: calls.append(("selected", folder)),
+				r"C:\Media",
+			)
+			self.assertEqual(["create", "pre"], [call[0] for call in calls])
+			callback, arguments = deferred.pop(0)
+			callback(*arguments)
+			callback, arguments = deferred.pop()
+			callback(*arguments)
+		finally:
+			for name, original in originals.items():
+				if original is missing:
+					delattr(wx_module, name)
+				else:
+					setattr(wx_module, name, original)
+			self.module.os.path.isdir = original_isdir
+			gui_module.mainFrame = original_main_frame
+		self.assertEqual("create", calls[0][0])
+		self.assertIs(main_frame, calls[0][1])
+		self.assertEqual("Choose a folder to convert", calls[0][2])
+		self.assertEqual(r"C:\Media", calls[0][3]["defaultPath"])
+		self.assertEqual(3, calls[0][3]["style"])
+		self.assertEqual(
+			[("pre",), ("show",), ("destroy",), ("post",), ("selected", "")],
+			calls[1:],
+		)
 
 	def test_settings_commands_target_the_requested_standalone_tabs(self):
 		calls = []
