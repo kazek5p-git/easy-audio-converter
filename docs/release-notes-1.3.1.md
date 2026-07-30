@@ -1,19 +1,20 @@
 # Easy Audio Converter 1.3.1
 
-To wydanie naprawia usterki wpływające na podstawową obsługę dodatku.
+This maintenance release resolves issues affecting essential add-on
+interaction.
 
-- NVDA zamyka się i uruchamia ponownie prawidłowo. Element podmenu dodatku jest
-  usuwany razem ze swoim podmenu w jednej operacji, co eliminuje podwójne
-  zwolnienie pamięci i awarię `0xc0000374`.
-- Polecenia konwersji odzyskują zaznaczenie z okna Eksploratora aktywnego przed
-  otwarciem menu NVDA.
-- Jeśli nie ma zaznaczenia, otwiera się standardowe okno Windows do wyboru
-  wielu plików zamiast niejasnego komunikatu „nieznane”.
-- Okna wyboru plików, folderu oraz folderu docelowego nie blokują już skryptu
-  wejściowego. NVDA prawidłowo odczytuje tytuł i aktywną kontrolkę, a jego
-  mechanizm nadzoru nie zgłasza zamrożenia.
-- W menu Narzędzia i Zdarzeniach wejścia są dostępne osobne polecenia wyboru
-  plików oraz folderu.
+- NVDA now shuts down and restarts correctly. The add-on's root menu item and
+  submenu are destroyed in a single operation, eliminating a double free and
+  the resulting `0xc0000374` heap-corruption crash.
+- Conversion commands recover the selection from the Explorer window that was
+  active before the NVDA menu opened.
+- If no selection can be recovered, a standard Windows multiple-file dialog
+  opens instead of the ambiguous “unknown” announcement.
+- File, folder, and destination selectors no longer block the input script.
+  NVDA announces their titles and focused controls, and its watchdog does not
+  report a frozen main thread.
+- Separate file and folder selection commands are available from the Tools
+  menu and NVDA Input Gestures.
 
-Konwersja, kolejka zadań, ustawienia i formaty wprowadzone w wersji 1.3.0
-pozostają bez zmian.
+Conversion, job queue, settings, and format features introduced in version
+1.3.0 remain unchanged.

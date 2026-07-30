@@ -2,17 +2,17 @@
 
 ## 1.3.1
 
-- Usunięto awarię NVDA podczas zamykania lub ponownego uruchamiania: podmenu
-  dodatku jest teraz niszczone dokładnie raz.
-- Przywrócono wykrywanie zaznaczenia w Eksploratorze po otwarciu menu NVDA,
-  korzystając z fokusu zapamiętanego przed wejściem do menu.
-- Gdy nie można odnaleźć zaznaczenia, polecenia konwersji otwierają standardowe
-  okno Windows pozwalające wybrać wiele plików.
-- Natywne okna wyboru plików, folderu i folderu docelowego są uruchamiane po
-  zakończeniu skryptu wejściowego. NVDA odczytuje ich tytuły i kontrolki bez
-  zgłaszania zamrożenia własnego wątku.
-- Dodano osobne polecenia „Wybierz pliki do konwersji...” i „Wybierz folder do
-  konwersji...” w menu Narzędzia oraz w Zdarzeniach wejścia NVDA.
+- Fixed an NVDA crash during shutdown or restart by ensuring that the add-on
+  submenu is destroyed exactly once.
+- Restored Explorer selection detection after opening the NVDA menu by using
+  the focus saved before entering the menu.
+- When no selection can be recovered, conversion commands now open the
+  standard Windows multiple-file selection dialog.
+- Native file, folder, and destination selectors are now opened after the
+  input script finishes. NVDA announces their titles and focused controls
+  without reporting a frozen main thread.
+- Added separate “Choose files to convert...” and “Choose a folder to
+  convert...” commands to the Tools menu and NVDA Input Gestures.
 
 ## 1.3.0
 
