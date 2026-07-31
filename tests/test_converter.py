@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import os
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 
@@ -11,10 +13,12 @@ sys.path.insert(0, str(PROJECT_ROOT / "src" / "globalPlugins" / "easyAudioConver
 
 from converter import (  # noqa: E402
 	AAC_M4A_COPY_FORMAT,
+	FLAC_COMPRESSION_LEVELS,
 	FORMAT_KEYS,
 	ORIGINAL_AUDIO_COPY_FORMAT,
 	QUALITY_KEYS,
 	STREAM_COPY_FORMATS,
+	WAVPACK_COMPRESSION_PROFILES,
 	ConversionSettings,
 	ConversionCallbacks,
 	Converter,
@@ -93,6 +97,43 @@ class ConversionSettingsTests(unittest.TestCase):
 			{"enabled": False, "codecLevel": 12},
 		)
 		self.assertEqual(base, advanced)
+
+	def test_lossless_compression_levels_are_bounded_and_applied(self):
+		self.assertEqual(tuple(range(13)), FLAC_COMPRESSION_LEVELS)
+		self.assertEqual(
+			(
+				(0, "-f"),
+				(1, ""),
+				(2, "-h"),
+				(3, "-hh"),
+				(4, "-hhx1"),
+				(5, "-hhx2"),
+				(6, "-hhx3"),
+				(7, "-hhx4"),
+				(8, "-hhx6"),
+			),
+			tuple((level, command) for level, _name, command in WAVPACK_COMPRESSION_PROFILES),
+		)
+		for target_format, requested, expected in (
+			("flac", 0, 0),
+			("flac", 12, 12),
+			("flac", 99, 12),
+			("wavpack", 0, 0),
+			("wavpack", 7, 7),
+			("wavpack", 8, 8),
+			("wavpack", 99, 8),
+		):
+			with self.subTest(target_format=target_format, requested=requested):
+				arguments = build_codec_arguments(
+					target_format,
+					"high",
+					"lame",
+					{"enabled": True, "codecLevel": requested},
+				)
+				self.assertEqual(
+					str(expected),
+					arguments[arguments.index("-compression_level") + 1],
+				)
 
 	def test_stream_copy_never_applies_encoder_overrides(self):
 		for target_format in STREAM_COPY_FORMATS:
@@ -465,6 +506,52 @@ class ConversionPlanningTests(unittest.TestCase):
 			self.assertNotIn("-ac", command)
 			self.assertEqual("-1", command[command.index("-map_metadata") + 1])
 			self.assertEqual("-1", command[command.index("-map_chapters") + 1])
+
+	def test_conversion_preserves_source_creation_and_modification_dates(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			for index, target_format in enumerate(
+				("mp3", ORIGINAL_AUDIO_COPY_FORMAT, AAC_M4A_COPY_FORMAT),
+				start=1,
+			):
+				with self.subTest(target_format=target_format):
+					case_root = root / target_format
+					case_root.mkdir()
+					source = case_root / "source.mp4"
+					source.write_bytes(b"source")
+					source_access_ns = source.stat().st_atime_ns
+					source_modification_ns = 1_600_000_000_123_456_700 + index * 100
+					os.utime(
+						source,
+						ns=(source_access_ns, source_modification_ns),
+					)
+					source_stat = source.stat()
+					source_creation_ns = getattr(
+						source_stat,
+						"st_birthtime_ns",
+						source_stat.st_ctime_ns,
+					)
+					time.sleep(0.02)
+					converter = _FakeConverter(case_root / "missing.exe", codec="aac")
+					summary = converter.run(
+						[source],
+						ConversionSettings(
+							target_format=target_format,
+							same_folder=False,
+							output_folder=str(case_root / "out"),
+							preserve_timestamps=True,
+						),
+					)
+					self.assertEqual(1, summary.succeeded)
+					output_stat = Path(summary.outputs[0]).stat()
+					self.assertEqual(source_stat.st_mtime_ns, output_stat.st_mtime_ns)
+					if os.name == "nt":
+						output_creation_ns = getattr(
+							output_stat,
+							"st_birthtime_ns",
+							output_stat.st_ctime_ns,
+						)
+						self.assertEqual(source_creation_ns, output_creation_ns)
 
 	def test_stop_after_current_finishes_exactly_one_file(self):
 		with tempfile.TemporaryDirectory() as temporary:

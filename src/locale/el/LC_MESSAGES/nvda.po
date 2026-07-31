@@ -1,1277 +1,1313 @@
 # Easy Audio Converter translation.
 # Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.3.1\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-29 19:49+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: el\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.4.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-30 17:34+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: el\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2103
+#: src/globalPlugins/easyAudioConverter/__init__.py:2262
 msgid "...and {count} more files"
 msgstr "...και {count} περισσότερα αρχεία"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2633
+#: src/globalPlugins/easyAudioConverter/__init__.py:2794
 msgid "...and {count} more skipped files"
 msgstr "... και {count} περισσότερα αρχεία που παραλείφθηκαν"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1084
+#: src/globalPlugins/easyAudioConverter/__init__.py:1198
 msgid "16 bit"
 msgstr "16 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1084
+#: src/globalPlugins/easyAudioConverter/__init__.py:1198
 msgid "24 bit"
 msgstr "24 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1084
+#: src/globalPlugins/easyAudioConverter/__init__.py:1198
 msgid "32 bit"
 msgstr "32 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1955
+#: src/globalPlugins/easyAudioConverter/__init__.py:2114
 msgid "A built-in profile already uses this name."
 msgstr "Ένα ενσωματωμένο προφίλ χρησιμοποιεί ήδη αυτό το όνομα."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:393
+#: src/globalPlugins/easyAudioConverter/__init__.py:398
 msgid "AAC"
 msgstr "ΜΑΚ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:397
+#: src/globalPlugins/easyAudioConverter/__init__.py:402
 msgid "AC-3"
 msgstr "ΑΚ-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:396
+#: src/globalPlugins/easyAudioConverter/__init__.py:401
 msgid "AIFF"
 msgstr "ΔΦΚ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:395
+#: src/globalPlugins/easyAudioConverter/__init__.py:400
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple Lossless)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:401
+#: src/globalPlugins/easyAudioConverter/__init__.py:406
 msgid "AMR narrowband"
 msgstr "AMR στενής ζώνης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:402
+#: src/globalPlugins/easyAudioConverter/__init__.py:407
 msgid "AMR wideband"
 msgstr "AMR ευρείας ζώνης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2577
+#: src/globalPlugins/easyAudioConverter/__init__.py:2736
 msgid "Access to the source or destination was denied."
 msgstr "Δεν επιτράπηκε η πρόσβαση στην πηγή ή τον προορισμό."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2719
+#: src/globalPlugins/easyAudioConverter/__init__.py:2880
 msgid "Additional skipped files: {count}"
 msgstr "Πρόσθετα αρχεία που παραλείφθηκαν: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1714
+#: src/globalPlugins/easyAudioConverter/__init__.py:1873
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "Οι προηγμένες παρακάμψεις κωδικοποιητή δεν χρησιμοποιούνται για την αντιγραφή ροής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1719
+#: src/globalPlugins/easyAudioConverter/__init__.py:1878
 msgid "Advanced codec overrides: disabled"
 msgstr "Προηγμένες παρακάμψεις κωδικοποιητή: απενεργοποιημένο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1717
+#: src/globalPlugins/easyAudioConverter/__init__.py:1876
 msgid "Advanced codec overrides: enabled"
 msgstr "Προηγμένες παρακάμψεις κωδικοποιητή: ενεργοποιημένες"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2964
+#: src/globalPlugins/easyAudioConverter/__init__.py:3127
 msgid "Advanced codec settings..."
 msgstr "Προηγμένες ρυθμίσεις κωδικοποιητή..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1029
+#: src/globalPlugins/easyAudioConverter/__init__.py:1136
 msgid "Advanced settings"
 msgstr "Ρυθμίσεις για προχωρημένους"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:471
+#: src/globalPlugins/easyAudioConverter/__init__.py:476
 msgid "Album"
 msgstr "Αλμπουμ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:472
+#: src/globalPlugins/easyAudioConverter/__init__.py:477
 msgid "Album artist"
 msgstr "Καλλιτέχνης άλμπουμ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2591
+#: src/globalPlugins/easyAudioConverter/__init__.py:1295
+msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
+msgstr "Όλα τα επίπεδα FLAC είναι χωρίς απώλειες. Το επίπεδο 0 είναι το ταχύτερο. Το επίπεδο 12 δίνει την ισχυρότερη συμπίεση αλλά είναι πολύ αργό."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2752
 msgid "Already uses the target format"
 msgstr "Χρησιμοποιεί ήδη τη μορφή προορισμού"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3070
+#: src/globalPlugins/easyAudioConverter/__init__.py:3239
 msgid "An update check is already in progress"
 msgstr "Ένας έλεγχος ενημέρωσης βρίσκεται ήδη σε εξέλιξη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3162
+#: src/globalPlugins/easyAudioConverter/__init__.py:3331
 msgid "An update download is already in progress"
 msgstr "Μια λήψη ενημέρωσης βρίσκεται ήδη σε εξέλιξη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2306
+#: src/globalPlugins/easyAudioConverter/__init__.py:2465
 msgid "Analyzing loudness, first pass"
 msgstr "Ανάλυση έντασης, πρώτο πέρασμα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:362
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "Archive FLAC"
 msgstr "Αρχείο FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:470
+#: src/globalPlugins/easyAudioConverter/__init__.py:475
 msgid "Artist"
 msgstr "Καλλιτέχνης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:291
+#: src/globalPlugins/easyAudioConverter/__init__.py:296
 msgid "At every file"
 msgstr "Σε κάθε αρχείο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:290
+#: src/globalPlugins/easyAudioConverter/__init__.py:295
 msgid "At progress milestones"
 msgstr "Σε ορόσημα προόδου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2160
+#: src/globalPlugins/easyAudioConverter/__init__.py:2319
 msgid "Audio codec: {value}"
 msgstr "Κωδικοποιητής ήχου: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2199
+#: src/globalPlugins/easyAudioConverter/__init__.py:2316 src/globalPlugins/easyAudioConverter/__init__.py:2358
 msgid "Audio file information"
 msgstr "Πληροφορίες αρχείου ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2236
+#: src/globalPlugins/easyAudioConverter/__init__.py:2395
 msgid "Audio information copied"
 msgstr "Οι πληροφορίες ήχου αντιγράφηκαν"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3898
+#: src/globalPlugins/easyAudioConverter/__init__.py:4248
 msgid "Audio information is already being read"
 msgstr "Οι πληροφορίες ήχου διαβάζονται ήδη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3943
+#: src/globalPlugins/easyAudioConverter/__init__.py:4293
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "Έτοιμες ηχητικές πληροφορίες. Κωδικοποιητής {codec}, διάρκεια {duration}, ρυθμός δειγματοληψίας {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:319
+#: src/globalPlugins/easyAudioConverter/__init__.py:324
 msgid "Audiobook MP3"
 msgstr "Ηχητικό βιβλίο MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:918
+#: src/globalPlugins/easyAudioConverter/__init__.py:993
 msgid "Automatic progress announcements:"
 msgstr "Αυτόματες ανακοινώσεις προόδου:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:926
+#: src/globalPlugins/easyAudioConverter/__init__.py:1001
 msgid "Automatically check for add-on updates"
 msgstr "Αυτόματος έλεγχος για ενημερώσεις πρόσθετων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:664
+#: src/globalPlugins/easyAudioConverter/__init__.py:730
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1056
+#: src/globalPlugins/easyAudioConverter/__init__.py:1164
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Ρυθμός bit σε kbps (το 0 χρησιμοποιεί την προεπιλογή ποιότητας):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2164
+#: src/globalPlugins/easyAudioConverter/__init__.py:2323
 msgid "Bitrate: {value}"
 msgstr "Ρυθμός bit: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:462
+#: src/globalPlugins/easyAudioConverter/__init__.py:467
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "Μετάδοση: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:654 src/globalPlugins/easyAudioConverter/__init__.py:1523
+#: src/globalPlugins/easyAudioConverter/__init__.py:720 src/globalPlugins/easyAudioConverter/__init__.py:1673
 msgid "Browse..."
 msgstr "Περιήγηση..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2304
+#: src/globalPlugins/easyAudioConverter/__init__.py:2463
 msgid "Building the conversion plan"
 msgstr "Κατασκευή του σχεδίου μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2532 src/globalPlugins/easyAudioConverter/__init__.py:2408 src/globalPlugins/easyAudioConverter/__init__.py:2959
+#: src/globalPlugins/easyAudioConverter/__init__.py:2691 src/globalPlugins/easyAudioConverter/__init__.py:2567 src/globalPlugins/easyAudioConverter/__init__.py:3122
 msgid "Cancel conversion"
 msgstr "Ακύρωση μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4022
+#: src/globalPlugins/easyAudioConverter/__init__.py:4370
 msgid "Cancel the current audio conversion"
 msgstr "Ακυρώστε την τρέχουσα μετατροπή ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4030
+#: src/globalPlugins/easyAudioConverter/__init__.py:4378
 msgid "Canceling the conversion"
 msgstr "Ακύρωση της μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2542
+#: src/globalPlugins/easyAudioConverter/__init__.py:2701
 msgid "Canceling..."
 msgstr "Ακύρωση..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:523 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:528 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Δεν είναι δυνατό το άνοιγμα της σελίδας υποστήριξης. Ανοίξτε αυτήν τη διεύθυνση μη αυτόματα: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3977
+#: src/globalPlugins/easyAudioConverter/__init__.py:4327
 msgid "Change the conversion quality"
 msgstr "Αλλάξτε την ποιότητα μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3963
+#: src/globalPlugins/easyAudioConverter/__init__.py:4313
 msgid "Change the target audio format"
 msgstr "Αλλάξτε τη μορφή ήχου στόχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1069
+#: src/globalPlugins/easyAudioConverter/__init__.py:1177
 msgid "Channels:"
 msgstr "Κανάλια:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2171
+#: src/globalPlugins/easyAudioConverter/__init__.py:2330
 msgid "Channels: {value}"
 msgstr "Κανάλια: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2183
+#: src/globalPlugins/easyAudioConverter/__init__.py:2342
 msgid "Chapters: {value}"
 msgstr "Κεφάλαια: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4162
+#: src/globalPlugins/easyAudioConverter/__init__.py:4510
 msgid "Check for Easy Audio Converter updates"
 msgstr "Ελέγξτε για ενημερώσεις Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2965
+#: src/globalPlugins/easyAudioConverter/__init__.py:3128
 msgid "Check for updates..."
 msgstr "Ελέγξτε για ενημερώσεις..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3073
+#: src/globalPlugins/easyAudioConverter/__init__.py:3242
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Έλεγχος για ενημερώσεις Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3872
+#: src/globalPlugins/easyAudioConverter/__init__.py:4029 src/globalPlugins/easyAudioConverter/__init__.py:4203 src/globalPlugins/easyAudioConverter/__init__.py:3115
 msgid "Choose a folder to convert"
 msgstr "Επιλέξτε ένα φάκελο για μετατροπή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1281
+#: src/globalPlugins/easyAudioConverter/__init__.py:3963 src/globalPlugins/easyAudioConverter/__init__.py:4192 src/globalPlugins/easyAudioConverter/__init__.py:3114
+msgid "Choose files to convert"
+msgstr "Choose files to convert"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1431
 msgid "Choose metadata fields"
 msgstr "Επιλογή πεδίων μεταδεδομένων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1547
+#: src/globalPlugins/easyAudioConverter/__init__.py:1703
 msgid "Choose metadata fields..."
 msgstr "Επιλέξτε πεδία μεταδεδομένων..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:774 src/globalPlugins/easyAudioConverter/__init__.py:1795 src/globalPlugins/easyAudioConverter/__init__.py:4004
+#: src/globalPlugins/easyAudioConverter/__init__.py:848 src/globalPlugins/easyAudioConverter/__init__.py:1954 src/globalPlugins/easyAudioConverter/__init__.py:4363
 msgid "Choose the destination folder"
 msgstr "Επιλέξτε το φάκελο προορισμού"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4059 src/globalPlugins/easyAudioConverter/__init__.py:2961
+#: src/globalPlugins/easyAudioConverter/__init__.py:4407 src/globalPlugins/easyAudioConverter/__init__.py:3124
 msgid "Clear queued conversion jobs"
 msgstr "Εκκαθάριση εργασιών μετατροπής σε ουρά"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2410
+#: src/globalPlugins/easyAudioConverter/__init__.py:2569
 msgid "Clear queued jobs"
 msgstr "Εκκαθάριση θέσεων εργασίας στην ουρά"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4072 src/globalPlugins/easyAudioConverter/__init__.py:3321
+#: src/globalPlugins/easyAudioConverter/__init__.py:4420 src/globalPlugins/easyAudioConverter/__init__.py:3490
 msgid "Cleared {count} queued conversion jobs"
 msgstr "Διαγράφηκαν {count} εργασίες μετατροπής σε ουρά"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2213 src/globalPlugins/easyAudioConverter/__init__.py:2529 src/globalPlugins/easyAudioConverter/__init__.py:2748
+#: src/globalPlugins/easyAudioConverter/__init__.py:2372 src/globalPlugins/easyAudioConverter/__init__.py:2688 src/globalPlugins/easyAudioConverter/__init__.py:2909
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1044
+#: src/globalPlugins/easyAudioConverter/__init__.py:1152
 msgid "Codec profile to edit:"
 msgstr "Προφίλ κωδικοποιητή για επεξεργασία:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1075
+#: src/globalPlugins/easyAudioConverter/__init__.py:1183
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Επίπεδο συγκεκριμένο κωδικοποιητή (το -1 χρησιμοποιεί την προεπιλογή):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:478
+#: src/globalPlugins/easyAudioConverter/__init__.py:483
 msgid "Comment"
 msgstr "Σχόλιο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:473
+#: src/globalPlugins/easyAudioConverter/__init__.py:478
 msgid "Composer"
 msgstr "Συνθέτης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3763
+#: src/globalPlugins/easyAudioConverter/__init__.py:4058
 msgid "Confirm folder conversion"
 msgstr "Επιβεβαιώστε τη μετατροπή φακέλου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2159
+#: src/globalPlugins/easyAudioConverter/__init__.py:2318
 msgid "Container: {value}"
 msgstr "Δοχείο: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3591
+#: src/globalPlugins/easyAudioConverter/__init__.py:3760
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Η μετατροπή ακυρώθηκε. Ολοκληρώθηκαν {done} από {total} αρχεία."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3609
+#: src/globalPlugins/easyAudioConverter/__init__.py:3778
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Η μετατροπή ολοκληρώθηκε. Πέτυχε: {done}. Απέτυχε: {failed}. Παράλειψη: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3618
+#: src/globalPlugins/easyAudioConverter/__init__.py:3787
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Η μετατροπή ολοκληρώθηκε: {done} πέτυχε, {failed} απέτυχε."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3294
+#: src/globalPlugins/easyAudioConverter/__init__.py:3463
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "Η εργασία μετατροπής προστέθηκε στην ουρά. Θέση ουράς: {position}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2063
+#: src/globalPlugins/easyAudioConverter/__init__.py:2222
 msgid "Conversion plan"
 msgstr "Σχέδιο μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1481
+#: src/globalPlugins/easyAudioConverter/__init__.py:1631
 msgid "Conversion profile:"
 msgstr "Προφίλ μετατροπής:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1914
+#: src/globalPlugins/easyAudioConverter/__init__.py:2073
 msgid "Conversion profiles exported"
 msgstr "Εξάγονται προφίλ μετατροπών"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2836
+#: src/globalPlugins/easyAudioConverter/__init__.py:2997
 msgid "Conversion report copied"
 msgstr "Η αναφορά μετατροπής αντιγράφηκε"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2604
+#: src/globalPlugins/easyAudioConverter/__init__.py:2765
 msgid "Conversion results"
 msgstr "Αποτελέσματα μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1574
+#: src/globalPlugins/easyAudioConverter/__init__.py:1730
 msgid "Convert"
 msgstr "Μετατρέπω"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3760
+#: src/globalPlugins/easyAudioConverter/__init__.py:4055
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Να μετατραπούν όλα τα υποστηριζόμενα αρχεία ήχου σε {folder}, {scope};"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3864
+#: src/globalPlugins/easyAudioConverter/__init__.py:4215
 msgid "Convert every supported audio file in the current folder"
 msgstr "Μετατρέψτε κάθε υποστηριζόμενο αρχείο ήχου στον τρέχοντα φάκελο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2952
+#: src/globalPlugins/easyAudioConverter/__init__.py:3113
 msgid "Convert selected files or folders"
 msgstr "Μετατροπή επιλεγμένων αρχείων ή φακέλων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3793
+#: src/globalPlugins/easyAudioConverter/__init__.py:4151
 msgid "Convert selected files or folders with one-time options"
 msgstr "Μετατροπή επιλεγμένων αρχείων ή φακέλων με εφάπαξ επιλογές"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2951
+#: src/globalPlugins/easyAudioConverter/__init__.py:3112
 msgid "Convert selected files or folders with options..."
 msgstr "Μετατροπή επιλεγμένων αρχείων ή φακέλων με επιλογές..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2953
+#: src/globalPlugins/easyAudioConverter/__init__.py:3116
 msgid "Convert the current folder"
 msgstr "Μετατρέψτε τον τρέχοντα φάκελο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1457
+#: src/globalPlugins/easyAudioConverter/__init__.py:1607
 msgid "Convert with options"
 msgstr "Μετατροπή με επιλογές"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2307
+#: src/globalPlugins/easyAudioConverter/__init__.py:2466
 msgid "Converting audio, second pass"
 msgstr "Μετατροπή ήχου, δεύτερο πέρασμα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3377
+#: src/globalPlugins/easyAudioConverter/__init__.py:3546
 msgid "Converting {index} of {total}: {name}"
 msgstr "Μετατροπή {index} από {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4122
+#: src/globalPlugins/easyAudioConverter/__init__.py:4470
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "Μετατροπή {index} από {total}: {name}. Τρέχουσα ώρα αρχείου {processed}; Έχει παρέλθει {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4133
+#: src/globalPlugins/easyAudioConverter/__init__.py:4481
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Μετατροπή {index} του {total}: {name}. Τρέχον αρχείο {filePercent}%, συνολικά {overallPercent}%, που έχει παρέλθει {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:452
+#: src/globalPlugins/easyAudioConverter/__init__.py:457
 msgid "Copy all text metadata"
 msgstr "Αντιγραφή όλων των μεταδεδομένων κειμένου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:872 src/globalPlugins/easyAudioConverter/__init__.py:1380
+#: src/globalPlugins/easyAudioConverter/__init__.py:947 src/globalPlugins/easyAudioConverter/__init__.py:1530
 msgid "Copy chapter markers"
 msgstr "Αντιγράψτε τους δείκτες κεφαλαίων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1376
+#: src/globalPlugins/easyAudioConverter/__init__.py:1526
 msgid "Copy embedded cover artwork when supported"
 msgstr "Αντιγράψτε το ενσωματωμένο εξώφυλλο όταν υποστηρίζεται"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:868
+#: src/globalPlugins/easyAudioConverter/__init__.py:943
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "Αντιγράψτε το ενσωματωμένο εξώφυλλο όταν το υποστηρίζει ο στόχος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2212
+#: src/globalPlugins/easyAudioConverter/__init__.py:2371
 msgid "Copy information"
 msgstr "Αντιγραφή πληροφοριών"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2747
+#: src/globalPlugins/easyAudioConverter/__init__.py:2908
 msgid "Copy report"
 msgstr "Αντιγραφή αναφοράς"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:453
+#: src/globalPlugins/easyAudioConverter/__init__.py:458
 msgid "Copy selected metadata fields"
 msgstr "Αντιγραφή επιλεγμένων πεδίων μεταδεδομένων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:479
+#: src/globalPlugins/easyAudioConverter/__init__.py:484
 msgid "Copyright"
 msgstr "Πνευματικά δικαιώματα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3102
+#: src/globalPlugins/easyAudioConverter/__init__.py:3271
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Δεν ήταν δυνατός ο έλεγχος για ενημερώσεις.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2234
+#: src/globalPlugins/easyAudioConverter/__init__.py:2393
 msgid "Could not copy the audio information"
 msgstr "Δεν ήταν δυνατή η αντιγραφή των πληροφοριών ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2830
+#: src/globalPlugins/easyAudioConverter/__init__.py:2991
 msgid "Could not copy the conversion report."
 msgstr "Δεν ήταν δυνατή η αντιγραφή της αναφοράς μετατροπής."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1908
+#: src/globalPlugins/easyAudioConverter/__init__.py:2067
 msgid "Could not export profiles:\n{error}"
 msgstr "Δεν ήταν δυνατή η εξαγωγή προφίλ:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1870
+#: src/globalPlugins/easyAudioConverter/__init__.py:2029
 msgid "Could not import profiles:\n{error}"
 msgstr "Δεν ήταν δυνατή η εισαγωγή προφίλ:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3039
+#: src/globalPlugins/easyAudioConverter/__init__.py:3208
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Δεν ήταν δυνατό το άνοιγμα των ρυθμίσεων Easy Audio Converter. Δείτε το αρχείο καταγραφής του NVDA για λεπτομέρειες."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3256
+#: src/globalPlugins/easyAudioConverter/__init__.py:3425
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Δεν ήταν δυνατό το άνοιγμα του προγράμματος εγκατάστασης του πρόσθετου NVDA. Η ενημέρωση αποθηκεύτηκε σε:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2817
+#: src/globalPlugins/easyAudioConverter/__init__.py:2978
 msgid "Could not open the output folder."
 msgstr "Δεν ήταν δυνατό το άνοιγμα του φακέλου εξόδου."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3928
+#: src/globalPlugins/easyAudioConverter/__init__.py:4278
 msgid "Could not read audio information:\n{error}"
 msgstr "Δεν ήταν δυνατή η ανάγνωση πληροφοριών ήχου:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1266
+#: src/globalPlugins/easyAudioConverter/__init__.py:1416
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Δεν ήταν δυνατή η αποθήκευση των ρυθμίσεων του Easy Audio Converter. Δείτε το αρχείο καταγραφής του NVDA για λεπτομέρειες."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2527
+#: src/globalPlugins/easyAudioConverter/__init__.py:2686
 msgid "Current file progress: 100%"
 msgstr "Τρέχουσα πρόοδος αρχείου: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2389
+#: src/globalPlugins/easyAudioConverter/__init__.py:2548
 msgid "Current file progress: waiting"
 msgstr "Τρέχουσα πρόοδος αρχείου: αναμονή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2477
+#: src/globalPlugins/easyAudioConverter/__init__.py:2636
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Τρέχουσα πρόοδος αρχείου: {percent}% ({processed} του {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2469
+#: src/globalPlugins/easyAudioConverter/__init__.py:2628
 msgid "Current file time: {processed}"
 msgstr "Τρέχουσα ώρα αρχείου: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:463
+#: src/globalPlugins/easyAudioConverter/__init__.py:468
 msgid "Custom EBU R128 target"
 msgstr "Προσαρμοσμένος στόχος EBU R128"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:842 src/globalPlugins/easyAudioConverter/__init__.py:1351
+#: src/globalPlugins/easyAudioConverter/__init__.py:917 src/globalPlugins/easyAudioConverter/__init__.py:1501
 msgid "Custom integrated loudness in LUFS:"
 msgstr "Προσαρμοσμένη ενσωματωμένη ένταση στο LUFS:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:860 src/globalPlugins/easyAudioConverter/__init__.py:1369
+#: src/globalPlugins/easyAudioConverter/__init__.py:935 src/globalPlugins/easyAudioConverter/__init__.py:1519
 msgid "Custom loudness range in LU:"
 msgstr "Προσαρμοσμένο εύρος έντασης στο LU:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:851 src/globalPlugins/easyAudioConverter/__init__.py:1360
+#: src/globalPlugins/easyAudioConverter/__init__.py:926 src/globalPlugins/easyAudioConverter/__init__.py:1510
 msgid "Custom true peak in dBTP:"
 msgstr "Προσαρμοσμένη αληθινή κορυφή σε dBTP:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:475
+#: src/globalPlugins/easyAudioConverter/__init__.py:480
 msgid "Date or year"
 msgstr "Ημερομηνία ή έτος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1384
+#: src/globalPlugins/easyAudioConverter/__init__.py:1534
 msgid "Deeply verify every output file"
 msgstr "Επαληθεύστε σε βάθος κάθε αρχείο εξόδου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:878
+#: src/globalPlugins/easyAudioConverter/__init__.py:953
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "Επαληθεύστε σε βάθος την έξοδο αποκωδικοποιώντας την και συγκρίνοντας τη διάρκεια"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2004
+#: src/globalPlugins/easyAudioConverter/__init__.py:2163
 msgid "Delete conversion profile"
 msgstr "Διαγραφή προφίλ μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1487
+#: src/globalPlugins/easyAudioConverter/__init__.py:1637
 msgid "Delete profile"
 msgstr "Διαγραφή προφίλ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2003
+#: src/globalPlugins/easyAudioConverter/__init__.py:2162
 msgid "Delete the profile “{name}”?"
 msgstr "Διαγραφή του προφίλ \"{name}\";"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:648 src/globalPlugins/easyAudioConverter/__init__.py:1519
+#: src/globalPlugins/easyAudioConverter/__init__.py:714 src/globalPlugins/easyAudioConverter/__init__.py:1669
 msgid "Destination folder:"
 msgstr "Φάκελος προορισμού:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4018
+#: src/globalPlugins/easyAudioConverter/__init__.py:4360
 msgid "Destination folder: {folder}"
 msgstr "Φάκελος προορισμού: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2066
+#: src/globalPlugins/easyAudioConverter/__init__.py:2225
 msgid "Destination: {destination}"
 msgstr "Προορισμός: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2720
+#: src/globalPlugins/easyAudioConverter/__init__.py:2881
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "Οι λεπτομέρειες περιορίζονται στα πρώτα {limit} αρχεία που παραλείφθηκαν."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2733
+#: src/globalPlugins/easyAudioConverter/__init__.py:2894
 msgid "Details:"
 msgstr "Λεπτομέριες:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:459
+#: src/globalPlugins/easyAudioConverter/__init__.py:464
 msgid "Disabled"
 msgstr "ΑμεΑ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:477
+#: src/globalPlugins/easyAudioConverter/__init__.py:482
 msgid "Disc number"
 msgstr "Αριθμός δίσκου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:451
+#: src/globalPlugins/easyAudioConverter/__init__.py:456
 msgid "Do not copy metadata"
 msgstr "Μην αντιγράφετε μεταδεδομένα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3142
+#: src/globalPlugins/easyAudioConverter/__init__.py:3311
 msgid "Download and install"
 msgstr "Λήψη και εγκατάσταση"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3220
+#: src/globalPlugins/easyAudioConverter/__init__.py:3389
 msgid "Downloaded {done:.1f} MB"
 msgstr "Λήψη {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3213
+#: src/globalPlugins/easyAudioConverter/__init__.py:3382
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Λήψη {done:.1f} από {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3172
+#: src/globalPlugins/easyAudioConverter/__init__.py:3341
 msgid "Downloading Easy Audio Converter update"
 msgstr "Λήψη της ενημέρωσης Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2161
+#: src/globalPlugins/easyAudioConverter/__init__.py:2320
 msgid "Duration: {value}"
 msgstr "Διάρκεια: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:398
+#: src/globalPlugins/easyAudioConverter/__init__.py:403
 msgid "E-AC-3"
 msgstr "Ε-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2854 src/globalPlugins/easyAudioConverter/__init__.py:3576 src/globalPlugins/easyAudioConverter/__init__.py:1948 src/globalPlugins/easyAudioConverter/__init__.py:1956 src/globalPlugins/easyAudioConverter/__init__.py:2979 src/globalPlugins/easyAudioConverter/__init__.py:3309 src/globalPlugins/easyAudioConverter/__init__.py:3931 src/globalPlugins/easyAudioConverter/__init__.py:790 src/globalPlugins/easyAudioConverter/__init__.py:1267 src/globalPlugins/easyAudioConverter/__init__.py:1820 src/globalPlugins/easyAudioConverter/__init__.py:1871 src/globalPlugins/easyAudioConverter/__init__.py:1909 src/globalPlugins/easyAudioConverter/__init__.py:1922 src/globalPlugins/easyAudioConverter/__init__.py:1986 src/globalPlugins/easyAudioConverter/__init__.py:2022 src/globalPlugins/easyAudioConverter/__init__.py:2818 src/globalPlugins/easyAudioConverter/__init__.py:2831 src/globalPlugins/easyAudioConverter/__init__.py:3040 src/globalPlugins/easyAudioConverter/__init__.py:3277
+#: src/globalPlugins/easyAudioConverter/__init__.py:3015 src/globalPlugins/easyAudioConverter/__init__.py:3745 src/globalPlugins/easyAudioConverter/__init__.py:2107 src/globalPlugins/easyAudioConverter/__init__.py:2115 src/globalPlugins/easyAudioConverter/__init__.py:3145 src/globalPlugins/easyAudioConverter/__init__.py:3478 src/globalPlugins/easyAudioConverter/__init__.py:4281 src/globalPlugins/easyAudioConverter/__init__.py:864 src/globalPlugins/easyAudioConverter/__init__.py:1417 src/globalPlugins/easyAudioConverter/__init__.py:1979 src/globalPlugins/easyAudioConverter/__init__.py:2030 src/globalPlugins/easyAudioConverter/__init__.py:2068 src/globalPlugins/easyAudioConverter/__init__.py:2081 src/globalPlugins/easyAudioConverter/__init__.py:2145 src/globalPlugins/easyAudioConverter/__init__.py:2181 src/globalPlugins/easyAudioConverter/__init__.py:2979 src/globalPlugins/easyAudioConverter/__init__.py:2992 src/globalPlugins/easyAudioConverter/__init__.py:3209 src/globalPlugins/easyAudioConverter/__init__.py:3446
 msgid "Easy Audio Converter"
 msgstr "Εύκολος μετατροπέας ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3113
+#: src/globalPlugins/easyAudioConverter/__init__.py:3282
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Το Easy Audio Converter είναι ενημερωμένο. Εγκατεστημένη έκδοση: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2375
+#: src/globalPlugins/easyAudioConverter/__init__.py:2534
 msgid "Easy Audio Converter progress"
 msgstr "Εύκολη πρόοδος μετατροπέα ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2649
+#: src/globalPlugins/easyAudioConverter/__init__.py:2810
 msgid "Easy Audio Converter results"
 msgstr "Αποτελέσματα Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1190
+#: src/globalPlugins/easyAudioConverter/__init__.py:1340
 msgid "Easy Audio Converter settings"
 msgstr "Εύκολες ρυθμίσεις μετατροπέα ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3246 src/globalPlugins/easyAudioConverter/__init__.py:3105 src/globalPlugins/easyAudioConverter/__init__.py:3116 src/globalPlugins/easyAudioConverter/__init__.py:3259
+#: src/globalPlugins/easyAudioConverter/__init__.py:3415 src/globalPlugins/easyAudioConverter/__init__.py:3274 src/globalPlugins/easyAudioConverter/__init__.py:3285 src/globalPlugins/easyAudioConverter/__init__.py:3428
 msgid "Easy Audio Converter update"
 msgstr "Εύκολη ενημέρωση μετατροπέα ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3153 src/globalPlugins/easyAudioConverter/__init__.py:3138
+#: src/globalPlugins/easyAudioConverter/__init__.py:3322 src/globalPlugins/easyAudioConverter/__init__.py:3307
 msgid "Easy Audio Converter update available"
 msgstr "Διατίθεται ενημέρωση Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3125
+#: src/globalPlugins/easyAudioConverter/__init__.py:3294
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Το Easy Audio Converter {newVersion} είναι διαθέσιμο. Έχετε την έκδοση {currentVersion}.\n\nΘέλετε να κατεβάσετε και να εγκαταστήσετε την ενημέρωση τώρα;"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3149
+#: src/globalPlugins/easyAudioConverter/__init__.py:3318
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Το Easy Audio Converter {version} είναι διαθέσιμο, αλλά η έκδοση δεν περιέχει άμεσο πρόσθετο πακέτο. Ανοίξτε τη σελίδα έκδοσης;"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:435
+#: src/globalPlugins/easyAudioConverter/__init__.py:440
 msgid "Economical"
 msgstr "Οικονομικό"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2397
+#: src/globalPlugins/easyAudioConverter/__init__.py:2556
 msgid "Elapsed time: 0:00"
 msgstr "Χρόνος που πέρασε: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2489
+#: src/globalPlugins/easyAudioConverter/__init__.py:2648
 msgid "Elapsed time: {elapsed}"
 msgstr "Χρόνος που πέρασε: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2180
+#: src/globalPlugins/easyAudioConverter/__init__.py:2339
 msgid "Embedded artwork: {value}"
 msgstr "Ενσωματωμένο έργο τέχνης: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1052
+#: src/globalPlugins/easyAudioConverter/__init__.py:1160
 msgid "Enable advanced overrides for this codec"
 msgstr "Ενεργοποίηση σύνθετων παρακάμψεων για αυτόν τον κωδικοποιητή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1935
+#: src/globalPlugins/easyAudioConverter/__init__.py:2094
 msgid "Enter a name for this conversion profile:"
 msgstr "Καταχωρίστε ένα όνομα για αυτό το προφίλ μετατροπής:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2070
+#: src/globalPlugins/easyAudioConverter/__init__.py:2229
 msgid "Estimated output size: {size}"
 msgstr "Εκτιμώμενο μέγεθος εξόδου: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2523
+#: src/globalPlugins/easyAudioConverter/__init__.py:2682
 msgid "Estimated time remaining: 0:00"
 msgstr "Εκτιμώμενος χρόνος που απομένει: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2401
+#: src/globalPlugins/easyAudioConverter/__init__.py:2560
 msgid "Estimated time remaining: calculating"
 msgstr "Εκτιμώμενος χρόνος που απομένει: υπολογισμός"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2493
+#: src/globalPlugins/easyAudioConverter/__init__.py:2652
 msgid "Estimated time remaining: {remaining}"
 msgstr "Εκτιμώμενος χρόνος που απομένει: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:752
+#: src/globalPlugins/easyAudioConverter/__init__.py:826
 msgid "Example album"
 msgstr "Παράδειγμα άλμπουμ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:751
+#: src/globalPlugins/easyAudioConverter/__init__.py:825
 msgid "Example artist"
 msgstr "Παράδειγμα καλλιτέχνη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:758
+#: src/globalPlugins/easyAudioConverter/__init__.py:832
 msgid "Example filename: {name}"
 msgstr "Παράδειγμα ονόματος αρχείου: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:750
+#: src/globalPlugins/easyAudioConverter/__init__.py:824
 msgid "Example title"
 msgstr "Παράδειγμα τίτλου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1889
+#: src/globalPlugins/easyAudioConverter/__init__.py:2048
 msgid "Export conversion profiles"
 msgstr "Εξαγωγή προφίλ μετατροπών"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1489
+#: src/globalPlugins/easyAudioConverter/__init__.py:1639
 msgid "Export profiles..."
 msgstr "Εξαγωγή προφίλ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:403
+#: src/globalPlugins/easyAudioConverter/__init__.py:408
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "Εξαγωγή αρχικής ροής ήχου (χωρίς επανακωδικοποίηση)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:389
+#: src/globalPlugins/easyAudioConverter/__init__.py:394
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2622
+#: src/globalPlugins/easyAudioConverter/__init__.py:1108
+msgid "FLAC 0 — fastest encoding"
+msgstr "FLAC 0 — ταχύτερη κωδικοποίηση"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1110
+msgid "FLAC 12 — maximum compression, very slow"
+msgstr "FLAC 12 — μέγιστη συμπίεση, πολύ αργή"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1112
+msgid "FLAC {level}"
+msgstr "FLAC {level}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2783
 msgid "Failed files:"
 msgstr "Αποτυχημένα αρχεία:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2696
+#: src/globalPlugins/easyAudioConverter/__init__.py:2857
 msgid "Failed: {name}"
 msgstr "Απέτυχε: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2593
+#: src/globalPlugins/easyAudioConverter/__init__.py:1117
+msgid "Fast, -f (FFmpeg level 0)"
+msgstr "Γρήγορη, -f (επίπεδο FFmpeg 0)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2754
 msgid "File or folder is unavailable"
 msgstr "Το αρχείο ή ο φάκελος δεν είναι διαθέσιμος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2179
+#: src/globalPlugins/easyAudioConverter/__init__.py:2338
 msgid "File size: {value}"
 msgstr "Μέγεθος αρχείου: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2460
+#: src/globalPlugins/easyAudioConverter/__init__.py:2619
 msgid "File {index} of {total}: {name}"
 msgstr "Αρχείο {index} από {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1730
+#: src/globalPlugins/easyAudioConverter/__init__.py:1889
 msgid "Filename preview: {name}"
 msgstr "Προεπισκόπηση ονόματος αρχείου: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2064
+#: src/globalPlugins/easyAudioConverter/__init__.py:2223
 msgid "Files to convert: {count}"
 msgstr "Αρχεία προς μετατροπή: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3353
+#: src/globalPlugins/easyAudioConverter/__init__.py:3522
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Αρχεία προς μετατροπή: {count}. Παράλειψη: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1151
-msgid "For FLAC, level 0 is fastest and level 12 gives the strongest compression."
-msgstr "Για το FLAC, το επίπεδο 0 είναι ταχύτερο και το επίπεδο 12 δίνει την ισχυρότερη συμπίεση."
-
-#: src/globalPlugins/easyAudioConverter/__init__.py:1150
+#: src/globalPlugins/easyAudioConverter/__init__.py:1294
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "Για το LAME MP3, το επίπεδο 0 είναι η πιο αργή και υψηλότερη ποιότητα αλγορίθμου. Το 9 είναι το πιο γρήγορο."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1152
+#: src/globalPlugins/easyAudioConverter/__init__.py:1299
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Για το Ogg Vorbis, τα επίπεδα 0 έως 10 επιλέγουν αυξανόμενη ποιότητα μεταβλητού ρυθμού bit."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1153
+#: src/globalPlugins/easyAudioConverter/__init__.py:1300
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Για το Opus, τα επίπεδα 0 έως 10 επιλέγουν αυξάνοντας την πολυπλοκότητα του κωδικοποιητή."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1154
-msgid "For WavPack, levels 0 to 8 select increasing compression effort."
-msgstr "Για το WavPack, τα επίπεδα 0 έως 8 επιλέγουν αυξανόμενη προσπάθεια συμπίεσης."
-
-#: src/globalPlugins/easyAudioConverter/__init__.py:3358
+#: src/globalPlugins/easyAudioConverter/__init__.py:3527
 msgid "Found {count} files to convert"
 msgstr "Βρέθηκαν {count} αρχεία για μετατροπή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:445
+#: src/globalPlugins/easyAudioConverter/__init__.py:450
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Ίδρυμα Windows Media MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2073
+#: src/globalPlugins/easyAudioConverter/__init__.py:2232
 msgid "Free disk space: {size}"
 msgstr "Ελεύθερος χώρος στο δίσκο: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:474
+#: src/globalPlugins/easyAudioConverter/__init__.py:479
 msgid "Genre"
 msgstr "Είδος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2413
+#: src/globalPlugins/easyAudioConverter/__init__.py:2572
 msgid "Hide"
 msgstr "Απόκρυψη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:437
+#: src/globalPlugins/easyAudioConverter/__init__.py:442
 msgid "High"
 msgstr "Ψηλά"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1119
+msgid "High, -h (FFmpeg level 2)"
+msgstr "Υψηλό, -h (επίπεδο FFmpeg 2)"
 
 #: src/installTasks.py:34
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Εάν το Easy Audio Converter σας είναι χρήσιμο και θέλετε να υποστηρίξετε τη δουλειά μου, μπορείτε να μου αγοράσετε έναν καφέ.\n\nΘέλετε να ανοίξετε τη σελίδα υποστήριξης τώρα;"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1838
+#: src/globalPlugins/easyAudioConverter/__init__.py:1997
 msgid "Import conversion profiles"
 msgstr "Εισαγωγή προφίλ μετατροπών"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1488
+#: src/globalPlugins/easyAudioConverter/__init__.py:1638
 msgid "Import profiles..."
 msgstr "Εισαγωγή προφίλ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1880
+#: src/globalPlugins/easyAudioConverter/__init__.py:2039
 msgid "Imported {count} conversion profiles"
 msgstr "Εισήχθησαν προφίλ μετατροπών {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:674 src/globalPlugins/easyAudioConverter/__init__.py:1531
+#: src/globalPlugins/easyAudioConverter/__init__.py:740 src/globalPlugins/easyAudioConverter/__init__.py:1681
 msgid "Include subfolders when converting a folder"
 msgstr "Συμπεριλάβετε υποφακέλους κατά τη μετατροπή ενός φακέλου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2954
+#: src/globalPlugins/easyAudioConverter/__init__.py:3117
 msgid "Information about the selected audio file..."
 msgstr "Πληροφορίες για το επιλεγμένο αρχείο ήχου..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2069
+#: src/globalPlugins/easyAudioConverter/__init__.py:2228
 msgid "Input size: {size}"
 msgstr "Μέγεθος εισόδου: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:764 src/globalPlugins/easyAudioConverter/__init__.py:1736
+#: src/globalPlugins/easyAudioConverter/__init__.py:838 src/globalPlugins/easyAudioConverter/__init__.py:1895
 msgid "Invalid filename template: {error}"
 msgstr "Μη έγκυρο πρότυπο ονόματος αρχείου: {error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1839 src/globalPlugins/easyAudioConverter/__init__.py:1891
+#: src/globalPlugins/easyAudioConverter/__init__.py:1998 src/globalPlugins/easyAudioConverter/__init__.py:2050
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "Αρχεία προφίλ JSON (*.json)|*.json|Όλα τα αρχεία (*.*)|*.*"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213
 msgid "KB"
 msgstr "KB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1071
+#: src/globalPlugins/easyAudioConverter/__init__.py:1179
 msgid "Keep the source channel count"
 msgstr "Διατήρηση του αριθμού καναλιών πηγής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1065
+#: src/globalPlugins/easyAudioConverter/__init__.py:1173
 msgid "Keep the source sample rate"
 msgstr "Διατηρήστε τον ρυθμό δειγματοληψίας πηγής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:444
+#: src/globalPlugins/easyAudioConverter/__init__.py:449
 msgid "LAME MP3"
 msgstr "ΛΑΜΕ MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:481
+#: src/globalPlugins/easyAudioConverter/__init__.py:486
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3142
+#: src/globalPlugins/easyAudioConverter/__init__.py:3311
 msgid "Later"
 msgstr "Αργότερα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:832 src/globalPlugins/easyAudioConverter/__init__.py:1341
+#: src/globalPlugins/easyAudioConverter/__init__.py:1190
+msgid "Lossless compression profile:"
+msgstr "Προφίλ συμπίεσης χωρίς απώλειες:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:907 src/globalPlugins/easyAudioConverter/__init__.py:1491
 msgid "Loudness normalization:"
 msgstr "Ομαλοποίηση έντασης:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:480
+#: src/globalPlugins/easyAudioConverter/__init__.py:485
 msgid "Lyrics"
 msgstr "Στίχοι"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:392
+#: src/globalPlugins/easyAudioConverter/__init__.py:397
 msgid "M4A (AAC)"
 msgstr "Μ4Α (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2054
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213
 msgid "MB"
 msgstr "MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:400
+#: src/globalPlugins/easyAudioConverter/__init__.py:405
 msgid "MP2"
 msgstr "ΜΡ2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:387
+#: src/globalPlugins/easyAudioConverter/__init__.py:392
 msgid "MP3"
 msgstr "ΜΡ3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:633 src/globalPlugins/easyAudioConverter/__init__.py:1510
+#: src/globalPlugins/easyAudioConverter/__init__.py:699 src/globalPlugins/easyAudioConverter/__init__.py:1660
 msgid "MP3 encoder:"
 msgstr "Κωδικοποιητής MP3:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:687 src/globalPlugins/easyAudioConverter/__init__.py:1542
+#: src/globalPlugins/easyAudioConverter/__init__.py:1125
+msgid "Maximum, -hhx6 (FFmpeg level 8)"
+msgstr "Μέγιστο, -hhx6 (επίπεδο FFmpeg 8)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:761 src/globalPlugins/easyAudioConverter/__init__.py:1698
 msgid "Metadata export:"
 msgstr "Εξαγωγή μεταδεδομένων:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:698
+#: src/globalPlugins/easyAudioConverter/__init__.py:772
 msgid "Metadata fields to copy:"
 msgstr "Πεδία μεταδεδομένων προς αντιγραφή:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2186
+#: src/globalPlugins/easyAudioConverter/__init__.py:2345
 msgid "Metadata:"
 msgstr "Μεταδεδομένα:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1071
+#: src/globalPlugins/easyAudioConverter/__init__.py:1179
 msgid "Mono"
 msgstr "Μονοφωνικό"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:461
+#: src/globalPlugins/easyAudioConverter/__init__.py:466
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "Μουσική και ροή: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1157
+#: src/globalPlugins/easyAudioConverter/__init__.py:1307
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "Δεν χρησιμοποιούνται προηγμένες ρυθμίσεις κωδικοποιητή επειδή η ροή ήχου αντιγράφεται χωρίς επανακωδικοποίηση."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:284
+#: src/globalPlugins/easyAudioConverter/__init__.py:289
 msgid "No completion notification"
 msgstr "Καμία ειδοποίηση ολοκλήρωσης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4027 src/globalPlugins/easyAudioConverter/__init__.py:4038 src/globalPlugins/easyAudioConverter/__init__.py:4101
+#: src/globalPlugins/easyAudioConverter/__init__.py:4375 src/globalPlugins/easyAudioConverter/__init__.py:4386 src/globalPlugins/easyAudioConverter/__init__.py:4449
 msgid "No conversion is in progress"
 msgstr "Δεν υπάρχει μετατροπή σε εξέλιξη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4082
+#: src/globalPlugins/easyAudioConverter/__init__.py:4430
 msgid "No conversion progress is available"
 msgstr "Δεν υπάρχει διαθέσιμη πρόοδος μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3700
+#: src/globalPlugins/easyAudioConverter/__init__.py:3869
 msgid "No conversion results are available"
 msgstr "Δεν υπάρχουν διαθέσιμα αποτελέσματα μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3721 src/globalPlugins/easyAudioConverter/__init__.py:3731
+#: src/globalPlugins/easyAudioConverter/__init__.py:3890 src/globalPlugins/easyAudioConverter/__init__.py:3900
 msgid "No failed files are available to retry"
 msgstr "Δεν υπάρχουν διαθέσιμα αποτυχημένα αρχεία για επανάληψη"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2777
+#: src/globalPlugins/easyAudioConverter/__init__.py:2938
 msgid "No file details are available."
 msgstr "Δεν υπάρχουν διαθέσιμες λεπτομέρειες αρχείου."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3603
+#: src/globalPlugins/easyAudioConverter/__init__.py:3772
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Κανένα αρχείο δεν χρειάζεται μετατροπή. Παράλειψη: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3799 src/globalPlugins/easyAudioConverter/__init__.py:3839
-msgid "No files or folders are selected"
-msgstr "Δεν έχουν επιλεγεί αρχεία ή φάκελοι"
-
-#: src/globalPlugins/easyAudioConverter/__init__.py:1745
+#: src/globalPlugins/easyAudioConverter/__init__.py:1904
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "Χωρίς επανακωδικοποίηση: δεν χρησιμοποιούνται ρυθμίσεις ποιότητας, έντασης ήχου και προηγμένων κωδικοποιητών."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1740
+#: src/globalPlugins/easyAudioConverter/__init__.py:1899
 msgid "No re-encoding: quality, loudness, metadata, artwork, chapters, and advanced codec settings are not used."
 msgstr "Χωρίς επανακωδικοποίηση: η ποιότητα, η ένταση, τα μεταδεδομένα, τα έργα τέχνης, τα κεφάλαια και οι προηγμένες ρυθμίσεις κωδικοποιητή δεν χρησιμοποιούνται."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2594
+#: src/globalPlugins/easyAudioConverter/__init__.py:2755
 msgid "No readable audio stream was found"
 msgstr "Δεν βρέθηκε αναγνώσιμη ροή ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3607
+#: src/globalPlugins/easyAudioConverter/__init__.py:3776
 msgid "No supported audio files were found"
 msgstr "Δεν βρέθηκαν υποστηριζόμενα αρχεία ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:390
+#: src/globalPlugins/easyAudioConverter/__init__.py:1118
+msgid "Normal (FFmpeg level 1)"
+msgstr "Κανονικό (επίπεδο FFmpeg 1)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1131
+msgid "Not used by this codec"
+msgstr "Δεν χρησιμοποιείται από αυτόν τον κωδικοποιητή"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:395
 msgid "Ogg Vorbis"
 msgstr "Ογκ Βορμπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4051
+#: src/globalPlugins/easyAudioConverter/__init__.py:4399
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "Μία μετατροπή είναι ενεργή. Εργασίες σε ουρά: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+#: src/globalPlugins/easyAudioConverter/__init__.py:1763
 msgid "One-time settings"
 msgstr "Εφάπαξ ρυθμίσεις"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:292
+#: src/globalPlugins/easyAudioConverter/__init__.py:297
 msgid "Only on demand"
 msgstr "Μόνο κατόπιν αιτήματος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3771
+#: src/globalPlugins/easyAudioConverter/__init__.py:4129
 msgid "Open Easy Audio Converter settings"
 msgstr "Ανοίξτε τις ρυθμίσεις του Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3782
+#: src/globalPlugins/easyAudioConverter/__init__.py:4140
 msgid "Open advanced codec settings"
 msgstr "Άνοιγμα σύνθετων ρυθμίσεων κωδικοποιητή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2746
+#: src/globalPlugins/easyAudioConverter/__init__.py:2907
 msgid "Open output folder"
 msgstr "Άνοιγμα φακέλου εξόδου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4170
+#: src/globalPlugins/easyAudioConverter/__init__.py:4518
 msgid "Open the author's support page"
 msgstr "Ανοίξτε τη σελίδα υποστήριξης του συγγραφέα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:521
+#: src/globalPlugins/easyAudioConverter/__init__.py:526
 msgid "Opening the support page"
 msgstr "Άνοιγμα της σελίδας υποστήριξης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:391
+#: src/globalPlugins/easyAudioConverter/__init__.py:396
 msgid "Opus"
 msgstr "Έργο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:657 src/globalPlugins/easyAudioConverter/__init__.py:1526
+#: src/globalPlugins/easyAudioConverter/__init__.py:723 src/globalPlugins/easyAudioConverter/__init__.py:1676
 msgid "Output filename template:"
 msgstr "Πρότυπο ονόματος αρχείου εξόδου:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2620
+#: src/globalPlugins/easyAudioConverter/__init__.py:2781
 msgid "Output files:"
 msgstr "Αρχεία εξόδου:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2585
+#: src/globalPlugins/easyAudioConverter/__init__.py:2744
 msgid "Output verification failed because its duration differs from the source."
 msgstr "Η επαλήθευση εξόδου απέτυχε επειδή η διάρκειά της διαφέρει από την πηγή."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2688
+#: src/globalPlugins/easyAudioConverter/__init__.py:2849
 msgid "Output:\n{output}"
 msgstr "Παραγωγή:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2528
+#: src/globalPlugins/easyAudioConverter/__init__.py:2687
 msgid "Overall progress: 100%"
 msgstr "Συνολική πρόοδος: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2393
+#: src/globalPlugins/easyAudioConverter/__init__.py:2552
 msgid "Overall progress: waiting"
 msgstr "Συνολική πρόοδος: αναμονή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2486
+#: src/globalPlugins/easyAudioConverter/__init__.py:2645
 msgid "Overall progress: {percent}%"
 msgstr "Συνολική πρόοδος: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1082
+#: src/globalPlugins/easyAudioConverter/__init__.py:1196
 msgid "PCM bit depth:"
 msgstr "Βάθος bit PCM:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2158
+#: src/globalPlugins/easyAudioConverter/__init__.py:2317
 msgid "Path: {path}"
 msgstr "Διαδρομή: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2098
+#: src/globalPlugins/easyAudioConverter/__init__.py:2257
 msgid "Planned output files:"
 msgstr "Προγραμματισμένα αρχεία εξόδου:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:902
+#: src/globalPlugins/easyAudioConverter/__init__.py:977
 msgid "Play a sound when a conversion fails"
 msgstr "Αναπαραγωγή ήχου όταν μια μετατροπή αποτυγχάνει"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:909
+#: src/globalPlugins/easyAudioConverter/__init__.py:984
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "Αναπαραγωγή ήχου όταν μια μετατροπή ακυρώνεται ή διακόπτεται"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:341
+#: src/globalPlugins/easyAudioConverter/__init__.py:346
 msgid "Podcast Opus"
 msgstr "Podcast Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:460
+#: src/globalPlugins/easyAudioConverter/__init__.py:465
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "Podcast: -16 LUFS, -1,5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2309 src/globalPlugins/easyAudioConverter/__init__.py:3348 src/globalPlugins/easyAudioConverter/__init__.py:2387
+#: src/globalPlugins/easyAudioConverter/__init__.py:2468 src/globalPlugins/easyAudioConverter/__init__.py:3517 src/globalPlugins/easyAudioConverter/__init__.py:2546
 msgid "Preparing the conversion"
 msgstr "Προετοιμασία της μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:680 src/globalPlugins/easyAudioConverter/__init__.py:1536
+#: src/globalPlugins/easyAudioConverter/__init__.py:753 src/globalPlugins/easyAudioConverter/__init__.py:1692
+msgid "Preserve source file creation and modification dates"
+msgstr "Διατήρηση ημερομηνιών δημιουργίας και τροποποίησης αρχείων προέλευσης"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:746 src/globalPlugins/easyAudioConverter/__init__.py:1686
 msgid "Preserve the source folder structure in the destination"
 msgstr "Διατηρήστε τη δομή του φακέλου προέλευσης στον προορισμό"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:820
+#: src/globalPlugins/easyAudioConverter/__init__.py:895
 msgid "Processing and notifications"
 msgstr "Επεξεργασία και ειδοποιήσεις"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1328
+#: src/globalPlugins/easyAudioConverter/__init__.py:1478
 msgid "Processing options"
 msgstr "Επιλογές επεξεργασίας"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1552
+#: src/globalPlugins/easyAudioConverter/__init__.py:1708
 msgid "Processing options..."
 msgstr "Επιλογές επεξεργασίας..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1755
+#: src/globalPlugins/easyAudioConverter/__init__.py:1914
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "Επεξεργασία: ηχηρότητα {loudness}; έργο τέχνης {artwork}; κεφάλαια {chapters}; επαλήθευση {verification}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2014
+#: src/globalPlugins/easyAudioConverter/__init__.py:2173
 msgid "Profile deleted"
 msgstr "Το προφίλ διαγράφηκε"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1993
+#: src/globalPlugins/easyAudioConverter/__init__.py:2152
 msgid "Profile saved: {name}"
 msgstr "Το προφίλ αποθηκεύτηκε: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:482
+#: src/globalPlugins/easyAudioConverter/__init__.py:487
 msgid "Publisher"
 msgstr "Εκδότης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3986
+#: src/globalPlugins/easyAudioConverter/__init__.py:4336
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "Η ποιότητα δεν χρησιμοποιείται κατά την αντιγραφή ήχου χωρίς επανακωδικοποίηση"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:624 src/globalPlugins/easyAudioConverter/__init__.py:1504
+#: src/globalPlugins/easyAudioConverter/__init__.py:690 src/globalPlugins/easyAudioConverter/__init__.py:1654
 msgid "Quality:"
 msgstr "Ποιότητα:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3993
+#: src/globalPlugins/easyAudioConverter/__init__.py:4343
 msgid "Quality: {quality}"
 msgstr "Ποιότητα: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4054
+#: src/globalPlugins/easyAudioConverter/__init__.py:4402
 msgid "Queued conversion jobs: {count}."
 msgstr "Εργασίες μετατροπής σε ουρά: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2404
+#: src/globalPlugins/easyAudioConverter/__init__.py:2563
 msgid "Queued jobs: 0"
 msgstr "Εργασίες σε ουρά: 0"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2517
+#: src/globalPlugins/easyAudioConverter/__init__.py:2676
 msgid "Queued jobs: {count}"
 msgstr "Εργασίες σε ουρά: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3997
+#: src/globalPlugins/easyAudioConverter/__init__.py:4347
 msgid "Quickly choose the destination folder"
 msgstr "Επιλέξτε γρήγορα τον φάκελο προορισμού"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3833
+#: src/globalPlugins/easyAudioConverter/__init__.py:4172
 msgid "Quickly convert selected files or folders"
 msgstr "Μετατρέψτε γρήγορα επιλεγμένα αρχεία ή φακέλους"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3901
+#: src/globalPlugins/easyAudioConverter/__init__.py:4251
 msgid "Reading audio file information"
 msgstr "Ανάγνωση πληροφοριών αρχείου ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2305
+#: src/globalPlugins/easyAudioConverter/__init__.py:2464
 msgid "Reading audio information"
 msgstr "Ανάγνωση ηχητικών πληροφοριών"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3134
+#: src/globalPlugins/easyAudioConverter/__init__.py:3303
 msgid "Release notes:"
 msgstr "Σημειώσεις έκδοσης:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:406
+#: src/globalPlugins/easyAudioConverter/__init__.py:411
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC σε M4A (χωρίς επανακωδικοποίηση)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1971
+#: src/globalPlugins/easyAudioConverter/__init__.py:2130
 msgid "Replace the existing profile “{name}”?"
 msgstr "Αντικατάσταση του υπάρχοντος προφίλ \"{name}\";"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4096
+#: src/globalPlugins/easyAudioConverter/__init__.py:4444
 msgid "Report audio conversion status"
 msgstr "Αναφορά κατάστασης μετατροπής ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2411 src/globalPlugins/easyAudioConverter/__init__.py:2956
+#: src/globalPlugins/easyAudioConverter/__init__.py:2570 src/globalPlugins/easyAudioConverter/__init__.py:3119
 msgid "Report conversion status"
 msgstr "Αναφορά κατάστασης μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4044 src/globalPlugins/easyAudioConverter/__init__.py:2960
+#: src/globalPlugins/easyAudioConverter/__init__.py:4392 src/globalPlugins/easyAudioConverter/__init__.py:3123
 msgid "Report queued conversion jobs"
 msgstr "Αναφορά εργασιών μετατροπής σε ουρά"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2745
+#: src/globalPlugins/easyAudioConverter/__init__.py:2906
 msgid "Retry failed files"
 msgstr "Επανάληψη αποτυχημένων αρχείων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2114
+#: src/globalPlugins/easyAudioConverter/__init__.py:2273
 msgid "Review conversion plan"
 msgstr "Ελέγξτε το σχέδιο μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2122
+#: src/globalPlugins/easyAudioConverter/__init__.py:2281
 msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
 msgstr "Εξετάστε το παρακάτω σχέδιο. Οι εκτιμήσεις μεγέθους είναι κατά προσέγγιση. Κανένα αρχείο προέλευσης δεν θα αντικατασταθεί."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1063
+#: src/globalPlugins/easyAudioConverter/__init__.py:1171
 msgid "Sample rate:"
 msgstr "Ρυθμός δειγματοληψίας:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2172
+#: src/globalPlugins/easyAudioConverter/__init__.py:2331
 msgid "Sample rate: {value}"
 msgstr "Ποσοστό δειγματοληψίας: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1936 src/globalPlugins/easyAudioConverter/__init__.py:1972
+#: src/globalPlugins/easyAudioConverter/__init__.py:2095 src/globalPlugins/easyAudioConverter/__init__.py:2131
 msgid "Save conversion profile"
 msgstr "Αποθήκευση προφίλ μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:642 src/globalPlugins/easyAudioConverter/__init__.py:1516
+#: src/globalPlugins/easyAudioConverter/__init__.py:708 src/globalPlugins/easyAudioConverter/__init__.py:1666
 msgid "Save converted files next to the source files"
 msgstr "Αποθηκεύστε τα αρχεία που έχουν μετατραπεί δίπλα στα αρχεία προέλευσης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1486
+#: src/globalPlugins/easyAudioConverter/__init__.py:1636
 msgid "Save profile..."
 msgstr "Αποθήκευση προφίλ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3895
+#: src/globalPlugins/easyAudioConverter/__init__.py:4245
 msgid "Select exactly one audio file"
 msgstr "Επιλέξτε ακριβώς ένα αρχείο ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1289
+#: src/globalPlugins/easyAudioConverter/__init__.py:1439
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Επιλέξτε τα πεδία μεταδεδομένων κειμένου που θέλετε να αντιγράψετε για αυτήν τη μετατροπή."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1476
+#: src/globalPlugins/easyAudioConverter/__init__.py:1626
 msgid "Selected items: {count}"
 msgstr "Επιλεγμένα στοιχεία: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2963
+#: src/globalPlugins/easyAudioConverter/__init__.py:3126
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:883
+#: src/globalPlugins/easyAudioConverter/__init__.py:958
 msgid "Show a conversion plan before starting"
 msgstr "Δείξτε ένα σχέδιο μετατροπής πριν ξεκινήσετε"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2955
+#: src/globalPlugins/easyAudioConverter/__init__.py:3118
 msgid "Show conversion progress"
 msgstr "Εμφάνιση προόδου μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2957
+#: src/globalPlugins/easyAudioConverter/__init__.py:3120
 msgid "Show last conversion results"
 msgstr "Εμφάνιση αποτελεσμάτων τελευταίας μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2412
+#: src/globalPlugins/easyAudioConverter/__init__.py:2571
 msgid "Show results"
 msgstr "Εμφάνιση αποτελεσμάτων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3888
+#: src/globalPlugins/easyAudioConverter/__init__.py:4238
 msgid "Show technical information about the selected audio file"
 msgstr "Εμφάνιση τεχνικών πληροφοριών σχετικά με το επιλεγμένο αρχείο ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4077
+#: src/globalPlugins/easyAudioConverter/__init__.py:4425
 msgid "Show the audio conversion progress window"
 msgstr "Εμφάνιση του παραθύρου προόδου μετατροπής ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1388
+#: src/globalPlugins/easyAudioConverter/__init__.py:1538
 msgid "Show the conversion plan before starting"
 msgstr "Δείξτε το σχέδιο μετατροπής πριν ξεκινήσετε"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4088
+#: src/globalPlugins/easyAudioConverter/__init__.py:4436
 msgid "Show the last audio conversion results"
 msgstr "Εμφάνιση των τελευταίων αποτελεσμάτων μετατροπής ήχου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2598
+#: src/globalPlugins/easyAudioConverter/__init__.py:2759
 msgid "Skipped"
 msgstr "Παραλείφθηκε"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2627
+#: src/globalPlugins/easyAudioConverter/__init__.py:2788
 msgid "Skipped files:"
 msgstr "Αρχεία που παραλείφθηκαν:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2065
+#: src/globalPlugins/easyAudioConverter/__init__.py:2224
 msgid "Skipped inputs: {count}"
 msgstr "Παράλειψη εισόδων: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2707
+#: src/globalPlugins/easyAudioConverter/__init__.py:2868
 msgid "Skipped: {name}"
 msgstr "Παράλειψη: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:283
+#: src/globalPlugins/easyAudioConverter/__init__.py:288
 msgid "Sound only"
 msgstr "Μόνο ήχος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2697
+#: src/globalPlugins/easyAudioConverter/__init__.py:2858
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Πηγή:\n{source}\n\nΣφάλμα:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2674
+#: src/globalPlugins/easyAudioConverter/__init__.py:2835
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Πηγή:\n{source}\n\nΠαραγωγή:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2708
+#: src/globalPlugins/easyAudioConverter/__init__.py:2869
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Πηγή:\n{source}\n\nΑιτιολόγηση:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:281
+#: src/globalPlugins/easyAudioConverter/__init__.py:286
 msgid "Speech and sound"
 msgstr "Ομιλία και ήχος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:282
+#: src/globalPlugins/easyAudioConverter/__init__.py:287
 msgid "Speech only"
 msgstr "Μόνο ομιλία"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:436
+#: src/globalPlugins/easyAudioConverter/__init__.py:441
 msgid "Standard"
 msgstr "Τυπικό"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:606
+#: src/globalPlugins/easyAudioConverter/__init__.py:672
 msgid "Standard settings"
 msgstr "Τυπικές ρυθμίσεις"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2138
+#: src/globalPlugins/easyAudioConverter/__init__.py:2297
 msgid "Start conversion"
 msgstr "Έναρξη μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3173
+#: src/globalPlugins/easyAudioConverter/__init__.py:3342
 msgid "Starting the download..."
 msgstr "Ξεκινώντας τη λήψη..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3691
+#: src/globalPlugins/easyAudioConverter/__init__.py:3860
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "Έναρξη της επόμενης μετατροπής σε ουρά. Θέσεις εργασίας που απομένουν: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1071
+#: src/globalPlugins/easyAudioConverter/__init__.py:1179
 msgid "Stereo"
 msgstr "Στερεοφωνικό"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2409
+#: src/globalPlugins/easyAudioConverter/__init__.py:2568
 msgid "Stop after current file"
 msgstr "Διακοπή μετά το τρέχον αρχείο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2958
+#: src/globalPlugins/easyAudioConverter/__init__.py:3121
 msgid "Stop after the current file"
 msgstr "Διακοπή μετά το τρέχον αρχείο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4033
+#: src/globalPlugins/easyAudioConverter/__init__.py:4381
 msgid "Stop the conversion after the current file"
 msgstr "Σταματήστε τη μετατροπή μετά το τρέχον αρχείο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3596
+#: src/globalPlugins/easyAudioConverter/__init__.py:3765
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "Σταμάτησε μετά το τρέχον αρχείο. Ολοκληρώθηκαν {done} από {total} αρχεία."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2547
+#: src/globalPlugins/easyAudioConverter/__init__.py:2706
 msgid "Stopping after this file..."
 msgstr "Διακοπή μετά από αυτό το αρχείο..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2605 src/globalPlugins/easyAudioConverter/__init__.py:2660
+#: src/globalPlugins/easyAudioConverter/__init__.py:2766 src/globalPlugins/easyAudioConverter/__init__.py:2821
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Πέτυχε: {done}. Απέτυχε: {failed}. Παράλειψη: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2673 src/globalPlugins/easyAudioConverter/__init__.py:2687
+#: src/globalPlugins/easyAudioConverter/__init__.py:2834 src/globalPlugins/easyAudioConverter/__init__.py:2848
 msgid "Success: {name}"
 msgstr "Επιτυχία: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:890
+#: src/globalPlugins/easyAudioConverter/__init__.py:965
 msgid "Successful completion notification:"
 msgstr "Ειδοποίηση επιτυχούς ολοκλήρωσης:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2616
+#: src/globalPlugins/easyAudioConverter/__init__.py:2777
 msgid "Successful files:"
 msgstr "Επιτυχημένα αρχεία:"
 
@@ -1279,246 +1315,270 @@ msgstr "Επιτυχημένα αρχεία:"
 msgid "Support Easy Audio Converter"
 msgstr "Υποστήριξη Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:930 src/globalPlugins/easyAudioConverter/__init__.py:2966
+#: src/globalPlugins/easyAudioConverter/__init__.py:1005 src/globalPlugins/easyAudioConverter/__init__.py:3129
 msgid "Support the author"
 msgstr "Υποστηρίξτε τον συγγραφέα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2054 src/globalPlugins/easyAudioConverter/__init__.py:2055
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213 src/globalPlugins/easyAudioConverter/__init__.py:2214
 msgid "TB"
 msgstr "ΤΒ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:615 src/globalPlugins/easyAudioConverter/__init__.py:1498
+#: src/globalPlugins/easyAudioConverter/__init__.py:681 src/globalPlugins/easyAudioConverter/__init__.py:1648
 msgid "Target format:"
 msgstr "Μορφή στόχου:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3973
+#: src/globalPlugins/easyAudioConverter/__init__.py:4323
 msgid "Target format: {format}"
 msgstr "Μορφή στόχου: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:913
+#: src/globalPlugins/easyAudioConverter/__init__.py:988
 msgid "Test cancel sound"
 msgstr "Δοκιμάστε τον ήχο ακύρωσης"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:906
+#: src/globalPlugins/easyAudioConverter/__init__.py:981
 msgid "Test error sound"
 msgstr "Δοκιμή ήχου σφάλματος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:898
+#: src/globalPlugins/easyAudioConverter/__init__.py:973
 msgid "Test success sound"
 msgstr "Ήχος επιτυχίας δοκιμής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3308
+#: src/globalPlugins/easyAudioConverter/__init__.py:3477
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Το συσσωρευμένο στοιχείο FFmpeg λείπει. Επανεγκαταστήστε το Easy Audio Converter."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1164
+#: src/globalPlugins/easyAudioConverter/__init__.py:1314
 msgid "The codec-specific level is not used by this format."
 msgstr "Το συγκεκριμένο επίπεδο κωδικοποιητή δεν χρησιμοποιείται από αυτήν τη μορφή."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3570
+#: src/globalPlugins/easyAudioConverter/__init__.py:3739
 msgid "The conversion could not start"
 msgstr "Δεν ήταν δυνατή η έναρξη της μετατροπής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3575
+#: src/globalPlugins/easyAudioConverter/__init__.py:3744
 msgid "The conversion could not start:\n{error}"
 msgstr "Δεν ήταν δυνατή η έναρξη της μετατροπής:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4065 src/globalPlugins/easyAudioConverter/__init__.py:4056
+#: src/globalPlugins/easyAudioConverter/__init__.py:4413 src/globalPlugins/easyAudioConverter/__init__.py:4404
 msgid "The conversion queue is empty"
 msgstr "Η ουρά μετατροπής είναι κενή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2612
+#: src/globalPlugins/easyAudioConverter/__init__.py:2773
 msgid "The conversion was canceled."
 msgstr "Η μετατροπή ακυρώθηκε."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4041
+#: src/globalPlugins/easyAudioConverter/__init__.py:4389
 msgid "The conversion will stop after the current file"
 msgstr "Η μετατροπή θα σταματήσει μετά το τρέχον αρχείο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1866
+#: src/globalPlugins/easyAudioConverter/__init__.py:2025
 msgid "The file does not contain valid conversion profiles."
 msgstr "Το αρχείο δεν περιέχει έγκυρα προφίλ μετατροπής."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:418
+#: src/globalPlugins/easyAudioConverter/__init__.py:423
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "Η πρώτη ροή ήχου AAC θα μετατραπεί εκ νέου σε M4A χωρίς επανακωδικοποίηση. Οι πηγές των οποίων η πρώτη ροή ήχου δεν είναι AAC παραλείπονται."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2595
+#: src/globalPlugins/easyAudioConverter/__init__.py:2756
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "Η πρώτη ροή ήχου δεν είναι AAC, επομένως δεν μπορεί να γίνει remix σε M4A"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:412
+#: src/globalPlugins/easyAudioConverter/__init__.py:417
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "Η πρώτη ροή ήχου θα εξαχθεί χωρίς επανακωδικοποίηση. Ο κωδικοποιητής και η ποιότητά του παραμένουν αμετάβλητες και η επέκταση εξόδου επιλέγεται αυτόματα."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2583
+#: src/globalPlugins/easyAudioConverter/__init__.py:2742
 msgid "The input does not contain a readable audio stream."
 msgstr "Η είσοδος δεν περιέχει αναγνώσιμη ροή ήχου."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2581
+#: src/globalPlugins/easyAudioConverter/__init__.py:2740
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "Το αρχείο εισόδου είναι κατεστραμμένο ή χρησιμοποιεί μη υποστηριζόμενη κωδικοποίηση."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2614
+#: src/globalPlugins/easyAudioConverter/__init__.py:2775
 msgid "The job was stopped after the current file."
 msgstr "Η εργασία διακόπηκε μετά το τρέχον αρχείο."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1850
+#: src/globalPlugins/easyAudioConverter/__init__.py:2009
 msgid "The profile file is too large."
 msgstr "Το αρχείο προφίλ είναι πολύ μεγάλο."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1947
+#: src/globalPlugins/easyAudioConverter/__init__.py:2106
 msgid "The profile name cannot be empty."
 msgstr "Το όνομα του προφίλ δεν μπορεί να είναι κενό."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3243
+#: src/globalPlugins/easyAudioConverter/__init__.py:2746
+msgid "The source file dates could not be preserved."
+msgstr "Δεν ήταν δυνατή η διατήρηση των ημερομηνιών του αρχείου προέλευσης."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3412
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "Δεν ήταν δυνατή η λήψη ή η επαλήθευση της ενημέρωσης.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3251
+#: src/globalPlugins/easyAudioConverter/__init__.py:3420
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "Η ενημέρωση είναι έτοιμη. Άνοιγμα του προγράμματος εγκατάστασης του πρόσθετου NVDA."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1885
+#: src/globalPlugins/easyAudioConverter/__init__.py:2044
 msgid "There are no user profiles to export"
 msgstr "Δεν υπάρχουν προφίλ χρηστών για εξαγωγή"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2579
+#: src/globalPlugins/easyAudioConverter/__init__.py:2738
 msgid "There is not enough free disk space."
 msgstr "Δεν υπάρχει αρκετός ελεύθερος χώρος στο δίσκο."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:469
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "Title"
 msgstr "Τίτλος"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2074
+#: src/globalPlugins/easyAudioConverter/__init__.py:2233
 msgid "Total audio duration: {duration}"
 msgstr "Συνολική διάρκεια ήχου: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:476
+#: src/globalPlugins/easyAudioConverter/__init__.py:481
 msgid "Track number"
 msgstr "Αριθμός κομματιού"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2586 src/globalPlugins/easyAudioConverter/__init__.py:3244 src/globalPlugins/easyAudioConverter/__init__.py:3929 src/globalPlugins/easyAudioConverter/__init__.py:3103
+#: src/globalPlugins/easyAudioConverter/__init__.py:2747 src/globalPlugins/easyAudioConverter/__init__.py:3413 src/globalPlugins/easyAudioConverter/__init__.py:4279 src/globalPlugins/easyAudioConverter/__init__.py:3272
 msgid "Unknown error"
 msgstr "Άγνωστο σφάλμα"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2592
+#: src/globalPlugins/easyAudioConverter/__init__.py:2753
 msgid "Unsupported file type"
 msgstr "Μη υποστηριζόμενος τύπος αρχείου"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3239
+#: src/globalPlugins/easyAudioConverter/__init__.py:3408
 msgid "Update download canceled"
 msgstr "Η λήψη ενημερώσεων ακυρώθηκε"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1084
+#: src/globalPlugins/easyAudioConverter/__init__.py:1105 src/globalPlugins/easyAudioConverter/__init__.py:1127 src/globalPlugins/easyAudioConverter/__init__.py:1198
 msgid "Use the quality preset"
 msgstr "Χρησιμοποιήστε την προεπιλογή ποιότητας"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1557
+#: src/globalPlugins/easyAudioConverter/__init__.py:1713
 msgid "Use these settings for future quick conversions"
 msgstr "Χρησιμοποιήστε αυτές τις ρυθμίσεις για μελλοντικές γρήγορες μετατροπές"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2308
+#: src/globalPlugins/easyAudioConverter/__init__.py:2467
 msgid "Verifying the output by decoding it"
 msgstr "Επαλήθευση της εξόδου αποκωδικοποιώντας την"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:438
+#: src/globalPlugins/easyAudioConverter/__init__.py:443
 msgid "Very high"
 msgstr "Πολύ ψηλά"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:388
+#: src/globalPlugins/easyAudioConverter/__init__.py:1121
+msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
+msgstr "Πολύ υψηλό + επιπλέον 1, -hhx1 (επίπεδο FFmpeg 4)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1122
+msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
+msgstr "Πολύ υψηλό + επιπλέον 2, -hhx2 (επίπεδο FFmpeg 5)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1123
+msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
+msgstr "Πολύ υψηλό + επιπλέον 3, -hhx3 (επίπεδο FFmpeg 6)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1124
+msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
+msgstr "Πολύ υψηλό + επιπλέον 4, -hhx4 (επίπεδο FFmpeg 7)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1120
+msgid "Very high, -hh (FFmpeg level 3)"
+msgstr "Πολύ υψηλό, -hh (επίπεδο FFmpeg 3)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:393
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:394
+#: src/globalPlugins/easyAudioConverter/__init__.py:399
 msgid "WMA"
 msgstr "WMA"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2095
+#: src/globalPlugins/easyAudioConverter/__init__.py:2254
 msgid "Warning: the estimated output is larger than the available disk space."
 msgstr "Προειδοποίηση: η εκτιμώμενη έξοδος είναι μεγαλύτερη από τον διαθέσιμο χώρο στο δίσκο."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2084
+#: src/globalPlugins/easyAudioConverter/__init__.py:2243
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "Προειδοποίηση: Τα αρχεία {count} θα μετατραπούν από μορφή με απώλεια σε άλλη μορφή με απώλειες, γεγονός που μπορεί να μειώσει την ποιότητα."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:399
+#: src/globalPlugins/easyAudioConverter/__init__.py:404
 msgid "WavPack"
 msgstr "Πακέτο Wav"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2054 src/globalPlugins/easyAudioConverter/__init__.py:2056
+#: src/globalPlugins/easyAudioConverter/__init__.py:1301
+msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
+msgstr "Τα προφίλ WavPack χρησιμοποιούν επίπεδα FFmpeg 0 έως 8. Το επίπεδο 8 αντιστοιχεί σε -hhx6 και είναι εξαιρετικά αργό."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2213 src/globalPlugins/easyAudioConverter/__init__.py:2215
 msgid "bytes"
 msgstr "bytes"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4150 src/globalPlugins/easyAudioConverter/__init__.py:2497
+#: src/globalPlugins/easyAudioConverter/__init__.py:4498 src/globalPlugins/easyAudioConverter/__init__.py:2656
 msgid "calculating"
 msgstr "Υπολογισμός"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3757
+#: src/globalPlugins/easyAudioConverter/__init__.py:4052
 msgid "excluding subfolders"
 msgstr "εξαιρουμένων των υποφακέλων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3755
+#: src/globalPlugins/easyAudioConverter/__init__.py:4050
 msgid "including subfolders"
 msgstr "συμπεριλαμβανομένων των υποφακέλων"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2181
+#: src/globalPlugins/easyAudioConverter/__init__.py:2340
 msgid "no"
 msgstr "όχι"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1760 src/globalPlugins/easyAudioConverter/__init__.py:1761 src/globalPlugins/easyAudioConverter/__init__.py:1762
+#: src/globalPlugins/easyAudioConverter/__init__.py:1919 src/globalPlugins/easyAudioConverter/__init__.py:1920 src/globalPlugins/easyAudioConverter/__init__.py:1921
 msgid "off"
 msgstr "εκτός λειτουργίας"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1760 src/globalPlugins/easyAudioConverter/__init__.py:1761 src/globalPlugins/easyAudioConverter/__init__.py:1762
+#: src/globalPlugins/easyAudioConverter/__init__.py:1919 src/globalPlugins/easyAudioConverter/__init__.py:1920 src/globalPlugins/easyAudioConverter/__init__.py:1921
 msgid "on"
 msgstr "επάνω"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2067
+#: src/globalPlugins/easyAudioConverter/__init__.py:2226
 msgid "source folders"
 msgstr "φακέλους πηγής"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2052 src/globalPlugins/easyAudioConverter/__init__.py:2078 src/globalPlugins/easyAudioConverter/__init__.py:2159 src/globalPlugins/easyAudioConverter/__init__.py:2160 src/globalPlugins/easyAudioConverter/__init__.py:2162 src/globalPlugins/easyAudioConverter/__init__.py:2168 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2176 src/globalPlugins/easyAudioConverter/__init__.py:3947 src/globalPlugins/easyAudioConverter/__init__.py:3951 src/globalPlugins/easyAudioConverter/__init__.py:3956
+#: src/globalPlugins/easyAudioConverter/__init__.py:2211 src/globalPlugins/easyAudioConverter/__init__.py:2237 src/globalPlugins/easyAudioConverter/__init__.py:2318 src/globalPlugins/easyAudioConverter/__init__.py:2319 src/globalPlugins/easyAudioConverter/__init__.py:2321 src/globalPlugins/easyAudioConverter/__init__.py:2327 src/globalPlugins/easyAudioConverter/__init__.py:2330 src/globalPlugins/easyAudioConverter/__init__.py:2335 src/globalPlugins/easyAudioConverter/__init__.py:4297 src/globalPlugins/easyAudioConverter/__init__.py:4301 src/globalPlugins/easyAudioConverter/__init__.py:4306
 msgid "unknown"
 msgstr "άγνωστο"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2181
+#: src/globalPlugins/easyAudioConverter/__init__.py:2340
 msgid "yes"
 msgstr "ναι"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3818 src/globalPlugins/easyAudioConverter/__init__.py:3847
+#: src/globalPlugins/easyAudioConverter/__init__.py:4087 src/globalPlugins/easyAudioConverter/__init__.py:4112
 msgid "{count} selected folders"
 msgstr "{count} επιλεγμένοι φάκελοι"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:427
+#: src/globalPlugins/easyAudioConverter/__init__.py:432
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (η επέκταση επιλέχθηκε από τον κωδικοποιητή ήχου πηγής)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2507
+#: src/globalPlugins/easyAudioConverter/__init__.py:2666
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. Αρχείο {index} από {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4105
+#: src/globalPlugins/easyAudioConverter/__init__.py:4453
 msgid "{stage}. Queued jobs: {count}."
 msgstr "{stage}. Εργασίες σε ουρά: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4153
+#: src/globalPlugins/easyAudioConverter/__init__.py:4501
 msgid "{stage}. {status} Queued jobs: {count}."
 msgstr "{stage}. {status} Εργασίες σε ουρά: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4145
+#: src/globalPlugins/easyAudioConverter/__init__.py:4493
 msgid "{status} Estimated time remaining {remaining}."
 msgstr "{status} Εκτιμώμενος χρόνος που απομένει {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2174 src/globalPlugins/easyAudioConverter/__init__.py:3954
+#: src/globalPlugins/easyAudioConverter/__init__.py:2333 src/globalPlugins/easyAudioConverter/__init__.py:4304
 msgid "{value} Hz"
 msgstr "{value} Hz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2166
+#: src/globalPlugins/easyAudioConverter/__init__.py:2325
 msgid "{value} kbps"
 msgstr "{value} kbps"
-
-#: src/globalPlugins/easyAudioConverter/__init__.py:3809 src/globalPlugins/easyAudioConverter/__init__.py:3986 src/globalPlugins/easyAudioConverter/__init__.py:3014
-msgid "Choose files to convert"
-msgstr "Choose files to convert"

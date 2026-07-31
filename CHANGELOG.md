@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0
+
+- Added an optional, profile-aware setting that copies each source file's
+  creation and modification dates to the completed output.
+- Added named lossless-compression choices to each advanced codec profile:
+  FLAC levels 0–12 and WavPack modes from fast through `-hhx6`.
+
 ## 1.3.1
 
 - Fixed an NVDA crash during shutdown or restart by ensuring that the add-on

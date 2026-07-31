@@ -124,13 +124,24 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.3.1", self.module.ADDON_VERSION)
+		self.assertEqual("1.4.0", self.module.ADDON_VERSION)
 		dialog = self.module.EasyAudioConverterSettingsDialog
 		self.assertEqual("Easy Audio Converter settings", dialog.title)
 		self.assertEqual(0, dialog.STANDARD_TAB)
 		self.assertEqual(1, dialog.ADVANCED_TAB)
 		self.assertEqual(2, dialog.PROCESSING_TAB)
 		self.assertEqual(18, len(self.module.FORMAT_KEYS))
+		self.assertEqual(
+			"boolean(default=False)",
+			self.module.CONFIG_SPEC["preserveTimestamps"],
+		)
+		flac_choices = self.module._lossless_compression_choices("flac")
+		self.assertEqual(tuple(range(-1, 13)), tuple(value for value, _label in flac_choices))
+		self.assertIn("maximum compression", flac_choices[-1][1])
+		wavpack_choices = self.module._lossless_compression_choices("wavpack")
+		self.assertEqual(tuple(range(-1, 9)), tuple(value for value, _label in wavpack_choices))
+		self.assertIn("-hhx4", dict(wavpack_choices)[7])
+		self.assertIn("-hhx6", dict(wavpack_choices)[8])
 		self.assertEqual(
 			"Extract original audio stream (no re-encoding)",
 			self.module._format_labels()[self.module.ORIGINAL_AUDIO_COPY_FORMAT],

@@ -112,6 +112,12 @@ target format. Only validated values are converted into FFmpeg arguments:
 - codec-specific compression, quality, or complexity level;
 - PCM bit depth for WAV and AIFF.
 
+Lossless compression uses named, bounded choices. FLAC accepts levels 0–12.
+The native FFmpeg WavPack encoder accepts levels 0–8, mapped to fast, normal,
+high (`-h`), very high (`-hh`), extra `-hhx1` through `-hhx4`, and maximum
+`-hhx6` profiles. The WavPack command names are descriptions; only the
+validated FFmpeg `-compression_level` integer is passed to the process.
+
 Raw command-line fragments are not accepted.
 Stream-copy modes always disable these overrides.
 

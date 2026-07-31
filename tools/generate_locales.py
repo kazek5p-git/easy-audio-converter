@@ -233,6 +233,12 @@ POLISH = {
 	"Preserve the source folder structure in the destination": (
 		"Zachowuj strukturę folderów źródłowych w folderze docelowym"
 	),
+	"Preserve source file creation and modification dates": (
+		"Zachowuj daty utworzenia i modyfikacji plików źródłowych"
+	),
+	"The source file dates could not be preserved.": (
+		"Nie udało się zachować dat pliku źródłowego."
+	),
 	"Quality:": "Jakość:",
 	"Quality: {quality}": "Jakość: {quality}",
 	"Quickly choose the destination folder": "Szybko wybierz folder docelowy",
@@ -350,9 +356,17 @@ POLISH = {
 		"Włącz zaawansowane ustawienia dla tego kodeka"
 	),
 	"File {index} of {total}: {name}": "Plik {index} z {total}: {name}",
-	"For FLAC, level 0 is fastest and level 12 gives the strongest compression.": (
-		"Dla FLAC poziom 0 jest najszybszy, a poziom 12 zapewnia najsilniejszą kompresję."
+	"All FLAC levels are lossless. Level 0 is fastest; level 12 gives "
+	"the strongest compression but is very slow.": (
+		"Wszystkie poziomy FLAC są bezstratne. Poziom 0 jest najszybszy; "
+		"poziom 12 zapewnia najsilniejszą kompresję, ale jest bardzo wolny."
 	),
+	"FLAC 0 — fastest encoding": "FLAC 0 — najszybsze kodowanie",
+	"FLAC 12 — maximum compression, very slow": (
+		"FLAC 12 — maksymalna kompresja, bardzo wolna"
+	),
+	"FLAC {level}": "FLAC {level}",
+	"Fast, -f (FFmpeg level 0)": "Szybki, -f (poziom FFmpeg 0)",
 	"For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest.": (
 		"Dla LAME MP3 poziom 0 jest najwolniejszy i daje najwyższą jakość algorytmu; "
 		"poziom 9 jest najszybszy."
@@ -363,20 +377,22 @@ POLISH = {
 	"For Opus, levels 0 to 10 select increasing encoder complexity.": (
 		"Dla Opus poziomy od 0 do 10 wybierają rosnącą złożoność kodera."
 	),
-	"For WavPack, levels 0 to 8 select increasing compression effort.": (
-		"Dla WavPack poziomy od 0 do 8 wybierają rosnący stopień kompresji."
-	),
 	"Genre": "Gatunek",
+	"High, -h (FFmpeg level 2)": "Wysoki, -h (poziom FFmpeg 2)",
 	"Hide": "Ukryj",
 	"Keep the source channel count": "Zachowaj liczbę kanałów źródła",
 	"Keep the source sample rate": "Zachowaj częstotliwość próbkowania źródła",
 	"Language": "Język",
 	"Later": "Później",
 	"Lyrics": "Tekst utworu",
+	"Lossless compression profile:": "Profil kompresji bezstratnej:",
+	"Maximum, -hhx6 (FFmpeg level 8)": "Maksymalny, -hhx6 (poziom FFmpeg 8)",
 	"Metadata export:": "Eksport metadanych:",
 	"Metadata fields to copy:": "Pola metadanych do skopiowania:",
 	"Mono": "Mono",
+	"Normal (FFmpeg level 1)": "Normalny (poziom FFmpeg 1)",
 	"No conversion progress is available": "Brak dostępnych informacji o postępie konwersji",
+	"Not used by this codec": "Nieużywane przez ten kodek",
 	"Open advanced codec settings": "Otwórz zaawansowane ustawienia kodeków",
 	"Overall progress: 100%": "Postęp całkowity: 100%",
 	"Overall progress: waiting": "Postęp całkowity: oczekiwanie",
@@ -403,6 +419,24 @@ POLISH = {
 	"Track number": "Numer utworu",
 	"Update download canceled": "Pobieranie aktualizacji anulowane",
 	"Use the quality preset": "Użyj ustawienia jakości",
+	"Very high, -hh (FFmpeg level 3)": "Bardzo wysoki, -hh (poziom FFmpeg 3)",
+	"Very high + extra 1, -hhx1 (FFmpeg level 4)": (
+		"Bardzo wysoki + tryb dodatkowy 1, -hhx1 (poziom FFmpeg 4)"
+	),
+	"Very high + extra 2, -hhx2 (FFmpeg level 5)": (
+		"Bardzo wysoki + tryb dodatkowy 2, -hhx2 (poziom FFmpeg 5)"
+	),
+	"Very high + extra 3, -hhx3 (FFmpeg level 6)": (
+		"Bardzo wysoki + tryb dodatkowy 3, -hhx3 (poziom FFmpeg 6)"
+	),
+	"Very high + extra 4, -hhx4 (FFmpeg level 7)": (
+		"Bardzo wysoki + tryb dodatkowy 4, -hhx4 (poziom FFmpeg 7)"
+	),
+	"WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds "
+	"to -hhx6 and is extremely slow.": (
+		"Profile WavPack używają poziomów FFmpeg od 0 do 8. Poziom 8 "
+		"odpowiada -hhx6 i jest wyjątkowo wolny."
+	),
 	MANIFEST_SUMMARY: "Easy Audio Converter",
 	MANIFEST_DESCRIPTION: (
 		"Dostępna kolejkowana konwersja audio oraz wyodrębnianie i remuksowanie "
@@ -794,6 +828,9 @@ POLISH.update(
 )
 
 PLACEHOLDER_PATTERN = re.compile(r"\{[^{}]+\}")
+PROTECTED_TOKEN_PATTERN = re.compile(
+	r"\{[^{}]+\}|(?<!\w)-(?:hhx[1-6]|hh|h|f)\b|\b(?:FFmpeg|FLAC|WavPack)\b|\b\d+\b"
+)
 
 
 def extract_messages() -> list[str]:
@@ -822,7 +859,30 @@ def _protect(message: str, message_index: int) -> tuple[str, dict[str, str]]:
 		replacements[token] = match.group(0)
 		return token
 
-	return PLACEHOLDER_PATTERN.sub(replace, message), replacements
+	return PROTECTED_TOKEN_PATTERN.sub(replace, message), replacements
+
+
+def _preserves_lossless_profile_tokens(message: str, translation: str) -> bool:
+	"""Sprawdza nieprzetłumaczalne nazwy i wartości profili kompresji."""
+	if not (
+		"FFmpeg level" in message
+		or message.startswith("FLAC ")
+		or message.startswith("All FLAC levels")
+		or message.startswith("WavPack profiles")
+	):
+		return True
+	return all(
+		token in translation
+		for token in PROTECTED_TOKEN_PATTERN.findall(message)
+	)
+
+
+def _restore_protected_tokens(result: str, replacements: dict[str, str]) -> str:
+	"""Przywraca tokeny także wtedy, gdy tłumacz doda spację przed nawiasem."""
+	for token, original in replacements.items():
+		flexible_token = re.escape(token[:-1]) + r"\s*" + re.escape(token[-1])
+		result = re.sub(flexible_token, lambda _match, value=original: value, result)
+	return result
 
 
 def _translate_request(payload: str, target: str) -> str:
@@ -892,10 +952,13 @@ def _translate_chunk(messages: list[str], target: str, offset: int) -> list[str]
 
 	cleaned_results: list[str] = []
 	for original, result, token_map in zip(messages, results, replacements):
-		result = result.strip()
-		for token, placeholder in token_map.items():
-			result = result.replace(token, placeholder)
-		if sorted(PLACEHOLDER_PATTERN.findall(result)) != sorted(PLACEHOLDER_PATTERN.findall(original)):
+		result = _restore_protected_tokens(result.strip(), token_map)
+		if (
+			"⟦EACPH" in result
+			or sorted(PLACEHOLDER_PATTERN.findall(result))
+			!= sorted(PLACEHOLDER_PATTERN.findall(original))
+			or not _preserves_lossless_profile_tokens(original, result)
+		):
 			result = original
 		cleaned_results.append(result)
 	return cleaned_results
@@ -968,10 +1031,16 @@ def translate_messages_edge(messages: list[str], locale: str) -> dict[str, str]:
 
 	translations: dict[str, str] = {}
 	for original, item, token_map in zip(messages, payload, replacements):
-		result = str(item["translations"][0]["text"]).strip()
-		for placeholder_token, placeholder in token_map.items():
-			result = result.replace(placeholder_token, placeholder)
-		if sorted(PLACEHOLDER_PATTERN.findall(result)) != sorted(PLACEHOLDER_PATTERN.findall(original)):
+		result = _restore_protected_tokens(
+			str(item["translations"][0]["text"]).strip(),
+			token_map,
+		)
+		if (
+			"⟦EACPH" in result
+			or sorted(PLACEHOLDER_PATTERN.findall(result))
+			!= sorted(PLACEHOLDER_PATTERN.findall(original))
+			or not _preserves_lossless_profile_tokens(original, result)
+		):
 			result = original
 		translations[original] = result
 	return translations
@@ -986,7 +1055,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.3.1\n"
+		"Project-Id-Version: Easy Audio Converter 1.4.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -1028,7 +1097,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.3.1\n"
+		"Project-Id-Version: Easy Audio Converter 1.4.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"
@@ -1124,6 +1193,10 @@ def main() -> None:
 			message
 			for message in runtime_messages
 			if not translations.get(message)
+			or not _preserves_lossless_profile_tokens(
+				message,
+				translations.get(message, ""),
+			)
 			or (
 				locale == "pl"
 				and message in POLISH

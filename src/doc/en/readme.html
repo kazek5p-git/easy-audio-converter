@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.3.1.</p>
+	<p>Author: Kazimierz Parzych. Version 1.4.0.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -46,8 +46,9 @@
 	<h2>One-time options and named profiles</h2>
 	<p>
 		“Convert with options” lets you choose the format, quality, MP3 encoder,
-		destination, folder behavior, metadata, output filename template, and
-		active processing and codec overrides for one job. Enable “Use these
+		destination, folder behavior, metadata, output filename template, source
+		file date preservation, and active processing and codec overrides for
+		one job. Enable “Use these
 		settings for future quick
 		conversions” only when you also want to replace the saved defaults.
 	</p>
@@ -57,6 +58,11 @@
 		imported, and exported as safe JSON.
 		Profile names and values are validated before they are stored in NVDA's
 		configuration.
+	</p>
+	<p>
+		“Preserve source file creation and modification dates” assigns both
+		dates from the input file to each completed output. This setting is also
+		stored in custom profiles.
 	</p>
 
 	<h2>Planning and output names</h2>
@@ -211,9 +217,14 @@
 	</p>
 	<p>
 		The codec level means LAME algorithm effort, Vorbis quality, Opus
-		complexity, or FLAC/WavPack compression depending on the selected
-		format. Controls that do not apply are disabled. A value of -1 or 0
-		where described keeps the normal quality preset.
+		complexity, or compression depending on the selected format. FLAC has a
+		separate list from level 0 (fastest) through 12 (strongest and very
+		slow). WavPack provides named fast, normal, high <code>-h</code>, very
+		high <code>-hh</code>, <code>-hhx1</code> through <code>-hhx4</code>, and
+		maximum <code>-hhx6</code> profiles. The corresponding validated FFmpeg
+		levels range from 0 through 8. Every mode is lossless; a higher level
+		changes encoding time and file size, not audio quality. Controls that do
+		not apply are disabled.
 	</p>
 
 	<h2>Updates</h2>

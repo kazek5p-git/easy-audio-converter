@@ -20,6 +20,8 @@ separate codec installation is required.
   encoder choices;
 - saves next to each source or in a selected destination folder;
 - optionally includes subfolders and preserves their structure;
+- can preserve each source file's creation and modification dates on the
+  completed output, including through named profiles;
 - skips files already using the target extension when scanning a folder,
   while still allowing an explicitly selected same-format file to be
   re-encoded;
@@ -52,7 +54,8 @@ separate codec installation is required.
 - makes success speech/sound configurable and provides separate optional
   sounds for errors and cancellation;
 - copies all, selected, or no source text metadata;
-- stores independent advanced parameter profiles for each target codec;
+- stores independent advanced parameter profiles for each target codec,
+  including FLAC levels 0–12 and named WavPack modes through `-hhx6`;
 - provides one standalone, resizable settings window under NVDA's Tools menu,
   with three accessible tabs and standard OK and Cancel buttons;
 - provides direct Tools-menu commands for choosing multiple files or one

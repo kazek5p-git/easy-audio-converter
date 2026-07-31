@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.3.1.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.4.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -47,7 +47,8 @@
 	<p>
 		Okno „Konwertuj z opcjami” pozwala wybrać dla jednego zadania format,
 		jakość, kodek MP3, miejsce docelowe, sposób obsługi folderów, metadane,
-		szablon nazwy wyniku oraz aktywne ustawienia przetwarzania i kodeka.
+		szablon nazwy wyniku, zachowanie dat plików źródłowych oraz aktywne
+		ustawienia przetwarzania i kodeka.
 		Zaznacz pole „Używaj tych
 		ustawień podczas przyszłych szybkich konwersji” tylko wtedy, gdy chcesz
 		także zastąpić zapisane ustawienia domyślne.
@@ -57,6 +58,11 @@
 		FLAC. Kompletne profile własne można zapisywać, zastępować, usuwać,
 		importować i eksportować do bezpiecznego pliku JSON.
 		Nazwy oraz wartości są sprawdzane przed zapisaniem w konfiguracji NVDA.
+	</p>
+	<p>
+		Opcja „Zachowuj daty utworzenia i modyfikacji plików źródłowych” ustawia
+		obie daty ukończonego pliku wynikowego zgodnie z plikiem wejściowym.
+		Ustawienie jest zapisywane również w profilach własnych.
 	</p>
 
 	<h2>Plan i nazwy wyników</h2>
@@ -218,9 +224,14 @@
 	</p>
 	<p>
 		Poziom kodeka oznacza jakość algorytmu LAME, jakość Vorbis, złożoność
-		Opus albo stopień kompresji FLAC/WavPack — zależnie od formatu.
-		Niepasujące kontrolki są wyłączane. Wartość -1 lub 0, zgodnie z opisem,
-		zachowuje zwykłe ustawienie jakości.
+		Opus albo stopień kompresji — zależnie od formatu. FLAC ma osobną listę
+		poziomów od 0 (najszybszy) do 12 (najsilniejsza, bardzo wolna kompresja).
+		WavPack udostępnia nazwane profile: szybki, normalny, wysoki <code>-h</code>,
+		bardzo wysoki <code>-hh</code>, dodatkowe <code>-hhx1</code> do
+		<code>-hhx4</code> oraz maksymalny <code>-hhx6</code>. FFmpeg otrzymuje
+		odpowiadające im, bezpieczne poziomy od 0 do 8. Wszystkie te tryby są
+		bezstratne; wyższy poziom zmienia rozmiar i czas kodowania, a nie jakość
+		dźwięku. Niepasujące kontrolki są wyłączane.
 	</p>
 
 	<h2>Aktualizacje</h2>

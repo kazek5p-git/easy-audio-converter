@@ -140,6 +140,19 @@ DEFAULT_METADATA_FIELDS = (
 ADVANCED_SAMPLE_RATES = (0, 8000, 11025, 16000, 22050, 32000, 44100, 48000, 88200, 96000, 192000)
 ADVANCED_CHANNEL_COUNTS = (0, 1, 2)
 ADVANCED_BIT_DEPTHS = (0, 16, 24, 32)
+FLAC_COMPRESSION_LEVELS = tuple(range(13))
+# Profile natywnego enkodera FFmpeg i odpowiadająca mu składnia programu WavPack.
+WAVPACK_COMPRESSION_PROFILES = (
+	(0, "fast", "-f"),
+	(1, "normal", ""),
+	(2, "high", "-h"),
+	(3, "veryHigh", "-hh"),
+	(4, "veryHighExtra1", "-hhx1"),
+	(5, "veryHighExtra2", "-hhx2"),
+	(6, "veryHighExtra3", "-hhx3"),
+	(7, "veryHighExtra4", "-hhx4"),
+	(8, "veryHighExtra6", "-hhx6"),
+)
 MAX_SKIPPED_FILE_DETAILS = 500
 MAX_OUTPUT_NAME_TEMPLATE_LENGTH = 240
 MAX_SAFE_FILENAME_LENGTH = 180
@@ -313,6 +326,7 @@ class ConversionSettings:
 	output_folder: str = ""
 	include_subfolders: bool = True
 	preserve_folder_structure: bool = True
+	preserve_timestamps: bool = False
 	metadata_mode: str = "all"
 	metadata_fields: tuple[str, ...] = DEFAULT_METADATA_FIELDS
 	advanced_options: Mapping[str, Any] = field(default_factory=dict)
@@ -446,6 +460,118 @@ def _safe_callback(callback: Callable | None, *args) -> None:
 	except Exception:
 		# A status callback must never stop a conversion.
 		pass
+
+
+def copy_source_file_timestamps(
+	source: str | os.PathLike[str],
+	destination: str | os.PathLike[str],
+) -> None:
+	"""Kopiuje datę utworzenia i modyfikacji źródła do gotowego wyniku."""
+	source_path = Path(source)
+	destination_path = Path(destination)
+	if os.name != "nt":
+		# Systemy POSIX zwykle nie pozwalają zmienić daty utworzenia. Zachowujemy
+		# datę modyfikacji bez zmiany czasu ostatniego dostępu do wyniku.
+		source_stat = source_path.stat()
+		destination_stat = destination_path.stat()
+		os.utime(
+			destination_path,
+			ns=(destination_stat.st_atime_ns, source_stat.st_mtime_ns),
+		)
+		return
+
+	# NVDA działa w Windows, gdzie potrzebne jest SetFileTime, ponieważ os.utime
+	# nie ustawia daty utworzenia wyświetlanej w Eksploratorze.
+	import ctypes
+	from ctypes import wintypes
+
+	kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+	create_file = kernel32.CreateFileW
+	create_file.argtypes = (
+		wintypes.LPCWSTR,
+		wintypes.DWORD,
+		wintypes.DWORD,
+		wintypes.LPVOID,
+		wintypes.DWORD,
+		wintypes.DWORD,
+		wintypes.HANDLE,
+	)
+	create_file.restype = wintypes.HANDLE
+	get_file_time = kernel32.GetFileTime
+	get_file_time.argtypes = (
+		wintypes.HANDLE,
+		ctypes.POINTER(wintypes.FILETIME),
+		ctypes.POINTER(wintypes.FILETIME),
+		ctypes.POINTER(wintypes.FILETIME),
+	)
+	get_file_time.restype = wintypes.BOOL
+	set_file_time = kernel32.SetFileTime
+	set_file_time.argtypes = get_file_time.argtypes
+	set_file_time.restype = wintypes.BOOL
+	close_handle = kernel32.CloseHandle
+	close_handle.argtypes = (wintypes.HANDLE,)
+	close_handle.restype = wintypes.BOOL
+
+	file_read_attributes = 0x0080
+	file_write_attributes = 0x0100
+	file_share_all = 0x0001 | 0x0002 | 0x0004
+	open_existing = 3
+	file_attribute_normal = 0x0080
+	invalid_handle_value = ctypes.c_void_p(-1).value
+
+	def open_attributes(path: Path, access: int):
+		handle = create_file(
+			str(path),
+			access,
+			file_share_all,
+			None,
+			open_existing,
+			file_attribute_normal,
+			None,
+		)
+		if handle == invalid_handle_value:
+			error_code = ctypes.get_last_error()
+			raise OSError(
+				error_code,
+				f"Could not open file attributes: {ctypes.FormatError(error_code).strip()}",
+				str(path),
+			)
+		return handle
+
+	source_handle = open_attributes(source_path, file_read_attributes)
+	try:
+		creation_time = wintypes.FILETIME()
+		modification_time = wintypes.FILETIME()
+		if not get_file_time(
+			source_handle,
+			ctypes.byref(creation_time),
+			None,
+			ctypes.byref(modification_time),
+		):
+			error_code = ctypes.get_last_error()
+			raise OSError(
+				error_code,
+				f"Could not read source file dates: {ctypes.FormatError(error_code).strip()}",
+				str(source_path),
+			)
+		destination_handle = open_attributes(destination_path, file_write_attributes)
+		try:
+			if not set_file_time(
+				destination_handle,
+				ctypes.byref(creation_time),
+				None,
+				ctypes.byref(modification_time),
+			):
+				error_code = ctypes.get_last_error()
+				raise OSError(
+					error_code,
+					f"Could not preserve source file dates: {ctypes.FormatError(error_code).strip()}",
+					str(destination_path),
+				)
+		finally:
+			close_handle(destination_handle)
+	finally:
+		close_handle(source_handle)
 
 
 def _normal_path(path: str | os.PathLike[str]) -> str:
@@ -741,13 +867,21 @@ def apply_advanced_codec_arguments(
 		if target_format == "mp3" and mp3_encoder == "lame":
 			_replace_argument(arguments, "-compression_level", str(min(level, 9)))
 		elif target_format == "flac":
-			_replace_argument(arguments, "-compression_level", str(min(level, 12)))
+			_replace_argument(
+				arguments,
+				"-compression_level",
+				str(min(level, FLAC_COMPRESSION_LEVELS[-1])),
+			)
 		elif target_format == "ogg":
 			_replace_argument(arguments, "-q:a", str(min(level, 10)))
 		elif target_format == "opus":
 			_replace_argument(arguments, "-compression_level", str(min(level, 10)))
 		elif target_format == "wavpack":
-			_replace_argument(arguments, "-compression_level", str(min(level, 8)))
+			_replace_argument(
+				arguments,
+				"-compression_level",
+				str(min(level, WAVPACK_COMPRESSION_PROFILES[-1][0])),
+			)
 
 	bit_depth = _integer_option(options, "bitDepth")
 	if bit_depth in ADVANCED_BIT_DEPTHS and bit_depth:
@@ -1557,6 +1691,19 @@ class Converter:
 					if not verified:
 						self._remove_partial_output(output)
 						self._record_failure(summary, source, verification_error)
+						if self._finish_at_boundary(summary):
+							break
+						continue
+				if settings.preserve_timestamps:
+					try:
+						copy_source_file_timestamps(source, output)
+					except OSError as error:
+						self._remove_partial_output(output)
+						self._record_failure(
+							summary,
+							source,
+							f"Could not preserve source file dates: {error}",
+						)
 						if self._finish_at_boundary(summary):
 							break
 						continue

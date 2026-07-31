@@ -25,9 +25,11 @@ python tools/validate_codecs.py
 
 This generates Unicode-named sources and tests all 17 encoder paths (the 16
 encoded targets, with both MP3 encoders) plus original-stream extraction and
-AAC-to-M4A remuxing. It verifies that compressed packet payloads are unchanged,
-that no video stream reaches the output, and that non-AAC input is rejected by
-the M4A copy mode. It also checks recursive output layout, folder-level
+AAC-to-M4A remuxing. It also encodes and decodes all 13 FLAC levels and all
+nine named WavPack profiles, comparing their PCM hashes with the source. It
+verifies that copied packet payloads are unchanged, that no video stream
+reaches the output, and that non-AAC input is rejected by the M4A copy mode.
+It also checks recursive output layout, folder-level
 target-format skipping, explicitly selected same-format source protection,
 all/selected/no metadata modes, real FFmpeg progress, and advanced
 sample-rate/channel settings.
@@ -58,11 +60,16 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    tabs and the OK and Cancel buttons; verify that Cancel discards changes and
    OK preserves them after reopening. In particular, verify that the custom
    LUFS, dBTP, and LRA fields have distinct spoken names.
+   Dla FLAC sprawdź listę poziomów 0–12, a dla WavPack profile od szybkiego do
+   `-hhx6`; po ponownym otwarciu ustawień wybrany profil ma pozostać aktywny.
 3. Select “Copy selected metadata fields” and verify that every field is
    announced as a check box with its checked state.
 4. Open “Convert selected files or folders with options”. Traverse the
    complete dialog, switch each built-in profile, save and remove a temporary
    user profile, and verify that canceling does not change defaults.
+   Zapisz profile z włączoną i wyłączoną opcją zachowywania dat, a następnie
+   sprawdź w Eksploratorze, czy wynik otrzymał datę utworzenia i modyfikacji
+   pliku źródłowego.
 5. Import and export user profiles, replace a same-name profile, reject an
    invalid or oversized JSON file, and verify that built-in profiles cannot be
    replaced through import.

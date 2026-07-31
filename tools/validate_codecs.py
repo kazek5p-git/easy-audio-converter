@@ -15,9 +15,11 @@ sys.path.insert(0, str(PROJECT_ROOT / "src" / "globalPlugins" / "easyAudioConver
 
 from converter import (  # noqa: E402
 	AAC_M4A_COPY_FORMAT,
+	FLAC_COMPRESSION_LEVELS,
 	FORMAT_KEYS,
 	ORIGINAL_AUDIO_COPY_FORMAT,
 	STREAM_COPY_FORMATS,
+	WAVPACK_COMPRESSION_PROFILES,
 	ConversionCallbacks,
 	ConversionSettings,
 	Converter,
@@ -58,6 +60,37 @@ def copied_packet_hash(
 			"-c:a",
 			"copy",
 			*bitstream_filter,
+			"-f",
+			"hash",
+			"-hash",
+			"sha256",
+			"-",
+		],
+		stdout=subprocess.PIPE,
+		stderr=subprocess.PIPE,
+		text=True,
+		encoding="utf-8",
+		errors="replace",
+		check=False,
+	)
+	return result.stdout.strip() if result.returncode == 0 else ""
+
+
+def decoded_audio_hash(ffmpeg: Path, path: Path) -> str:
+	"""Zwraca skrót zdekodowanych próbek PCM do kontroli bezstratności."""
+	result = subprocess.run(
+		[
+			str(ffmpeg),
+			"-nostdin",
+			"-hide_banner",
+			"-loglevel",
+			"error",
+			"-i",
+			str(path),
+			"-map",
+			"0:a:0",
+			"-c:a",
+			"pcm_s16le",
 			"-f",
 			"hash",
 			"-hash",
@@ -160,6 +193,38 @@ def main() -> int:
 			else:
 				output = Path(summary.outputs[0])
 				print(f"PASS {format_key}/{encoder}: {output.stat().st_size} bytes")
+
+		source_pcm_hash = decoded_audio_hash(ffmpeg, source)
+		lossless_profiles = [
+			("flac", level, f"FLAC {level}")
+			for level in FLAC_COMPRESSION_LEVELS
+		] + [
+			("wavpack", level, command or "normal")
+			for level, _name, command in WAVPACK_COMPRESSION_PROFILES
+		]
+		for format_key, level, profile_name in lossless_profiles:
+			summary = Converter(ffmpeg).run(
+				[source],
+				ConversionSettings(
+					target_format=format_key,
+					same_folder=False,
+					output_folder=str(root / f"lossless-{format_key}-{level}"),
+					advanced_options={"enabled": True, "codecLevel": level},
+					verify_output=True,
+				),
+			)
+			output_hash = (
+				decoded_audio_hash(ffmpeg, Path(summary.outputs[0]))
+				if summary.succeeded
+				else ""
+			)
+			if not source_pcm_hash or output_hash != source_pcm_hash:
+				failures.append(
+					f"{format_key} compression profile {profile_name} was not lossless"
+				)
+				print(f"FAIL {format_key} compression profile {profile_name}")
+			else:
+				print(f"PASS {format_key} compression profile {profile_name}")
 
 		aac_video = root / "video with AAC.mp4"
 		mp3_video = root / "video with MP3.mkv"
@@ -501,7 +566,10 @@ def main() -> int:
 		for failure in failures:
 			print(f"- {failure}", file=sys.stderr)
 		return 1
-	print(f"\nAll {len(cases)} encoder paths and four stream-copy checks passed.")
+	print(
+		f"\nAll {len(cases)} encoder paths, {len(lossless_profiles)} lossless "
+		"compression profiles, and four stream-copy checks passed."
+	)
 	return 0
 
 

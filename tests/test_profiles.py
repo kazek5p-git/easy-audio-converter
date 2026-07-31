@@ -49,6 +49,7 @@ class ProfileSerializationTests(unittest.TestCase):
 			output_folder=r"D:\Converted",
 			include_subfolders=False,
 			preserve_folder_structure=False,
+			preserve_timestamps=True,
 			metadata_mode="selected",
 			metadata_fields=("title", "artist", "comment"),
 			advanced_options={
@@ -79,12 +80,14 @@ class ProfileSerializationTests(unittest.TestCase):
 			quality="high",
 			same_folder=True,
 			output_folder=r"D:\Audio",
+			preserve_timestamps=True,
 		)
 		settings = profiles.conversion_settings_from_mapping(
 			{
 				"targetFormat": "invalid",
 				"quality": "invalid",
 				"sameFolder": "false",
+				"preserveTimestamps": "false",
 				"metadataFields": ["title", "invalid"],
 				"advancedOptions": {
 					"enabled": True,
@@ -100,6 +103,7 @@ class ProfileSerializationTests(unittest.TestCase):
 		self.assertEqual("flac", settings.target_format)
 		self.assertEqual("high", settings.quality)
 		self.assertTrue(settings.same_folder)
+		self.assertTrue(settings.preserve_timestamps)
 		self.assertEqual(("title",), settings.metadata_fields)
 		self.assertEqual(
 			{

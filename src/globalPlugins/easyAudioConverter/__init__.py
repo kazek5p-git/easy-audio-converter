@@ -38,6 +38,7 @@ from .converter import (
 	ADVANCED_CHANNEL_COUNTS,
 	ADVANCED_SAMPLE_RATES,
 	DEFAULT_METADATA_FIELDS,
+	FLAC_COMPRESSION_LEVELS,
 	FORMAT_EXTENSIONS,
 	FORMAT_KEYS,
 	LOUDNESS_PRESET_KEYS,
@@ -47,6 +48,7 @@ from .converter import (
 	ORIGINAL_AUDIO_COPY_FORMAT,
 	QUALITY_KEYS,
 	STREAM_COPY_FORMATS,
+	WAVPACK_COMPRESSION_PROFILES,
 	ConversionCallbacks,
 	ConversionPlan,
 	ConversionSettings,
@@ -87,7 +89,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.3.1"
+ADDON_VERSION = "1.4.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
@@ -103,6 +105,7 @@ CONFIG_SPEC = {
 	"outputFolder": "string(default='')",
 	"includeSubfolders": "boolean(default=True)",
 	"preserveFolderStructure": "boolean(default=True)",
+	"preserveTimestamps": "boolean(default=False)",
 	"metadataMode": "string(default='all')",
 	"metadataFields": (
 		"string_list(default=list('title', 'artist', 'album', 'album_artist', "
@@ -200,6 +203,7 @@ def _read_settings() -> ConversionSettings:
 		output_folder=str(conf.get("outputFolder") or _default_output_folder()),
 		include_subfolders=bool(conf.get("includeSubfolders", True)),
 		preserve_folder_structure=bool(conf.get("preserveFolderStructure", True)),
+		preserve_timestamps=bool(conf.get("preserveTimestamps", False)),
 		metadata_mode=_validated_key(conf.get("metadataMode"), METADATA_MODE_KEYS, "all"),
 		metadata_fields=metadata_fields,
 		advanced_options=profiles.get(target_format, {}),
@@ -231,6 +235,7 @@ def _write_conversion_settings(settings: ConversionSettings) -> None:
 	conf["outputFolder"] = settings.output_folder or _default_output_folder()
 	conf["includeSubfolders"] = settings.include_subfolders
 	conf["preserveFolderStructure"] = settings.preserve_folder_structure
+	conf["preserveTimestamps"] = settings.preserve_timestamps
 	conf["metadataMode"] = settings.metadata_mode
 	conf["metadataFields"] = list(settings.metadata_fields)
 	conf["outputNameTemplate"] = settings.output_name_template
@@ -741,6 +746,14 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 			wx.CheckBox(self, label=_("Preserve the source folder structure in the destination")),
 		)
 		self.preserve_structure.SetValue(settings.preserve_folder_structure)
+		self.preserve_timestamps = helper.addItem(
+			# Translators: Kopiowanie dat utworzenia i modyfikacji do przekonwertowanych plików.
+			wx.CheckBox(
+				self,
+				label=_("Preserve source file creation and modification dates"),
+			),
+		)
+		self.preserve_timestamps.SetValue(settings.preserve_timestamps)
 
 		metadata_mode_labels = _metadata_mode_labels()
 		self.metadata_mode = helper.addLabeledControl(
@@ -866,6 +879,7 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		conf["outputFolder"] = self.output_folder.GetValue().strip() or _default_output_folder()
 		conf["includeSubfolders"] = self.include_subfolders.IsChecked()
 		conf["preserveFolderStructure"] = self.preserve_structure.IsChecked()
+		conf["preserveTimestamps"] = self.preserve_timestamps.IsChecked()
 		conf["metadataMode"] = METADATA_MODE_KEYS[self.metadata_mode.GetSelection()]
 		conf["metadataFields"] = [
 			field_name
@@ -1085,12 +1099,45 @@ def _default_advanced_profile() -> dict[str, Any]:
 	}
 
 
+def _lossless_compression_choices(format_key: str) -> list[tuple[int, str]]:
+	"""Zwraca nazwane, bezpieczne poziomy kompresji dla kodeka bezstratnego."""
+	if format_key == "flac":
+		choices = [(-1, _("Use the quality preset"))]
+		for level in FLAC_COMPRESSION_LEVELS:
+			if level == 0:
+				label = _("FLAC 0 — fastest encoding")
+			elif level == FLAC_COMPRESSION_LEVELS[-1]:
+				label = _("FLAC 12 — maximum compression, very slow")
+			else:
+				label = _("FLAC {level}").format(level=level)
+			choices.append((level, label))
+		return choices
+	if format_key == "wavpack":
+		labels = (
+			_("Fast, -f (FFmpeg level 0)"),
+			_("Normal (FFmpeg level 1)"),
+			_("High, -h (FFmpeg level 2)"),
+			_("Very high, -hh (FFmpeg level 3)"),
+			_("Very high + extra 1, -hhx1 (FFmpeg level 4)"),
+			_("Very high + extra 2, -hhx2 (FFmpeg level 5)"),
+			_("Very high + extra 3, -hhx3 (FFmpeg level 6)"),
+			_("Very high + extra 4, -hhx4 (FFmpeg level 7)"),
+			_("Maximum, -hhx6 (FFmpeg level 8)"),
+		)
+		return [(-1, _("Use the quality preset"))] + [
+			(profile[0], label)
+			for profile, label in zip(WAVPACK_COMPRESSION_PROFILES, labels)
+		]
+	return [(-1, _("Not used by this codec"))]
+
+
 class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 	# Translators: Name of the advanced settings tab.
 	title = _("Advanced settings")
 
 	_BITRATE_FORMATS = {"mp3", "opus", "m4a", "aac", "wma", "ac3", "eac3", "mp2", "amr", "amrwb"}
-	_LEVEL_FORMATS = {"mp3", "flac", "ogg", "opus", "wavpack"}
+	_NUMERIC_LEVEL_FORMATS = {"mp3", "ogg", "opus"}
+	_LOSSLESS_COMPRESSION_FORMATS = {"flac", "wavpack"}
 	_BIT_DEPTH_FORMATS = {"wav", "aiff"}
 
 	def makeSettings(self, settingsSizer):
@@ -1139,6 +1186,12 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			max=12,
 			initial=-1,
 		)
+		self.lossless_compression = helper.addLabeledControl(
+			_("Lossless compression profile:"),
+			wx.Choice,
+			choices=[],
+		)
+		self._lossless_compression_values: tuple[int, ...] = (-1,)
 		self.bit_depth = helper.addLabeledControl(
 			_("PCM bit depth:"),
 			wx.Choice,
@@ -1154,6 +1207,14 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 		return dict(_default_advanced_profile(), **self._profiles.get(format_key, {}))
 
 	def _store_current_profile(self) -> None:
+		codec_level = self.codec_level.GetValue()
+		if self._current_format in self._LOSSLESS_COMPRESSION_FORMATS:
+			selection = self.lossless_compression.GetSelection()
+			codec_level = (
+				self._lossless_compression_values[selection]
+				if 0 <= selection < len(self._lossless_compression_values)
+				else -1
+			)
 		self._profiles[self._current_format] = {
 			"enabled": (
 				self.enabled.IsChecked()
@@ -1162,7 +1223,7 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			"bitrate": self.bitrate.GetValue(),
 			"sampleRate": ADVANCED_SAMPLE_RATES[self.sample_rate.GetSelection()],
 			"channels": ADVANCED_CHANNEL_COUNTS[self.channels.GetSelection()],
-			"codecLevel": self.codec_level.GetValue(),
+			"codecLevel": codec_level,
 			"bitDepth": ADVANCED_BIT_DEPTHS[self.bit_depth.GetSelection()],
 		}
 
@@ -1184,7 +1245,9 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			if channels in ADVANCED_CHANNEL_COUNTS
 			else 0
 		)
-		self.codec_level.SetValue(max(-1, min(12, _safe_int(profile["codecLevel"], -1))))
+		codec_level = max(-1, min(12, _safe_int(profile["codecLevel"], -1)))
+		self.codec_level.SetValue(codec_level)
+		self._load_lossless_compression(format_key, codec_level)
 		bit_depth = _safe_int(profile["bitDepth"], 0)
 		self.bit_depth.SetSelection(
 			ADVANCED_BIT_DEPTHS.index(bit_depth)
@@ -1192,6 +1255,21 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			else 0
 		)
 		self._update_control_state()
+
+	def _load_lossless_compression(self, format_key: str, codec_level: int) -> None:
+		choices = _lossless_compression_choices(format_key)
+		self._lossless_compression_values = tuple(value for value, _label in choices)
+		self.lossless_compression.Clear()
+		self.lossless_compression.AppendItems([label for _value, label in choices])
+		if codec_level not in self._lossless_compression_values:
+			codec_level = (
+				self._lossless_compression_values[-1]
+				if codec_level >= 0 and len(self._lossless_compression_values) > 1
+				else -1
+			)
+		self.lossless_compression.SetSelection(
+			self._lossless_compression_values.index(codec_level)
+		)
 
 	def _on_codec_changed(self, event):
 		self._store_current_profile()
@@ -1205,14 +1283,25 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 		self.bitrate.Enable(enabled and self._current_format in self._BITRATE_FORMATS)
 		self.sample_rate.Enable(enabled and self._current_format not in {"amr", "amrwb", "opus"})
 		self.channels.Enable(enabled and self._current_format not in {"amr", "amrwb"})
-		self.codec_level.Enable(enabled and self._current_format in self._LEVEL_FORMATS)
+		self.codec_level.Enable(
+			enabled and self._current_format in self._NUMERIC_LEVEL_FORMATS
+		)
+		self.lossless_compression.Enable(
+			enabled and self._current_format in self._LOSSLESS_COMPRESSION_FORMATS
+		)
 		self.bit_depth.Enable(enabled and self._current_format in self._BIT_DEPTH_FORMATS)
 		level_descriptions = {
 			"mp3": _("For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."),
-			"flac": _("For FLAC, level 0 is fastest and level 12 gives the strongest compression."),
+			"flac": _(
+				"All FLAC levels are lossless. Level 0 is fastest; level 12 gives "
+				"the strongest compression but is very slow."
+			),
 			"ogg": _("For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."),
 			"opus": _("For Opus, levels 0 to 10 select increasing encoder complexity."),
-			"wavpack": _("For WavPack, levels 0 to 8 select increasing compression effort."),
+			"wavpack": _(
+				"WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds "
+				"to -hhx6 and is extremely slow."
+			),
 		}
 		self.level_help.SetLabel(
 			_(
@@ -1597,6 +1686,12 @@ class ConversionOptionsDialog(wx.Dialog):
 				label=_("Preserve the source folder structure in the destination"),
 			)
 		)
+		self.preserve_timestamps = helper.addItem(
+			wx.CheckBox(
+				panel,
+				label=_("Preserve source file creation and modification dates"),
+			)
+		)
 
 		metadata_labels = _metadata_mode_labels()
 		self.metadata_mode = helper.addLabeledControl(
@@ -1651,6 +1746,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.output_name_template.Bind(wx.EVT_TEXT, self._on_setting_changed)
 		self.include_subfolders.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.preserve_structure.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
+		self.preserve_timestamps.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.metadata_mode.Bind(wx.EVT_CHOICE, self._on_setting_changed)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
 		self.metadata_fields_button.Bind(wx.EVT_BUTTON, self._on_metadata_fields)
@@ -1700,6 +1796,7 @@ class ConversionOptionsDialog(wx.Dialog):
 			self.output_name_template.SetValue(settings.output_name_template)
 			self.include_subfolders.SetValue(settings.include_subfolders)
 			self.preserve_structure.SetValue(settings.preserve_folder_structure)
+			self.preserve_timestamps.SetValue(settings.preserve_timestamps)
 			self.metadata_mode.SetSelection(METADATA_MODE_KEYS.index(settings.metadata_mode))
 			self._metadata_fields = tuple(settings.metadata_fields)
 			self._advanced_options = dict(settings.advanced_options)
@@ -1724,6 +1821,7 @@ class ConversionOptionsDialog(wx.Dialog):
 			output_folder=self.output_folder.GetValue().strip() or _default_output_folder(),
 			include_subfolders=self.include_subfolders.IsChecked(),
 			preserve_folder_structure=self.preserve_structure.IsChecked(),
+			preserve_timestamps=self.preserve_timestamps.IsChecked(),
 			metadata_mode=METADATA_MODE_KEYS[max(0, self.metadata_mode.GetSelection())],
 			metadata_fields=self._metadata_fields,
 			advanced_options=advanced_options,
@@ -2644,6 +2742,8 @@ def _friendly_failure_message(message: str) -> str:
 		return _("The input does not contain a readable audio stream.")
 	if "output duration differs" in lowered:
 		return _("Output verification failed because its duration differs from the source.")
+	if "could not preserve source file dates" in lowered:
+		return _("The source file dates could not be preserved.")
 	return last_line[:1000] if last_line else _("Unknown error")
 
 
