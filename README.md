@@ -22,10 +22,13 @@ separate codec installation is required.
 - optionally includes subfolders and preserves their structure;
 - can preserve each source file's creation and modification dates on the
   completed output, including through named profiles;
+- can optionally replace source files after successful conversion, with an
+  irreversible-action warning that defaults to No and automatic protection
+  after conversion, verification, or cancellation failures;
 - skips files already using the target extension when scanning a folder,
   while still allowing an explicitly selected same-format file to be
   re-encoded;
-- never overwrites source or existing destination files;
+- never writes a result over its source or an existing destination file;
 - previews folder and one-time jobs with exact input/output paths, skipped
   counts, destination, duration, estimated size, free space, and
   lossy-to-lossy warnings;

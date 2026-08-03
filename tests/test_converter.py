@@ -422,6 +422,20 @@ class ConversionPlanningTests(unittest.TestCase):
 			self.assertEqual("Artist - source.opus", Path(plan.items[0].output_path).name)
 			self.assertGreater(plan.estimated_output_bytes, 0)
 
+	def test_plan_records_source_replacement_policy(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			plan = _FakeConverter(root / "missing.exe").create_plan(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					replace_source_files=True,
+				),
+			)
+			self.assertTrue(plan.replace_source_files)
+
 	def test_original_stream_plan_uses_codec_suffix_and_audio_bitrate(self):
 		with tempfile.TemporaryDirectory() as temporary:
 			root = Path(temporary)
@@ -552,6 +566,123 @@ class ConversionPlanningTests(unittest.TestCase):
 							output_stat.st_ctime_ns,
 						)
 						self.assertEqual(source_creation_ns, output_creation_ns)
+
+	def test_successful_conversion_removes_source_when_replacement_is_enabled(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			summary = _FakeConverter(root / "missing.exe").run(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					replace_source_files=True,
+				),
+			)
+			self.assertEqual(1, summary.succeeded)
+			self.assertFalse(source.exists())
+			self.assertTrue(Path(summary.outputs[0]).is_file())
+
+	def test_failed_ffmpeg_keeps_source_when_replacement_is_enabled(self):
+		class FailingConverter(_FakeConverter):
+			def _run_process(self, command, on_progress=None):
+				output = Path(command[-1])
+				output.write_bytes(b"partial")
+				return 1, "Conversion failed"
+
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			summary = FailingConverter(root / "missing.exe").run(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					replace_source_files=True,
+				),
+			)
+			self.assertEqual(1, summary.failed)
+			self.assertTrue(source.is_file())
+			self.assertEqual([], list((root / "out").glob("*")))
+
+	def test_failed_verification_keeps_source_when_replacement_is_enabled(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			converter = _FakeConverter(root / "missing.exe")
+			converter._verify_output = lambda *args, **kwargs: (
+				False,
+				"Output verification failed",
+			)
+			summary = converter.run(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					replace_source_files=True,
+					verify_output=True,
+				),
+			)
+			self.assertEqual(1, summary.failed)
+			self.assertTrue(source.is_file())
+			self.assertEqual([], list((root / "out").glob("*")))
+
+	def test_canceled_conversion_keeps_source_when_replacement_is_enabled(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			converter = _FakeConverter(root / "missing.exe")
+			callbacks = ConversionCallbacks(
+				on_progress=lambda *args: converter.cancel(),
+			)
+			summary = converter.run(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					replace_source_files=True,
+				),
+				callbacks=callbacks,
+			)
+			self.assertTrue(summary.canceled)
+			self.assertTrue(source.is_file())
+			self.assertEqual([], list((root / "out").glob("*")))
+
+	def test_source_removal_failure_keeps_completed_output(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			converter = _FakeConverter(root / "missing.exe")
+
+			def fail_source_removal(_source):
+				raise PermissionError("Access is denied")
+
+			converter._remove_source_file = fail_source_removal
+			summary = converter.run(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					replace_source_files=True,
+				),
+			)
+			self.assertEqual(0, summary.succeeded)
+			self.assertEqual(1, summary.failed)
+			self.assertTrue(source.is_file())
+			self.assertEqual(1, len(summary.failures))
+			kept_output = Path(summary.failures[0].output_path)
+			self.assertTrue(kept_output.is_file())
+			self.assertEqual(b"converted", kept_output.read_bytes())
 
 	def test_stop_after_current_finishes_exactly_one_file(self):
 		with tempfile.TemporaryDirectory() as temporary:

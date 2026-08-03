@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.4.0.</p>
+	<p>Author: Kazimierz Parzych. Version 1.5.0.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -47,8 +47,8 @@
 	<p>
 		“Convert with options” lets you choose the format, quality, MP3 encoder,
 		destination, folder behavior, metadata, output filename template, source
-		file date preservation, and active processing and codec overrides for
-		one job. Enable “Use these
+		file date preservation, source replacement, and active processing and
+		codec overrides for one job. Enable “Use these
 		settings for future quick
 		conversions” only when you also want to replace the saved defaults.
 	</p>
@@ -63,6 +63,15 @@
 		“Preserve source file creation and modification dates” assigns both
 		dates from the input file to each completed output. This setting is also
 		stored in custom profiles.
+	</p>
+	<p>
+		“Replace source files after successful conversion” permanently deletes
+		each source only after its output has been created, checked, optionally
+		verified, and assigned the requested dates. The option is stored in custom
+		profiles, but every job still requires a separate irreversible-action
+		confirmation whose default answer is No. A source remains untouched after
+		an error or cancellation. If the output succeeds but deleting the source
+		fails, the completed output is retained and reported with its full path.
 	</p>
 
 	<h2>Planning and output names</h2>
@@ -141,14 +150,16 @@
 		the configured destination folder.
 	</p>
 	<p>
-		Existing files and source files are never overwritten. A numbered name is
-		created automatically when necessary.
+		A result is never written over its source or an existing destination file.
+		A numbered name is created automatically when necessary. Source files stay
+		untouched unless the explicit replacement option is enabled and confirmed.
 	</p>
 	<p>
 		When a folder is converted, files already using the target extension are
 		skipped. For example, an existing MP3 is left unchanged during a WAV-to-MP3
 		folder job. An MP3 selected directly can still be intentionally re-encoded;
-		its source remains untouched and the result receives a safe new name.
+		its source remains untouched by default and the result receives a safe new
+		name.
 	</p>
 
 	<h2>Original-stream extraction and AAC remuxing</h2>

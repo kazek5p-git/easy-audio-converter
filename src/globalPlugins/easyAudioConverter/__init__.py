@@ -89,7 +89,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.4.0"
+ADDON_VERSION = "1.5.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
@@ -106,6 +106,7 @@ CONFIG_SPEC = {
 	"includeSubfolders": "boolean(default=True)",
 	"preserveFolderStructure": "boolean(default=True)",
 	"preserveTimestamps": "boolean(default=False)",
+	"replaceSourceFiles": "boolean(default=False)",
 	"metadataMode": "string(default='all')",
 	"metadataFields": (
 		"string_list(default=list('title', 'artist', 'album', 'album_artist', "
@@ -204,6 +205,7 @@ def _read_settings() -> ConversionSettings:
 		include_subfolders=bool(conf.get("includeSubfolders", True)),
 		preserve_folder_structure=bool(conf.get("preserveFolderStructure", True)),
 		preserve_timestamps=bool(conf.get("preserveTimestamps", False)),
+		replace_source_files=bool(conf.get("replaceSourceFiles", False)),
 		metadata_mode=_validated_key(conf.get("metadataMode"), METADATA_MODE_KEYS, "all"),
 		metadata_fields=metadata_fields,
 		advanced_options=profiles.get(target_format, {}),
@@ -236,6 +238,7 @@ def _write_conversion_settings(settings: ConversionSettings) -> None:
 	conf["includeSubfolders"] = settings.include_subfolders
 	conf["preserveFolderStructure"] = settings.preserve_folder_structure
 	conf["preserveTimestamps"] = settings.preserve_timestamps
+	conf["replaceSourceFiles"] = settings.replace_source_files
 	conf["metadataMode"] = settings.metadata_mode
 	conf["metadataFields"] = list(settings.metadata_fields)
 	conf["outputNameTemplate"] = settings.output_name_template
@@ -754,6 +757,17 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 			),
 		)
 		self.preserve_timestamps.SetValue(settings.preserve_timestamps)
+		self.replace_source_files = helper.addItem(
+			# Translators: Trwałe usuwanie oryginałów dopiero po udanej konwersji.
+			wx.CheckBox(
+				self,
+				label=_(
+					"Replace source files after successful conversion "
+					"(permanently deletes originals)",
+				),
+			),
+		)
+		self.replace_source_files.SetValue(settings.replace_source_files)
 
 		metadata_mode_labels = _metadata_mode_labels()
 		self.metadata_mode = helper.addLabeledControl(
@@ -880,6 +894,7 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		conf["includeSubfolders"] = self.include_subfolders.IsChecked()
 		conf["preserveFolderStructure"] = self.preserve_structure.IsChecked()
 		conf["preserveTimestamps"] = self.preserve_timestamps.IsChecked()
+		conf["replaceSourceFiles"] = self.replace_source_files.IsChecked()
 		conf["metadataMode"] = METADATA_MODE_KEYS[self.metadata_mode.GetSelection()]
 		conf["metadataFields"] = [
 			field_name
@@ -1692,6 +1707,15 @@ class ConversionOptionsDialog(wx.Dialog):
 				label=_("Preserve source file creation and modification dates"),
 			)
 		)
+		self.replace_source_files = helper.addItem(
+			wx.CheckBox(
+				panel,
+				label=_(
+					"Replace source files after successful conversion "
+					"(permanently deletes originals)",
+				),
+			)
+		)
 
 		metadata_labels = _metadata_mode_labels()
 		self.metadata_mode = helper.addLabeledControl(
@@ -1747,6 +1771,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.include_subfolders.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.preserve_structure.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.preserve_timestamps.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
+		self.replace_source_files.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.metadata_mode.Bind(wx.EVT_CHOICE, self._on_setting_changed)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
 		self.metadata_fields_button.Bind(wx.EVT_BUTTON, self._on_metadata_fields)
@@ -1797,6 +1822,7 @@ class ConversionOptionsDialog(wx.Dialog):
 			self.include_subfolders.SetValue(settings.include_subfolders)
 			self.preserve_structure.SetValue(settings.preserve_folder_structure)
 			self.preserve_timestamps.SetValue(settings.preserve_timestamps)
+			self.replace_source_files.SetValue(settings.replace_source_files)
 			self.metadata_mode.SetSelection(METADATA_MODE_KEYS.index(settings.metadata_mode))
 			self._metadata_fields = tuple(settings.metadata_fields)
 			self._advanced_options = dict(settings.advanced_options)
@@ -1822,6 +1848,7 @@ class ConversionOptionsDialog(wx.Dialog):
 			include_subfolders=self.include_subfolders.IsChecked(),
 			preserve_folder_structure=self.preserve_structure.IsChecked(),
 			preserve_timestamps=self.preserve_timestamps.IsChecked(),
+			replace_source_files=self.replace_source_files.IsChecked(),
 			metadata_mode=METADATA_MODE_KEYS[max(0, self.metadata_mode.GetSelection())],
 			metadata_fields=self._metadata_fields,
 			advanced_options=advanced_options,
@@ -2238,6 +2265,13 @@ def _build_plan_report(plan: ConversionPlan) -> str:
 			)
 		),
 	]
+	if plan.replace_source_files:
+		lines.append(
+			_(
+				"Warning: source files will be permanently deleted after "
+				"successful conversion.",
+			)
+		)
 	if plan.lossy_to_lossy_count:
 		lines.append(
 			_(
@@ -2275,13 +2309,21 @@ class ConversionPlanDialog(wx.Dialog):
 		)
 		panel = wx.Panel(self)
 		sizer = wx.BoxSizer(wx.VERTICAL)
+		if plan.replace_source_files:
+			description = _(
+				"Review the plan below. Size estimates are approximate. "
+				"Source files will be permanently deleted after their outputs "
+				"are completed successfully.",
+			)
+		else:
+			description = _(
+				"Review the plan below. Size estimates are approximate. "
+				"No source file will be overwritten.",
+			)
 		sizer.Add(
 			wx.StaticText(
 				panel,
-				label=_(
-					"Review the plan below. Size estimates are approximate. "
-					"No source file will be overwritten.",
-				),
+				label=description,
 			),
 			0,
 			wx.ALL | wx.EXPAND,
@@ -2732,6 +2774,10 @@ def _friendly_failure_message(message: str) -> str:
 	"""Translate common FFmpeg and filesystem failures into actionable text."""
 	last_line = message.splitlines()[-1].strip() if message else ""
 	lowered = last_line.casefold()
+	if "could not remove source file after successful conversion" in message.casefold():
+		return _(
+			"The converted output was kept, but the source file could not be removed."
+		)
 	if "permission denied" in lowered or "access is denied" in lowered:
 		return _("Access to the source or destination was denied.")
 	if "no space left on device" in lowered or "not enough space" in lowered:
@@ -2784,6 +2830,12 @@ def _build_results_report(summary: ConversionSummary) -> str:
 		for failure in summary.failures:
 			source = failure.source_path or failure.source_name
 			lines.append(f"{source}: {_friendly_failure_message(failure.message)}")
+			if failure.output_path:
+				lines.append(
+					_("Converted output kept at: {output}").format(
+						output=failure.output_path,
+					)
+				)
 	if summary.skipped_files:
 		lines.extend(("", _("Skipped files:")))
 		for skipped in summary.skipped_files:
@@ -2852,14 +2904,19 @@ class ConversionResultsDialog(wx.Dialog):
 				)
 		for failure in summary.failures:
 			source = failure.source_path or failure.source_name
+			details = _("Source:\n{source}\n\nError:\n{error}").format(
+				source=source,
+				error=_friendly_failure_message(failure.message),
+			)
+			if failure.output_path:
+				details += "\n\n" + _(
+					"Converted output kept at:\n{output}",
+				).format(output=failure.output_path)
 			self._entries.append(
 				(
 					_("Failed: {name}").format(name=failure.source_name),
-					_("Source:\n{source}\n\nError:\n{error}").format(
-						source=source,
-						error=_friendly_failure_message(failure.message),
-					),
-					None,
+					details,
+					failure.output_path or None,
 				)
 			)
 		for skipped in summary.skipped_files:
@@ -2927,9 +2984,12 @@ class ConversionResultsDialog(wx.Dialog):
 		self.close_button.Bind(wx.EVT_BUTTON, self._on_close_button)
 		self.Bind(wx.EVT_CLOSE, self._on_close)
 		self.retry_button.Enable(
-			any(failure.source_path for failure in summary.failures)
+			any(
+				failure.source_path and not failure.output_path
+				for failure in summary.failures
+			)
 		)
-		self.open_button.Enable(bool(summary.outputs))
+		self.open_button.Enable(any(entry[2] for entry in self._entries))
 		if self._entries:
 			self.result_list.SetSelection(0)
 			self._show_entry(0)
@@ -3453,6 +3513,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			metadata_fields=tuple(settings.metadata_fields),
 			advanced_options=dict(settings.advanced_options),
 		)
+		if settings.replace_source_files:
+			result = gui.messageBox(
+				_(
+					"Replacing source files cannot be undone. After each output is "
+					"created and checked successfully, its source file will be "
+					"permanently deleted. Source files will be kept if conversion "
+					"or verification fails. Continue?",
+				),
+				_("Replace source files"),
+				wx.YES_NO | getattr(wx, "NO_DEFAULT", 0) | wx.ICON_WARNING,
+				gui.mainFrame,
+			)
+			if result != wx.YES:
+				return
 		job = _ConversionJob(tuple(paths), settings, source_root)
 		if self._is_busy():
 			self._job_queue.append(job)
@@ -3893,7 +3967,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			dict.fromkeys(
 				failure.source_path
 				for failure in summary.failures
-				if failure.source_path
+				if failure.source_path and not failure.output_path
 			)
 		)
 		if not paths:

@@ -827,6 +827,49 @@ POLISH.update(
 	}
 )
 
+POLISH.update(
+	{
+		"Converted output kept at: {output}": "Zachowany plik wynikowy: {output}",
+		"Converted output kept at:\n{output}": (
+			"Zachowany plik wynikowy:\n{output}"
+		),
+		"Replace source files": "Zastępowanie plików źródłowych",
+		"Replace source files after successful conversion (permanently deletes originals)": (
+			"Zastępuj pliki źródłowe po udanej konwersji "
+			"(trwale usuwa oryginały)"
+		),
+		(
+			"Replacing source files cannot be undone. After each output is "
+			"created and checked successfully, its source file will be "
+			"permanently deleted. Source files will be kept if conversion "
+			"or verification fails. Continue?"
+		): (
+			"Zastępowania plików źródłowych nie można cofnąć. Po pomyślnym "
+			"utworzeniu i sprawdzeniu każdego pliku wynikowego jego plik "
+			"źródłowy zostanie trwale usunięty. Pliki źródłowe zostaną "
+			"zachowane, jeśli konwersja lub weryfikacja się nie powiedzie. "
+			"Kontynuować?"
+		),
+		(
+			"Review the plan below. Size estimates are approximate. Source "
+			"files will be permanently deleted after their outputs are "
+			"completed successfully."
+		): (
+			"Sprawdź poniższy plan. Rozmiary są przybliżone. Pliki źródłowe "
+			"zostaną trwale usunięte po pomyślnym utworzeniu odpowiadających "
+			"im plików wynikowych."
+		),
+		"The converted output was kept, but the source file could not be removed.": (
+			"Przekonwertowany plik wynikowy został zachowany, ale nie udało "
+			"się usunąć pliku źródłowego."
+		),
+		"Warning: source files will be permanently deleted after successful conversion.": (
+			"Ostrzeżenie: po udanej konwersji pliki źródłowe zostaną trwale "
+			"usunięte."
+		),
+	}
+)
+
 PLACEHOLDER_PATTERN = re.compile(r"\{[^{}]+\}")
 PROTECTED_TOKEN_PATTERN = re.compile(
 	r"\{[^{}]+\}|(?<!\w)-(?:hhx[1-6]|hh|h|f)\b|\b(?:FFmpeg|FLAC|WavPack)\b|\b\d+\b"
@@ -1055,7 +1098,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.4.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.5.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -1097,7 +1140,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.4.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.5.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

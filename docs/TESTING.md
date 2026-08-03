@@ -15,7 +15,9 @@ time, results reports, notification modes, balanced NVDA popup state, download
 cancellation, filename templates, media-information parsing, EBU R128
 arguments, artwork mapping, stop-after-current behavior, queue recovery,
 stream-copy validation, standalone settings-window lifecycle, checksums,
-manifest validation, and ZIP path traversal rejection.
+manifest validation, ZIP path traversal rejection, and source-replacement
+safety after success, FFmpeg failure, verification failure, and deletion
+failure.
 
 ## End-to-end codec validation
 
@@ -70,6 +72,9 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    Zapisz profile z włączoną i wyłączoną opcją zachowywania dat, a następnie
    sprawdź w Eksploratorze, czy wynik otrzymał datę utworzenia i modyfikacji
    pliku źródłowego.
+   Zapisz także profil zastępujący źródła. Sprawdź ostrzeżenie z domyślną
+   odpowiedzią „Nie”, anulowanie bez utraty źródła oraz usunięcie źródła
+   dopiero po poprawnej konwersji i weryfikacji.
 5. Import and export user profiles, replace a same-name profile, reject an
    invalid or oversized JSON file, and verify that built-in profiles cannot be
    replaced through import.

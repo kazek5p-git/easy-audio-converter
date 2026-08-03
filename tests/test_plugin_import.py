@@ -124,7 +124,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.4.0", self.module.ADDON_VERSION)
+		self.assertEqual("1.5.0", self.module.ADDON_VERSION)
 		dialog = self.module.EasyAudioConverterSettingsDialog
 		self.assertEqual("Easy Audio Converter settings", dialog.title)
 		self.assertEqual(0, dialog.STANDARD_TAB)
@@ -134,6 +134,10 @@ class PluginImportTests(unittest.TestCase):
 		self.assertEqual(
 			"boolean(default=False)",
 			self.module.CONFIG_SPEC["preserveTimestamps"],
+		)
+		self.assertEqual(
+			"boolean(default=False)",
+			self.module.CONFIG_SPEC["replaceSourceFiles"],
 		)
 		flac_choices = self.module._lossless_compression_choices("flac")
 		self.assertEqual(tuple(range(-1, 13)), tuple(value for value, _label in flac_choices))
@@ -883,6 +887,58 @@ class PluginImportTests(unittest.TestCase):
 		self.assertEqual("opus", job.settings.target_format)
 		self.assertIsNot(job.settings.advanced_options, settings.advanced_options)
 
+	def test_source_replacement_warning_defaults_to_no_and_blocks_the_job(self):
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._converter = None
+		plugin._job_queue = deque()
+		plugin._progress_dialog = None
+		launched = []
+		plugin._launch_conversion_job = launched.append
+
+		gui_module = sys.modules["gui"]
+		wx_module = sys.modules["wx"]
+		missing = object()
+		original_message_box = getattr(gui_module, "messageBox", missing)
+		constant_names = ("YES", "NO", "YES_NO", "NO_DEFAULT", "ICON_WARNING")
+		original_constants = {
+			name: getattr(wx_module, name, missing)
+			for name in constant_names
+		}
+		wx_module.YES = 1
+		wx_module.NO = 0
+		wx_module.YES_NO = 2
+		wx_module.NO_DEFAULT = 4
+		wx_module.ICON_WARNING = 8
+		decision = {"value": wx_module.NO}
+		calls = []
+
+		def message_box(*args):
+			calls.append(args)
+			return decision["value"]
+
+		gui_module.messageBox = message_box
+		try:
+			settings = self.module.ConversionSettings(replace_source_files=True)
+			plugin._start_conversion([r"D:\input.wav"], settings=settings)
+			self.assertEqual([], launched)
+			self.assertEqual(1, len(calls))
+			self.assertIn("cannot be undone", calls[0][0])
+			self.assertTrue(calls[0][2] & wx_module.NO_DEFAULT)
+
+			decision["value"] = wx_module.YES
+			plugin._start_conversion([r"D:\input.wav"], settings=settings)
+			self.assertEqual(1, len(launched))
+		finally:
+			if original_message_box is missing:
+				del gui_module.messageBox
+			else:
+				gui_module.messageBox = original_message_box
+			for name, original in original_constants.items():
+				if original is missing:
+					delattr(wx_module, name)
+				else:
+					setattr(wx_module, name, original)
+
 	def test_next_queued_job_starts_after_current_job_releases(self):
 		started = []
 		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
@@ -1055,6 +1111,41 @@ class PluginImportTests(unittest.TestCase):
 		self.assertIn(r"D:\in\broken.wav", report)
 		self.assertIn("Access to the source or destination was denied.", report)
 		self.assertIn(r"D:\in\already.mp3", report)
+
+	def test_plan_and_results_reports_explain_source_replacement(self):
+		plan = self.module.ConversionPlan(
+			items=(),
+			ignored=0,
+			skipped_files=(),
+			input_bytes=0,
+			estimated_output_bytes=0,
+			total_duration=0.0,
+			destination=r"D:\out",
+			free_space_bytes=None,
+			lossy_to_lossy_count=0,
+			replace_source_files=True,
+		)
+		self.assertIn(
+			"source files will be permanently deleted",
+			self.module._build_plan_report(plan).casefold(),
+		)
+
+		kept_output = r"D:\out\song.mp3"
+		summary = self.module.ConversionSummary(
+			total=1,
+			failed=1,
+			failures=[
+				self.module.converter.ConversionFailure(
+					"song.wav",
+					"Could not remove source file after successful conversion: Access is denied",
+					r"D:\in\song.wav",
+					kept_output,
+				)
+			],
+		)
+		report = self.module._build_results_report(summary)
+		self.assertIn("converted output was kept", report)
+		self.assertIn(kept_output, report)
 
 	def test_sound_only_completion_does_not_speak(self):
 		sound_calls = []

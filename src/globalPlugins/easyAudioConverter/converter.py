@@ -327,6 +327,7 @@ class ConversionSettings:
 	include_subfolders: bool = True
 	preserve_folder_structure: bool = True
 	preserve_timestamps: bool = False
+	replace_source_files: bool = False
 	metadata_mode: str = "all"
 	metadata_fields: tuple[str, ...] = DEFAULT_METADATA_FIELDS
 	advanced_options: Mapping[str, Any] = field(default_factory=dict)
@@ -369,6 +370,7 @@ class ConversionFailure:
 	source_name: str
 	message: str
 	source_path: str = ""
+	output_path: str = ""
 
 
 @dataclass(frozen=True)
@@ -437,6 +439,7 @@ class ConversionPlan:
 	destination: str
 	free_space_bytes: int | None
 	lossy_to_lossy_count: int
+	replace_source_files: bool = False
 
 	@property
 	def total(self) -> int:
@@ -1452,6 +1455,7 @@ class Converter:
 			destination=destination,
 			free_space_bytes=free_space,
 			lossy_to_lossy_count=lossy_to_lossy_count,
+			replace_source_files=settings.replace_source_files,
 		)
 
 	def probe_media_info(self, source: str | os.PathLike[str]) -> MediaInfo:
@@ -1707,6 +1711,23 @@ class Converter:
 						if self._finish_at_boundary(summary):
 							break
 						continue
+				if settings.replace_source_files:
+					if self._cancel_event.is_set():
+						summary.canceled = True
+						self._remove_partial_output(output)
+						break
+					try:
+						self._remove_source_file(source)
+					except OSError as error:
+						self._record_failure(
+							summary,
+							source,
+							f"Could not remove source file after successful conversion: {error}",
+							output=output,
+						)
+						if self._finish_at_boundary(summary):
+							break
+						continue
 				summary.succeeded += 1
 				summary.outputs.append(str(output))
 				summary.successes.append(
@@ -1796,9 +1817,22 @@ class Converter:
 		)
 
 	@staticmethod
-	def _record_failure(summary: ConversionSummary, source: Path, message: str) -> None:
+	def _record_failure(
+		summary: ConversionSummary,
+		source: Path,
+		message: str,
+		*,
+		output: Path | None = None,
+	) -> None:
 		summary.failed += 1
-		summary.failures.append(ConversionFailure(source.name, message, str(source)))
+		summary.failures.append(
+			ConversionFailure(
+				source.name,
+				message,
+				str(source),
+				str(output) if output is not None else "",
+			)
+		)
 
 	def _finish_at_boundary(self, summary: ConversionSummary) -> bool:
 		if not self._stop_after_current_event.is_set():
@@ -2101,6 +2135,10 @@ class Converter:
 				output.unlink()
 		except OSError:
 			pass
+
+	@staticmethod
+	def _remove_source_file(source: Path) -> None:
+		source.unlink()
 
 
 def query_ffmpeg_version(ffmpeg_path: str | os.PathLike[str]) -> str:

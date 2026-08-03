@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.0
+
+- Added an optional, profile-aware source replacement mode. Every job requires
+  an irreversible-action warning that defaults to No, and a source is deleted
+  only after conversion, output checks, optional verification, and date
+  preservation succeed.
+- Kept completed outputs when source deletion fails, reported their exact
+  paths, and excluded those cases from failed-file retry to prevent duplicate
+  conversions.
+
 ## 1.4.0
 
 - Added an optional, profile-aware setting that copies each source file's

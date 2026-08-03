@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.4.0.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.5.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -47,8 +47,8 @@
 	<p>
 		Okno „Konwertuj z opcjami” pozwala wybrać dla jednego zadania format,
 		jakość, kodek MP3, miejsce docelowe, sposób obsługi folderów, metadane,
-		szablon nazwy wyniku, zachowanie dat plików źródłowych oraz aktywne
-		ustawienia przetwarzania i kodeka.
+		szablon nazwy wyniku, zachowanie dat i zastępowanie plików źródłowych oraz
+		aktywne ustawienia przetwarzania i kodeka.
 		Zaznacz pole „Używaj tych
 		ustawień podczas przyszłych szybkich konwersji” tylko wtedy, gdy chcesz
 		także zastąpić zapisane ustawienia domyślne.
@@ -63,6 +63,16 @@
 		Opcja „Zachowuj daty utworzenia i modyfikacji plików źródłowych” ustawia
 		obie daty ukończonego pliku wynikowego zgodnie z plikiem wejściowym.
 		Ustawienie jest zapisywane również w profilach własnych.
+	</p>
+	<p>
+		Opcja „Zastępuj pliki źródłowe po udanej konwersji” trwale usuwa każde
+		źródło dopiero po utworzeniu i sprawdzeniu wyniku, jego opcjonalnej
+		weryfikacji oraz ustawieniu żądanych dat. Opcja jest zapisywana w profilach,
+		ale przed każdym zadaniem dodatek ponownie pokazuje ostrzeżenie o
+		nieodwracalnej operacji z domyślną odpowiedzią „Nie”. Po błędzie lub
+		anulowaniu źródło pozostaje nietknięte. Jeśli wynik powstanie, lecz źródła
+		nie uda się usunąć, gotowy wynik zostaje zachowany i zgłoszony z pełną
+		ścieżką.
 	</p>
 
 	<h2>Plan i nazwy wyników</h2>
@@ -143,15 +153,17 @@
 		zostaną zapisane w wybranym folderze docelowym.
 	</p>
 	<p>
-		Pliki źródłowe i istniejące wyniki nigdy nie są nadpisywane.
-		W razie konfliktu dodatek automatycznie tworzy nazwę z numerem.
+		Wynik nigdy nie jest zapisywany na źródle ani istniejącym pliku docelowym.
+		W razie konfliktu dodatek automatycznie tworzy nazwę z numerem. Pliki
+		źródłowe pozostają nietknięte, chyba że użytkownik włączy i potwierdzi
+		opcję ich zastępowania.
 	</p>
 	<p>
 		Podczas konwersji folderu pomijane są pliki, które już mają rozszerzenie
 		formatu docelowego. Przykładowo istniejący MP3 pozostanie bez zmian przy
 		folderowej konwersji WAV do MP3. MP3 zaznaczony bezpośrednio nadal można
-		świadomie przekodować; źródło pozostanie nietknięte, a wynik otrzyma
-		bezpieczną nową nazwę.
+		świadomie przekodować; domyślnie źródło pozostanie nietknięte, a wynik
+		otrzyma bezpieczną nową nazwę.
 	</p>
 
 	<h2>Wyodrębnianie oryginalnego strumienia i remuksowanie AAC</h2>

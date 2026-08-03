@@ -31,9 +31,14 @@
    through `wx.CallAfter`.
 7. Success is accepted only when FFmpeg exits with zero and creates a nonempty
    output. Failed or canceled partial outputs are removed.
-8. The summary retains bounded details for successful, failed, and skipped
+8. Optional deep verification and source-date copying finish before the
+   source-replacement policy is applied. Replacement requires a separate
+   warning that defaults to No. A source is deleted only after every enabled
+   success check passes; deletion failure keeps the completed output and
+   records its path as a non-retryable failure.
+9. The summary retains bounded details for successful, failed, and skipped
    inputs, including source paths required for a safe failed-file retry.
-9. When every planned file succeeds, NVDA applies the configured completion
+10. When every planned file succeeds, NVDA applies the configured completion
    notification mode and can play the bundled sound asynchronously through
    its configured sound output device.
 
@@ -45,11 +50,12 @@ can optionally write that snapshot back as the future quick-conversion
 default.
 
 Named profiles use a versioned JSON object stored as one NVDA string setting.
-Each entry includes format, quality, MP3 encoder, destination policy,
-subfolder and structure behavior, metadata mode and fields, and the validated
-advanced codec options. Loading rejects unknown schema versions, invalid
-keys, duplicate or empty names, and values outside supported bounds. The list
-is limited to 50 profiles and names to 80 characters.
+Each entry includes format, quality, MP3 encoder, destination and source
+replacement policies, subfolder and structure behavior, metadata mode and
+fields, and the validated advanced codec options. Loading rejects unknown
+schema versions, invalid keys, duplicate or empty names, and values outside
+supported bounds. The list is limited to 50 profiles and names to 80
+characters.
 
 ## Results and retry
 
@@ -59,6 +65,9 @@ to 500 skipped-file details while preserving the full skipped count. A retry
 uses only stored failed source paths together with the immutable settings and
 source root from the original job. Existing outputs remain protected by the
 normal collision-free naming logic.
+When source deletion fails after a valid output has been produced, that output
+is shown with its path and can be opened, but it is excluded from retry to
+avoid creating an unnecessary second converted copy.
 
 ## Progress and notifications
 

@@ -104,6 +104,7 @@ def conversion_settings_to_mapping(settings: ConversionSettings) -> dict[str, An
 		"includeSubfolders": settings.include_subfolders,
 		"preserveFolderStructure": settings.preserve_folder_structure,
 		"preserveTimestamps": settings.preserve_timestamps,
+		"replaceSourceFiles": settings.replace_source_files,
 		"metadataMode": settings.metadata_mode,
 		"metadataFields": list(settings.metadata_fields),
 		"advancedOptions": _advanced_options_from_mapping(settings.advanced_options, {}),
@@ -166,6 +167,10 @@ def conversion_settings_from_mapping(
 		preserve_timestamps=_validated_bool(
 			raw.get("preserveTimestamps"),
 			base.preserve_timestamps,
+		),
+		replace_source_files=_validated_bool(
+			raw.get("replaceSourceFiles"),
+			base.replace_source_files,
 		),
 		metadata_mode=_validated_key(
 			raw.get("metadataMode"),
