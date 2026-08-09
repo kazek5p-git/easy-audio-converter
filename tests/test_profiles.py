@@ -67,6 +67,7 @@ class ProfileSerializationTests(unittest.TestCase):
 			copy_chapters=False,
 			verify_output=True,
 			show_preflight=False,
+			parallel_jobs=4,
 		)
 		named = profiles.NamedConversionProfile("  Podcast   mono  ", settings)
 		payload = profiles.dump_user_profiles([named])
@@ -91,6 +92,7 @@ class ProfileSerializationTests(unittest.TestCase):
 				"sameFolder": "false",
 				"preserveTimestamps": "false",
 				"replaceSourceFiles": "false",
+				"parallelJobs": 999,
 				"metadataFields": ["title", "invalid"],
 				"advancedOptions": {
 					"enabled": True,
@@ -108,6 +110,7 @@ class ProfileSerializationTests(unittest.TestCase):
 		self.assertTrue(settings.same_folder)
 		self.assertTrue(settings.preserve_timestamps)
 		self.assertTrue(settings.replace_source_files)
+		self.assertEqual(fallback.parallel_jobs, settings.parallel_jobs)
 		self.assertEqual(("title",), settings.metadata_fields)
 		self.assertEqual(
 			{

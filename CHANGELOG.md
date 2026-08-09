@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.6.0
+
+- Added CPU-aware parallel conversion workers for independent files, with an
+  automatic default and validated choices from one through 32 workers.
+- Added safe cancellation propagation across all active FFmpeg processes and
+  prevented new files from being scheduled after a boundary-stop request.
+- Explicitly delegates codec and filter thread selection to FFmpeg with
+  `-threads 0`; GPU acceleration remains disabled because the add-on's target
+  codecs encode audio on the CPU.
+
 ## 1.5.0
 
 - Added an optional, profile-aware source replacement mode. Every job requires

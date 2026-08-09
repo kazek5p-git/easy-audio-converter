@@ -15,6 +15,7 @@ from .converter import (
 	METADATA_FIELD_KEYS,
 	METADATA_MODE_KEYS,
 	MP3_ENCODER_KEYS,
+	PARALLEL_JOB_COUNTS,
 	QUALITY_KEYS,
 	ConversionSettings,
 )
@@ -117,6 +118,7 @@ def conversion_settings_to_mapping(settings: ConversionSettings) -> dict[str, An
 		"copyChapters": settings.copy_chapters,
 		"verifyOutput": settings.verify_output,
 		"showPreflight": settings.show_preflight,
+		"parallelJobs": settings.parallel_jobs,
 	}
 
 
@@ -142,6 +144,9 @@ def conversion_settings_from_mapping(
 	output_folder = str(raw.get("outputFolder") or base.output_folder).strip()
 	if not same_folder and not output_folder:
 		same_folder = True
+	parallel_jobs = _safe_int(raw.get("parallelJobs"), base.parallel_jobs)
+	if parallel_jobs not in PARALLEL_JOB_COUNTS:
+		parallel_jobs = base.parallel_jobs
 	settings = ConversionSettings(
 		target_format=_validated_key(
 			raw.get("targetFormat"),
@@ -212,6 +217,7 @@ def conversion_settings_from_mapping(
 		copy_chapters=_validated_bool(raw.get("copyChapters"), base.copy_chapters),
 		verify_output=_validated_bool(raw.get("verifyOutput"), base.verify_output),
 		show_preflight=_validated_bool(raw.get("showPreflight"), base.show_preflight),
+		parallel_jobs=parallel_jobs,
 	)
 	settings.validate()
 	return settings

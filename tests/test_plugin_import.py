@@ -124,7 +124,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.5.0", self.module.ADDON_VERSION)
+		self.assertEqual("1.6.0", self.module.ADDON_VERSION)
 		dialog = self.module.EasyAudioConverterSettingsDialog
 		self.assertEqual("Easy Audio Converter settings", dialog.title)
 		self.assertEqual(0, dialog.STANDARD_TAB)

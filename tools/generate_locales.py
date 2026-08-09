@@ -870,6 +870,26 @@ POLISH.update(
 	}
 )
 
+POLISH.update(
+	{
+		"16 files at a time": "16 plików naraz",
+		"2 files at a time": "2 pliki naraz",
+		"32 files at a time": "32 pliki naraz",
+		"4 files at a time": "4 pliki naraz",
+		"8 files at a time": "8 plików naraz",
+		"Automatic (recommended)": "Automatycznie (zalecane)",
+		"Automatic mode uses the available CPU cores for independent files. GPU acceleration is not used for audio encoding.": (
+			"Tryb automatyczny używa dostępnych rdzeni procesora do niezależnych "
+			"plików. Przyspieszanie GPU nie jest używane do kodowania dźwięku."
+		),
+		"One file at a time": "Jeden plik naraz",
+		"Parallel conversion jobs:": "Równoległe zadania konwersji:",
+		"{message}. Using {workers} parallel conversion workers.": (
+			"{message}. Używam {workers} równoległych pracowników konwersji."
+		),
+	}
+)
+
 PLACEHOLDER_PATTERN = re.compile(r"\{[^{}]+\}")
 PROTECTED_TOKEN_PATTERN = re.compile(
 	r"\{[^{}]+\}|(?<!\w)-(?:hhx[1-6]|hh|h|f)\b|\b(?:FFmpeg|FLAC|WavPack)\b|\b\d+\b"
@@ -1098,7 +1118,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.5.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.6.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -1140,7 +1160,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.5.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.6.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

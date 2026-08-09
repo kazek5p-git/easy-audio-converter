@@ -3,9 +3,11 @@ from __future__ import annotations
 import os
 import sys
 import tempfile
+import threading
 import time
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +17,9 @@ from converter import (  # noqa: E402
 	AAC_M4A_COPY_FORMAT,
 	FLAC_COMPRESSION_LEVELS,
 	FORMAT_KEYS,
+	MAX_PARALLEL_JOBS,
 	ORIGINAL_AUDIO_COPY_FORMAT,
+	PARALLEL_JOB_COUNTS,
 	QUALITY_KEYS,
 	STREAM_COPY_FORMATS,
 	WAVPACK_COMPRESSION_PROFILES,
@@ -38,11 +42,23 @@ from converter import (  # noqa: E402
 	parse_media_info,
 	parse_progress_time,
 	render_output_name,
+	resolve_parallel_jobs,
+	recommended_parallel_jobs,
 	sanitize_windows_filename,
 )
 
 
 class ConversionSettingsTests(unittest.TestCase):
+	def test_parallel_worker_count_is_validated_and_resolved(self):
+		self.assertEqual(1, resolve_parallel_jobs(0, 1))
+		self.assertEqual(2, resolve_parallel_jobs(2, 10))
+		self.assertEqual(10, resolve_parallel_jobs(32, 10))
+		self.assertEqual(MAX_PARALLEL_JOBS, PARALLEL_JOB_COUNTS[-1])
+		with mock.patch("converter.os.cpu_count", return_value=8):
+			self.assertEqual(4, recommended_parallel_jobs(20))
+		with self.assertRaises(ValueError):
+			ConversionSettings(parallel_jobs=MAX_PARALLEL_JOBS + 1).validate()
+
 	def test_every_format_and_quality_has_codec_arguments(self):
 		for format_key in FORMAT_KEYS:
 			for quality in QUALITY_KEYS:
@@ -403,7 +419,56 @@ class _FakeConverter(Converter):
 		return 0, ""
 
 
+class _ParallelFakeConverter(_FakeConverter):
+	_active = 0
+	_max_active = 0
+	_active_lock = threading.Lock()
+
+	@classmethod
+	def reset_activity(cls):
+		with cls._active_lock:
+			cls._active = 0
+			cls._max_active = 0
+
+	def _run_process(self, command, on_progress=None):
+		with self._active_lock:
+			type(self)._active += 1
+			type(self)._max_active = max(type(self)._max_active, type(self)._active)
+		try:
+			time.sleep(0.04)
+			output = Path(command[-1])
+			output.write_bytes(b"converted")
+			if on_progress is not None:
+				on_progress(10.0)
+			return 0, ""
+		finally:
+			with self._active_lock:
+				type(self)._active -= 1
+
+
 class ConversionPlanningTests(unittest.TestCase):
+	def test_multiple_files_use_bounded_parallel_workers(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			sources = []
+			for index in range(4):
+				source = root / f"source-{index}.wav"
+				source.write_bytes(b"source")
+				sources.append(source)
+			_ParallelFakeConverter.reset_activity()
+			converter = _ParallelFakeConverter(root / "missing.exe")
+			summary = converter.run(
+				sources,
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					parallel_jobs=2,
+				),
+			)
+			self.assertEqual(4, summary.succeeded)
+			self.assertEqual(2, _ParallelFakeConverter._max_active)
+
 	def test_plan_contains_actual_names_sizes_and_lossy_warning(self):
 		with tempfile.TemporaryDirectory() as temporary:
 			root = Path(temporary)
@@ -516,6 +581,7 @@ class ConversionPlanningTests(unittest.TestCase):
 			self.assertNotIn("0:a:0?", command)
 			self.assertIn("-vn", command)
 			self.assertNotIn("-af", command)
+			self.assertEqual("0", command[command.index("-threads") + 1])
 			self.assertNotIn("-ar", command)
 			self.assertNotIn("-ac", command)
 			self.assertEqual("-1", command[command.index("-map_metadata") + 1])
@@ -701,6 +767,7 @@ class ConversionPlanningTests(unittest.TestCase):
 					target_format="mp3",
 					same_folder=False,
 					output_folder=str(root / "out"),
+					parallel_jobs=1,
 				),
 				callbacks=callbacks,
 			)

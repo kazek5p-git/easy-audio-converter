@@ -50,6 +50,17 @@ the FFmpeg process stops and its partial result is removed.
 The file count can be raised to 5000 when sufficient time and disk space are
 available.
 
+## Performance and parallelism
+
+The default automatic mode uses a bounded number of parallel FFmpeg workers
+for independent files. To compare modes on the same machine, use a batch of
+at least 16 similarly sized sources and select one worker, then automatic mode
+in the Processing and notifications settings. Confirm that both summaries
+contain every file, output names remain unique, progress reaches 100 percent,
+and cancellation removes every partial output. The add-on passes `-threads 0`
+to FFmpeg; GPU use is intentionally not expected because the exposed targets
+are audio encoders.
+
 ## Interactive NVDA speech validation
 
 Automated tests do not replace testing the actual wx interface with NVDA:
@@ -105,16 +116,21 @@ Automated tests do not replace testing the actual wx interface with NVDA:
     correct spoken reason.
 14. Start a multi-file job and verify that visual progress does not flood
    speech with automatic percentages.
-15. Add two jobs while another is active. Verify spoken queue positions,
-    sequential execution, queue reporting and clearing, immediate cancel, and
-    stop after exactly the current file.
-16. Test the report, remaining-time estimate, hide, reopen, cancel, results,
-    and close buttons in the progress window.
-17. Run a mixed valid, corrupt, and already-target-format folder. Confirm that
+15. In Processing and notifications, switch between automatic, one-worker,
+   and an explicit multi-worker count. Convert at least four files and verify
+   the spoken worker count, unique outputs, monotonic overall progress,
+   immediate cancellation of all active FFmpeg processes, and boundary-stop
+   behavior for files that have not started.
+16. Add two jobs while another is active. Verify spoken queue positions,
+   sequential execution, queue reporting and clearing, immediate cancel, and
+   stop after exactly the current file.
+17. Test the report, remaining-time estimate, hide, reopen, cancel, results,
+   and close buttons in the progress window.
+18. Run a mixed valid, corrupt, and already-target-format folder. Confirm that
    the results window lists success, failure, and skip rows; copy its report;
    open the output folder; then repair the corrupt source and retry only that
    failed file.
-18. Przetestuj zadania zakończone sukcesem, bez danych wejściowych, z
+19. Przetestuj zadania zakończone sukcesem, bez danych wejściowych, z
     uszkodzonym plikiem oraz z zaznaczeniem w Eksploratorze. Otwórz menu
     Narzędzia NVDA po zaznaczeniu pliku i sprawdź, czy zapamiętane zaznaczenie
     zostaje przekazane do konwersji. Gdy zaznaczenia nie da się odzyskać, oba
@@ -123,13 +139,13 @@ Automated tests do not replace testing the actual wx interface with NVDA:
     folderu. NVDA ma odczytać odpowiednio „Wybierz pliki do konwersji” oraz
     „Wybierz folder do konwersji” wraz z aktywną kontrolką, bez wpisu o
     zamrożeniu w dzienniku.
-19. Open and dismiss the destination selectors, folder confirmation, update
+20. Open and dismiss the destination selectors, folder confirmation, update
    dialog, and support page.
-20. While the standalone settings window is already open, invoke its input
+21. While the standalone settings window is already open, invoke its input
     gesture again and verify that focus returns to the existing window instead
     of creating a duplicate.
-21. Review the NVDA log for add-on import, callback, and traceback errors.
-22. Zamknij NVDA skrótem Insert+Q i przetestuj polecenie Uruchom ponownie
+22. Review the NVDA log for add-on import, callback, and traceback errors.
+23. Zamknij NVDA skrótem Insert+Q i przetestuj polecenie Uruchom ponownie
     NVDA. Dziennik ma kończyć się wpisem `NVDA exit`, bez zdarzenia `APPCRASH`
     ani informacji o uszkodzeniu sterty.
 

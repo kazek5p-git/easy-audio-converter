@@ -44,8 +44,10 @@ separate codec installation is required.
 - can preserve embedded cover artwork and chapters when the target container
   supports them;
 - can deeply verify each output by decoding it and comparing its duration;
-- queues additional conversion jobs for sequential processing and supports
-  both immediate cancellation and stopping after the current file;
+- uses bounded parallel FFmpeg workers for independent files, with an
+  automatic CPU-aware default and an explicit worker-count override;
+- queues additional conversion jobs and supports both immediate cancellation
+  and stopping after the current file;
 - reports codec, container, duration, bitrate, channels, sample rate, size,
   tags, artwork, and chapters for one selected file;
 - shows quiet visual per-file and overall progress while conversion runs in a
@@ -59,6 +61,8 @@ separate codec installation is required.
 - copies all, selected, or no source text metadata;
 - stores independent advanced parameter profiles for each target codec,
   including FLAC levels 0–12 and named WavPack modes through `-hhx6`;
+- asks FFmpeg to use its automatic thread selection and explains why GPU
+  acceleration is not applicable to the add-on's audio encoders;
 - provides one standalone, resizable settings window under NVDA's Tools menu,
   with three accessible tabs and standard OK and Cancel buttons;
 - provides direct Tools-menu commands for choosing multiple files or one

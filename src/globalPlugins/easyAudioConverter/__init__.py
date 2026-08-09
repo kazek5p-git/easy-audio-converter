@@ -45,6 +45,7 @@ from .converter import (
 	METADATA_FIELD_KEYS,
 	METADATA_MODE_KEYS,
 	MP3_ENCODER_KEYS,
+	PARALLEL_JOB_COUNTS,
 	ORIGINAL_AUDIO_COPY_FORMAT,
 	QUALITY_KEYS,
 	STREAM_COPY_FORMATS,
@@ -56,6 +57,7 @@ from .converter import (
 	Converter,
 	MediaInfo,
 	render_output_name,
+	resolve_parallel_jobs,
 	validate_output_name_template,
 )
 from .profiles import (
@@ -89,7 +91,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.5.0"
+ADDON_VERSION = "1.6.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
@@ -121,6 +123,7 @@ CONFIG_SPEC = {
 	"copyChapters": "boolean(default=True)",
 	"verifyOutput": "boolean(default=False)",
 	"showPreflight": "boolean(default=True)",
+	"parallelJobs": "integer(default=0, min=0, max=32)",
 	"advancedProfiles": "string(default='{}')",
 	"conversionProfiles": "string(default='{}')",
 	"autoCheckUpdates": "boolean(default=True)",
@@ -195,6 +198,9 @@ def _read_settings() -> ConversionSettings:
 		for field_name in metadata_fields
 		if field_name in METADATA_FIELD_KEYS
 	)
+	parallel_jobs = _safe_int(conf.get("parallelJobs"), 0)
+	if parallel_jobs not in PARALLEL_JOB_COUNTS:
+		parallel_jobs = 0
 	profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
 	return ConversionSettings(
 		target_format=target_format,
@@ -222,6 +228,7 @@ def _read_settings() -> ConversionSettings:
 		copy_chapters=bool(conf.get("copyChapters", True)),
 		verify_output=bool(conf.get("verifyOutput", False)),
 		show_preflight=bool(conf.get("showPreflight", True)),
+		parallel_jobs=parallel_jobs,
 	)
 
 
@@ -250,6 +257,7 @@ def _write_conversion_settings(settings: ConversionSettings) -> None:
 	conf["copyChapters"] = settings.copy_chapters
 	conf["verifyOutput"] = settings.verify_output
 	conf["showPreflight"] = settings.show_preflight
+	conf["parallelJobs"] = int(settings.parallel_jobs)
 	profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
 	profiles[settings.target_format] = {
 		"enabled": bool(settings.advanced_options.get("enabled", False)),
@@ -298,6 +306,18 @@ def _progress_announcement_labels() -> dict[str, str]:
 		"milestones": _("At progress milestones"),
 		"everyFile": _("At every file"),
 		"onDemand": _("Only on demand"),
+	}
+
+
+def _parallel_job_labels() -> dict[int, str]:
+	return {
+		0: _("Automatic (recommended)"),
+		1: _("One file at a time"),
+		2: _("2 files at a time"),
+		4: _("4 files at a time"),
+		8: _("8 files at a time"),
+		16: _("16 files at a time"),
+		32: _("32 files at a time"),
 	}
 
 
@@ -969,6 +989,26 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 			)
 		)
 		self.verify_output.SetValue(settings.verify_output)
+		parallel_labels = _parallel_job_labels()
+		self.parallel_jobs = helper.addLabeledControl(
+			_("Parallel conversion jobs:"),
+			wx.Choice,
+			choices=[parallel_labels[key] for key in PARALLEL_JOB_COUNTS],
+		)
+		self.parallel_jobs.SetSelection(
+			PARALLEL_JOB_COUNTS.index(settings.parallel_jobs)
+			if settings.parallel_jobs in PARALLEL_JOB_COUNTS
+			else 0
+		)
+		helper.addItem(
+			wx.StaticText(
+				self,
+				label=_(
+					"Automatic mode uses the available CPU cores for independent files. "
+					"GPU acceleration is not used for audio encoding.",
+				),
+			)
+		)
 		self.show_preflight = helper.addItem(
 			wx.CheckBox(self, label=_("Show a conversion plan before starting"))
 		)
@@ -1091,6 +1131,9 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 			and target_format != ORIGINAL_AUDIO_COPY_FORMAT
 		)
 		conf["verifyOutput"] = self.verify_output.IsChecked()
+		conf["parallelJobs"] = PARALLEL_JOB_COUNTS[
+			max(0, self.parallel_jobs.GetSelection())
+		]
 		conf["showPreflight"] = self.show_preflight.IsChecked()
 		conf["completionNotification"] = COMPLETION_NOTIFICATION_KEYS[
 			max(0, self.completion_notification.GetSelection())
@@ -1549,6 +1592,17 @@ class JobProcessingOptionsDialog(wx.Dialog):
 			wx.CheckBox(panel, label=_("Deeply verify every output file"))
 		)
 		self.verify_output.SetValue(settings.verify_output)
+		parallel_labels = _parallel_job_labels()
+		self.parallel_jobs = helper.addLabeledControl(
+			_("Parallel conversion jobs:"),
+			wx.Choice,
+			choices=[parallel_labels[key] for key in PARALLEL_JOB_COUNTS],
+		)
+		self.parallel_jobs.SetSelection(
+			PARALLEL_JOB_COUNTS.index(settings.parallel_jobs)
+			if settings.parallel_jobs in PARALLEL_JOB_COUNTS
+			else 0
+		)
 		self.show_preflight = helper.addItem(
 			wx.CheckBox(panel, label=_("Show the conversion plan before starting"))
 		)
@@ -1603,6 +1657,7 @@ class JobProcessingOptionsDialog(wx.Dialog):
 			copy_chapters=self.copy_chapters.IsChecked() and preserve_extra_streams,
 			verify_output=self.verify_output.IsChecked(),
 			show_preflight=self.show_preflight.IsChecked(),
+			parallel_jobs=PARALLEL_JOB_COUNTS[max(0, self.parallel_jobs.GetSelection())],
 		)
 
 
@@ -3599,6 +3654,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					)
 				else:
 					message = _("Found {count} files to convert").format(count=total)
+				workers = resolve_parallel_jobs(settings.parallel_jobs, total)
+				if workers > 1:
+					message = _(
+						"{message}. Using {workers} parallel conversion workers.",
+					).format(message=message, workers=workers)
 				wx.CallAfter(ui.message, message)
 
 		def on_file_start(index: int, total: int, source_name: str, output_name: str) -> None:

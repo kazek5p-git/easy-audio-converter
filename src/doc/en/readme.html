@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.5.0.</p>
+	<p>Author: Kazimierz Parzych. Version 1.6.0.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -120,6 +120,15 @@
 		speech and sound, speech only, sound only, or no completion
 		notification. Errors and cancellation remain announced for safety.
 	</p>
+	<p>
+		Independent files in one job can be converted in parallel. On the
+		“Processing and notifications” tab, leave “Parallel conversion jobs” at
+		“Automatic (recommended)” or choose an explicit count. Automatic mode
+		matches the number of workers to CPU cores, and NVDA announces the active
+		worker count when the job starts. Each file has its own FFmpeg process, so
+		cancellation terminates all active processes and a boundary stop schedules
+		no new files.
+	</p>
 
 	<h2>Conversion results</h2>
 	<p>
@@ -141,8 +150,10 @@
 		destination behavior, subfolder scanning, folder-structure preservation,
 		metadata mode, and filename template. The third tab contains loudness,
 		artwork and chapter copying, output verification, preflight planning,
-		progress speech, updates, and separate success, error, and cancellation
-		sounds. Every sound can be tested.
+		parallel worker count, progress speech, updates, and separate success,
+		error, and cancellation sounds. Every sound can be tested. GPU
+		acceleration is not used because the add-on's exposed codecs encode audio
+		on the CPU; FFmpeg selects the appropriate thread count automatically.
 	</p>
 	<p>
 		When “Save converted files next to the source files” is enabled, every
@@ -290,7 +301,7 @@
 
 	<h2>Notes</h2>
 	<ul>
-		<li>One conversion job runs at a time; additional jobs wait in the queue.</li>
+		<li>One conversion job runs at a time; additional jobs wait in the queue, while files in the active job may run in parallel.</li>
 		<li>Folder jobs require plan approval or confirmation before they start.</li>
 		<li>WAV inputs may use either the .wav or .wave extension.</li>
 		<li>Video containers are accepted when they contain a readable audio track.</li>

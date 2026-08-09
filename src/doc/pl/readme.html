@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.5.0.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.6.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -122,6 +122,15 @@
 		powiadomienia. Błędy i anulowanie nadal są odczytywane ze względów
 		bezpieczeństwa.
 	</p>
+	<p>
+		Niezależne pliki w jednym zadaniu mogą być konwertowane równolegle. Na
+		zakładce „Przetwarzanie i powiadomienia” ustaw „Równoległe zadania
+		konwersji” na „Automatycznie (zalecane)” albo wybierz konkretną liczbę
+		plików. Tryb automatyczny dobiera liczbę procesów do rdzeni procesora,
+		a przy rozpoczęciu zadania NVDA poda używaną liczbę pracowników. Każdy
+		plik ma osobny proces FFmpeg, więc anulowanie kończy wszystkie aktywne
+		procesy, a zatrzymanie po bieżącym pliku nie uruchamia następnych.
+	</p>
 
 	<h2>Wyniki konwersji</h2>
 	<p>
@@ -144,8 +153,10 @@
 		struktury katalogów, sposób eksportu metadanych oraz szablon nazwy.
 		Trzecia zakładka zawiera normalizację głośności, kopiowanie okładek i
 		rozdziałów, weryfikację wyniku, plan przed startem, komunikaty postępu,
-		aktualizacje i osobne dźwięki sukcesu, błędu oraz anulowania. Każdy
-		dźwięk można przetestować.
+		liczbę równoległych zadań, aktualizacje i osobne dźwięki sukcesu, błędu
+		oraz anulowania. Każdy dźwięk można przetestować. GPU nie jest używane,
+		ponieważ dostępne kodeki dodatku kodują dźwięk na CPU; FFmpeg sam dobiera
+		wątki dla każdego procesu.
 	</p>
 	<p>
 		Po zaznaczeniu opcji „Zapisuj przekonwertowane pliki obok plików
@@ -299,7 +310,7 @@
 
 	<h2>Uwagi</h2>
 	<ul>
-		<li>Jednocześnie działa jedno zadanie, a kolejne czekają w kolejce.</li>
+		<li>Jednocześnie działa jedno zadanie, a kolejne czekają w kolejce; pliki w aktywnym zadaniu mogą być przetwarzane równolegle.</li>
 		<li>Konwersja folderu wymaga zatwierdzenia planu lub potwierdzenia.</li>
 		<li>Pliki WAV mogą mieć rozszerzenie .wav albo .wave.</li>
 		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>

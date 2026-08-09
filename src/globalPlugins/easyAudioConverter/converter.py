@@ -9,8 +9,9 @@ import shutil
 import string
 import subprocess
 import threading
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from collections import deque
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
@@ -61,6 +62,8 @@ FORMAT_EXTENSIONS = {
 QUALITY_KEYS = ("economical", "standard", "high", "veryHigh")
 MP3_ENCODER_KEYS = ("lame", "fraunhofer")
 METADATA_MODE_KEYS = ("none", "all", "selected")
+PARALLEL_JOB_COUNTS = (0, 1, 2, 4, 8, 16, 32)
+MAX_PARALLEL_JOBS = PARALLEL_JOB_COUNTS[-1]
 ORIGINAL_AUDIO_COPY_FORMAT = "copyAudio"
 AAC_M4A_COPY_FORMAT = "aacM4a"
 STREAM_COPY_FORMATS = frozenset(
@@ -340,6 +343,8 @@ class ConversionSettings:
 	copy_chapters: bool = True
 	verify_output: bool = False
 	show_preflight: bool = True
+	# Zero oznacza tryb automatyczny: jeden pracownik na szacowany rdzeń CPU.
+	parallel_jobs: int = 0
 
 	def validate(self) -> None:
 		if self.target_format not in FORMAT_KEYS:
@@ -348,6 +353,18 @@ class ConversionSettings:
 			raise ValueError(f"Unsupported quality preset: {self.quality}")
 		if self.mp3_encoder not in MP3_ENCODER_KEYS:
 			raise ValueError(f"Unsupported MP3 encoder: {self.mp3_encoder}")
+		try:
+			parallel_jobs = int(self.parallel_jobs)
+		except (TypeError, ValueError) as error:
+			raise ValueError("Invalid parallel conversion worker count") from error
+		if (
+			isinstance(self.parallel_jobs, bool)
+			or parallel_jobs != self.parallel_jobs
+			or parallel_jobs not in PARALLEL_JOB_COUNTS
+		):
+			raise ValueError(
+				f"Parallel conversion jobs must be between 0 and {MAX_PARALLEL_JOBS}"
+			)
 		if self.metadata_mode not in METADATA_MODE_KEYS:
 			raise ValueError(f"Unsupported metadata mode: {self.metadata_mode}")
 		if any(field_name not in METADATA_FIELD_KEYS for field_name in self.metadata_fields):
@@ -1316,8 +1333,43 @@ def _redact_ffmpeg_error(message: str, source: Path, output: Path) -> str:
 	return cleaned[-2000:]
 
 
+def recommended_parallel_jobs(file_count: int | None = None) -> int:
+	"""Zwróć ostrożnie dobraną automatyczną liczbę pracowników konwersji.
+
+	Enkodery audio zwykle wykonują pracę jednym wątkiem na plik. Tryb
+	automatyczny szacuje więc liczbę rdzeni fizycznych na podstawie logicznej
+	liczby procesorów i pozostawia rodzeństwo logiczne dla filtrów FFmpeg,
+	systemu oraz NVDA. Ustawienie ręczne może wybrać inną ograniczoną wartość.
+	"""
+	logical_cpus = max(1, int(os.cpu_count() or 1))
+	if logical_cpus <= 2:
+		workers = logical_cpus
+	else:
+		workers = max(1, logical_cpus // 2)
+	workers = min(MAX_PARALLEL_JOBS, workers)
+	if file_count is not None:
+		workers = min(workers, max(1, int(file_count)))
+	return max(1, workers)
+
+
+def resolve_parallel_jobs(requested: int, file_count: int) -> int:
+	"""Rozwiąż skonfigurowaną liczbę pracowników dla jednego zadania."""
+	try:
+		requested = int(requested)
+		file_count = max(0, int(file_count))
+	except (TypeError, ValueError) as error:
+		raise ValueError("Invalid parallel conversion worker count") from error
+	if requested not in PARALLEL_JOB_COUNTS:
+		raise ValueError("Invalid parallel conversion worker count")
+	if file_count <= 1:
+		return 1
+	if requested == 0:
+		return recommended_parallel_jobs(file_count)
+	return min(requested, file_count)
+
+
 class Converter:
-	"""Run one sequential conversion job and allow it to be canceled safely."""
+	"""Uruchom zadanie konwersji z bezpiecznym anulowaniem i równoległością."""
 
 	def __init__(self, ffmpeg_path: str | os.PathLike[str]):
 		self.ffmpeg_path = Path(ffmpeg_path)
@@ -1325,16 +1377,34 @@ class Converter:
 		self._stop_after_current_event = threading.Event()
 		self._process_lock = threading.Lock()
 		self._process: subprocess.Popen[str] | None = None
+		self._processes: set[subprocess.Popen[str]] = set()
+		self._children_lock = threading.Lock()
+		self._parallel_children: set[Converter] = set()
 
 	def cancel(self) -> None:
 		self._cancel_event.set()
 		with self._process_lock:
-			process = self._process
-		if process is not None and process.poll() is None:
-			try:
-				process.terminate()
-			except OSError:
-				pass
+			processes = tuple(self._processes)
+			if self._process is not None and self._process not in processes:
+				processes += (self._process,)
+		with self._children_lock:
+			children = tuple(self._parallel_children)
+		for child in children:
+			child.cancel()
+		for process in processes:
+			if process.poll() is None:
+				try:
+					process.terminate()
+				except OSError:
+					pass
+
+	def _register_parallel_child(self, child: Converter) -> None:
+		with self._children_lock:
+			self._parallel_children.add(child)
+
+	def _unregister_parallel_child(self, child: Converter) -> None:
+		with self._children_lock:
+			self._parallel_children.discard(child)
 
 	def stop_after_current(self) -> None:
 		"""Finish the active file, then stop this conversion job."""
@@ -1496,15 +1566,29 @@ class Converter:
 			ignored = plan.ignored
 			skipped_files = list(plan.skipped_files)
 			plan_items = plan.items
+		if not files or self._cancel_event.is_set():
+			summary = ConversionSummary(
+				total=len(files),
+				ignored=ignored,
+				skipped_files=skipped_files,
+			)
+			_safe_callback(callbacks.on_collected, summary.total, ignored)
+			summary.canceled = self._cancel_event.is_set()
+			return summary
+		if resolve_parallel_jobs(settings.parallel_jobs, len(files)) > 1:
+			return self._run_parallel(
+				path_list,
+				settings,
+				source_root=source_root,
+				callbacks=callbacks,
+				plan=plan,
+			)
 		summary = ConversionSummary(
 			total=len(files),
 			ignored=ignored,
 			skipped_files=skipped_files,
 		)
 		_safe_callback(callbacks.on_collected, summary.total, ignored)
-		if not files or self._cancel_event.is_set():
-			summary.canceled = self._cancel_event.is_set()
-			return summary
 
 		reserved_outputs: set[str] = set()
 		for index, source in enumerate(files, start=1):
@@ -1616,6 +1700,9 @@ class Converter:
 				"-n",
 				"-i",
 				str(source),
+				# Pozwól każdemu kodekowi i filtrowi FFmpeg dobrać liczbę wątków.
+				"-threads",
+				"0",
 				*stream_arguments,
 				*self._metadata_arguments(settings, metadata),
 				"-map_chapters",
@@ -1760,6 +1847,229 @@ class Converter:
 				break
 		return summary
 
+	def _run_parallel(
+		self,
+		path_list: Sequence[str | os.PathLike[str]],
+		settings: ConversionSettings,
+		*,
+		source_root: str | os.PathLike[str] | None,
+		callbacks: ConversionCallbacks,
+		plan: ConversionPlan | None,
+	) -> ConversionSummary:
+		"""Konwertuj niezależne pliki równolegle z limitem pracowników FFmpeg.
+
+		Przed startem pracowników wymagany jest kompletny plan. Dzięki temu
+		unikalne nazwy wyników są rezerwowane tylko raz i równoległe pliki nie
+		wybierają tego samego celu. Każdy pracownik ma własny obiekt Converter,
+		ale współdzieli z rodzicem zdarzenie anulowania, więc anulowanie kończy
+		każdy aktywny proces potomny FFmpeg.
+		"""
+		if plan is None:
+			plan = self.create_plan(
+				path_list,
+				settings,
+				source_root=source_root,
+				callbacks=ConversionCallbacks(on_stage=callbacks.on_stage),
+			)
+		items = tuple(plan.items)
+		summary = ConversionSummary(
+			total=len(items),
+			ignored=plan.ignored,
+			skipped_files=list(plan.skipped_files),
+		)
+		_safe_callback(callbacks.on_collected, summary.total, summary.ignored)
+		if not items:
+			summary.canceled = self._cancel_event.is_set()
+			return summary
+		if self._cancel_event.is_set():
+			summary.canceled = True
+			return summary
+
+		worker_count = resolve_parallel_jobs(settings.parallel_jobs, len(items))
+		progress_values = [0.0] * len(items)
+		progress_lock = threading.Lock()
+
+		def convert_one(
+			index: int,
+			item: ConversionPlanItem,
+		) -> ConversionSummary | None:
+			# Po zatrzymaniu na granicy nie uruchamiaj nowej pracy. Pliki już
+			# uruchomione mogą bezpiecznie się zakończyć.
+			if self._cancel_event.is_set() or self._stop_after_current_event.is_set():
+				return None
+			try:
+				child = type(self)(self.ffmpeg_path)
+			except TypeError:
+				# Zachowaj obsługę niestandardowych podklas testowych i integracyjnych,
+				# nawet gdy ich konstruktor wymaga dodatkowych argumentów.
+				child = Converter(self.ffmpeg_path)
+			# Wspólne zdarzenie pozwala rodzicowi natychmiast anulować zadanie.
+			child._cancel_event = self._cancel_event
+			child._stop_after_current_event = self._stop_after_current_event
+			self._register_parallel_child(child)
+			child_settings = replace(settings, parallel_jobs=1)
+			single_plan = ConversionPlan(
+				items=(item,),
+				ignored=0,
+				skipped_files=(),
+				input_bytes=item.input_size,
+				estimated_output_bytes=item.estimated_output_size,
+				total_duration=item.duration,
+				destination=str(Path(item.output_path).parent),
+				free_space_bytes=plan.free_space_bytes,
+				lossy_to_lossy_count=0,
+				replace_source_files=settings.replace_source_files,
+			)
+
+			def on_file_start(
+				_child_index: int,
+				_child_total: int,
+				source_name: str,
+				output_name: str,
+			) -> None:
+				_safe_callback(
+					callbacks.on_file_start,
+					index,
+					len(items),
+					source_name,
+					output_name,
+				)
+
+			def on_stage(
+				_child_index: int,
+				_child_total: int,
+				source_name: str,
+				stage: str,
+			) -> None:
+				_safe_callback(
+					callbacks.on_stage,
+					index,
+					len(items),
+					source_name,
+					stage,
+				)
+
+			def on_progress(
+				_child_index: int,
+				_child_total: int,
+				source_name: str,
+				file_fraction: float | None,
+				_child_overall_fraction: float,
+				processed_seconds: float,
+				duration: float | None,
+			) -> None:
+				fraction = file_fraction if file_fraction is not None else 0.0
+				with progress_lock:
+					progress_values[index - 1] = max(
+						progress_values[index - 1],
+						max(0.0, min(1.0, fraction)),
+					)
+					overall_fraction = sum(progress_values) / len(items)
+				_safe_callback(
+					callbacks.on_progress,
+					index,
+					len(items),
+					source_name,
+					file_fraction,
+					overall_fraction,
+					processed_seconds,
+					duration,
+				)
+
+			def on_file_done(
+				_child_index: int,
+				_child_total: int,
+				source_name: str,
+				output_name: str,
+			) -> None:
+				_safe_callback(
+					callbacks.on_file_done,
+					index,
+					len(items),
+					source_name,
+					output_name,
+				)
+
+			try:
+				return child.run(
+					[item.source_path],
+					child_settings,
+					source_root=source_root,
+					callbacks=ConversionCallbacks(
+						on_file_start=on_file_start,
+						on_progress=on_progress,
+						on_file_done=on_file_done,
+						on_stage=on_stage,
+					),
+					plan=single_plan,
+				)
+			except Exception as error:
+				return ConversionSummary(
+					total=1,
+					failed=1,
+					failures=[
+						ConversionFailure(
+							Path(item.source_path).name,
+							str(error),
+							item.source_path,
+							item.output_path,
+						)
+					],
+				)
+			finally:
+				self._unregister_parallel_child(child)
+
+		results: list[ConversionSummary | None] = [None] * len(items)
+		with ThreadPoolExecutor(
+			max_workers=worker_count,
+			thread_name_prefix="EasyAudioConverterFile",
+		) as executor:
+			next_index = 0
+			active: dict[Any, int] = {}
+
+			def submit_next() -> None:
+				nonlocal next_index
+				if (
+					next_index >= len(items)
+					or self._cancel_event.is_set()
+					or self._stop_after_current_event.is_set()
+				):
+					return
+				index = next_index
+				next_index += 1
+				active[executor.submit(convert_one, index + 1, items[index])] = index
+
+			for _ in range(worker_count):
+				submit_next()
+			while active:
+				done, _pending = wait(
+					tuple(active),
+					return_when=FIRST_COMPLETED,
+				)
+				for future in done:
+					index = active.pop(future)
+					results[index] = future.result()
+					if not self._cancel_event.is_set() and not self._stop_after_current_event.is_set():
+						submit_next()
+
+		for result in results:
+			if result is None:
+				continue
+			summary.succeeded += result.succeeded
+			summary.failed += result.failed
+			summary.outputs.extend(result.outputs)
+			summary.failures.extend(result.failures)
+			summary.successes.extend(result.successes)
+			summary.canceled = summary.canceled or result.canceled
+			summary.stopped_after_current = (
+				summary.stopped_after_current or result.stopped_after_current
+			)
+		if self._cancel_event.is_set():
+			summary.canceled = True
+		elif self._stop_after_current_event.is_set():
+			summary.stopped_after_current = True
+		return summary
+
 	def _require_ffmpeg(self) -> None:
 		if not self.ffmpeg_path.is_file():
 			raise FileNotFoundError("The bundled FFmpeg executable is missing")
@@ -1901,6 +2211,7 @@ class Converter:
 			**kwargs,
 		)
 		with self._process_lock:
+			self._processes.add(process)
 			self._process = process
 		if self._cancel_event.is_set() and process.poll() is None:
 			try:
@@ -1911,8 +2222,9 @@ class Converter:
 
 	def _clear_process(self, process: subprocess.Popen[str]) -> None:
 		with self._process_lock:
+			self._processes.discard(process)
 			if self._process is process:
-				self._process = None
+				self._process = next(iter(self._processes), None)
 
 	def _capture_process(
 		self,

@@ -42,6 +42,25 @@
    notification mode and can play the bundled sound asynchronously through
    its configured sound output device.
 
+## Performance and hardware use
+
+The processing page exposes the number of parallel file workers. Automatic
+mode estimates physical cores from the logical CPU count and starts one
+bounded FFmpeg process per estimated core; explicit choices of 1, 2, 4, 8,
+16, or 32 are also validated and stored in named profiles. A complete output plan is
+created before parallel workers start, reserving collision-free names once.
+Each worker owns its process and progress stream, while the parent shares a
+cancel event and terminates every active FFmpeg child when cancellation is
+requested. Boundary-stop requests prevent new files from being scheduled while
+already active files finish safely.
+
+Every encode command passes `-threads 0`, which delegates codec and filter
+thread selection to FFmpeg. The bundled build contains GPU video components,
+but the add-on maps and encodes audio streams; its exposed audio encoders do
+not have a GPU path. Running audio through a video hardware encoder would not
+improve this workload, so GPU acceleration is not enabled or advertised as a
+false speedup.
+
 ## One-time jobs and named profiles
 
 Quick conversion continues to read the standard NVDA configuration. “Convert
