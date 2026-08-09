@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.6.0.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.7.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -130,6 +130,19 @@
 		a przy rozpoczęciu zadania NVDA poda używaną liczbę pracowników. Każdy
 		plik ma osobny proces FFmpeg, więc anulowanie kończy wszystkie aktywne
 		procesy, a zatrzymanie po bieżącym pliku nie uruchamia następnych.
+	</p>
+	<p>
+		Przy nierównych plikach kolejka uruchamia najpierw najdłuższe lub
+		największe pliki, a postęp całego zadania uwzględnia ich przewidywany
+		czas pracy. Gdy wyłączysz plan przed rozpoczęciem, zwykła konwersja bez
+		metadanych w nazwie, kopiowania strumienia i normalizacji może pominąć
+		wstępne rozpoznanie wejścia. Raport wyników podaje osobno czasy
+		rozpoznawania, analizy głośności, kodowania z zapisem oraz finalizacji.
+	</p>
+	<p>
+		Podczas konwersji nie wyłączaj ani nie uruchamiaj ponownie NVDA. Aby
+		bezpiecznie przerwać zadanie, użyj przycisku „Anuluj”; ponowne uruchomienie
+		NVDA kończy bieżącą konwersję.
 	</p>
 
 	<h2>Wyniki konwersji</h2>

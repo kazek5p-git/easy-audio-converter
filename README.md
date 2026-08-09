@@ -46,7 +46,13 @@ separate codec installation is required.
 - can deeply verify each output by decoding it and comparing its duration;
 - uses bounded parallel FFmpeg workers for independent files, with an
 	automatic load-balancing mode that adapts to CPU and memory use, plus an
-	explicit worker-count override;
+	explicit worker-count override; schedules the longest files first and weights
+	batch progress by estimated work;
+- uses a safe fast path without preliminary input probing when the plan is
+	disabled and no codec, metadata, or loudness decision requires source
+	information; reuses unchanged probes through a bounded cache;
+- includes stage timing in the results report for input recognition, loudness
+	analysis, encoding/output writing, and finalization;
 - queues additional conversion jobs and supports both immediate cancellation
   and stopping after the current file;
 - reports codec, container, duration, bitrate, channels, sample rate, size,

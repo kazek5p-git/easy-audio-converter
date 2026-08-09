@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.7.0 - 2026-08-09
 
 - Changed automatic parallel conversion from a one-time CPU estimate to an
   adaptive scheduler that reacts to sustained CPU and memory load between
@@ -10,6 +10,17 @@
 - Added per-job and profile-aware metadata overrides with common extended tag
   fields such as BPM, description, compilation, ISRC, track/disc totals, and
   sort fields.
+- Added a bounded, timestamp-aware probe cache for repeated technical and
+  metadata reads.
+- Added a safe fast path that skips preliminary probing when an ordinary encode
+  does not need source information, while retaining probes for stream-copy,
+  metadata-aware naming, selected metadata, and loudness analysis.
+- Improved uneven batch scheduling with longest-processing-time-first ordering
+  and work-weighted overall progress.
+- Added stage timing to conversion results, covering input recognition,
+  loudness analysis, encoding/output writing, and finalization.
+- Added an accessible warning that restarting or closing NVDA interrupts an
+  active conversion; the progress window now points users to the Cancel button.
 
 ## 1.6.0
 

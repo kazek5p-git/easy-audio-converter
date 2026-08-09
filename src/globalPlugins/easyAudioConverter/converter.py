@@ -10,8 +10,9 @@ import shutil
 import string
 import subprocess
 import threading
+import time
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
-from collections import deque
+from collections import OrderedDict, deque
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping, Sequence
@@ -171,6 +172,7 @@ WAVPACK_COMPRESSION_PROFILES = (
 	(8, "veryHighExtra6", "-hhx6"),
 )
 MAX_SKIPPED_FILE_DETAILS = 500
+MAX_PROBE_CACHE_ENTRIES = 128
 MAX_OUTPUT_NAME_TEMPLATE_LENGTH = 240
 MAX_SAFE_FILENAME_LENGTH = 180
 ARTWORK_TARGET_FORMATS = frozenset({"mp3", "m4a", "alac", "flac", AAC_M4A_COPY_FORMAT})
@@ -442,6 +444,7 @@ class ConversionSummary:
 	failures: list[ConversionFailure] = field(default_factory=list)
 	successes: list[ConversionSuccess] = field(default_factory=list)
 	skipped_files: list[SkippedFile] = field(default_factory=list)
+	timing: ConversionTiming = field(default_factory=lambda: ConversionTiming())
 
 
 @dataclass(frozen=True)
@@ -461,6 +464,58 @@ class MediaInfo:
 	chapter_count: int = 0
 
 
+@dataclass
+class ConversionTiming:
+	"""Pomiar etapów zadania, używany w raporcie diagnostycznym."""
+
+	wall_seconds: float = 0.0
+	probe_seconds: float = 0.0
+	analysis_seconds: float = 0.0
+	encode_seconds: float = 0.0
+	finalize_seconds: float = 0.0
+	probe_cache_hits: int = 0
+	probe_cache_misses: int = 0
+
+	def copy(self) -> "ConversionTiming":
+		return ConversionTiming(
+			wall_seconds=self.wall_seconds,
+			probe_seconds=self.probe_seconds,
+			analysis_seconds=self.analysis_seconds,
+			encode_seconds=self.encode_seconds,
+			finalize_seconds=self.finalize_seconds,
+			probe_cache_hits=self.probe_cache_hits,
+			probe_cache_misses=self.probe_cache_misses,
+		)
+
+	def add(self, other: "ConversionTiming") -> None:
+		self.probe_seconds += other.probe_seconds
+		self.analysis_seconds += other.analysis_seconds
+		self.encode_seconds += other.encode_seconds
+		self.finalize_seconds += other.finalize_seconds
+		self.probe_cache_hits += other.probe_cache_hits
+		self.probe_cache_misses += other.probe_cache_misses
+
+
+@dataclass(frozen=True)
+class _ProbeCacheEntry:
+	signature: tuple[int, int]
+	info: MediaInfo
+	metadata_loaded: bool = False
+
+
+_PROBE_CACHE: OrderedDict[str, _ProbeCacheEntry] = OrderedDict()
+_PROBE_CACHE_LOCK = threading.RLock()
+
+
+def _probe_file_signature(source: Path) -> tuple[int, int] | None:
+	"""Return a cheap invalidation signature for one input file."""
+	try:
+		stat = source.stat()
+	except OSError:
+		return None
+	return (int(stat.st_size), int(stat.st_mtime_ns))
+
+
 @dataclass(frozen=True)
 class ConversionPlanItem:
 	source_path: str
@@ -469,7 +524,8 @@ class ConversionPlanItem:
 	input_size: int
 	estimated_output_size: int | None
 	metadata: Mapping[str, str] = field(default_factory=dict)
-	has_artwork: bool = False
+	# None oznacza, że szybka ścieżka nie wykonywała rozpoznania źródła.
+	has_artwork: bool | None = False
 	codec: str = ""
 
 
@@ -485,6 +541,7 @@ class ConversionPlan:
 	free_space_bytes: int | None
 	lossy_to_lossy_count: int
 	replace_source_files: bool = False
+	timing: ConversionTiming = field(default_factory=ConversionTiming)
 
 	@property
 	def total(self) -> int:
@@ -1627,6 +1684,35 @@ def resolve_parallel_jobs(requested: int, file_count: int) -> int:
 	return min(requested, file_count)
 
 
+def _parallel_work_seconds(item: ConversionPlanItem) -> float:
+	"""Oszacuj koszt pliku dla równoważenia kolejki.
+
+	Czas z rozpoznania jest najlepszym wskaźnikiem. Dla szybkiej ścieżki,
+	gdy czasu nie znamy, rozmiar jest przybliżeniem kosztu odczytu i zapisu.
+	"""
+	if item.duration is not None and float(item.duration) > 0:
+		return float(item.duration)
+	if item.input_size > 0:
+		# 192 kb/s to neutralny przelicznik tylko do porządkowania kolejki.
+		return max(0.001, float(item.input_size) / (192_000.0 / 8.0))
+	return 0.001
+
+
+def parallel_schedule_order(items: Sequence[ConversionPlanItem]) -> tuple[int, ...]:
+	"""Zwróć indeksy od najdroższych plików do najtańszych.
+
+	Najdłuższe pliki startują wcześniej (heurystyka LPT), dzięki czemu krótkie
+	pliki nie czekają na koniec jednej przypadkowo uruchomionej długiej ścieżki.
+	"""
+	return tuple(
+		sorted(
+			range(len(items)),
+			key=lambda index: _parallel_work_seconds(items[index]),
+			reverse=True,
+		)
+	)
+
+
 class Converter:
 	"""Uruchom zadanie konwersji z bezpiecznym anulowaniem i równoległością."""
 
@@ -1639,6 +1725,15 @@ class Converter:
 		self._processes: set[subprocess.Popen[str]] = set()
 		self._children_lock = threading.Lock()
 		self._parallel_children: set[Converter] = set()
+		self._probe_stats_lock = threading.Lock()
+		self._probe_cache_hits = 0
+		self._probe_cache_misses = 0
+
+	@staticmethod
+	def clear_probe_cache() -> None:
+		"""Wyczyść współdzielony, ograniczony cache rozpoznania plików."""
+		with _PROBE_CACHE_LOCK:
+			_PROBE_CACHE.clear()
 
 	def cancel(self) -> None:
 		self._cancel_event.set()
@@ -1673,6 +1768,83 @@ class Converter:
 	def is_canceled(self) -> bool:
 		return self._cancel_event.is_set()
 
+	@staticmethod
+	def _can_use_fast_path(settings: ConversionSettings) -> bool:
+		"""Czy można pominąć rozpoznanie wejścia przed zwykłym kodowaniem."""
+		return bool(
+			not settings.show_preflight
+			and settings.target_format not in STREAM_COPY_FORMATS
+			and settings.loudness_preset == "off"
+			and not Converter._requires_source_metadata(settings)
+		)
+
+	def _create_fast_plan(
+		self,
+		paths: Iterable[str | os.PathLike[str]],
+		settings: ConversionSettings,
+		*,
+		source_root: str | os.PathLike[str] | None = None,
+	) -> ConversionPlan:
+		"""Zbuduj plan bez uruchamiania FFmpeg dla zwykłej konwersji.
+
+		Szybka ścieżka jest używana wyłącznie wtedy, gdy format docelowy, nazwa
+		pliku i ustawienia nie wymagają informacji z wejściowego strumienia.
+		Postęp czasowy pozostaje nieznany, ale FFmpeg i tak otrzymuje pełny plik.
+		"""
+		path_list = tuple(paths)
+		root = Path(source_root) if source_root else None
+		files, ignored, skipped_files = self._collect_job_files(path_list, settings)
+		reserved_outputs: set[str] = set()
+		items: list[ConversionPlanItem] = []
+		input_bytes = 0
+		for index, source in enumerate(files, start=1):
+			try:
+				source_size = source.stat().st_size
+			except OSError:
+				source_size = 0
+			output_directory = _output_directory(source, settings, root)
+			base_name = render_output_name(
+				settings.output_name_template,
+				source,
+				output_format_name_for(settings.target_format),
+				{},
+				index=index,
+			)
+			output = make_unique_output_path(
+				source,
+				output_directory,
+				FORMAT_EXTENSIONS[settings.target_format],
+				reserved_outputs,
+				base_name=base_name,
+			)
+			items.append(
+				ConversionPlanItem(
+					source_path=str(source),
+					output_path=str(output),
+					duration=None,
+					input_size=source_size,
+					estimated_output_size=None,
+					metadata={},
+					has_artwork=None,
+					codec="",
+				)
+			)
+			input_bytes += source_size
+		destination, free_space = self._plan_destination(items, settings)
+		return ConversionPlan(
+			items=tuple(items),
+			ignored=ignored,
+			skipped_files=tuple(skipped_files),
+			input_bytes=input_bytes,
+			estimated_output_bytes=None,
+			total_duration=None,
+			destination=destination,
+			free_space_bytes=free_space,
+			lossy_to_lossy_count=0,
+			replace_source_files=settings.replace_source_files,
+		)
+
+
 	def create_plan(
 		self,
 		paths: Iterable[str | os.PathLike[str]],
@@ -1696,12 +1868,17 @@ class Converter:
 		durations: list[float | None] = []
 		lossy_to_lossy_count = 0
 		include_metadata = self._requires_source_metadata(settings)
+		plan_started = time.monotonic()
+		probe_seconds = 0.0
+		cache_hits_before, cache_misses_before = self._probe_stats()
 
 		for index, source in enumerate(files, start=1):
 			if self._cancel_event.is_set():
 				break
 			_safe_callback(callbacks.on_stage, index, len(files), source.name, "planning")
+			probe_started = time.monotonic()
 			info = self._probe_media_info(source, include_metadata=include_metadata)
+			probe_seconds += max(0.0, time.monotonic() - probe_started)
 			try:
 				target_extension = output_extension_for(
 					settings.target_format,
@@ -1766,6 +1943,7 @@ class Converter:
 				lossy_to_lossy_count += 1
 
 		destination, free_space = self._plan_destination(items, settings)
+		cache_hits_after, cache_misses_after = self._probe_stats()
 		return ConversionPlan(
 			items=tuple(items),
 			ignored=ignored,
@@ -1785,6 +1963,12 @@ class Converter:
 			free_space_bytes=free_space,
 			lossy_to_lossy_count=lossy_to_lossy_count,
 			replace_source_files=settings.replace_source_files,
+			timing=ConversionTiming(
+				wall_seconds=max(0.0, time.monotonic() - plan_started),
+				probe_seconds=probe_seconds,
+				probe_cache_hits=max(0, cache_hits_after - cache_hits_before),
+				probe_cache_misses=max(0, cache_misses_after - cache_misses_before),
+			),
 		)
 
 	def probe_media_info(self, source: str | os.PathLike[str]) -> MediaInfo:
@@ -1809,10 +1993,19 @@ class Converter:
 		path_list = tuple(paths)
 		callbacks = callbacks or ConversionCallbacks()
 		root = Path(source_root) if source_root else None
+		run_started = time.monotonic()
 		if plan is None and settings.target_format in STREAM_COPY_FORMATS:
 			# Copy modes must probe before choosing a container and, for M4A,
 			# must reject non-AAC sources even when preflight UI is disabled.
 			plan = self.create_plan(
+				path_list,
+				settings,
+				source_root=source_root,
+			)
+		elif plan is None and self._can_use_fast_path(settings):
+			# Przy wyłączonym podglądzie zwykła konwersja nie potrzebuje drugiego
+			# procesu FFmpeg do odczytania czasu i kodeka.
+			plan = self._create_fast_plan(
 				path_list,
 				settings,
 				source_root=source_root,
@@ -1825,11 +2018,17 @@ class Converter:
 			ignored = plan.ignored
 			skipped_files = list(plan.skipped_files)
 			plan_items = plan.items
+		inline_probe_stats_before = self._probe_stats()
 		if not files or self._cancel_event.is_set():
 			summary = ConversionSummary(
 				total=len(files),
 				ignored=ignored,
 				skipped_files=skipped_files,
+				timing=(plan.timing.copy() if plan is not None else ConversionTiming()),
+			)
+			summary.timing.wall_seconds = (
+				(plan.timing.wall_seconds if plan is not None else 0.0)
+				+ max(0.0, time.monotonic() - run_started)
 			)
 			_safe_callback(callbacks.on_collected, summary.total, ignored)
 			summary.canceled = self._cancel_event.is_set()
@@ -1846,6 +2045,7 @@ class Converter:
 			total=len(files),
 			ignored=ignored,
 			skipped_files=skipped_files,
+			timing=(plan.timing.copy() if plan is not None else ConversionTiming()),
 		)
 		_safe_callback(callbacks.on_collected, summary.total, ignored)
 
@@ -1872,10 +2072,12 @@ class Converter:
 				reserved_outputs.add(_normal_path(output))
 			else:
 				_safe_callback(callbacks.on_stage, index, summary.total, source.name, "probing")
+				probe_started = time.monotonic()
 				info = self._probe_media_info(
 					source,
 					include_metadata=self._requires_source_metadata(settings),
 				)
+				summary.timing.probe_seconds += max(0.0, time.monotonic() - probe_started)
 				metadata = dict(info.metadata)
 				duration = info.duration
 				has_artwork = info.has_artwork
@@ -1919,6 +2121,7 @@ class Converter:
 					source.name,
 					"analyzingLoudness",
 				)
+				analysis_started = time.monotonic()
 				try:
 					measurement = self._analyze_loudness(source, settings)
 					loudnorm_filter = (
@@ -1934,6 +2137,11 @@ class Converter:
 					if self._finish_at_boundary(summary):
 						break
 					continue
+				finally:
+					summary.timing.analysis_seconds += max(
+						0.0,
+						time.monotonic() - analysis_started,
+					)
 			start_overall_fraction = (index - 1) / max(1, summary.total)
 			_safe_callback(
 				callbacks.on_progress,
@@ -2005,10 +2213,21 @@ class Converter:
 					duration,
 				)
 
+			encode_started = time.monotonic()
 			return_code, error_message = self._run_process(command, report_progress)
+			summary.timing.encode_seconds += max(0.0, time.monotonic() - encode_started)
+			finalize_started = time.monotonic()
+
+			def record_finalize_time() -> None:
+				summary.timing.finalize_seconds += max(
+					0.0,
+					time.monotonic() - finalize_started,
+				)
+
 			if self._cancel_event.is_set():
 				summary.canceled = True
 				self._remove_partial_output(output)
+				record_finalize_time()
 				break
 			valid_output = False
 			if return_code == 0:
@@ -2037,10 +2256,12 @@ class Converter:
 					if self._cancel_event.is_set():
 						summary.canceled = True
 						self._remove_partial_output(output)
+						record_finalize_time()
 						break
 					if not verified:
 						self._remove_partial_output(output)
 						self._record_failure(summary, source, verification_error)
+						record_finalize_time()
 						if self._finish_at_boundary(summary):
 							break
 						continue
@@ -2054,6 +2275,7 @@ class Converter:
 							source,
 							f"Could not preserve source file dates: {error}",
 						)
+						record_finalize_time()
 						if self._finish_at_boundary(summary):
 							break
 						continue
@@ -2061,6 +2283,7 @@ class Converter:
 					if self._cancel_event.is_set():
 						summary.canceled = True
 						self._remove_partial_output(output)
+						record_finalize_time()
 						break
 					try:
 						self._remove_source_file(source)
@@ -2071,6 +2294,7 @@ class Converter:
 							f"Could not remove source file after successful conversion: {error}",
 							output=output,
 						)
+						record_finalize_time()
 						if self._finish_at_boundary(summary):
 							break
 						continue
@@ -2093,6 +2317,7 @@ class Converter:
 					duration,
 				)
 				_safe_callback(callbacks.on_file_done, index, summary.total, source.name, output.name)
+				record_finalize_time()
 				if self._finish_at_boundary(summary):
 					break
 				continue
@@ -2102,8 +2327,23 @@ class Converter:
 				source,
 				_redact_ffmpeg_error(error_message, source, output),
 			)
+			record_finalize_time()
 			if self._finish_at_boundary(summary):
 				break
+		summary.timing.wall_seconds = (
+			(plan.timing.wall_seconds if plan is not None else 0.0)
+			+ max(0.0, time.monotonic() - run_started)
+		)
+		if plan_items is None:
+			cache_hits_after, cache_misses_after = self._probe_stats()
+			summary.timing.probe_cache_hits += max(
+				0,
+				cache_hits_after - inline_probe_stats_before[0],
+			)
+			summary.timing.probe_cache_misses += max(
+				0,
+				cache_misses_after - inline_probe_stats_before[1],
+			)
 		return summary
 
 	def _run_parallel(
@@ -2124,24 +2364,42 @@ class Converter:
 		każdy aktywny proces potomny FFmpeg.
 		"""
 		if plan is None:
-			plan = self.create_plan(
-				path_list,
-				settings,
-				source_root=source_root,
-				callbacks=ConversionCallbacks(on_stage=callbacks.on_stage),
-			)
+			if self._can_use_fast_path(settings):
+				plan = self._create_fast_plan(
+					path_list,
+					settings,
+					source_root=source_root,
+				)
+			else:
+				plan = self.create_plan(
+					path_list,
+					settings,
+					source_root=source_root,
+					callbacks=ConversionCallbacks(on_stage=callbacks.on_stage),
+				)
+		plan_timing = plan.timing.copy()
+		conversion_started = time.monotonic()
 		items = tuple(plan.items)
 		summary = ConversionSummary(
 			total=len(items),
 			ignored=plan.ignored,
 			skipped_files=list(plan.skipped_files),
+			timing=plan_timing,
 		)
 		_safe_callback(callbacks.on_collected, summary.total, summary.ignored)
 		if not items:
 			summary.canceled = self._cancel_event.is_set()
+			summary.timing.wall_seconds = plan_timing.wall_seconds + max(
+				0.0,
+				time.monotonic() - conversion_started,
+			)
 			return summary
 		if self._cancel_event.is_set():
 			summary.canceled = True
+			summary.timing.wall_seconds = plan_timing.wall_seconds + max(
+				0.0,
+				time.monotonic() - conversion_started,
+			)
 			return summary
 
 		adaptive_controller = (
@@ -2161,6 +2419,8 @@ class Converter:
 		)
 		resource_monitor = _SystemResourceMonitor() if adaptive_controller else None
 		progress_values = [0.0] * len(items)
+		progress_weights = [max(0.001, _parallel_work_seconds(item)) for item in items]
+		total_progress_weight = sum(progress_weights) or 1.0
 		progress_lock = threading.Lock()
 
 		def convert_one(
@@ -2238,7 +2498,10 @@ class Converter:
 						progress_values[index - 1],
 						max(0.0, min(1.0, fraction)),
 					)
-					overall_fraction = sum(progress_values) / len(items)
+					overall_fraction = sum(
+						weight * value
+						for weight, value in zip(progress_weights, progress_values)
+					) / total_progress_weight
 				_safe_callback(
 					callbacks.on_progress,
 					index,
@@ -2294,23 +2557,24 @@ class Converter:
 				self._unregister_parallel_child(child)
 
 		results: list[ConversionSummary | None] = [None] * len(items)
+		schedule = parallel_schedule_order(items)
 		with ThreadPoolExecutor(
 			max_workers=worker_limit,
 			thread_name_prefix="EasyAudioConverterFile",
 		) as executor:
-			next_index = 0
+			next_position = 0
 			active: dict[Any, int] = {}
 
 			def submit_next() -> None:
-				nonlocal next_index
+				nonlocal next_position
 				while (
-					next_index < len(items)
+					next_position < len(schedule)
 					and len(active) < worker_count
 					and not self._cancel_event.is_set()
 					and not self._stop_after_current_event.is_set()
 				):
-					index = next_index
-					next_index += 1
+					index = schedule[next_position]
+					next_position += 1
 					active[executor.submit(convert_one, index + 1, items[index])] = index
 
 			submit_next()
@@ -2350,10 +2614,15 @@ class Converter:
 			summary.stopped_after_current = (
 				summary.stopped_after_current or result.stopped_after_current
 			)
+			summary.timing.add(result.timing)
 		if self._cancel_event.is_set():
 			summary.canceled = True
 		elif self._stop_after_current_event.is_set():
 			summary.stopped_after_current = True
+		summary.timing.wall_seconds = plan_timing.wall_seconds + max(
+			0.0,
+			time.monotonic() - conversion_started,
+		)
 		return summary
 
 	def _require_ffmpeg(self) -> None:
@@ -2448,11 +2717,18 @@ class Converter:
 	def _stream_mapping_arguments(
 		settings: ConversionSettings,
 		*,
-		has_artwork: bool,
+		has_artwork: bool | None,
 	) -> list[str]:
 		audio_stream = "0:a:0" if settings.target_format in STREAM_COPY_FORMATS else "0:a:0?"
 		arguments = ["-map", audio_stream, "-sn", "-dn"]
-		if settings.copy_artwork and has_artwork and settings.target_format in ARTWORK_TARGET_FORMATS:
+		# None oznacza brak rozpoznania. Opcjonalne mapowanie jest bezpieczne,
+		# więc szybka ścieżka nie musi uruchamiać dodatkowego FFmpeg tylko po to,
+		# aby sprawdzić, czy okładka istnieje.
+		if (
+			settings.copy_artwork
+			and has_artwork is not False
+			and settings.target_format in ARTWORK_TARGET_FORMATS
+		):
 			arguments.extend(
 				(
 					"-map",
@@ -2548,9 +2824,47 @@ class Converter:
 		finally:
 			self._clear_process(process)
 
+	def _record_probe_hit(self) -> None:
+		with self._probe_stats_lock:
+			self._probe_cache_hits += 1
+
+	def _record_probe_miss(self) -> None:
+		with self._probe_stats_lock:
+			self._probe_cache_misses += 1
+
+	def _probe_stats(self) -> tuple[int, int]:
+		with self._probe_stats_lock:
+			return self._probe_cache_hits, self._probe_cache_misses
+
 	def _probe_media_info(self, source: Path, *, include_metadata: bool) -> MediaInfo:
 		if self._cancel_event.is_set():
 			return MediaInfo(source_path=str(source))
+		signature = _probe_file_signature(source)
+		cache_key = _normal_path(source)
+		cached: _ProbeCacheEntry | None = None
+		if signature is not None:
+			with _PROBE_CACHE_LOCK:
+				candidate = _PROBE_CACHE.get(cache_key)
+				if candidate is not None and candidate.signature == signature:
+					cached = candidate
+					_PROBE_CACHE.move_to_end(cache_key)
+			if cached is not None:
+				if not include_metadata or cached.metadata_loaded:
+					self._record_probe_hit()
+					return cached.info
+				# Informacje techniczne są nadal aktualne; dociągamy tylko tagi.
+				metadata = self._probe_metadata(source)
+				info = replace(cached.info, metadata=metadata)
+				with _PROBE_CACHE_LOCK:
+					_PROBE_CACHE[cache_key] = _ProbeCacheEntry(
+						signature=signature,
+						info=info,
+						metadata_loaded=True,
+					)
+					_PROBE_CACHE.move_to_end(cache_key)
+				self._record_probe_hit()
+				return info
+		self._record_probe_miss()
 		command = [
 			str(self.ffmpeg_path),
 			"-nostdin",
@@ -2564,12 +2878,23 @@ class Converter:
 			size_bytes = source.stat().st_size
 		except OSError:
 			size_bytes = 0
-		return parse_media_info(
+		info = parse_media_info(
 			stderr,
 			source_path=str(source),
 			size_bytes=size_bytes,
 			metadata=metadata,
 		)
+		if signature is not None and not self._cancel_event.is_set():
+			with _PROBE_CACHE_LOCK:
+				_PROBE_CACHE[cache_key] = _ProbeCacheEntry(
+					signature=signature,
+					info=info,
+					metadata_loaded=include_metadata,
+				)
+				_PROBE_CACHE.move_to_end(cache_key)
+				while len(_PROBE_CACHE) > MAX_PROBE_CACHE_ENTRIES:
+					_PROBE_CACHE.popitem(last=False)
+		return info
 
 	def _probe_duration(self, source: Path) -> float | None:
 		return self._probe_media_info(source, include_metadata=False).duration

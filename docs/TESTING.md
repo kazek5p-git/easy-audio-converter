@@ -62,6 +62,19 @@ progress reaches 100 percent, and cancellation removes every partial output.
 The add-on passes `-threads 0` to FFmpeg; GPU use is intentionally not expected
 because the exposed targets are audio encoders.
 
+When comparing startup overhead, disable the conversion-plan preview and run a
+normal encoded target with no metadata-aware filename, selected metadata, or
+loudness analysis. The run should create outputs without calling the probe
+method, while stream-copy, metadata-template, and loudness jobs must still
+probe. Repeat an unchanged technical-information query and confirm the probe
+cache reduces the process count. The results report includes wall time and the
+probe, analysis, encoding/output, and finalization stage totals.
+
+For uneven batches, use files with clearly different durations or sizes. The
+longest-processing-time-first queue should start the largest files first, the
+weighted overall progress should remain monotonic, and all outputs should still
+be unique.
+
 ## Interactive NVDA speech validation
 
 Automated tests do not replace testing the actual wx interface with NVDA:
@@ -76,6 +89,9 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    LUFS, dBTP, and LRA fields have distinct spoken names.
    Dla FLAC sprawdź listę poziomów 0–12, a dla WavPack profile od szybkiego do
    `-hhx6`; po ponownym otwarciu ustawień wybrany profil ma pozostać aktywny.
+   Start a conversion with and without the preflight plan and confirm that the
+   warning about not restarting NVDA is visible and, without a plan, spoken
+   once before the first file starts.
 3. Select “Copy selected metadata fields” and verify that every field is
    announced as a check box with its checked state.
    Open “Edit metadata overrides...”, enter a title, BPM, description,

@@ -1,841 +1,849 @@
-# Easy Audio Converter translation.
-# Edit and save this file with Poedit; then run the compile command.
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.6.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-09 04:25+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: ka\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.7.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: ka\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2517
+#: src/globalPlugins/easyAudioConverter/__init__.py:2530
 msgid "...and {count} more files"
 msgstr "...და {count} სხვა ფაილი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3093
+#: src/globalPlugins/easyAudioConverter/__init__.py:3145
 msgid "...and {count} more skipped files"
 msgstr "... და {count} მეტი გამოტოვებული ფაილი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1317
+#: src/globalPlugins/easyAudioConverter/__init__.py:1330
 msgid "16 bit"
 msgstr "16 ბიტი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:348
 msgid "16 files at a time"
 msgstr "16 ფაილი ერთდროულად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:341
+#: src/globalPlugins/easyAudioConverter/__init__.py:345
 msgid "2 files at a time"
 msgstr "2 ფაილები ერთდროულად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1317
+#: src/globalPlugins/easyAudioConverter/__init__.py:1330
 msgid "24 bit"
 msgstr "24 ბიტიანი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1317
+#: src/globalPlugins/easyAudioConverter/__init__.py:1330
 msgid "32 bit"
 msgstr "32 ბიტი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:345
+#: src/globalPlugins/easyAudioConverter/__init__.py:349
 msgid "32 files at a time"
 msgstr "32 ფაილები ერთდროულად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:342
+#: src/globalPlugins/easyAudioConverter/__init__.py:346
 msgid "4 files at a time"
 msgstr "4 ფაილები ერთდროულად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:347
 msgid "8 files at a time"
 msgstr "8 ფაილები ერთდროულად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2362
+#: src/globalPlugins/easyAudioConverter/__init__.py:2375
 msgid "A built-in profile already uses this name."
 msgstr "ჩაშენებული პროფილი უკვე იყენებს ამ სახელს."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:446
+#: src/globalPlugins/easyAudioConverter/__init__.py:450
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:450
+#: src/globalPlugins/easyAudioConverter/__init__.py:454
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:449
+#: src/globalPlugins/easyAudioConverter/__init__.py:453
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:448
+#: src/globalPlugins/easyAudioConverter/__init__.py:452
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple Lossless)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:454
+#: src/globalPlugins/easyAudioConverter/__init__.py:458
 msgid "AMR narrowband"
 msgstr "AMR ვიწრო ზოლი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:455
+#: src/globalPlugins/easyAudioConverter/__init__.py:459
 msgid "AMR wideband"
 msgstr "AMR ფართოზოლოვანი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3029
+#: src/globalPlugins/easyAudioConverter/__init__.py:3046
 msgid "Access to the source or destination was denied."
 msgstr "წყაროზე ან დანიშნულებაზე წვდომა უარყოფილია."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2954
+#: src/globalPlugins/easyAudioConverter/__init__.py:2971
 msgid "Adaptive workers: {active} active, target {target}"
 msgstr "ადაპტაციური მუშები: {active} აქტიური, სამიზნე {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3184
+#: src/globalPlugins/easyAudioConverter/__init__.py:3236
 msgid "Additional skipped files: {count}"
 msgstr "დამატებითი გამოტოვებული ფაილები: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2109
+#: src/globalPlugins/easyAudioConverter/__init__.py:2122
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "კოდეკის გაფართოებული უგულებელყოფა არ გამოიყენება ნაკადის ასლისთვის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2114
+#: src/globalPlugins/easyAudioConverter/__init__.py:2127
 msgid "Advanced codec overrides: disabled"
 msgstr "გაფართოებული კოდეკის გადალახვა: გამორთულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2112
+#: src/globalPlugins/easyAudioConverter/__init__.py:2125
 msgid "Advanced codec overrides: enabled"
 msgstr "გაფართოებული კოდეკის უგულებელყოფა: ჩართულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3434
+#: src/globalPlugins/easyAudioConverter/__init__.py:3486
 msgid "Advanced codec settings..."
 msgstr "კოდეკის დამატებითი პარამეტრები..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1255
+#: src/globalPlugins/easyAudioConverter/__init__.py:1268
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:524
+#: src/globalPlugins/easyAudioConverter/__init__.py:528
 msgid "Album"
 msgstr "ალბომი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:525
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Album artist"
 msgstr "ალბომის შემსრულებელი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1414
+#: src/globalPlugins/easyAudioConverter/__init__.py:1427
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr "FLAC-ის ყველა დონე უდანაკარგოა. დონე 0 არის ყველაზე სწრაფი; დონე 12 იძლევა ყველაზე ძლიერ შეკუმშვას, მაგრამ ძალიან ნელია."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3045
+#: src/globalPlugins/easyAudioConverter/__init__.py:3062
 msgid "Already uses the target format"
 msgstr "უკვე იყენებს სამიზნე ფორმატს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3546
+#: src/globalPlugins/easyAudioConverter/__init__.py:3598
 msgid "An update check is already in progress"
 msgstr "განახლების შემოწმება უკვე მიმდინარეობს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3638
+#: src/globalPlugins/easyAudioConverter/__init__.py:3690
 msgid "An update download is already in progress"
 msgstr "განახლების ჩამოტვირთვა უკვე მიმდინარეობს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2728
+#: src/globalPlugins/easyAudioConverter/__init__.py:2742
 msgid "Analyzing loudness, first pass"
 msgstr "ხმამაღლა გაანალიზება, პირველი გავლა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:415
+#: src/globalPlugins/easyAudioConverter/__init__.py:419
 msgid "Archive FLAC"
 msgstr "არქივი FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:523
+#: src/globalPlugins/easyAudioConverter/__init__.py:527
 msgid "Artist"
 msgstr "მხატვარი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:332
+#: src/globalPlugins/easyAudioConverter/__init__.py:336
 msgid "At every file"
 msgstr "ყველა ფაილში"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:331
+#: src/globalPlugins/easyAudioConverter/__init__.py:335
 msgid "At progress milestones"
 msgstr "პროგრესის ეტაპებზე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2582
+#: src/globalPlugins/easyAudioConverter/__init__.py:2596
 msgid "Audio codec: {value}"
 msgstr "აუდიო კოდეკი: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2579 src/globalPlugins/easyAudioConverter/__init__.py:2621
+#: src/globalPlugins/easyAudioConverter/__init__.py:2593 src/globalPlugins/easyAudioConverter/__init__.py:2635
 msgid "Audio file information"
 msgstr "აუდიო ფაილის ინფორმაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2658
+#: src/globalPlugins/easyAudioConverter/__init__.py:2672
 msgid "Audio information copied"
 msgstr "აუდიო ინფორმაცია კოპირებულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4601
+#: src/globalPlugins/easyAudioConverter/__init__.py:4655
 msgid "Audio information is already being read"
 msgstr "აუდიო ინფორმაცია უკვე იკითხება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4646
+#: src/globalPlugins/easyAudioConverter/__init__.py:4700
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "აუდიო ინფორმაცია მზად არის. კოდეკი {codec}, ხანგრძლივობა {duration}, ნიმუშის სიჩქარე {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:372
+#: src/globalPlugins/easyAudioConverter/__init__.py:376
 msgid "Audiobook MP3"
 msgstr "აუდიო წიგნი MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:339
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "Automatic (dynamic load balancing)"
 msgstr "ავტომატური (დინამიური დატვირთვის დაბალანსება)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1741
+#: src/globalPlugins/easyAudioConverter/__init__.py:1754
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
 msgstr "ავტომატური რეჟიმი დინამიურად არეგულირებს დამოუკიდებელ ფაილებს CPU და მეხსიერების დატვირთვის გამოყენებით."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1067
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
 msgstr "ავტომატური რეჟიმი დინამიურად არეგულირებს დამოუკიდებელ ფაილებს CPU და მეხსიერების დატვირთვის გამოყენებით. GPU აჩქარება არ გამოიყენება აუდიო კოდირებისთვის."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1109
+#: src/globalPlugins/easyAudioConverter/__init__.py:1122
 msgid "Automatic progress announcements:"
 msgstr "პროგრესის ავტომატური განცხადებები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1117
+#: src/globalPlugins/easyAudioConverter/__init__.py:1130
 msgid "Automatically check for add-on updates"
 msgstr "ავტომატურად შეამოწმეთ დანამატის განახლებები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:789
+#: src/globalPlugins/easyAudioConverter/__init__.py:793
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:539
+#: src/globalPlugins/easyAudioConverter/__init__.py:543
 msgid "BPM"
 msgstr "BPM"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1283
+#: src/globalPlugins/easyAudioConverter/__init__.py:1296
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "ბიტრეიტი kbps-ში (0 იყენებს ხარისხის წინასწარ დაყენებულს):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2586
+#: src/globalPlugins/easyAudioConverter/__init__.py:2600
 msgid "Bitrate: {value}"
 msgstr "ბიტის სიხშირე: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515
+#: src/globalPlugins/easyAudioConverter/__init__.py:519
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "მაუწყებლობა: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:779 src/globalPlugins/easyAudioConverter/__init__.py:1884
+#: src/globalPlugins/easyAudioConverter/__init__.py:783 src/globalPlugins/easyAudioConverter/__init__.py:1897
 msgid "Browse..."
 msgstr "დათვალიერება..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2726
+#: src/globalPlugins/easyAudioConverter/__init__.py:2740
 msgid "Building the conversion plan"
 msgstr "კონვერტაციის გეგმის შედგენა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2980 src/globalPlugins/easyAudioConverter/__init__.py:2835 src/globalPlugins/easyAudioConverter/__init__.py:3429
+#: src/globalPlugins/easyAudioConverter/__init__.py:2997 src/globalPlugins/easyAudioConverter/__init__.py:2852 src/globalPlugins/easyAudioConverter/__init__.py:3481
 msgid "Cancel conversion"
 msgstr "კონვერტაციის გაუქმება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4723
+#: src/globalPlugins/easyAudioConverter/__init__.py:4777
 msgid "Cancel the current audio conversion"
 msgstr "გააუქმეთ მიმდინარე აუდიო კონვერტაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4731
+#: src/globalPlugins/easyAudioConverter/__init__.py:4785
 msgid "Canceling the conversion"
 msgstr "კონვერტაციის გაუქმება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2990
+#: src/globalPlugins/easyAudioConverter/__init__.py:3007
 msgid "Canceling..."
 msgstr "გაუქმება..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:587 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:591 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "მხარდაჭერის გვერდის გახსნა შეუძლებელია. გახსენით ეს მისამართი ხელით: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4680
+#: src/globalPlugins/easyAudioConverter/__init__.py:4734
 msgid "Change the conversion quality"
 msgstr "შეცვალეთ კონვერტაციის ხარისხი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4666
+#: src/globalPlugins/easyAudioConverter/__init__.py:4720
 msgid "Change the target audio format"
 msgstr "შეცვალეთ სამიზნე აუდიო ფორმატი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1296
+#: src/globalPlugins/easyAudioConverter/__init__.py:1309
 msgid "Channels:"
 msgstr "არხები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2593
+#: src/globalPlugins/easyAudioConverter/__init__.py:2607
 msgid "Channels: {value}"
 msgstr "არხები: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2605
+#: src/globalPlugins/easyAudioConverter/__init__.py:2619
 msgid "Chapters: {value}"
 msgstr "თავები: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4863
+#: src/globalPlugins/easyAudioConverter/__init__.py:4917
 msgid "Check for Easy Audio Converter updates"
 msgstr "შეამოწმეთ მარტივი აუდიო გადამყვანის განახლებები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3435
+#: src/globalPlugins/easyAudioConverter/__init__.py:3487
 msgid "Check for updates..."
 msgstr "შეამოწმეთ განახლებები..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3549
+#: src/globalPlugins/easyAudioConverter/__init__.py:3601
 msgid "Checking for Easy Audio Converter updates"
 msgstr "მარტივი აუდიო გადამყვანის განახლებების შემოწმება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4382 src/globalPlugins/easyAudioConverter/__init__.py:4556 src/globalPlugins/easyAudioConverter/__init__.py:3422
+#: src/globalPlugins/easyAudioConverter/__init__.py:4436 src/globalPlugins/easyAudioConverter/__init__.py:4610 src/globalPlugins/easyAudioConverter/__init__.py:3474
 msgid "Choose a folder to convert"
 msgstr "აირჩიეთ საქაღალდე კონვერტაციისთვის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4316 src/globalPlugins/easyAudioConverter/__init__.py:4545 src/globalPlugins/easyAudioConverter/__init__.py:3421
+#: src/globalPlugins/easyAudioConverter/__init__.py:4370 src/globalPlugins/easyAudioConverter/__init__.py:4599 src/globalPlugins/easyAudioConverter/__init__.py:3473
 msgid "Choose files to convert"
 msgstr "Choose files to convert"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1550
+#: src/globalPlugins/easyAudioConverter/__init__.py:1563
 msgid "Choose metadata fields"
 msgstr "აირჩიეთ მეტამონაცემების ველები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1923
+#: src/globalPlugins/easyAudioConverter/__init__.py:1936
 msgid "Choose metadata fields..."
 msgstr "მეტამონაცემების ველების არჩევა..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:942 src/globalPlugins/easyAudioConverter/__init__.py:2192 src/globalPlugins/easyAudioConverter/__init__.py:4716
+#: src/globalPlugins/easyAudioConverter/__init__.py:946 src/globalPlugins/easyAudioConverter/__init__.py:2205 src/globalPlugins/easyAudioConverter/__init__.py:4770
 msgid "Choose the destination folder"
 msgstr "აირჩიეთ დანიშნულების საქაღალდე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4760 src/globalPlugins/easyAudioConverter/__init__.py:3431
+#: src/globalPlugins/easyAudioConverter/__init__.py:4814 src/globalPlugins/easyAudioConverter/__init__.py:3483
 msgid "Clear queued conversion jobs"
 msgstr "რიგის კონვერტაციის სამუშაოების გასუფთავება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2837
+#: src/globalPlugins/easyAudioConverter/__init__.py:2854
 msgid "Clear queued jobs"
 msgstr "რიგის სამუშაოების გასუფთავება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4773 src/globalPlugins/easyAudioConverter/__init__.py:3811
+#: src/globalPlugins/easyAudioConverter/__init__.py:4827 src/globalPlugins/easyAudioConverter/__init__.py:3863
 msgid "Cleared {count} queued conversion jobs"
 msgstr "გასუფთავდა {count} რიგის კონვერტაციის სამუშაოები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2635 src/globalPlugins/easyAudioConverter/__init__.py:2977 src/globalPlugins/easyAudioConverter/__init__.py:3213
+#: src/globalPlugins/easyAudioConverter/__init__.py:2649 src/globalPlugins/easyAudioConverter/__init__.py:2994 src/globalPlugins/easyAudioConverter/__init__.py:3265
 msgid "Close"
 msgstr "დაგვიკავშირდით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1271
+#: src/globalPlugins/easyAudioConverter/__init__.py:1284
 msgid "Codec profile to edit:"
 msgstr "კოდეკის პროფილი რედაქტირებისთვის:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1302
+#: src/globalPlugins/easyAudioConverter/__init__.py:1315
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "კოდეკის სპეციფიკური დონე (-1 იყენებს წინასწარ დაყენებას):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:531
+#: src/globalPlugins/easyAudioConverter/__init__.py:535
 msgid "Comment"
 msgstr "კომენტარი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:538
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "Compilation"
 msgstr "კომპილაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526
+#: src/globalPlugins/easyAudioConverter/__init__.py:530
 msgid "Composer"
 msgstr "კომპოზიტორი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4411
+#: src/globalPlugins/easyAudioConverter/__init__.py:4465
 msgid "Confirm folder conversion"
 msgstr "დაადასტურეთ საქაღალდის კონვერტაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2581
+#: src/globalPlugins/easyAudioConverter/__init__.py:2595
 msgid "Container: {value}"
 msgstr "კონტეინერი: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4113
+#: src/globalPlugins/easyAudioConverter/__init__.py:4167
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "კონვერტაცია გაუქმდა. დასრულებულია {done} {total} ფაილიდან."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4131
+#: src/globalPlugins/easyAudioConverter/__init__.py:4185
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "კონვერტაცია დასრულებულია. წარმატებას მიაღწია: {done}. ვერ მოხერხდა: {failed}. გამოტოვებულია: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4140
+#: src/globalPlugins/easyAudioConverter/__init__.py:4194
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "კონვერტაცია დასრულდა: {done} წარმატებით დასრულდა, {failed} ვერ მოხერხდა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3784
+#: src/globalPlugins/easyAudioConverter/__init__.py:3836
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "რიგს დაემატა კონვერტაციის დავალება. რიგის პოზიცია: {position}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2470
+#: src/globalPlugins/easyAudioConverter/__init__.py:2483
 msgid "Conversion plan"
 msgstr "კონვერტაციის გეგმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1842
+#: src/globalPlugins/easyAudioConverter/__init__.py:1855
 msgid "Conversion profile:"
 msgstr "კონვერტაციის პროფილი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2321
+#: src/globalPlugins/easyAudioConverter/__init__.py:2334
 msgid "Conversion profiles exported"
 msgstr "კონვერტაციის პროფილები ექსპორტირებულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3304
+#: src/globalPlugins/easyAudioConverter/__init__.py:3356
 msgid "Conversion report copied"
 msgstr "კონვერტაციის ანგარიში კოპირებულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3058
+#: src/globalPlugins/easyAudioConverter/__init__.py:3109
 msgid "Conversion results"
 msgstr "კონვერტაციის შედეგები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1954
+#: src/globalPlugins/easyAudioConverter/__init__.py:1967
 msgid "Convert"
 msgstr "კონვერტაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4408
+#: src/globalPlugins/easyAudioConverter/__init__.py:4462
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "გადაიყვანეთ ყველა მხარდაჭერილი აუდიო ფაილი {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4568
+#: src/globalPlugins/easyAudioConverter/__init__.py:4622
 msgid "Convert every supported audio file in the current folder"
 msgstr "ყველა მხარდაჭერილი აუდიო ფაილის კონვერტაცია მიმდინარე საქაღალდეში"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3420
+#: src/globalPlugins/easyAudioConverter/__init__.py:3472
 msgid "Convert selected files or folders"
 msgstr "შერჩეული ფაილების ან საქაღალდეების კონვერტაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4504
+#: src/globalPlugins/easyAudioConverter/__init__.py:4558
 msgid "Convert selected files or folders with one-time options"
 msgstr "არჩეული ფაილების ან საქაღალდეების კონვერტაცია ერთჯერადი პარამეტრებით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3419
+#: src/globalPlugins/easyAudioConverter/__init__.py:3471
 msgid "Convert selected files or folders with options..."
 msgstr "არჩეული ფაილების ან საქაღალდეების კონვერტაცია პარამეტრებით..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3423
+#: src/globalPlugins/easyAudioConverter/__init__.py:3475
 msgid "Convert the current folder"
 msgstr "მიმდინარე საქაღალდის კონვერტაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1817
+#: src/globalPlugins/easyAudioConverter/__init__.py:1830
 msgid "Convert with options"
 msgstr "კონვერტაცია პარამეტრებით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3159
+#: src/globalPlugins/easyAudioConverter/__init__.py:3211
 msgid "Converted output kept at:\n{output}"
 msgstr "გადაყვანილი გამომავალი ინახება:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3082
+#: src/globalPlugins/easyAudioConverter/__init__.py:3134
 msgid "Converted output kept at: {output}"
 msgstr "კონვერტაციის გამომავალი ინახება: {output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2729
+#: src/globalPlugins/easyAudioConverter/__init__.py:2743
 msgid "Converting audio, second pass"
 msgstr "აუდიოს კონვერტაცია, მეორე გადასასვლელი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3877
+#: src/globalPlugins/easyAudioConverter/__init__.py:3931
 msgid "Converting {index} of {total}: {name}"
 msgstr "{index}-ის კონვერტაცია {total}-დან: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4823
+#: src/globalPlugins/easyAudioConverter/__init__.py:4877
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{index} {total}: {name}-ის კონვერტაცია. მიმდინარე ფაილის დრო {processed}; გავიდა {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4834
+#: src/globalPlugins/easyAudioConverter/__init__.py:4888
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "{index}-ის {total}: {name}-ის კონვერტაცია. მიმდინარე ფაილი {filePercent}%, საერთო {overallPercent}%, გასული {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:505
+#: src/globalPlugins/easyAudioConverter/__init__.py:509
 msgid "Copy all text metadata"
 msgstr "დააკოპირეთ ყველა ტექსტის მეტამონაცემები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1043 src/globalPlugins/easyAudioConverter/__init__.py:1720
+#: src/globalPlugins/easyAudioConverter/__init__.py:1047 src/globalPlugins/easyAudioConverter/__init__.py:1733
 msgid "Copy chapter markers"
 msgstr "დააკოპირეთ თავის მარკერები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1716
+#: src/globalPlugins/easyAudioConverter/__init__.py:1729
 msgid "Copy embedded cover artwork when supported"
 msgstr "დააკოპირეთ ჩაშენებული ყდის ნამუშევარი მხარდაჭერის შემთხვევაში"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1039
+#: src/globalPlugins/easyAudioConverter/__init__.py:1043
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "დააკოპირეთ ჩაშენებული ყდის ნამუშევარი, როდესაც სამიზნე მხარს უჭერს მას"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2634
+#: src/globalPlugins/easyAudioConverter/__init__.py:2648
 msgid "Copy information"
 msgstr "დააკოპირეთ ინფორმაცია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3212
+#: src/globalPlugins/easyAudioConverter/__init__.py:3264
 msgid "Copy report"
 msgstr "ანგარიშის კოპირება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:506
+#: src/globalPlugins/easyAudioConverter/__init__.py:510
 msgid "Copy selected metadata fields"
 msgstr "არჩეული მეტამონაცემების ველების კოპირება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532
+#: src/globalPlugins/easyAudioConverter/__init__.py:536
 msgid "Copyright"
 msgstr "საავტორო უფლებები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3578
+#: src/globalPlugins/easyAudioConverter/__init__.py:3630
 msgid "Could not check for updates.\n\n{error}"
 msgstr "განახლებების შემოწმება ვერ მოხერხდა.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2656
+#: src/globalPlugins/easyAudioConverter/__init__.py:2670
 msgid "Could not copy the audio information"
 msgstr "აუდიო ინფორმაციის კოპირება ვერ მოხერხდა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3298
+#: src/globalPlugins/easyAudioConverter/__init__.py:3350
 msgid "Could not copy the conversion report."
 msgstr "კონვერტაციის ანგარიშის კოპირება ვერ მოხერხდა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2315
+#: src/globalPlugins/easyAudioConverter/__init__.py:2328
 msgid "Could not export profiles:\n{error}"
 msgstr "პროფილების ექსპორტი ვერ მოხერხდა:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2277
+#: src/globalPlugins/easyAudioConverter/__init__.py:2290
 msgid "Could not import profiles:\n{error}"
 msgstr "პროფილების იმპორტი ვერ მოხერხდა:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3515
+#: src/globalPlugins/easyAudioConverter/__init__.py:3567
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Easy Audio Converter-ის პარამეტრების გახსნა ვერ მოხერხდა. იხილეთ NVDA ჟურნალი დეტალებისთვის."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3732
+#: src/globalPlugins/easyAudioConverter/__init__.py:3784
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "NVDA დანამატის ინსტალერის გახსნა ვერ მოხერხდა. განახლება შენახულია:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3285
+#: src/globalPlugins/easyAudioConverter/__init__.py:3337
 msgid "Could not open the output folder."
 msgstr "გამომავალი საქაღალდის გახსნა ვერ მოხერხდა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4631
+#: src/globalPlugins/easyAudioConverter/__init__.py:4685
 msgid "Could not read audio information:\n{error}"
 msgstr "აუდიო ინფორმაციის წაკითხვა ვერ მოხერხდა:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1535
+#: src/globalPlugins/easyAudioConverter/__init__.py:1548
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Easy Audio Converter-ის პარამეტრების შენახვა ვერ მოხერხდა. იხილეთ NVDA ჟურნალი დეტალებისთვის."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2975
+#: src/globalPlugins/easyAudioConverter/__init__.py:2992
 msgid "Current file progress: 100%"
 msgstr "მიმდინარე ფაილის პროგრესი: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2811
+#: src/globalPlugins/easyAudioConverter/__init__.py:2828
 msgid "Current file progress: waiting"
 msgstr "მიმდინარე ფაილის პროგრესი: ლოდინი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2904
+#: src/globalPlugins/easyAudioConverter/__init__.py:2921
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "მიმდინარე ფაილის პროგრესი: {percent}% ({processed} {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2896
+#: src/globalPlugins/easyAudioConverter/__init__.py:2913
 msgid "Current file time: {processed}"
 msgstr "ფაილის მიმდინარე დრო: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:520
 msgid "Custom EBU R128 target"
 msgstr "მორგებული EBU R128 სამიზნე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1013 src/globalPlugins/easyAudioConverter/__init__.py:1691
+#: src/globalPlugins/easyAudioConverter/__init__.py:1017 src/globalPlugins/easyAudioConverter/__init__.py:1704
 msgid "Custom integrated loudness in LUFS:"
 msgstr "მორგებული ინტეგრირებული ხმამაღლა LUFS-ში:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1031 src/globalPlugins/easyAudioConverter/__init__.py:1709
+#: src/globalPlugins/easyAudioConverter/__init__.py:1035 src/globalPlugins/easyAudioConverter/__init__.py:1722
 msgid "Custom loudness range in LU:"
 msgstr "მორგებული ხმის დიაპაზონი LU-ში:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1022 src/globalPlugins/easyAudioConverter/__init__.py:1700
+#: src/globalPlugins/easyAudioConverter/__init__.py:1026 src/globalPlugins/easyAudioConverter/__init__.py:1713
 msgid "Custom true peak in dBTP:"
 msgstr "მორგებული ჭეშმარიტი პიკი dBTP-ში:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:528
+#: src/globalPlugins/easyAudioConverter/__init__.py:532
 msgid "Date or year"
 msgstr "თარიღი ან წელი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1724
+#: src/globalPlugins/easyAudioConverter/__init__.py:1737
 msgid "Deeply verify every output file"
 msgstr "ღრმად გადაამოწმეთ ყველა გამომავალი ფაილი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1049
+#: src/globalPlugins/easyAudioConverter/__init__.py:1053
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "ღრმად გადაამოწმეთ გამომავალი დეკოდირებით და ხანგრძლივობის შედარებით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2411
+#: src/globalPlugins/easyAudioConverter/__init__.py:2424
 msgid "Delete conversion profile"
 msgstr "კონვერტაციის პროფილის წაშლა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1848
+#: src/globalPlugins/easyAudioConverter/__init__.py:1861
 msgid "Delete profile"
 msgstr "პროფილის წაშლა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2410
+#: src/globalPlugins/easyAudioConverter/__init__.py:2423
 msgid "Delete the profile “{name}”?"
 msgstr "წაშალეთ პროფილი \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:540
+#: src/globalPlugins/easyAudioConverter/__init__.py:544
 msgid "Description"
 msgstr "აღწერა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:773 src/globalPlugins/easyAudioConverter/__init__.py:1880
+#: src/globalPlugins/easyAudioConverter/__init__.py:777 src/globalPlugins/easyAudioConverter/__init__.py:1893
 msgid "Destination folder:"
 msgstr "დანიშნულების საქაღალდე:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4713
+#: src/globalPlugins/easyAudioConverter/__init__.py:4767
 msgid "Destination folder: {folder}"
 msgstr "დანიშნულების საქაღალდე: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2473
+#: src/globalPlugins/easyAudioConverter/__init__.py:2486
 msgid "Destination: {destination}"
 msgstr "დანიშნულება: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3185
+#: src/globalPlugins/easyAudioConverter/__init__.py:3237
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "დეტალები შემოიფარგლება პირველი {limit} გამოტოვებული ფაილებით."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3198
+#: src/globalPlugins/easyAudioConverter/__init__.py:3250
 msgid "Details:"
 msgstr "დეტალები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:512
+#: src/globalPlugins/easyAudioConverter/__init__.py:516
 msgid "Disabled"
 msgstr "გამორთულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:534
 msgid "Disc number"
 msgstr "დისკის ნომერი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:504
+#: src/globalPlugins/easyAudioConverter/__init__.py:101
+msgid "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
+msgstr "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:508
 msgid "Do not copy metadata"
 msgstr "არ დააკოპიროთ მეტამონაცემები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3618
+#: src/globalPlugins/easyAudioConverter/__init__.py:3670
 msgid "Download and install"
 msgstr "ჩამოტვირთეთ და დააინსტალირეთ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3696
+#: src/globalPlugins/easyAudioConverter/__init__.py:3748
 msgid "Downloaded {done:.1f} MB"
 msgstr "გადმოწერილია {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3689
+#: src/globalPlugins/easyAudioConverter/__init__.py:3741
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "გადმოწერილია {done:.1f} of {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3648
+#: src/globalPlugins/easyAudioConverter/__init__.py:3700
 msgid "Downloading Easy Audio Converter update"
 msgstr "მარტივი აუდიო კონვერტორის განახლების ჩამოტვირთვა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2583
+#: src/globalPlugins/easyAudioConverter/__init__.py:2597
 msgid "Duration: {value}"
 msgstr "ხანგრძლივობა: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:451
+#: src/globalPlugins/easyAudioConverter/__init__.py:455
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3322 src/globalPlugins/easyAudioConverter/__init__.py:4098 src/globalPlugins/easyAudioConverter/__init__.py:2355 src/globalPlugins/easyAudioConverter/__init__.py:2363 src/globalPlugins/easyAudioConverter/__init__.py:3452 src/globalPlugins/easyAudioConverter/__init__.py:3799 src/globalPlugins/easyAudioConverter/__init__.py:4634 src/globalPlugins/easyAudioConverter/__init__.py:958 src/globalPlugins/easyAudioConverter/__init__.py:1536 src/globalPlugins/easyAudioConverter/__init__.py:2227 src/globalPlugins/easyAudioConverter/__init__.py:2278 src/globalPlugins/easyAudioConverter/__init__.py:2316 src/globalPlugins/easyAudioConverter/__init__.py:2329 src/globalPlugins/easyAudioConverter/__init__.py:2393 src/globalPlugins/easyAudioConverter/__init__.py:2429 src/globalPlugins/easyAudioConverter/__init__.py:3286 src/globalPlugins/easyAudioConverter/__init__.py:3299 src/globalPlugins/easyAudioConverter/__init__.py:3516 src/globalPlugins/easyAudioConverter/__init__.py:3753
+#: src/globalPlugins/easyAudioConverter/__init__.py:3374 src/globalPlugins/easyAudioConverter/__init__.py:4152 src/globalPlugins/easyAudioConverter/__init__.py:2368 src/globalPlugins/easyAudioConverter/__init__.py:2376 src/globalPlugins/easyAudioConverter/__init__.py:3504 src/globalPlugins/easyAudioConverter/__init__.py:3851 src/globalPlugins/easyAudioConverter/__init__.py:4688 src/globalPlugins/easyAudioConverter/__init__.py:962 src/globalPlugins/easyAudioConverter/__init__.py:1549 src/globalPlugins/easyAudioConverter/__init__.py:2240 src/globalPlugins/easyAudioConverter/__init__.py:2291 src/globalPlugins/easyAudioConverter/__init__.py:2329 src/globalPlugins/easyAudioConverter/__init__.py:2342 src/globalPlugins/easyAudioConverter/__init__.py:2406 src/globalPlugins/easyAudioConverter/__init__.py:2442 src/globalPlugins/easyAudioConverter/__init__.py:3338 src/globalPlugins/easyAudioConverter/__init__.py:3351 src/globalPlugins/easyAudioConverter/__init__.py:3568 src/globalPlugins/easyAudioConverter/__init__.py:3805
 msgid "Easy Audio Converter"
 msgstr "მარტივი აუდიო კონვერტორი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3589
+#: src/globalPlugins/easyAudioConverter/__init__.py:3641
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Easy Audio Converter განახლებულია. დაინსტალირებული ვერსია: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2797
+#: src/globalPlugins/easyAudioConverter/__init__.py:2811
 msgid "Easy Audio Converter progress"
 msgstr "მარტივი აუდიო კონვერტორის პროგრესი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3109
+#: src/globalPlugins/easyAudioConverter/__init__.py:3161
 msgid "Easy Audio Converter results"
 msgstr "მარტივი აუდიო კონვერტორის შედეგები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1459
+#: src/globalPlugins/easyAudioConverter/__init__.py:1472
 msgid "Easy Audio Converter settings"
 msgstr "მარტივი აუდიო კონვერტორის პარამეტრები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3722 src/globalPlugins/easyAudioConverter/__init__.py:3581 src/globalPlugins/easyAudioConverter/__init__.py:3592 src/globalPlugins/easyAudioConverter/__init__.py:3735
+#: src/globalPlugins/easyAudioConverter/__init__.py:3774 src/globalPlugins/easyAudioConverter/__init__.py:3633 src/globalPlugins/easyAudioConverter/__init__.py:3644 src/globalPlugins/easyAudioConverter/__init__.py:3787
 msgid "Easy Audio Converter update"
 msgstr "მარტივი აუდიო გადამყვანის განახლება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3629 src/globalPlugins/easyAudioConverter/__init__.py:3614
+#: src/globalPlugins/easyAudioConverter/__init__.py:3681 src/globalPlugins/easyAudioConverter/__init__.py:3666
 msgid "Easy Audio Converter update available"
 msgstr "მარტივი აუდიო კონვერტორის განახლება ხელმისაწვდომია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3601
+#: src/globalPlugins/easyAudioConverter/__init__.py:3653
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "ხელმისაწვდომია მარტივი აუდიო გადამყვანი {newVersion}. თქვენ გაქვთ ვერსია {currentVersion}.\n\nგსურთ ჩამოტვირთოთ და დააინსტალიროთ განახლება ახლავე?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3625
+#: src/globalPlugins/easyAudioConverter/__init__.py:3677
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Easy Audio Converter {version} ხელმისაწვდომია, მაგრამ გამოშვება არ შეიცავს პირდაპირ დამატებით პაკეტს. გახსენით გამოშვების გვერდი?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:488
+#: src/globalPlugins/easyAudioConverter/__init__.py:492
 msgid "Economical"
 msgstr "ეკონომიური"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1597
+#: src/globalPlugins/easyAudioConverter/__init__.py:1610
 msgid "Edit metadata overrides"
 msgstr "მეტამონაცემების უგულებელყოფის რედაქტირება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:853 src/globalPlugins/easyAudioConverter/__init__.py:1926
+#: src/globalPlugins/easyAudioConverter/__init__.py:857 src/globalPlugins/easyAudioConverter/__init__.py:1939
 msgid "Edit metadata overrides..."
 msgstr "მეტამონაცემების უგულებელყოფის რედაქტირება..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2819
+#: src/globalPlugins/easyAudioConverter/__init__.py:2836
 msgid "Elapsed time: 0:00"
 msgstr "გასული დრო: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2916
+#: src/globalPlugins/easyAudioConverter/__init__.py:2933
 msgid "Elapsed time: {elapsed}"
 msgstr "გასული დრო: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2602
+#: src/globalPlugins/easyAudioConverter/__init__.py:2616
 msgid "Embedded artwork: {value}"
 msgstr "ჩაშენებული ნამუშევარი: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1279
+#: src/globalPlugins/easyAudioConverter/__init__.py:1292
 msgid "Enable advanced overrides for this codec"
 msgstr "ამ კოდეკისთვის გაფართოებული გადალახვის ჩართვა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:542
+#: src/globalPlugins/easyAudioConverter/__init__.py:546
 msgid "Encoder"
 msgstr "შიფრატორი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2342
+#: src/globalPlugins/easyAudioConverter/__init__.py:3093
+msgid "Encoding and output writing: {value}"
+msgstr "Encoding and output writing: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2355
 msgid "Enter a name for this conversion profile:"
 msgstr "შეიყვანეთ სახელი ამ კონვერტაციის პროფილისთვის:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+#: src/globalPlugins/easyAudioConverter/__init__.py:1619
 msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
 msgstr "შეიყვანეთ მნიშვნელობები, რათა შეცვალოთ წყაროს ტეგები თითოეული კონვერტირებული ფაილისთვის. დატოვეთ ველი ცარიელი, რათა შეინარჩუნოთ მისი საწყისი მნიშვნელობა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2477
+#: src/globalPlugins/easyAudioConverter/__init__.py:2490
 msgid "Estimated output size: {size}"
 msgstr "გამომავალი სავარაუდო ზომა: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2970
+#: src/globalPlugins/easyAudioConverter/__init__.py:2987
 msgid "Estimated time remaining: 0:00"
 msgstr "დარჩენილი სავარაუდო დრო: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2823
+#: src/globalPlugins/easyAudioConverter/__init__.py:2840
 msgid "Estimated time remaining: calculating"
 msgstr "დარჩენილი სავარაუდო დრო: გამოთვლა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2920
+#: src/globalPlugins/easyAudioConverter/__init__.py:2937
 msgid "Estimated time remaining: {remaining}"
 msgstr "დარჩენილი სავარაუდო დრო: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:910
+#: src/globalPlugins/easyAudioConverter/__init__.py:914
 msgid "Example album"
 msgstr "მაგალითი ალბომის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:909
+#: src/globalPlugins/easyAudioConverter/__init__.py:913
 msgid "Example artist"
 msgstr "მხატვრის მაგალითი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:917
+#: src/globalPlugins/easyAudioConverter/__init__.py:921
 msgid "Example filename: {name}"
 msgstr "ფაილის სახელის მაგალითი: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:908
+#: src/globalPlugins/easyAudioConverter/__init__.py:912
 msgid "Example title"
 msgstr "მაგალითი სათაური"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2296
+#: src/globalPlugins/easyAudioConverter/__init__.py:2309
 msgid "Export conversion profiles"
 msgstr "კონვერტაციის პროფილების ექსპორტი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1850
+#: src/globalPlugins/easyAudioConverter/__init__.py:1863
 msgid "Export profiles..."
 msgstr "პროფილების ექსპორტი..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:456
+#: src/globalPlugins/easyAudioConverter/__init__.py:460
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "ორიგინალური აუდიო ნაკადის ამოღება (ხელახალი კოდირების გარეშე)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:442
+#: src/globalPlugins/easyAudioConverter/__init__.py:446
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1227
+#: src/globalPlugins/easyAudioConverter/__init__.py:1240
 msgid "FLAC 0 — fastest encoding"
 msgstr "FLAC 0 — ყველაზე სწრაფი კოდირება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1229
+#: src/globalPlugins/easyAudioConverter/__init__.py:1242
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr "FLAC 12 - მაქსიმალური შეკუმშვა, ძალიან ნელი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1231
+#: src/globalPlugins/easyAudioConverter/__init__.py:1244
 msgid "FLAC {level}"
 msgstr "FLAC {level}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3076
+#: src/globalPlugins/easyAudioConverter/__init__.py:3128
 msgid "Failed files:"
 msgstr "წარუმატებელი ფაილები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3164
+#: src/globalPlugins/easyAudioConverter/__init__.py:3216
 msgid "Failed: {name}"
 msgstr "ვერ მოხერხდა: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1236
+#: src/globalPlugins/easyAudioConverter/__init__.py:1249
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr "სწრაფი, -f (FFmpeg დონე 0)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3047
+#: src/globalPlugins/easyAudioConverter/__init__.py:3064
 msgid "File or folder is unavailable"
 msgstr "ფაილი ან საქაღალდე მიუწვდომელია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2601
+#: src/globalPlugins/easyAudioConverter/__init__.py:2615
 msgid "File size: {value}"
 msgstr "ფაილის ზომა: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2887
+#: src/globalPlugins/easyAudioConverter/__init__.py:2904
 msgid "File {index} of {total}: {name}"
 msgstr "ფაილი {index} {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2126
+#: src/globalPlugins/easyAudioConverter/__init__.py:2139
 msgid "Filename preview: {name}"
 msgstr "ფაილის სახელის გადახედვა: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2471
+#: src/globalPlugins/easyAudioConverter/__init__.py:2484
 msgid "Files to convert: {count}"
 msgstr "გადასაყვანი ფაილები: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3843
+#: src/globalPlugins/easyAudioConverter/__init__.py:3897
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "ფაილები კონვერტაციისთვის: {count}. გამოტოვებულია: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1413
+#: src/globalPlugins/easyAudioConverter/__init__.py:1426
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3-ისთვის დონე 0 არის ყველაზე ნელი და უმაღლესი ალგორითმის ხარისხი; 9 ყველაზე სწრაფია."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1418
+#: src/globalPlugins/easyAudioConverter/__init__.py:1431
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Ogg Vorbis-ისთვის, 0-დან 10-მდე დონეები ირჩევს ცვლადი ბიტის ხარისხის გაზრდას."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1419
+#: src/globalPlugins/easyAudioConverter/__init__.py:1432
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Opus-ისთვის, 0-დან 10-მდე დონეები ირჩევს ენკოდერის სირთულის ზრდას."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3848
+#: src/globalPlugins/easyAudioConverter/__init__.py:3902
 msgid "Found {count} files to convert"
 msgstr "ნაპოვნია {count} ფაილი კონვერტაციისთვის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:498
+#: src/globalPlugins/easyAudioConverter/__init__.py:502
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2480
+#: src/globalPlugins/easyAudioConverter/__init__.py:2493
 msgid "Free disk space: {size}"
 msgstr "თავისუფალი ადგილი დისკზე: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2461
+#: src/globalPlugins/easyAudioConverter/__init__.py:2474
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:527
+#: src/globalPlugins/easyAudioConverter/__init__.py:531
 msgid "Genre"
 msgstr "ჟანრი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:545
 msgid "Grouping"
 msgstr "დაჯგუფება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2840
+#: src/globalPlugins/easyAudioConverter/__init__.py:2857
 msgid "Hide"
 msgstr "დამალვა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:490
+#: src/globalPlugins/easyAudioConverter/__init__.py:494
 msgid "High"
 msgstr "მაღალი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1238
+#: src/globalPlugins/easyAudioConverter/__init__.py:1251
 msgid "High, -h (FFmpeg level 2)"
 msgstr "მაღალი, -h (FFmpeg დონე 2)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:547
 msgid "ISRC"
 msgstr "ISRC"
 
@@ -843,603 +851,615 @@ msgstr "ISRC"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "თუ Easy Audio Converter გამოგადგებათ და გსურთ მხარი დაუჭიროთ ჩემს მუშაობას, შეგიძლიათ მიყიდოთ ყავა.\n\nგსურთ ახლავე გახსნათ მხარდაჭერის გვერდი?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2245
+#: src/globalPlugins/easyAudioConverter/__init__.py:2258
 msgid "Import conversion profiles"
 msgstr "კონვერტაციის პროფილების იმპორტი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1849
+#: src/globalPlugins/easyAudioConverter/__init__.py:1862
 msgid "Import profiles..."
 msgstr "პროფილების იმპორტი..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2287
+#: src/globalPlugins/easyAudioConverter/__init__.py:2300
 msgid "Imported {count} conversion profiles"
 msgstr "იმპორტირებული {count} კონვერტაციის პროფილები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:799 src/globalPlugins/easyAudioConverter/__init__.py:1892
+#: src/globalPlugins/easyAudioConverter/__init__.py:803 src/globalPlugins/easyAudioConverter/__init__.py:1905
 msgid "Include subfolders when converting a folder"
 msgstr "ჩართეთ ქვესაქაღალდეები საქაღალდის კონვერტაციისას"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3424
+#: src/globalPlugins/easyAudioConverter/__init__.py:3476
 msgid "Information about the selected audio file..."
 msgstr "ინფორმაცია არჩეული აუდიო ფაილის შესახებ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2476
+#: src/globalPlugins/easyAudioConverter/__init__.py:3087
+msgid "Input recognition: {value}"
+msgstr "Input recognition: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2489
 msgid "Input size: {size}"
 msgstr "შეყვანის ზომა: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:923 src/globalPlugins/easyAudioConverter/__init__.py:2132
+#: src/globalPlugins/easyAudioConverter/__init__.py:927 src/globalPlugins/easyAudioConverter/__init__.py:2145
 msgid "Invalid filename template: {error}"
 msgstr "ფაილის სახელის შაბლონი არასწორია: {error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2246 src/globalPlugins/easyAudioConverter/__init__.py:2298
+#: src/globalPlugins/easyAudioConverter/__init__.py:2259 src/globalPlugins/easyAudioConverter/__init__.py:2311
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "JSON პროფილის ფაილები (*.json)|*.json|ყველა ფაილი (*.*)|*.*"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2461
+#: src/globalPlugins/easyAudioConverter/__init__.py:2474
 msgid "KB"
 msgstr "კბ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1298
+#: src/globalPlugins/easyAudioConverter/__init__.py:1311
 msgid "Keep the source channel count"
 msgstr "შეინახეთ წყაროს არხების რაოდენობა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1292
+#: src/globalPlugins/easyAudioConverter/__init__.py:1305
 msgid "Keep the source sample rate"
 msgstr "შეინახეთ წყაროს ნიმუშის სიხშირე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:497
+#: src/globalPlugins/easyAudioConverter/__init__.py:501
 msgid "LAME MP3"
 msgstr "ᲙᲝᲭᲚᲘ MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:538
 msgid "Language"
 msgstr "ენა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3618
+#: src/globalPlugins/easyAudioConverter/__init__.py:3670
 msgid "Later"
 msgstr "მოგვიანებით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1309
+#: src/globalPlugins/easyAudioConverter/__init__.py:1322
 msgid "Lossless compression profile:"
 msgstr "უდანაკარგო შეკუმშვის პროფილი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1003 src/globalPlugins/easyAudioConverter/__init__.py:1681
+#: src/globalPlugins/easyAudioConverter/__init__.py:3090
+msgid "Loudness analysis: {value}"
+msgstr "Loudness analysis: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1007 src/globalPlugins/easyAudioConverter/__init__.py:1694
 msgid "Loudness normalization:"
 msgstr "ხმაურის ნორმალიზება:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:537
 msgid "Lyrics"
 msgstr "ტექსტი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:445
+#: src/globalPlugins/easyAudioConverter/__init__.py:449
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2461
+#: src/globalPlugins/easyAudioConverter/__init__.py:2474
 msgid "MB"
 msgstr "მბ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:453
+#: src/globalPlugins/easyAudioConverter/__init__.py:457
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:440
+#: src/globalPlugins/easyAudioConverter/__init__.py:444
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:758 src/globalPlugins/easyAudioConverter/__init__.py:1871
+#: src/globalPlugins/easyAudioConverter/__init__.py:762 src/globalPlugins/easyAudioConverter/__init__.py:1884
 msgid "MP3 encoder:"
 msgstr "MP3 შიფრატორი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1244
+#: src/globalPlugins/easyAudioConverter/__init__.py:1257
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr "მაქსიმუმი, -hhx6 (FFmpeg დონე 8)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:831 src/globalPlugins/easyAudioConverter/__init__.py:1918
+#: src/globalPlugins/easyAudioConverter/__init__.py:835 src/globalPlugins/easyAudioConverter/__init__.py:1931
 msgid "Metadata export:"
 msgstr "მეტამონაცემების ექსპორტი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:842
+#: src/globalPlugins/easyAudioConverter/__init__.py:846
 msgid "Metadata fields to copy:"
 msgstr "მეტამონაცემების ველები კოპირებისთვის:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:870 src/globalPlugins/easyAudioConverter/__init__.py:2103
+#: src/globalPlugins/easyAudioConverter/__init__.py:874 src/globalPlugins/easyAudioConverter/__init__.py:2116
 msgid "Metadata overrides: {count} fields"
 msgstr "მეტამონაცემების უგულებელყოფა: {count} ველებს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2608
+#: src/globalPlugins/easyAudioConverter/__init__.py:2622
 msgid "Metadata:"
 msgstr "მეტამონაცემები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1298
+#: src/globalPlugins/easyAudioConverter/__init__.py:1311
 msgid "Mono"
 msgstr "მონო"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:514
+#: src/globalPlugins/easyAudioConverter/__init__.py:518
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "მუსიკა და სტრიმინგი: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1426
+#: src/globalPlugins/easyAudioConverter/__init__.py:1439
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "კოდეკის გაფართოებული პარამეტრები არ გამოიყენება, რადგან აუდიო ნაკადი კოპირებულია ხელახალი კოდირების გარეშე."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:325
+#: src/globalPlugins/easyAudioConverter/__init__.py:329
 msgid "No completion notification"
 msgstr "დასრულების შესახებ შეტყობინება არ არის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4728 src/globalPlugins/easyAudioConverter/__init__.py:4739 src/globalPlugins/easyAudioConverter/__init__.py:4802
+#: src/globalPlugins/easyAudioConverter/__init__.py:4782 src/globalPlugins/easyAudioConverter/__init__.py:4793 src/globalPlugins/easyAudioConverter/__init__.py:4856
 msgid "No conversion is in progress"
 msgstr "კონვერტაცია არ მიმდინარეობს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4783
+#: src/globalPlugins/easyAudioConverter/__init__.py:4837
 msgid "No conversion progress is available"
 msgstr "კონვერტაციის პროგრესი არ არის ხელმისაწვდომი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4222
+#: src/globalPlugins/easyAudioConverter/__init__.py:4276
 msgid "No conversion results are available"
 msgstr "კონვერტაციის შედეგები ხელმისაწვდომი არ არის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4243 src/globalPlugins/easyAudioConverter/__init__.py:4253
+#: src/globalPlugins/easyAudioConverter/__init__.py:4297 src/globalPlugins/easyAudioConverter/__init__.py:4307
 msgid "No failed files are available to retry"
 msgstr "წარუმატებელი ფაილები არ არის ხელმისაწვდომი ხელახალი საცდელად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3245
+#: src/globalPlugins/easyAudioConverter/__init__.py:3297
 msgid "No file details are available."
 msgstr "ფაილის დეტალები ხელმისაწვდომი არ არის."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4125
+#: src/globalPlugins/easyAudioConverter/__init__.py:4179
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "არცერთ ფაილს არ სჭირდება კონვერტაცია. გამოტოვებულია: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2142
+#: src/globalPlugins/easyAudioConverter/__init__.py:2155
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "ხელახალი კოდირება არ არის: ხარისხის, ხმაურის და კოდეკის გაფართოებული პარამეტრები არ გამოიყენება."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2136
+#: src/globalPlugins/easyAudioConverter/__init__.py:2149
 msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 msgstr "ხელახალი კოდირება არ არის: ხარისხი, ხმამაღალი, წყაროს მეტამონაცემები, ნამუშევრები, თავები და კოდეკის გაფართოებული პარამეტრები არ გამოიყენება. მეტამონაცემების აშკარა უგულებელყოფა კვლავ გამოიყენება."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3048
+#: src/globalPlugins/easyAudioConverter/__init__.py:3065
 msgid "No readable audio stream was found"
 msgstr "წაკითხვადი აუდიო ნაკადი ვერ მოიძებნა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4129
+#: src/globalPlugins/easyAudioConverter/__init__.py:4183
 msgid "No supported audio files were found"
 msgstr "მხარდაჭერილი აუდიო ფაილები ვერ მოიძებნა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1237
+#: src/globalPlugins/easyAudioConverter/__init__.py:1250
 msgid "Normal (FFmpeg level 1)"
 msgstr "ნორმალური (FFmpeg დონე 1)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1250
+#: src/globalPlugins/easyAudioConverter/__init__.py:1263
 msgid "Not used by this codec"
 msgstr "არ გამოიყენება ამ კოდეკის მიერ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:443
+#: src/globalPlugins/easyAudioConverter/__init__.py:447
 msgid "Ogg Vorbis"
 msgstr "ოგ ვორბისი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4752
+#: src/globalPlugins/easyAudioConverter/__init__.py:4806
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "ერთი კონვერტაცია აქტიურია. რიგი სამუშაოები: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:340
+#: src/globalPlugins/easyAudioConverter/__init__.py:344
 msgid "One file at a time"
 msgstr "ერთი ფაილი ერთდროულად"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1989
+#: src/globalPlugins/easyAudioConverter/__init__.py:2002
 msgid "One-time settings"
 msgstr "ერთჯერადი პარამეტრები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:333
+#: src/globalPlugins/easyAudioConverter/__init__.py:337
 msgid "Only on demand"
 msgstr "მხოლოდ მოთხოვნით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4482
+#: src/globalPlugins/easyAudioConverter/__init__.py:4536
 msgid "Open Easy Audio Converter settings"
 msgstr "გახსენით Easy Audio Converter-ის პარამეტრები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4493
+#: src/globalPlugins/easyAudioConverter/__init__.py:4547
 msgid "Open advanced codec settings"
 msgstr "გახსენით კოდეკის დამატებითი პარამეტრები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3211
+#: src/globalPlugins/easyAudioConverter/__init__.py:3263
 msgid "Open output folder"
 msgstr "გამომავალი საქაღალდის გახსნა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4871
+#: src/globalPlugins/easyAudioConverter/__init__.py:4925
 msgid "Open the author's support page"
 msgstr "გახსენით ავტორის მხარდაჭერის გვერდი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:585
+#: src/globalPlugins/easyAudioConverter/__init__.py:589
 msgid "Opening the support page"
 msgstr "მხარდაჭერის გვერდის გახსნა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:444
+#: src/globalPlugins/easyAudioConverter/__init__.py:448
 msgid "Opus"
 msgstr "ოპუსი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:782 src/globalPlugins/easyAudioConverter/__init__.py:1887
+#: src/globalPlugins/easyAudioConverter/__init__.py:786 src/globalPlugins/easyAudioConverter/__init__.py:1900
 msgid "Output filename template:"
 msgstr "გამომავალი ფაილის სახელის შაბლონი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3074
+#: src/globalPlugins/easyAudioConverter/__init__.py:3126
 msgid "Output files:"
 msgstr "გამომავალი ფაილები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3037
+#: src/globalPlugins/easyAudioConverter/__init__.py:3054
 msgid "Output verification failed because its duration differs from the source."
 msgstr "გამომავალი დადასტურება ვერ მოხერხდა, რადგან მისი ხანგრძლივობა განსხვავდება წყაროსგან."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3148
+#: src/globalPlugins/easyAudioConverter/__init__.py:3200
 msgid "Output:\n{output}"
 msgstr "გამომავალი:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2976
+#: src/globalPlugins/easyAudioConverter/__init__.py:2993
 msgid "Overall progress: 100%"
 msgstr "საერთო პროგრესი: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2815
+#: src/globalPlugins/easyAudioConverter/__init__.py:2832
 msgid "Overall progress: waiting"
 msgstr "საერთო პროგრესი: ლოდინი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2913
+#: src/globalPlugins/easyAudioConverter/__init__.py:2930
 msgid "Overall progress: {percent}%"
 msgstr "საერთო პროგრესი: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1315
+#: src/globalPlugins/easyAudioConverter/__init__.py:1328
 msgid "PCM bit depth:"
 msgstr "PCM ბიტის სიღრმე:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1055 src/globalPlugins/easyAudioConverter/__init__.py:1729
+#: src/globalPlugins/easyAudioConverter/__init__.py:1059 src/globalPlugins/easyAudioConverter/__init__.py:1742
 msgid "Parallel conversion jobs:"
 msgstr "პარალელური კონვერტაციის სამუშაოები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2971
+#: src/globalPlugins/easyAudioConverter/__init__.py:2988
 msgid "Parallel workers: finished"
 msgstr "პარალელური მუშები: დასრულდა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2830
+#: src/globalPlugins/easyAudioConverter/__init__.py:2847
 msgid "Parallel workers: waiting"
 msgstr "პარალელური მუშები: ელოდება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2961
+#: src/globalPlugins/easyAudioConverter/__init__.py:2978
 msgid "Parallel workers: {active} active of {target}"
 msgstr "პარალელური მუშები: {active} აქტიური {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2580
+#: src/globalPlugins/easyAudioConverter/__init__.py:2594
 msgid "Path: {path}"
 msgstr "ბილიკი: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2512
+#: src/globalPlugins/easyAudioConverter/__init__.py:2525
 msgid "Planned output files:"
 msgstr "დაგეგმილი გამომავალი ფაილები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1093
+#: src/globalPlugins/easyAudioConverter/__init__.py:1106
 msgid "Play a sound when a conversion fails"
 msgstr "დაუკარით ხმა, როდესაც კონვერტაცია ვერ ხერხდება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1100
+#: src/globalPlugins/easyAudioConverter/__init__.py:1113
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "დაუკარით ხმა, როდესაც კონვერტაცია გაუქმებულია ან შეჩერებულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:394
+#: src/globalPlugins/easyAudioConverter/__init__.py:398
 msgid "Podcast Opus"
 msgstr "პოდკასტი ოპუსი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:513
+#: src/globalPlugins/easyAudioConverter/__init__.py:517
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "პოდკასტი: -16 LUFS, -1.5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2731 src/globalPlugins/easyAudioConverter/__init__.py:3838 src/globalPlugins/easyAudioConverter/__init__.py:2809
+#: src/globalPlugins/easyAudioConverter/__init__.py:2745 src/globalPlugins/easyAudioConverter/__init__.py:3890 src/globalPlugins/easyAudioConverter/__init__.py:2823
 msgid "Preparing the conversion"
 msgstr "კონვერტაციის მომზადება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:812 src/globalPlugins/easyAudioConverter/__init__.py:1903
+#: src/globalPlugins/easyAudioConverter/__init__.py:816 src/globalPlugins/easyAudioConverter/__init__.py:1916
 msgid "Preserve source file creation and modification dates"
 msgstr "შეინახეთ წყაროს ფაილის შექმნისა და მოდიფიკაციის თარიღები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:805 src/globalPlugins/easyAudioConverter/__init__.py:1897
+#: src/globalPlugins/easyAudioConverter/__init__.py:809 src/globalPlugins/easyAudioConverter/__init__.py:1910
 msgid "Preserve the source folder structure in the destination"
 msgstr "შეინახეთ წყაროს საქაღალდის სტრუქტურა დანიშნულების ადგილზე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:991
+#: src/globalPlugins/easyAudioConverter/__init__.py:3099
+msgid "Probe cache hits: {count}; misses: {misses}"
+msgstr "Probe cache hits: {count}; misses: {misses}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:995
 msgid "Processing and notifications"
 msgstr "დამუშავება და შეტყობინებები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1668
+#: src/globalPlugins/easyAudioConverter/__init__.py:1681
 msgid "Processing options"
 msgstr "დამუშავების პარამეტრები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1932
+#: src/globalPlugins/easyAudioConverter/__init__.py:1945
 msgid "Processing options..."
 msgstr "დამუშავების ვარიანტები..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2152
+#: src/globalPlugins/easyAudioConverter/__init__.py:2165
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "დამუშავება: ხმამაღალი {loudness}; ნამუშევარი {artwork}; თავები {chapters}; ვერიფიკაცია {verification}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2421
+#: src/globalPlugins/easyAudioConverter/__init__.py:2434
 msgid "Profile deleted"
 msgstr "პროფილი წაიშალა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2400
+#: src/globalPlugins/easyAudioConverter/__init__.py:2413
 msgid "Profile saved: {name}"
 msgstr "პროფილი შენახულია: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:539
 msgid "Publisher"
 msgstr "გამომცემელი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4689
+#: src/globalPlugins/easyAudioConverter/__init__.py:4743
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "ხარისხი არ გამოიყენება ხელახალი კოდირების გარეშე აუდიოს კოპირებისას"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:749 src/globalPlugins/easyAudioConverter/__init__.py:1865
+#: src/globalPlugins/easyAudioConverter/__init__.py:753 src/globalPlugins/easyAudioConverter/__init__.py:1878
 msgid "Quality:"
 msgstr "ხარისხი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4696
+#: src/globalPlugins/easyAudioConverter/__init__.py:4750
 msgid "Quality: {quality}"
 msgstr "ხარისხი: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4755
+#: src/globalPlugins/easyAudioConverter/__init__.py:4809
 msgid "Queued conversion jobs: {count}."
 msgstr "რიგით კონვერტაციის სამუშაოები: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2826
+#: src/globalPlugins/easyAudioConverter/__init__.py:2843
 msgid "Queued jobs: 0"
 msgstr "რიგში მდგომი სამუშაოები: 0"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2944
+#: src/globalPlugins/easyAudioConverter/__init__.py:2961
 msgid "Queued jobs: {count}"
 msgstr "რიგი სამუშაო ადგილები: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4700
+#: src/globalPlugins/easyAudioConverter/__init__.py:4754
 msgid "Quickly choose the destination folder"
 msgstr "სწრაფად აირჩიეთ დანიშნულების საქაღალდე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4525
+#: src/globalPlugins/easyAudioConverter/__init__.py:4579
 msgid "Quickly convert selected files or folders"
 msgstr "სწრაფად დააკონვერტიროთ არჩეული ფაილები ან საქაღალდეები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4604
+#: src/globalPlugins/easyAudioConverter/__init__.py:4658
 msgid "Reading audio file information"
 msgstr "აუდიო ფაილის ინფორმაციის წაკითხვა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2727
+#: src/globalPlugins/easyAudioConverter/__init__.py:2741
 msgid "Reading audio information"
 msgstr "აუდიო ინფორმაციის კითხვა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3610
+#: src/globalPlugins/easyAudioConverter/__init__.py:3662
 msgid "Release notes:"
 msgstr "გამოშვების შენიშვნები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:459
+#: src/globalPlugins/easyAudioConverter/__init__.py:463
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC to M4A (ხელახალი კოდირების გარეშე)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3771
+#: src/globalPlugins/easyAudioConverter/__init__.py:3823
 msgid "Replace source files"
 msgstr "შეცვალეთ წყარო ფაილები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:820 src/globalPlugins/easyAudioConverter/__init__.py:1909
+#: src/globalPlugins/easyAudioConverter/__init__.py:824 src/globalPlugins/easyAudioConverter/__init__.py:1922
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr "შეცვალეთ წყარო ფაილები წარმატებული კონვერტაციის შემდეგ (სამუდამოდ შლის ორიგინალებს)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2378
+#: src/globalPlugins/easyAudioConverter/__init__.py:2391
 msgid "Replace the existing profile “{name}”?"
 msgstr "შეცვალეთ არსებული პროფილი \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3765
+#: src/globalPlugins/easyAudioConverter/__init__.py:3817
 msgid "Replacing source files cannot be undone. After each output is created and checked successfully, its source file will be permanently deleted. Source files will be kept if conversion or verification fails. Continue?"
 msgstr "წყაროს ფაილების ჩანაცვლება შეუძლებელია. ყოველი გამომავალი შექმნისა და წარმატებით შემოწმების შემდეგ, მისი წყაროს ფაილი სამუდამოდ წაიშლება. წყაროს ფაილები შეინახება, თუ კონვერტაცია ან დადასტურება ვერ მოხერხდა. გაგრძელება?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4797
+#: src/globalPlugins/easyAudioConverter/__init__.py:4851
 msgid "Report audio conversion status"
 msgstr "აუდიო კონვერტაციის სტატუსის შესახებ შეტყობინება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2838 src/globalPlugins/easyAudioConverter/__init__.py:3426
+#: src/globalPlugins/easyAudioConverter/__init__.py:2855 src/globalPlugins/easyAudioConverter/__init__.py:3478
 msgid "Report conversion status"
 msgstr "კონვერტაციის სტატუსის შესახებ შეტყობინება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4745 src/globalPlugins/easyAudioConverter/__init__.py:3430
+#: src/globalPlugins/easyAudioConverter/__init__.py:4799 src/globalPlugins/easyAudioConverter/__init__.py:3482
 msgid "Report queued conversion jobs"
 msgstr "შეატყობინეთ რიგში მდგომი კონვერტაციის სამუშაოებს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3210
+#: src/globalPlugins/easyAudioConverter/__init__.py:3262
 msgid "Retry failed files"
 msgstr "წარუმატებელი ფაილების ხელახლა ცდა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2528
+#: src/globalPlugins/easyAudioConverter/__init__.py:2541
 msgid "Review conversion plan"
 msgstr "გადახედეთ კონვერტაციის გეგმას"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2540
+#: src/globalPlugins/easyAudioConverter/__init__.py:2553
 msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
 msgstr "გადახედეთ ქვემოთ მოცემულ გეგმას. ზომების შეფასება მიახლოებითია. არც ერთი წყარო ფაილი არ გადაიწერება."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2534
+#: src/globalPlugins/easyAudioConverter/__init__.py:2547
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr "გადახედეთ ქვემოთ მოცემულ გეგმას. ზომების შეფასება მიახლოებითია. წყაროს ფაილები სამუდამოდ წაიშლება მათი შედეგების წარმატებით დასრულების შემდეგ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1290
+#: src/globalPlugins/easyAudioConverter/__init__.py:1303
 msgid "Sample rate:"
 msgstr "ნიმუშის განაკვეთი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2594
+#: src/globalPlugins/easyAudioConverter/__init__.py:2608
 msgid "Sample rate: {value}"
 msgstr "ნიმუშის მაჩვენებელი: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2343 src/globalPlugins/easyAudioConverter/__init__.py:2379
+#: src/globalPlugins/easyAudioConverter/__init__.py:2356 src/globalPlugins/easyAudioConverter/__init__.py:2392
 msgid "Save conversion profile"
 msgstr "შეინახეთ კონვერტაციის პროფილი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:767 src/globalPlugins/easyAudioConverter/__init__.py:1877
+#: src/globalPlugins/easyAudioConverter/__init__.py:771 src/globalPlugins/easyAudioConverter/__init__.py:1890
 msgid "Save converted files next to the source files"
 msgstr "შეინახეთ კონვერტირებული ფაილები წყაროს ფაილების გვერდით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1847
+#: src/globalPlugins/easyAudioConverter/__init__.py:1860
 msgid "Save profile..."
 msgstr "პროფილის შენახვა..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4598
+#: src/globalPlugins/easyAudioConverter/__init__.py:4652
 msgid "Select exactly one audio file"
 msgstr "აირჩიეთ ზუსტად ერთი აუდიო ფაილი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1558
+#: src/globalPlugins/easyAudioConverter/__init__.py:1571
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "აირჩიეთ ტექსტური მეტამონაცემების ველები ამ კონვერტაციისთვის კოპირებისთვის."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1837
+#: src/globalPlugins/easyAudioConverter/__init__.py:1850
 msgid "Selected items: {count}"
 msgstr "არჩეული ელემენტები: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3433
+#: src/globalPlugins/easyAudioConverter/__init__.py:3485
 msgid "Settings..."
 msgstr "პარამეტრები..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1074
+#: src/globalPlugins/easyAudioConverter/__init__.py:1078
 msgid "Show a conversion plan before starting"
 msgstr "დაწყებამდე აჩვენეთ კონვერტაციის გეგმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3425
+#: src/globalPlugins/easyAudioConverter/__init__.py:3477
 msgid "Show conversion progress"
 msgstr "კონვერტაციის პროგრესის ჩვენება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3427
+#: src/globalPlugins/easyAudioConverter/__init__.py:3479
 msgid "Show last conversion results"
 msgstr "ბოლო კონვერტაციის შედეგების ჩვენება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2839
+#: src/globalPlugins/easyAudioConverter/__init__.py:2856
 msgid "Show results"
 msgstr "შედეგების ჩვენება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4591
+#: src/globalPlugins/easyAudioConverter/__init__.py:4645
 msgid "Show technical information about the selected audio file"
 msgstr "ტექნიკური ინფორმაციის ჩვენება არჩეული აუდიო ფაილის შესახებ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4778
+#: src/globalPlugins/easyAudioConverter/__init__.py:4832
 msgid "Show the audio conversion progress window"
 msgstr "აუდიო კონვერტაციის პროგრესის ფანჯრის ჩვენება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1747
+#: src/globalPlugins/easyAudioConverter/__init__.py:1760
 msgid "Show the conversion plan before starting"
 msgstr "აჩვენეთ კონვერტაციის გეგმა დაწყებამდე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4789
+#: src/globalPlugins/easyAudioConverter/__init__.py:4843
 msgid "Show the last audio conversion results"
 msgstr "აუდიო კონვერტაციის ბოლო შედეგების ჩვენება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3052
+#: src/globalPlugins/easyAudioConverter/__init__.py:3069
 msgid "Skipped"
 msgstr "გამოტოვებულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3087
+#: src/globalPlugins/easyAudioConverter/__init__.py:3139
 msgid "Skipped files:"
 msgstr "გამოტოვებული ფაილები:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2472
+#: src/globalPlugins/easyAudioConverter/__init__.py:2485
 msgid "Skipped inputs: {count}"
 msgstr "გამოტოვებული შეყვანები: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3172
+#: src/globalPlugins/easyAudioConverter/__init__.py:3224
 msgid "Skipped: {name}"
 msgstr "გამოტოვებულია: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:545
+#: src/globalPlugins/easyAudioConverter/__init__.py:549
 msgid "Sort album"
 msgstr "ალბომის დალაგება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:544
+#: src/globalPlugins/easyAudioConverter/__init__.py:548
 msgid "Sort artist"
 msgstr "მხატვრის დალაგება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:546
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Sort title"
 msgstr "სათაურის დალაგება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:324
+#: src/globalPlugins/easyAudioConverter/__init__.py:328
 msgid "Sound only"
 msgstr "მხოლოდ ხმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3154
+#: src/globalPlugins/easyAudioConverter/__init__.py:3206
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "წყარო:\n{source}\n\nშეცდომა:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3134
+#: src/globalPlugins/easyAudioConverter/__init__.py:3186
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "წყარო:\n{source}\n\nგამომავალი:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3173
+#: src/globalPlugins/easyAudioConverter/__init__.py:3225
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "წყარო:\n{source}\n\nმიზეზი:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:322
+#: src/globalPlugins/easyAudioConverter/__init__.py:326
 msgid "Speech and sound"
 msgstr "მეტყველება და ხმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:323
+#: src/globalPlugins/easyAudioConverter/__init__.py:327
 msgid "Speech only"
 msgstr "მხოლოდ მეტყველება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:489
+#: src/globalPlugins/easyAudioConverter/__init__.py:493
 msgid "Standard"
 msgstr "სტანდარტული"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:731
+#: src/globalPlugins/easyAudioConverter/__init__.py:735
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2560
+#: src/globalPlugins/easyAudioConverter/__init__.py:2574
 msgid "Start conversion"
 msgstr "კონვერტაციის დაწყება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3649
+#: src/globalPlugins/easyAudioConverter/__init__.py:3701
 msgid "Starting the download..."
 msgstr "ჩამოტვირთვის დაწყება..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4213
+#: src/globalPlugins/easyAudioConverter/__init__.py:4267
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "იწყება შემდეგი რიგის კონვერტაცია. დარჩენილი ვაკანსიები: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1298
+#: src/globalPlugins/easyAudioConverter/__init__.py:1311
 msgid "Stereo"
 msgstr "სტერეო"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2836
+#: src/globalPlugins/easyAudioConverter/__init__.py:2853
 msgid "Stop after current file"
 msgstr "შეჩერება მიმდინარე ფაილის შემდეგ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3428
+#: src/globalPlugins/easyAudioConverter/__init__.py:3480
 msgid "Stop after the current file"
 msgstr "შეჩერება მიმდინარე ფაილის შემდეგ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4734
+#: src/globalPlugins/easyAudioConverter/__init__.py:4788
 msgid "Stop the conversion after the current file"
 msgstr "შეაჩერე კონვერტაცია მიმდინარე ფაილის შემდეგ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4118
+#: src/globalPlugins/easyAudioConverter/__init__.py:4172
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "შეჩერდა მიმდინარე ფაილის შემდეგ. დასრულებულია {done} {total} ფაილიდან."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2995
+#: src/globalPlugins/easyAudioConverter/__init__.py:3012
 msgid "Stopping after this file..."
 msgstr "შეჩერება ამ ფაილის შემდეგ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3059 src/globalPlugins/easyAudioConverter/__init__.py:3120
+#: src/globalPlugins/easyAudioConverter/__init__.py:3110 src/globalPlugins/easyAudioConverter/__init__.py:3172
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "წარმატებას მიაღწია: {done}. ვერ მოხერხდა: {failed}. გამოტოვებულია: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3133 src/globalPlugins/easyAudioConverter/__init__.py:3147
+#: src/globalPlugins/easyAudioConverter/__init__.py:3185 src/globalPlugins/easyAudioConverter/__init__.py:3199
 msgid "Success: {name}"
 msgstr "წარმატება: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1081
+#: src/globalPlugins/easyAudioConverter/__init__.py:1094
 msgid "Successful completion notification:"
 msgstr "წარმატებით დასრულების შესახებ შეტყობინება:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3070
+#: src/globalPlugins/easyAudioConverter/__init__.py:3122
 msgid "Successful files:"
 msgstr "წარმატებული ფაილები:"
 
@@ -1447,294 +1467,310 @@ msgstr "წარმატებული ფაილები:"
 msgid "Support Easy Audio Converter"
 msgstr "მარტივი აუდიო კონვერტორის მხარდაჭერა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1121 src/globalPlugins/easyAudioConverter/__init__.py:3436
+#: src/globalPlugins/easyAudioConverter/__init__.py:1134 src/globalPlugins/easyAudioConverter/__init__.py:3488
 msgid "Support the author"
 msgstr "მხარი დაუჭირეთ ავტორს"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2461 src/globalPlugins/easyAudioConverter/__init__.py:2462
+#: src/globalPlugins/easyAudioConverter/__init__.py:2474 src/globalPlugins/easyAudioConverter/__init__.py:2475
 msgid "TB"
 msgstr "ტუბერკულოზი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:740 src/globalPlugins/easyAudioConverter/__init__.py:1859
+#: src/globalPlugins/easyAudioConverter/__init__.py:744 src/globalPlugins/easyAudioConverter/__init__.py:1872
 msgid "Target format:"
 msgstr "სამიზნე ფორმატი:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4676
+#: src/globalPlugins/easyAudioConverter/__init__.py:4730
 msgid "Target format: {format}"
 msgstr "სამიზნე ფორმატი: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1104
+#: src/globalPlugins/easyAudioConverter/__init__.py:1117
 msgid "Test cancel sound"
 msgstr "ტესტის გაუქმების ხმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1097
+#: src/globalPlugins/easyAudioConverter/__init__.py:1110
 msgid "Test error sound"
 msgstr "ტესტის შეცდომის ხმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1089
+#: src/globalPlugins/easyAudioConverter/__init__.py:1102
 msgid "Test success sound"
 msgstr "ტესტი წარმატების ხმა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3798
+#: src/globalPlugins/easyAudioConverter/__init__.py:3850
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "შეფუთული FFmpeg კომპონენტი აკლია. ხელახლა დააინსტალირე Easy Audio Converter."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1433
+#: src/globalPlugins/easyAudioConverter/__init__.py:1446
 msgid "The codec-specific level is not used by this format."
 msgstr "კოდეკის სპეციფიკური დონე არ გამოიყენება ამ ფორმატის მიერ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4092
+#: src/globalPlugins/easyAudioConverter/__init__.py:4146
 msgid "The conversion could not start"
 msgstr "კონვერტაცია ვერ დაიწყო"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4097
+#: src/globalPlugins/easyAudioConverter/__init__.py:4151
 msgid "The conversion could not start:\n{error}"
 msgstr "კონვერტაცია ვერ დაიწყო:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4766 src/globalPlugins/easyAudioConverter/__init__.py:4757
+#: src/globalPlugins/easyAudioConverter/__init__.py:4820 src/globalPlugins/easyAudioConverter/__init__.py:4811
 msgid "The conversion queue is empty"
 msgstr "კონვერტაციის რიგი ცარიელია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3066
+#: src/globalPlugins/easyAudioConverter/__init__.py:3118
 msgid "The conversion was canceled."
 msgstr "კონვერტაცია გაუქმდა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4742
+#: src/globalPlugins/easyAudioConverter/__init__.py:4796
 msgid "The conversion will stop after the current file"
 msgstr "კონვერტაცია შეჩერდება მიმდინარე ფაილის შემდეგ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3025
+#: src/globalPlugins/easyAudioConverter/__init__.py:3042
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr "კონვერტირებული გამომავალი შენახული იყო, მაგრამ საწყისი ფაილის წაშლა ვერ მოხერხდა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2273
+#: src/globalPlugins/easyAudioConverter/__init__.py:2286
 msgid "The file does not contain valid conversion profiles."
 msgstr "ფაილი არ შეიცავს მოქმედ კონვერტაციის პროფილებს."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:471
+#: src/globalPlugins/easyAudioConverter/__init__.py:475
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "პირველი AAC აუდიო ნაკადი გადაკეთდება M4A-ში ხელახალი კოდირების გარეშე. წყაროები, რომელთა პირველი აუდიო ნაკადი არ არის AAC, გამოტოვებულია."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3049
+#: src/globalPlugins/easyAudioConverter/__init__.py:3066
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "პირველი აუდიო ნაკადი არ არის AAC, ასე რომ არ შეიძლება მისი ხელახალი შეყვანა M4A-ზე"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:465
+#: src/globalPlugins/easyAudioConverter/__init__.py:469
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "პირველი აუდიო ნაკადი ამოღებული იქნება ხელახალი კოდირების გარეშე. მისი კოდეკი და ხარისხი უცვლელი რჩება და გამომავალი გაფართოება შეირჩევა ავტომატურად."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3035
+#: src/globalPlugins/easyAudioConverter/__init__.py:3052
 msgid "The input does not contain a readable audio stream."
 msgstr "შეყვანა არ შეიცავს წასაკითხ აუდიო ნაკადს."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3033
+#: src/globalPlugins/easyAudioConverter/__init__.py:3050
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "შეყვანის ფაილი დაზიანებულია ან იყენებს მხარდაუჭერელი კოდირებას."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3068
+#: src/globalPlugins/easyAudioConverter/__init__.py:3120
 msgid "The job was stopped after the current file."
 msgstr "სამუშაო შეჩერდა მიმდინარე ფაილის შემდეგ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2257
+#: src/globalPlugins/easyAudioConverter/__init__.py:2270
 msgid "The profile file is too large."
 msgstr "პროფილის ფაილი ძალიან დიდია."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2354
+#: src/globalPlugins/easyAudioConverter/__init__.py:2367
 msgid "The profile name cannot be empty."
 msgstr "პროფილის სახელი არ შეიძლება იყოს ცარიელი."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3039
+#: src/globalPlugins/easyAudioConverter/__init__.py:3056
 msgid "The source file dates could not be preserved."
 msgstr "წყაროს ფაილის თარიღების შენახვა ვერ მოხერხდა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3719
+#: src/globalPlugins/easyAudioConverter/__init__.py:3771
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "განახლების ჩამოტვირთვა ან დადასტურება ვერ მოხერხდა.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3727
+#: src/globalPlugins/easyAudioConverter/__init__.py:3779
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "განახლება მზად არის. NVDA დანამატის ინსტალერის გახსნა."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2292
+#: src/globalPlugins/easyAudioConverter/__init__.py:2305
 msgid "There are no user profiles to export"
 msgstr "არ არსებობს მომხმარებლის პროფილები ექსპორტისთვის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3031
+#: src/globalPlugins/easyAudioConverter/__init__.py:3048
 msgid "There is not enough free disk space."
 msgstr "არ არის საკმარისი თავისუფალი ადგილი დისკზე."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:3083
+msgid "Timing:"
+msgstr "Timing:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:526
 msgid "Title"
 msgstr "სათაური"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2481
+#: src/globalPlugins/easyAudioConverter/__init__.py:2494
 msgid "Total audio duration: {duration}"
 msgstr "აუდიოს სრული ხანგრძლივობა: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:537
+#: src/globalPlugins/easyAudioConverter/__init__.py:541
 msgid "Total discs"
 msgstr "სულ დისკები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:536
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "Total tracks"
 msgstr "სულ ტრეკები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:529
+#: src/globalPlugins/easyAudioConverter/__init__.py:3084
+msgid "Total wall time: {value}"
+msgstr "Total wall time: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "Track number"
 msgstr "ტრეკის ნომერი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3040 src/globalPlugins/easyAudioConverter/__init__.py:3720 src/globalPlugins/easyAudioConverter/__init__.py:4632 src/globalPlugins/easyAudioConverter/__init__.py:3579
+#: src/globalPlugins/easyAudioConverter/__init__.py:3057 src/globalPlugins/easyAudioConverter/__init__.py:3772 src/globalPlugins/easyAudioConverter/__init__.py:4686 src/globalPlugins/easyAudioConverter/__init__.py:3631
 msgid "Unknown error"
 msgstr "უცნობი შეცდომა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3046
+#: src/globalPlugins/easyAudioConverter/__init__.py:3063
 msgid "Unsupported file type"
 msgstr "მხარდაუჭერელი ფაილის ტიპი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3715
+#: src/globalPlugins/easyAudioConverter/__init__.py:3767
 msgid "Update download canceled"
 msgstr "განახლების ჩამოტვირთვა გაუქმდა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1224 src/globalPlugins/easyAudioConverter/__init__.py:1246 src/globalPlugins/easyAudioConverter/__init__.py:1317
+#: src/globalPlugins/easyAudioConverter/__init__.py:1237 src/globalPlugins/easyAudioConverter/__init__.py:1259 src/globalPlugins/easyAudioConverter/__init__.py:1330
 msgid "Use the quality preset"
 msgstr "გამოიყენეთ ხარისხის წინასწარ დაყენება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1937
+#: src/globalPlugins/easyAudioConverter/__init__.py:1950
 msgid "Use these settings for future quick conversions"
 msgstr "გამოიყენეთ ეს პარამეტრები მომავალი სწრაფი კონვერტაციისთვის"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2730
+#: src/globalPlugins/easyAudioConverter/__init__.py:3096
+msgid "Verification and finalization: {value}"
+msgstr "Verification and finalization: {value}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2744
 msgid "Verifying the output by decoding it"
 msgstr "გამომავალი გადამოწმება დეკოდირებით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:491
+#: src/globalPlugins/easyAudioConverter/__init__.py:495
 msgid "Very high"
 msgstr "ძალიან მაღალი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1240
+#: src/globalPlugins/easyAudioConverter/__init__.py:1253
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr "ძალიან მაღალი + დამატებითი 1, -hhx1 (FFmpeg დონე 4)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1241
+#: src/globalPlugins/easyAudioConverter/__init__.py:1254
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr "ძალიან მაღალი + დამატებითი 2, -hhx2 (FFmpeg დონე 5)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1242
+#: src/globalPlugins/easyAudioConverter/__init__.py:1255
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr "ძალიან მაღალი + დამატებითი 3, -hhx3 (FFmpeg დონე 6)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1243
+#: src/globalPlugins/easyAudioConverter/__init__.py:1256
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr "ძალიან მაღალი + დამატებითი 4, -hhx4 (FFmpeg დონე 7)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1239
+#: src/globalPlugins/easyAudioConverter/__init__.py:1252
 msgid "Very high, -hh (FFmpeg level 3)"
 msgstr "ძალიან მაღალი, -hh (FFmpeg დონე 3)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:441
+#: src/globalPlugins/easyAudioConverter/__init__.py:445
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:447
+#: src/globalPlugins/easyAudioConverter/__init__.py:451
 msgid "WMA"
 msgstr "WMA"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2491
+#: src/globalPlugins/easyAudioConverter/__init__.py:2504
 msgid "Warning: source files will be permanently deleted after successful conversion."
 msgstr "გაფრთხილება: წყაროს ფაილები სამუდამოდ წაიშლება წარმატებული კონვერტაციის შემდეგ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2509
+#: src/globalPlugins/easyAudioConverter/__init__.py:2522
 msgid "Warning: the estimated output is larger than the available disk space."
 msgstr "გაფრთხილება: სავარაუდო გამომავალი დისკის ხელმისაწვდომ ადგილს აღემატება."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2498
+#: src/globalPlugins/easyAudioConverter/__init__.py:2511
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "გაფრთხილება: {count} ფაილები გადაიქცევა დაკარგვის ფორმატიდან სხვა დაკარგულ ფორმატში, რამაც შეიძლება შეამციროს ხარისხი."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:452
+#: src/globalPlugins/easyAudioConverter/__init__.py:456
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1420
+#: src/globalPlugins/easyAudioConverter/__init__.py:1433
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr "WavPack პროფილები იყენებენ FFmpeg დონეებს 0-დან 8-მდე. მე-8 დონე შეესაბამება -hhx6-ს და ძალიან ნელია."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2461 src/globalPlugins/easyAudioConverter/__init__.py:2463
+#: src/globalPlugins/easyAudioConverter/__init__.py:1084
+msgid "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
+msgstr "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2474 src/globalPlugins/easyAudioConverter/__init__.py:2476
 msgid "bytes"
 msgstr "ბაიტები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4851 src/globalPlugins/easyAudioConverter/__init__.py:2924
+#: src/globalPlugins/easyAudioConverter/__init__.py:4905 src/globalPlugins/easyAudioConverter/__init__.py:2941
 msgid "calculating"
 msgstr "გაანგარიშება"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4405
+#: src/globalPlugins/easyAudioConverter/__init__.py:4459
 msgid "excluding subfolders"
 msgstr "ქვესაქაღალდის გამოკლებით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4403
+#: src/globalPlugins/easyAudioConverter/__init__.py:4457
 msgid "including subfolders"
 msgstr "ქვესაქაღალდეების ჩათვლით"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2603
+#: src/globalPlugins/easyAudioConverter/__init__.py:2617
 msgid "no"
 msgstr "არა"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2158 src/globalPlugins/easyAudioConverter/__init__.py:2159
+#: src/globalPlugins/easyAudioConverter/__init__.py:2170 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2172
 msgid "off"
 msgstr "გამორთულია"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2158 src/globalPlugins/easyAudioConverter/__init__.py:2159
+#: src/globalPlugins/easyAudioConverter/__init__.py:2170 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2172
 msgid "on"
 msgstr "on"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2474
+#: src/globalPlugins/easyAudioConverter/__init__.py:2487
 msgid "source folders"
 msgstr "წყაროს საქაღალდეები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2459 src/globalPlugins/easyAudioConverter/__init__.py:2485 src/globalPlugins/easyAudioConverter/__init__.py:2581 src/globalPlugins/easyAudioConverter/__init__.py:2582 src/globalPlugins/easyAudioConverter/__init__.py:2584 src/globalPlugins/easyAudioConverter/__init__.py:2590 src/globalPlugins/easyAudioConverter/__init__.py:2593 src/globalPlugins/easyAudioConverter/__init__.py:2598 src/globalPlugins/easyAudioConverter/__init__.py:4650 src/globalPlugins/easyAudioConverter/__init__.py:4654 src/globalPlugins/easyAudioConverter/__init__.py:4659
+#: src/globalPlugins/easyAudioConverter/__init__.py:2472 src/globalPlugins/easyAudioConverter/__init__.py:2498 src/globalPlugins/easyAudioConverter/__init__.py:2595 src/globalPlugins/easyAudioConverter/__init__.py:2596 src/globalPlugins/easyAudioConverter/__init__.py:2598 src/globalPlugins/easyAudioConverter/__init__.py:2604 src/globalPlugins/easyAudioConverter/__init__.py:2607 src/globalPlugins/easyAudioConverter/__init__.py:2612 src/globalPlugins/easyAudioConverter/__init__.py:4704 src/globalPlugins/easyAudioConverter/__init__.py:4708 src/globalPlugins/easyAudioConverter/__init__.py:4713
 msgid "unknown"
 msgstr "უცნობი"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2603
+#: src/globalPlugins/easyAudioConverter/__init__.py:2617
 msgid "yes"
 msgstr "დიახ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4440 src/globalPlugins/easyAudioConverter/__init__.py:4465
+#: src/globalPlugins/easyAudioConverter/__init__.py:4494 src/globalPlugins/easyAudioConverter/__init__.py:4519
 msgid "{count} selected folders"
 msgstr "{count} შერჩეული საქაღალდეები"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3852
+#: src/globalPlugins/easyAudioConverter/__init__.py:3906
 msgid "{message}. Starting with {workers} adaptive conversion workers."
 msgstr "{message}. დაწყებული {workers} ადაპტური კონვერტაციის მუშაკებით."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3856
+#: src/globalPlugins/easyAudioConverter/__init__.py:3910
 msgid "{message}. Using {workers} parallel conversion workers."
 msgstr "{message}. {workers} პარალელური კონვერტაციის მუშაკების გამოყენებით."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:480
+#: src/globalPlugins/easyAudioConverter/__init__.py:484
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (გაფართოება არჩეულია წყაროს აუდიო კოდეკიდან)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2934
+#: src/globalPlugins/easyAudioConverter/__init__.py:2951
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. ფაილი {index} {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4806
+#: src/globalPlugins/easyAudioConverter/__init__.py:4860
 msgid "{stage}. Queued jobs: {count}."
 msgstr "{stage}. რიგი სამუშაოები: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4854
+#: src/globalPlugins/easyAudioConverter/__init__.py:4908
 msgid "{stage}. {status} Queued jobs: {count}."
 msgstr "{stage}. {status} რიგის სამუშაოები: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4846
+#: src/globalPlugins/easyAudioConverter/__init__.py:4900
 msgid "{status} Estimated time remaining {remaining}."
 msgstr "{status} დარჩენილი სავარაუდო დრო {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2596 src/globalPlugins/easyAudioConverter/__init__.py:4657
+#: src/globalPlugins/easyAudioConverter/__init__.py:2610 src/globalPlugins/easyAudioConverter/__init__.py:4711
 msgid "{value} Hz"
 msgstr "{value} ჰც"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2588
+#: src/globalPlugins/easyAudioConverter/__init__.py:2602
 msgid "{value} kbps"
 msgstr "{value} kbps"

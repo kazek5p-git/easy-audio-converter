@@ -92,12 +92,16 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.6.0"
+ADDON_VERSION = "1.7.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
 ERROR_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_error.wav"
 CANCEL_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_cancel.wav"
+CONVERSION_LIFECYCLE_WARNING = _(
+	"Do not close or restart NVDA while conversion is running. "
+	"To stop safely, use the Cancel button."
+)
 COMPLETION_NOTIFICATION_KEYS = ("speechAndSound", "speechOnly", "soundOnly", "none")
 PROGRESS_ANNOUNCEMENT_KEYS = ("milestones", "everyFile", "onDemand")
 CONFIG_SPEC = {
@@ -1074,6 +1078,15 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 			wx.CheckBox(self, label=_("Show a conversion plan before starting"))
 		)
 		self.show_preflight.SetValue(settings.show_preflight)
+		helper.addItem(
+			wx.StaticText(
+				self,
+				label=_(
+					"When the plan is disabled, ordinary conversions use a fast path "
+					"and skip the preliminary input scan when it is not needed.",
+				),
+			)
+		)
 
 		completion_mode, progress_mode = _read_notification_preferences()
 		completion_labels = _completion_notification_labels()
@@ -2541,6 +2554,7 @@ class ConversionPlanDialog(wx.Dialog):
 				"Review the plan below. Size estimates are approximate. "
 				"No source file will be overwritten.",
 			)
+		description = f"{description}\n\n{CONVERSION_LIFECYCLE_WARNING}"
 		sizer.Add(
 			wx.StaticText(
 				panel,
@@ -2808,6 +2822,9 @@ class ConversionProgressDialog(wx.Dialog):
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		self.current_file = wx.StaticText(panel, label=_("Preparing the conversion"))
 		sizer.Add(self.current_file, 0, wx.ALL | wx.EXPAND, 8)
+		self.lifecycle_warning = wx.StaticText(panel, label=CONVERSION_LIFECYCLE_WARNING)
+		self.lifecycle_warning.Wrap(520)
+		sizer.Add(self.lifecycle_warning, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 		self.file_status = wx.StaticText(panel, label=_("Current file progress: waiting"))
 		sizer.Add(self.file_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 		self.file_gauge = _VisualProgressBar(panel, value_range=1000)
@@ -3052,6 +3069,40 @@ def _skipped_reason_label(reason: str) -> str:
 	}.get(reason, _("Skipped"))
 
 
+def _format_timing_seconds(seconds: float | None) -> str:
+	"""Formatuj krótki pomiar, zachowując ułamki dla szybkich etapów."""
+	value = max(0.0, float(seconds or 0.0))
+	if value < 60.0:
+		return f"{value:.2f} s"
+	return _format_elapsed(value)
+
+
+def _build_timing_report(summary: ConversionSummary) -> list[str]:
+	timing = summary.timing
+	return [
+		_("Timing:"),
+		_("Total wall time: {value}").format(
+			value=_format_timing_seconds(timing.wall_seconds),
+		),
+		_("Input recognition: {value}").format(
+			value=_format_timing_seconds(timing.probe_seconds),
+		),
+		_("Loudness analysis: {value}").format(
+			value=_format_timing_seconds(timing.analysis_seconds),
+		),
+		_("Encoding and output writing: {value}").format(
+			value=_format_timing_seconds(timing.encode_seconds),
+		),
+		_("Verification and finalization: {value}").format(
+			value=_format_timing_seconds(timing.finalize_seconds),
+		),
+		_("Probe cache hits: {count}; misses: {misses}").format(
+			count=timing.probe_cache_hits,
+			misses=timing.probe_cache_misses,
+		),
+	]
+
+
 def _build_results_report(summary: ConversionSummary) -> str:
 	"""Build a complete localized plain-text report for the clipboard."""
 	lines = [
@@ -3062,6 +3113,7 @@ def _build_results_report(summary: ConversionSummary) -> str:
 			skipped=summary.ignored,
 		),
 	]
+	lines.extend(("", *_build_timing_report(summary)))
 	if summary.canceled:
 		lines.append(_("The conversion was canceled."))
 	if summary.stopped_after_current:
@@ -3836,6 +3888,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._progress_dialog.set_queue_count(len(self._job_queue))
 		self._progress_dialog.show_window()
 		ui.message(_("Preparing the conversion"))
+		if not settings.show_preflight:
+			ui.message(CONVERSION_LIFECYCLE_WARNING)
 
 		def on_collected(total: int, ignored: int) -> None:
 			if total:

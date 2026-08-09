@@ -245,6 +245,20 @@ POLISH = {
 	"Quickly convert selected files or folders": "Szybko konwertuj zaznaczone pliki lub foldery",
 	"Report audio conversion status": "Odczytaj stan konwersji audio",
 	"Report conversion status": "Odczytaj stan konwersji",
+	"Timing:": "Czasy etapów:",
+	"Total wall time: {value}": "Łączny czas rzeczywisty: {value}",
+	"Input recognition: {value}": "Rozpoznawanie wejścia: {value}",
+	"Loudness analysis: {value}": "Analiza głośności: {value}",
+	"Encoding and output writing: {value}": "Kodowanie i zapis wyniku: {value}",
+	"Verification and finalization: {value}": "Weryfikacja i finalizacja: {value}",
+	"Probe cache hits: {count}; misses: {misses}": (
+		"Trafienia pamięci podręcznej rozpoznania: {count}; chybienia: {misses}"
+	),
+	"When the plan is disabled, ordinary conversions use a fast path "
+	"and skip the preliminary input scan when it is not needed.": (
+		"Po wyłączeniu planu zwykłe konwersje używają szybkiej ścieżki i pomijają "
+		"wstępne rozpoznanie wejścia, gdy nie jest ono potrzebne."
+	),
 	"Save converted files next to the source files": (
 		"Zapisuj przekonwertowane pliki obok plików źródłowych"
 	),
@@ -882,6 +896,10 @@ POLISH.update(
 			"zostaną trwale usunięte po pomyślnym utworzeniu odpowiadających "
 			"im plików wynikowych."
 		),
+		"Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button.": (
+			"Nie wyłączaj ani nie uruchamiaj ponownie NVDA podczas konwersji. "
+			"Aby bezpiecznie przerwać, użyj przycisku „Anuluj”."
+		),
 		"The converted output was kept, but the source file could not be removed.": (
 			"Przekonwertowany plik wynikowy został zachowany, ale nie udało "
 			"się usunąć pliku źródłowego."
@@ -1159,7 +1177,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.6.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.7.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -1201,7 +1219,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.6.0\n"
+		"Project-Id-Version: Easy Audio Converter 1.7.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"
@@ -1278,6 +1296,11 @@ def main() -> None:
 		action="store_true",
 		help="Retry entries whose translation is still identical to English.",
 	)
+	parser.add_argument(
+		"--offline",
+		action="store_true",
+		help="Do not contact translation services; use English fallback for missing entries.",
+	)
 	arguments = parser.parse_args()
 	selected_locales = tuple(arguments.locales) if arguments.locales else NVDA_LOCALES
 	runtime_messages = extract_messages()
@@ -1324,7 +1347,9 @@ def main() -> None:
 				for message in runtime_messages
 				if not translations.get(message)
 			]
-		if missing_messages:
+		if missing_messages and arguments.offline:
+			new_translations = {message: message for message in missing_messages}
+		elif missing_messages:
 			try:
 				if arguments.provider == "edge":
 					new_translations = translate_messages_edge(missing_messages, locale)

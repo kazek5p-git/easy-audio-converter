@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.6.0.</p>
+	<p>Author: Kazimierz Parzych. Version 1.7.0.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -128,6 +128,18 @@
 		scheduled files when CPU or memory load remains high or low. Each file has
 		its own FFmpeg process, so cancellation terminates all active processes and
 		a boundary stop schedules no new files.
+	</p>
+	<p>
+		For uneven batches, the queue starts the longest or largest files first and
+		weights overall progress by estimated work. When preflight planning is
+		disabled, an ordinary encode without metadata-aware naming, stream copying,
+		or loudness analysis can skip the preliminary input probe. The results
+		report lists separate times for probing, loudness analysis, encoding/output
+		writing, and finalization.
+	</p>
+	<p>
+		Do not close or restart NVDA while a conversion is running. Use the Cancel
+		button to stop safely; restarting NVDA ends the active conversion.
 	</p>
 
 	<h2>Conversion results</h2>

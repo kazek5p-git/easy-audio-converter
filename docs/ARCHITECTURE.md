@@ -67,6 +67,27 @@ not have a GPU path. Running audio through a video hardware encoder would not
 improve this workload, so GPU acceleration is not enabled or advertised as a
 false speedup.
 
+When the preflight plan is disabled, ordinary encoded targets use a fast path:
+the add-on can build collision-safe output names from the source filename and
+starts FFmpeg without a preliminary input probe. The path is disabled whenever
+stream-copy compatibility, metadata-aware naming, selected metadata, or
+loudness analysis requires source information. A bounded process-wide probe
+cache reuses unchanged file information (size and modification time) for
+technical-information views and repeated jobs.
+
+The conversion coordinator currently lives inside the NVDA add-on process.
+During NVDA shutdown or restart it cancels active FFmpeg children, clears the
+queued jobs, and removes partial outputs safely; the user interface warns about
+this limitation and directs users to the Cancel button. A future standalone
+edition can move this coordinator to a persistent helper process with a durable
+job manifest and reconnect support.
+
+Parallel jobs use a longest-processing-time-first queue based on duration, or
+input size when duration is unknown. Overall progress is weighted by the same
+estimate, so a long file contributes more than a short file. Each summary also
+records wall time, probing, loudness analysis, encoding/output writing,
+verification/finalization, and probe-cache hits.
+
 ## One-time jobs and named profiles
 
 Quick conversion continues to read the standard NVDA configuration. “Convert

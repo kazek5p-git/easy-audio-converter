@@ -26,6 +26,7 @@ from converter import (  # noqa: E402
 	WAVPACK_COMPRESSION_PROFILES,
 	ConversionSettings,
 	ConversionCallbacks,
+	ConversionPlanItem,
 	Converter,
 	MediaInfo,
 	StreamCopySourceError,
@@ -45,6 +46,7 @@ from converter import (  # noqa: E402
 	parse_media_info,
 	parse_progress_time,
 	render_output_name,
+	parallel_schedule_order,
 	resolve_parallel_jobs,
 	recommended_parallel_jobs,
 	sanitize_windows_filename,
@@ -301,6 +303,37 @@ class ProgressParsingTests(unittest.TestCase):
 
 
 class MediaInfoTests(unittest.TestCase):
+	def test_probe_cache_reuses_unchanged_file_information(self):
+		class CacheProbeConverter(Converter):
+			def __init__(self, ffmpeg_path):
+				super().__init__(ffmpeg_path)
+				self.capture_count = 0
+
+			def _require_ffmpeg(self):
+				pass
+
+			def _capture_process(self, command, *, timeout=15):
+				self.capture_count += 1
+				return (
+					1,
+					"",
+					"Input #0, wav, from 'source.wav':\n"
+					"  Duration: 00:00:10.00, start: 0.0, bitrate: 1411 kb/s\n"
+					"  Stream #0:0: Audio: pcm_s16le, 44100 Hz, stereo, 1411 kb/s\n",
+				)
+
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			Converter.clear_probe_cache()
+			converter = CacheProbeConverter(root / "missing.exe")
+			first = converter.probe_media_info(source)
+			second = converter.probe_media_info(source)
+			self.assertEqual(first, second)
+			self.assertEqual(2, converter.capture_count)
+			self.assertEqual((1, 1), converter._probe_stats())
+
 	def test_media_info_parser_reports_audio_properties(self):
 		info = parse_media_info(
 			"Input #0, mp3, from 'song.mp3':\n"
@@ -517,6 +550,38 @@ class _ParallelFakeConverter(_FakeConverter):
 
 
 class ConversionPlanningTests(unittest.TestCase):
+	def test_fast_path_skips_input_probe_when_preview_is_disabled(self):
+		class FastPathConverter(_FakeConverter):
+			def _probe_media_info(self, source, *, include_metadata):
+				raise AssertionError("fast path unexpectedly probed the source")
+
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "source.wav"
+			source.write_bytes(b"source")
+			converter = FastPathConverter(root / "missing.exe")
+			summary = converter.run(
+				[source],
+				ConversionSettings(
+					target_format="mp3",
+					same_folder=False,
+					output_folder=str(root / "out"),
+					show_preflight=False,
+					parallel_jobs=1,
+				),
+			)
+			self.assertEqual(1, summary.succeeded)
+			self.assertEqual(0, summary.timing.probe_seconds)
+			self.assertGreaterEqual(summary.timing.encode_seconds, 0.0)
+
+	def test_parallel_schedule_starts_largest_work_first(self):
+		items = (
+			ConversionPlanItem("short", "short.mp3", 5.0, 1, None),
+			ConversionPlanItem("long", "long.mp3", 120.0, 1, None),
+			ConversionPlanItem("medium", "medium.mp3", 30.0, 1, None),
+		)
+		self.assertEqual((1, 2, 0), parallel_schedule_order(items))
+
 	def test_multiple_files_use_bounded_parallel_workers(self):
 		with tempfile.TemporaryDirectory() as temporary:
 			root = Path(temporary)
