@@ -772,6 +772,24 @@ POLISH.update(
 
 POLISH.update(
 	{
+		"BPM": "BPM",
+		"Compilation": "Kompilacja",
+		"Description": "Opis",
+		"Edit metadata overrides": "Edytuj nadpisania metadanych",
+		"Edit metadata overrides...": "Edytuj nadpisania metadanych...",
+		"Encoder": "Enkoder",
+		"Enter values to replace source tags for every converted file. Leave a field empty to keep its source value.": (
+			"Wpisz wartości zastępujące tagi źródłowe we wszystkich konwertowanych plikach. "
+			"Puste pole pozostawi wartość źródłową."
+		),
+		"Grouping": "Grupowanie",
+		"ISRC": "ISRC",
+		"Metadata overrides: {count} fields": "Nadpisania metadanych: pól {count}",
+		"Sort album": "Sortowanie albumu",
+		"Sort artist": "Sortowanie wykonawcy",
+		"Sort title": "Sortowanie tytułu",
+		"Total discs": "Łączna liczba płyt",
+		"Total tracks": "Łączna liczba utworów",
 		"Could not open Easy Audio Converter settings. See the NVDA log for details.": (
 			"Nie udało się otworzyć ustawień Easy Audio Converter. "
 			"Szczegóły znajdują się w dzienniku NVDA."
@@ -798,6 +816,11 @@ POLISH.update(
 		"No re-encoding: quality, loudness, metadata, artwork, chapters, and advanced codec settings are not used.": (
 			"Bez ponownego kodowania: jakość, normalizacja głośności, metadane, "
 			"okładki, rozdziały i zaawansowane ustawienia kodeka nie są używane."
+		),
+		"No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied.": (
+			"Bez ponownego kodowania: jakość, normalizacja głośności, metadane źródłowe, "
+			"okładki, rozdziały i zaawansowane ustawienia kodeka nie są używane. "
+			"Wprowadzone nadpisania metadanych są nadal stosowane."
 		),
 		"No readable audio stream was found": (
 			"Nie znaleziono możliwego do odczytania strumienia audio"
@@ -877,15 +900,33 @@ POLISH.update(
 		"32 files at a time": "32 pliki naraz",
 		"4 files at a time": "4 pliki naraz",
 		"8 files at a time": "8 plików naraz",
-		"Automatic (recommended)": "Automatycznie (zalecane)",
-		"Automatic mode uses the available CPU cores for independent files. GPU acceleration is not used for audio encoding.": (
-			"Tryb automatyczny używa dostępnych rdzeni procesora do niezależnych "
-			"plików. Przyspieszanie GPU nie jest używane do kodowania dźwięku."
+		"Adaptive workers: {active} active, target {target}": (
+			"Tryb adaptacyjny: aktywne {active}, cel {target}"
+		),
+		"Automatic (dynamic load balancing)": (
+			"Automatycznie (dynamiczne dostosowanie obciążenia)"
+		),
+		"Automatic mode dynamically adjusts independent files using CPU and memory load.": (
+			"Tryb automatyczny dynamicznie dostosowuje liczbę niezależnych plików "
+			"do obciążenia procesora i pamięci."
+		),
+		"Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding.": (
+			"Tryb automatyczny dynamicznie dostosowuje liczbę niezależnych plików "
+			"do obciążenia procesora i pamięci. Przyspieszanie GPU nie jest używane "
+			"do kodowania dźwięku."
 		),
 		"One file at a time": "Jeden plik naraz",
 		"Parallel conversion jobs:": "Równoległe zadania konwersji:",
+		"Parallel workers: finished": "Równoległe procesy: zakończono",
+		"Parallel workers: waiting": "Równoległe procesy: oczekiwanie",
+		"Parallel workers: {active} active of {target}": (
+			"Równoległe procesy: aktywne {active} z {target}"
+		),
 		"{message}. Using {workers} parallel conversion workers.": (
 			"{message}. Używam {workers} równoległych pracowników konwersji."
+		),
+		"{message}. Starting with {workers} adaptive conversion workers.": (
+			"{message}. Rozpoczynam od {workers} adaptacyjnych pracowników konwersji."
 		),
 	}
 )

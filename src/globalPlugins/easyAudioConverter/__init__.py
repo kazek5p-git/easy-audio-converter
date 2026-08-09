@@ -11,7 +11,7 @@ import webbrowser
 from collections import deque
 from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Mapping
 
 import addonHandler
 import api
@@ -45,6 +45,7 @@ from .converter import (
 	METADATA_FIELD_KEYS,
 	METADATA_MODE_KEYS,
 	MP3_ENCODER_KEYS,
+	normalize_metadata_overrides,
 	PARALLEL_JOB_COUNTS,
 	ORIGINAL_AUDIO_COPY_FORMAT,
 	QUALITY_KEYS,
@@ -114,6 +115,7 @@ CONFIG_SPEC = {
 		"string_list(default=list('title', 'artist', 'album', 'album_artist', "
 		"'composer', 'genre', 'date', 'track', 'disc'))"
 	),
+	"metadataOverrides": "string(default='{}')",
 	"outputNameTemplate": "string(default='{source}')",
 	"loudnessPreset": "string(default='off')",
 	"loudnessTargetI": "float(default=-16.0, min=-70.0, max=-5.0)",
@@ -186,6 +188,27 @@ def _safe_float(value: Any, default: float) -> float:
 		return default
 
 
+def _load_metadata_overrides(value: Any = None) -> dict[str, str]:
+	"""Wczytaj ograniczone nadpisania tagów z tekstowej konfiguracji NVDA."""
+	if value is None:
+		_ensure_config()
+		value = config.conf[CONFIG_SECTION].get("metadataOverrides", "{}")
+	try:
+		raw = json.loads(str(value or "{}"))
+	except (TypeError, ValueError):
+		return {}
+	return normalize_metadata_overrides(raw)
+
+
+def _dump_metadata_overrides(value: Any) -> str:
+	return json.dumps(
+		normalize_metadata_overrides(value),
+		ensure_ascii=True,
+		sort_keys=True,
+		separators=(",", ":"),
+	)
+
+
 def _read_settings() -> ConversionSettings:
 	_ensure_config()
 	conf = config.conf[CONFIG_SECTION]
@@ -214,6 +237,7 @@ def _read_settings() -> ConversionSettings:
 		replace_source_files=bool(conf.get("replaceSourceFiles", False)),
 		metadata_mode=_validated_key(conf.get("metadataMode"), METADATA_MODE_KEYS, "all"),
 		metadata_fields=metadata_fields,
+		metadata_overrides=_load_metadata_overrides(conf.get("metadataOverrides", "{}")),
 		advanced_options=profiles.get(target_format, {}),
 		output_name_template=str(conf.get("outputNameTemplate") or "{source}")[:240],
 		loudness_preset=_validated_key(
@@ -248,6 +272,7 @@ def _write_conversion_settings(settings: ConversionSettings) -> None:
 	conf["replaceSourceFiles"] = settings.replace_source_files
 	conf["metadataMode"] = settings.metadata_mode
 	conf["metadataFields"] = list(settings.metadata_fields)
+	conf["metadataOverrides"] = _dump_metadata_overrides(settings.metadata_overrides)
 	conf["outputNameTemplate"] = settings.output_name_template
 	conf["loudnessPreset"] = settings.loudness_preset
 	conf["loudnessTargetI"] = settings.loudness_target_i
@@ -311,7 +336,7 @@ def _progress_announcement_labels() -> dict[str, str]:
 
 def _parallel_job_labels() -> dict[int, str]:
 	return {
-		0: _("Automatic (recommended)"),
+		0: _("Automatic (dynamic load balancing)"),
 		1: _("One file at a time"),
 		2: _("2 files at a time"),
 		4: _("4 files at a time"),
@@ -508,6 +533,17 @@ def _metadata_field_labels() -> dict[str, str]:
 		"lyrics": _("Lyrics"),
 		"language": _("Language"),
 		"publisher": _("Publisher"),
+		"track_total": _("Total tracks"),
+		"disc_total": _("Total discs"),
+		"compilation": _("Compilation"),
+		"bpm": _("BPM"),
+		"description": _("Description"),
+		"grouping": _("Grouping"),
+		"encoder": _("Encoder"),
+		"isrc": _("ISRC"),
+		"sort_artist": _("Sort artist"),
+		"sort_album": _("Sort album"),
+		"sort_title": _("Sort title"),
 	}
 
 
@@ -812,14 +848,27 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 			self.metadata_fields_sizer.Add(checkbox, 0, wx.BOTTOM, 3)
 			self.metadata_fields.append(checkbox)
 		helper.addItem(self.metadata_fields_sizer)
+		self.metadata_overrides = dict(settings.metadata_overrides)
+		self.metadata_overrides_button = helper.addItem(
+			wx.Button(self, label=_("Edit metadata overrides..."))
+		)
+		self.metadata_overrides_summary = helper.addItem(wx.StaticText(self, label=""))
 
 		self.target_format.Bind(wx.EVT_CHOICE, self._update_control_state)
 		self.same_folder.Bind(wx.EVT_CHECKBOX, self._update_control_state)
 		self.metadata_mode.Bind(wx.EVT_CHOICE, self._update_control_state)
+		self.metadata_overrides_button.Bind(wx.EVT_BUTTON, self._on_metadata_overrides)
 		self.output_name_template.Bind(wx.EVT_TEXT, self._update_name_preview)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
 		self._update_control_state()
 		self._update_name_preview()
+		self._update_metadata_overrides_summary()
+
+	def _update_metadata_overrides_summary(self) -> None:
+		count = len(self.metadata_overrides)
+		self.metadata_overrides_summary.SetLabel(
+			_("Metadata overrides: {count} fields").format(count=count)
+		)
 
 	def _update_control_state(self, event=None):
 		target_format = FORMAT_KEYS[self.target_format.GetSelection()]
@@ -844,6 +893,7 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		self.metadata_fields_sizer.GetStaticBox().Enable(copy_selected_metadata)
 		for checkbox in self.metadata_fields:
 			checkbox.Enable(copy_selected_metadata)
+		self.metadata_overrides_button.Enable(True)
 		self._update_name_preview()
 		self.Layout()
 
@@ -860,6 +910,7 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 					"album": _("Example album"),
 					"track": "01",
 					"disc": "1",
+					**self.metadata_overrides,
 				},
 			)
 			self.template_preview.SetLabel(
@@ -873,6 +924,15 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 			)
 		if event is not None:
 			event.Skip()
+
+	def _on_metadata_overrides(self, event) -> None:
+		dialog = MetadataOverridesDialog(self, self.metadata_overrides)
+		try:
+			if dialog.ShowModal() == wx.ID_OK:
+				self.metadata_overrides = dialog.values()
+				self._update_metadata_overrides_summary()
+		finally:
+			dialog.Destroy()
 
 	def _on_browse(self, event):
 		initial_path = self.output_folder.GetValue().strip() or _default_output_folder()
@@ -921,6 +981,7 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 			for field_name, checkbox in zip(METADATA_FIELD_KEYS, self.metadata_fields)
 			if checkbox.IsChecked()
 		]
+		conf["metadataOverrides"] = _dump_metadata_overrides(self.metadata_overrides)
 		conf["outputNameTemplate"] = self.output_name_template.GetValue().strip()
 
 
@@ -1004,7 +1065,7 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 			wx.StaticText(
 				self,
 				label=_(
-					"Automatic mode uses the available CPU cores for independent files. "
+					"Automatic mode dynamically adjusts independent files using CPU and memory load. "
 					"GPU acceleration is not used for audio encoding.",
 				),
 			)
@@ -1527,6 +1588,77 @@ class MetadataFieldsDialog(wx.Dialog):
 		)
 
 
+class MetadataOverridesDialog(wx.Dialog):
+	"""Dostępny edytor tagów stosowanych do każdego wyniku zadania."""
+
+	def __init__(self, parent, overrides: Mapping[str, str] | None):
+		super().__init__(
+			parent,
+			title=_("Edit metadata overrides"),
+			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
+		)
+		panel = wx.Panel(self)
+		sizer = wx.BoxSizer(wx.VERTICAL)
+		sizer.Add(
+			wx.StaticText(
+				panel,
+				label=(
+					_(
+						"Enter values to replace source tags for every converted file. "
+						"Leave a field empty to keep its source value."
+					)
+				),
+			),
+			0,
+			wx.ALL | wx.EXPAND,
+			8,
+		)
+		content = scrolledpanel.ScrolledPanel(panel, style=wx.TAB_TRAVERSAL)
+		content_sizer = wx.FlexGridSizer(0, 2, 8, 10)
+		content_sizer.AddGrowableCol(1, 1)
+		self._controls: dict[str, wx.TextCtrl] = {}
+		field_labels = _metadata_field_labels()
+		overrides = normalize_metadata_overrides(overrides)
+		multiline_fields = {"comment", "lyrics", "description"}
+		for field_name in METADATA_FIELD_KEYS:
+			label = wx.StaticText(content, label=field_labels[field_name])
+			style = wx.TE_MULTILINE if field_name in multiline_fields else 0
+			control = wx.TextCtrl(
+				content,
+				value=overrides.get(field_name, ""),
+				style=style,
+			)
+			control.SetName(field_labels[field_name])
+			if style:
+				control.SetMinSize((360, 58))
+			content_sizer.Add(label, 0, wx.ALIGN_TOP | wx.ALIGN_LEFT)
+			content_sizer.Add(control, 1, wx.EXPAND)
+			self._controls[field_name] = control
+		content.SetSizer(content_sizer)
+		content.SetupScrolling(scroll_x=False)
+		sizer.Add(content, 1, wx.ALL | wx.EXPAND, 8)
+		buttons = wx.StdDialogButtonSizer()
+		buttons.AddButton(wx.Button(panel, wx.ID_OK))
+		buttons.AddButton(wx.Button(panel, wx.ID_CANCEL))
+		buttons.Realize()
+		sizer.Add(buttons, 0, wx.ALL | wx.ALIGN_RIGHT, 8)
+		panel.SetSizer(sizer)
+		outer = wx.BoxSizer(wx.VERTICAL)
+		outer.Add(panel, 1, wx.EXPAND)
+		self.SetSizerAndFit(outer)
+		self.SetSize((700, 650))
+		self.SetMinSize((560, 420))
+		self.CentreOnParent()
+
+	def values(self) -> dict[str, str]:
+		return normalize_metadata_overrides(
+			{
+				field_name: control.GetValue()
+				for field_name, control in self._controls.items()
+			}
+		)
+
+
 class JobProcessingOptionsDialog(wx.Dialog):
 	"""One-job loudness, stream-copy and verification options."""
 
@@ -1602,6 +1734,14 @@ class JobProcessingOptionsDialog(wx.Dialog):
 			PARALLEL_JOB_COUNTS.index(settings.parallel_jobs)
 			if settings.parallel_jobs in PARALLEL_JOB_COUNTS
 			else 0
+		)
+		helper.addItem(
+			wx.StaticText(
+				panel,
+				label=_(
+					"Automatic mode dynamically adjusts independent files using CPU and memory load."
+				),
+			)
 		)
 		self.show_preflight = helper.addItem(
 			wx.CheckBox(panel, label=_("Show the conversion plan before starting"))
@@ -1681,6 +1821,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		self._one_time_settings = initial_settings
 		self._advanced_options = dict(initial_settings.advanced_options)
 		self._metadata_fields = tuple(initial_settings.metadata_fields)
+		self._metadata_overrides = dict(initial_settings.metadata_overrides)
 		self._processing_settings = initial_settings
 		self._preview_source = Path(preview_source) if preview_source else Path("Example source.wav")
 		self._builtin_profiles = _builtin_conversion_profiles(initial_settings)
@@ -1781,6 +1922,10 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.metadata_fields_button = helper.addItem(
 			wx.Button(panel, label=_("Choose metadata fields...")),
 		)
+		self.metadata_overrides_button = helper.addItem(
+			wx.Button(panel, label=_("Edit metadata overrides...")),
+		)
+		self.metadata_overrides_summary = helper.addItem(wx.StaticText(panel, label=""))
 		self.advanced_status = helper.addItem(wx.StaticText(panel, label=""))
 		self.processing_status = helper.addItem(wx.StaticText(panel, label=""))
 		self.processing_options_button = helper.addItem(
@@ -1830,6 +1975,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.metadata_mode.Bind(wx.EVT_CHOICE, self._on_setting_changed)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
 		self.metadata_fields_button.Bind(wx.EVT_BUTTON, self._on_metadata_fields)
+		self.metadata_overrides_button.Bind(wx.EVT_BUTTON, self._on_metadata_overrides)
 		self.processing_options_button.Bind(wx.EVT_BUTTON, self._on_processing_options)
 		self.Bind(wx.EVT_BUTTON, self._on_convert, id=wx.ID_OK)
 		self._update_control_state()
@@ -1880,6 +2026,7 @@ class ConversionOptionsDialog(wx.Dialog):
 			self.replace_source_files.SetValue(settings.replace_source_files)
 			self.metadata_mode.SetSelection(METADATA_MODE_KEYS.index(settings.metadata_mode))
 			self._metadata_fields = tuple(settings.metadata_fields)
+			self._metadata_overrides = dict(settings.metadata_overrides)
 			self._advanced_options = dict(settings.advanced_options)
 			self._processing_settings = settings
 			self._update_control_state()
@@ -1906,6 +2053,7 @@ class ConversionOptionsDialog(wx.Dialog):
 			replace_source_files=self.replace_source_files.IsChecked(),
 			metadata_mode=METADATA_MODE_KEYS[max(0, self.metadata_mode.GetSelection())],
 			metadata_fields=self._metadata_fields,
+			metadata_overrides=self._metadata_overrides,
 			advanced_options=advanced_options,
 			output_name_template=self.output_name_template.GetValue().strip(),
 			loudness_preset=(
@@ -1950,6 +2098,12 @@ class ConversionOptionsDialog(wx.Dialog):
 			and METADATA_MODE_KEYS[max(0, self.metadata_mode.GetSelection())] == "selected"
 		)
 		self.metadata_fields_button.Enable(selected_metadata)
+		self.metadata_overrides_button.Enable(True)
+		self.metadata_overrides_summary.SetLabel(
+			_("Metadata overrides: {count} fields").format(
+				count=len(self._metadata_overrides)
+			)
+		)
 		advanced_enabled = bool(self._advanced_options.get("enabled", False))
 		self.advanced_status.SetLabel(
 			_("Advanced codec overrides are not used for stream copy")
@@ -1965,6 +2119,7 @@ class ConversionOptionsDialog(wx.Dialog):
 				self.output_name_template.GetValue(),
 				self._preview_source,
 				target_format,
+				self._metadata_overrides,
 				index=1,
 			)
 			self.name_preview.SetLabel(
@@ -1979,8 +2134,9 @@ class ConversionOptionsDialog(wx.Dialog):
 		if stream_copy:
 			self.processing_status.SetLabel(
 				_(
-					"No re-encoding: quality, loudness, metadata, artwork, "
-					"chapters, and advanced codec settings are not used.",
+					"No re-encoding: quality, loudness, source metadata, artwork, "
+					"chapters, and advanced codec settings are not used. Explicit "
+					"metadata overrides are still applied.",
 				)
 				if original_stream
 				else _(
@@ -2048,6 +2204,16 @@ class ConversionOptionsDialog(wx.Dialog):
 		try:
 			if dialog.ShowModal() == wx.ID_OK:
 				self._metadata_fields = dialog.selected_fields()
+				self._mark_as_one_time()
+		finally:
+			dialog.Destroy()
+
+	def _on_metadata_overrides(self, event) -> None:
+		dialog = MetadataOverridesDialog(self, self._metadata_overrides)
+		try:
+			if dialog.ShowModal() == wx.ID_OK:
+				self._metadata_overrides = dialog.values()
+				self._update_control_state()
 				self._mark_as_one_time()
 		finally:
 			dialog.Destroy()
@@ -2659,6 +2825,11 @@ class ConversionProgressDialog(wx.Dialog):
 		sizer.Add(self.remaining_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 		self.queue_status = wx.StaticText(panel, label=_("Queued jobs: 0"))
 		sizer.Add(self.queue_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+		self.parallel_status = wx.StaticText(
+			panel,
+			label=_("Parallel workers: waiting"),
+		)
+		sizer.Add(self.parallel_status, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
 		button_sizer = wx.FlexGridSizer(rows=2, cols=3, vgap=8, hgap=8)
 		self.cancel_button = wx.Button(panel, label=_("Cancel conversion"))
@@ -2773,10 +2944,31 @@ class ConversionProgressDialog(wx.Dialog):
 		self.queue_status.SetLabel(_("Queued jobs: {count}").format(count=count))
 		self.clear_queue_button.Enable(self._running and count > 0)
 
+	def set_parallelism(self, active: int, target: int, adaptive: bool) -> None:
+		if not self._running:
+			return
+		active = max(0, int(active))
+		target = max(1, int(target))
+		if adaptive:
+			self.parallel_status.SetLabel(
+				_("Adaptive workers: {active} active, target {target}").format(
+					active=active,
+					target=target,
+				)
+			)
+		else:
+			self.parallel_status.SetLabel(
+				_("Parallel workers: {active} active of {target}").format(
+					active=active,
+					target=target,
+				)
+			)
+
 	def finish(self, message: str, completed: bool, has_results: bool = False) -> None:
 		self._running = False
 		self.current_file.SetLabel(message)
 		self.remaining_status.SetLabel(_("Estimated time remaining: 0:00"))
+		self.parallel_status.SetLabel(_("Parallel workers: finished"))
 		if completed:
 			self.file_gauge.SetValue(1000)
 			self.overall_gauge.SetValue(1000)
@@ -3656,9 +3848,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					message = _("Found {count} files to convert").format(count=total)
 				workers = resolve_parallel_jobs(settings.parallel_jobs, total)
 				if workers > 1:
-					message = _(
-						"{message}. Using {workers} parallel conversion workers.",
-					).format(message=message, workers=workers)
+					if settings.parallel_jobs == 0:
+						message = _(
+							"{message}. Starting with {workers} adaptive conversion workers.",
+						).format(message=message, workers=workers)
+					else:
+						message = _(
+							"{message}. Using {workers} parallel conversion workers.",
+						).format(message=message, workers=workers)
 				wx.CallAfter(ui.message, message)
 
 		def on_file_start(index: int, total: int, source_name: str, output_name: str) -> None:
@@ -3728,11 +3925,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				stage,
 			)
 
+		def on_parallelism(active: int, target: int, adaptive: bool) -> None:
+			wx.CallAfter(
+				self._set_parallelism,
+				converter,
+				active,
+				target,
+				adaptive,
+			)
+
 		callbacks = ConversionCallbacks(
 			on_collected=on_collected,
 			on_file_start=on_file_start,
 			on_progress=on_progress,
 			on_stage=on_stage,
+			on_parallelism=on_parallelism,
 		)
 
 		def run_job() -> None:
@@ -3830,6 +4037,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				source_name,
 				stage,
 			)
+
+	def _set_parallelism(
+		self,
+		converter: Converter,
+		active: int,
+		target: int,
+		adaptive: bool,
+	) -> None:
+		if self._terminated or converter is not self._converter:
+			return
+		if self._progress_dialog is not None:
+			self._progress_dialog.set_parallelism(active, target, adaptive)
 
 	def _set_progress(
 		self,

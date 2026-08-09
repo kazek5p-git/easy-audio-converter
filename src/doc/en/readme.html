@@ -123,11 +123,11 @@
 	<p>
 		Independent files in one job can be converted in parallel. On the
 		“Processing and notifications” tab, leave “Parallel conversion jobs” at
-		“Automatic (recommended)” or choose an explicit count. Automatic mode
-		matches the number of workers to CPU cores, and NVDA announces the active
-		worker count when the job starts. Each file has its own FFmpeg process, so
-		cancellation terminates all active processes and a boundary stop schedules
-		no new files.
+		“Automatic (dynamic load balancing)” or choose an explicit count. Automatic
+		mode starts from the available CPU cores and adapts the number of newly
+		scheduled files when CPU or memory load remains high or low. Each file has
+		its own FFmpeg process, so cancellation terminates all active processes and
+		a boundary stop schedules no new files.
 	</p>
 
 	<h2>Conversion results</h2>
@@ -179,8 +179,9 @@
 		video or other media file without re-encoding. Its codec and quality do
 		not change. The add-on automatically chooses an extension such as .aac,
 		.mp3, .opus, .ogg, .flac, .m4a, .wav, or .aiff; an uncommon codec uses
-		the safe .mka container fallback. Video, metadata, artwork, and chapters
-		are not included.
+		the safe .mka container fallback. Video, source metadata, artwork, and
+		chapters are not included; explicit metadata overrides can still add tags
+		when needed.
 	</p>
 	<p>
 		“Remux AAC to M4A” places the first AAC audio stream in an M4A container
@@ -198,10 +199,17 @@
 		<li>copy all global text metadata;</li>
 		<li>
 			copy only checked fields such as title, artist, album, composer,
-			genre, date, track, disc, comment, copyright, lyrics, language, or
-			publisher.
+			genre, date, track, disc, comment, copyright, lyrics, language,
+			publisher, BPM, description, grouping, compilation, encoder, ISRC,
+			track/disc totals, and sort fields.
 		</li>
 	</ul>
+	<p>
+		Use “Edit metadata overrides...” to enter values that should replace tags
+		for every output in the job or named profile. Empty fields keep the source
+		value. Overrides are applied after the selected metadata mode, so they can
+		also add a tag when source metadata copying is disabled.
+	</p>
 	<p>
 		Cover artwork is a media stream, not a text field. A separate option can
 		copy it to MP3, M4A/ALAC, and FLAC when supported. Chapter markers also

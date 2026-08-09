@@ -53,6 +53,11 @@ class ProfileSerializationTests(unittest.TestCase):
 			replace_source_files=True,
 			metadata_mode="selected",
 			metadata_fields=("title", "artist", "comment"),
+			metadata_overrides={
+				"title": "Edited title",
+				"bpm": "120",
+				"description": "Edited description",
+			},
 			advanced_options={
 				"enabled": True,
 				"bitrate": 96,
@@ -112,6 +117,7 @@ class ProfileSerializationTests(unittest.TestCase):
 		self.assertTrue(settings.replace_source_files)
 		self.assertEqual(fallback.parallel_jobs, settings.parallel_jobs)
 		self.assertEqual(("title",), settings.metadata_fields)
+		self.assertEqual({}, settings.metadata_overrides)
 		self.assertEqual(
 			{
 				"enabled": True,

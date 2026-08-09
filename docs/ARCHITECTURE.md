@@ -45,14 +45,20 @@
 ## Performance and hardware use
 
 The processing page exposes the number of parallel file workers. Automatic
-mode estimates physical cores from the logical CPU count and starts one
-bounded FFmpeg process per estimated core; explicit choices of 1, 2, 4, 8,
-16, or 32 are also validated and stored in named profiles. A complete output plan is
-created before parallel workers start, reserving collision-free names once.
-Each worker owns its process and progress stream, while the parent shares a
-cancel event and terminates every active FFmpeg child when cancellation is
-requested. Boundary-stop requests prevent new files from being scheduled while
-already active files finish safely.
+mode starts from an estimate of physical cores derived from the logical CPU
+count and then adapts the number of newly scheduled files at completion
+boundaries. It uses Windows system CPU and physical-memory counters without an
+additional dependency, reduces the target after sustained high load, and raises
+it after sustained idle load, never interrupting files that are already active.
+Its automatic ceiling remains the estimated physical-core count, avoiding
+uncontrolled oversubscription of logical threads; higher values remain an
+explicit user choice.
+Explicit choices of 1, 2, 4, 8, 16, or 32 are also validated and stored in
+named profiles. A complete output plan is created before parallel workers
+start, reserving collision-free names once. Each worker owns its process and
+progress stream, while the parent shares a cancel event and terminates every
+active FFmpeg child when cancellation is requested. Boundary-stop requests
+prevent new files from being scheduled while already active files finish safely.
 
 Every encode command passes `-threads 0`, which delegates codec and filter
 thread selection to FFmpeg. The bundled build contains GPU video components,
@@ -71,10 +77,10 @@ default.
 Named profiles use a versioned JSON object stored as one NVDA string setting.
 Each entry includes format, quality, MP3 encoder, destination and source
 replacement policies, subfolder and structure behavior, metadata mode and
-fields, and the validated advanced codec options. Loading rejects unknown
-schema versions, invalid keys, duplicate or empty names, and values outside
-supported bounds. The list is limited to 50 profiles and names to 80
-characters.
+fields, per-job metadata overrides, and the validated advanced codec options.
+Loading rejects unknown schema versions, invalid keys, duplicate or empty
+names, and values outside supported bounds. The list is limited to 50 profiles
+and names to 80 characters.
 
 ## Results and retry
 
@@ -106,6 +112,14 @@ The three modes are:
   add-on filters the selected keys, then writes only those keys;
 - `none`: source metadata mapping is disabled.
 
+The standard and one-time options dialogs also expose metadata overrides. An
+override is a non-empty value written with `-metadata` after the source mapping
+and therefore replaces that field for every output in the job. It works with
+all three modes, while an empty field leaves the source value untouched. The
+editor includes common extended fields such as track/disc totals, BPM,
+description, grouping, compilation, encoder, ISRC, and sort titles. Values are
+bounded and stored with the complete named profile.
+
 Artwork is a media stream rather than text metadata and is intentionally not
 included by the metadata selector.
 
@@ -120,8 +134,9 @@ Original-stream extraction chooses an output extension from the detected
 codec, including AAC, MP3, Opus, Vorbis, FLAC, ALAC, WAV PCM, and AIFF PCM.
 An uncommon stream that has no dedicated raw extension is placed in `.mka`,
 which is the safe generic audio-container fallback. This mode deliberately
-strips text metadata, artwork, video, and chapters so the result contains only
-the unchanged first audio stream.
+strips source text metadata, artwork, video, and chapters so the result
+contains only the unchanged first audio stream; explicit metadata overrides
+remain available when a caller needs tags on the extracted stream.
 
 AAC-to-M4A remuxing accepts only a detected AAC first stream. Other codecs and
 files without audio become explicit preflight skips instead of failed FFmpeg

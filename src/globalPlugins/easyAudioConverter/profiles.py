@@ -15,6 +15,7 @@ from .converter import (
 	METADATA_FIELD_KEYS,
 	METADATA_MODE_KEYS,
 	MP3_ENCODER_KEYS,
+	normalize_metadata_overrides,
 	PARALLEL_JOB_COUNTS,
 	QUALITY_KEYS,
 	ConversionSettings,
@@ -108,6 +109,9 @@ def conversion_settings_to_mapping(settings: ConversionSettings) -> dict[str, An
 		"replaceSourceFiles": settings.replace_source_files,
 		"metadataMode": settings.metadata_mode,
 		"metadataFields": list(settings.metadata_fields),
+		"metadataOverrides": dict(
+			normalize_metadata_overrides(settings.metadata_overrides)
+		),
 		"advancedOptions": _advanced_options_from_mapping(settings.advanced_options, {}),
 		"outputNameTemplate": settings.output_name_template,
 		"loudnessPreset": settings.loudness_preset,
@@ -139,6 +143,9 @@ def conversion_settings_from_mapping(
 		field_name
 		for field_name in metadata_fields
 		if isinstance(field_name, str) and field_name in METADATA_FIELD_KEYS
+	)
+	metadata_overrides = normalize_metadata_overrides(
+		raw.get("metadataOverrides", base.metadata_overrides)
 	)
 	same_folder = _validated_bool(raw.get("sameFolder"), base.same_folder)
 	output_folder = str(raw.get("outputFolder") or base.output_folder).strip()
@@ -183,6 +190,7 @@ def conversion_settings_from_mapping(
 			base.metadata_mode,
 		),
 		metadata_fields=metadata_fields,
+		metadata_overrides=metadata_overrides,
 		advanced_options=_advanced_options_from_mapping(
 			raw.get("advancedOptions"),
 			base.advanced_options,

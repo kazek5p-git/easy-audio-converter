@@ -139,6 +139,10 @@ class PluginImportTests(unittest.TestCase):
 			"boolean(default=False)",
 			self.module.CONFIG_SPEC["replaceSourceFiles"],
 		)
+		self.assertEqual(
+			"string(default='{}')",
+			self.module.CONFIG_SPEC["metadataOverrides"],
+		)
 		flac_choices = self.module._lossless_compression_choices("flac")
 		self.assertEqual(tuple(range(-1, 13)), tuple(value for value, _label in flac_choices))
 		self.assertIn("maximum compression", flac_choices[-1][1])

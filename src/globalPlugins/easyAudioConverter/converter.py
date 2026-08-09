@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ctypes
 import json
 import os
 import re
@@ -128,6 +129,17 @@ METADATA_FIELD_KEYS = (
 	"lyrics",
 	"language",
 	"publisher",
+	"track_total",
+	"disc_total",
+	"compilation",
+	"bpm",
+	"description",
+	"grouping",
+	"encoder",
+	"isrc",
+	"sort_artist",
+	"sort_album",
+	"sort_title",
 )
 DEFAULT_METADATA_FIELDS = (
 	"title",
@@ -140,6 +152,8 @@ DEFAULT_METADATA_FIELDS = (
 	"track",
 	"disc",
 )
+MAX_METADATA_VALUE_LENGTH = 4096
+MAX_METADATA_OVERRIDES = 32
 ADVANCED_SAMPLE_RATES = (0, 8000, 11025, 16000, 22050, 32000, 44100, 48000, 88200, 96000, 192000)
 ADVANCED_CHANNEL_COUNTS = (0, 1, 2)
 ADVANCED_BIT_DEPTHS = (0, 16, 24, 32)
@@ -343,8 +357,9 @@ class ConversionSettings:
 	copy_chapters: bool = True
 	verify_output: bool = False
 	show_preflight: bool = True
-	# Zero oznacza tryb automatyczny: jeden pracownik na szacowany rdzeń CPU.
+	# Zero oznacza automatyczny tryb dynamicznego dostosowania obciążenia.
 	parallel_jobs: int = 0
+	metadata_overrides: Mapping[str, str] = field(default_factory=dict)
 
 	def validate(self) -> None:
 		if self.target_format not in FORMAT_KEYS:
@@ -369,6 +384,19 @@ class ConversionSettings:
 			raise ValueError(f"Unsupported metadata mode: {self.metadata_mode}")
 		if any(field_name not in METADATA_FIELD_KEYS for field_name in self.metadata_fields):
 			raise ValueError("Unsupported metadata field")
+		if not isinstance(self.metadata_overrides, Mapping):
+			raise ValueError("Metadata overrides must be a mapping")
+		if len(self.metadata_overrides) > MAX_METADATA_OVERRIDES:
+			raise ValueError("Too many metadata overrides")
+		for field_name, value in self.metadata_overrides.items():
+			if field_name not in METADATA_FIELD_KEYS:
+				raise ValueError("Unsupported metadata override field")
+			if not isinstance(value, str):
+				raise ValueError("Metadata override values must be text")
+			if "\x00" in value:
+				raise ValueError("Metadata override values cannot contain NUL bytes")
+			if len(value) > MAX_METADATA_VALUE_LENGTH:
+				raise ValueError("Metadata override value is too long")
 		if not self.same_folder and not str(self.output_folder).strip():
 			raise ValueError("A destination folder is required")
 		validate_output_name_template(self.output_name_template)
@@ -470,6 +498,15 @@ class ConversionCallbacks:
 	on_progress: Callable[[int, int, str, float | None, float, float, float | None], None] | None = None
 	on_file_done: Callable[[int, int, str, str], None] | None = None
 	on_stage: Callable[[int, int, str, str], None] | None = None
+	on_parallelism: Callable[[int, int, bool], None] | None = None
+
+
+@dataclass(frozen=True)
+class SystemResourceUsage:
+	"""Ostatni zmierzony udział zasobów systemowych w procentach."""
+
+	cpu_percent: float | None = None
+	memory_percent: float | None = None
 
 
 def _safe_callback(callback: Callable | None, *args) -> None:
@@ -950,8 +987,20 @@ _METADATA_ALIASES = {
 	"albumartist": "album_artist",
 	"year": "date",
 	"tracknumber": "track",
+	"track number": "track",
+	"tracktotal": "track_total",
+	"track total": "track_total",
 	"discnumber": "disc",
+	"disc number": "disc",
+	"disctotal": "disc_total",
+	"disc total": "disc_total",
 	"description": "comment",
+	"synopsis": "description",
+	"encoded_by": "encoder",
+	"encodedby": "encoder",
+	"sortartist": "sort_artist",
+	"sortalbum": "sort_album",
+	"sorttitle": "sort_title",
 }
 
 
@@ -1137,27 +1186,69 @@ def parse_ffmetadata(text: str) -> dict[str, str]:
 		normalized_key = _unescape_ffmetadata(key).strip().lower()
 		normalized_key = _METADATA_ALIASES.get(normalized_key, normalized_key)
 		if normalized_key:
-			metadata[normalized_key] = _unescape_ffmetadata(value)
+			unescaped_value = _unescape_ffmetadata(value)
+			metadata[normalized_key] = unescaped_value
+			if normalized_key in {"track", "disc"} and "/" in unescaped_value:
+				_number, total = unescaped_value.split("/", 1)
+				if total and f"{normalized_key}_total" not in metadata:
+					metadata[f"{normalized_key}_total"] = total
 	return metadata
+
+
+def normalize_metadata_overrides(
+	value: Mapping[str, Any] | None,
+) -> dict[str, str]:
+	"""Zwróć ograniczone i ujednolicone wartości tagów dla FFmpeg."""
+	if not isinstance(value, Mapping):
+		return {}
+	normalized: dict[str, str] = {}
+	for raw_key, raw_value in value.items():
+		key = str(raw_key or "").strip().casefold()
+		if key not in METADATA_FIELD_KEYS:
+			key = _METADATA_ALIASES.get(key, key)
+		if key not in METADATA_FIELD_KEYS or raw_value is None:
+			continue
+		text_value = str(raw_value)
+		if not text_value:
+			continue
+		text_value = text_value.replace("\x00", "")[:MAX_METADATA_VALUE_LENGTH]
+		if text_value:
+			normalized[key] = text_value
+	return {
+		field_name: normalized[field_name]
+		for field_name in METADATA_FIELD_KEYS
+		if field_name in normalized
+	}
 
 
 def build_metadata_arguments(
 	mode: str,
 	selected_fields: Sequence[str],
 	source_metadata: Mapping[str, str] | None = None,
+	metadata_overrides: Mapping[str, Any] | None = None,
 ) -> list[str]:
-	if mode == "all":
-		return ["-map_metadata", "0"]
-	if mode == "none":
-		return ["-map_metadata", "-1"]
-	if mode != "selected":
+	if mode not in METADATA_MODE_KEYS:
 		raise ValueError(f"Unsupported metadata mode: {mode}")
-	arguments = ["-map_metadata", "-1"]
+	arguments = ["-map_metadata", "0" if mode == "all" else "-1"]
 	source_metadata = source_metadata or {}
-	for field_name in selected_fields:
-		if field_name not in METADATA_FIELD_KEYS or field_name not in source_metadata:
-			continue
-		arguments.extend(("-metadata", f"{field_name}={source_metadata[field_name]}"))
+	overrides = normalize_metadata_overrides(metadata_overrides)
+	if mode == "all":
+		selected_values: dict[str, str] = {}
+	else:
+		selected_values = {}
+		if mode == "selected":
+			for field_name in selected_fields:
+				if field_name not in METADATA_FIELD_KEYS:
+					continue
+				if field_name in source_metadata:
+					selected_values[field_name] = str(source_metadata[field_name])
+		for field_name, value in overrides.items():
+			selected_values[field_name] = value
+	if mode == "all":
+		selected_values.update(overrides)
+	for field_name in METADATA_FIELD_KEYS:
+		if field_name in selected_values:
+			arguments.extend(("-metadata", f"{field_name}={selected_values[field_name]}"))
 	return arguments
 
 
@@ -1333,13 +1424,181 @@ def _redact_ffmpeg_error(message: str, source: Path, output: Path) -> str:
 	return cleaned[-2000:]
 
 
+def _windows_system_times() -> tuple[int, int, int] | None:
+	"""Zwróć czasy bezczynności, jądra i użytkownika systemu Windows."""
+	if os.name != "nt":
+		return None
+
+	class _FileTime(ctypes.Structure):
+		_fields_ = [
+			("dwLowDateTime", ctypes.c_ulong),
+			("dwHighDateTime", ctypes.c_ulong),
+		]
+
+	idle = _FileTime()
+	kernel = _FileTime()
+	user = _FileTime()
+	try:
+		if not ctypes.windll.kernel32.GetSystemTimes(
+			ctypes.byref(idle), ctypes.byref(kernel), ctypes.byref(user)
+		):
+			return None
+	except (AttributeError, OSError):
+		return None
+
+	def value(file_time: _FileTime) -> int:
+		return int(file_time.dwLowDateTime) | (int(file_time.dwHighDateTime) << 32)
+
+	return value(idle), value(kernel), value(user)
+
+
+def _windows_memory_percent() -> float | None:
+	"""Zwróć procent użytej pamięci fizycznej systemu Windows."""
+	if os.name != "nt":
+		return None
+
+	class _MemoryStatusEx(ctypes.Structure):
+		_fields_ = [
+			("dwLength", ctypes.c_ulong),
+			("dwMemoryLoad", ctypes.c_ulong),
+			("ullTotalPhys", ctypes.c_ulonglong),
+			("ullAvailPhys", ctypes.c_ulonglong),
+			("ullTotalPageFile", ctypes.c_ulonglong),
+			("ullAvailPageFile", ctypes.c_ulonglong),
+			("ullTotalVirtual", ctypes.c_ulonglong),
+			("ullAvailVirtual", ctypes.c_ulonglong),
+			("ullAvailExtendedVirtual", ctypes.c_ulonglong),
+		]
+
+	status = _MemoryStatusEx()
+	status.dwLength = ctypes.sizeof(status)
+	try:
+		if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
+			return None
+	except (AttributeError, OSError):
+		return None
+	return max(0.0, min(100.0, float(status.dwMemoryLoad)))
+
+
+def _portable_cpu_percent() -> float | None:
+	"""Użyj średniego obciążenia jako awaryjnego pomiaru poza Windows."""
+	try:
+		load = float(os.getloadavg()[0])
+		logical_cpus = max(1, int(os.cpu_count() or 1))
+	except (AttributeError, OSError, TypeError, ValueError):
+		return None
+	return max(0.0, min(100.0, load * 100.0 / logical_cpus))
+
+
+def _portable_memory_percent() -> float | None:
+	"""Zwróć użycie pamięci z POSIX-owego sysconf, gdy jest dostępne."""
+	try:
+		total_pages = int(os.sysconf("SC_PHYS_PAGES"))
+		available_pages = int(os.sysconf("SC_AVPHYS_PAGES"))
+	except (AttributeError, OSError, TypeError, ValueError):
+		return None
+	if total_pages <= 0:
+		return None
+	used_pages = max(0, total_pages - available_pages)
+	return max(0.0, min(100.0, used_pages * 100.0 / total_pages))
+
+
+class _SystemResourceMonitor:
+	"""Lekki monitor zasobów, niewymagający dodatkowych pakietów."""
+
+	def __init__(self) -> None:
+		self._previous_times = _windows_system_times()
+
+	def sample(self) -> SystemResourceUsage:
+		current_times = _windows_system_times()
+		cpu_percent: float | None = None
+		if current_times is not None and self._previous_times is not None:
+			previous_idle, previous_kernel, previous_user = self._previous_times
+			idle, kernel, user = current_times
+			delta_idle = max(0, idle - previous_idle)
+			delta_total = max(
+				0,
+				(kernel - previous_kernel) + (user - previous_user),
+			)
+			if delta_total:
+				busy = max(0, delta_total - delta_idle)
+				cpu_percent = max(0.0, min(100.0, busy * 100.0 / delta_total))
+		self._previous_times = current_times
+		if cpu_percent is None and os.name != "nt":
+			cpu_percent = _portable_cpu_percent()
+		memory_percent = (
+			_windows_memory_percent()
+			if os.name == "nt"
+			else _portable_memory_percent()
+		)
+		return SystemResourceUsage(cpu_percent, memory_percent)
+
+
+ADAPTIVE_CPU_HIGH_PERCENT = 88.0
+ADAPTIVE_CPU_LOW_PERCENT = 55.0
+ADAPTIVE_MEMORY_HIGH_PERCENT = 90.0
+ADAPTIVE_MEMORY_LOW_PERCENT = 75.0
+ADAPTIVE_HIGH_SAMPLES = 2
+ADAPTIVE_LOW_SAMPLES = 3
+
+
+class AdaptiveWorkerController:
+	"""Dobieraj liczbę nowych pracowników na granicach plików.
+
+	Aktywne zadania nigdy nie są przerywane przy zmniejszaniu limitu. Kontroler
+	zmienia wyłącznie liczbę kolejnych plików dopuszczanych do wykonania, dzięki
+	czemu konwersja pozostaje bezpieczna także przy wysokim obciążeniu.
+	"""
+
+	def __init__(self, file_count: int) -> None:
+		file_count = max(1, int(file_count))
+		# Automatyczny tryb nie przekracza ostrożnego limitu rdzeni fizycznych.
+		# Ręczne wartości nadal pozwalają świadomie wybrać także wątki logiczne.
+		self.maximum = min(
+			MAX_PARALLEL_JOBS,
+			file_count,
+			recommended_parallel_jobs(file_count),
+		)
+		self.target = self.maximum
+		self._high_samples = 0
+		self._low_samples = 0
+
+	@property
+	def adaptive(self) -> bool:
+		return True
+
+	def update(self, usage: SystemResourceUsage) -> int:
+		cpu = usage.cpu_percent
+		memory = usage.memory_percent
+		high_cpu = cpu is not None and cpu >= ADAPTIVE_CPU_HIGH_PERCENT
+		high_memory = memory is not None and memory >= ADAPTIVE_MEMORY_HIGH_PERCENT
+		low_cpu = cpu is not None and cpu <= ADAPTIVE_CPU_LOW_PERCENT
+		low_memory = memory is None or memory <= ADAPTIVE_MEMORY_LOW_PERCENT
+		if high_cpu or high_memory:
+			self._high_samples += 1
+			self._low_samples = 0
+			if self._high_samples >= ADAPTIVE_HIGH_SAMPLES:
+				self.target = max(1, self.target - 1)
+				self._high_samples = 0
+		elif low_cpu and low_memory:
+			self._low_samples += 1
+			self._high_samples = 0
+			if self._low_samples >= ADAPTIVE_LOW_SAMPLES:
+				self.target = min(self.maximum, self.target + 1)
+				self._low_samples = 0
+		else:
+			self._high_samples = 0
+			self._low_samples = 0
+		return self.target
+
+
 def recommended_parallel_jobs(file_count: int | None = None) -> int:
-	"""Zwróć ostrożnie dobraną automatyczną liczbę pracowników konwersji.
+	"""Zwróć początkową liczbę pracowników dla trybu adaptacyjnego.
 
 	Enkodery audio zwykle wykonują pracę jednym wątkiem na plik. Tryb
-	automatyczny szacuje więc liczbę rdzeni fizycznych na podstawie logicznej
-	liczby procesorów i pozostawia rodzeństwo logiczne dla filtrów FFmpeg,
-	systemu oraz NVDA. Ustawienie ręczne może wybrać inną ograniczoną wartość.
+	automatyczny zaczyna od ostrożnego szacunku liczby rdzeni fizycznych na
+	podstawie logicznej liczby procesorów, a następnie może zwiększać lub
+	zmniejszać limit na granicach kolejnych plików.
 	"""
 	logical_cpus = max(1, int(os.cpu_count() or 1))
 	if logical_cpus <= 2:
@@ -1885,7 +2144,22 @@ class Converter:
 			summary.canceled = True
 			return summary
 
-		worker_count = resolve_parallel_jobs(settings.parallel_jobs, len(items))
+		adaptive_controller = (
+			AdaptiveWorkerController(len(items))
+			if settings.parallel_jobs == 0
+			else None
+		)
+		worker_count = (
+			adaptive_controller.target
+			if adaptive_controller is not None
+			else resolve_parallel_jobs(settings.parallel_jobs, len(items))
+		)
+		worker_limit = (
+			adaptive_controller.maximum
+			if adaptive_controller is not None
+			else worker_count
+		)
+		resource_monitor = _SystemResourceMonitor() if adaptive_controller else None
 		progress_values = [0.0] * len(items)
 		progress_lock = threading.Lock()
 
@@ -2021,7 +2295,7 @@ class Converter:
 
 		results: list[ConversionSummary | None] = [None] * len(items)
 		with ThreadPoolExecutor(
-			max_workers=worker_count,
+			max_workers=worker_limit,
 			thread_name_prefix="EasyAudioConverterFile",
 		) as executor:
 			next_index = 0
@@ -2029,18 +2303,23 @@ class Converter:
 
 			def submit_next() -> None:
 				nonlocal next_index
-				if (
-					next_index >= len(items)
-					or self._cancel_event.is_set()
-					or self._stop_after_current_event.is_set()
+				while (
+					next_index < len(items)
+					and len(active) < worker_count
+					and not self._cancel_event.is_set()
+					and not self._stop_after_current_event.is_set()
 				):
-					return
-				index = next_index
-				next_index += 1
-				active[executor.submit(convert_one, index + 1, items[index])] = index
+					index = next_index
+					next_index += 1
+					active[executor.submit(convert_one, index + 1, items[index])] = index
 
-			for _ in range(worker_count):
-				submit_next()
+			submit_next()
+			_safe_callback(
+				callbacks.on_parallelism,
+				len(active),
+				worker_count,
+				adaptive_controller is not None,
+			)
 			while active:
 				done, _pending = wait(
 					tuple(active),
@@ -2049,8 +2328,15 @@ class Converter:
 				for future in done:
 					index = active.pop(future)
 					results[index] = future.result()
-					if not self._cancel_event.is_set() and not self._stop_after_current_event.is_set():
-						submit_next()
+				if adaptive_controller is not None and resource_monitor is not None:
+					worker_count = adaptive_controller.update(resource_monitor.sample())
+				submit_next()
+				_safe_callback(
+					callbacks.on_parallelism,
+					len(active),
+					worker_count,
+					adaptive_controller is not None,
+				)
 
 		for result in results:
 			if result is None:
@@ -2118,12 +2404,20 @@ class Converter:
 		settings: ConversionSettings,
 		metadata: Mapping[str, str],
 	) -> list[str]:
-		if settings.target_format == ORIGINAL_AUDIO_COPY_FORMAT:
+		if (
+			settings.target_format == ORIGINAL_AUDIO_COPY_FORMAT
+			and not settings.metadata_overrides
+		):
 			return ["-map_metadata", "-1"]
 		return build_metadata_arguments(
-			settings.metadata_mode,
+			(
+				"none"
+				if settings.target_format == ORIGINAL_AUDIO_COPY_FORMAT
+				else settings.metadata_mode
+			),
 			settings.metadata_fields,
 			metadata,
+			settings.metadata_overrides,
 		)
 
 	@staticmethod

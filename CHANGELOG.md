@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- Changed automatic parallel conversion from a one-time CPU estimate to an
+  adaptive scheduler that reacts to sustained CPU and memory load between
+  files without interrupting active conversions.
+- Renamed the automatic worker choice to “Automatic (dynamic load balancing)”
+  and documented its behavior in the settings and user guide.
+- Added per-job and profile-aware metadata overrides with common extended tag
+  fields such as BPM, description, compilation, ISRC, track/disc totals, and
+  sort fields.
+
 ## 1.6.0
 
 - Added CPU-aware parallel conversion workers for independent files, with an

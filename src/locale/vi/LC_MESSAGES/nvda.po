@@ -1,1373 +1,1445 @@
 # Easy Audio Converter translation.
 # Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.6.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-09 03:04+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: vi\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.6.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-09 04:25+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: vi\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2351
+#: src/globalPlugins/easyAudioConverter/__init__.py:2517
 msgid "...and {count} more files"
 msgstr "... và {count} nhiều tệp hơn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2901
+#: src/globalPlugins/easyAudioConverter/__init__.py:3093
 msgid "...and {count} more skipped files"
 msgstr "... và {count} nhiều tệp bị bỏ qua hơn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1256
+#: src/globalPlugins/easyAudioConverter/__init__.py:1317
 msgid "16 bit"
 msgstr "16 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:319
+#: src/globalPlugins/easyAudioConverter/__init__.py:344
 msgid "16 files at a time"
 msgstr "16 tệp cùng một lúc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:316
+#: src/globalPlugins/easyAudioConverter/__init__.py:341
 msgid "2 files at a time"
 msgstr "2 tệp cùng một lúc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1256
+#: src/globalPlugins/easyAudioConverter/__init__.py:1317
 msgid "24 bit"
 msgstr "24 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1256
+#: src/globalPlugins/easyAudioConverter/__init__.py:1317
 msgid "32 bit"
 msgstr "32 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:320
+#: src/globalPlugins/easyAudioConverter/__init__.py:345
 msgid "32 files at a time"
 msgstr "32 tệp cùng một lúc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:317
+#: src/globalPlugins/easyAudioConverter/__init__.py:342
 msgid "4 files at a time"
 msgstr "4 tệp cùng một lúc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:318
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "8 files at a time"
 msgstr "8 tệp cùng một lúc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2196
+#: src/globalPlugins/easyAudioConverter/__init__.py:2362
 msgid "A built-in profile already uses this name."
 msgstr "Một hồ sơ tích hợp sẵn đã sử dụng tên này."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:421
+#: src/globalPlugins/easyAudioConverter/__init__.py:446
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:425
+#: src/globalPlugins/easyAudioConverter/__init__.py:450
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:424
+#: src/globalPlugins/easyAudioConverter/__init__.py:449
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:423
+#: src/globalPlugins/easyAudioConverter/__init__.py:448
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple Lossless)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:429
+#: src/globalPlugins/easyAudioConverter/__init__.py:454
 msgid "AMR narrowband"
 msgstr "băng thông hẹp AMR"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:430
+#: src/globalPlugins/easyAudioConverter/__init__.py:455
 msgid "AMR wideband"
 msgstr "băng rộng AMR"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2837
+#: src/globalPlugins/easyAudioConverter/__init__.py:3029
 msgid "Access to the source or destination was denied."
 msgstr "Quyền truy cập vào nguồn hoặc đích bị từ chối."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2992
+#: src/globalPlugins/easyAudioConverter/__init__.py:2954
+msgid "Adaptive workers: {active} active, target {target}"
+msgstr "Công nhân thích ứng: {active} đang hoạt động, mục tiêu {target}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3184
 msgid "Additional skipped files: {count}"
 msgstr "Các tệp bị bỏ qua bổ sung: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1955
+#: src/globalPlugins/easyAudioConverter/__init__.py:2109
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "Không sử dụng ghi đè codec nâng cao cho bản sao luồng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1960
+#: src/globalPlugins/easyAudioConverter/__init__.py:2114
 msgid "Advanced codec overrides: disabled"
 msgstr "Ghi đè codec nâng cao: đã tắt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1958
+#: src/globalPlugins/easyAudioConverter/__init__.py:2112
 msgid "Advanced codec overrides: enabled"
 msgstr "Ghi đè codec nâng cao: đã bật"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3242
+#: src/globalPlugins/easyAudioConverter/__init__.py:3434
 msgid "Advanced codec settings..."
 msgstr "Cài đặt codec nâng cao..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1194
+#: src/globalPlugins/easyAudioConverter/__init__.py:1255
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:499
+#: src/globalPlugins/easyAudioConverter/__init__.py:524
 msgid "Album"
 msgstr "Album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:500
+#: src/globalPlugins/easyAudioConverter/__init__.py:525
 msgid "Album artist"
 msgstr "Nghệ sĩ album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1353
+#: src/globalPlugins/easyAudioConverter/__init__.py:1414
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr "Tất cả các mức FLAC đều không mất dữ liệu. Cấp 0 là nhanh nhất; Cấp 12 cho lực nén mạnh nhất nhưng rất chậm."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2853
+#: src/globalPlugins/easyAudioConverter/__init__.py:3045
 msgid "Already uses the target format"
 msgstr "Đã sử dụng định dạng mục tiêu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3354
+#: src/globalPlugins/easyAudioConverter/__init__.py:3546
 msgid "An update check is already in progress"
 msgstr "Một kiểm tra cập nhật đang được tiến hành"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3446
+#: src/globalPlugins/easyAudioConverter/__init__.py:3638
 msgid "An update download is already in progress"
 msgstr "Quá trình tải bản cập nhật đang được tiến hành"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2562
+#: src/globalPlugins/easyAudioConverter/__init__.py:2728
 msgid "Analyzing loudness, first pass"
 msgstr "Phân tích độ to, lần đầu tiên"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:390
+#: src/globalPlugins/easyAudioConverter/__init__.py:415
 msgid "Archive FLAC"
 msgstr "Lưu trữ FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:498
+#: src/globalPlugins/easyAudioConverter/__init__.py:523
 msgid "Artist"
 msgstr "Nghệ sĩ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:307
+#: src/globalPlugins/easyAudioConverter/__init__.py:332
 msgid "At every file"
 msgstr "Ở mỗi hồ sơ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:306
+#: src/globalPlugins/easyAudioConverter/__init__.py:331
 msgid "At progress milestones"
 msgstr "Tại các cột mốc tiến trình"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2416
+#: src/globalPlugins/easyAudioConverter/__init__.py:2582
 msgid "Audio codec: {value}"
 msgstr "Codec âm thanh: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2413 src/globalPlugins/easyAudioConverter/__init__.py:2455
+#: src/globalPlugins/easyAudioConverter/__init__.py:2579 src/globalPlugins/easyAudioConverter/__init__.py:2621
 msgid "Audio file information"
 msgstr "Thông tin tệp âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2492
+#: src/globalPlugins/easyAudioConverter/__init__.py:2658
 msgid "Audio information copied"
 msgstr "Thông tin âm thanh đã sao chép"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4382
+#: src/globalPlugins/easyAudioConverter/__init__.py:4601
 msgid "Audio information is already being read"
 msgstr "Thông tin âm thanh đã được đọc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4427
+#: src/globalPlugins/easyAudioConverter/__init__.py:4646
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "Thông tin âm thanh đã sẵn sàng. Codec {codec}, thời lượng {duration}, tần số mẫu {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:347
+#: src/globalPlugins/easyAudioConverter/__init__.py:372
 msgid "Audiobook MP3"
 msgstr "Sách nói MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:314
-msgid "Automatic (recommended)"
-msgstr "Tự động (được khuyến nghị)"
+#: src/globalPlugins/easyAudioConverter/__init__.py:339
+msgid "Automatic (dynamic load balancing)"
+msgstr "Tự động (cân bằng tải động)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1006
-msgid "Automatic mode uses the available CPU cores for independent files. GPU acceleration is not used for audio encoding."
-msgstr "Chế độ tự động sử dụng các lõi CPU có sẵn cho các tệp độc lập. Tăng tốc GPU không được sử dụng để mã hóa âm thanh."
+#: src/globalPlugins/easyAudioConverter/__init__.py:1741
+msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
+msgstr "Chế độ tự động điều chỉnh linh hoạt các tệp độc lập bằng cách sử dụng tải CPU và bộ nhớ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1048
+#: src/globalPlugins/easyAudioConverter/__init__.py:1067
+msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
+msgstr "Chế độ tự động điều chỉnh linh hoạt các tệp độc lập bằng cách sử dụng tải CPU và bộ nhớ. Tăng tốc GPU không được sử dụng để mã hóa âm thanh."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1109
 msgid "Automatic progress announcements:"
 msgstr "Thông báo tiến độ tự động:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1056
+#: src/globalPlugins/easyAudioConverter/__init__.py:1117
 msgid "Automatically check for add-on updates"
 msgstr "Tự động kiểm tra các bản cập nhật tiện ích bổ sung"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:753
+#: src/globalPlugins/easyAudioConverter/__init__.py:789
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Các trường có sẵn: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1222
+#: src/globalPlugins/easyAudioConverter/__init__.py:539
+msgid "BPM"
+msgstr "BPM"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1283
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Bitrate tính bằng kbps (0 sử dụng thiết lập chất lượng sẵn):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2420
+#: src/globalPlugins/easyAudioConverter/__init__.py:2586
 msgid "Bitrate: {value}"
 msgstr "Bitrate: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:490
+#: src/globalPlugins/easyAudioConverter/__init__.py:515
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "Phát sóng: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:743 src/globalPlugins/easyAudioConverter/__init__.py:1743
+#: src/globalPlugins/easyAudioConverter/__init__.py:779 src/globalPlugins/easyAudioConverter/__init__.py:1884
 msgid "Browse..."
 msgstr "Duyệt..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2560
+#: src/globalPlugins/easyAudioConverter/__init__.py:2726
 msgid "Building the conversion plan"
 msgstr "Xây dựng kế hoạch chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2788 src/globalPlugins/easyAudioConverter/__init__.py:2664 src/globalPlugins/easyAudioConverter/__init__.py:3237
+#: src/globalPlugins/easyAudioConverter/__init__.py:2980 src/globalPlugins/easyAudioConverter/__init__.py:2835 src/globalPlugins/easyAudioConverter/__init__.py:3429
 msgid "Cancel conversion"
 msgstr "Hủy chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4504
+#: src/globalPlugins/easyAudioConverter/__init__.py:4723
 msgid "Cancel the current audio conversion"
 msgstr "Hủy chuyển đổi âm thanh hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4512
+#: src/globalPlugins/easyAudioConverter/__init__.py:4731
 msgid "Canceling the conversion"
 msgstr "Hủy chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2798
+#: src/globalPlugins/easyAudioConverter/__init__.py:2990
 msgid "Canceling..."
 msgstr "Hủy bỏ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:551 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:587 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Không thể mở trang hỗ trợ. Mở địa chỉ này theo cách thủ công: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4461
+#: src/globalPlugins/easyAudioConverter/__init__.py:4680
 msgid "Change the conversion quality"
 msgstr "Thay đổi chất lượng chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4447
+#: src/globalPlugins/easyAudioConverter/__init__.py:4666
 msgid "Change the target audio format"
 msgstr "Thay đổi định dạng âm thanh mục tiêu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1235
+#: src/globalPlugins/easyAudioConverter/__init__.py:1296
 msgid "Channels:"
 msgstr "Kênh:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2427
+#: src/globalPlugins/easyAudioConverter/__init__.py:2593
 msgid "Channels: {value}"
 msgstr "Kênh: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2439
+#: src/globalPlugins/easyAudioConverter/__init__.py:2605
 msgid "Chapters: {value}"
 msgstr "Chương: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4644
+#: src/globalPlugins/easyAudioConverter/__init__.py:4863
 msgid "Check for Easy Audio Converter updates"
 msgstr "Kiểm tra các bản cập nhật Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3243
+#: src/globalPlugins/easyAudioConverter/__init__.py:3435
 msgid "Check for updates..."
 msgstr "Kiểm tra cập nhật..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3357
+#: src/globalPlugins/easyAudioConverter/__init__.py:3549
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Kiểm tra cập nhật Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4163 src/globalPlugins/easyAudioConverter/__init__.py:4337 src/globalPlugins/easyAudioConverter/__init__.py:3230
+#: src/globalPlugins/easyAudioConverter/__init__.py:4382 src/globalPlugins/easyAudioConverter/__init__.py:4556 src/globalPlugins/easyAudioConverter/__init__.py:3422
 msgid "Choose a folder to convert"
 msgstr "Chọn thư mục để chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4097 src/globalPlugins/easyAudioConverter/__init__.py:4326 src/globalPlugins/easyAudioConverter/__init__.py:3229
+#: src/globalPlugins/easyAudioConverter/__init__.py:4316 src/globalPlugins/easyAudioConverter/__init__.py:4545 src/globalPlugins/easyAudioConverter/__init__.py:3421
 msgid "Choose files to convert"
 msgstr "Choose files to convert"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1489
+#: src/globalPlugins/easyAudioConverter/__init__.py:1550
 msgid "Choose metadata fields"
 msgstr "Chọn trường siêu dữ liệu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1782
+#: src/globalPlugins/easyAudioConverter/__init__.py:1923
 msgid "Choose metadata fields..."
 msgstr "Chọn các trường siêu dữ liệu..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:882 src/globalPlugins/easyAudioConverter/__init__.py:2036 src/globalPlugins/easyAudioConverter/__init__.py:4497
+#: src/globalPlugins/easyAudioConverter/__init__.py:942 src/globalPlugins/easyAudioConverter/__init__.py:2192 src/globalPlugins/easyAudioConverter/__init__.py:4716
 msgid "Choose the destination folder"
 msgstr "Chọn thư mục đích"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4541 src/globalPlugins/easyAudioConverter/__init__.py:3239
+#: src/globalPlugins/easyAudioConverter/__init__.py:4760 src/globalPlugins/easyAudioConverter/__init__.py:3431
 msgid "Clear queued conversion jobs"
 msgstr "Xóa các công việc chuyển đổi trong hàng đợi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2666
+#: src/globalPlugins/easyAudioConverter/__init__.py:2837
 msgid "Clear queued jobs"
 msgstr "Dọn dẹp các công việc trong hàng đợi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4554 src/globalPlugins/easyAudioConverter/__init__.py:3619
+#: src/globalPlugins/easyAudioConverter/__init__.py:4773 src/globalPlugins/easyAudioConverter/__init__.py:3811
 msgid "Cleared {count} queued conversion jobs"
 msgstr "Đã xóa các công việc chuyển đổi {count} trong hàng đợi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2469 src/globalPlugins/easyAudioConverter/__init__.py:2785 src/globalPlugins/easyAudioConverter/__init__.py:3021
+#: src/globalPlugins/easyAudioConverter/__init__.py:2635 src/globalPlugins/easyAudioConverter/__init__.py:2977 src/globalPlugins/easyAudioConverter/__init__.py:3213
 msgid "Close"
 msgstr "Đóng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1210
+#: src/globalPlugins/easyAudioConverter/__init__.py:1271
 msgid "Codec profile to edit:"
 msgstr "Hồ sơ codec để chỉnh sửa:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1241
+#: src/globalPlugins/easyAudioConverter/__init__.py:1302
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Cấp độ đặc thù cho codec (-1 sử dụng preset):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:506
+#: src/globalPlugins/easyAudioConverter/__init__.py:531
 msgid "Comment"
 msgstr "Bình luận"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:501
+#: src/globalPlugins/easyAudioConverter/__init__.py:538
+msgid "Compilation"
+msgstr "biên soạn"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:526
 msgid "Composer"
 msgstr "Nhà soạn nhạc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4192
+#: src/globalPlugins/easyAudioConverter/__init__.py:4411
 msgid "Confirm folder conversion"
 msgstr "Xác nhận chuyển đổi thư mục"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2415
+#: src/globalPlugins/easyAudioConverter/__init__.py:2581
 msgid "Container: {value}"
 msgstr "Container: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3894
+#: src/globalPlugins/easyAudioConverter/__init__.py:4113
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Đã hủy chuyển đổi. Đã hoàn thành {done} trong số {total} tệp."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3912
+#: src/globalPlugins/easyAudioConverter/__init__.py:4131
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Chuyển đổi hoàn tất. Thành công: {done}. Thất bại: {failed}. Bỏ qua: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3921
+#: src/globalPlugins/easyAudioConverter/__init__.py:4140
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Chuyển đổi hoàn tất: {done} đã thành công, {failed} không thành công."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3592
+#: src/globalPlugins/easyAudioConverter/__init__.py:3784
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "Công việc chuyển đổi được thêm vào hàng đợi. Vị trí hàng đợi: {position}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2304
+#: src/globalPlugins/easyAudioConverter/__init__.py:2470
 msgid "Conversion plan"
 msgstr "Kế hoạch chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1701
+#: src/globalPlugins/easyAudioConverter/__init__.py:1842
 msgid "Conversion profile:"
 msgstr "Hồ sơ chuyển đổi:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2155
+#: src/globalPlugins/easyAudioConverter/__init__.py:2321
 msgid "Conversion profiles exported"
 msgstr "Các hồ sơ chuyển đổi được xuất"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3112
+#: src/globalPlugins/easyAudioConverter/__init__.py:3304
 msgid "Conversion report copied"
 msgstr "Báo cáo chuyển đổi đã được sao chép"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2866
+#: src/globalPlugins/easyAudioConverter/__init__.py:3058
 msgid "Conversion results"
 msgstr "Kết quả chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1809
+#: src/globalPlugins/easyAudioConverter/__init__.py:1954
 msgid "Convert"
 msgstr "Chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4189
+#: src/globalPlugins/easyAudioConverter/__init__.py:4408
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Chuyển đổi tất cả các tệp âm thanh được hỗ trợ trong {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4349
+#: src/globalPlugins/easyAudioConverter/__init__.py:4568
 msgid "Convert every supported audio file in the current folder"
 msgstr "Chuyển đổi mọi tệp âm thanh được hỗ trợ trong thư mục hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3228
+#: src/globalPlugins/easyAudioConverter/__init__.py:3420
 msgid "Convert selected files or folders"
 msgstr "Chuyển đổi tập tin hoặc thư mục đã chọn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4285
+#: src/globalPlugins/easyAudioConverter/__init__.py:4504
 msgid "Convert selected files or folders with one-time options"
 msgstr "Chuyển đổi các tệp hoặc thư mục đã chọn với các tùy chọn dùng một lần"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3227
+#: src/globalPlugins/easyAudioConverter/__init__.py:3419
 msgid "Convert selected files or folders with options..."
 msgstr "Chuyển đổi các tệp hoặc thư mục đã chọn với các tùy chọn..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3231
+#: src/globalPlugins/easyAudioConverter/__init__.py:3423
 msgid "Convert the current folder"
 msgstr "Chuyển đổi thư mục hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1677
+#: src/globalPlugins/easyAudioConverter/__init__.py:1817
 msgid "Convert with options"
 msgstr "Chuyển đổi bằng tùy chọn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2967
+#: src/globalPlugins/easyAudioConverter/__init__.py:3159
 msgid "Converted output kept at:\n{output}"
 msgstr "Đầu ra được chuyển đổi được giữ ở mức:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2890
+#: src/globalPlugins/easyAudioConverter/__init__.py:3082
 msgid "Converted output kept at: {output}"
 msgstr "Đầu ra chuyển đổi được giữ ở mức: {output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2563
+#: src/globalPlugins/easyAudioConverter/__init__.py:2729
 msgid "Converting audio, second pass"
 msgstr "Chuyển đổi âm thanh, lần thứ hai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3680
+#: src/globalPlugins/easyAudioConverter/__init__.py:3877
 msgid "Converting {index} of {total}: {name}"
 msgstr "Đang chuyển đổi {index} của {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4604
+#: src/globalPlugins/easyAudioConverter/__init__.py:4823
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "Chuyển đổi {index} của {total}: {name}. Thời gian tệp hiện tại {processed}; đã trôi qua {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4615
+#: src/globalPlugins/easyAudioConverter/__init__.py:4834
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Chuyển đổi {index} của {total}: {name}. Tệp hiện tại {filePercent}%, tổng thể {overallPercent}%, đã qua {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:480
+#: src/globalPlugins/easyAudioConverter/__init__.py:505
 msgid "Copy all text metadata"
 msgstr "Sao chép toàn bộ siêu dữ liệu văn bản"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:982 src/globalPlugins/easyAudioConverter/__init__.py:1588
+#: src/globalPlugins/easyAudioConverter/__init__.py:1043 src/globalPlugins/easyAudioConverter/__init__.py:1720
 msgid "Copy chapter markers"
 msgstr "Sao chép các đánh dấu chương"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1584
+#: src/globalPlugins/easyAudioConverter/__init__.py:1716
 msgid "Copy embedded cover artwork when supported"
 msgstr "Sao chép bìa nhúng khi được hỗ trợ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:978
+#: src/globalPlugins/easyAudioConverter/__init__.py:1039
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "Sao chép hình ảnh bìa nhúng khi mục tiêu hỗ trợ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2468
+#: src/globalPlugins/easyAudioConverter/__init__.py:2634
 msgid "Copy information"
 msgstr "Sao chép thông tin"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3020
+#: src/globalPlugins/easyAudioConverter/__init__.py:3212
 msgid "Copy report"
 msgstr "Sao chép báo cáo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:481
+#: src/globalPlugins/easyAudioConverter/__init__.py:506
 msgid "Copy selected metadata fields"
 msgstr "Sao chép các trường siêu dữ liệu đã chọn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:507
+#: src/globalPlugins/easyAudioConverter/__init__.py:532
 msgid "Copyright"
 msgstr "Bản quyền"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3386
+#: src/globalPlugins/easyAudioConverter/__init__.py:3578
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Không thể kiểm tra cập nhật.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2490
+#: src/globalPlugins/easyAudioConverter/__init__.py:2656
 msgid "Could not copy the audio information"
 msgstr "Không thể sao chép thông tin âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3106
+#: src/globalPlugins/easyAudioConverter/__init__.py:3298
 msgid "Could not copy the conversion report."
 msgstr "Không thể sao chép báo cáo chuyển đổi."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2149
+#: src/globalPlugins/easyAudioConverter/__init__.py:2315
 msgid "Could not export profiles:\n{error}"
 msgstr "Không thể xuất hồ sơ:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2111
+#: src/globalPlugins/easyAudioConverter/__init__.py:2277
 msgid "Could not import profiles:\n{error}"
 msgstr "Không thể nhập hồ sơ:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3323
+#: src/globalPlugins/easyAudioConverter/__init__.py:3515
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Không thể mở cài đặt Easy Audio Converter. Xem nhật ký NVDA để biết chi tiết."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3540
+#: src/globalPlugins/easyAudioConverter/__init__.py:3732
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Không thể mở trình cài đặt tiện ích bổ sung NVDA. Bản cập nhật được lưu vào:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3093
+#: src/globalPlugins/easyAudioConverter/__init__.py:3285
 msgid "Could not open the output folder."
 msgstr "Không thể mở thư mục đầu ra."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4412
+#: src/globalPlugins/easyAudioConverter/__init__.py:4631
 msgid "Could not read audio information:\n{error}"
 msgstr "Không thể đọc thông tin âm thanh:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1474
+#: src/globalPlugins/easyAudioConverter/__init__.py:1535
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Không thể lưu cài đặt Easy Audio Converter. Xem nhật ký NVDA để biết chi tiết."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2783
+#: src/globalPlugins/easyAudioConverter/__init__.py:2975
 msgid "Current file progress: 100%"
 msgstr "Tiến độ tệp hiện tại: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2645
+#: src/globalPlugins/easyAudioConverter/__init__.py:2811
 msgid "Current file progress: waiting"
 msgstr "Tiến trình tệp hiện tại: đang chờ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2733
+#: src/globalPlugins/easyAudioConverter/__init__.py:2904
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Tiến độ tệp hiện tại: {percent}% ({processed} của {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2725
+#: src/globalPlugins/easyAudioConverter/__init__.py:2896
 msgid "Current file time: {processed}"
 msgstr "Thời gian lưu trữ hiện tại: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:491
+#: src/globalPlugins/easyAudioConverter/__init__.py:516
 msgid "Custom EBU R128 target"
 msgstr "Mục tiêu EBU R128 tùy chỉnh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:952 src/globalPlugins/easyAudioConverter/__init__.py:1559
+#: src/globalPlugins/easyAudioConverter/__init__.py:1013 src/globalPlugins/easyAudioConverter/__init__.py:1691
 msgid "Custom integrated loudness in LUFS:"
 msgstr "Độ to tích hợp tùy chỉnh trong LUFS:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:970 src/globalPlugins/easyAudioConverter/__init__.py:1577
+#: src/globalPlugins/easyAudioConverter/__init__.py:1031 src/globalPlugins/easyAudioConverter/__init__.py:1709
 msgid "Custom loudness range in LU:"
 msgstr "Dải âm lượng tùy chỉnh trong LU:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:961 src/globalPlugins/easyAudioConverter/__init__.py:1568
+#: src/globalPlugins/easyAudioConverter/__init__.py:1022 src/globalPlugins/easyAudioConverter/__init__.py:1700
 msgid "Custom true peak in dBTP:"
 msgstr "Đỉnh thực tùy chỉnh trong dBTP:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:503
+#: src/globalPlugins/easyAudioConverter/__init__.py:528
 msgid "Date or year"
 msgstr "Ngày hoặc năm"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1592
+#: src/globalPlugins/easyAudioConverter/__init__.py:1724
 msgid "Deeply verify every output file"
 msgstr "Kiểm tra kỹ từng tệp đầu ra"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:988
+#: src/globalPlugins/easyAudioConverter/__init__.py:1049
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "Xác minh kỹ đầu ra bằng cách giải mã và so sánh thời gian"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2245
+#: src/globalPlugins/easyAudioConverter/__init__.py:2411
 msgid "Delete conversion profile"
 msgstr "Xóa hồ sơ chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1707
+#: src/globalPlugins/easyAudioConverter/__init__.py:1848
 msgid "Delete profile"
 msgstr "Xóa hồ sơ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2244
+#: src/globalPlugins/easyAudioConverter/__init__.py:2410
 msgid "Delete the profile “{name}”?"
 msgstr "Xóa hồ sơ \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:737 src/globalPlugins/easyAudioConverter/__init__.py:1739
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
+msgid "Description"
+msgstr "Mô tả"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:773 src/globalPlugins/easyAudioConverter/__init__.py:1880
 msgid "Destination folder:"
 msgstr "Thư mục đích:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4494
+#: src/globalPlugins/easyAudioConverter/__init__.py:4713
 msgid "Destination folder: {folder}"
 msgstr "Thư mục đích: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2307
+#: src/globalPlugins/easyAudioConverter/__init__.py:2473
 msgid "Destination: {destination}"
 msgstr "Điểm đến: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2993
+#: src/globalPlugins/easyAudioConverter/__init__.py:3185
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "Chi tiết chỉ giới hạn ở các tệp {limit} bị bỏ qua đầu tiên."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3006
+#: src/globalPlugins/easyAudioConverter/__init__.py:3198
 msgid "Details:"
 msgstr "Chi tiết:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:487
+#: src/globalPlugins/easyAudioConverter/__init__.py:512
 msgid "Disabled"
 msgstr "Bị vô hiệu hóa"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:505
+#: src/globalPlugins/easyAudioConverter/__init__.py:530
 msgid "Disc number"
 msgstr "Số đĩa"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:479
+#: src/globalPlugins/easyAudioConverter/__init__.py:504
 msgid "Do not copy metadata"
 msgstr "Không sao chép siêu dữ liệu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3426
+#: src/globalPlugins/easyAudioConverter/__init__.py:3618
 msgid "Download and install"
 msgstr "Tải xuống và cài đặt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3504
+#: src/globalPlugins/easyAudioConverter/__init__.py:3696
 msgid "Downloaded {done:.1f} MB"
 msgstr "Đã tải về {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3497
+#: src/globalPlugins/easyAudioConverter/__init__.py:3689
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Đã tải về {done:.1f} trong tổng cộng {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3456
+#: src/globalPlugins/easyAudioConverter/__init__.py:3648
 msgid "Downloading Easy Audio Converter update"
 msgstr "Tải bản cập nhật Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2417
+#: src/globalPlugins/easyAudioConverter/__init__.py:2583
 msgid "Duration: {value}"
 msgstr "Thời lượng: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:426
+#: src/globalPlugins/easyAudioConverter/__init__.py:451
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3130 src/globalPlugins/easyAudioConverter/__init__.py:3879 src/globalPlugins/easyAudioConverter/__init__.py:2189 src/globalPlugins/easyAudioConverter/__init__.py:2197 src/globalPlugins/easyAudioConverter/__init__.py:3260 src/globalPlugins/easyAudioConverter/__init__.py:3607 src/globalPlugins/easyAudioConverter/__init__.py:4415 src/globalPlugins/easyAudioConverter/__init__.py:898 src/globalPlugins/easyAudioConverter/__init__.py:1475 src/globalPlugins/easyAudioConverter/__init__.py:2061 src/globalPlugins/easyAudioConverter/__init__.py:2112 src/globalPlugins/easyAudioConverter/__init__.py:2150 src/globalPlugins/easyAudioConverter/__init__.py:2163 src/globalPlugins/easyAudioConverter/__init__.py:2227 src/globalPlugins/easyAudioConverter/__init__.py:2263 src/globalPlugins/easyAudioConverter/__init__.py:3094 src/globalPlugins/easyAudioConverter/__init__.py:3107 src/globalPlugins/easyAudioConverter/__init__.py:3324 src/globalPlugins/easyAudioConverter/__init__.py:3561
+#: src/globalPlugins/easyAudioConverter/__init__.py:3322 src/globalPlugins/easyAudioConverter/__init__.py:4098 src/globalPlugins/easyAudioConverter/__init__.py:2355 src/globalPlugins/easyAudioConverter/__init__.py:2363 src/globalPlugins/easyAudioConverter/__init__.py:3452 src/globalPlugins/easyAudioConverter/__init__.py:3799 src/globalPlugins/easyAudioConverter/__init__.py:4634 src/globalPlugins/easyAudioConverter/__init__.py:958 src/globalPlugins/easyAudioConverter/__init__.py:1536 src/globalPlugins/easyAudioConverter/__init__.py:2227 src/globalPlugins/easyAudioConverter/__init__.py:2278 src/globalPlugins/easyAudioConverter/__init__.py:2316 src/globalPlugins/easyAudioConverter/__init__.py:2329 src/globalPlugins/easyAudioConverter/__init__.py:2393 src/globalPlugins/easyAudioConverter/__init__.py:2429 src/globalPlugins/easyAudioConverter/__init__.py:3286 src/globalPlugins/easyAudioConverter/__init__.py:3299 src/globalPlugins/easyAudioConverter/__init__.py:3516 src/globalPlugins/easyAudioConverter/__init__.py:3753
 msgid "Easy Audio Converter"
 msgstr "Chuyển đổi âm thanh dễ dàng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3397
+#: src/globalPlugins/easyAudioConverter/__init__.py:3589
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Easy Audio Converter đã được cập nhật. Phiên bản cài đặt: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2631
+#: src/globalPlugins/easyAudioConverter/__init__.py:2797
 msgid "Easy Audio Converter progress"
 msgstr "Tiến độ Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2917
+#: src/globalPlugins/easyAudioConverter/__init__.py:3109
 msgid "Easy Audio Converter results"
 msgstr "Kết quả Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1398
+#: src/globalPlugins/easyAudioConverter/__init__.py:1459
 msgid "Easy Audio Converter settings"
 msgstr "Cài đặt Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3530 src/globalPlugins/easyAudioConverter/__init__.py:3389 src/globalPlugins/easyAudioConverter/__init__.py:3400 src/globalPlugins/easyAudioConverter/__init__.py:3543
+#: src/globalPlugins/easyAudioConverter/__init__.py:3722 src/globalPlugins/easyAudioConverter/__init__.py:3581 src/globalPlugins/easyAudioConverter/__init__.py:3592 src/globalPlugins/easyAudioConverter/__init__.py:3735
 msgid "Easy Audio Converter update"
 msgstr "Cập nhật Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3437 src/globalPlugins/easyAudioConverter/__init__.py:3422
+#: src/globalPlugins/easyAudioConverter/__init__.py:3629 src/globalPlugins/easyAudioConverter/__init__.py:3614
 msgid "Easy Audio Converter update available"
 msgstr "Đã có bản cập nhật Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3409
+#: src/globalPlugins/easyAudioConverter/__init__.py:3601
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Trình chuyển đổi âm thanh dễ dàng {newVersion} đã có sẵn. Bạn có phiên bản {currentVersion}.\n\nBạn có muốn tải xuống và cài đặt bản cập nhật ngay bây giờ không?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3433
+#: src/globalPlugins/easyAudioConverter/__init__.py:3625
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Easy Audio Converter {version} có sẵn, nhưng bản phát hành không bao gồm gói bổ sung trực tiếp. Mở trang phát hành à?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:463
+#: src/globalPlugins/easyAudioConverter/__init__.py:488
 msgid "Economical"
 msgstr "tiết kiệm"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2653
+#: src/globalPlugins/easyAudioConverter/__init__.py:1597
+msgid "Edit metadata overrides"
+msgstr "Chỉnh sửa ghi đè siêu dữ liệu"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:853 src/globalPlugins/easyAudioConverter/__init__.py:1926
+msgid "Edit metadata overrides..."
+msgstr "Chỉnh sửa ghi đè siêu dữ liệu..."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2819
 msgid "Elapsed time: 0:00"
 msgstr "Thời gian đã trôi qua: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2745
+#: src/globalPlugins/easyAudioConverter/__init__.py:2916
 msgid "Elapsed time: {elapsed}"
 msgstr "Thời gian trôi qua: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2436
+#: src/globalPlugins/easyAudioConverter/__init__.py:2602
 msgid "Embedded artwork: {value}"
 msgstr "Tác phẩm nghệ thuật nhúng: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1218
+#: src/globalPlugins/easyAudioConverter/__init__.py:1279
 msgid "Enable advanced overrides for this codec"
 msgstr "Bật ghi đè nâng cao cho codec này"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2176
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
+msgid "Encoder"
+msgstr "Bộ mã hóa"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2342
 msgid "Enter a name for this conversion profile:"
 msgstr "Nhập tên cho hồ sơ chuyển đổi này:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2311
+#: src/globalPlugins/easyAudioConverter/__init__.py:1606
+msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
+msgstr "Nhập giá trị để thay thế thẻ nguồn cho mỗi tệp được chuyển đổi. Để trống một trường để giữ giá trị nguồn của nó."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2477
 msgid "Estimated output size: {size}"
 msgstr "Kích thước đầu ra ước tính: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2779
+#: src/globalPlugins/easyAudioConverter/__init__.py:2970
 msgid "Estimated time remaining: 0:00"
 msgstr "Thời gian dự kiến còn lại: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2657
+#: src/globalPlugins/easyAudioConverter/__init__.py:2823
 msgid "Estimated time remaining: calculating"
 msgstr "Thời gian ước tính còn lại: đang tính toán"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2749
+#: src/globalPlugins/easyAudioConverter/__init__.py:2920
 msgid "Estimated time remaining: {remaining}"
 msgstr "Thời gian ước tính còn lại: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:860
+#: src/globalPlugins/easyAudioConverter/__init__.py:910
 msgid "Example album"
 msgstr "Ví dụ về album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:859
+#: src/globalPlugins/easyAudioConverter/__init__.py:909
 msgid "Example artist"
 msgstr "Họa sĩ ví dụ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:866
+#: src/globalPlugins/easyAudioConverter/__init__.py:917
 msgid "Example filename: {name}"
 msgstr "Ví dụ tên tệp: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:858
+#: src/globalPlugins/easyAudioConverter/__init__.py:908
 msgid "Example title"
 msgstr "Tiêu đề ví dụ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2130
+#: src/globalPlugins/easyAudioConverter/__init__.py:2296
 msgid "Export conversion profiles"
 msgstr "Xuất hồ sơ chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1709
+#: src/globalPlugins/easyAudioConverter/__init__.py:1850
 msgid "Export profiles..."
 msgstr "Xuất hồ sơ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:431
+#: src/globalPlugins/easyAudioConverter/__init__.py:456
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "Trích xuất luồng âm thanh gốc (không mã hóa lại)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:417
+#: src/globalPlugins/easyAudioConverter/__init__.py:442
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1166
+#: src/globalPlugins/easyAudioConverter/__init__.py:1227
 msgid "FLAC 0 — fastest encoding"
 msgstr "FLAC 0 — mã hóa nhanh nhất"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1168
+#: src/globalPlugins/easyAudioConverter/__init__.py:1229
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr "FLAC 12 — nén tối đa, rất chậm"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1170
+#: src/globalPlugins/easyAudioConverter/__init__.py:1231
 msgid "FLAC {level}"
 msgstr "FLAC {level}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2884
+#: src/globalPlugins/easyAudioConverter/__init__.py:3076
 msgid "Failed files:"
 msgstr "Tệp thất bại:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2972
+#: src/globalPlugins/easyAudioConverter/__init__.py:3164
 msgid "Failed: {name}"
 msgstr "Thất bại: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1175
+#: src/globalPlugins/easyAudioConverter/__init__.py:1236
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr "Nhanh, -f (FFmpeg cấp 0)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2855
+#: src/globalPlugins/easyAudioConverter/__init__.py:3047
 msgid "File or folder is unavailable"
 msgstr "Tệp hoặc thư mục không khả dụng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2435
+#: src/globalPlugins/easyAudioConverter/__init__.py:2601
 msgid "File size: {value}"
 msgstr "Kích thước tệp: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2716
+#: src/globalPlugins/easyAudioConverter/__init__.py:2887
 msgid "File {index} of {total}: {name}"
 msgstr "Tệp {index} của {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1971
+#: src/globalPlugins/easyAudioConverter/__init__.py:2126
 msgid "Filename preview: {name}"
 msgstr "Xem trước tên tệp: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2305
+#: src/globalPlugins/easyAudioConverter/__init__.py:2471
 msgid "Files to convert: {count}"
 msgstr "Số tệp cần chuyển đổi: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3651
+#: src/globalPlugins/easyAudioConverter/__init__.py:3843
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Tệp cần chuyển đổi: {count}. Bỏ qua: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1352
+#: src/globalPlugins/easyAudioConverter/__init__.py:1413
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "Đối với LAME MP3, cấp 0 là chất lượng thuật toán chậm nhất và cao nhất; 9 là nhanh nhất."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1357
+#: src/globalPlugins/easyAudioConverter/__init__.py:1418
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Đối với Ogg Vorbis, các cấp độ 0 đến 10 chọn tăng dần chất lượng bitrate biến đổi."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1358
+#: src/globalPlugins/easyAudioConverter/__init__.py:1419
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Đối với Opus, các cấp 0 đến 10 chọn độ phức tạp của bộ mã hóa tăng lên."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3656
+#: src/globalPlugins/easyAudioConverter/__init__.py:3848
 msgid "Found {count} files to convert"
 msgstr "Đã tìm thấy tệp {count} để chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:473
+#: src/globalPlugins/easyAudioConverter/__init__.py:498
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2314
+#: src/globalPlugins/easyAudioConverter/__init__.py:2480
 msgid "Free disk space: {size}"
 msgstr "Dung lượng đĩa trống: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2295
+#: src/globalPlugins/easyAudioConverter/__init__.py:2461
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:502
+#: src/globalPlugins/easyAudioConverter/__init__.py:527
 msgid "Genre"
 msgstr "Thể loại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2669
+#: src/globalPlugins/easyAudioConverter/__init__.py:541
+msgid "Grouping"
+msgstr "Nhóm"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2840
 msgid "Hide"
 msgstr "Ẩn mình"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:465
+#: src/globalPlugins/easyAudioConverter/__init__.py:490
 msgid "High"
 msgstr "Cao"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1177
+#: src/globalPlugins/easyAudioConverter/__init__.py:1238
 msgid "High, -h (FFmpeg level 2)"
 msgstr "Cao, -h (FFmpeg cấp 2)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:543
+msgid "ISRC"
+msgstr "ISRC"
 
 #: src/installTasks.py:34
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Nếu Easy Audio Converter hữu ích với bạn và bạn muốn hỗ trợ công việc của tôi, bạn có thể mua cho tôi một ly cà phê.\n\nBạn có muốn mở trang hỗ trợ ngay bây giờ không?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2079
+#: src/globalPlugins/easyAudioConverter/__init__.py:2245
 msgid "Import conversion profiles"
 msgstr "Nhập hồ sơ chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1708
+#: src/globalPlugins/easyAudioConverter/__init__.py:1849
 msgid "Import profiles..."
 msgstr "Nhập hồ sơ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2121
+#: src/globalPlugins/easyAudioConverter/__init__.py:2287
 msgid "Imported {count} conversion profiles"
 msgstr "Nhập khẩu hồ sơ chuyển đổi {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:763 src/globalPlugins/easyAudioConverter/__init__.py:1751
+#: src/globalPlugins/easyAudioConverter/__init__.py:799 src/globalPlugins/easyAudioConverter/__init__.py:1892
 msgid "Include subfolders when converting a folder"
 msgstr "Bao gồm các thư mục con khi chuyển đổi thư mục"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3232
+#: src/globalPlugins/easyAudioConverter/__init__.py:3424
 msgid "Information about the selected audio file..."
 msgstr "Thông tin về tệp âm thanh đã chọn..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2310
+#: src/globalPlugins/easyAudioConverter/__init__.py:2476
 msgid "Input size: {size}"
 msgstr "Kích thước đầu vào: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:872 src/globalPlugins/easyAudioConverter/__init__.py:1977
+#: src/globalPlugins/easyAudioConverter/__init__.py:923 src/globalPlugins/easyAudioConverter/__init__.py:2132
 msgid "Invalid filename template: {error}"
 msgstr "Mẫu tên tệp không hợp lệ: {error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2080 src/globalPlugins/easyAudioConverter/__init__.py:2132
+#: src/globalPlugins/easyAudioConverter/__init__.py:2246 src/globalPlugins/easyAudioConverter/__init__.py:2298
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "Tệp hồ sơ JSON (*.json)|*.json|Tất cả các tệp (*.*)|*.*"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2295
+#: src/globalPlugins/easyAudioConverter/__init__.py:2461
 msgid "KB"
 msgstr "KB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1237
+#: src/globalPlugins/easyAudioConverter/__init__.py:1298
 msgid "Keep the source channel count"
 msgstr "Giữ số lượng kênh nguồn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1231
+#: src/globalPlugins/easyAudioConverter/__init__.py:1292
 msgid "Keep the source sample rate"
 msgstr "Giữ nguyên tốc độ lấy mẫu nguồn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:472
+#: src/globalPlugins/easyAudioConverter/__init__.py:497
 msgid "LAME MP3"
 msgstr "MP3 NHÀM CHÁN"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:509
+#: src/globalPlugins/easyAudioConverter/__init__.py:534
 msgid "Language"
 msgstr "Ngôn ngữ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3426
+#: src/globalPlugins/easyAudioConverter/__init__.py:3618
 msgid "Later"
 msgstr "Sau này"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1248
+#: src/globalPlugins/easyAudioConverter/__init__.py:1309
 msgid "Lossless compression profile:"
 msgstr "Hồ sơ nén không mất dữ liệu:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:942 src/globalPlugins/easyAudioConverter/__init__.py:1549
+#: src/globalPlugins/easyAudioConverter/__init__.py:1003 src/globalPlugins/easyAudioConverter/__init__.py:1681
 msgid "Loudness normalization:"
 msgstr "Chuẩn hóa độ lớn:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:508
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "Lyrics"
 msgstr "Lời bài hát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:420
+#: src/globalPlugins/easyAudioConverter/__init__.py:445
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2295
+#: src/globalPlugins/easyAudioConverter/__init__.py:2461
 msgid "MB"
 msgstr "MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:428
+#: src/globalPlugins/easyAudioConverter/__init__.py:453
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:415
+#: src/globalPlugins/easyAudioConverter/__init__.py:440
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:722 src/globalPlugins/easyAudioConverter/__init__.py:1730
+#: src/globalPlugins/easyAudioConverter/__init__.py:758 src/globalPlugins/easyAudioConverter/__init__.py:1871
 msgid "MP3 encoder:"
 msgstr "Bộ mã hóa MP3:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1183
+#: src/globalPlugins/easyAudioConverter/__init__.py:1244
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr "Tối đa, -hhx6 (FFmpeg cấp 8)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:795 src/globalPlugins/easyAudioConverter/__init__.py:1777
+#: src/globalPlugins/easyAudioConverter/__init__.py:831 src/globalPlugins/easyAudioConverter/__init__.py:1918
 msgid "Metadata export:"
 msgstr "Xuất siêu dữ liệu:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:806
+#: src/globalPlugins/easyAudioConverter/__init__.py:842
 msgid "Metadata fields to copy:"
 msgstr "Các trường siêu dữ liệu cần sao chép:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2442
+#: src/globalPlugins/easyAudioConverter/__init__.py:870 src/globalPlugins/easyAudioConverter/__init__.py:2103
+msgid "Metadata overrides: {count} fields"
+msgstr "Ghi đè siêu dữ liệu: trường {count}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2608
 msgid "Metadata:"
 msgstr "Siêu dữ liệu:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1237
+#: src/globalPlugins/easyAudioConverter/__init__.py:1298
 msgid "Mono"
 msgstr "Mono"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:489
+#: src/globalPlugins/easyAudioConverter/__init__.py:514
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "Âm nhạc và phát trực tuyến: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1365
+#: src/globalPlugins/easyAudioConverter/__init__.py:1426
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "Không sử dụng các thiết lập codec nâng cao vì luồng âm thanh được sao chép mà không mã hóa lại."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:300
+#: src/globalPlugins/easyAudioConverter/__init__.py:325
 msgid "No completion notification"
 msgstr "Không có thông báo hoàn thành"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4509 src/globalPlugins/easyAudioConverter/__init__.py:4520 src/globalPlugins/easyAudioConverter/__init__.py:4583
+#: src/globalPlugins/easyAudioConverter/__init__.py:4728 src/globalPlugins/easyAudioConverter/__init__.py:4739 src/globalPlugins/easyAudioConverter/__init__.py:4802
 msgid "No conversion is in progress"
 msgstr "Không có chuyển đổi nào đang diễn ra"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4564
+#: src/globalPlugins/easyAudioConverter/__init__.py:4783
 msgid "No conversion progress is available"
 msgstr "Không có tiến trình chuyển đổi nào được hiển thị"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4003
+#: src/globalPlugins/easyAudioConverter/__init__.py:4222
 msgid "No conversion results are available"
 msgstr "Không có kết quả chuyển đổi nào có sẵn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4024 src/globalPlugins/easyAudioConverter/__init__.py:4034
+#: src/globalPlugins/easyAudioConverter/__init__.py:4243 src/globalPlugins/easyAudioConverter/__init__.py:4253
 msgid "No failed files are available to retry"
 msgstr "Không có tệp nào bị lỗi để thử lại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3053
+#: src/globalPlugins/easyAudioConverter/__init__.py:3245
 msgid "No file details are available."
 msgstr "Không có chi tiết hồ sơ nào được cung cấp."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3906
+#: src/globalPlugins/easyAudioConverter/__init__.py:4125
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Không có tệp nào cần chuyển đổi. Bỏ qua: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1986
+#: src/globalPlugins/easyAudioConverter/__init__.py:2142
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "Không mã hóa lại: không sử dụng chất lượng, độ lớn và các thiết lập codec nâng cao."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1981
-msgid "No re-encoding: quality, loudness, metadata, artwork, chapters, and advanced codec settings are not used."
-msgstr "Không mã hóa lại: chất lượng, độ ồn, siêu dữ liệu, hình ảnh, chương và cài đặt codec nâng cao không được sử dụng."
+#: src/globalPlugins/easyAudioConverter/__init__.py:2136
+msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
+msgstr "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2856
+#: src/globalPlugins/easyAudioConverter/__init__.py:3048
 msgid "No readable audio stream was found"
 msgstr "Không tìm thấy luồng âm thanh có thể đọc được"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3910
+#: src/globalPlugins/easyAudioConverter/__init__.py:4129
 msgid "No supported audio files were found"
 msgstr "Không tìm thấy tệp âm thanh được hỗ trợ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1176
+#: src/globalPlugins/easyAudioConverter/__init__.py:1237
 msgid "Normal (FFmpeg level 1)"
 msgstr "Bình thường (FFmpeg cấp 1)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1189
+#: src/globalPlugins/easyAudioConverter/__init__.py:1250
 msgid "Not used by this codec"
 msgstr "Không được sử dụng bởi codec này"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:418
+#: src/globalPlugins/easyAudioConverter/__init__.py:443
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4533
+#: src/globalPlugins/easyAudioConverter/__init__.py:4752
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "Một chuyển đổi đang được kích hoạt. Số công việc trong chờ: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:315
+#: src/globalPlugins/easyAudioConverter/__init__.py:340
 msgid "One file at a time"
 msgstr "Mỗi lần một tập tin"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1843
+#: src/globalPlugins/easyAudioConverter/__init__.py:1989
 msgid "One-time settings"
 msgstr "Cài đặt một lần"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:308
+#: src/globalPlugins/easyAudioConverter/__init__.py:333
 msgid "Only on demand"
 msgstr "Chỉ theo yêu cầu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4263
+#: src/globalPlugins/easyAudioConverter/__init__.py:4482
 msgid "Open Easy Audio Converter settings"
 msgstr "Mở cài đặt Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4274
+#: src/globalPlugins/easyAudioConverter/__init__.py:4493
 msgid "Open advanced codec settings"
 msgstr "Mở cài đặt codec nâng cao"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3019
+#: src/globalPlugins/easyAudioConverter/__init__.py:3211
 msgid "Open output folder"
 msgstr "Mở thư mục đầu ra"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4652
+#: src/globalPlugins/easyAudioConverter/__init__.py:4871
 msgid "Open the author's support page"
 msgstr "Mở trang hỗ trợ tác giả"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:549
+#: src/globalPlugins/easyAudioConverter/__init__.py:585
 msgid "Opening the support page"
 msgstr "Mở trang hỗ trợ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:419
+#: src/globalPlugins/easyAudioConverter/__init__.py:444
 msgid "Opus"
 msgstr "tác phẩm"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:746 src/globalPlugins/easyAudioConverter/__init__.py:1746
+#: src/globalPlugins/easyAudioConverter/__init__.py:782 src/globalPlugins/easyAudioConverter/__init__.py:1887
 msgid "Output filename template:"
 msgstr "Mẫu tên tệp đầu ra:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2882
+#: src/globalPlugins/easyAudioConverter/__init__.py:3074
 msgid "Output files:"
 msgstr "Tệp đầu ra:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2845
+#: src/globalPlugins/easyAudioConverter/__init__.py:3037
 msgid "Output verification failed because its duration differs from the source."
 msgstr "Xác minh đầu ra thất bại vì thời lượng của nó khác với nguồn."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2956
+#: src/globalPlugins/easyAudioConverter/__init__.py:3148
 msgid "Output:\n{output}"
 msgstr "Đầu ra:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2784
+#: src/globalPlugins/easyAudioConverter/__init__.py:2976
 msgid "Overall progress: 100%"
 msgstr "Tiến bộ tổng thể: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2649
+#: src/globalPlugins/easyAudioConverter/__init__.py:2815
 msgid "Overall progress: waiting"
 msgstr "Tiến độ tổng thể: đang chờ đợi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2742
+#: src/globalPlugins/easyAudioConverter/__init__.py:2913
 msgid "Overall progress: {percent}%"
 msgstr "Tiến độ tổng thể: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1254
+#: src/globalPlugins/easyAudioConverter/__init__.py:1315
 msgid "PCM bit depth:"
 msgstr "Độ sâu bit PCM:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:994 src/globalPlugins/easyAudioConverter/__init__.py:1597
+#: src/globalPlugins/easyAudioConverter/__init__.py:1055 src/globalPlugins/easyAudioConverter/__init__.py:1729
 msgid "Parallel conversion jobs:"
 msgstr "Công việc chuyển đổi song song:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2414
+#: src/globalPlugins/easyAudioConverter/__init__.py:2971
+msgid "Parallel workers: finished"
+msgstr "Công nhân song song: đã hoàn thành"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2830
+msgid "Parallel workers: waiting"
+msgstr "Công nhân song song: đang chờ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2961
+msgid "Parallel workers: {active} active of {target}"
+msgstr "Nhân viên song song: {active} hoạt động của {target}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2580
 msgid "Path: {path}"
 msgstr "Đường đi: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2346
+#: src/globalPlugins/easyAudioConverter/__init__.py:2512
 msgid "Planned output files:"
 msgstr "Các tệp đầu ra dự kiến:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1032
+#: src/globalPlugins/easyAudioConverter/__init__.py:1093
 msgid "Play a sound when a conversion fails"
 msgstr "Phát âm thanh khi chuyển đổi thất bại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1039
+#: src/globalPlugins/easyAudioConverter/__init__.py:1100
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "Phát âm thanh khi chuyển đổi bị hủy hoặc dừng lại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:369
+#: src/globalPlugins/easyAudioConverter/__init__.py:394
 msgid "Podcast Opus"
 msgstr "Podcast Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:488
+#: src/globalPlugins/easyAudioConverter/__init__.py:513
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "Podcast: -16 LUFS, -1.5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2565 src/globalPlugins/easyAudioConverter/__init__.py:3646 src/globalPlugins/easyAudioConverter/__init__.py:2643
+#: src/globalPlugins/easyAudioConverter/__init__.py:2731 src/globalPlugins/easyAudioConverter/__init__.py:3838 src/globalPlugins/easyAudioConverter/__init__.py:2809
 msgid "Preparing the conversion"
 msgstr "Chuẩn bị chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:776 src/globalPlugins/easyAudioConverter/__init__.py:1762
+#: src/globalPlugins/easyAudioConverter/__init__.py:812 src/globalPlugins/easyAudioConverter/__init__.py:1903
 msgid "Preserve source file creation and modification dates"
 msgstr "Giữ nguyên ngày tạo và sửa đổi tệp nguồn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:769 src/globalPlugins/easyAudioConverter/__init__.py:1756
+#: src/globalPlugins/easyAudioConverter/__init__.py:805 src/globalPlugins/easyAudioConverter/__init__.py:1897
 msgid "Preserve the source folder structure in the destination"
 msgstr "Bảo toàn cấu trúc thư mục nguồn ở đích"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:930
+#: src/globalPlugins/easyAudioConverter/__init__.py:991
 msgid "Processing and notifications"
 msgstr "Xử lý và thông báo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1536
+#: src/globalPlugins/easyAudioConverter/__init__.py:1668
 msgid "Processing options"
 msgstr "Tùy chọn xử lý"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1787
+#: src/globalPlugins/easyAudioConverter/__init__.py:1932
 msgid "Processing options..."
 msgstr "Tùy chọn xử lý..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1996
+#: src/globalPlugins/easyAudioConverter/__init__.py:2152
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "Xử lý: độ lớn {loudness}; tác phẩm nghệ thuật {artwork}; Chương {chapters}; Xác minh {verification}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2255
+#: src/globalPlugins/easyAudioConverter/__init__.py:2421
 msgid "Profile deleted"
 msgstr "Hồ sơ đã bị xóa"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2234
+#: src/globalPlugins/easyAudioConverter/__init__.py:2400
 msgid "Profile saved: {name}"
 msgstr "Hồ sơ đã lưu: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:510
+#: src/globalPlugins/easyAudioConverter/__init__.py:535
 msgid "Publisher"
 msgstr "Nhà xuất bản"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4470
+#: src/globalPlugins/easyAudioConverter/__init__.py:4689
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "Chất lượng không được sử dụng khi sao chép âm thanh mà không mã hóa lại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:713 src/globalPlugins/easyAudioConverter/__init__.py:1724
+#: src/globalPlugins/easyAudioConverter/__init__.py:749 src/globalPlugins/easyAudioConverter/__init__.py:1865
 msgid "Quality:"
 msgstr "Chất lượng:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4477
+#: src/globalPlugins/easyAudioConverter/__init__.py:4696
 msgid "Quality: {quality}"
 msgstr "Chất lượng: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4536
+#: src/globalPlugins/easyAudioConverter/__init__.py:4755
 msgid "Queued conversion jobs: {count}."
 msgstr "Công việc chuyển đổi trong hàng đợi: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2660
+#: src/globalPlugins/easyAudioConverter/__init__.py:2826
 msgid "Queued jobs: 0"
 msgstr "Số việc làm trong hàng đợi: 0"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2773
+#: src/globalPlugins/easyAudioConverter/__init__.py:2944
 msgid "Queued jobs: {count}"
 msgstr "Số công việc đã xếp hàng: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4481
+#: src/globalPlugins/easyAudioConverter/__init__.py:4700
 msgid "Quickly choose the destination folder"
 msgstr "Chọn nhanh thư mục đích"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4306
+#: src/globalPlugins/easyAudioConverter/__init__.py:4525
 msgid "Quickly convert selected files or folders"
 msgstr "Chuyển đổi nhanh chóng các tập tin hoặc thư mục đã chọn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4385
+#: src/globalPlugins/easyAudioConverter/__init__.py:4604
 msgid "Reading audio file information"
 msgstr "Đọc thông tin tệp âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2561
+#: src/globalPlugins/easyAudioConverter/__init__.py:2727
 msgid "Reading audio information"
 msgstr "Đọc thông tin âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3418
+#: src/globalPlugins/easyAudioConverter/__init__.py:3610
 msgid "Release notes:"
 msgstr "Ghi chú phát hành:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:434
+#: src/globalPlugins/easyAudioConverter/__init__.py:459
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC sang M4A (không mã hóa lại)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3579
+#: src/globalPlugins/easyAudioConverter/__init__.py:3771
 msgid "Replace source files"
 msgstr "Thay thế tập tin nguồn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:784 src/globalPlugins/easyAudioConverter/__init__.py:1768
+#: src/globalPlugins/easyAudioConverter/__init__.py:820 src/globalPlugins/easyAudioConverter/__init__.py:1909
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr "Thay thế file nguồn sau khi chuyển đổi thành công (xóa vĩnh viễn bản gốc)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2212
+#: src/globalPlugins/easyAudioConverter/__init__.py:2378
 msgid "Replace the existing profile “{name}”?"
 msgstr "Thay thế hồ sơ hiện có \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3573
+#: src/globalPlugins/easyAudioConverter/__init__.py:3765
 msgid "Replacing source files cannot be undone. After each output is created and checked successfully, its source file will be permanently deleted. Source files will be kept if conversion or verification fails. Continue?"
 msgstr "Không thể hoàn tác việc thay thế tệp nguồn. Sau khi mỗi đầu ra được tạo và kiểm tra thành công, tệp nguồn của nó sẽ bị xóa vĩnh viễn. Các tập tin nguồn sẽ được giữ lại nếu việc chuyển đổi hoặc xác minh không thành công. Tiếp tục?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4578
+#: src/globalPlugins/easyAudioConverter/__init__.py:4797
 msgid "Report audio conversion status"
 msgstr "Báo cáo trạng thái chuyển đổi âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2667 src/globalPlugins/easyAudioConverter/__init__.py:3234
+#: src/globalPlugins/easyAudioConverter/__init__.py:2838 src/globalPlugins/easyAudioConverter/__init__.py:3426
 msgid "Report conversion status"
 msgstr "Báo cáo trạng thái chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4526 src/globalPlugins/easyAudioConverter/__init__.py:3238
+#: src/globalPlugins/easyAudioConverter/__init__.py:4745 src/globalPlugins/easyAudioConverter/__init__.py:3430
 msgid "Report queued conversion jobs"
 msgstr "Báo cáo các công việc chuyển đổi trong hàng đợi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3018
+#: src/globalPlugins/easyAudioConverter/__init__.py:3210
 msgid "Retry failed files"
 msgstr "Thử lại các tệp thất bại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2362
+#: src/globalPlugins/easyAudioConverter/__init__.py:2528
 msgid "Review conversion plan"
 msgstr "Xem xét kế hoạch chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2374
+#: src/globalPlugins/easyAudioConverter/__init__.py:2540
 msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
 msgstr "Xem lại kế hoạch bên dưới. Ước tính kích thước chỉ là ước lượng. Không có tệp nguồn nào bị ghi đè."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2368
+#: src/globalPlugins/easyAudioConverter/__init__.py:2534
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr "Xem lại kế hoạch dưới đây. Ước tính kích thước là gần đúng. Các tệp nguồn sẽ bị xóa vĩnh viễn sau khi kết quả đầu ra của chúng được hoàn thành thành công."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1229
+#: src/globalPlugins/easyAudioConverter/__init__.py:1290
 msgid "Sample rate:"
 msgstr "Tỷ lệ lấy mẫu:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2428
+#: src/globalPlugins/easyAudioConverter/__init__.py:2594
 msgid "Sample rate: {value}"
 msgstr "Tỷ lệ mẫu: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2177 src/globalPlugins/easyAudioConverter/__init__.py:2213
+#: src/globalPlugins/easyAudioConverter/__init__.py:2343 src/globalPlugins/easyAudioConverter/__init__.py:2379
 msgid "Save conversion profile"
 msgstr "Lưu hồ sơ chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:731 src/globalPlugins/easyAudioConverter/__init__.py:1736
+#: src/globalPlugins/easyAudioConverter/__init__.py:767 src/globalPlugins/easyAudioConverter/__init__.py:1877
 msgid "Save converted files next to the source files"
 msgstr "Lưu các tệp đã chuyển đổi bên cạnh các tệp nguồn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1706
+#: src/globalPlugins/easyAudioConverter/__init__.py:1847
 msgid "Save profile..."
 msgstr "Lưu hồ sơ..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4379
+#: src/globalPlugins/easyAudioConverter/__init__.py:4598
 msgid "Select exactly one audio file"
 msgstr "Chọn đúng một tệp âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1497
+#: src/globalPlugins/easyAudioConverter/__init__.py:1558
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Chọn các trường siêu dữ liệu văn bản để sao chép cho chuyển đổi này."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1696
+#: src/globalPlugins/easyAudioConverter/__init__.py:1837
 msgid "Selected items: {count}"
 msgstr "Các mặt hàng được chọn: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3241
+#: src/globalPlugins/easyAudioConverter/__init__.py:3433
 msgid "Settings..."
 msgstr "Cài đặt..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1013
+#: src/globalPlugins/easyAudioConverter/__init__.py:1074
 msgid "Show a conversion plan before starting"
 msgstr "Hiển thị kế hoạch chuyển đổi trước khi bắt đầu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3233
+#: src/globalPlugins/easyAudioConverter/__init__.py:3425
 msgid "Show conversion progress"
 msgstr "Hiển thị tiến trình chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3235
+#: src/globalPlugins/easyAudioConverter/__init__.py:3427
 msgid "Show last conversion results"
 msgstr "Hiển thị kết quả chuyển đổi cuối cùng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2668
+#: src/globalPlugins/easyAudioConverter/__init__.py:2839
 msgid "Show results"
 msgstr "Xem kết quả"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4372
+#: src/globalPlugins/easyAudioConverter/__init__.py:4591
 msgid "Show technical information about the selected audio file"
 msgstr "Hiển thị thông tin kỹ thuật về tệp âm thanh đã chọn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4559
+#: src/globalPlugins/easyAudioConverter/__init__.py:4778
 msgid "Show the audio conversion progress window"
 msgstr "Hiển thị cửa sổ tiến trình chuyển đổi âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1607
+#: src/globalPlugins/easyAudioConverter/__init__.py:1747
 msgid "Show the conversion plan before starting"
 msgstr "Hiển thị kế hoạch chuyển đổi trước khi bắt đầu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4570
+#: src/globalPlugins/easyAudioConverter/__init__.py:4789
 msgid "Show the last audio conversion results"
 msgstr "Hiển thị kết quả chuyển đổi âm thanh cuối cùng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2860
+#: src/globalPlugins/easyAudioConverter/__init__.py:3052
 msgid "Skipped"
 msgstr "đã bỏ qua"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2895
+#: src/globalPlugins/easyAudioConverter/__init__.py:3087
 msgid "Skipped files:"
 msgstr "Các tệp bị bỏ qua:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2306
+#: src/globalPlugins/easyAudioConverter/__init__.py:2472
 msgid "Skipped inputs: {count}"
 msgstr "Các đầu vào bị bỏ qua: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2980
+#: src/globalPlugins/easyAudioConverter/__init__.py:3172
 msgid "Skipped: {name}"
 msgstr "Bỏ qua: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:299
+#: src/globalPlugins/easyAudioConverter/__init__.py:545
+msgid "Sort album"
+msgstr "Sắp xếp album"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:544
+msgid "Sort artist"
+msgstr "Sắp xếp nghệ sĩ"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:546
+msgid "Sort title"
+msgstr "Sắp xếp tiêu đề"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:324
 msgid "Sound only"
 msgstr "Chỉ âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2962
+#: src/globalPlugins/easyAudioConverter/__init__.py:3154
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Nguồn:\n{source}\n\nLỗi:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2942
+#: src/globalPlugins/easyAudioConverter/__init__.py:3134
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Nguồn:\n{source}\n\nĐầu ra:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2981
+#: src/globalPlugins/easyAudioConverter/__init__.py:3173
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Nguồn:\n{source}\n\nLý do:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:297
+#: src/globalPlugins/easyAudioConverter/__init__.py:322
 msgid "Speech and sound"
 msgstr "Giọng nói và âm thanh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:298
+#: src/globalPlugins/easyAudioConverter/__init__.py:323
 msgid "Speech only"
 msgstr "Chỉ dùng lời nói"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:464
+#: src/globalPlugins/easyAudioConverter/__init__.py:489
 msgid "Standard"
 msgstr "Tiêu chuẩn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:695
+#: src/globalPlugins/easyAudioConverter/__init__.py:731
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2394
+#: src/globalPlugins/easyAudioConverter/__init__.py:2560
 msgid "Start conversion"
 msgstr "Bắt đầu chuyển đổi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3457
+#: src/globalPlugins/easyAudioConverter/__init__.py:3649
 msgid "Starting the download..."
 msgstr "Bắt đầu tải xuống..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3994
+#: src/globalPlugins/easyAudioConverter/__init__.py:4213
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "Bắt đầu chuyển đổi hàng đợi tiếp theo. Số việc còn lại: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1237
+#: src/globalPlugins/easyAudioConverter/__init__.py:1298
 msgid "Stereo"
 msgstr "Stereo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2665
+#: src/globalPlugins/easyAudioConverter/__init__.py:2836
 msgid "Stop after current file"
 msgstr "Dừng sau tệp hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3236
+#: src/globalPlugins/easyAudioConverter/__init__.py:3428
 msgid "Stop after the current file"
 msgstr "Dừng sau tệp hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4515
+#: src/globalPlugins/easyAudioConverter/__init__.py:4734
 msgid "Stop the conversion after the current file"
 msgstr "Dừng chuyển đổi sau khi tệp hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3899
+#: src/globalPlugins/easyAudioConverter/__init__.py:4118
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "Đã dừng sau tệp hiện tại. Đã hoàn thành {done} của các tệp {total}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2803
+#: src/globalPlugins/easyAudioConverter/__init__.py:2995
 msgid "Stopping after this file..."
 msgstr "Dừng lại sau tập tin này..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2867 src/globalPlugins/easyAudioConverter/__init__.py:2928
+#: src/globalPlugins/easyAudioConverter/__init__.py:3059 src/globalPlugins/easyAudioConverter/__init__.py:3120
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Thành công: {done}. Thất bại: {failed}. Bỏ qua: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2941 src/globalPlugins/easyAudioConverter/__init__.py:2955
+#: src/globalPlugins/easyAudioConverter/__init__.py:3133 src/globalPlugins/easyAudioConverter/__init__.py:3147
 msgid "Success: {name}"
 msgstr "Thành công: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1020
+#: src/globalPlugins/easyAudioConverter/__init__.py:1081
 msgid "Successful completion notification:"
 msgstr "Thông báo hoàn thành thành công:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2878
+#: src/globalPlugins/easyAudioConverter/__init__.py:3070
 msgid "Successful files:"
 msgstr "Các tệp thành công:"
 
@@ -1375,282 +1447,294 @@ msgstr "Các tệp thành công:"
 msgid "Support Easy Audio Converter"
 msgstr "Hỗ trợ chuyển đổi âm thanh dễ dàng"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1060 src/globalPlugins/easyAudioConverter/__init__.py:3244
+#: src/globalPlugins/easyAudioConverter/__init__.py:1121 src/globalPlugins/easyAudioConverter/__init__.py:3436
 msgid "Support the author"
 msgstr "Ủng hộ tác giả"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2295 src/globalPlugins/easyAudioConverter/__init__.py:2296
+#: src/globalPlugins/easyAudioConverter/__init__.py:2461 src/globalPlugins/easyAudioConverter/__init__.py:2462
 msgid "TB"
 msgstr "TB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:704 src/globalPlugins/easyAudioConverter/__init__.py:1718
+#: src/globalPlugins/easyAudioConverter/__init__.py:740 src/globalPlugins/easyAudioConverter/__init__.py:1859
 msgid "Target format:"
 msgstr "Định dạng mục tiêu:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4457
+#: src/globalPlugins/easyAudioConverter/__init__.py:4676
 msgid "Target format: {format}"
 msgstr "Định dạng mục tiêu: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1043
+#: src/globalPlugins/easyAudioConverter/__init__.py:1104
 msgid "Test cancel sound"
 msgstr "Kiểm tra âm thanh hủy"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1036
+#: src/globalPlugins/easyAudioConverter/__init__.py:1097
 msgid "Test error sound"
 msgstr "Âm thanh lỗi kiểm tra"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1028
+#: src/globalPlugins/easyAudioConverter/__init__.py:1089
 msgid "Test success sound"
 msgstr "Kiểm tra âm thanh thành công"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3606
+#: src/globalPlugins/easyAudioConverter/__init__.py:3798
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Thiếu thành phần FFmpeg đi kèm. Cài đặt lại Easy Audio Converter."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1372
+#: src/globalPlugins/easyAudioConverter/__init__.py:1433
 msgid "The codec-specific level is not used by this format."
 msgstr "Mức đặc thù của codec không được sử dụng bởi định dạng này."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3873
+#: src/globalPlugins/easyAudioConverter/__init__.py:4092
 msgid "The conversion could not start"
 msgstr "Quá trình chuyển đổi không thể bắt đầu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3878
+#: src/globalPlugins/easyAudioConverter/__init__.py:4097
 msgid "The conversion could not start:\n{error}"
 msgstr "Quá trình chuyển đổi không thể bắt đầu:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4547 src/globalPlugins/easyAudioConverter/__init__.py:4538
+#: src/globalPlugins/easyAudioConverter/__init__.py:4766 src/globalPlugins/easyAudioConverter/__init__.py:4757
 msgid "The conversion queue is empty"
 msgstr "Hàng đợi chuyển đổi đang trống"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2874
+#: src/globalPlugins/easyAudioConverter/__init__.py:3066
 msgid "The conversion was canceled."
 msgstr "Việc chuyển đổi đã bị hủy bỏ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4523
+#: src/globalPlugins/easyAudioConverter/__init__.py:4742
 msgid "The conversion will stop after the current file"
 msgstr "Quá trình chuyển đổi sẽ dừng lại sau tệp hiện tại"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2833
+#: src/globalPlugins/easyAudioConverter/__init__.py:3025
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr "Đầu ra đã chuyển đổi được giữ lại nhưng không thể xóa tệp nguồn."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2107
+#: src/globalPlugins/easyAudioConverter/__init__.py:2273
 msgid "The file does not contain valid conversion profiles."
 msgstr "Tệp không chứa hồ sơ chuyển đổi hợp lệ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:446
+#: src/globalPlugins/easyAudioConverter/__init__.py:471
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "Luồng âm thanh AAC đầu tiên sẽ được remux vào M4A mà không cần mã hóa lại. Các nguồn có luồng âm thanh đầu tiên không phải là AAC sẽ bị bỏ qua."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2857
+#: src/globalPlugins/easyAudioConverter/__init__.py:3049
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "Luồng âm thanh đầu tiên không phải là AAC, nên không thể chuyển đổi sang M4A"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:440
+#: src/globalPlugins/easyAudioConverter/__init__.py:465
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "Luồng âm thanh đầu tiên sẽ được trích xuất mà không cần mã hóa lại. Codec và chất lượng của nó không thay đổi, và phần mở rộng đầu ra được chọn tự động."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2843
+#: src/globalPlugins/easyAudioConverter/__init__.py:3035
 msgid "The input does not contain a readable audio stream."
 msgstr "Đầu vào không chứa luồng âm thanh có thể đọc được."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2841
+#: src/globalPlugins/easyAudioConverter/__init__.py:3033
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "Tệp đầu vào bị hỏng hoặc sử dụng mã hóa không được hỗ trợ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2876
+#: src/globalPlugins/easyAudioConverter/__init__.py:3068
 msgid "The job was stopped after the current file."
 msgstr "Công việc đã bị dừng sau khi có tệp hiện tại."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2091
+#: src/globalPlugins/easyAudioConverter/__init__.py:2257
 msgid "The profile file is too large."
 msgstr "File hồ sơ quá lớn."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2188
+#: src/globalPlugins/easyAudioConverter/__init__.py:2354
 msgid "The profile name cannot be empty."
 msgstr "Tên hồ sơ không được để trống."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2847
+#: src/globalPlugins/easyAudioConverter/__init__.py:3039
 msgid "The source file dates could not be preserved."
 msgstr "Ngày tháng của tệp nguồn không thể được bảo toàn."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3527
+#: src/globalPlugins/easyAudioConverter/__init__.py:3719
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "Bản cập nhật không thể tải xuống hoặc xác minh.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3535
+#: src/globalPlugins/easyAudioConverter/__init__.py:3727
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "Bản cập nhật đã sẵn sàng. Mở trình cài đặt tiện ích bổ sung NVDA."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2126
+#: src/globalPlugins/easyAudioConverter/__init__.py:2292
 msgid "There are no user profiles to export"
 msgstr "Không có hồ sơ người dùng nào để xuất"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2839
+#: src/globalPlugins/easyAudioConverter/__init__.py:3031
 msgid "There is not enough free disk space."
 msgstr "Không đủ dung lượng đĩa trống."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:497
+#: src/globalPlugins/easyAudioConverter/__init__.py:522
 msgid "Title"
 msgstr "Tiêu đề"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2315
+#: src/globalPlugins/easyAudioConverter/__init__.py:2481
 msgid "Total audio duration: {duration}"
 msgstr "Tổng thời lượng âm thanh: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:504
+#: src/globalPlugins/easyAudioConverter/__init__.py:537
+msgid "Total discs"
+msgstr "Tổng số đĩa"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:536
+msgid "Total tracks"
+msgstr "Tổng số bài hát"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:529
 msgid "Track number"
 msgstr "Số hiệu đường ray"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2848 src/globalPlugins/easyAudioConverter/__init__.py:3528 src/globalPlugins/easyAudioConverter/__init__.py:4413 src/globalPlugins/easyAudioConverter/__init__.py:3387
+#: src/globalPlugins/easyAudioConverter/__init__.py:3040 src/globalPlugins/easyAudioConverter/__init__.py:3720 src/globalPlugins/easyAudioConverter/__init__.py:4632 src/globalPlugins/easyAudioConverter/__init__.py:3579
 msgid "Unknown error"
 msgstr "Lỗi không xác định"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2854
+#: src/globalPlugins/easyAudioConverter/__init__.py:3046
 msgid "Unsupported file type"
 msgstr "Loại tệp không được hỗ trợ"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3523
+#: src/globalPlugins/easyAudioConverter/__init__.py:3715
 msgid "Update download canceled"
 msgstr "Tải về bản cập nhật bị hủy"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1163 src/globalPlugins/easyAudioConverter/__init__.py:1185 src/globalPlugins/easyAudioConverter/__init__.py:1256
+#: src/globalPlugins/easyAudioConverter/__init__.py:1224 src/globalPlugins/easyAudioConverter/__init__.py:1246 src/globalPlugins/easyAudioConverter/__init__.py:1317
 msgid "Use the quality preset"
 msgstr "Sử dụng thiết lập chất lượng sẵn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1792
+#: src/globalPlugins/easyAudioConverter/__init__.py:1937
 msgid "Use these settings for future quick conversions"
 msgstr "Sử dụng các thiết lập này cho các chuyển đổi nhanh trong tương lai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2564
+#: src/globalPlugins/easyAudioConverter/__init__.py:2730
 msgid "Verifying the output by decoding it"
 msgstr "Xác minh đầu ra bằng cách giải mã nó"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:466
+#: src/globalPlugins/easyAudioConverter/__init__.py:491
 msgid "Very high"
 msgstr "Rất cao"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1179
+#: src/globalPlugins/easyAudioConverter/__init__.py:1240
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr "Rất cao + thêm 1, -hhx1 (FFmpeg cấp 4)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1180
+#: src/globalPlugins/easyAudioConverter/__init__.py:1241
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr "Rất cao + thêm 2, -hhx2 (FFmpeg cấp 5)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1181
+#: src/globalPlugins/easyAudioConverter/__init__.py:1242
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr "Rất cao + thêm 3, -hhx3 (FFmpeg cấp 6)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1182
+#: src/globalPlugins/easyAudioConverter/__init__.py:1243
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr "Rất cao + thêm 4, -hhx4 (FFmpeg cấp 7)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1178
+#: src/globalPlugins/easyAudioConverter/__init__.py:1239
 msgid "Very high, -hh (FFmpeg level 3)"
 msgstr "Rất cao, -hh (FFmpeg cấp 3)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:416
+#: src/globalPlugins/easyAudioConverter/__init__.py:441
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:422
+#: src/globalPlugins/easyAudioConverter/__init__.py:447
 msgid "WMA"
 msgstr "WMA"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2325
+#: src/globalPlugins/easyAudioConverter/__init__.py:2491
 msgid "Warning: source files will be permanently deleted after successful conversion."
 msgstr "Cảnh báo: các file nguồn sẽ bị xóa vĩnh viễn sau khi chuyển đổi thành công."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2343
+#: src/globalPlugins/easyAudioConverter/__init__.py:2509
 msgid "Warning: the estimated output is larger than the available disk space."
 msgstr "Cảnh báo: đầu ra ước tính lớn hơn dung lượng đĩa khả dụng."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2332
+#: src/globalPlugins/easyAudioConverter/__init__.py:2498
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "Cảnh báo: Các tệp {count} sẽ được chuyển đổi từ định dạng mất dữ liệu sang định dạng mất dữ liệu khác, điều này có thể làm giảm chất lượng."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:427
+#: src/globalPlugins/easyAudioConverter/__init__.py:452
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1359
+#: src/globalPlugins/easyAudioConverter/__init__.py:1420
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr "Hồ sơ WavPack sử dụng các cấp FFmpeg từ 0 đến 8. Cấp 8 tương ứng với -hhx6 và cực kỳ chậm."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2295 src/globalPlugins/easyAudioConverter/__init__.py:2297
+#: src/globalPlugins/easyAudioConverter/__init__.py:2461 src/globalPlugins/easyAudioConverter/__init__.py:2463
 msgid "bytes"
 msgstr "byte"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4632 src/globalPlugins/easyAudioConverter/__init__.py:2753
+#: src/globalPlugins/easyAudioConverter/__init__.py:4851 src/globalPlugins/easyAudioConverter/__init__.py:2924
 msgid "calculating"
 msgstr "đang tính toán"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4186
+#: src/globalPlugins/easyAudioConverter/__init__.py:4405
 msgid "excluding subfolders"
 msgstr "loại trừ các thư mục con"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4184
+#: src/globalPlugins/easyAudioConverter/__init__.py:4403
 msgid "including subfolders"
 msgstr "bao gồm các thư mục con"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2437
+#: src/globalPlugins/easyAudioConverter/__init__.py:2603
 msgid "no"
 msgstr "không"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2001 src/globalPlugins/easyAudioConverter/__init__.py:2002 src/globalPlugins/easyAudioConverter/__init__.py:2003
+#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2158 src/globalPlugins/easyAudioConverter/__init__.py:2159
 msgid "off"
 msgstr "tắt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2001 src/globalPlugins/easyAudioConverter/__init__.py:2002 src/globalPlugins/easyAudioConverter/__init__.py:2003
+#: src/globalPlugins/easyAudioConverter/__init__.py:2157 src/globalPlugins/easyAudioConverter/__init__.py:2158 src/globalPlugins/easyAudioConverter/__init__.py:2159
 msgid "on"
 msgstr "trên"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2308
+#: src/globalPlugins/easyAudioConverter/__init__.py:2474
 msgid "source folders"
 msgstr "thư mục nguồn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2293 src/globalPlugins/easyAudioConverter/__init__.py:2319 src/globalPlugins/easyAudioConverter/__init__.py:2415 src/globalPlugins/easyAudioConverter/__init__.py:2416 src/globalPlugins/easyAudioConverter/__init__.py:2418 src/globalPlugins/easyAudioConverter/__init__.py:2424 src/globalPlugins/easyAudioConverter/__init__.py:2427 src/globalPlugins/easyAudioConverter/__init__.py:2432 src/globalPlugins/easyAudioConverter/__init__.py:4431 src/globalPlugins/easyAudioConverter/__init__.py:4435 src/globalPlugins/easyAudioConverter/__init__.py:4440
+#: src/globalPlugins/easyAudioConverter/__init__.py:2459 src/globalPlugins/easyAudioConverter/__init__.py:2485 src/globalPlugins/easyAudioConverter/__init__.py:2581 src/globalPlugins/easyAudioConverter/__init__.py:2582 src/globalPlugins/easyAudioConverter/__init__.py:2584 src/globalPlugins/easyAudioConverter/__init__.py:2590 src/globalPlugins/easyAudioConverter/__init__.py:2593 src/globalPlugins/easyAudioConverter/__init__.py:2598 src/globalPlugins/easyAudioConverter/__init__.py:4650 src/globalPlugins/easyAudioConverter/__init__.py:4654 src/globalPlugins/easyAudioConverter/__init__.py:4659
 msgid "unknown"
 msgstr "không biết"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2437
+#: src/globalPlugins/easyAudioConverter/__init__.py:2603
 msgid "yes"
 msgstr "Đúng vậy"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4221 src/globalPlugins/easyAudioConverter/__init__.py:4246
+#: src/globalPlugins/easyAudioConverter/__init__.py:4440 src/globalPlugins/easyAudioConverter/__init__.py:4465
 msgid "{count} selected folders"
 msgstr "{count} thư mục đã chọn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3659
+#: src/globalPlugins/easyAudioConverter/__init__.py:3852
+msgid "{message}. Starting with {workers} adaptive conversion workers."
+msgstr "{message}. Bắt đầu với {workers} nhân viên chuyển đổi thích ứng."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3856
 msgid "{message}. Using {workers} parallel conversion workers."
 msgstr "{message}. Sử dụng trình chuyển đổi song song {workers}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:455
+#: src/globalPlugins/easyAudioConverter/__init__.py:480
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (phần mở rộng được chọn từ codec âm thanh nguồn)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2763
+#: src/globalPlugins/easyAudioConverter/__init__.py:2934
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. Tệp {index} của {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4587
+#: src/globalPlugins/easyAudioConverter/__init__.py:4806
 msgid "{stage}. Queued jobs: {count}."
 msgstr "{stage}. Số công việc trong hàng đợi: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4635
+#: src/globalPlugins/easyAudioConverter/__init__.py:4854
 msgid "{stage}. {status} Queued jobs: {count}."
 msgstr "{stage}. {status} Số việc đã xếp hàng: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4627
+#: src/globalPlugins/easyAudioConverter/__init__.py:4846
 msgid "{status} Estimated time remaining {remaining}."
 msgstr "{status} Thời gian ước tính còn lại {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2430 src/globalPlugins/easyAudioConverter/__init__.py:4438
+#: src/globalPlugins/easyAudioConverter/__init__.py:2596 src/globalPlugins/easyAudioConverter/__init__.py:4657
 msgid "{value} Hz"
 msgstr "{value} Hz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2422
+#: src/globalPlugins/easyAudioConverter/__init__.py:2588
 msgid "{value} kbps"
 msgstr "{value} kbps"

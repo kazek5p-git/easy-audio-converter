@@ -156,7 +156,8 @@
 		liczbę równoległych zadań, aktualizacje i osobne dźwięki sukcesu, błędu
 		oraz anulowania. Każdy dźwięk można przetestować. GPU nie jest używane,
 		ponieważ dostępne kodeki dodatku kodują dźwięk na CPU; FFmpeg sam dobiera
-		wątki dla każdego procesu.
+		wątki dla każdego procesu. Tryb automatyczny dynamicznie dostosowuje
+		liczbę nowych plików do obciążenia procesora i pamięci.
 	</p>
 	<p>
 		Po zaznaczeniu opcji „Zapisuj przekonwertowane pliki obok plików
@@ -184,7 +185,9 @@
 		Kodek i jakość nie zmieniają się. Dodatek automatycznie dobiera
 		rozszerzenie, na przykład .aac, .mp3, .opus, .ogg, .flac, .m4a, .wav
 		lub .aiff; dla nietypowego kodeka używa bezpiecznego kontenera .mka.
-		Obraz wideo, metadane, okładki i rozdziały nie trafiają do wyniku.
+		Obraz wideo, źródłowe metadane, okładki i rozdziały nie trafiają do wyniku;
+		wprowadzone nadpisania metadanych mogą jednak dodać tagi do wyodrębnionego
+		strumienia.
 	</p>
 	<p>
 		„Remuksuj AAC do M4A” umieszcza pierwszy strumień AAC w kontenerze M4A
@@ -204,9 +207,17 @@
 		<li>
 			kopiowanie tylko zaznaczonych pól, takich jak tytuł, wykonawca,
 			album, kompozytor, gatunek, data, numer utworu i płyty, komentarz,
-			prawa autorskie, tekst utworu, język lub wydawca.
+			prawa autorskie, tekst utworu, język, wydawca, BPM, opis, grupowanie,
+			kompilacja, enkoder, ISRC, sumy utworów i płyt oraz pola sortowania.
 		</li>
 	</ul>
+	<p>
+		Przycisk „Edytuj nadpisania metadanych...” pozwala wpisać wartości, które
+		mają zastąpić tagi w każdym wyniku bieżącego zadania lub nazwanego profilu.
+		Puste pola pozostawiają wartość źródłową. Nadpisania są stosowane po
+		wybranym trybie kopiowania, więc mogą także dodać tag przy wyłączonym
+		kopiowaniu metadanych źródłowych.
+	</p>
 	<p>
 		Okładka jest strumieniem multimedialnym, a nie polem tekstowym. Może być
 		kopiowana oddzielną opcją do MP3, M4A/ALAC i FLAC, jeśli źródło i

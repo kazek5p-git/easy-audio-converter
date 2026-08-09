@@ -15,6 +15,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src" / "globalPlugins" / "easyAudioConver
 
 from converter import (  # noqa: E402
 	AAC_M4A_COPY_FORMAT,
+	AdaptiveWorkerController,
 	FLAC_COMPRESSION_LEVELS,
 	FORMAT_KEYS,
 	MAX_PARALLEL_JOBS,
@@ -28,6 +29,7 @@ from converter import (  # noqa: E402
 	Converter,
 	MediaInfo,
 	StreamCopySourceError,
+	SystemResourceUsage,
 	apply_advanced_codec_arguments,
 	build_codec_arguments,
 	build_loudnorm_filter,
@@ -35,6 +37,7 @@ from converter import (  # noqa: E402
 	collect_audio_files,
 	collect_audio_files_detailed,
 	make_unique_output_path,
+	normalize_metadata_overrides,
 	output_extension_for,
 	parse_duration,
 	parse_ffmetadata,
@@ -58,6 +61,39 @@ class ConversionSettingsTests(unittest.TestCase):
 			self.assertEqual(4, recommended_parallel_jobs(20))
 		with self.assertRaises(ValueError):
 			ConversionSettings(parallel_jobs=MAX_PARALLEL_JOBS + 1).validate()
+
+	def test_adaptive_workers_increase_when_resources_are_idle(self):
+		with mock.patch("converter.os.cpu_count", return_value=32):
+			controller = AdaptiveWorkerController(100)
+			self.assertEqual(16, controller.target)
+			self.assertEqual(16, controller.maximum)
+			busy = SystemResourceUsage(cpu_percent=96.0, memory_percent=60.0)
+			controller.update(busy)
+			controller.update(busy)
+			self.assertEqual(15, controller.target)
+			usage = SystemResourceUsage(cpu_percent=25.0, memory_percent=40.0)
+			for _ in range(3):
+				controller.update(usage)
+			self.assertEqual(16, controller.target)
+
+	def test_adaptive_workers_reduce_when_resources_are_busy(self):
+		with mock.patch("converter.os.cpu_count", return_value=32):
+			controller = AdaptiveWorkerController(100)
+			usage = SystemResourceUsage(cpu_percent=96.0, memory_percent=60.0)
+			controller.update(usage)
+			self.assertEqual(16, controller.target)
+			controller.update(usage)
+			self.assertEqual(15, controller.target)
+			self.assertEqual(15, controller.update(usage))
+
+	def test_adaptive_workers_never_exceed_cpu_or_file_limits(self):
+		with mock.patch("converter.os.cpu_count", return_value=8):
+			controller = AdaptiveWorkerController(3)
+			self.assertEqual(3, controller.maximum)
+			self.assertEqual(3, controller.target)
+			for _ in range(20):
+				controller.update(SystemResourceUsage(cpu_percent=10.0, memory_percent=10.0))
+			self.assertEqual(3, controller.target)
 
 	def test_every_format_and_quality_has_codec_arguments(self):
 		for format_key in FORMAT_KEYS:
@@ -195,12 +231,17 @@ class MetadataTests(unittest.TestCase):
 			";FFMETADATA1\n"
 			"title=Title\\=part\n"
 			"album artist=Various Artists\n"
+			"track=2/12\n"
+			"disc=1/2\n"
 			"comment=Hash\\# and semicolon\\;\n"
 			"[CHAPTER]\n"
 			"title=Chapter title\n"
 		)
 		self.assertEqual("Title=part", metadata["title"])
 		self.assertEqual("Various Artists", metadata["album_artist"])
+		self.assertEqual("2/12", metadata["track"])
+		self.assertEqual("12", metadata["track_total"])
+		self.assertEqual("2", metadata["disc_total"])
 		self.assertEqual("Hash# and semicolon;", metadata["comment"])
 		self.assertNotEqual("Chapter title", metadata["title"])
 
@@ -218,6 +259,35 @@ class MetadataTests(unittest.TestCase):
 	def test_metadata_all_and_none_modes(self):
 		self.assertEqual(["-map_metadata", "0"], build_metadata_arguments("all", ()))
 		self.assertEqual(["-map_metadata", "-1"], build_metadata_arguments("none", ()))
+
+	def test_metadata_overrides_replace_selected_values_and_add_extra_fields(self):
+		arguments = build_metadata_arguments(
+			"selected",
+			("title", "artist"),
+			{"title": "Song", "artist": "Person", "album": "Album"},
+			{"title": "New title", "bpm": "120", "description": "Notes"},
+		)
+		self.assertIn("title=New title", arguments)
+		self.assertIn("artist=Person", arguments)
+		self.assertIn("bpm=120", arguments)
+		self.assertIn("description=Notes", arguments)
+		self.assertNotIn("album=Album", arguments)
+
+	def test_metadata_overrides_are_bounded_and_aliases_are_canonicalized(self):
+		overrides = normalize_metadata_overrides(
+			{
+				"album artist": "Various",
+				"tracktotal": 12,
+				"unknown": "ignored",
+				"empty": "",
+			}
+		)
+		self.assertEqual(
+			{"album_artist": "Various", "track_total": "12"},
+			overrides,
+		)
+		with self.assertRaises(ValueError):
+			ConversionSettings(metadata_overrides={"unknown": "value"}).validate()
 
 
 class ProgressParsingTests(unittest.TestCase):

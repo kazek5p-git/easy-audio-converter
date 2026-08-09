@@ -8,7 +8,7 @@ python -m tabnanny src tools tests
 python -m unittest discover -s tests -v
 ```
 
-The unit suite covers formats, metadata filtering and escaping, progress
+The unit suite covers formats, metadata filtering, overrides and escaping, progress
 parsing, output collision handling, advanced overrides, updater version
 comparison, complete profile serialization, skipped-file reasons, remaining
 time, results reports, notification modes, balanced NVDA popup state, download
@@ -53,13 +53,14 @@ available.
 ## Performance and parallelism
 
 The default automatic mode uses a bounded number of parallel FFmpeg workers
-for independent files. To compare modes on the same machine, use a batch of
-at least 16 similarly sized sources and select one worker, then automatic mode
-in the Processing and notifications settings. Confirm that both summaries
-contain every file, output names remain unique, progress reaches 100 percent,
-and cancellation removes every partial output. The add-on passes `-threads 0`
-to FFmpeg; GPU use is intentionally not expected because the exposed targets
-are audio encoders.
+for independent files. It starts from a CPU-aware target and adapts it between
+files when Windows CPU or memory load remains high or low. To compare modes on
+the same machine, use a batch of at least 16 similarly sized sources and select
+one worker, then automatic mode in the Processing and notifications settings.
+Confirm that both summaries contain every file, output names remain unique,
+progress reaches 100 percent, and cancellation removes every partial output.
+The add-on passes `-threads 0` to FFmpeg; GPU use is intentionally not expected
+because the exposed targets are audio encoders.
 
 ## Interactive NVDA speech validation
 
@@ -77,6 +78,11 @@ Automated tests do not replace testing the actual wx interface with NVDA:
    `-hhx6`; po ponownym otwarciu ustawień wybrany profil ma pozostać aktywny.
 3. Select “Copy selected metadata fields” and verify that every field is
    announced as a check box with its checked state.
+   Open “Edit metadata overrides...”, enter a title, BPM, description,
+   compilation flag, ISRC, and track/disc totals, then verify with FFmpeg
+   that the values replace the source tags. Repeat with all three metadata
+   modes, leave a field empty to confirm that it remains unchanged, and save
+   the settings in a named profile and through JSON import/export.
 4. Open “Convert selected files or folders with options”. Traverse the
    complete dialog, switch each built-in profile, save and remove a temporary
    user profile, and verify that canceling does not change defaults.

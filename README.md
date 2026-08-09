@@ -45,7 +45,8 @@ separate codec installation is required.
   supports them;
 - can deeply verify each output by decoding it and comparing its duration;
 - uses bounded parallel FFmpeg workers for independent files, with an
-  automatic CPU-aware default and an explicit worker-count override;
+	automatic load-balancing mode that adapts to CPU and memory use, plus an
+	explicit worker-count override;
 - queues additional conversion jobs and supports both immediate cancellation
   and stopping after the current file;
 - reports codec, container, duration, bitrate, channels, sample rate, size,
@@ -59,6 +60,8 @@ separate codec installation is required.
 - makes success speech/sound configurable and provides separate optional
   sounds for errors and cancellation;
 - copies all, selected, or no source text metadata;
+- lets each job or named profile override common tags such as title, BPM,
+  description, compilation, ISRC, track/disc totals, and sort fields;
 - stores independent advanced parameter profiles for each target codec,
   including FLAC levels 0–12 and named WavPack modes through `-hhx6`;
 - asks FFmpeg to use its automatic thread selection and explains why GPU
