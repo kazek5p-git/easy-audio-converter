@@ -104,6 +104,7 @@ CONVERSION_LIFECYCLE_WARNING = _(
 )
 COMPLETION_NOTIFICATION_KEYS = ("speechAndSound", "speechOnly", "soundOnly", "none")
 PROGRESS_ANNOUNCEMENT_KEYS = ("milestones", "everyFile", "onDemand")
+BUSY_CONVERSION_MODE_KEYS = ("queue", "parallel")
 CONFIG_SPEC = {
 	"targetFormat": "string(default='mp3')",
 	"quality": "string(default='high')",
@@ -130,6 +131,7 @@ CONFIG_SPEC = {
 	"verifyOutput": "boolean(default=False)",
 	"showPreflight": "boolean(default=True)",
 	"parallelJobs": "integer(default=0, min=0, max=32)",
+	"busyConversionMode": "string(default='queue')",
 	"advancedProfiles": "string(default='{}')",
 	"conversionProfiles": "string(default='{}')",
 	"autoCheckUpdates": "boolean(default=True)",
@@ -321,6 +323,21 @@ def _read_notification_preferences() -> tuple[str, str]:
 	)
 
 
+def _read_busy_conversion_mode() -> str:
+	"""Odczytaj sposób obsługi nowego zadania podczas trwającej konwersji."""
+	try:
+		_ensure_config()
+		conf = config.conf[CONFIG_SECTION]
+		return _validated_key(
+			conf.get("busyConversionMode"),
+			BUSY_CONVERSION_MODE_KEYS,
+			"queue",
+		)
+	except Exception:
+		# Keep conversion requests safe in test doubles or damaged configurations.
+		return "queue"
+
+
 def _completion_notification_labels() -> dict[str, str]:
 	return {
 		"speechAndSound": _("Speech and sound"),
@@ -335,6 +352,13 @@ def _progress_announcement_labels() -> dict[str, str]:
 		"milestones": _("At progress milestones"),
 		"everyFile": _("At every file"),
 		"onDemand": _("Only on demand"),
+	}
+
+
+def _busy_conversion_mode_labels() -> dict[str, str]:
+	return {
+		"queue": _("Add new jobs to the queue"),
+		"parallel": _("Run new jobs in separate progress windows"),
 	}
 
 
@@ -1065,6 +1089,24 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 			if settings.parallel_jobs in PARALLEL_JOB_COUNTS
 			else 0
 		)
+		busy_labels = _busy_conversion_mode_labels()
+		self.busy_conversion_mode = helper.addLabeledControl(
+			_("When another conversion is active:"),
+			wx.Choice,
+			choices=[busy_labels[key] for key in BUSY_CONVERSION_MODE_KEYS],
+		)
+		busy_mode = _read_busy_conversion_mode()
+		self.busy_conversion_mode.SetSelection(
+			BUSY_CONVERSION_MODE_KEYS.index(busy_mode)
+		)
+		helper.addItem(
+			wx.StaticText(
+				self,
+				label=_(
+					"Separate progress windows run independently and may use more CPU and memory."
+				),
+			)
+		)
 		helper.addItem(
 			wx.StaticText(
 				self,
@@ -1207,6 +1249,9 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 		conf["verifyOutput"] = self.verify_output.IsChecked()
 		conf["parallelJobs"] = PARALLEL_JOB_COUNTS[
 			max(0, self.parallel_jobs.GetSelection())
+		]
+		conf["busyConversionMode"] = BUSY_CONVERSION_MODE_KEYS[
+			max(0, self.busy_conversion_mode.GetSelection())
 		]
 		conf["showPreflight"] = self.show_preflight.IsChecked()
 		conf["completionNotification"] = COMPLETION_NOTIFICATION_KEYS[
@@ -3382,6 +3427,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_ensure_config()
 		self._converter: Converter | None = None
 		self._job_queue: deque[_ConversionJob] = deque()
+		self._parallel_plugins: dict[int, GlobalPlugin] = {}
+		self._next_parallel_plugin_id = 1
+		self._last_results_controller: GlobalPlugin | None = None
 		self._current_job: _ConversionJob | None = None
 		self._worker: threading.Thread | None = None
 		self._progress: tuple[int, int, str, float | None, float, float, float | None, float] | None = None
@@ -3426,6 +3474,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		worker = self._worker
 		if worker is not None and worker.is_alive():
 			worker.join(timeout=3)
+		parallel_plugins = tuple(getattr(self, "_parallel_plugins", {}).values())
+		for parallel_plugin in parallel_plugins:
+			parallel_plugin._terminated = True
+			parallel_converter = getattr(parallel_plugin, "_converter", None)
+			if parallel_converter is not None:
+				parallel_converter.cancel()
+		for parallel_plugin in parallel_plugins:
+			parallel_worker = getattr(parallel_plugin, "_worker", None)
+			if parallel_worker is not None and parallel_worker.is_alive():
+				parallel_worker.join(timeout=3)
 		if self._update_timer is not None:
 			try:
 				self._update_timer.Stop()
@@ -3459,6 +3517,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if self._update_progress_dialog is not None:
 				self._update_progress_dialog.Destroy()
 				self._update_progress_dialog = None
+			for parallel_plugin in parallel_plugins:
+				for attribute in (
+					"_settings_dialog",
+					"_progress_dialog",
+					"_results_dialog",
+					"_audio_info_dialog",
+					"_update_progress_dialog",
+				):
+					dialog = getattr(parallel_plugin, attribute, None)
+					if dialog is not None:
+						try:
+							dialog.Destroy()
+						except Exception:
+							log.debugWarning(
+								"Easy Audio Converter: could not close a parallel job window",
+								exc_info=True,
+							)
+					setattr(parallel_plugin, attribute, None)
+			getattr(parallel_plugin, "_job_queue", deque()).clear()
+			if hasattr(self, "_parallel_plugins"):
+				self._parallel_plugins.clear()
 		finally:
 			super().terminate()
 
@@ -3529,8 +3608,163 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _ffmpeg_path() -> Path:
 		return Path(__file__).resolve().parent / "bin" / "ffmpeg.exe"
 
+	def _active_parallel_plugins(self) -> tuple["GlobalPlugin", ...]:
+		return tuple(
+			plugin
+			for plugin in getattr(self, "_parallel_plugins", {}).values()
+			if getattr(plugin, "_converter", None) is not None
+		)
+
 	def _is_busy(self) -> bool:
-		return self._converter is not None
+		return getattr(self, "_converter", None) is not None or bool(
+			self._active_parallel_plugins()
+		)
+
+	def _create_parallel_plugin(self) -> "GlobalPlugin":
+		"""Utwórz lekki kontroler zadania bez instalowania drugiego menu NVDA."""
+		parallel_plugin = type(self).__new__(type(self))
+		parallel_plugin._parallel_parent = self
+		parallel_plugin._parallel_task_id = 0
+		parallel_plugin._terminated = False
+		parallel_plugin._converter = None
+		parallel_plugin._job_queue = deque()
+		parallel_plugin._parallel_plugins = {}
+		parallel_plugin._last_results_controller = None
+		parallel_plugin._current_job = None
+		parallel_plugin._worker = None
+		parallel_plugin._progress = None
+		parallel_plugin._progress_dialog = None
+		parallel_plugin._results_dialog = None
+		parallel_plugin._audio_info_dialog = None
+		parallel_plugin._media_info_worker = None
+		parallel_plugin._last_summary = None
+		parallel_plugin._last_job_settings = None
+		parallel_plugin._last_source_root = None
+		parallel_plugin._pending_failure_result = None
+		parallel_plugin._job_settings = None
+		parallel_plugin._job_source_root = None
+		parallel_plugin._job_completion_mode = "speechAndSound"
+		parallel_plugin._job_progress_mode = "milestones"
+		parallel_plugin._job_started_at = 0.0
+		parallel_plugin._job_stage = "preparing"
+		parallel_plugin._update_check_thread = None
+		parallel_plugin._update_download_thread = None
+		parallel_plugin._update_cancel_event = None
+		parallel_plugin._update_progress_dialog = None
+		parallel_plugin._update_timer = None
+		parallel_plugin._settings_dialog = None
+		parallel_plugin._menu = None
+		parallel_plugin._menu_root_item = None
+		parallel_plugin._menu_bindings = []
+		return parallel_plugin
+
+	def _launch_parallel_conversion_job(self, job: _ConversionJob) -> None:
+		"""Uruchom drugie zadanie z własnym konwerterem i oknem postępu."""
+		parallel_plugin = self._create_parallel_plugin()
+		parallel_plugin._parallel_task_id = getattr(self, "_next_parallel_plugin_id", 1)
+		self._next_parallel_plugin_id = parallel_plugin._parallel_task_id + 1
+		self._parallel_plugins[parallel_plugin._parallel_task_id] = parallel_plugin
+		try:
+			parallel_plugin._launch_conversion_job(job)
+		except Exception:
+			parallel_plugin._terminated = True
+			parallel_converter = getattr(parallel_plugin, "_converter", None)
+			if parallel_converter is not None:
+				parallel_converter.cancel()
+			parallel_worker = getattr(parallel_plugin, "_worker", None)
+			if parallel_worker is not None and parallel_worker.is_alive():
+				parallel_worker.join(timeout=3)
+			self._parallel_plugins.pop(parallel_plugin._parallel_task_id, None)
+			raise
+		if parallel_plugin._converter is None and parallel_plugin._worker is None:
+			self._parallel_plugins.pop(parallel_plugin._parallel_task_id, None)
+			return
+		progress_dialog = getattr(parallel_plugin, "_progress_dialog", None)
+		if progress_dialog is not None and hasattr(progress_dialog, "SetTitle"):
+			try:
+				progress_dialog.SetTitle(
+					_("Easy Audio Converter progress — separate job {id}").format(
+						id=parallel_plugin._parallel_task_id,
+					)
+				)
+			except Exception:
+				log.debugWarning(
+					"Easy Audio Converter: could not label a parallel progress window",
+					exc_info=True,
+				)
+		ui.message(
+			_("Started a separate conversion window for the new job.")
+		)
+
+	def _parallel_job_finished(self, parallel_plugin: "GlobalPlugin") -> None:
+		"""Zachowaj zakończone okno, aby można było ponownie otworzyć wyniki."""
+		if getattr(parallel_plugin, "_parallel_parent", None) is not self:
+			return
+		if getattr(parallel_plugin, "_last_summary", None) is not None:
+			self._last_results_controller = parallel_plugin
+		self._launch_next_queued_job()
+
+	def _conversion_controllers(self, *, active_only: bool = True) -> tuple["GlobalPlugin", ...]:
+		"""Zwróć zadanie główne i zadania w osobnych oknach w stałej kolejności."""
+		controllers: list[GlobalPlugin] = []
+		if not active_only or getattr(self, "_converter", None) is not None:
+			controllers.append(self)
+		parallel_plugins = getattr(self, "_parallel_plugins", {})
+		for plugin in parallel_plugins.values():
+			if not active_only or getattr(plugin, "_converter", None) is not None:
+				controllers.append(plugin)
+		return tuple(controllers)
+
+	def _controller_status(self, controller: "GlobalPlugin") -> str:
+		"""Przygotuj odczytywany stan bez informacji o kolejce."""
+		progress = getattr(controller, "_progress", None)
+		if progress is None:
+			return _stage_status_label(getattr(controller, "_job_stage", "preparing"))
+		(
+			index,
+			total,
+			source_name,
+			file_fraction,
+			overall_fraction,
+			processed_seconds,
+			duration,
+			elapsed_seconds,
+		) = progress
+		if file_fraction is None:
+			message = _(
+				"Converting {index} of {total}: {name}. "
+				"Current file time {processed}; elapsed {elapsed}.",
+			).format(
+				index=index,
+				total=total,
+				name=source_name,
+				processed=_format_elapsed(processed_seconds),
+				elapsed=_format_elapsed(elapsed_seconds),
+			)
+		else:
+			message = _(
+				"Converting {index} of {total}: {name}. "
+				"Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}.",
+			).format(
+				index=index,
+				total=total,
+				name=source_name,
+				filePercent=int(file_fraction * 100),
+				overallPercent=int(overall_fraction * 100),
+				elapsed=_format_elapsed(elapsed_seconds),
+			)
+		remaining = _estimate_remaining(elapsed_seconds, overall_fraction)
+		return _(
+			"{stage}. {status} Estimated time remaining {remaining}."
+		).format(
+			stage=_stage_status_label(getattr(controller, "_job_stage", "converting")),
+			status=message,
+			remaining=(
+				_format_elapsed(remaining)
+				if remaining is not None
+				else _("calculating")
+			),
+		)
 
 	def _open_settings_dialog(
 		self,
@@ -3828,6 +4062,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				return
 		job = _ConversionJob(tuple(paths), settings, source_root)
 		if self._is_busy():
+			if _read_busy_conversion_mode() == "parallel":
+				try:
+					self._launch_parallel_conversion_job(job)
+				except Exception as error:
+					log.error(
+						"Easy Audio Converter: could not start a separate conversion",
+						exc_info=True,
+					)
+					gui.messageBox(
+						_("The separate conversion could not start:\n{error}").format(
+							error=error,
+						),
+						_("Easy Audio Converter"),
+						wx.OK | wx.ICON_ERROR,
+						gui.mainFrame,
+					)
+				return
 			self._job_queue.append(job)
 			position = len(self._job_queue)
 			if self._progress_dialog is not None:
@@ -4156,6 +4407,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if _event_sound_enabled("errorSound"):
 			_play_event_sound(ERROR_SOUND_PATH, "error")
 		self._launch_next_queued_job()
+		parallel_parent = getattr(self, "_parallel_parent", None)
+		if parallel_parent is not None:
+			parallel_parent._parallel_job_finished(self)
 
 	def _job_complete(self, converter: Converter, summary: ConversionSummary) -> None:
 		if converter is not self._converter:
@@ -4223,6 +4477,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._last_summary = summary
 		self._last_job_settings = job_settings
 		self._last_source_root = job_source_root
+		if getattr(self, "_parallel_parent", None) is None:
+			self._last_results_controller = self
 		if summary.failures and queue_pending:
 			self._pending_failure_result = (
 				summary,
@@ -4255,6 +4511,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self._last_summary is not None and self._last_summary.failures and not queue_pending:
 			self._show_results_dialog()
 		self._launch_next_queued_job()
+		parallel_parent = getattr(self, "_parallel_parent", None)
+		if parallel_parent is not None:
+			parallel_parent._parallel_job_finished(self)
 
 	def _launch_next_queued_job(self) -> None:
 		if self._terminated or self._is_busy():
@@ -4778,22 +5037,42 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=SCRIPT_CATEGORY,
 	)
 	def script_cancelConversion(self, gesture):
-		if not self._is_busy() or self._converter is None:
+		controllers = self._conversion_controllers()
+		if not controllers:
 			ui.message(_("No conversion is in progress"))
 			return
-		self._converter.cancel()
-		ui.message(_("Canceling the conversion"))
+		for controller in controllers:
+			converter = getattr(controller, "_converter", None)
+			if converter is not None:
+				converter.cancel()
+		if len(controllers) == 1:
+			ui.message(_("Canceling the conversion"))
+		else:
+			ui.message(
+				_("Canceling {count} active conversions").format(count=len(controllers))
+			)
 
 	@script(
 		description=_("Stop the conversion after the current file"),
 		category=SCRIPT_CATEGORY,
 	)
 	def script_stopAfterCurrent(self, gesture):
-		if not self._is_busy() or self._converter is None:
+		controllers = self._conversion_controllers()
+		if not controllers:
 			ui.message(_("No conversion is in progress"))
 			return
-		self._converter.stop_after_current()
-		ui.message(_("The conversion will stop after the current file"))
+		for controller in controllers:
+			converter = getattr(controller, "_converter", None)
+			if converter is not None:
+				converter.stop_after_current()
+		if len(controllers) == 1:
+			ui.message(_("The conversion will stop after the current file"))
+		else:
+			ui.message(
+				_("The {count} active conversions will stop after their current files").format(
+					count=len(controllers)
+				)
+			)
 
 	@script(
 		description=_("Report queued conversion jobs"),
@@ -4801,9 +5080,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_reportQueue(self, gesture):
 		count = len(getattr(self, "_job_queue", ()))
-		if self._is_busy():
+		active_count = len(self._conversion_controllers())
+		if active_count == 1 and getattr(self, "_converter", None) is not None:
 			ui.message(
 				_("One conversion is active. Queued jobs: {count}.").format(count=count)
+			)
+		elif active_count == 1:
+			ui.message(
+				_("One separate conversion is active. Queued jobs: {count}.").format(
+					count=count
+				)
+			)
+		elif active_count > 1:
+			ui.message(
+				_("Active conversions: {active}. Queued jobs: {count}.").format(
+					active=active_count,
+					count=count,
+				)
 			)
 		elif count:
 			ui.message(_("Queued conversion jobs: {count}.").format(count=count))
@@ -4833,10 +5126,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=SCRIPT_CATEGORY,
 	)
 	def script_showProgress(self, gesture):
-		if self._progress_dialog is None:
+		dialogs = []
+		if self._progress_dialog is not None:
+			dialogs.append(self._progress_dialog)
+		for controller in self._conversion_controllers(active_only=False):
+			if controller is self:
+				continue
+			dialog = getattr(controller, "_progress_dialog", None)
+			if dialog is not None:
+				dialogs.append(dialog)
+		if not dialogs:
 			ui.message(_("No conversion progress is available"))
 			return
-		self._progress_dialog.show_window()
+		for dialog in dialogs:
+			dialog.show_window()
 
 	@script(
 		# Translators: Input gesture description.
@@ -4844,7 +5147,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=SCRIPT_CATEGORY,
 	)
 	def script_showResults(self, gesture):
-		self._show_results_dialog()
+		controller = getattr(self, "_last_results_controller", None)
+		if controller is not None and getattr(controller, "_last_summary", None) is not None:
+			controller._show_results_dialog()
+		else:
+			self._show_results_dialog()
 
 	@script(
 		# Translators: Input gesture description.
@@ -4852,65 +5159,48 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=SCRIPT_CATEGORY,
 	)
 	def script_reportStatus(self, gesture):
-		if not self._is_busy():
+		controllers = self._conversion_controllers()
+		if not controllers:
 			ui.message(_("No conversion is in progress"))
 			return
-		if self._progress is None:
+		if len(controllers) == 1:
+			controller = controllers[0]
+			status = self._controller_status(controller)
+			if getattr(controller, "_progress", None) is None:
+				ui.message(
+					_("{status}. Queued jobs: {count}.").format(
+						status=status,
+						count=len(getattr(self, "_job_queue", ())),
+					)
+				)
+			else:
+				ui.message(
+					_("{status} Queued jobs: {count}.").format(
+						status=status,
+						count=len(getattr(self, "_job_queue", ())),
+					)
+				)
+			return
+		ui.message(_("Active conversions: {count}.").format(count=len(controllers)))
+		for index, controller in enumerate(controllers, start=1):
+			if controller is self:
+				label = _("Main conversion")
+			else:
+				label = _("Separate conversion {index}").format(
+					index=getattr(controller, "_parallel_task_id", index),
+				)
 			ui.message(
-				_("{stage}. Queued jobs: {count}.").format(
-					stage=_stage_status_label(getattr(self, "_job_stage", "preparing")),
-					count=len(getattr(self, "_job_queue", ())),
+				_("{label}: {status}").format(
+					label=label,
+					status=self._controller_status(controller),
 				)
 			)
-			return
-		(
-			index,
-			total,
-			source_name,
-			file_fraction,
-			overall_fraction,
-			processed_seconds,
-			duration,
-			elapsed_seconds,
-		) = self._progress
-		if file_fraction is None:
-			message = _(
-				"Converting {index} of {total}: {name}. "
-				"Current file time {processed}; elapsed {elapsed}.",
-			).format(
-				index=index,
-				total=total,
-				name=source_name,
-				processed=_format_elapsed(processed_seconds),
-				elapsed=_format_elapsed(elapsed_seconds),
+		if getattr(self, "_job_queue", None):
+			ui.message(
+				_("Queued jobs: {count}.").format(
+					count=len(self._job_queue),
+				)
 			)
-		else:
-			message = _(
-				"Converting {index} of {total}: {name}. "
-				"Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}.",
-			).format(
-				index=index,
-				total=total,
-				name=source_name,
-				filePercent=int(file_fraction * 100),
-				overallPercent=int(overall_fraction * 100),
-				elapsed=_format_elapsed(elapsed_seconds),
-			)
-		remaining = _estimate_remaining(elapsed_seconds, overall_fraction)
-		message = _("{status} Estimated time remaining {remaining}.").format(
-			status=message,
-			remaining=(
-				_format_elapsed(remaining)
-				if remaining is not None
-				else _("calculating")
-			),
-		)
-		message = _("{stage}. {status} Queued jobs: {count}.").format(
-			stage=_stage_status_label(getattr(self, "_job_stage", "converting")),
-			status=message,
-			count=len(getattr(self, "_job_queue", ())),
-		)
-		ui.message(message)
 
 	@script(
 		# Translators: Input gesture description.

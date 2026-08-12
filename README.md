@@ -53,8 +53,9 @@ separate codec installation is required.
 	information; reuses unchanged probes through a bounded cache;
 - includes stage timing in the results report for input recognition, loudness
 	analysis, encoding/output writing, and finalization;
-- queues additional conversion jobs and supports both immediate cancellation
-  and stopping after the current file;
+- queues additional conversion jobs by default and supports an optional mode
+  that starts each new job in its own progress window, with independent
+  cancellation, stopping, and results;
 - reports codec, container, duration, bitrate, channels, sample rate, size,
   tags, artwork, and chapters for one selected file;
 - shows quiet visual per-file and overall progress while conversion runs in a
@@ -74,6 +75,8 @@ separate codec installation is required.
   acceleration is not applicable to the add-on's audio encoders;
 - provides one standalone, resizable settings window under NVDA's Tools menu,
   with three accessible tabs and standard OK and Cancel buttons;
+- lets the user choose what happens when another conversion is already active:
+  add the new job to the safe queue or start it in a separate progress window;
 - provides direct Tools-menu commands for choosing multiple files or one
   folder through standard Windows dialogs;
 - checks GitHub releases for verified add-on updates;

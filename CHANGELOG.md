@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- Added a configurable busy-job policy: new conversion requests are queued by
+  default or can run in independent progress windows.
+- Added independent controllers with separate FFmpeg workers, progress and
+  results windows, while global cancellation, stop-after-current, status, and
+  progress commands cover all active jobs.
+- Retained completed independent-job results until NVDA shuts down and added
+  lifecycle cleanup for every controller during NVDA termination.
+
 ## 1.7.0 - 2026-08-09
 
 - Changed automatic parallel conversion from a one-time CPU estimate to an

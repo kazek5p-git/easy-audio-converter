@@ -110,9 +110,14 @@
 		the job.
 	</p>
 	<p>
-		Additional conversion commands are added to a sequential queue. The
-		progress window and Tools menu report pending jobs and can clear only
-		the waiting queue without interrupting the active file.
+		By default, additional conversion commands are added to a sequential
+		queue. In the “Processing and notifications” tab, “When another
+		conversion is active” can instead be set to “Run new jobs in separate
+		progress windows”. Each independent job then gets its own converter,
+		progress window, cancellation, and results. The progress and status
+		commands report all active windows; the queue controls affect only the
+		waiting queue. Independent windows can use more CPU and memory, especially
+		when each job also has several parallel file workers.
 	</p>
 	<p>
 		Automatic speech can occur at progress milestones, for every file, or
@@ -162,8 +167,9 @@
 		destination behavior, subfolder scanning, folder-structure preservation,
 		metadata mode, and filename template. The third tab contains loudness,
 		artwork and chapter copying, output verification, preflight planning,
-		parallel worker count, progress speech, updates, and separate success,
-		error, and cancellation sounds. Every sound can be tested. GPU
+		parallel worker count, the busy-job policy, progress speech, updates,
+		and separate success, error, and cancellation sounds. Every sound can
+		be tested. GPU
 		acceleration is not used because the add-on's exposed codecs encode audio
 		on the CPU; FFmpeg selects the appropriate thread count automatically.
 	</p>
@@ -321,7 +327,7 @@
 
 	<h2>Notes</h2>
 	<ul>
-		<li>One conversion job runs at a time; additional jobs wait in the queue, while files in the active job may run in parallel.</li>
+		<li>Additional jobs use the safe queue by default; the busy-job policy can run them in separate progress windows, while files within each job may also run in parallel.</li>
 		<li>Folder jobs require plan approval or confirmation before they start.</li>
 		<li>WAV inputs may use either the .wav or .wave extension.</li>
 		<li>Video containers are accepted when they contain a readable audio track.</li>

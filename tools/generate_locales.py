@@ -148,9 +148,9 @@ EDGE_TARGETS = {
 
 MANIFEST_SUMMARY = "Easy Audio Converter"
 MANIFEST_DESCRIPTION = (
-	"Accessible queued audio conversion and no-re-encoding stream extraction "
-	"and remuxing with planning, filename templates, loudness normalization, "
-	"verification, profiles, and bundled FFmpeg."
+	"Accessible queued and independent-window audio conversion plus "
+	"no-re-encoding stream extraction and remuxing with planning, filename "
+	"templates, loudness normalization, verification, profiles, and bundled FFmpeg."
 )
 
 POLISH = {
@@ -453,7 +453,7 @@ POLISH = {
 	),
 	MANIFEST_SUMMARY: "Easy Audio Converter",
 	MANIFEST_DESCRIPTION: (
-		"Dostępna kolejkowana konwersja audio oraz wyodrębnianie i remuksowanie "
+		"Dostępna kolejkowana i wielookienkowa konwersja audio oraz wyodrębnianie i remuksowanie "
 		"strumieni bez ponownego kodowania, z planowaniem, szablonami nazw, "
 		"normalizacją głośności, weryfikacją, profilami i dołączonym FFmpeg."
 	),
@@ -933,6 +933,45 @@ POLISH.update(
 			"do obciążenia procesora i pamięci. Przyspieszanie GPU nie jest używane "
 			"do kodowania dźwięku."
 		),
+		"Add new jobs to the queue": "Dodawaj nowe zadania do kolejki",
+		"Run new jobs in separate progress windows": (
+			"Uruchamiaj nowe zadania w osobnych oknach postępu"
+		),
+		"Separate progress windows run independently and may use more CPU and memory.": (
+			"Osobne okna postępu działają niezależnie i mogą używać więcej procesora i pamięci."
+		),
+		"When another conversion is active:": "Gdy trwa już inna konwersja:",
+		"Easy Audio Converter progress — separate job {id}": (
+			"Postęp Easy Audio Converter — osobne zadanie {id}"
+		),
+		"Started a separate conversion window for the new job.": (
+			"Nowe zadanie uruchomiono w osobnym oknie postępu."
+		),
+		"The separate conversion could not start:\n{error}": (
+			"Nie można rozpocząć osobnej konwersji:\n{error}"
+		),
+		"Canceling {count} active conversions": (
+			"Anulowanie aktywnych konwersji: {count}"
+		),
+		"The {count} active conversions will stop after their current files": (
+			"Aktywne konwersje ({count}) zatrzymają się po bieżących plikach"
+		),
+		"One separate conversion is active. Queued jobs: {count}.": (
+			"Jedna osobna konwersja jest aktywna. Oczekujące zadania: {count}."
+		),
+		"Active conversions: {active}. Queued jobs: {count}.": (
+			"Aktywne konwersje: {active}. Oczekujące zadania: {count}."
+		),
+		"Active conversions: {count}.": "Aktywne konwersje: {count}.",
+		"Main conversion": "Konwersja główna",
+		"Separate conversion {index}": "Osobna konwersja {index}",
+		"Queued jobs: {count}.": "Oczekujące zadania: {count}.",
+		"{label}: {status}": "{label}: {status}",
+		"{stage}. {status} Estimated time remaining {remaining}.": (
+			"{stage}. {status} Szacowany czas do zakończenia: {remaining}."
+		),
+		"{status} Queued jobs: {count}.": "{status} Oczekujące zadania: {count}.",
+		"{status}. Queued jobs: {count}.": "{status}. Oczekujące zadania: {count}.",
 		"One file at a time": "Jeden plik naraz",
 		"Parallel conversion jobs:": "Równoległe zadania konwersji:",
 		"Parallel workers: finished": "Równoległe procesy: zakończono",

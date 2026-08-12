@@ -3,587 +3,603 @@
 msgid ""
 msgstr "Project-Id-Version: Easy Audio Converter 1.7.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: hu\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2530
+#: src/globalPlugins/easyAudioConverter/__init__.py:2575
 msgid "...and {count} more files"
 msgstr "...és {count} további fájl"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3145
+#: src/globalPlugins/easyAudioConverter/__init__.py:3190
 msgid "...and {count} more skipped files"
 msgstr "... és {count} további kihagyott fájlok"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1330
+#: src/globalPlugins/easyAudioConverter/__init__.py:1375
 msgid "16 bit"
 msgstr "16 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:348
+#: src/globalPlugins/easyAudioConverter/__init__.py:372
 msgid "16 files at a time"
 msgstr "16 fájlokat egyszerre"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:345
+#: src/globalPlugins/easyAudioConverter/__init__.py:369
 msgid "2 files at a time"
 msgstr "2 fájlokat egyszerre"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1330
+#: src/globalPlugins/easyAudioConverter/__init__.py:1375
 msgid "24 bit"
 msgstr "24 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1330
+#: src/globalPlugins/easyAudioConverter/__init__.py:1375
 msgid "32 bit"
 msgstr "32 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:349
+#: src/globalPlugins/easyAudioConverter/__init__.py:373
 msgid "32 files at a time"
 msgstr "32 fájlokat egyszerre"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:346
+#: src/globalPlugins/easyAudioConverter/__init__.py:370
 msgid "4 files at a time"
 msgstr "4 fájlokat egyszerre"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:347
+#: src/globalPlugins/easyAudioConverter/__init__.py:371
 msgid "8 files at a time"
 msgstr "8 fájlokat egyszerre"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2375
+#: src/globalPlugins/easyAudioConverter/__init__.py:2420
 msgid "A built-in profile already uses this name."
 msgstr "Egy beépített profil már használja ezt a nevet."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:450
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:454
+#: src/globalPlugins/easyAudioConverter/__init__.py:478
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:453
+#: src/globalPlugins/easyAudioConverter/__init__.py:477
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:452
+#: src/globalPlugins/easyAudioConverter/__init__.py:476
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple veszteségmentes)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:458
+#: src/globalPlugins/easyAudioConverter/__init__.py:482
 msgid "AMR narrowband"
 msgstr "AMR keskeny sáv"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:459
+#: src/globalPlugins/easyAudioConverter/__init__.py:483
 msgid "AMR wideband"
 msgstr "AMR szélessávú"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3046
+#: src/globalPlugins/easyAudioConverter/__init__.py:3091
 msgid "Access to the source or destination was denied."
 msgstr "A forráshoz vagy a célhoz való hozzáférést megtagadták."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2971
+#: src/globalPlugins/easyAudioConverter/__init__.py:5096
+msgid "Active conversions: {active}. Queued jobs: {count}."
+msgstr "Active conversions: {active}. Queued jobs: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:5184
+msgid "Active conversions: {count}."
+msgstr "Active conversions: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3016
 msgid "Adaptive workers: {active} active, target {target}"
 msgstr "Adaptív dolgozók: {active} aktív, cél {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3236
+#: src/globalPlugins/easyAudioConverter/__init__.py:360
+msgid "Add new jobs to the queue"
+msgstr "Add new jobs to the queue"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3281
 msgid "Additional skipped files: {count}"
 msgstr "További kihagyott fájlok: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2122
+#: src/globalPlugins/easyAudioConverter/__init__.py:2167
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "A speciális kodek-felülírások nem használhatók adatfolyam-másoláshoz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2127
+#: src/globalPlugins/easyAudioConverter/__init__.py:2172
 msgid "Advanced codec overrides: disabled"
 msgstr "Fejlett kódek felülbírálások: letiltva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2125
+#: src/globalPlugins/easyAudioConverter/__init__.py:2170
 msgid "Advanced codec overrides: enabled"
 msgstr "Fejlett kódek felülbírálások: engedélyezve"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3486
+#: src/globalPlugins/easyAudioConverter/__init__.py:3565
 msgid "Advanced codec settings..."
 msgstr "Fejlett kódek beállítások..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1268
+#: src/globalPlugins/easyAudioConverter/__init__.py:1313
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:528
+#: src/globalPlugins/easyAudioConverter/__init__.py:552
 msgid "Album"
 msgstr "Album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:529
+#: src/globalPlugins/easyAudioConverter/__init__.py:553
 msgid "Album artist"
 msgstr "Album előadó"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1427
+#: src/globalPlugins/easyAudioConverter/__init__.py:1472
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr "Minden FLAC szint veszteségmentes. A 0. szint a leggyorsabb; A 12. szint adja a legerősebb kompressziót, de nagyon lassú."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3062
+#: src/globalPlugins/easyAudioConverter/__init__.py:3107
 msgid "Already uses the target format"
 msgstr "Már használja a célformátumot"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3598
+#: src/globalPlugins/easyAudioConverter/__init__.py:3832
 msgid "An update check is already in progress"
 msgstr "Frissítési ellenőrzés már folyamatban van"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3690
+#: src/globalPlugins/easyAudioConverter/__init__.py:3924
 msgid "An update download is already in progress"
 msgstr "Frissítés letöltése már folyamatban van"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2742
+#: src/globalPlugins/easyAudioConverter/__init__.py:2787
 msgid "Analyzing loudness, first pass"
 msgstr "Hangosság elemzése, első lépés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:419
+#: src/globalPlugins/easyAudioConverter/__init__.py:443
 msgid "Archive FLAC"
 msgstr "Archívum FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:527
+#: src/globalPlugins/easyAudioConverter/__init__.py:551
 msgid "Artist"
 msgstr "Művész"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:336
+#: src/globalPlugins/easyAudioConverter/__init__.py:353
 msgid "At every file"
 msgstr "Minden fájlnál"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:335
+#: src/globalPlugins/easyAudioConverter/__init__.py:352
 msgid "At progress milestones"
 msgstr "A fejlődési mérföldköveken"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2596
+#: src/globalPlugins/easyAudioConverter/__init__.py:2641
 msgid "Audio codec: {value}"
 msgstr "Audiokodek: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2593 src/globalPlugins/easyAudioConverter/__init__.py:2635
+#: src/globalPlugins/easyAudioConverter/__init__.py:2638 src/globalPlugins/easyAudioConverter/__init__.py:2680
 msgid "Audio file information"
 msgstr "Hangfájl információk"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2672
+#: src/globalPlugins/easyAudioConverter/__init__.py:2717
 msgid "Audio information copied"
 msgstr "Hanginformáció másolva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4655
+#: src/globalPlugins/easyAudioConverter/__init__.py:4914
 msgid "Audio information is already being read"
 msgstr "A hanginformáció már beolvasás alatt áll"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4700
+#: src/globalPlugins/easyAudioConverter/__init__.py:4959
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "Hanginformáció készen áll. Kodek {codec}, időtartam {duration}, mintavételezési sebesség {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:376
+#: src/globalPlugins/easyAudioConverter/__init__.py:400
 msgid "Audiobook MP3"
 msgstr "Hangoskönyv MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "Automatic (dynamic load balancing)"
 msgstr "Automatikus (dinamikus terheléselosztás)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1754
+#: src/globalPlugins/easyAudioConverter/__init__.py:1799
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
 msgstr "Az automatikus mód dinamikusan állítja be a független fájlokat a CPU és a memória terhelése alapján."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1071
+#: src/globalPlugins/easyAudioConverter/__init__.py:1113
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
 msgstr "Az automatikus mód dinamikusan állítja be a független fájlokat a CPU és a memória terhelése alapján. A GPU-gyorsítást nem használják hangkódoláshoz."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1122
+#: src/globalPlugins/easyAudioConverter/__init__.py:1164
 msgid "Automatic progress announcements:"
 msgstr "Automatikus előrehaladási bejelentések:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1130
+#: src/globalPlugins/easyAudioConverter/__init__.py:1172
 msgid "Automatically check for add-on updates"
 msgstr "Automatikusan ellenőrizd a kiegészítő frissítéseket"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:793
+#: src/globalPlugins/easyAudioConverter/__init__.py:817
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:567
 msgid "BPM"
 msgstr "BPM"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1296
+#: src/globalPlugins/easyAudioConverter/__init__.py:1341
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Bitráta kbps-ben (0 a minőségi előbeállítást használja):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2600
+#: src/globalPlugins/easyAudioConverter/__init__.py:2645
 msgid "Bitrate: {value}"
 msgstr "Bitráta: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:519
+#: src/globalPlugins/easyAudioConverter/__init__.py:543
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "Adás: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:783 src/globalPlugins/easyAudioConverter/__init__.py:1897
+#: src/globalPlugins/easyAudioConverter/__init__.py:807 src/globalPlugins/easyAudioConverter/__init__.py:1942
 msgid "Browse..."
 msgstr "Tallózás..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2740
+#: src/globalPlugins/easyAudioConverter/__init__.py:2785
 msgid "Building the conversion plan"
 msgstr "Az átalakítási terv elkészítése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2997 src/globalPlugins/easyAudioConverter/__init__.py:2852 src/globalPlugins/easyAudioConverter/__init__.py:3481
+#: src/globalPlugins/easyAudioConverter/__init__.py:3042 src/globalPlugins/easyAudioConverter/__init__.py:2897 src/globalPlugins/easyAudioConverter/__init__.py:3560
 msgid "Cancel conversion"
 msgstr "Konverzió megszakítása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4777
+#: src/globalPlugins/easyAudioConverter/__init__.py:5036
 msgid "Cancel the current audio conversion"
 msgstr "Törölje az aktuális hangátalakítást"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4785
+#: src/globalPlugins/easyAudioConverter/__init__.py:5049
 msgid "Canceling the conversion"
 msgstr "Az átalakítás megszakítása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3007
+#: src/globalPlugins/easyAudioConverter/__init__.py:5052
+msgid "Canceling {count} active conversions"
+msgstr "Canceling {count} active conversions"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3052
 msgid "Canceling..."
 msgstr "Lemondás..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:591 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:615 src/installTasks.py:57
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "A támogatási oldal nem nyitható meg. Nyissa meg ezt a címet manuálisan: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4734
+#: src/globalPlugins/easyAudioConverter/__init__.py:4993
 msgid "Change the conversion quality"
 msgstr "Módosítsa a konverzió minőségét"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4720
+#: src/globalPlugins/easyAudioConverter/__init__.py:4979
 msgid "Change the target audio format"
 msgstr "Módosítsa a cél hangformátumot"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1309
+#: src/globalPlugins/easyAudioConverter/__init__.py:1354
 msgid "Channels:"
 msgstr "Csatornák:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2607
+#: src/globalPlugins/easyAudioConverter/__init__.py:2652
 msgid "Channels: {value}"
 msgstr "Csatornák: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2619
+#: src/globalPlugins/easyAudioConverter/__init__.py:2664
 msgid "Chapters: {value}"
 msgstr "Fejezetek: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4917
+#: src/globalPlugins/easyAudioConverter/__init__.py:5207
 msgid "Check for Easy Audio Converter updates"
 msgstr "Ellenőrizd az Easy Audio Converter frissítéseket"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3487
+#: src/globalPlugins/easyAudioConverter/__init__.py:3566
 msgid "Check for updates..."
 msgstr "Nézd meg a frissítéseket..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3601
+#: src/globalPlugins/easyAudioConverter/__init__.py:3835
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Az Easy Audio Converter frissítések ellenőrzése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4436 src/globalPlugins/easyAudioConverter/__init__.py:4610 src/globalPlugins/easyAudioConverter/__init__.py:3474
+#: src/globalPlugins/easyAudioConverter/__init__.py:4695 src/globalPlugins/easyAudioConverter/__init__.py:4869 src/globalPlugins/easyAudioConverter/__init__.py:3553
 msgid "Choose a folder to convert"
 msgstr "Válassza ki a konvertálni kívánt mappát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4370 src/globalPlugins/easyAudioConverter/__init__.py:4599 src/globalPlugins/easyAudioConverter/__init__.py:3473
+#: src/globalPlugins/easyAudioConverter/__init__.py:4629 src/globalPlugins/easyAudioConverter/__init__.py:4858 src/globalPlugins/easyAudioConverter/__init__.py:3552
 msgid "Choose files to convert"
 msgstr "Choose files to convert"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1563
+#: src/globalPlugins/easyAudioConverter/__init__.py:1608
 msgid "Choose metadata fields"
 msgstr "Válaszd ki a metaadatmezőket"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1936
+#: src/globalPlugins/easyAudioConverter/__init__.py:1981
 msgid "Choose metadata fields..."
 msgstr "Válaszd ki metaadatmezőket..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:946 src/globalPlugins/easyAudioConverter/__init__.py:2205 src/globalPlugins/easyAudioConverter/__init__.py:4770
+#: src/globalPlugins/easyAudioConverter/__init__.py:970 src/globalPlugins/easyAudioConverter/__init__.py:2250 src/globalPlugins/easyAudioConverter/__init__.py:5029
 msgid "Choose the destination folder"
 msgstr "Válassza ki a célmappát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4814 src/globalPlugins/easyAudioConverter/__init__.py:3483
+#: src/globalPlugins/easyAudioConverter/__init__.py:5107 src/globalPlugins/easyAudioConverter/__init__.py:3562
 msgid "Clear queued conversion jobs"
 msgstr "Sorban lévő konverziós feladatok törlése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2854
+#: src/globalPlugins/easyAudioConverter/__init__.py:2899
 msgid "Clear queued jobs"
 msgstr "Sorban lévő feladatok törlése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4827 src/globalPlugins/easyAudioConverter/__init__.py:3863
+#: src/globalPlugins/easyAudioConverter/__init__.py:5120 src/globalPlugins/easyAudioConverter/__init__.py:4114
 msgid "Cleared {count} queued conversion jobs"
 msgstr "Törölték az {count} sorba állított konverziós feladatokat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2649 src/globalPlugins/easyAudioConverter/__init__.py:2994 src/globalPlugins/easyAudioConverter/__init__.py:3265
+#: src/globalPlugins/easyAudioConverter/__init__.py:2694 src/globalPlugins/easyAudioConverter/__init__.py:3039 src/globalPlugins/easyAudioConverter/__init__.py:3310
 msgid "Close"
 msgstr "Zárt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1284
+#: src/globalPlugins/easyAudioConverter/__init__.py:1329
 msgid "Codec profile to edit:"
 msgstr "Kódek profil szerkesztéséhez:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1315
+#: src/globalPlugins/easyAudioConverter/__init__.py:1360
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Kodek-specifikus szint (-1 az előbeállítást használja):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:535
+#: src/globalPlugins/easyAudioConverter/__init__.py:559
 msgid "Comment"
 msgstr "Hozzászólás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:542
+#: src/globalPlugins/easyAudioConverter/__init__.py:566
 msgid "Compilation"
 msgstr "Összeállítás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:554
 msgid "Composer"
 msgstr "Zeneszerző"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4465
+#: src/globalPlugins/easyAudioConverter/__init__.py:4724
 msgid "Confirm folder conversion"
 msgstr "Erősítse meg a mappakonverziót"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2595
+#: src/globalPlugins/easyAudioConverter/__init__.py:2640
 msgid "Container: {value}"
 msgstr "Tároló: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4167
+#: src/globalPlugins/easyAudioConverter/__init__.py:4421
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Az átalakítás megszakítva. {done}/{total} fájl elkészült."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4185
+#: src/globalPlugins/easyAudioConverter/__init__.py:4439
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Az átalakítás befejeződött. Sikeres: {done}. Megbukott: {failed}. Átugorva: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4194
+#: src/globalPlugins/easyAudioConverter/__init__.py:4448
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "A konvertálás befejeződött: {done} sikerült, {failed} sikertelen."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3836
+#: src/globalPlugins/easyAudioConverter/__init__.py:4087
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "Konverziós feladat hozzáadva a sorhoz. Sor pozíciója: {position}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2483
+#: src/globalPlugins/easyAudioConverter/__init__.py:2528
 msgid "Conversion plan"
 msgstr "Átalakítási terv"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1855
+#: src/globalPlugins/easyAudioConverter/__init__.py:1900
 msgid "Conversion profile:"
 msgstr "Konverziós profil:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2334
+#: src/globalPlugins/easyAudioConverter/__init__.py:2379
 msgid "Conversion profiles exported"
 msgstr "A konverziós profilok exportálva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3356
+#: src/globalPlugins/easyAudioConverter/__init__.py:3401
 msgid "Conversion report copied"
 msgstr "Átváltási jelentés másolva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3109
+#: src/globalPlugins/easyAudioConverter/__init__.py:3154
 msgid "Conversion results"
 msgstr "Konverziós eredmények"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1967
+#: src/globalPlugins/easyAudioConverter/__init__.py:2012
 msgid "Convert"
 msgstr "Áttérés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4462
+#: src/globalPlugins/easyAudioConverter/__init__.py:4721
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Konvertálja az összes támogatott hangfájlt a következőben: {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4622
+#: src/globalPlugins/easyAudioConverter/__init__.py:4881
 msgid "Convert every supported audio file in the current folder"
 msgstr "Konvertálja az összes támogatott hangfájlt az aktuális mappában"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3472
+#: src/globalPlugins/easyAudioConverter/__init__.py:3551
 msgid "Convert selected files or folders"
 msgstr "Konvertálja a kiválasztott fájlokat vagy mappákat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4558
+#: src/globalPlugins/easyAudioConverter/__init__.py:4817
 msgid "Convert selected files or folders with one-time options"
 msgstr "Kiválasztott fájlokat vagy mappákat egyszeri opcióval konvertálni"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3471
+#: src/globalPlugins/easyAudioConverter/__init__.py:3550
 msgid "Convert selected files or folders with options..."
 msgstr "Kiválasztott fájlokat vagy mappákat konvertálni opciókkal..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3475
+#: src/globalPlugins/easyAudioConverter/__init__.py:3554
 msgid "Convert the current folder"
 msgstr "Konvertálja az aktuális mappát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1830
+#: src/globalPlugins/easyAudioConverter/__init__.py:1875
 msgid "Convert with options"
 msgstr "Átalakítás opciókkal"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3211
+#: src/globalPlugins/easyAudioConverter/__init__.py:3256
 msgid "Converted output kept at:\n{output}"
 msgstr "Az átváltott kimenet a következő helyen tartva:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3134
+#: src/globalPlugins/easyAudioConverter/__init__.py:3179
 msgid "Converted output kept at: {output}"
 msgstr "A konvertált kimenet a következő helyen tartva: {output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2743
+#: src/globalPlugins/easyAudioConverter/__init__.py:2788
 msgid "Converting audio, second pass"
 msgstr "Hang konvertálása, második lépés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3931
+#: src/globalPlugins/easyAudioConverter/__init__.py:4182
 msgid "Converting {index} of {total}: {name}"
 msgstr "{index}/{total} konvertálása: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4877
+#: src/globalPlugins/easyAudioConverter/__init__.py:3734
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "{index} átváltás {total}: {name}. Jelenlegi fájlidő {processed}; elmúlt {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4888
+#: src/globalPlugins/easyAudioConverter/__init__.py:3745
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "{index} átváltás {total}: {name}. Jelenlegi fájl {filePercent}%, összességében {overallPercent}%, elmúlt {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:509
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "Copy all text metadata"
 msgstr "Másolj ki minden szöveges metaadatot"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1047 src/globalPlugins/easyAudioConverter/__init__.py:1733
+#: src/globalPlugins/easyAudioConverter/__init__.py:1071 src/globalPlugins/easyAudioConverter/__init__.py:1778
 msgid "Copy chapter markers"
 msgstr "Fejezetjelzők másolása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1729
+#: src/globalPlugins/easyAudioConverter/__init__.py:1774
 msgid "Copy embedded cover artwork when supported"
 msgstr "Másolja a beágyazott borítót, ha támogatott"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1043
+#: src/globalPlugins/easyAudioConverter/__init__.py:1067
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "Másolja a beágyazott borítót, ha a cél támogatja azt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2648
+#: src/globalPlugins/easyAudioConverter/__init__.py:2693
 msgid "Copy information"
 msgstr "Információ másolása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3264
+#: src/globalPlugins/easyAudioConverter/__init__.py:3309
 msgid "Copy report"
 msgstr "Jelentés másolata"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:510
+#: src/globalPlugins/easyAudioConverter/__init__.py:534
 msgid "Copy selected metadata fields"
 msgstr "Kiválasztott metaadatmezők másolása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:536
+#: src/globalPlugins/easyAudioConverter/__init__.py:560
 msgid "Copyright"
 msgstr "Szerzői jog"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3630
+#: src/globalPlugins/easyAudioConverter/__init__.py:3864
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Nem tudtam frissítéseket ellenőrizni.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2670
+#: src/globalPlugins/easyAudioConverter/__init__.py:2715
 msgid "Could not copy the audio information"
 msgstr "Nem sikerült átmásolni a hanginformációt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3350
+#: src/globalPlugins/easyAudioConverter/__init__.py:3395
 msgid "Could not copy the conversion report."
 msgstr "Nem tudtam másolni az átváltási jelentést."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2328
+#: src/globalPlugins/easyAudioConverter/__init__.py:2373
 msgid "Could not export profiles:\n{error}"
 msgstr "Nem sikerült exportálni a profilokat:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2290
+#: src/globalPlugins/easyAudioConverter/__init__.py:2335
 msgid "Could not import profiles:\n{error}"
 msgstr "Nem sikerült importálni a profilokat:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3567
+#: src/globalPlugins/easyAudioConverter/__init__.py:3801
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Nem sikerült megnyitni az Easy Audio Converter beállításait. A részletekért tekintse meg az NVDA naplóját."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3784
+#: src/globalPlugins/easyAudioConverter/__init__.py:4018
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Nem tudtam megnyitni az NVDA kiegészítő telepítőjét. A frissítést a következő helyekre mentették el.\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3337
+#: src/globalPlugins/easyAudioConverter/__init__.py:3382
 msgid "Could not open the output folder."
 msgstr "Nem tudtam megnyitni a kimeneti mappát."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4685
+#: src/globalPlugins/easyAudioConverter/__init__.py:4944
 msgid "Could not read audio information:\n{error}"
 msgstr "Nem sikerült beolvasni a hanginformációt:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1548
+#: src/globalPlugins/easyAudioConverter/__init__.py:1593
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Nem sikerült menteni az Easy Audio Converter beállításait. A részletekért tekintse meg az NVDA naplóját."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2992
+#: src/globalPlugins/easyAudioConverter/__init__.py:3037
 msgid "Current file progress: 100%"
 msgstr "Jelenlegi fájl haladása: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2828
+#: src/globalPlugins/easyAudioConverter/__init__.py:2873
 msgid "Current file progress: waiting"
 msgstr "Jelenlegi fájl előrehaladása: várakozás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2921
+#: src/globalPlugins/easyAudioConverter/__init__.py:2966
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Jelenlegi fájl haladása: {percent}% ({processed} {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2913
+#: src/globalPlugins/easyAudioConverter/__init__.py:2958
 msgid "Current file time: {processed}"
 msgstr "Jelenlegi fájlidő: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:520
+#: src/globalPlugins/easyAudioConverter/__init__.py:544
 msgid "Custom EBU R128 target"
 msgstr "Egyedi EBU R128 célpont"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1017 src/globalPlugins/easyAudioConverter/__init__.py:1704
+#: src/globalPlugins/easyAudioConverter/__init__.py:1041 src/globalPlugins/easyAudioConverter/__init__.py:1749
 msgid "Custom integrated loudness in LUFS:"
 msgstr "Egyedi integrált hangerő a LUFS-ben:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1035 src/globalPlugins/easyAudioConverter/__init__.py:1722
+#: src/globalPlugins/easyAudioConverter/__init__.py:1059 src/globalPlugins/easyAudioConverter/__init__.py:1767
 msgid "Custom loudness range in LU:"
 msgstr "Egyedi hangerő-tartomány LU-ban:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1026 src/globalPlugins/easyAudioConverter/__init__.py:1713
+#: src/globalPlugins/easyAudioConverter/__init__.py:1050 src/globalPlugins/easyAudioConverter/__init__.py:1758
 msgid "Custom true peak in dBTP:"
 msgstr "Egyedi valódi csúcs dBTP-ben:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532
+#: src/globalPlugins/easyAudioConverter/__init__.py:556
 msgid "Date or year"
 msgstr "Dátum vagy év"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1737
+#: src/globalPlugins/easyAudioConverter/__init__.py:1782
 msgid "Deeply verify every output file"
 msgstr "Mélyen ellenőrizze az összes kimeneti fájlt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1053
+#: src/globalPlugins/easyAudioConverter/__init__.py:1077
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "Mélyen ellenőrizze a kimenetet dekódolásával és az időtartam összehasonlításával"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2424
+#: src/globalPlugins/easyAudioConverter/__init__.py:2469
 msgid "Delete conversion profile"
 msgstr "Törlesztés konverziós profil"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1861
+#: src/globalPlugins/easyAudioConverter/__init__.py:1906
 msgid "Delete profile"
 msgstr "Profil törlése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2423
+#: src/globalPlugins/easyAudioConverter/__init__.py:2468
 msgid "Delete the profile “{name}”?"
 msgstr "Törölni a \"{name}\" profilt?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:544
+#: src/globalPlugins/easyAudioConverter/__init__.py:568
 msgid "Description"
 msgstr "Leírás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:777 src/globalPlugins/easyAudioConverter/__init__.py:1893
+#: src/globalPlugins/easyAudioConverter/__init__.py:801 src/globalPlugins/easyAudioConverter/__init__.py:1938
 msgid "Destination folder:"
 msgstr "Cél mappa:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4767
+#: src/globalPlugins/easyAudioConverter/__init__.py:5026
 msgid "Destination folder: {folder}"
 msgstr "Célmappa: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2486
+#: src/globalPlugins/easyAudioConverter/__init__.py:2531
 msgid "Destination: {destination}"
 msgstr "Cél: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3237
+#: src/globalPlugins/easyAudioConverter/__init__.py:3282
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "A részletek az első {limit} kihagyott fájlokra korlátozódnak."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3250
+#: src/globalPlugins/easyAudioConverter/__init__.py:3295
 msgid "Details:"
 msgstr "Részletek:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "Disabled"
 msgstr "Letiltva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:558
 msgid "Disc number"
 msgstr "Lemezszám"
 
@@ -591,259 +607,263 @@ msgstr "Lemezszám"
 msgid "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 msgstr "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:508
+#: src/globalPlugins/easyAudioConverter/__init__.py:532
 msgid "Do not copy metadata"
 msgstr "Ne másolj metaadatokat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3670
+#: src/globalPlugins/easyAudioConverter/__init__.py:3904
 msgid "Download and install"
 msgstr "Letöltés és telepítés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3748
+#: src/globalPlugins/easyAudioConverter/__init__.py:3982
 msgid "Downloaded {done:.1f} MB"
 msgstr "Letöltve {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3741
+#: src/globalPlugins/easyAudioConverter/__init__.py:3975
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Letöltve {done:.1f} vagy {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3700
+#: src/globalPlugins/easyAudioConverter/__init__.py:3934
 msgid "Downloading Easy Audio Converter update"
 msgstr "Az Easy Audio Converter frissítés letöltése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2597
+#: src/globalPlugins/easyAudioConverter/__init__.py:2642
 msgid "Duration: {value}"
 msgstr "Időtartam: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:455
+#: src/globalPlugins/easyAudioConverter/__init__.py:479
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3374 src/globalPlugins/easyAudioConverter/__init__.py:4152 src/globalPlugins/easyAudioConverter/__init__.py:2368 src/globalPlugins/easyAudioConverter/__init__.py:2376 src/globalPlugins/easyAudioConverter/__init__.py:3504 src/globalPlugins/easyAudioConverter/__init__.py:3851 src/globalPlugins/easyAudioConverter/__init__.py:4688 src/globalPlugins/easyAudioConverter/__init__.py:962 src/globalPlugins/easyAudioConverter/__init__.py:1549 src/globalPlugins/easyAudioConverter/__init__.py:2240 src/globalPlugins/easyAudioConverter/__init__.py:2291 src/globalPlugins/easyAudioConverter/__init__.py:2329 src/globalPlugins/easyAudioConverter/__init__.py:2342 src/globalPlugins/easyAudioConverter/__init__.py:2406 src/globalPlugins/easyAudioConverter/__init__.py:2442 src/globalPlugins/easyAudioConverter/__init__.py:3338 src/globalPlugins/easyAudioConverter/__init__.py:3351 src/globalPlugins/easyAudioConverter/__init__.py:3568 src/globalPlugins/easyAudioConverter/__init__.py:3805
+#: src/globalPlugins/easyAudioConverter/__init__.py:3419 src/globalPlugins/easyAudioConverter/__init__.py:4403 src/globalPlugins/easyAudioConverter/__init__.py:2413 src/globalPlugins/easyAudioConverter/__init__.py:2421 src/globalPlugins/easyAudioConverter/__init__.py:3583 src/globalPlugins/easyAudioConverter/__init__.py:4102 src/globalPlugins/easyAudioConverter/__init__.py:4947 src/globalPlugins/easyAudioConverter/__init__.py:986 src/globalPlugins/easyAudioConverter/__init__.py:1594 src/globalPlugins/easyAudioConverter/__init__.py:2285 src/globalPlugins/easyAudioConverter/__init__.py:2336 src/globalPlugins/easyAudioConverter/__init__.py:2374 src/globalPlugins/easyAudioConverter/__init__.py:2387 src/globalPlugins/easyAudioConverter/__init__.py:2451 src/globalPlugins/easyAudioConverter/__init__.py:2487 src/globalPlugins/easyAudioConverter/__init__.py:3383 src/globalPlugins/easyAudioConverter/__init__.py:3396 src/globalPlugins/easyAudioConverter/__init__.py:3802 src/globalPlugins/easyAudioConverter/__init__.py:4039 src/globalPlugins/easyAudioConverter/__init__.py:4077
 msgid "Easy Audio Converter"
 msgstr "Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3641
+#: src/globalPlugins/easyAudioConverter/__init__.py:3875
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Az Easy Audio Converter naprakész. Telepített verzió: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2811
+#: src/globalPlugins/easyAudioConverter/__init__.py:2856
 msgid "Easy Audio Converter progress"
 msgstr "Az Easy Audio Converter előrehaladása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3161
+#: src/globalPlugins/easyAudioConverter/__init__.py:3686
+msgid "Easy Audio Converter progress — separate job {id}"
+msgstr "Easy Audio Converter progress — separate job {id}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3206
 msgid "Easy Audio Converter results"
 msgstr "Easy Audio Converter eredmények"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1472
+#: src/globalPlugins/easyAudioConverter/__init__.py:1517
 msgid "Easy Audio Converter settings"
 msgstr "Easy Audio Converter beállításai"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3774 src/globalPlugins/easyAudioConverter/__init__.py:3633 src/globalPlugins/easyAudioConverter/__init__.py:3644 src/globalPlugins/easyAudioConverter/__init__.py:3787
+#: src/globalPlugins/easyAudioConverter/__init__.py:4008 src/globalPlugins/easyAudioConverter/__init__.py:3867 src/globalPlugins/easyAudioConverter/__init__.py:3878 src/globalPlugins/easyAudioConverter/__init__.py:4021
 msgid "Easy Audio Converter update"
 msgstr "Easy Audio Converter frissítés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3681 src/globalPlugins/easyAudioConverter/__init__.py:3666
+#: src/globalPlugins/easyAudioConverter/__init__.py:3915 src/globalPlugins/easyAudioConverter/__init__.py:3900
 msgid "Easy Audio Converter update available"
 msgstr "Easy Audio Converter frissítés elérhető"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3653
+#: src/globalPlugins/easyAudioConverter/__init__.py:3887
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Az Easy Audio Converter {newVersion} elérhető. Van egy {currentVersion} verziód.\n\nMost szeretnéd letölteni és telepíteni a frissítést?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3677
+#: src/globalPlugins/easyAudioConverter/__init__.py:3911
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Az Easy Audio Converter {version} elérhető, de a kiadás nem tartalmaz közvetlen kiegészítő csomagot. Nyisd meg a megjelenési oldalt?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:492
+#: src/globalPlugins/easyAudioConverter/__init__.py:516
 msgid "Economical"
 msgstr "Gazdaságos"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1610
+#: src/globalPlugins/easyAudioConverter/__init__.py:1655
 msgid "Edit metadata overrides"
 msgstr "A metaadat-felülírások szerkesztése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:857 src/globalPlugins/easyAudioConverter/__init__.py:1939
+#: src/globalPlugins/easyAudioConverter/__init__.py:881 src/globalPlugins/easyAudioConverter/__init__.py:1984
 msgid "Edit metadata overrides..."
 msgstr "Metaadat-felülírások szerkesztése..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2836
+#: src/globalPlugins/easyAudioConverter/__init__.py:2881
 msgid "Elapsed time: 0:00"
 msgstr "Eltelt idő: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2933
+#: src/globalPlugins/easyAudioConverter/__init__.py:2978
 msgid "Elapsed time: {elapsed}"
 msgstr "Eltelt idő: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2616
+#: src/globalPlugins/easyAudioConverter/__init__.py:2661
 msgid "Embedded artwork: {value}"
 msgstr "Beágyazott műalkotás: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1292
+#: src/globalPlugins/easyAudioConverter/__init__.py:1337
 msgid "Enable advanced overrides for this codec"
 msgstr "Kapcsold be a fejlett felülbírálódásokat ehhez a kodekhez"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:546
+#: src/globalPlugins/easyAudioConverter/__init__.py:570
 msgid "Encoder"
 msgstr "Kódoló"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3093
+#: src/globalPlugins/easyAudioConverter/__init__.py:3138
 msgid "Encoding and output writing: {value}"
 msgstr "Encoding and output writing: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2355
+#: src/globalPlugins/easyAudioConverter/__init__.py:2400
 msgid "Enter a name for this conversion profile:"
 msgstr "Írj be nevet ehhez a konverziós profilhoz:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1619
+#: src/globalPlugins/easyAudioConverter/__init__.py:1664
 msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
 msgstr "Adjon meg értékeket a forráscímkék lecseréléséhez minden konvertált fájlhoz. Hagyjon üresen egy mezőt a forrásérték megtartásához."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2490
+#: src/globalPlugins/easyAudioConverter/__init__.py:2535
 msgid "Estimated output size: {size}"
 msgstr "Becsült kimeneti méret: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2987
+#: src/globalPlugins/easyAudioConverter/__init__.py:3032
 msgid "Estimated time remaining: 0:00"
 msgstr "Becsült idő, ami hátramaradt: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2840
+#: src/globalPlugins/easyAudioConverter/__init__.py:2885
 msgid "Estimated time remaining: calculating"
 msgstr "Becsült hátralévő idő: számítás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2937
+#: src/globalPlugins/easyAudioConverter/__init__.py:2982
 msgid "Estimated time remaining: {remaining}"
 msgstr "Becsült idő: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:914
+#: src/globalPlugins/easyAudioConverter/__init__.py:938
 msgid "Example album"
 msgstr "Példa album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:913
+#: src/globalPlugins/easyAudioConverter/__init__.py:937
 msgid "Example artist"
 msgstr "Példaművész"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:921
+#: src/globalPlugins/easyAudioConverter/__init__.py:945
 msgid "Example filename: {name}"
 msgstr "Példa fájlnév: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:912
+#: src/globalPlugins/easyAudioConverter/__init__.py:936
 msgid "Example title"
 msgstr "Példa cím"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2309
+#: src/globalPlugins/easyAudioConverter/__init__.py:2354
 msgid "Export conversion profiles"
 msgstr "Konverziós profilok exportálása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1863
+#: src/globalPlugins/easyAudioConverter/__init__.py:1908
 msgid "Export profiles..."
 msgstr "Profilok exportálása..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:460
+#: src/globalPlugins/easyAudioConverter/__init__.py:484
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "Eredeti hangfolyam kibontása (nincs újrakódolás)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:446
+#: src/globalPlugins/easyAudioConverter/__init__.py:470
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1240
+#: src/globalPlugins/easyAudioConverter/__init__.py:1285
 msgid "FLAC 0 — fastest encoding"
 msgstr "FLAC 0 — a leggyorsabb kódolás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1242
+#: src/globalPlugins/easyAudioConverter/__init__.py:1287
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr "FLAC 12 — maximális kompresszió, nagyon lassú"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1244
+#: src/globalPlugins/easyAudioConverter/__init__.py:1289
 msgid "FLAC {level}"
 msgstr "FLAC {level}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3128
+#: src/globalPlugins/easyAudioConverter/__init__.py:3173
 msgid "Failed files:"
 msgstr "Meghibásított fájlok:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3216
+#: src/globalPlugins/easyAudioConverter/__init__.py:3261
 msgid "Failed: {name}"
 msgstr "Megbukott: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1249
+#: src/globalPlugins/easyAudioConverter/__init__.py:1294
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr "Gyors, -f (FFmpeg 0. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3064
+#: src/globalPlugins/easyAudioConverter/__init__.py:3109
 msgid "File or folder is unavailable"
 msgstr "Fájl vagy mappa nem elérhető"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2615
+#: src/globalPlugins/easyAudioConverter/__init__.py:2660
 msgid "File size: {value}"
 msgstr "Fájlméret: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2904
+#: src/globalPlugins/easyAudioConverter/__init__.py:2949
 msgid "File {index} of {total}: {name}"
 msgstr "Fájl {index} of {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2139
+#: src/globalPlugins/easyAudioConverter/__init__.py:2184
 msgid "Filename preview: {name}"
 msgstr "Fájlnév előnézete: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2484
+#: src/globalPlugins/easyAudioConverter/__init__.py:2529
 msgid "Files to convert: {count}"
 msgstr "Átalakítandó fájlok: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3897
+#: src/globalPlugins/easyAudioConverter/__init__.py:4148
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Átalakítandó fájlok: {count}. Kihagyva: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1426
+#: src/globalPlugins/easyAudioConverter/__init__.py:1471
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "LAME MP3 esetén a 0-s szint a leglassabb és legmagasabb algoritmusminőség; A 9 a leggyorsabb."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1431
+#: src/globalPlugins/easyAudioConverter/__init__.py:1476
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Az Ogg Vorbis esetében a 0–10. szintek a változó bitrátával növelő minőséget választják."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1432
+#: src/globalPlugins/easyAudioConverter/__init__.py:1477
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Az OPUS esetében a 0–10-es szintek növelik a kódoló komplexitását."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3902
+#: src/globalPlugins/easyAudioConverter/__init__.py:4153
 msgid "Found {count} files to convert"
 msgstr "A konvertálandó {count} fájlt találtuk"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:502
+#: src/globalPlugins/easyAudioConverter/__init__.py:526
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2493
+#: src/globalPlugins/easyAudioConverter/__init__.py:2538
 msgid "Free disk space: {size}"
 msgstr "Szabad lemezterület: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2474
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:531
+#: src/globalPlugins/easyAudioConverter/__init__.py:555
 msgid "Genre"
 msgstr "Műfaj"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:545
+#: src/globalPlugins/easyAudioConverter/__init__.py:569
 msgid "Grouping"
 msgstr "Csoportosítás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2857
+#: src/globalPlugins/easyAudioConverter/__init__.py:2902
 msgid "Hide"
 msgstr "Bújj el"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:494
+#: src/globalPlugins/easyAudioConverter/__init__.py:518
 msgid "High"
 msgstr "Magas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1251
+#: src/globalPlugins/easyAudioConverter/__init__.py:1296
 msgid "High, -h (FFmpeg level 2)"
 msgstr "Magas, -h (FFmpeg 2. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:547
+#: src/globalPlugins/easyAudioConverter/__init__.py:571
 msgid "ISRC"
 msgstr "ISRC"
 
@@ -851,615 +871,643 @@ msgstr "ISRC"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Ha az Easy Audio Converter hasznos az Ön számára, és szeretné támogatni a munkámat, vehet nekem egy kávét.\n\nSzeretné most megnyitni a támogatási oldalt?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2258
+#: src/globalPlugins/easyAudioConverter/__init__.py:2303
 msgid "Import conversion profiles"
 msgstr "Konverziós profilok importálása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1862
+#: src/globalPlugins/easyAudioConverter/__init__.py:1907
 msgid "Import profiles..."
 msgstr "Profilok importálása..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2300
+#: src/globalPlugins/easyAudioConverter/__init__.py:2345
 msgid "Imported {count} conversion profiles"
 msgstr "Importált {count} konverziós profilok"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:803 src/globalPlugins/easyAudioConverter/__init__.py:1905
+#: src/globalPlugins/easyAudioConverter/__init__.py:827 src/globalPlugins/easyAudioConverter/__init__.py:1950
 msgid "Include subfolders when converting a folder"
 msgstr "Mappa konvertálásakor vegyen fel almappákat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3476
+#: src/globalPlugins/easyAudioConverter/__init__.py:3555
 msgid "Information about the selected audio file..."
 msgstr "Információ a kiválasztott hangfájlról..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3087
+#: src/globalPlugins/easyAudioConverter/__init__.py:3132
 msgid "Input recognition: {value}"
 msgstr "Input recognition: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2489
+#: src/globalPlugins/easyAudioConverter/__init__.py:2534
 msgid "Input size: {size}"
 msgstr "Bemeneti méret: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:927 src/globalPlugins/easyAudioConverter/__init__.py:2145
+#: src/globalPlugins/easyAudioConverter/__init__.py:951 src/globalPlugins/easyAudioConverter/__init__.py:2190
 msgid "Invalid filename template: {error}"
 msgstr "Érvénytelen fájlnévsablon: {error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2259 src/globalPlugins/easyAudioConverter/__init__.py:2311
+#: src/globalPlugins/easyAudioConverter/__init__.py:2304 src/globalPlugins/easyAudioConverter/__init__.py:2356
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "JSON-profilfájlok (*.json)|*.json|Minden fájl (*.*)|*.*"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2474
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519
 msgid "KB"
 msgstr "KB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1311
+#: src/globalPlugins/easyAudioConverter/__init__.py:1356
 msgid "Keep the source channel count"
 msgstr "Tartsd meg a forráscsatorna számát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1305
+#: src/globalPlugins/easyAudioConverter/__init__.py:1350
 msgid "Keep the source sample rate"
 msgstr "Tartsd meg a forrás mintavételi sebességet"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:501
+#: src/globalPlugins/easyAudioConverter/__init__.py:525
 msgid "LAME MP3"
 msgstr "BÁNTA MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:538
+#: src/globalPlugins/easyAudioConverter/__init__.py:562
 msgid "Language"
 msgstr "Nyelv"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3670
+#: src/globalPlugins/easyAudioConverter/__init__.py:3904
 msgid "Later"
 msgstr "Később"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1322
+#: src/globalPlugins/easyAudioConverter/__init__.py:1367
 msgid "Lossless compression profile:"
 msgstr "Veszteségmentes kompresszióprofil:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3090
+#: src/globalPlugins/easyAudioConverter/__init__.py:3135
 msgid "Loudness analysis: {value}"
 msgstr "Loudness analysis: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1007 src/globalPlugins/easyAudioConverter/__init__.py:1694
+#: src/globalPlugins/easyAudioConverter/__init__.py:1031 src/globalPlugins/easyAudioConverter/__init__.py:1739
 msgid "Loudness normalization:"
 msgstr "A hangerő normalizálása:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:537
+#: src/globalPlugins/easyAudioConverter/__init__.py:561
 msgid "Lyrics"
 msgstr "Dalszöveg"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:449
+#: src/globalPlugins/easyAudioConverter/__init__.py:473
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2474
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519
 msgid "MB"
 msgstr "MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:457
+#: src/globalPlugins/easyAudioConverter/__init__.py:481
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:444
+#: src/globalPlugins/easyAudioConverter/__init__.py:468
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:762 src/globalPlugins/easyAudioConverter/__init__.py:1884
+#: src/globalPlugins/easyAudioConverter/__init__.py:786 src/globalPlugins/easyAudioConverter/__init__.py:1929
 msgid "MP3 encoder:"
 msgstr "MP3 kódoló:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1257
+#: src/globalPlugins/easyAudioConverter/__init__.py:5187
+msgid "Main conversion"
+msgstr "Main conversion"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1302
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr "Maximum, -hhx6 (FFmpeg 8. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:835 src/globalPlugins/easyAudioConverter/__init__.py:1931
+#: src/globalPlugins/easyAudioConverter/__init__.py:859 src/globalPlugins/easyAudioConverter/__init__.py:1976
 msgid "Metadata export:"
 msgstr "Metaadat-export:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:846
+#: src/globalPlugins/easyAudioConverter/__init__.py:870
 msgid "Metadata fields to copy:"
 msgstr "Metaadatmezők, amelyeket másolhatsz:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:874 src/globalPlugins/easyAudioConverter/__init__.py:2116
+#: src/globalPlugins/easyAudioConverter/__init__.py:898 src/globalPlugins/easyAudioConverter/__init__.py:2161
 msgid "Metadata overrides: {count} fields"
 msgstr "A metaadatok felülbírálása: {count} mezők"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2622
+#: src/globalPlugins/easyAudioConverter/__init__.py:2667
 msgid "Metadata:"
 msgstr "Metaadatok:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1311
+#: src/globalPlugins/easyAudioConverter/__init__.py:1356
 msgid "Mono"
 msgstr "Mono"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:518
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "Zene és streaming: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1439
+#: src/globalPlugins/easyAudioConverter/__init__.py:1484
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "A rendszer nem használ speciális kodekbeállításokat, mert a hangfolyam átmásolása újrakódolás nélkül történik."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:329
+#: src/globalPlugins/easyAudioConverter/__init__.py:346
 msgid "No completion notification"
 msgstr "Nincs befejezési értesítés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4782 src/globalPlugins/easyAudioConverter/__init__.py:4793 src/globalPlugins/easyAudioConverter/__init__.py:4856
+#: src/globalPlugins/easyAudioConverter/__init__.py:5042 src/globalPlugins/easyAudioConverter/__init__.py:5062 src/globalPlugins/easyAudioConverter/__init__.py:5164
 msgid "No conversion is in progress"
 msgstr "Nincs folyamatban átalakítás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4837
+#: src/globalPlugins/easyAudioConverter/__init__.py:5139
 msgid "No conversion progress is available"
 msgstr "Nincs átalakítási előrejelzés"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4276
+#: src/globalPlugins/easyAudioConverter/__init__.py:4535
 msgid "No conversion results are available"
 msgstr "Nem elérhetők az átalakítási eredmények"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4297 src/globalPlugins/easyAudioConverter/__init__.py:4307
+#: src/globalPlugins/easyAudioConverter/__init__.py:4556 src/globalPlugins/easyAudioConverter/__init__.py:4566
 msgid "No failed files are available to retry"
 msgstr "Nem lehet újrapróbálni sikertelen fájlokat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3297
+#: src/globalPlugins/easyAudioConverter/__init__.py:3342
 msgid "No file details are available."
 msgstr "Nincs elérhető fájlrészlet."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4179
+#: src/globalPlugins/easyAudioConverter/__init__.py:4433
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Nincs szükség konvertálásra. Kihagyva: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2155
+#: src/globalPlugins/easyAudioConverter/__init__.py:2200
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "Nincs újrakódolás: a minőség, a hangerő és a speciális kodekbeállítások nem használatosak."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2149
+#: src/globalPlugins/easyAudioConverter/__init__.py:2194
 msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 msgstr "Nincs újrakódolás: a minőség, a hangerő, a forrás metaadatok, a grafika, a fejezetek és a speciális kodekbeállítások nem használatosak. Az explicit metaadat-felülírások továbbra is érvényesek."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3065
+#: src/globalPlugins/easyAudioConverter/__init__.py:3110
 msgid "No readable audio stream was found"
 msgstr "Nem található olvasható hangfolyam"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4183
+#: src/globalPlugins/easyAudioConverter/__init__.py:4437
 msgid "No supported audio files were found"
 msgstr "Nem található támogatott hangfájl"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1250
+#: src/globalPlugins/easyAudioConverter/__init__.py:1295
 msgid "Normal (FFmpeg level 1)"
 msgstr "Normál (FFmpeg 1. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1263
+#: src/globalPlugins/easyAudioConverter/__init__.py:1308
 msgid "Not used by this codec"
 msgstr "Ez a kódek nem használja"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:447
+#: src/globalPlugins/easyAudioConverter/__init__.py:471
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4806
+#: src/globalPlugins/easyAudioConverter/__init__.py:5086
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "Egy konverzió aktív. Sorban lévő munkák: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:368
 msgid "One file at a time"
 msgstr "Egyszerre egy fájlt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2002
+#: src/globalPlugins/easyAudioConverter/__init__.py:5090
+msgid "One separate conversion is active. Queued jobs: {count}."
+msgstr "One separate conversion is active. Queued jobs: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2047
 msgid "One-time settings"
 msgstr "Egyszeri beállítások"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:337
+#: src/globalPlugins/easyAudioConverter/__init__.py:354
 msgid "Only on demand"
 msgstr "Csak igény szerint"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4536
+#: src/globalPlugins/easyAudioConverter/__init__.py:4795
 msgid "Open Easy Audio Converter settings"
 msgstr "Nyissa meg az Easy Audio Converter beállításait"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4547
+#: src/globalPlugins/easyAudioConverter/__init__.py:4806
 msgid "Open advanced codec settings"
 msgstr "Nyitott fejlett kódek beállítások"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3263
+#: src/globalPlugins/easyAudioConverter/__init__.py:3308
 msgid "Open output folder"
 msgstr "Nyisd ki a kimeneti mappát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4925
+#: src/globalPlugins/easyAudioConverter/__init__.py:5215
 msgid "Open the author's support page"
 msgstr "Nyissa meg a szerző támogatási oldalát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:589
+#: src/globalPlugins/easyAudioConverter/__init__.py:613
 msgid "Opening the support page"
 msgstr "A támogatási oldal megnyitása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:448
+#: src/globalPlugins/easyAudioConverter/__init__.py:472
 msgid "Opus"
 msgstr "Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:786 src/globalPlugins/easyAudioConverter/__init__.py:1900
+#: src/globalPlugins/easyAudioConverter/__init__.py:810 src/globalPlugins/easyAudioConverter/__init__.py:1945
 msgid "Output filename template:"
 msgstr "Kimeneti fájlnév sablon:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3126
+#: src/globalPlugins/easyAudioConverter/__init__.py:3171
 msgid "Output files:"
 msgstr "Kimeneti fájlok:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3054
+#: src/globalPlugins/easyAudioConverter/__init__.py:3099
 msgid "Output verification failed because its duration differs from the source."
 msgstr "A kimenet ellenőrzése nem sikerült, mert időtartama eltér a forrástól."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3200
+#: src/globalPlugins/easyAudioConverter/__init__.py:3245
 msgid "Output:\n{output}"
 msgstr "Kimenet:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2993
+#: src/globalPlugins/easyAudioConverter/__init__.py:3038
 msgid "Overall progress: 100%"
 msgstr "Összértékű előrehaladás: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2832
+#: src/globalPlugins/easyAudioConverter/__init__.py:2877
 msgid "Overall progress: waiting"
 msgstr "Általános előrehaladás: várakozás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2930
+#: src/globalPlugins/easyAudioConverter/__init__.py:2975
 msgid "Overall progress: {percent}%"
 msgstr "Összértékű előrehaladás: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1328
+#: src/globalPlugins/easyAudioConverter/__init__.py:1373
 msgid "PCM bit depth:"
 msgstr "PCM bitmélység:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1059 src/globalPlugins/easyAudioConverter/__init__.py:1742
+#: src/globalPlugins/easyAudioConverter/__init__.py:1083 src/globalPlugins/easyAudioConverter/__init__.py:1787
 msgid "Parallel conversion jobs:"
 msgstr "Párhuzamos átalakítási munkák:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2988
+#: src/globalPlugins/easyAudioConverter/__init__.py:3033
 msgid "Parallel workers: finished"
 msgstr "Párhuzamos munkások: kész"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2847
+#: src/globalPlugins/easyAudioConverter/__init__.py:2892
 msgid "Parallel workers: waiting"
 msgstr "Párhuzamos munkások: várakozás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2978
+#: src/globalPlugins/easyAudioConverter/__init__.py:3023
 msgid "Parallel workers: {active} active of {target}"
 msgstr "Párhuzamos dolgozók: {active} aktív / {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2594
+#: src/globalPlugins/easyAudioConverter/__init__.py:2639
 msgid "Path: {path}"
 msgstr "Elérési út: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2525
+#: src/globalPlugins/easyAudioConverter/__init__.py:2570
 msgid "Planned output files:"
 msgstr "Tervezett kimeneti fájlok:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1106
+#: src/globalPlugins/easyAudioConverter/__init__.py:1148
 msgid "Play a sound when a conversion fails"
 msgstr "Hang lejátszása, ha az átalakítás sikertelen"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1113
+#: src/globalPlugins/easyAudioConverter/__init__.py:1155
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "Hang lejátszása, amikor egy konverziót megszakítanak vagy leállítanak"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:398
+#: src/globalPlugins/easyAudioConverter/__init__.py:422
 msgid "Podcast Opus"
 msgstr "Podcast Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:517
+#: src/globalPlugins/easyAudioConverter/__init__.py:541
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "Podcast: -16 LUFS, -1,5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2745 src/globalPlugins/easyAudioConverter/__init__.py:3890 src/globalPlugins/easyAudioConverter/__init__.py:2823
+#: src/globalPlugins/easyAudioConverter/__init__.py:2790 src/globalPlugins/easyAudioConverter/__init__.py:4141 src/globalPlugins/easyAudioConverter/__init__.py:2868
 msgid "Preparing the conversion"
 msgstr "Az átalakítás előkészítése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:816 src/globalPlugins/easyAudioConverter/__init__.py:1916
+#: src/globalPlugins/easyAudioConverter/__init__.py:840 src/globalPlugins/easyAudioConverter/__init__.py:1961
 msgid "Preserve source file creation and modification dates"
 msgstr "A forrásfájl létrehozásának és módosításának időpontjai megőrzése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:809 src/globalPlugins/easyAudioConverter/__init__.py:1910
+#: src/globalPlugins/easyAudioConverter/__init__.py:833 src/globalPlugins/easyAudioConverter/__init__.py:1955
 msgid "Preserve the source folder structure in the destination"
 msgstr "Őrizze meg a forrásmappa szerkezetét a célhelyen"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3099
+#: src/globalPlugins/easyAudioConverter/__init__.py:3144
 msgid "Probe cache hits: {count}; misses: {misses}"
 msgstr "Probe cache hits: {count}; misses: {misses}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:995
+#: src/globalPlugins/easyAudioConverter/__init__.py:1019
 msgid "Processing and notifications"
 msgstr "Feldolgozás és értesítések"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1681
+#: src/globalPlugins/easyAudioConverter/__init__.py:1726
 msgid "Processing options"
 msgstr "Feldolgozási lehetőségek"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1945
+#: src/globalPlugins/easyAudioConverter/__init__.py:1990
 msgid "Processing options..."
 msgstr "Feldolgozási lehetőségek..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2165
+#: src/globalPlugins/easyAudioConverter/__init__.py:2210
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "Feldolgozás: hangosság {loudness}; műalkotás {artwork}; fejezetek {chapters}; ellenőrzés {verification}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2434
+#: src/globalPlugins/easyAudioConverter/__init__.py:2479
 msgid "Profile deleted"
 msgstr "Profil törölve"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2413
+#: src/globalPlugins/easyAudioConverter/__init__.py:2458
 msgid "Profile saved: {name}"
 msgstr "Profil mentve: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:539
+#: src/globalPlugins/easyAudioConverter/__init__.py:563
 msgid "Publisher"
 msgstr "Kiadó"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4743
+#: src/globalPlugins/easyAudioConverter/__init__.py:5002
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "A minőség nem használatos, ha újrakódolás nélkül másol hangot"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:753 src/globalPlugins/easyAudioConverter/__init__.py:1878
+#: src/globalPlugins/easyAudioConverter/__init__.py:777 src/globalPlugins/easyAudioConverter/__init__.py:1923
 msgid "Quality:"
 msgstr "Minőség:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4750
+#: src/globalPlugins/easyAudioConverter/__init__.py:5009
 msgid "Quality: {quality}"
 msgstr "Minőség: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4809
+#: src/globalPlugins/easyAudioConverter/__init__.py:5102
 msgid "Queued conversion jobs: {count}."
 msgstr "Sorban lévő átalakítási feladatok: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2843
+#: src/globalPlugins/easyAudioConverter/__init__.py:2888
 msgid "Queued jobs: 0"
 msgstr "Sorban lévő munkák: 0"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2961
+#: src/globalPlugins/easyAudioConverter/__init__.py:3006
 msgid "Queued jobs: {count}"
 msgstr "Sorban lévő munkák: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4754
+#: src/globalPlugins/easyAudioConverter/__init__.py:5200
+msgid "Queued jobs: {count}."
+msgstr "Queued jobs: {count}."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:5013
 msgid "Quickly choose the destination folder"
 msgstr "Gyorsan válassza ki a célmappát"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4579
+#: src/globalPlugins/easyAudioConverter/__init__.py:4838
 msgid "Quickly convert selected files or folders"
 msgstr "Gyorsan konvertálja a kiválasztott fájlokat vagy mappákat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4658
+#: src/globalPlugins/easyAudioConverter/__init__.py:4917
 msgid "Reading audio file information"
 msgstr "Hangfájl információ olvasása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2741
+#: src/globalPlugins/easyAudioConverter/__init__.py:2786
 msgid "Reading audio information"
 msgstr "Hangos információk olvasása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3662
+#: src/globalPlugins/easyAudioConverter/__init__.py:3896
 msgid "Release notes:"
 msgstr "Közlemény megjegyzések:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:463
+#: src/globalPlugins/easyAudioConverter/__init__.py:487
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC M4A-ra (nincs újrakódolás)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3823
+#: src/globalPlugins/easyAudioConverter/__init__.py:4057
 msgid "Replace source files"
 msgstr "Cserélje ki a forrásfájlokat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:824 src/globalPlugins/easyAudioConverter/__init__.py:1922
+#: src/globalPlugins/easyAudioConverter/__init__.py:848 src/globalPlugins/easyAudioConverter/__init__.py:1967
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr "A forrásfájlok cseréje a sikeres átalakítás után (véglegesen törli az eredetiket)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2391
+#: src/globalPlugins/easyAudioConverter/__init__.py:2436
 msgid "Replace the existing profile “{name}”?"
 msgstr "Cserélni a meglévő profilt \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3817
+#: src/globalPlugins/easyAudioConverter/__init__.py:4051
 msgid "Replacing source files cannot be undone. After each output is created and checked successfully, its source file will be permanently deleted. Source files will be kept if conversion or verification fails. Continue?"
 msgstr "A forrásfájlok cseréje nem vonható vissza. Minden egyes kimenet létrehozása és sikeres ellenőrzése után a forrásfájl véglegesen törlődik. A forrásfájlok megmaradnak, ha az átalakítás vagy az ellenőrzés sikertelen. Folytatja?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4851
+#: src/globalPlugins/easyAudioConverter/__init__.py:5158
 msgid "Report audio conversion status"
 msgstr "Hangátalakítás állapotának jelentése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2855 src/globalPlugins/easyAudioConverter/__init__.py:3478
+#: src/globalPlugins/easyAudioConverter/__init__.py:2900 src/globalPlugins/easyAudioConverter/__init__.py:3557
 msgid "Report conversion status"
 msgstr "A konverziós állapot jelentése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4799 src/globalPlugins/easyAudioConverter/__init__.py:3482
+#: src/globalPlugins/easyAudioConverter/__init__.py:5078 src/globalPlugins/easyAudioConverter/__init__.py:3561
 msgid "Report queued conversion jobs"
 msgstr "Jelentse a sorban álló konverziós feladatokat"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3262
+#: src/globalPlugins/easyAudioConverter/__init__.py:3307
 msgid "Retry failed files"
 msgstr "Próbálkozás sikertelen fájlokkal"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2541
+#: src/globalPlugins/easyAudioConverter/__init__.py:2586
 msgid "Review conversion plan"
 msgstr "Tekintse át az átalakítási tervet"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2553
+#: src/globalPlugins/easyAudioConverter/__init__.py:2598
 msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
 msgstr "Tekintse át az alábbi tervet. A méretbecslések hozzávetőlegesek. Egyetlen forrásfájl sem lesz felülírva."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2547
+#: src/globalPlugins/easyAudioConverter/__init__.py:2592
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr "Tekintse át az alábbi tervet. A méretbecslések hozzávetőlegesek. A forrásfájlok véglegesen törlődnek, miután kimeneteik sikeresen befejeződnek."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1303
+#: src/globalPlugins/easyAudioConverter/__init__.py:361
+msgid "Run new jobs in separate progress windows"
+msgstr "Run new jobs in separate progress windows"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1348
 msgid "Sample rate:"
 msgstr "Mintavételi sebesség:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2608
+#: src/globalPlugins/easyAudioConverter/__init__.py:2653
 msgid "Sample rate: {value}"
 msgstr "Mintavételi arány: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2356 src/globalPlugins/easyAudioConverter/__init__.py:2392
+#: src/globalPlugins/easyAudioConverter/__init__.py:2401 src/globalPlugins/easyAudioConverter/__init__.py:2437
 msgid "Save conversion profile"
 msgstr "Mentési konverziós profil"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:771 src/globalPlugins/easyAudioConverter/__init__.py:1890
+#: src/globalPlugins/easyAudioConverter/__init__.py:795 src/globalPlugins/easyAudioConverter/__init__.py:1935
 msgid "Save converted files next to the source files"
 msgstr "Mentse a konvertált fájlokat a forrásfájlok mellé"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1860
+#: src/globalPlugins/easyAudioConverter/__init__.py:1905
 msgid "Save profile..."
 msgstr "Profil mentése..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4652
+#: src/globalPlugins/easyAudioConverter/__init__.py:4911
 msgid "Select exactly one audio file"
 msgstr "Válasszon ki pontosan egy hangfájlt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1571
+#: src/globalPlugins/easyAudioConverter/__init__.py:1616
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Válaszd ki a szöveg metaadatmezőit a másoláshoz ehhez az átalakításhoz."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1850
+#: src/globalPlugins/easyAudioConverter/__init__.py:1895
 msgid "Selected items: {count}"
 msgstr "Kiválasztott tárgyak: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3485
+#: src/globalPlugins/easyAudioConverter/__init__.py:5189
+msgid "Separate conversion {index}"
+msgstr "Separate conversion {index}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1105
+msgid "Separate progress windows run independently and may use more CPU and memory."
+msgstr "Separate progress windows run independently and may use more CPU and memory."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3564
 msgid "Settings..."
 msgstr "Beállítások..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1078
+#: src/globalPlugins/easyAudioConverter/__init__.py:1120
 msgid "Show a conversion plan before starting"
 msgstr "Kezdés előtt mutasson meg egy konverziós tervet"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3477
+#: src/globalPlugins/easyAudioConverter/__init__.py:3556
 msgid "Show conversion progress"
 msgstr "A konvertálás haladásának megjelenítése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3479
+#: src/globalPlugins/easyAudioConverter/__init__.py:3558
 msgid "Show last conversion results"
 msgstr "Utolsó konverzió eredményeinek megjelenítése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2856
+#: src/globalPlugins/easyAudioConverter/__init__.py:2901
 msgid "Show results"
 msgstr "Műsoreredmények"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4645
+#: src/globalPlugins/easyAudioConverter/__init__.py:4904
 msgid "Show technical information about the selected audio file"
 msgstr "Műszaki információk megjelenítése a kiválasztott hangfájlról"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4832
+#: src/globalPlugins/easyAudioConverter/__init__.py:5125
 msgid "Show the audio conversion progress window"
 msgstr "Mutassa meg az audio átalakítási előrehaladási ablakot"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1760
+#: src/globalPlugins/easyAudioConverter/__init__.py:1805
 msgid "Show the conversion plan before starting"
 msgstr "Kezdés előtt mutassa meg az átalakítási tervet"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4843
+#: src/globalPlugins/easyAudioConverter/__init__.py:5146
 msgid "Show the last audio conversion results"
 msgstr "Mutassa meg az utolsó hangátalakítási eredményeket"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3069
+#: src/globalPlugins/easyAudioConverter/__init__.py:3114
 msgid "Skipped"
 msgstr "Áthagyva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3139
+#: src/globalPlugins/easyAudioConverter/__init__.py:3184
 msgid "Skipped files:"
 msgstr "Kihagyott fájlok:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2485
+#: src/globalPlugins/easyAudioConverter/__init__.py:2530
 msgid "Skipped inputs: {count}"
 msgstr "Kihagyott bemenetek: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3224
+#: src/globalPlugins/easyAudioConverter/__init__.py:3269
 msgid "Skipped: {name}"
 msgstr "Kihagyva: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:549
+#: src/globalPlugins/easyAudioConverter/__init__.py:573
 msgid "Sort album"
 msgstr "Album rendezése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:548
+#: src/globalPlugins/easyAudioConverter/__init__.py:572
 msgid "Sort artist"
 msgstr "Művész rendezése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:550
+#: src/globalPlugins/easyAudioConverter/__init__.py:574
 msgid "Sort title"
 msgstr "Rendezési cím"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:328
+#: src/globalPlugins/easyAudioConverter/__init__.py:345
 msgid "Sound only"
 msgstr "Csak hang"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3206
+#: src/globalPlugins/easyAudioConverter/__init__.py:3251
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Forrás:\n{source}\n\nHiba:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3186
+#: src/globalPlugins/easyAudioConverter/__init__.py:3231
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Forrás:\n{source}\n\nKimenet:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3225
+#: src/globalPlugins/easyAudioConverter/__init__.py:3270
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Forrás:\n{source}\n\nOk:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:326
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "Speech and sound"
 msgstr "Beszéd és hang"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:327
+#: src/globalPlugins/easyAudioConverter/__init__.py:344
 msgid "Speech only"
 msgstr "Csak beszéd"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:493
+#: src/globalPlugins/easyAudioConverter/__init__.py:517
 msgid "Standard"
 msgstr "Szabványos"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:735
+#: src/globalPlugins/easyAudioConverter/__init__.py:759
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2574
+#: src/globalPlugins/easyAudioConverter/__init__.py:2619
 msgid "Start conversion"
 msgstr "Indítsa el az átalakítást"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3701
+#: src/globalPlugins/easyAudioConverter/__init__.py:3696
+msgid "Started a separate conversion window for the new job."
+msgstr "Started a separate conversion window for the new job."
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3935
 msgid "Starting the download..."
 msgstr "Elkezdem a letöltést..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4267
+#: src/globalPlugins/easyAudioConverter/__init__.py:4526
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "A következő sorban álló konverzió indítása. Fennmaradó állások: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1311
+#: src/globalPlugins/easyAudioConverter/__init__.py:1356
 msgid "Stereo"
 msgstr "Sztereó"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2853
+#: src/globalPlugins/easyAudioConverter/__init__.py:2898
 msgid "Stop after current file"
 msgstr "Leállítás az aktuális fájl után"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3480
+#: src/globalPlugins/easyAudioConverter/__init__.py:3559
 msgid "Stop after the current file"
 msgstr "Leállítás az aktuális fájl után"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4788
+#: src/globalPlugins/easyAudioConverter/__init__.py:5056
 msgid "Stop the conversion after the current file"
 msgstr "Állítsa le a konvertálást az aktuális fájl után"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4172
+#: src/globalPlugins/easyAudioConverter/__init__.py:4426
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "Az aktuális fájl után leállt. {done}/{total} fájl elkészült."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3012
+#: src/globalPlugins/easyAudioConverter/__init__.py:3057
 msgid "Stopping after this file..."
 msgstr "Leállítás a fájl után..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3110 src/globalPlugins/easyAudioConverter/__init__.py:3172
+#: src/globalPlugins/easyAudioConverter/__init__.py:3155 src/globalPlugins/easyAudioConverter/__init__.py:3217
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Sikeres: {done}. Megbukott: {failed}. Kihagyva: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3185 src/globalPlugins/easyAudioConverter/__init__.py:3199
+#: src/globalPlugins/easyAudioConverter/__init__.py:3230 src/globalPlugins/easyAudioConverter/__init__.py:3244
 msgid "Success: {name}"
 msgstr "Siker: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1094
+#: src/globalPlugins/easyAudioConverter/__init__.py:1136
 msgid "Successful completion notification:"
 msgstr "Sikeres befejezési értesítés:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3122
+#: src/globalPlugins/easyAudioConverter/__init__.py:3167
 msgid "Successful files:"
 msgstr "Sikeres fájlok:"
 
@@ -1467,310 +1515,326 @@ msgstr "Sikeres fájlok:"
 msgid "Support Easy Audio Converter"
 msgstr "Az Easy Audio Converter támogatása"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1134 src/globalPlugins/easyAudioConverter/__init__.py:3488
+#: src/globalPlugins/easyAudioConverter/__init__.py:1176 src/globalPlugins/easyAudioConverter/__init__.py:3567
 msgid "Support the author"
 msgstr "Támogassa a szerzőt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2474 src/globalPlugins/easyAudioConverter/__init__.py:2475
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519 src/globalPlugins/easyAudioConverter/__init__.py:2520
 msgid "TB"
 msgstr "TB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:744 src/globalPlugins/easyAudioConverter/__init__.py:1872
+#: src/globalPlugins/easyAudioConverter/__init__.py:768 src/globalPlugins/easyAudioConverter/__init__.py:1917
 msgid "Target format:"
 msgstr "Célformátum:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4730
+#: src/globalPlugins/easyAudioConverter/__init__.py:4989
 msgid "Target format: {format}"
 msgstr "Célformátum: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1117
+#: src/globalPlugins/easyAudioConverter/__init__.py:1159
 msgid "Test cancel sound"
 msgstr "Hang teszt törlése"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1110
+#: src/globalPlugins/easyAudioConverter/__init__.py:1152
 msgid "Test error sound"
 msgstr "Teszt hiba hang"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1102
+#: src/globalPlugins/easyAudioConverter/__init__.py:1144
 msgid "Test success sound"
 msgstr "Teszt sikeres hang"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3850
+#: src/globalPlugins/easyAudioConverter/__init__.py:4101
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "A mellékelt FFmpeg komponens hiányzik. Telepítse újra az Easy Audio Converter programot."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1446
+#: src/globalPlugins/easyAudioConverter/__init__.py:1491
 msgid "The codec-specific level is not used by this format."
 msgstr "A kodek-specifikus szintet ez a formátum nem használja."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4146
+#: src/globalPlugins/easyAudioConverter/__init__.py:4397
 msgid "The conversion could not start"
 msgstr "Az átalakítás nem indulhatott el"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4151
+#: src/globalPlugins/easyAudioConverter/__init__.py:4402
 msgid "The conversion could not start:\n{error}"
 msgstr "Az átalakítás nem indulhat el:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4820 src/globalPlugins/easyAudioConverter/__init__.py:4811
+#: src/globalPlugins/easyAudioConverter/__init__.py:5113 src/globalPlugins/easyAudioConverter/__init__.py:5104
 msgid "The conversion queue is empty"
 msgstr "A konverziós sor üres"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3118
+#: src/globalPlugins/easyAudioConverter/__init__.py:3163
 msgid "The conversion was canceled."
 msgstr "Az átalakítást törölték."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4796
+#: src/globalPlugins/easyAudioConverter/__init__.py:5069
 msgid "The conversion will stop after the current file"
 msgstr "Az átalakítás leáll az aktuális fájl után"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3042
+#: src/globalPlugins/easyAudioConverter/__init__.py:3087
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr "Az átalakított kimenet megmaradt, de a forrásfájlt nem lehetett eltávolítani."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2286
+#: src/globalPlugins/easyAudioConverter/__init__.py:2331
 msgid "The file does not contain valid conversion profiles."
 msgstr "A fájl nem tartalmaz érvényes konverziós profilokat."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:475
+#: src/globalPlugins/easyAudioConverter/__init__.py:499
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "Az első AAC hangfolyamot újrakódolás nélkül újrakeverik M4A-ba. Azok a források, amelyek első hangfolyama nem AAC, kimarad."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3066
+#: src/globalPlugins/easyAudioConverter/__init__.py:3111
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "Az első hangfolyam nem AAC, így nem lehet újrakeverni M4A-ra"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:469
+#: src/globalPlugins/easyAudioConverter/__init__.py:493
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "Az első hangfolyamot újrakódolás nélkül kinyerjük. A kodek és a minőség változatlan marad, és a kimeneti kiterjesztés automatikusan kiválasztásra kerül."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3052
+#: src/globalPlugins/easyAudioConverter/__init__.py:3097
 msgid "The input does not contain a readable audio stream."
 msgstr "A bemenet nem tartalmaz olvasható hangfolyamot."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3050
+#: src/globalPlugins/easyAudioConverter/__init__.py:3095
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "A bemeneti fájl sérült vagy nem támogatott kódolást használ."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3120
+#: src/globalPlugins/easyAudioConverter/__init__.py:3165
 msgid "The job was stopped after the current file."
 msgstr "A feladat leállt az aktuális fájl után."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2270
+#: src/globalPlugins/easyAudioConverter/__init__.py:2315
 msgid "The profile file is too large."
 msgstr "A profilfájl túl nagy."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2367
+#: src/globalPlugins/easyAudioConverter/__init__.py:2412
 msgid "The profile name cannot be empty."
 msgstr "A profilnév nem lehet üres."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3056
+#: src/globalPlugins/easyAudioConverter/__init__.py:4074
+msgid "The separate conversion could not start:\n{error}"
+msgstr "The separate conversion could not start:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:3101
 msgid "The source file dates could not be preserved."
 msgstr "A forrásfájl dátumait nem lehetett megőrizni."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3771
+#: src/globalPlugins/easyAudioConverter/__init__.py:4005
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "A frissítést nem lehetett letölteni vagy ellenőrizni.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3779
+#: src/globalPlugins/easyAudioConverter/__init__.py:4013
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "A frissítés készen áll. Az NVDA kiegészítő telepítőjének megnyitása."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2305
+#: src/globalPlugins/easyAudioConverter/__init__.py:5072
+msgid "The {count} active conversions will stop after their current files"
+msgstr "The {count} active conversions will stop after their current files"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:2350
 msgid "There are no user profiles to export"
 msgstr "Nincsenek exportálható felhasználói profilok"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3048
+#: src/globalPlugins/easyAudioConverter/__init__.py:3093
 msgid "There is not enough free disk space."
 msgstr "Nincs elég szabad koronchely."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3083
+#: src/globalPlugins/easyAudioConverter/__init__.py:3128
 msgid "Timing:"
 msgstr "Timing:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Title"
 msgstr "Cím"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2494
+#: src/globalPlugins/easyAudioConverter/__init__.py:2539
 msgid "Total audio duration: {duration}"
 msgstr "A hang teljes időtartama: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:565
 msgid "Total discs"
 msgstr "Összes lemez"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:540
+#: src/globalPlugins/easyAudioConverter/__init__.py:564
 msgid "Total tracks"
 msgstr "Összes pálya"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3084
+#: src/globalPlugins/easyAudioConverter/__init__.py:3129
 msgid "Total wall time: {value}"
 msgstr "Total wall time: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:557
 msgid "Track number"
 msgstr "Pálya száma"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3057 src/globalPlugins/easyAudioConverter/__init__.py:3772 src/globalPlugins/easyAudioConverter/__init__.py:4686 src/globalPlugins/easyAudioConverter/__init__.py:3631
+#: src/globalPlugins/easyAudioConverter/__init__.py:3102 src/globalPlugins/easyAudioConverter/__init__.py:4006 src/globalPlugins/easyAudioConverter/__init__.py:4945 src/globalPlugins/easyAudioConverter/__init__.py:3865
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3063
+#: src/globalPlugins/easyAudioConverter/__init__.py:3108
 msgid "Unsupported file type"
 msgstr "Nem támogatott fájltípus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3767
+#: src/globalPlugins/easyAudioConverter/__init__.py:4001
 msgid "Update download canceled"
 msgstr "Frissítés letöltése törölve"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1237 src/globalPlugins/easyAudioConverter/__init__.py:1259 src/globalPlugins/easyAudioConverter/__init__.py:1330
+#: src/globalPlugins/easyAudioConverter/__init__.py:1282 src/globalPlugins/easyAudioConverter/__init__.py:1304 src/globalPlugins/easyAudioConverter/__init__.py:1375
 msgid "Use the quality preset"
 msgstr "Használd a minőségi előbeállítást"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1950
+#: src/globalPlugins/easyAudioConverter/__init__.py:1995
 msgid "Use these settings for future quick conversions"
 msgstr "Használd ezeket a beállításokat a jövőbeli gyors konverziókhoz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3096
+#: src/globalPlugins/easyAudioConverter/__init__.py:3141
 msgid "Verification and finalization: {value}"
 msgstr "Verification and finalization: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2744
+#: src/globalPlugins/easyAudioConverter/__init__.py:2789
 msgid "Verifying the output by decoding it"
 msgstr "A kimenet ellenőrzése dekódolással"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:495
+#: src/globalPlugins/easyAudioConverter/__init__.py:519
 msgid "Very high"
 msgstr "Nagyon magas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1253
+#: src/globalPlugins/easyAudioConverter/__init__.py:1298
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr "Nagyon magas + extra 1, -hhx1 (FFmpeg 4. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1254
+#: src/globalPlugins/easyAudioConverter/__init__.py:1299
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr "Nagyon magas + extra 2, -hhx2 (FFmpeg 5. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1255
+#: src/globalPlugins/easyAudioConverter/__init__.py:1300
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr "Nagyon magas + extra 3, -hhx3 (FFmpeg 6. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1256
+#: src/globalPlugins/easyAudioConverter/__init__.py:1301
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr "Nagyon magas + extra 4, -hhx4 (FFmpeg 7. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1252
+#: src/globalPlugins/easyAudioConverter/__init__.py:1297
 msgid "Very high, -hh (FFmpeg level 3)"
 msgstr "Nagyon magas, -hh (FFmpeg 3. szint)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:445
+#: src/globalPlugins/easyAudioConverter/__init__.py:469
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:451
+#: src/globalPlugins/easyAudioConverter/__init__.py:475
 msgid "WMA"
 msgstr "WMA"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2504
+#: src/globalPlugins/easyAudioConverter/__init__.py:2549
 msgid "Warning: source files will be permanently deleted after successful conversion."
 msgstr "Figyelmeztetés: a forrásfájlok a sikeres átalakítás után véglegesen törlődnek."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2522
+#: src/globalPlugins/easyAudioConverter/__init__.py:2567
 msgid "Warning: the estimated output is larger than the available disk space."
 msgstr "Figyelmeztetés: a becsült kimenet nagyobb, mint a rendelkezésre álló lemezterület."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2511
+#: src/globalPlugins/easyAudioConverter/__init__.py:2556
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "Figyelmeztetés: Az {count} fájlokat a rendszer veszteséges formátumból egy másik veszteséges formátumba konvertálja, ami ronthatja a minőséget."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:456
+#: src/globalPlugins/easyAudioConverter/__init__.py:480
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1433
+#: src/globalPlugins/easyAudioConverter/__init__.py:1478
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr "A WavPack profilok az FFmpeg 0-tól 8-ig terjedő szinteket használják. A 8. szint a -hhx6-nak felel meg, és rendkívül lassú."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1084
+#: src/globalPlugins/easyAudioConverter/__init__.py:1094
+msgid "When another conversion is active:"
+msgstr "When another conversion is active:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:1126
 msgid "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 msgstr "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2474 src/globalPlugins/easyAudioConverter/__init__.py:2476
+#: src/globalPlugins/easyAudioConverter/__init__.py:2519 src/globalPlugins/easyAudioConverter/__init__.py:2521
 msgid "bytes"
 msgstr "bájtok"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4905 src/globalPlugins/easyAudioConverter/__init__.py:2941
+#: src/globalPlugins/easyAudioConverter/__init__.py:3765 src/globalPlugins/easyAudioConverter/__init__.py:2986
 msgid "calculating"
 msgstr "Számítás"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4459
+#: src/globalPlugins/easyAudioConverter/__init__.py:4718
 msgid "excluding subfolders"
 msgstr "almappák nélkül"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4457
+#: src/globalPlugins/easyAudioConverter/__init__.py:4716
 msgid "including subfolders"
 msgstr "beleértve az almappákat is"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2617
+#: src/globalPlugins/easyAudioConverter/__init__.py:2662
 msgid "no"
 msgstr "nem"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2170 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2172
+#: src/globalPlugins/easyAudioConverter/__init__.py:2215 src/globalPlugins/easyAudioConverter/__init__.py:2216 src/globalPlugins/easyAudioConverter/__init__.py:2217
 msgid "off"
 msgstr "kikapcsolva"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2170 src/globalPlugins/easyAudioConverter/__init__.py:2171 src/globalPlugins/easyAudioConverter/__init__.py:2172
+#: src/globalPlugins/easyAudioConverter/__init__.py:2215 src/globalPlugins/easyAudioConverter/__init__.py:2216 src/globalPlugins/easyAudioConverter/__init__.py:2217
 msgid "on"
 msgstr "be"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2487
+#: src/globalPlugins/easyAudioConverter/__init__.py:2532
 msgid "source folders"
 msgstr "forrásmappák"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2472 src/globalPlugins/easyAudioConverter/__init__.py:2498 src/globalPlugins/easyAudioConverter/__init__.py:2595 src/globalPlugins/easyAudioConverter/__init__.py:2596 src/globalPlugins/easyAudioConverter/__init__.py:2598 src/globalPlugins/easyAudioConverter/__init__.py:2604 src/globalPlugins/easyAudioConverter/__init__.py:2607 src/globalPlugins/easyAudioConverter/__init__.py:2612 src/globalPlugins/easyAudioConverter/__init__.py:4704 src/globalPlugins/easyAudioConverter/__init__.py:4708 src/globalPlugins/easyAudioConverter/__init__.py:4713
+#: src/globalPlugins/easyAudioConverter/__init__.py:2517 src/globalPlugins/easyAudioConverter/__init__.py:2543 src/globalPlugins/easyAudioConverter/__init__.py:2640 src/globalPlugins/easyAudioConverter/__init__.py:2641 src/globalPlugins/easyAudioConverter/__init__.py:2643 src/globalPlugins/easyAudioConverter/__init__.py:2649 src/globalPlugins/easyAudioConverter/__init__.py:2652 src/globalPlugins/easyAudioConverter/__init__.py:2657 src/globalPlugins/easyAudioConverter/__init__.py:4963 src/globalPlugins/easyAudioConverter/__init__.py:4967 src/globalPlugins/easyAudioConverter/__init__.py:4972
 msgid "unknown"
 msgstr "ismeretlen"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2617
+#: src/globalPlugins/easyAudioConverter/__init__.py:2662
 msgid "yes"
 msgstr "igen"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4494 src/globalPlugins/easyAudioConverter/__init__.py:4519
+#: src/globalPlugins/easyAudioConverter/__init__.py:4753 src/globalPlugins/easyAudioConverter/__init__.py:4778
 msgid "{count} selected folders"
 msgstr "{count} kiválasztott mappák"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3906
+#: src/globalPlugins/easyAudioConverter/__init__.py:5193
+msgid "{label}: {status}"
+msgstr "{label}: {status}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:4157
 msgid "{message}. Starting with {workers} adaptive conversion workers."
 msgstr "{message}. Kezdve az {workers} adaptív konverziós dolgozókkal."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3910
+#: src/globalPlugins/easyAudioConverter/__init__.py:4161
 msgid "{message}. Using {workers} parallel conversion workers."
 msgstr "{message}. {workers} párhuzamos konverziós dolgozók használata."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:484
+#: src/globalPlugins/easyAudioConverter/__init__.py:508
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (a kiterjesztés a forrás audiokodekből van kiválasztva)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2951
+#: src/globalPlugins/easyAudioConverter/__init__.py:2996
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. {index}/{total} fájl: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4860
-msgid "{stage}. Queued jobs: {count}."
-msgstr "{stage}. Sorban lévő munkák: {count}."
+#: src/globalPlugins/easyAudioConverter/__init__.py:3757
+msgid "{stage}. {status} Estimated time remaining {remaining}."
+msgstr "{stage}. {status} Estimated time remaining {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4908
-msgid "{stage}. {status} Queued jobs: {count}."
-msgstr "{stage}. {status} Sorban lévő feladatok: {count}."
+#: src/globalPlugins/easyAudioConverter/__init__.py:5178
+msgid "{status} Queued jobs: {count}."
+msgstr "{status} Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4900
-msgid "{status} Estimated time remaining {remaining}."
-msgstr "{status} Becsült idő hátralévő {remaining}."
+#: src/globalPlugins/easyAudioConverter/__init__.py:5171
+msgid "{status}. Queued jobs: {count}."
+msgstr "{status}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2610 src/globalPlugins/easyAudioConverter/__init__.py:4711
+#: src/globalPlugins/easyAudioConverter/__init__.py:2655 src/globalPlugins/easyAudioConverter/__init__.py:4970
 msgid "{value} Hz"
 msgstr "{value} Hz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2602
+#: src/globalPlugins/easyAudioConverter/__init__.py:2647
 msgid "{value} kbps"
 msgstr "{value} kbps"

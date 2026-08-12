@@ -14,6 +14,8 @@ comparison, complete profile serialization, skipped-file reasons, remaining
 time, results reports, notification modes, balanced NVDA popup state, download
 cancellation, filename templates, media-information parsing, EBU R128
 arguments, artwork mapping, stop-after-current behavior, queue recovery,
+busy-job policy selection, independent conversion controllers, and cancellation
+or stopping across all active windows,
 stream-copy validation, standalone settings-window lifecycle, checksums,
 manifest validation, ZIP path traversal rejection, and source-replacement
 safety after success, FFmpeg failure, verification failure, and deletion

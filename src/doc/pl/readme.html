@@ -110,10 +110,15 @@
 		a następnie bezpiecznie zakończyć zadanie.
 	</p>
 	<p>
-		Kolejne polecenia konwersji wydane podczas pracy trafiają do kolejki i
-		są wykonywane po kolei. Okno postępu oraz menu pozwalają odczytać liczbę
-		oczekujących zadań i wyczyścić wyłącznie kolejkę, bez przerywania
-		aktywnego pliku.
+		Domyślnie kolejne polecenia konwersji wydane podczas pracy trafiają do
+		kolejki i są wykonywane po kolei. Na zakładce „Przetwarzanie i
+		powiadomienia” opcja „Gdy trwa już inna konwersja” pozwala zamiast tego
+		wybrać „Uruchamiaj nowe zadania w osobnych oknach postępu”. Każde
+		niezależne zadanie otrzymuje własny konwerter, okno postępu, anulowanie i
+		wyniki. Polecenia odczytu postępu i stanu obejmują wszystkie aktywne
+		okna, a sterowanie kolejką dotyczy tylko oczekujących zadań. Osobne okna
+		mogą używać więcej procesora i pamięci, szczególnie gdy każde zadanie ma
+		własne równoległe pracowniki plików.
 	</p>
 	<p>
 		Automatyczne komunikaty mogą występować w kolejnych etapach postępu, przy
@@ -166,8 +171,9 @@
 		struktury katalogów, sposób eksportu metadanych oraz szablon nazwy.
 		Trzecia zakładka zawiera normalizację głośności, kopiowanie okładek i
 		rozdziałów, weryfikację wyniku, plan przed startem, komunikaty postępu,
-		liczbę równoległych zadań, aktualizacje i osobne dźwięki sukcesu, błędu
-		oraz anulowania. Każdy dźwięk można przetestować. GPU nie jest używane,
+		liczbę równoległych zadań, sposób obsługi zajętej konwersji, aktualizacje
+		i osobne dźwięki sukcesu, błędu oraz anulowania. Każdy dźwięk można
+		przetestować. GPU nie jest używane,
 		ponieważ dostępne kodeki dodatku kodują dźwięk na CPU; FFmpeg sam dobiera
 		wątki dla każdego procesu. Tryb automatyczny dynamicznie dostosowuje
 		liczbę nowych plików do obciążenia procesora i pamięci.
@@ -334,7 +340,7 @@
 
 	<h2>Uwagi</h2>
 	<ul>
-		<li>Jednocześnie działa jedno zadanie, a kolejne czekają w kolejce; pliki w aktywnym zadaniu mogą być przetwarzane równolegle.</li>
+		<li>Domyślnie kolejne zadania czekają w kolejce; opcja obsługi zajętej konwersji może uruchamiać je w osobnych oknach, a pliki w każdym zadaniu mogą być przetwarzane równolegle.</li>
 		<li>Konwersja folderu wymaga zatwierdzenia planu lub potwierdzenia.</li>
 		<li>Pliki WAV mogą mieć rozszerzenie .wav albo .wave.</li>
 		<li>Pliki wideo są akceptowane, jeśli zawierają odczytywalną ścieżkę audio.</li>

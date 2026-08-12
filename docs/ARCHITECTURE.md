@@ -39,8 +39,26 @@
 9. The summary retains bounded details for successful, failed, and skipped
    inputs, including source paths required for a safe failed-file retry.
 10. When every planned file succeeds, NVDA applies the configured completion
-   notification mode and can play the bundled sound asynchronously through
-   its configured sound output device.
+    notification mode and can play the bundled sound asynchronously through
+    its configured sound output device.
+
+## Multiple independent jobs
+
+The coordinator keeps one primary job queue and can also retain lightweight
+controllers for independent jobs. The processing setting “When another
+conversion is active” defaults to queueing a new immutable `_ConversionJob`.
+When the separate-window policy is selected, the new job receives its own
+`Converter`, worker thread, progress dialog, cancellation state, and results
+dialog. These controllers do not install another NVDA menu or duplicate the
+global plug-in registration.
+
+The global cancel and stop commands enumerate the primary converter and every
+active independent controller. The progress and status commands expose all
+visible jobs, while the results command opens the summary that finished most
+recently. Completed independent controllers remain retained until NVDA shuts
+down so their progress and results windows can be reopened. Shutdown marks all
+controllers terminated, cancels every FFmpeg process, waits briefly for their
+workers, and destroys their windows before the menu is removed.
 
 ## Performance and hardware use
 

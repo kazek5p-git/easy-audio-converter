@@ -142,6 +142,10 @@ class PluginImportTests(unittest.TestCase):
 			self.module.CONFIG_SPEC["replaceSourceFiles"],
 		)
 		self.assertEqual(
+			"string(default='queue')",
+			self.module.CONFIG_SPEC["busyConversionMode"],
+		)
+		self.assertEqual(
 			"string(default='{}')",
 			self.module.CONFIG_SPEC["metadataOverrides"],
 		)
@@ -892,6 +896,119 @@ class PluginImportTests(unittest.TestCase):
 		self.assertEqual((r"D:\input.wav",), job.paths)
 		self.assertEqual("opus", job.settings.target_format)
 		self.assertIsNot(job.settings.advanced_options, settings.advanced_options)
+
+	def test_busy_conversion_can_be_routed_to_a_separate_controller(self):
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._converter = object()
+		plugin._parallel_plugins = {}
+		plugin._job_queue = deque()
+		launched = []
+		plugin._launch_parallel_conversion_job = launched.append
+		original_mode = self.module._read_busy_conversion_mode
+		self.module._read_busy_conversion_mode = lambda: "parallel"
+		try:
+			plugin._start_conversion(
+				[r"D:\input.wav"],
+				settings=self.module.ConversionSettings(),
+			)
+		finally:
+			self.module._read_busy_conversion_mode = original_mode
+		self.assertEqual(1, len(launched))
+		self.assertEqual(0, len(plugin._job_queue))
+		self.assertEqual((r"D:\input.wav",), launched[0].paths)
+
+	def test_busy_state_includes_active_separate_controllers(self):
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._converter = None
+		plugin._parallel_plugins = {
+			1: types.SimpleNamespace(_converter=object()),
+			2: types.SimpleNamespace(_converter=None),
+		}
+		self.assertTrue(plugin._is_busy())
+		self.assertEqual(1, len(plugin._conversion_controllers()))
+
+	def test_separate_controller_gets_its_own_window_title_and_is_retained(self):
+		class Dialog:
+			def __init__(self):
+				self.title = ""
+
+			def SetTitle(self, title):
+				self.title = title
+
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._parallel_plugins = {}
+		plugin._next_parallel_plugin_id = 1
+		dialog = Dialog()
+		parallel_plugin = types.SimpleNamespace(
+			_parallel_task_id=0,
+			_converter=object(),
+			_worker=object(),
+			_progress_dialog=dialog,
+			_launch_conversion_job=lambda job: None,
+		)
+		plugin._create_parallel_plugin = lambda: parallel_plugin
+		messages = []
+		original_message = self.module.ui.message
+		self.module.ui.message = messages.append
+		try:
+			plugin._launch_parallel_conversion_job(
+				self.module._ConversionJob(("input.wav",), self.module.ConversionSettings())
+			)
+		finally:
+			self.module.ui.message = original_message
+		self.assertIs(parallel_plugin, plugin._parallel_plugins[1])
+		self.assertIn("separate job 1", dialog.title)
+		self.assertEqual(
+			["Started a separate conversion window for the new job."],
+			messages,
+		)
+
+	def test_cancel_and_stop_apply_to_all_active_controllers(self):
+		calls = []
+
+		class ConverterControl:
+			def cancel(self):
+				calls.append("cancel")
+
+			def stop_after_current(self):
+				calls.append("stop")
+
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._converter = ConverterControl()
+		plugin._parallel_plugins = {
+			1: types.SimpleNamespace(_converter=ConverterControl()),
+		}
+		messages = []
+		original_message = self.module.ui.message
+		self.module.ui.message = messages.append
+		try:
+			plugin.script_cancelConversion(None)
+			plugin.script_stopAfterCurrent(None)
+		finally:
+			self.module.ui.message = original_message
+		self.assertEqual(["cancel", "cancel", "stop", "stop"], calls)
+		self.assertIn("Canceling 2 active conversions", messages)
+		self.assertIn(
+			"The 2 active conversions will stop after their current files",
+			messages,
+		)
+
+	def test_last_parallel_completion_releases_the_main_queue(self):
+		parent = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		parent._converter = None
+		parent._job_queue = deque([object()])
+		parent._parallel_plugins = {}
+		parent._last_results_controller = None
+		started = []
+		parent._launch_next_queued_job = lambda: started.append(True)
+		child = types.SimpleNamespace(
+			_parallel_parent=parent,
+			_last_summary=self.module.ConversionSummary(total=1, succeeded=1),
+			_converter=None,
+		)
+		parent._parallel_job_finished(child)
+		self.assertIs(child, parent._last_results_controller)
+		self.assertEqual([True], started)
 
 	def test_source_replacement_warning_defaults_to_no_and_blocks_the_job(self):
 		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
