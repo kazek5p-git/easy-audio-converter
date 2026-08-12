@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.8.0 - 2026-08-12
 
 - Added a configurable busy-job policy: new conversion requests are queued by
   default or can run in independent progress windows.

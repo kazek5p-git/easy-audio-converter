@@ -92,7 +92,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.7.0"
+ADDON_VERSION = "1.8.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
