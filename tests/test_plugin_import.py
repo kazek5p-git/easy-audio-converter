@@ -124,7 +124,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.8.0", self.module.ADDON_VERSION)
+		self.assertEqual("1.8.1", self.module.ADDON_VERSION)
 		self.assertIn("Do not close or restart NVDA", self.module.CONVERSION_LIFECYCLE_WARNING)
 		self.assertIn("Cancel button", self.module.CONVERSION_LIFECYCLE_WARNING)
 		dialog = self.module.EasyAudioConverterSettingsDialog

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.8.1 - 2026-08-12
+
+- Marked the stable release as tested with stable NVDA 2026.1.1 so it can be
+  submitted to the NVDA Add-on Store.
+
 ## 1.8.0 - 2026-08-12
 
 - Added a configurable busy-job policy: new conversion requests are queued by
