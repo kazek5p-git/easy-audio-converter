@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.8.2 - 2026-08-12
+
+- Added explicit GPL copyright and SPDX headers identifying Kazimierz Parzych
+  in the add-on's Python source files.
+- Split the NVDA integration, settings dialogs, and conversion dialogs into
+  focused modules while preserving the public scripts and compatibility
+  exports.
+- Documented the naming conventions and module responsibilities in
+  `docs/STANDARDY_KODU.md` and updated the architecture guide.
+
 ## 1.8.1 - 2026-08-12
 
 - Marked the stable release as tested with stable NVDA 2026.1.1 so it can be

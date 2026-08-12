@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Kazimierz Parzych
+# SPDX-License-Identifier: GPL-3.0-or-later
 """FFmpeg-backed conversion engine with no dependency on NVDA."""
 
 from __future__ import annotations

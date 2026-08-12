@@ -90,7 +90,14 @@ The add-on is authored by Kazimierz Parzych.
 
 - `src` contains the installable add-on tree.
 - `tests` contains unit tests for the conversion core.
-- `profiles.py` validates and serializes complete named conversion profiles.
+- `src/globalPlugins/easyAudioConverter/plugin.py` contains NVDA scripts,
+  lifecycle management, and job coordination.
+- `src/globalPlugins/easyAudioConverter/settings_dialogs.py` contains settings
+  pages and profile/options dialogs.
+- `src/globalPlugins/easyAudioConverter/conversion_dialogs.py` contains plan,
+  progress, results, and audio-information dialogs.
+- `src/globalPlugins/easyAudioConverter/profiles.py` validates and serializes
+  complete named conversion profiles.
 - `tools/build_addon.py` creates the `.nvda-addon` package.
 - `tools/poedit_catalog.py` creates the POT template, merges PO files,
   validates placeholders, and compiles MO catalogs.

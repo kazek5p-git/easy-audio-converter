@@ -2,8 +2,14 @@
 
 ## Runtime components
 
-- `globalPlugins/easyAudioConverter/__init__.py` integrates with NVDA,
-  Windows Explorer, settings, scripts, menus, progress UI, and update prompts.
+- `globalPlugins/easyAudioConverter/__init__.py` provides shared configuration,
+  constants, Explorer helpers, and the compatibility exports used by NVDA.
+- `globalPlugins/easyAudioConverter/plugin.py` integrates with NVDA, Windows
+  Explorer, scripts, the job queue, and the add-on lifecycle.
+- `globalPlugins/easyAudioConverter/settings_dialogs.py` contains the settings
+  pages, profiles, and conversion-options dialogs.
+- `globalPlugins/easyAudioConverter/conversion_dialogs.py` contains the plan,
+  progress, results, and technical-information dialogs.
 - `converter.py` is independent of NVDA. It collects files, builds validated
   FFmpeg commands, parses duration/progress/metadata, handles output naming,
   and owns cancellation and partial-file cleanup.

@@ -1,1840 +1,1840 @@
 # Easy Audio Converter translation.
 # Edit and save this file with Poedit; then run the compile command.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.8.1\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-12 03:38+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: is\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.8.2\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-12 11:37+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: is\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2575
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:92
 msgid "...and {count} more files"
 msgstr "...og {count} fleiri skrár"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3190
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:713
 msgid "...and {count} more skipped files"
 msgstr "... og {count} fleiri sleppt skrám"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1375
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
 msgid "16 bit"
 msgstr "16 bita"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:372
+#: src/globalPlugins/easyAudioConverter/__init__.py:362
 msgid "16 files at a time"
 msgstr "16 skrár í einu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:369
+#: src/globalPlugins/easyAudioConverter/__init__.py:359
 msgid "2 files at a time"
 msgstr "2 skrár í einu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1375
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
 msgid "24 bit"
 msgstr "24 bita"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1375
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
 msgid "32 bit"
 msgstr "32 bita"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:373
+#: src/globalPlugins/easyAudioConverter/__init__.py:363
 msgid "32 files at a time"
 msgstr "32 skrár í einu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:370
+#: src/globalPlugins/easyAudioConverter/__init__.py:360
 msgid "4 files at a time"
 msgstr "4 skrár í einu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:371
+#: src/globalPlugins/easyAudioConverter/__init__.py:361
 msgid "8 files at a time"
 msgstr "8 skrár í einu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2420
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1764
 msgid "A built-in profile already uses this name."
 msgstr "Innbyggður prófíll notar þegar þetta nafn."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:474
+#: src/globalPlugins/easyAudioConverter/__init__.py:464
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:478
+#: src/globalPlugins/easyAudioConverter/__init__.py:468
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:477
+#: src/globalPlugins/easyAudioConverter/__init__.py:467
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:476
+#: src/globalPlugins/easyAudioConverter/__init__.py:466
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple taplaust)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:482
+#: src/globalPlugins/easyAudioConverter/__init__.py:472
 msgid "AMR narrowband"
 msgstr "AMR mjóband"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:483
+#: src/globalPlugins/easyAudioConverter/__init__.py:473
 msgid "AMR wideband"
 msgstr "AMR breiðband"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3091
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:613
 msgid "Access to the source or destination was denied."
 msgstr "Aðgangur að uppruna eða áfangastað var neitað."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5096
+#: src/globalPlugins/easyAudioConverter/plugin.py:1825
 msgid "Active conversions: {active}. Queued jobs: {count}."
 msgstr "Active conversions: {active}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5184
+#: src/globalPlugins/easyAudioConverter/plugin.py:1914
 msgid "Active conversions: {count}."
 msgstr "Active conversions: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3016
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:538
 msgid "Adaptive workers: {active} active, target {target}"
 msgstr "Aðlögunarstarfsmenn: {active} virkir, miða á {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:360
+#: src/globalPlugins/easyAudioConverter/__init__.py:350
 msgid "Add new jobs to the queue"
 msgstr "Add new jobs to the queue"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3281
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:805
 msgid "Additional skipped files: {count}"
 msgstr "Aukaskrár sem voru slepptar: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2167
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1509
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "Ítarlegri merkjahnekkingar eru ekki notuð fyrir straumafritun"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2172
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1514
 msgid "Advanced codec overrides: disabled"
 msgstr "Háþróaðar kóðar-yfirskriftir: óvirkar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2170
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1512
 msgid "Advanced codec overrides: enabled"
 msgstr "Háþróaðar kóðar-yfirskriftir: virkjaðar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3565
+#: src/globalPlugins/easyAudioConverter/plugin.py:273
 msgid "Advanced codec settings..."
 msgstr "Háþróaðar kóðastillingar..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1313
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:646
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:552
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "Album"
 msgstr "Plata"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:553
+#: src/globalPlugins/easyAudioConverter/__init__.py:543
 msgid "Album artist"
 msgstr "Plötulistamaður"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1472
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:807
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr "Öll FLAC-stig eru taplaus. Stig 0 er hraðast; Stig 12 gefur sterkustu þjöppunina en er mjög hægt."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3107
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:629
 msgid "Already uses the target format"
 msgstr "Notar nú þegar markmiðssniðið"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3832
+#: src/globalPlugins/easyAudioConverter/plugin.py:549
 msgid "An update check is already in progress"
 msgstr "Uppfærslupróf er þegar í gangi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3924
+#: src/globalPlugins/easyAudioConverter/plugin.py:642
 msgid "An update download is already in progress"
 msgstr "Niðurhal á uppfærslu er þegar í gangi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2787
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:306
 msgid "Analyzing loudness, first pass"
 msgstr "Greining á hávaða, fyrstu umferð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:443
+#: src/globalPlugins/easyAudioConverter/__init__.py:433
 msgid "Archive FLAC"
 msgstr "Skjalasafn FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:551
+#: src/globalPlugins/easyAudioConverter/__init__.py:541
 msgid "Artist"
 msgstr "Listamaður"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:353
+#: src/globalPlugins/easyAudioConverter/__init__.py:343
 msgid "At every file"
 msgstr "Á hverju skjali"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:352
+#: src/globalPlugins/easyAudioConverter/__init__.py:342
 msgid "At progress milestones"
 msgstr "Við framvinduáfanga"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2641
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:159
 msgid "Audio codec: {value}"
 msgstr "Hljóðmerkjamál: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2638 src/globalPlugins/easyAudioConverter/__init__.py:2680
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:156 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:198
 msgid "Audio file information"
 msgstr "Upplýsingar um hljóðskrár"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2717
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:236
 msgid "Audio information copied"
 msgstr "Hljóðupplýsingar afritaðar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4914
+#: src/globalPlugins/easyAudioConverter/plugin.py:1642
 msgid "Audio information is already being read"
 msgstr "Nú þegar er verið að lesa hljóðupplýsingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4959
+#: src/globalPlugins/easyAudioConverter/plugin.py:1687
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "Hljóðupplýsingar tilbúnar. Merkjamál {codec}, lengd {duration}, sýnishraðni {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:400
+#: src/globalPlugins/easyAudioConverter/__init__.py:390
 msgid "Audiobook MP3"
 msgstr "Hljóðbók MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:367
+#: src/globalPlugins/easyAudioConverter/__init__.py:357
 msgid "Automatic (dynamic load balancing)"
 msgstr "Sjálfvirk (kvik álagsjöfnun)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1799
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1137
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
 msgstr "Sjálfvirk stilling stillir óháðar skrár á virkan hátt með því að nota CPU og minnisálag."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1113
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:444
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
 msgstr "Sjálfvirk stilling stillir óháðar skrár á virkan hátt með því að nota CPU og minnisálag. GPU hröðun er ekki notuð fyrir hljóðkóðun."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1164
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:496
 msgid "Automatic progress announcements:"
 msgstr "Sjálfvirkar framvindutilkynningar:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1172
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:504
 msgid "Automatically check for add-on updates"
 msgstr "Athugaðu sjálfkrafa fyrir viðbótaruppfærslum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:817
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:145
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:567
+#: src/globalPlugins/easyAudioConverter/__init__.py:557
 msgid "BPM"
 msgstr "BPM"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1341
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:674
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Bitahraði í kbps (0 notar gæðaforstillinguna):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2645
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:163
 msgid "Bitrate: {value}"
 msgstr "Bitahraði: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "Útsending: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:807 src/globalPlugins/easyAudioConverter/__init__.py:1942
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:135 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1281
 msgid "Browse..."
 msgstr "Skoða..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2785
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:304
 msgid "Building the conversion plan"
 msgstr "Að byggja upp breytingaáætlunina"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3042 src/globalPlugins/easyAudioConverter/__init__.py:2897 src/globalPlugins/easyAudioConverter/__init__.py:3560
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:564 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:417 src/globalPlugins/easyAudioConverter/plugin.py:268
 msgid "Cancel conversion"
 msgstr "Hætta við umbreytingu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5036
+#: src/globalPlugins/easyAudioConverter/plugin.py:1765
 msgid "Cancel the current audio conversion"
 msgstr "Hætta við núverandi hljóðbreytingu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5049
+#: src/globalPlugins/easyAudioConverter/plugin.py:1778
 msgid "Canceling the conversion"
 msgstr "Hætt við viðskiptin"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5052
+#: src/globalPlugins/easyAudioConverter/plugin.py:1781
 msgid "Canceling {count} active conversions"
 msgstr "Canceling {count} active conversions"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3052
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:574
 msgid "Canceling..."
 msgstr "Hætti við..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:615 src/installTasks.py:57
+#: src/globalPlugins/easyAudioConverter/__init__.py:605 src/installTasks.py:59
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Get ekki opnað stuðningssíðuna. Opnaðu þetta heimilisfang handvirkt: {url}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4993
+#: src/globalPlugins/easyAudioConverter/plugin.py:1721
 msgid "Change the conversion quality"
 msgstr "Breyttu viðskiptagæðum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4979
+#: src/globalPlugins/easyAudioConverter/plugin.py:1707
 msgid "Change the target audio format"
 msgstr "Breyttu markhljóðsniðinu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1354
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:687
 msgid "Channels:"
 msgstr "Rásir:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2652
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:170
 msgid "Channels: {value}"
 msgstr "Rásir: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2664
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:182
 msgid "Chapters: {value}"
 msgstr "Kaflar: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5207
+#: src/globalPlugins/easyAudioConverter/plugin.py:1937
 msgid "Check for Easy Audio Converter updates"
 msgstr "Athugaðu fyrir uppfærslum á Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3566
+#: src/globalPlugins/easyAudioConverter/plugin.py:274
 msgid "Check for updates..."
 msgstr "Athugaðu hvort uppfærslur séu komnar..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3835
+#: src/globalPlugins/easyAudioConverter/plugin.py:552
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Athugun á Easy Audio Converter uppfærslum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4695 src/globalPlugins/easyAudioConverter/__init__.py:4869 src/globalPlugins/easyAudioConverter/__init__.py:3553
+#: src/globalPlugins/easyAudioConverter/plugin.py:1420 src/globalPlugins/easyAudioConverter/plugin.py:1596 src/globalPlugins/easyAudioConverter/plugin.py:261
 msgid "Choose a folder to convert"
 msgstr "Veldu möppu til að umbreyta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4629 src/globalPlugins/easyAudioConverter/__init__.py:4858 src/globalPlugins/easyAudioConverter/__init__.py:3552
+#: src/globalPlugins/easyAudioConverter/plugin.py:1354 src/globalPlugins/easyAudioConverter/plugin.py:1585 src/globalPlugins/easyAudioConverter/plugin.py:260
 msgid "Choose files to convert"
 msgstr "Choose files to convert"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1608
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:944
 msgid "Choose metadata fields"
 msgstr "Veldu lýsigagnareiti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1981
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1321
 msgid "Choose metadata fields..."
 msgstr "Veldu lýsigagnareiti..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:970 src/globalPlugins/easyAudioConverter/__init__.py:2250 src/globalPlugins/easyAudioConverter/__init__.py:5029
+#: src/globalPlugins/easyAudioConverter/plugin.py:1758 src/globalPlugins/easyAudioConverter/settings_dialogs.py:300 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1592
 msgid "Choose the destination folder"
 msgstr "Veldu áfangamöppuna"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5107 src/globalPlugins/easyAudioConverter/__init__.py:3562
+#: src/globalPlugins/easyAudioConverter/plugin.py:1836 src/globalPlugins/easyAudioConverter/plugin.py:270
 msgid "Clear queued conversion jobs"
 msgstr "Hreinsaðu umbreytingarstörf í biðröð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2899
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:419
 msgid "Clear queued jobs"
 msgstr "Hreinsaðu störf í biðröð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5120 src/globalPlugins/easyAudioConverter/__init__.py:4114
+#: src/globalPlugins/easyAudioConverter/plugin.py:1850 src/globalPlugins/easyAudioConverter/plugin.py:834
 msgid "Cleared {count} queued conversion jobs"
 msgstr "Hreinsaði {count} umbreytingarverk í biðröð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2694 src/globalPlugins/easyAudioConverter/__init__.py:3039 src/globalPlugins/easyAudioConverter/__init__.py:3310
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:212 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:561 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:834
 msgid "Close"
 msgstr "Loka"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1329
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:662
 msgid "Codec profile to edit:"
 msgstr "Codec prófíll til að breyta:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1360
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:694
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Codec-sértækt stig (-1 notar forstillinguna):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:559
+#: src/globalPlugins/easyAudioConverter/__init__.py:549
 msgid "Comment"
 msgstr "Athugasemd"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:566
+#: src/globalPlugins/easyAudioConverter/__init__.py:556
 msgid "Compilation"
 msgstr "Samantekt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:554
+#: src/globalPlugins/easyAudioConverter/__init__.py:544
 msgid "Composer"
 msgstr "Tónskáld"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4724
+#: src/globalPlugins/easyAudioConverter/plugin.py:1450
 msgid "Confirm folder conversion"
 msgstr "Staðfestu möppubreytingu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2640
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:158
 msgid "Container: {value}"
 msgstr "Gámur: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4421
+#: src/globalPlugins/easyAudioConverter/plugin.py:1144
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Hætt við umbreytingu. Lokið {done} af {total} skrám."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4439
+#: src/globalPlugins/easyAudioConverter/plugin.py:1162
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Umbreyting lokið. Tókst: {done}. Mistókst: {failed}. Sleppt: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4448
+#: src/globalPlugins/easyAudioConverter/plugin.py:1171
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Umbreytingu lokið: {done} tókst, {failed} mistókst."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4087
+#: src/globalPlugins/easyAudioConverter/plugin.py:806
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "Umbreytingarverki bætt við biðröðina. Biðröð staðsetning: {position}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2528
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:45
 msgid "Conversion plan"
 msgstr "Breytingaráætlun"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1900
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1239
 msgid "Conversion profile:"
 msgstr "Umbreytingarprófíl:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2379
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1723
 msgid "Conversion profiles exported"
 msgstr "Viðskiptaprófílar fluttir út"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3401
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:926
 msgid "Conversion report copied"
 msgstr "Umbreytingarskýrsla afrituð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3154
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:677
 msgid "Conversion results"
 msgstr "Umbreytingarniðurstöður"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2012
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1352
 msgid "Convert"
 msgstr "Umbreyttu þér"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4721
+#: src/globalPlugins/easyAudioConverter/plugin.py:1447
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Umbreyta öllum studdum hljóðskrám í {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4881
+#: src/globalPlugins/easyAudioConverter/plugin.py:1608
 msgid "Convert every supported audio file in the current folder"
 msgstr "Umbreyttu öllum studdum hljóðskrám í núverandi möppu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3551
+#: src/globalPlugins/easyAudioConverter/plugin.py:259
 msgid "Convert selected files or folders"
 msgstr "Umbreyttu völdum skrám eða möppum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4817
+#: src/globalPlugins/easyAudioConverter/plugin.py:1544
 msgid "Convert selected files or folders with one-time options"
 msgstr "Umbreyttu völdum skrám eða möppum með einu sinni valkostum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3550
+#: src/globalPlugins/easyAudioConverter/plugin.py:258
 msgid "Convert selected files or folders with options..."
 msgstr "Umbreyttu völdum skrám eða möppum með valkostum..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3554
+#: src/globalPlugins/easyAudioConverter/plugin.py:262
 msgid "Convert the current folder"
 msgstr "Umbreyttu núverandi möppu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1875
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1214
 msgid "Convert with options"
 msgstr "Umbreyttu með valkostum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3256
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:780
 msgid "Converted output kept at:\n{output}"
 msgstr "Umbreytt framleiðsla haldið á:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3179
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:702
 msgid "Converted output kept at: {output}"
 msgstr "Umbreytt úttak haldið á: {output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2788
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:307
 msgid "Converting audio, second pass"
 msgstr "Umbreytir hljóð, önnur umferð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4182
+#: src/globalPlugins/easyAudioConverter/plugin.py:902
 msgid "Converting {index} of {total}: {name}"
 msgstr "Umbreytir {index} af {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3734
+#: src/globalPlugins/easyAudioConverter/plugin.py:444
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "Umbreyting {index} af {total}: {name}. Núverandi skráartími {processed}; liðinn {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3745
+#: src/globalPlugins/easyAudioConverter/plugin.py:455
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Umbreyting {index} af {total}: {name}. Núverandi skrá {filePercent}%, heildar {overallPercent}%, liðin {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:523
 msgid "Copy all text metadata"
 msgstr "Afritaðu öll textagögn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1071 src/globalPlugins/easyAudioConverter/__init__.py:1778
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:402 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1116
 msgid "Copy chapter markers"
 msgstr "Afritaðu kaflamerki"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1774
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1112
 msgid "Copy embedded cover artwork when supported"
 msgstr "Afritaðu innfellt forsíðumyndverk þegar það er stutt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1067
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:398
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "Afritaðu innfellt forsíðumyndverk þegar markið styður það"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2693
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:211
 msgid "Copy information"
 msgstr "Afritaðu upplýsingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3309
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:833
 msgid "Copy report"
 msgstr "Afrita skýrslu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:524
 msgid "Copy selected metadata fields"
 msgstr "Afritaðu valda lýsigagnareiti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:560
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Copyright"
 msgstr "Höfundarréttur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3864
+#: src/globalPlugins/easyAudioConverter/plugin.py:581
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Gat ekki athugað hvort það væri uppfært.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2715
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:234
 msgid "Could not copy the audio information"
 msgstr "Ekki tókst að afrita hljóðupplýsingarnar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3395
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:920
 msgid "Could not copy the conversion report."
 msgstr "Gat ekki afritað umbreytingarskýrsluna."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2373
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1717
 msgid "Could not export profiles:\n{error}"
 msgstr "Gat ekki flutt út prófíla:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2335
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1678
 msgid "Could not import profiles:\n{error}"
 msgstr "Gat ekki flutt inn prófíla:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3801
+#: src/globalPlugins/easyAudioConverter/plugin.py:517
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Gat ekki opnað stillingar Easy Audio Converter. Sjá nánari upplýsingar í NVDA-skránni."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4018
+#: src/globalPlugins/easyAudioConverter/plugin.py:737
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Gat ekki opnað NVDA viðbótina. Uppfærslan var vistað á:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3382
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:907
 msgid "Could not open the output folder."
 msgstr "Gat ekki opnað úttaksmöppuna."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4944
+#: src/globalPlugins/easyAudioConverter/plugin.py:1672
 msgid "Could not read audio information:\n{error}"
 msgstr "Gat ekki lesið hljóðupplýsingar:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1593
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:929
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Gat ekki vistað stillingar Easy Audio Converter. Sjá nánari upplýsingar í NVDA-skránni."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3037
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:559
 msgid "Current file progress: 100%"
 msgstr "Núverandi framvinda í skrá: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2873
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:393
 msgid "Current file progress: waiting"
 msgstr "Núverandi framvinda í skrá: bíð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2966
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:487
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Núverandi skrá framvinda: {percent}% ({processed} of {duration})"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2958
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:479
 msgid "Current file time: {processed}"
 msgstr "Núverandi skráartími: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:544
+#: src/globalPlugins/easyAudioConverter/__init__.py:534
 msgid "Custom EBU R128 target"
 msgstr "Sérsniðið EBU R128 skotmark"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1041 src/globalPlugins/easyAudioConverter/__init__.py:1749
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:371 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1086
 msgid "Custom integrated loudness in LUFS:"
 msgstr "Sérsniðin samþætt hávaði í LUFS:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1059 src/globalPlugins/easyAudioConverter/__init__.py:1767
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:390 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1105
 msgid "Custom loudness range in LU:"
 msgstr "Sérsniðið hljóðstyrkssvið í LU:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1050 src/globalPlugins/easyAudioConverter/__init__.py:1758
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:380 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1096
 msgid "Custom true peak in dBTP:"
 msgstr "Sérsniðinn sannur toppur í dBTP:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:556
+#: src/globalPlugins/easyAudioConverter/__init__.py:546
 msgid "Date or year"
 msgstr "Dagsetning eða ár"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1782
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1120
 msgid "Deeply verify every output file"
 msgstr "Staðfestu djúpt hverja framleiðsluskrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1077
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:408
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "Staðfestu djúpt úttak með því að afkóða það og bera saman tímalengd"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2469
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1814
 msgid "Delete conversion profile"
 msgstr "Eyða umbreytingarprófíl"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1906
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1245
 msgid "Delete profile"
 msgstr "Eyða prófílnum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2468
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1813
 msgid "Delete the profile “{name}”?"
 msgstr "Eyða prófílnum \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:568
+#: src/globalPlugins/easyAudioConverter/__init__.py:558
 msgid "Description"
 msgstr "Lýsing"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:801 src/globalPlugins/easyAudioConverter/__init__.py:1938
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:129 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1277
 msgid "Destination folder:"
 msgstr "Áfangamappa:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5026
+#: src/globalPlugins/easyAudioConverter/plugin.py:1755
 msgid "Destination folder: {folder}"
 msgstr "Áfangamappa: {folder}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2531
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:48
 msgid "Destination: {destination}"
 msgstr "Áfangastaður: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3282
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:806
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "Upplýsingar eru takmarkaðar við fyrstu {limit} skrárnar sem voru slepptar."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3295
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:819
 msgid "Details:"
 msgstr "Nánari upplýsingar:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:540
+#: src/globalPlugins/easyAudioConverter/__init__.py:530
 msgid "Disabled"
 msgstr "Öryrkjar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:558
+#: src/globalPlugins/easyAudioConverter/__init__.py:548
 msgid "Disc number"
 msgstr "Diskanúmer"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:101
+#: src/globalPlugins/easyAudioConverter/__init__.py:91
 msgid "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 msgstr "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532
+#: src/globalPlugins/easyAudioConverter/__init__.py:522
 msgid "Do not copy metadata"
 msgstr "Ekki afrita lýsigögn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3904
+#: src/globalPlugins/easyAudioConverter/plugin.py:621
 msgid "Download and install"
 msgstr "Sæktu og settu upp"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3982
+#: src/globalPlugins/easyAudioConverter/plugin.py:700
 msgid "Downloaded {done:.1f} MB"
 msgstr "Hlaðið niður {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3975
+#: src/globalPlugins/easyAudioConverter/plugin.py:693
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Sótt {done:.1f} af {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3934
+#: src/globalPlugins/easyAudioConverter/plugin.py:652
 msgid "Downloading Easy Audio Converter update"
 msgstr "Niðurhal Easy Audio Converter uppfærslu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2642
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:160
 msgid "Duration: {value}"
 msgstr "Lengd: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:479
+#: src/globalPlugins/easyAudioConverter/__init__.py:469
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3419 src/globalPlugins/easyAudioConverter/__init__.py:4403 src/globalPlugins/easyAudioConverter/__init__.py:2413 src/globalPlugins/easyAudioConverter/__init__.py:2421 src/globalPlugins/easyAudioConverter/__init__.py:3583 src/globalPlugins/easyAudioConverter/__init__.py:4102 src/globalPlugins/easyAudioConverter/__init__.py:4947 src/globalPlugins/easyAudioConverter/__init__.py:986 src/globalPlugins/easyAudioConverter/__init__.py:1594 src/globalPlugins/easyAudioConverter/__init__.py:2285 src/globalPlugins/easyAudioConverter/__init__.py:2336 src/globalPlugins/easyAudioConverter/__init__.py:2374 src/globalPlugins/easyAudioConverter/__init__.py:2387 src/globalPlugins/easyAudioConverter/__init__.py:2451 src/globalPlugins/easyAudioConverter/__init__.py:2487 src/globalPlugins/easyAudioConverter/__init__.py:3383 src/globalPlugins/easyAudioConverter/__init__.py:3396 src/globalPlugins/easyAudioConverter/__init__.py:3802 src/globalPlugins/easyAudioConverter/__init__.py:4039 src/globalPlugins/easyAudioConverter/__init__.py:4077
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:908 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:921 src/globalPlugins/easyAudioConverter/plugin.py:126 src/globalPlugins/easyAudioConverter/plugin.py:1125 src/globalPlugins/easyAudioConverter/plugin.py:291 src/globalPlugins/easyAudioConverter/plugin.py:821 src/globalPlugins/easyAudioConverter/plugin.py:1675 src/globalPlugins/easyAudioConverter/plugin.py:518 src/globalPlugins/easyAudioConverter/plugin.py:758 src/globalPlugins/easyAudioConverter/plugin.py:796 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1757 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1765 src/globalPlugins/easyAudioConverter/settings_dialogs.py:316 src/globalPlugins/easyAudioConverter/settings_dialogs.py:930 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1628 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1679 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1718 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1731 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1795 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1832
 msgid "Easy Audio Converter"
 msgstr "Auðvelt hljóðbreytir"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3875
+#: src/globalPlugins/easyAudioConverter/plugin.py:592
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Easy Audio Converter er uppfærður. Uppsett útgáfa: {version}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2856
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:376
 msgid "Easy Audio Converter progress"
 msgstr "Framvinda Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3686
+#: src/globalPlugins/easyAudioConverter/plugin.py:395
 msgid "Easy Audio Converter progress — separate job {id}"
 msgstr "Easy Audio Converter progress — separate job {id}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3206
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:729
 msgid "Easy Audio Converter results"
 msgstr "Niðurstöður Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1517
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:852
 msgid "Easy Audio Converter settings"
 msgstr "Auðveldar stillingar fyrir hljóðbreytir"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4008 src/globalPlugins/easyAudioConverter/__init__.py:3867 src/globalPlugins/easyAudioConverter/__init__.py:3878 src/globalPlugins/easyAudioConverter/__init__.py:4021
+#: src/globalPlugins/easyAudioConverter/plugin.py:726 src/globalPlugins/easyAudioConverter/plugin.py:584 src/globalPlugins/easyAudioConverter/plugin.py:595 src/globalPlugins/easyAudioConverter/plugin.py:740
 msgid "Easy Audio Converter update"
 msgstr "Easy Audio Converter uppfærsla"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3915 src/globalPlugins/easyAudioConverter/__init__.py:3900
+#: src/globalPlugins/easyAudioConverter/plugin.py:633 src/globalPlugins/easyAudioConverter/plugin.py:617
 msgid "Easy Audio Converter update available"
 msgstr "Easy Audio Converter uppfærsla í boði"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3887
+#: src/globalPlugins/easyAudioConverter/plugin.py:604
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Easy Audio Converter {newVersion} er fáanlegur. Þú hefur útgáfu {currentVersion}.\n\nViltu hlaða niður og setja uppfærsluna upp núna?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3911
+#: src/globalPlugins/easyAudioConverter/plugin.py:628
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Easy Audio Converter {version} er fáanlegur, en útgáfan inniheldur ekki beinn viðbótarpakka. Opna útgáfusíðuna?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:506
 msgid "Economical"
 msgstr "Hagkvæmt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1655
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:991
 msgid "Edit metadata overrides"
 msgstr "Breyta hnekkingum lýsigagna"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:881 src/globalPlugins/easyAudioConverter/__init__.py:1984
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:210 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1324
 msgid "Edit metadata overrides..."
 msgstr "Breyta hnekkingum lýsigagna..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2881
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:401
 msgid "Elapsed time: 0:00"
 msgstr "Liðinn tími: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2978
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:499
 msgid "Elapsed time: {elapsed}"
 msgstr "Liðinn tími: {elapsed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2661
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:179
 msgid "Embedded artwork: {value}"
 msgstr "Innfellt listaverk: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1337
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:670
 msgid "Enable advanced overrides for this codec"
 msgstr "Virkjaðu háþróaðar yfirskriftir fyrir þennan kóða"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:570
+#: src/globalPlugins/easyAudioConverter/__init__.py:560
 msgid "Encoder"
 msgstr "Kóðari"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3138
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:661
 msgid "Encoding and output writing: {value}"
 msgstr "Encoding and output writing: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2400
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1744
 msgid "Enter a name for this conversion profile:"
 msgstr "Sláðu inn nafn fyrir þennan umbreytingarprófíl:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1664
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1001
 msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
 msgstr "Sláðu inn gildi til að skipta um upprunamerki fyrir hverja breytta skrá. Skildu eftir reit autt til að halda upprunagildi hans."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2535
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:52
 msgid "Estimated output size: {size}"
 msgstr "Áætluð úttaksstærð: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3032
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:554
 msgid "Estimated time remaining: 0:00"
 msgstr "Áætlaður tími eftir: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2885
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:405
 msgid "Estimated time remaining: calculating"
 msgstr "Áætlaður tími eftir: útreikningur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2982
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:503
 msgid "Estimated time remaining: {remaining}"
 msgstr "Áætlaður tími eftir: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:938
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:267
 msgid "Example album"
 msgstr "Dæmi um albúm"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:937
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:266
 msgid "Example artist"
 msgstr "Dæmi listamaður"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:945
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:274
 msgid "Example filename: {name}"
 msgstr "Dæmi um skráarnafn: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:936
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:265
 msgid "Example title"
 msgstr "Dæmi um titil"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2354
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1697
 msgid "Export conversion profiles"
 msgstr "Flytja út viðskiptasnið"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1908
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1247
 msgid "Export profiles..."
 msgstr "Flytja út prófíla..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:484
+#: src/globalPlugins/easyAudioConverter/__init__.py:474
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "Dragðu út upprunalega hljóðstrauminn (engin endurkóðun)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:470
+#: src/globalPlugins/easyAudioConverter/__init__.py:460
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1285
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:618
 msgid "FLAC 0 — fastest encoding"
 msgstr "FLAC 0 — hraðasta kóðun"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1287
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:620
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr "FLAC 12 — hámarks þjöppun, mjög hæg"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1289
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:622
 msgid "FLAC {level}"
 msgstr "FLAC {level}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3173
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:696
 msgid "Failed files:"
 msgstr "Misheppnaðar skrár:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3261
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:785
 msgid "Failed: {name}"
 msgstr "Mistókst: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1294
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:627
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr "Hratt, -f (FFmpeg stig 0)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3109
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:631
 msgid "File or folder is unavailable"
 msgstr "Skrá eða möppa er ekki tiltæk"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2660
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:178
 msgid "File size: {value}"
 msgstr "Skráarstærð: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2949
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:470
 msgid "File {index} of {total}: {name}"
 msgstr "Skrá {index} af {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2184
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1526
 msgid "Filename preview: {name}"
 msgstr "Forskoðun skráarnafns: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2529
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:46
 msgid "Files to convert: {count}"
 msgstr "Skrár til að umbreyta: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4148
+#: src/globalPlugins/easyAudioConverter/plugin.py:868
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Skrár til að umbreyta: {count}. Sleppt: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1471
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:806
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "Fyrir LAME MP3 er stig 0 hægasta og hæsta gæði reikniritsins; 9 er hraðast."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1476
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:811
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Fyrir Ogg Vorbis velja stig 0 til 10 sem auka gæði breytilegs bitahraða."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1477
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:812
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Fyrir Opus velja stig 0 til 10 sem eykur flækjustig kóðara."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4153
+#: src/globalPlugins/easyAudioConverter/plugin.py:873
 msgid "Found {count} files to convert"
 msgstr "Fann {count} skrár til að umbreyta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:526
+#: src/globalPlugins/easyAudioConverter/__init__.py:516
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2538
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:55
 msgid "Free disk space: {size}"
 msgstr "Laust diskpláss: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:36
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:555
+#: src/globalPlugins/easyAudioConverter/__init__.py:545
 msgid "Genre"
 msgstr "Tegund"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:569
+#: src/globalPlugins/easyAudioConverter/__init__.py:559
 msgid "Grouping"
 msgstr "Flokkun"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2902
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:422
 msgid "Hide"
 msgstr "Fela þig"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:518
+#: src/globalPlugins/easyAudioConverter/__init__.py:508
 msgid "High"
 msgstr "Hátt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1296
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:629
 msgid "High, -h (FFmpeg level 2)"
 msgstr "High, -h (FFmpeg stig 2)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:571
+#: src/globalPlugins/easyAudioConverter/__init__.py:561
 msgid "ISRC"
 msgstr "ISRC"
 
-#: src/installTasks.py:34
+#: src/installTasks.py:36
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Ef Easy Audio Converter er gagnlegt fyrir þig og þú vilt styrkja starf mitt geturðu keypt mér kaffi.\n\nViltu opna stuðningssíðuna núna?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2303
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1646
 msgid "Import conversion profiles"
 msgstr "Flytja inn viðskiptasnið"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1907
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1246
 msgid "Import profiles..."
 msgstr "Flytja inn prófíla..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2345
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1688
 msgid "Imported {count} conversion profiles"
 msgstr "Innflutt {count} viðskiptasnið"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:827 src/globalPlugins/easyAudioConverter/__init__.py:1950
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:155 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1289
 msgid "Include subfolders when converting a folder"
 msgstr "Láttu undirmöppur fylgja með þegar þú umbreytir möppu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3555
+#: src/globalPlugins/easyAudioConverter/plugin.py:263
 msgid "Information about the selected audio file..."
 msgstr "Upplýsingar um valda hljóðskrá..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3132
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:655
 msgid "Input recognition: {value}"
 msgstr "Input recognition: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2534
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:51
 msgid "Input size: {size}"
 msgstr "Inntaksstærð: {size}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:951 src/globalPlugins/easyAudioConverter/__init__.py:2190
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:280 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1532
 msgid "Invalid filename template: {error}"
 msgstr "Ógilt skráarnafnssniðmát: {error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2304 src/globalPlugins/easyAudioConverter/__init__.py:2356
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1647 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1699
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "JSON prófílskrár (*.json)|*.json|Allar skrár (*.*)|*.*"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:36
 msgid "KB"
 msgstr "KB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1356
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
 msgid "Keep the source channel count"
 msgstr "Haltu upprunarásafjölda"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1350
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:683
 msgid "Keep the source sample rate"
 msgstr "Haltu uppsprettu sýnishornatíðni"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:525
+#: src/globalPlugins/easyAudioConverter/__init__.py:515
 msgid "LAME MP3"
 msgstr "LAME MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:562
+#: src/globalPlugins/easyAudioConverter/__init__.py:552
 msgid "Language"
 msgstr "Tungumál"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3904
+#: src/globalPlugins/easyAudioConverter/plugin.py:621
 msgid "Later"
 msgstr "Síðar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1367
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:701
 msgid "Lossless compression profile:"
 msgstr "Taplaus þjöppunarprófíll:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3135
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:658
 msgid "Loudness analysis: {value}"
 msgstr "Loudness analysis: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1031 src/globalPlugins/easyAudioConverter/__init__.py:1739
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:361 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1076
 msgid "Loudness normalization:"
 msgstr "Normalization háværs:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:561
+#: src/globalPlugins/easyAudioConverter/__init__.py:551
 msgid "Lyrics"
 msgstr "Textar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:473
+#: src/globalPlugins/easyAudioConverter/__init__.py:463
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:36
 msgid "MB"
 msgstr "MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:481
+#: src/globalPlugins/easyAudioConverter/__init__.py:471
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:468
+#: src/globalPlugins/easyAudioConverter/__init__.py:458
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:786 src/globalPlugins/easyAudioConverter/__init__.py:1929
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:114 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1268
 msgid "MP3 encoder:"
 msgstr "MP3 kóðari:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5187
+#: src/globalPlugins/easyAudioConverter/plugin.py:1917
 msgid "Main conversion"
 msgstr "Main conversion"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1302
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:635
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr "Hámark, -hhx6 (FFmpeg stig 8)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:859 src/globalPlugins/easyAudioConverter/__init__.py:1976
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:188 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1316
 msgid "Metadata export:"
 msgstr "Útflutningur lýsigagna:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:870
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:199
 msgid "Metadata fields to copy:"
 msgstr "Lýsigagnareitir til að afrita:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:898 src/globalPlugins/easyAudioConverter/__init__.py:2161
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:227 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1503
 msgid "Metadata overrides: {count} fields"
 msgstr "Hnekki lýsigögn: {count} reitir"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2667
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:185
 msgid "Metadata:"
 msgstr "Lýsigögn:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1356
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
 msgid "Mono"
 msgstr "Mono"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:542
+#: src/globalPlugins/easyAudioConverter/__init__.py:532
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "Tónlist og streymi: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1484
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:819
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "Engar háþróaðar merkjastillingar eru notaðar vegna þess að hljóðstraumurinn er afritaður án endurkóðun."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:346
+#: src/globalPlugins/easyAudioConverter/__init__.py:336
 msgid "No completion notification"
 msgstr "Engin tilkynning um lok"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5042 src/globalPlugins/easyAudioConverter/__init__.py:5062 src/globalPlugins/easyAudioConverter/__init__.py:5164
+#: src/globalPlugins/easyAudioConverter/plugin.py:1771 src/globalPlugins/easyAudioConverter/plugin.py:1791 src/globalPlugins/easyAudioConverter/plugin.py:1894
 msgid "No conversion is in progress"
 msgstr "Engin umbreyting er í gangi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5139
+#: src/globalPlugins/easyAudioConverter/plugin.py:1869
 msgid "No conversion progress is available"
 msgstr "Engin umbreytingarframvinda er í boði"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4535
+#: src/globalPlugins/easyAudioConverter/plugin.py:1259
 msgid "No conversion results are available"
 msgstr "Engar umbreytingarniðurstöður eru tiltækar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4556 src/globalPlugins/easyAudioConverter/__init__.py:4566
+#: src/globalPlugins/easyAudioConverter/plugin.py:1280 src/globalPlugins/easyAudioConverter/plugin.py:1290
 msgid "No failed files are available to retry"
 msgstr "Engar misheppnaðar skrár eru tiltækar til að reyna aftur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3342
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:867
 msgid "No file details are available."
 msgstr "Engar skráarupplýsingar eru tiltækar."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4433
+#: src/globalPlugins/easyAudioConverter/plugin.py:1156
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Engar skrár þurfa umbreytingu. Sleppt: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2200
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1542
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "Engin endurkóðun: gæði, hávaði og háþróaðar merkjastillingar eru ekki notaðar."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2194
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1536
 msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 msgstr "Engin endurkóðun: gæði, hávaði, upprunalýsigögn, listaverk, kaflar og háþróaðar merkjamálsstillingar eru ekki notaðar. Hnekkingum á skýrum lýsigögnum er enn beitt."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3110
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:632
 msgid "No readable audio stream was found"
 msgstr "Enginn læsilegur hljóðstraumur fannst"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4437
+#: src/globalPlugins/easyAudioConverter/plugin.py:1160
 msgid "No supported audio files were found"
 msgstr "Engar studdar hljóðskrár fundust"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1295
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:628
 msgid "Normal (FFmpeg level 1)"
 msgstr "Venjulegt (FFmpeg stig 1)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1308
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:641
 msgid "Not used by this codec"
 msgstr "Ekki notað af þessum kóða"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:471
+#: src/globalPlugins/easyAudioConverter/__init__.py:461
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5086
+#: src/globalPlugins/easyAudioConverter/plugin.py:1815
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "Ein umbreyting er virk. Störf í biðröð: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:368
+#: src/globalPlugins/easyAudioConverter/__init__.py:358
 msgid "One file at a time"
 msgstr "Ein skrá í einu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5090
+#: src/globalPlugins/easyAudioConverter/plugin.py:1819
 msgid "One separate conversion is active. Queued jobs: {count}."
 msgstr "One separate conversion is active. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2047
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1387
 msgid "One-time settings"
 msgstr "Einu sinni stillingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:354
+#: src/globalPlugins/easyAudioConverter/__init__.py:344
 msgid "Only on demand"
 msgstr "Aðeins eftir þörfum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4795
+#: src/globalPlugins/easyAudioConverter/plugin.py:1521
 msgid "Open Easy Audio Converter settings"
 msgstr "Opnaðu stillingar Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4806
+#: src/globalPlugins/easyAudioConverter/plugin.py:1532
 msgid "Open advanced codec settings"
 msgstr "Opnaðu háþróaðar kóðastillingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3308
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:832
 msgid "Open output folder"
 msgstr "Opna úttaksmöppu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5215
+#: src/globalPlugins/easyAudioConverter/plugin.py:1946
 msgid "Open the author's support page"
 msgstr "Opnaðu stuðningssíðu höfundar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:613
+#: src/globalPlugins/easyAudioConverter/__init__.py:603
 msgid "Opening the support page"
 msgstr "Að opna stuðningssíðuna"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:472
+#: src/globalPlugins/easyAudioConverter/__init__.py:462
 msgid "Opus"
 msgstr "Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:810 src/globalPlugins/easyAudioConverter/__init__.py:1945
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:138 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1284
 msgid "Output filename template:"
 msgstr "Úttak skráarnafns sniðmát:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3171
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:694
 msgid "Output files:"
 msgstr "Úttaksskrár:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3099
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:621
 msgid "Output verification failed because its duration differs from the source."
 msgstr "Úttaksstaðfesting mistókst vegna þess að lengd hennar er frábrugðin upprunanum."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3245
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:769
 msgid "Output:\n{output}"
 msgstr "Úttak:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3038
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:560
 msgid "Overall progress: 100%"
 msgstr "Heildarárangur: 100%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2877
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:397
 msgid "Overall progress: waiting"
 msgstr "Heildarárangur: bíð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2975
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:496
 msgid "Overall progress: {percent}%"
 msgstr "Heildarárangur: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1373
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:707
 msgid "PCM bit depth:"
 msgstr "PCM bitadýpt:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1083 src/globalPlugins/easyAudioConverter/__init__.py:1787
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:414 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1125
 msgid "Parallel conversion jobs:"
 msgstr "Samhliða umbreytingarstörf:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3033
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:555
 msgid "Parallel workers: finished"
 msgstr "Samhliða starfsmenn: lokið"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2892
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:412
 msgid "Parallel workers: waiting"
 msgstr "Samhliða starfsmenn: bíða"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3023
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:545
 msgid "Parallel workers: {active} active of {target}"
 msgstr "Samhliða starfsmenn: {active} virkir af {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2639
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:157
 msgid "Path: {path}"
 msgstr "Slóð: {path}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2570
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:87
 msgid "Planned output files:"
 msgstr "Fyrirhugaðar úttaksskrár:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1148
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:479
 msgid "Play a sound when a conversion fails"
 msgstr "Spilaðu hljóð þegar umbreyting mistekst"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1155
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:486
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "Spilaðu hljóð þegar umbreytingu er hætt eða hætt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:422
+#: src/globalPlugins/easyAudioConverter/__init__.py:412
 msgid "Podcast Opus"
 msgstr "Hlaðvarp Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:531
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "Podcast: -16 LUFS, -1,5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2790 src/globalPlugins/easyAudioConverter/__init__.py:4141 src/globalPlugins/easyAudioConverter/__init__.py:2868
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:309 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:388 src/globalPlugins/easyAudioConverter/plugin.py:861
 msgid "Preparing the conversion"
 msgstr "Undirbúningur viðskipta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:840 src/globalPlugins/easyAudioConverter/__init__.py:1961
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:168 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1301
 msgid "Preserve source file creation and modification dates"
 msgstr "Varðveita dagsetningar fyrir gerð og breytingar á upprunalegu skrám"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:833 src/globalPlugins/easyAudioConverter/__init__.py:1955
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:161 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1294
 msgid "Preserve the source folder structure in the destination"
 msgstr "Varðveittu upprunamöppuskipulagið á áfangastaðnum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3144
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:667
 msgid "Probe cache hits: {count}; misses: {misses}"
 msgstr "Probe cache hits: {count}; misses: {misses}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1019
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:349
 msgid "Processing and notifications"
 msgstr "Vinnsla og tilkynningar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1726
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1063
 msgid "Processing options"
 msgstr "Vinnsluvalkostir"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1990
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1330
 msgid "Processing options..."
 msgstr "Vinnsluvalkostir..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2210
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1552
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "Vinnsla: hávær {loudness}; listaverk {artwork}; kaflar {chapters}; staðfesting {verification}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2479
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1824
 msgid "Profile deleted"
 msgstr "Prófíll eytt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2458
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1803
 msgid "Profile saved: {name}"
 msgstr "Prófíll vistaður: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:563
+#: src/globalPlugins/easyAudioConverter/__init__.py:553
 msgid "Publisher"
 msgstr "Útgefandi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5002
+#: src/globalPlugins/easyAudioConverter/plugin.py:1730
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "Gæði eru ekki notuð þegar hljóð er afritað án endurkóðun"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:777 src/globalPlugins/easyAudioConverter/__init__.py:1923
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:105 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1262
 msgid "Quality:"
 msgstr "Gæði:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5009
+#: src/globalPlugins/easyAudioConverter/plugin.py:1737
 msgid "Quality: {quality}"
 msgstr "Gæði: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5102
+#: src/globalPlugins/easyAudioConverter/plugin.py:1831
 msgid "Queued conversion jobs: {count}."
 msgstr "Umbreytingarstörf í biðröð: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2888
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:408
 msgid "Queued jobs: 0"
 msgstr "Störf í biðröð: 0"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3006
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:527
 msgid "Queued jobs: {count}"
 msgstr "Störf í biðröð: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5200
+#: src/globalPlugins/easyAudioConverter/plugin.py:1930
 msgid "Queued jobs: {count}."
 msgstr "Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5013
+#: src/globalPlugins/easyAudioConverter/plugin.py:1742
 msgid "Quickly choose the destination folder"
 msgstr "Veldu fljótt áfangamöppuna"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4838
+#: src/globalPlugins/easyAudioConverter/plugin.py:1565
 msgid "Quickly convert selected files or folders"
 msgstr "Umbreyttu völdum skrám eða möppum fljótt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4917
+#: src/globalPlugins/easyAudioConverter/plugin.py:1645
 msgid "Reading audio file information"
 msgstr "Að lesa upplýsingar um hljóðskrár"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2786
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:305
 msgid "Reading audio information"
 msgstr "Að lesa hljóðupplýsingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3896
+#: src/globalPlugins/easyAudioConverter/plugin.py:613
 msgid "Release notes:"
 msgstr "Útgáfunótur:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:487
+#: src/globalPlugins/easyAudioConverter/__init__.py:477
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC til M4A (engin endurkóðun)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4057
+#: src/globalPlugins/easyAudioConverter/plugin.py:776
 msgid "Replace source files"
 msgstr "Skiptu um upprunaskrár"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:848 src/globalPlugins/easyAudioConverter/__init__.py:1967
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:176 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1307
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr "Skiptu um upprunaskrár eftir árangursríka umbreytingu (eyðir frumritum varanlega)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2436
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1780
 msgid "Replace the existing profile “{name}”?"
 msgstr "Skipta út núverandi prófíl \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4051
+#: src/globalPlugins/easyAudioConverter/plugin.py:770
 msgid "Replacing source files cannot be undone. After each output is created and checked successfully, its source file will be permanently deleted. Source files will be kept if conversion or verification fails. Continue?"
 msgstr "Ekki er hægt að afturkalla það að skipta út frumskrám. Eftir að hver framleiðsla hefur verið búin til og athugað með góðum árangri, verður upprunaskrá hennar varanlega eytt. Upprunaskrár verða geymdar ef umbreyting eða staðfesting mistekst. Halda áfram?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5158
+#: src/globalPlugins/easyAudioConverter/plugin.py:1888
 msgid "Report audio conversion status"
 msgstr "Tilkynna hljóðbreytingarstöðu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2900 src/globalPlugins/easyAudioConverter/__init__.py:3557
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:420 src/globalPlugins/easyAudioConverter/plugin.py:265
 msgid "Report conversion status"
 msgstr "Tilkynna viðskiptastöðu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5078 src/globalPlugins/easyAudioConverter/__init__.py:3561
+#: src/globalPlugins/easyAudioConverter/plugin.py:1807 src/globalPlugins/easyAudioConverter/plugin.py:269
 msgid "Report queued conversion jobs"
 msgstr "Tilkynna umbreytingarstörf í biðröð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3307
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:831
 msgid "Retry failed files"
 msgstr "Endurtilraun misheppnaðar skrár"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2586
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:103
 msgid "Review conversion plan"
 msgstr "Farðu yfir umbreytingaráætlun"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2598
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:115
 msgid "Review the plan below. Size estimates are approximate. No source file will be overwritten."
 msgstr "Skoðaðu áætlunina hér að neðan. Stærðaráætlanir eru áætluð. Engin frumskrá verður yfirskrifuð."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2592
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:109
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr "Skoðaðu áætlunina hér að neðan. Stærðaráætlanir eru áætluð. Upprunaskrám verður varanlega eytt eftir að úttak þeirra er lokið."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:361
+#: src/globalPlugins/easyAudioConverter/__init__.py:351
 msgid "Run new jobs in separate progress windows"
 msgstr "Run new jobs in separate progress windows"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1348
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:681
 msgid "Sample rate:"
 msgstr "Sýnishornstíðni:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2653
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:171
 msgid "Sample rate: {value}"
 msgstr "Sýnatíðni: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2401 src/globalPlugins/easyAudioConverter/__init__.py:2437
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1745 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1781
 msgid "Save conversion profile"
 msgstr "Vista umbreytingarprófíll"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:795 src/globalPlugins/easyAudioConverter/__init__.py:1935
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:123 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1274
 msgid "Save converted files next to the source files"
 msgstr "Vistaðu breyttar skrár við hlið upprunaskránna"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1905
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1244
 msgid "Save profile..."
 msgstr "Vista prófíl..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4911
+#: src/globalPlugins/easyAudioConverter/plugin.py:1638
 msgid "Select exactly one audio file"
 msgstr "Veldu nákvæmlega eina hljóðskrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1616
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:952
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Veldu textagagnareitina til að afrita fyrir þessa umbreytingu."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1895
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1234
 msgid "Selected items: {count}"
 msgstr "Valin atriði: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5189
+#: src/globalPlugins/easyAudioConverter/plugin.py:1919
 msgid "Separate conversion {index}"
 msgstr "Separate conversion {index}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1105
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:436
 msgid "Separate progress windows run independently and may use more CPU and memory."
 msgstr "Separate progress windows run independently and may use more CPU and memory."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3564
+#: src/globalPlugins/easyAudioConverter/plugin.py:272
 msgid "Settings..."
 msgstr "Stillingar..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1120
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:451
 msgid "Show a conversion plan before starting"
 msgstr "Sýndu umbreytingaáætlun áður en þú byrjar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3556
+#: src/globalPlugins/easyAudioConverter/plugin.py:264
 msgid "Show conversion progress"
 msgstr "Framvinda í umbreytingu þáttarins"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3558
+#: src/globalPlugins/easyAudioConverter/plugin.py:266
 msgid "Show last conversion results"
 msgstr "Sýndu niðurstöður síðustu umbreytingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2901
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:421
 msgid "Show results"
 msgstr "Niðurstöður sýningarinnar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4904
+#: src/globalPlugins/easyAudioConverter/plugin.py:1631
 msgid "Show technical information about the selected audio file"
 msgstr "Sýna tæknilegar upplýsingar um valda hljóðskrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5125
+#: src/globalPlugins/easyAudioConverter/plugin.py:1855
 msgid "Show the audio conversion progress window"
 msgstr "Sýndu framvinduglugga hljóðumbreytingarinnar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1805
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1143
 msgid "Show the conversion plan before starting"
 msgstr "Sýndu umbreytingaráætlunina áður en þú byrjar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5146
+#: src/globalPlugins/easyAudioConverter/plugin.py:1876
 msgid "Show the last audio conversion results"
 msgstr "Sýndu síðustu niðurstöður hljóðbreytinga"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3114
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:636
 msgid "Skipped"
 msgstr "Sleppt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3184
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:707
 msgid "Skipped files:"
 msgstr "Sleppt skrám:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2530
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:47
 msgid "Skipped inputs: {count}"
 msgstr "Sleppt inntak: {count}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3269
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:793
 msgid "Skipped: {name}"
 msgstr "Sleppt: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:573
+#: src/globalPlugins/easyAudioConverter/__init__.py:563
 msgid "Sort album"
 msgstr "Raða albúmi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:572
+#: src/globalPlugins/easyAudioConverter/__init__.py:562
 msgid "Sort artist"
 msgstr "Raða listamann"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:574
+#: src/globalPlugins/easyAudioConverter/__init__.py:564
 msgid "Sort title"
 msgstr "Raða titil"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:345
+#: src/globalPlugins/easyAudioConverter/__init__.py:335
 msgid "Sound only"
 msgstr "Aðeins hljóð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3251
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:775
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Heimild:\n{source}\n\nVilla:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3231
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:755
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Heimild:\n{source}\n\nÚttak:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3270
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:794
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Heimild:\n{source}\n\nÁstæða:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:333
 msgid "Speech and sound"
 msgstr "Tal og hljóð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:334
 msgid "Speech only"
 msgstr "Aðeins ræða"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:517
+#: src/globalPlugins/easyAudioConverter/__init__.py:507
 msgid "Standard"
 msgstr "Staðall"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:759
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:87
 msgid "Standard settings"
 msgstr "Standard settings"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2619
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:137
 msgid "Start conversion"
 msgstr "Byrjaðu viðskipti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3696
+#: src/globalPlugins/easyAudioConverter/plugin.py:405
 msgid "Started a separate conversion window for the new job."
 msgstr "Started a separate conversion window for the new job."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3935
+#: src/globalPlugins/easyAudioConverter/plugin.py:653
 msgid "Starting the download..."
 msgstr "Byrjum niðurhalið..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4526
+#: src/globalPlugins/easyAudioConverter/plugin.py:1250
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "Byrjar á næstu umbreytingu í biðröð. Störf eftir: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1356
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
 msgid "Stereo"
 msgstr "Stereo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2898
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:418
 msgid "Stop after current file"
 msgstr "Stöðva eftir núverandi skrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3559
+#: src/globalPlugins/easyAudioConverter/plugin.py:267
 msgid "Stop after the current file"
 msgstr "Hættu eftir núverandi skrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5056
+#: src/globalPlugins/easyAudioConverter/plugin.py:1785
 msgid "Stop the conversion after the current file"
 msgstr "Stöðvaðu umbreytinguna eftir núverandi skrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4426
+#: src/globalPlugins/easyAudioConverter/plugin.py:1149
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "Hætt eftir núverandi skrá. Lokið {done} af {total} skrám."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3057
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:579
 msgid "Stopping after this file..."
 msgstr "Stöðvar eftir þessa skrá..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3155 src/globalPlugins/easyAudioConverter/__init__.py:3217
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:678 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:741
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Tókst: {done}. Mistókst: {failed}. Sleppt: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3230 src/globalPlugins/easyAudioConverter/__init__.py:3244
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:754 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:768
 msgid "Success: {name}"
 msgstr "Árangur: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1136
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:467
 msgid "Successful completion notification:"
 msgstr "Tilkynning um árangursríka lokun:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3167
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:690
 msgid "Successful files:"
 msgstr "Árangursríkar skrár:"
 
-#: src/installTasks.py:40 src/installTasks.py:58
+#: src/installTasks.py:42 src/installTasks.py:60
 msgid "Support Easy Audio Converter"
 msgstr "Styðja Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1176 src/globalPlugins/easyAudioConverter/__init__.py:3567
+#: src/globalPlugins/easyAudioConverter/plugin.py:275 src/globalPlugins/easyAudioConverter/settings_dialogs.py:508
 msgid "Support the author"
 msgstr "Styðjið höfundinn"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519 src/globalPlugins/easyAudioConverter/__init__.py:2520
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:36 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:37
 msgid "TB"
 msgstr "TB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:768 src/globalPlugins/easyAudioConverter/__init__.py:1917
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1256
 msgid "Target format:"
 msgstr "Marksnið:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4989
+#: src/globalPlugins/easyAudioConverter/plugin.py:1717
 msgid "Target format: {format}"
 msgstr "Marksnið: {format}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1159
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:491
 msgid "Test cancel sound"
 msgstr "Próf að hætta við hljóð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1152
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:483
 msgid "Test error sound"
 msgstr "Prófunarvilluhljóð"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1144
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:475
 msgid "Test success sound"
 msgstr "Hljóð prófunar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4101
+#: src/globalPlugins/easyAudioConverter/plugin.py:820
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Búnt FFmpeg íhlutinn vantar. Settu aftur upp Easy Audio Converter."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1491
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:826
 msgid "The codec-specific level is not used by this format."
 msgstr "Codec-sértæka stigið er ekki notað í þessu sniði."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4397
+#: src/globalPlugins/easyAudioConverter/plugin.py:1119
 msgid "The conversion could not start"
 msgstr "Umbreytingin gat ekki hafist"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4402
+#: src/globalPlugins/easyAudioConverter/plugin.py:1124
 msgid "The conversion could not start:\n{error}"
 msgstr "Umbreytingin gat ekki ræst:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5113 src/globalPlugins/easyAudioConverter/__init__.py:5104
+#: src/globalPlugins/easyAudioConverter/plugin.py:1843 src/globalPlugins/easyAudioConverter/plugin.py:1833
 msgid "The conversion queue is empty"
 msgstr "Umbreytingarröð er tóm"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3163
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:686
 msgid "The conversion was canceled."
 msgstr "Umbreytingin var felld niður."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5069
+#: src/globalPlugins/easyAudioConverter/plugin.py:1798
 msgid "The conversion will stop after the current file"
 msgstr "Umbreytingin hættir eftir núverandi skrá"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3087
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:609
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr "Umbreyttu úttakinu var haldið, en ekki var hægt að fjarlægja upprunaskrána."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2331
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1674
 msgid "The file does not contain valid conversion profiles."
 msgstr "Skráin inniheldur ekki gild viðskiptasnið."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:499
+#: src/globalPlugins/easyAudioConverter/__init__.py:489
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "Fyrsti AAC hljóðstraumurinn verður endurblandaður í M4A án endurkóðun. Heimildum þar sem fyrsta hljóðstraumurinn er ekki AAC er sleppt."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3111
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:633
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "Fyrsti hljóðstraumurinn er ekki AAC, svo það er ekki hægt að endurbæta hann í M4A"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:493
+#: src/globalPlugins/easyAudioConverter/__init__.py:483
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "Fyrsti hljóðstraumurinn verður dreginn út án endurkóðun. Merkjamál og gæði þess haldast óbreytt og framleiðsla eftirnafn er valin sjálfkrafa."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3097
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:619
 msgid "The input does not contain a readable audio stream."
 msgstr "Inntakið inniheldur ekki læsilegan hljóðstraum."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3095
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:617
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "Inntaksskráin er skemmd eða notar óstudda kóðun."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3165
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:688
 msgid "The job was stopped after the current file."
 msgstr "Verkið var hætt eftir núverandi skrá."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2315
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1658
 msgid "The profile file is too large."
 msgstr "Prófílskráin er of stór."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2412
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1756
 msgid "The profile name cannot be empty."
 msgstr "Nafn prófílsins má ekki vera tómt."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4074
+#: src/globalPlugins/easyAudioConverter/plugin.py:793
 msgid "The separate conversion could not start:\n{error}"
 msgstr "The separate conversion could not start:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3101
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:623
 msgid "The source file dates could not be preserved."
 msgstr "Ekki var hægt að varðveita dagsetningar heimildarskrárinnar."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4005
+#: src/globalPlugins/easyAudioConverter/plugin.py:723
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "Ekki var hægt að hlaða niður né staðfesta uppfærsluna.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4013
+#: src/globalPlugins/easyAudioConverter/plugin.py:732
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "Uppfærslan er tilbúin. Opna NVDA viðbótaruppsetningarforritið."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5072
+#: src/globalPlugins/easyAudioConverter/plugin.py:1801
 msgid "The {count} active conversions will stop after their current files"
 msgstr "The {count} active conversions will stop after their current files"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2350
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1693
 msgid "There are no user profiles to export"
 msgstr "Það eru engin notendasnið til að flytja út"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3093
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:615
 msgid "There is not enough free disk space."
 msgstr "Það er ekki nægilegt laust diskpláss."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3128
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:651
 msgid "Timing:"
 msgstr "Timing:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:550
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "Title"
 msgstr "Titill"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2539
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:56
 msgid "Total audio duration: {duration}"
 msgstr "Heildarlengd hljóðs: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:565
+#: src/globalPlugins/easyAudioConverter/__init__.py:555
 msgid "Total discs"
 msgstr "Samtals diskar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:564
+#: src/globalPlugins/easyAudioConverter/__init__.py:554
 msgid "Total tracks"
 msgstr "Samtals lög"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3129
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:652
 msgid "Total wall time: {value}"
 msgstr "Total wall time: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:557
+#: src/globalPlugins/easyAudioConverter/__init__.py:547
 msgid "Track number"
 msgstr "Laganúmer"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3102 src/globalPlugins/easyAudioConverter/__init__.py:4006 src/globalPlugins/easyAudioConverter/__init__.py:4945 src/globalPlugins/easyAudioConverter/__init__.py:3865
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:624 src/globalPlugins/easyAudioConverter/plugin.py:724 src/globalPlugins/easyAudioConverter/plugin.py:1673 src/globalPlugins/easyAudioConverter/plugin.py:582
 msgid "Unknown error"
 msgstr "Óþekkt villa"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3108
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:630
 msgid "Unsupported file type"
 msgstr "Óstudd skráartegund"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4001
+#: src/globalPlugins/easyAudioConverter/plugin.py:719
 msgid "Update download canceled"
 msgstr "Uppfærslu niðurhal hætt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1282 src/globalPlugins/easyAudioConverter/__init__.py:1304 src/globalPlugins/easyAudioConverter/__init__.py:1375
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:615 src/globalPlugins/easyAudioConverter/settings_dialogs.py:637 src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
 msgid "Use the quality preset"
 msgstr "Notaðu gæðaforstillinguna"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1995
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1335
 msgid "Use these settings for future quick conversions"
 msgstr "Notaðu þessar stillingar fyrir framtíðar hraðar umbreytingar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3141
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:664
 msgid "Verification and finalization: {value}"
 msgstr "Verification and finalization: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2789
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:308
 msgid "Verifying the output by decoding it"
 msgstr "Staðfestir úttakið með því að afkóða það"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:519
+#: src/globalPlugins/easyAudioConverter/__init__.py:509
 msgid "Very high"
 msgstr "Mjög hátt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1298
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:631
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr "Mjög hátt + auka 1, -hhx1 (FFmpeg stig 4)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1299
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:632
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr "Mjög hátt + auka 2, -hhx2 (FFmpeg stig 5)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1300
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:633
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr "Mjög hátt + auka 3, -hhx3 (FFmpeg stig 6)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1301
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:634
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr "Mjög hátt + auka 4, -hhx4 (FFmpeg stig 7)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1297
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:630
 msgid "Very high, -hh (FFmpeg level 3)"
 msgstr "Mjög hátt, -hh (FFmpeg stig 3)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:469
+#: src/globalPlugins/easyAudioConverter/__init__.py:459
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:475
+#: src/globalPlugins/easyAudioConverter/__init__.py:465
 msgid "WMA"
 msgstr "WMA"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2549
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:66
 msgid "Warning: source files will be permanently deleted after successful conversion."
 msgstr "Viðvörun: upprunaskrám verður eytt varanlega eftir árangursríka umbreytingu."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2567
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:84
 msgid "Warning: the estimated output is larger than the available disk space."
 msgstr "Viðvörun: áætlað framleiðsla er stærra en tiltækt pláss."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2556
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:73
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "Viðvörun: {count} skrám verður breytt úr tapað sniði í annað tapað snið, sem getur dregið úr gæðum."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:480
+#: src/globalPlugins/easyAudioConverter/__init__.py:470
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1478
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:813
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr "WavPack prófílar nota FFmpeg stig 0 til 8. Stig 8 samsvarar -hhx6 og er mjög hægt."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1094
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:425
 msgid "When another conversion is active:"
 msgstr "When another conversion is active:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:1126
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:457
 msgid "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 msgstr "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2519 src/globalPlugins/easyAudioConverter/__init__.py:2521
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:36 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:38
 msgid "bytes"
 msgstr "bæti"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3765 src/globalPlugins/easyAudioConverter/__init__.py:2986
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:507 src/globalPlugins/easyAudioConverter/plugin.py:475
 msgid "calculating"
 msgstr "Útreikningur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4718
+#: src/globalPlugins/easyAudioConverter/plugin.py:1444
 msgid "excluding subfolders"
 msgstr "að undanskildum undirmöppum"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4716
+#: src/globalPlugins/easyAudioConverter/plugin.py:1442
 msgid "including subfolders"
 msgstr "þar á meðal undirmöppur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2662
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:180
 msgid "no"
 msgstr "nei"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2215 src/globalPlugins/easyAudioConverter/__init__.py:2216 src/globalPlugins/easyAudioConverter/__init__.py:2217
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1557 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1558 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1559
 msgid "off"
 msgstr "af"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2215 src/globalPlugins/easyAudioConverter/__init__.py:2216 src/globalPlugins/easyAudioConverter/__init__.py:2217
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1557 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1558 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1559
 msgid "on"
 msgstr "á"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2532
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:49
 msgid "source folders"
 msgstr "upprunamöppur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2517 src/globalPlugins/easyAudioConverter/__init__.py:2543 src/globalPlugins/easyAudioConverter/__init__.py:2640 src/globalPlugins/easyAudioConverter/__init__.py:2641 src/globalPlugins/easyAudioConverter/__init__.py:2643 src/globalPlugins/easyAudioConverter/__init__.py:2649 src/globalPlugins/easyAudioConverter/__init__.py:2652 src/globalPlugins/easyAudioConverter/__init__.py:2657 src/globalPlugins/easyAudioConverter/__init__.py:4963 src/globalPlugins/easyAudioConverter/__init__.py:4967 src/globalPlugins/easyAudioConverter/__init__.py:4972
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:34 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:60 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:158 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:159 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:161 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:167 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:170 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:175 src/globalPlugins/easyAudioConverter/plugin.py:1691 src/globalPlugins/easyAudioConverter/plugin.py:1695 src/globalPlugins/easyAudioConverter/plugin.py:1700
 msgid "unknown"
 msgstr "óþekkt"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2662
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:180
 msgid "yes"
 msgstr "já"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4753 src/globalPlugins/easyAudioConverter/__init__.py:4778
+#: src/globalPlugins/easyAudioConverter/plugin.py:1479 src/globalPlugins/easyAudioConverter/plugin.py:1504
 msgid "{count} selected folders"
 msgstr "{count} valdar möppur"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5193
+#: src/globalPlugins/easyAudioConverter/plugin.py:1923
 msgid "{label}: {status}"
 msgstr "{label}: {status}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4157
+#: src/globalPlugins/easyAudioConverter/plugin.py:877
 msgid "{message}. Starting with {workers} adaptive conversion workers."
 msgstr "{message}. Byrjar á {workers} aðlögunarstarfsmönnum."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:4161
+#: src/globalPlugins/easyAudioConverter/plugin.py:881
 msgid "{message}. Using {workers} parallel conversion workers."
 msgstr "{message}. Notkun {workers} samhliða umbreytingarstarfsmenn."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:508
+#: src/globalPlugins/easyAudioConverter/__init__.py:498
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (viðbót valin úr frumhljóðmerkjamálinu)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2996
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:517
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. Skrá {index} af {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:3757
+#: src/globalPlugins/easyAudioConverter/plugin.py:467
 msgid "{stage}. {status} Estimated time remaining {remaining}."
 msgstr "{stage}. {status} Estimated time remaining {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5178
+#: src/globalPlugins/easyAudioConverter/plugin.py:1908
 msgid "{status} Queued jobs: {count}."
 msgstr "{status} Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:5171
+#: src/globalPlugins/easyAudioConverter/plugin.py:1901
 msgid "{status}. Queued jobs: {count}."
 msgstr "{status}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2655 src/globalPlugins/easyAudioConverter/__init__.py:4970
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:173 src/globalPlugins/easyAudioConverter/plugin.py:1698
 msgid "{value} Hz"
 msgstr "{value} Hz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:2647
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:165
 msgid "{value} kbps"
 msgstr "{value} kbps"

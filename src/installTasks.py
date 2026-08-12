@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Kazimierz Parzych
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Installation tasks for Easy Audio Converter."""
 
 from __future__ import annotations

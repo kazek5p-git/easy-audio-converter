@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Kazimierz Parzych
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Safe serialization for complete, named conversion profiles."""
 
 from __future__ import annotations
