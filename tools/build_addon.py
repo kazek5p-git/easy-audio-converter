@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import os
 import re
+import shutil
 import sys
 import zipfile
 from pathlib import Path
@@ -125,7 +126,11 @@ def build() -> Path:
 		if any(name.startswith("src/") for name in names):
 			raise RuntimeError("The package contains an unexpected src directory")
 
+	# Stała nazwa służy do budowania niezmiennego adresu „latest/download”.
+	stable_output = DIST_ROOT / f"{name}.nvda-addon"
+	shutil.copy2(output, stable_output)
 	print(f"Built: {output}")
+	print(f"Stable asset copy: {stable_output}")
 	print(f"Bytes: {output.stat().st_size}")
 	print(f"SHA-256: {_sha256(output)}")
 	return output
