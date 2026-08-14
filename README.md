@@ -18,6 +18,9 @@ separate codec installation is required.
 - offers economical, standard, high, and very high quality presets;
 - provides LAME and Windows Media Foundation (Fraunhofer-compatible) MP3
   encoder choices;
+- optionally uses the bundled GOGO-no-coda encoder for fast WAV/WAVE to MP3
+  jobs, with bitrate presets, quality control, extra arguments, and GOGO help
+  output; the user may select another compatible executable;
 - saves next to each source or in a selected destination folder;
 - optionally includes subfolders and preserves their structure;
 - can preserve each source file's creation and modification dates on the
@@ -84,6 +87,18 @@ separate codec installation is required.
 - ships standard PO, MO, and POT files compatible with Poedit;
 - includes the author's optional support prompt used by Sonic Pitch.
 
+### GOGO-no-coda
+
+GOGO is an optional backend for users who need its WAV-to-MP3 encoding path.
+The add-on includes the unmodified `gogo.exe`, so leaving the executable field
+empty uses the bundled encoder. Users may select another compatible copy and
+configure the bitrate preset, `-q` quality, or additional GOGO arguments.
+Only `.wav` and `.wave` inputs are sent to GOGO; metadata, loudness
+normalization, artwork, and chapters are intentionally not written by this
+encoder. Easy Audio Converter still controls output naming, progress,
+cancellation, verification, timestamp preservation, source replacement,
+queues, and parallel jobs.
+
 The add-on is authored by Kazimierz Parzych.
 
 ## Project layout
@@ -92,6 +107,8 @@ The add-on is authored by Kazimierz Parzych.
 - `tests` contains unit tests for the conversion core.
 - `src/globalPlugins/easyAudioConverter/plugin.py` contains NVDA scripts,
   lifecycle management, and job coordination.
+- `src/globalPlugins/easyAudioConverter/gogo.py` contains the isolated,
+  shell-free GOGO command builder and help reader.
 - `src/globalPlugins/easyAudioConverter/settings_dialogs.py` contains settings
   pages and profile/options dialogs.
 - `src/globalPlugins/easyAudioConverter/conversion_dialogs.py` contains plan,

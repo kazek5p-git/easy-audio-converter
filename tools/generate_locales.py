@@ -150,7 +150,8 @@ MANIFEST_SUMMARY = "Easy Audio Converter"
 MANIFEST_DESCRIPTION = (
 	"Accessible queued and independent-window audio conversion plus "
 	"no-re-encoding stream extraction and remuxing with planning, filename "
-	"templates, loudness normalization, verification, profiles, and bundled FFmpeg."
+	"templates, loudness normalization, verification, profiles, optional bundled "
+	"GOGO WAV-to-MP3 encoding, and bundled FFmpeg."
 )
 
 POLISH = {
@@ -205,6 +206,43 @@ POLISH = {
 	),
 	"Found {count} files to convert": "Znaleziono pliki do konwersji: {count}",
 	"Fraunhofer / Windows Media Foundation MP3": "Fraunhofer / Windows Media Foundation MP3",
+	"GOGO-no-coda MP3 (bundled WAV encoder)": "GOGO-no-coda MP3 (dołączony enkoder WAV)",
+	"GOGO executable (gogo.exe):": "Plik wykonywalny GOGO (gogo.exe):",
+	"Browse for GOGO executable...": "Przeglądaj w poszukiwaniu pliku GOGO...",
+	"GOGO bitrate:": "Przepływność GOGO:",
+	"GOGO quality:": "Jakość GOGO:",
+	"Additional GOGO arguments:": "Dodatkowe argumenty GOGO:",
+	"Show GOGO commands": "Pokaż polecenia GOGO",
+	"GOGO commands": "Polecenia GOGO",
+	"Define manually in GOGO arguments": "Zdefiniuj ręcznie w argumentach GOGO",
+	"64 kb/s joint stereo": "64 kb/s, joint stereo",
+	"128 kb/s joint stereo": "128 kb/s, joint stereo",
+	"160 kb/s joint stereo": "160 kb/s, joint stereo",
+	"192 kb/s joint stereo": "192 kb/s, joint stereo",
+	"256 kb/s stereo": "256 kb/s, stereo",
+	"320 kb/s stereo": "320 kb/s, stereo",
+	"GOGO Q {value} — highest quality": "GOGO Q {value} — najwyższa jakość",
+	"GOGO Q {value} — fastest at Q9": "GOGO Q {value} — najszybciej przy Q9",
+	"GOGO Q {value}": "GOGO Q {value}",
+	"Choose the GOGO executable": "Wybierz plik wykonywalny GOGO",
+	"Choose the GOGO executable first.": "Najpierw wybierz plik wykonywalny GOGO.",
+	"Could not read GOGO help:\n{error}": "Nie można odczytać pomocy GOGO:\n{error}",
+	"The configured or bundled GOGO executable is missing. Choose another gogo.exe in Easy Audio Converter settings.": (
+		"Brakuje skonfigurowanego lub dołączonego pliku GOGO. Wybierz inny plik gogo.exe w ustawieniach Easy Audio Converter."
+	),
+	"GOGO encodes WAV/WAVE files to MP3 without metadata or loudness processing. The add-on includes GOGO-no-coda; leave the executable field empty to use it, or choose another gogo.exe.": (
+		"GOGO koduje pliki WAV/WAVE do MP3 bez metadanych i przetwarzania głośności. "
+		"Dodatek zawiera GOGO-no-coda; pozostaw pole pliku wykonywalnego puste, aby go użyć, "
+		"albo wybierz inny plik gogo.exe."
+	),
+	"GOGO processing: WAV/WAVE input only; metadata, loudness, artwork, and chapters are not written.": (
+		"Przetwarzanie GOGO: tylko pliki WAV/WAVE; metadane, głośność, okładki i rozdziały nie są zapisywane."
+	),
+	"Advanced codec overrides are not used by GOGO": "GOGO nie używa zaawansowanych ustawień kodeka",
+	"GOGO can encode only WAV/WAVE source files": "GOGO może kodować tylko pliki źródłowe WAV/WAVE",
+	"The GOGO output path already exists; no file was overwritten.": (
+		"Ścieżka wyniku GOGO już istnieje; żaden plik nie został nadpisany."
+	),
 	"High": "Wysoka",
 	"If Easy Audio Converter is useful to you and you want to support my work, "
 	"you can buy me a coffee.\n\nDo you want to open the support page now?": (
@@ -349,7 +387,6 @@ POLISH = {
 	"Easy Audio Converter is up to date. Installed version: {version}.": (
 		"Easy Audio Converter jest aktualny. Zainstalowana wersja: {version}."
 	),
-	"Easy Audio Converter progress": "Postęp Easy Audio Converter",
 	"Easy Audio Converter update": "Aktualizacja Easy Audio Converter",
 	"Easy Audio Converter update available": "Dostępna aktualizacja Easy Audio Converter",
 	"Easy Audio Converter {newVersion} is available. "
@@ -455,7 +492,8 @@ POLISH = {
 	MANIFEST_DESCRIPTION: (
 		"Dostępna kolejkowana i wielookienkowa konwersja audio oraz wyodrębnianie i remuksowanie "
 		"strumieni bez ponownego kodowania, z planowaniem, szablonami nazw, "
-		"normalizacją głośności, weryfikacją, profilami i dołączonym FFmpeg."
+		"normalizacją głośności, weryfikacją, profilami, opcjonalnym dołączonym "
+		"kodowaniem GOGO WAV do MP3 i dołączonym FFmpeg."
 	),
 }
 
@@ -941,8 +979,9 @@ POLISH.update(
 			"Osobne okna postępu działają niezależnie i mogą używać więcej procesora i pamięci."
 		),
 		"When another conversion is active:": "Gdy trwa już inna konwersja:",
-		"Easy Audio Converter progress — separate job {id}": (
-			"Postęp Easy Audio Converter — osobne zadanie {id}"
+		"Converting — Easy Audio Converter": "Konwertowanie — Easy Audio Converter",
+		"Converting — Easy Audio Converter — separate job {id}": (
+			"Konwertowanie — Easy Audio Converter — osobne zadanie {id}"
 		),
 		"Started a separate conversion window for the new job.": (
 			"Nowe zadanie uruchomiono w osobnym oknie postępu."
@@ -1216,7 +1255,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.8.2\n"
+		"Project-Id-Version: Easy Audio Converter 1.9.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -1258,7 +1297,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.8.2\n"
+		"Project-Id-Version: Easy Audio Converter 1.9.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

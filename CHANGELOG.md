@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.9.0 - 2026-08-14
+
+- Added the overall conversion percentage at the start of the progress-window
+  title, followed by the conversion status and add-on name.
+- Added an optional GOGO-no-coda MP3 backend for WAV/WAVE sources with safe
+  argument parsing, bitrate presets, `-q` quality selection, custom options,
+  executable help, cancellation, verification, profiles, queues, and parallel
+  jobs. The GOGO-no-coda 3.13 executable is now bundled; a custom executable
+  may still be selected in the settings.
+
 ## 1.8.2 - 2026-08-12
 
 - Added explicit GPL copyright and SPDX headers identifying Kazimierz Parzych

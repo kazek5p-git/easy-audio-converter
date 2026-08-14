@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Author: Kazimierz Parzych. Version 1.8.2.</p>
+	<p>Author: Kazimierz Parzych. Version 1.9.0.</p>
 	<p>
 		Easy Audio Converter converts selected files and folders without leaving
 		Windows Explorer. Conversion runs in the background using the FFmpeg
@@ -189,6 +189,23 @@
 		folder job. An MP3 selected directly can still be intentionally re-encoded;
 		its source remains untouched by default and the result receives a safe new
 		name.
+	</p>
+
+	<h2>Optional GOGO-no-coda encoder</h2>
+	<p>
+		The first settings tab includes “GOGO-no-coda MP3 (bundled WAV encoder)”.
+		The add-on includes an unmodified <code>gogo.exe</code>, so leaving the
+		executable field empty uses the bundled version. You may select your own
+		<code>gogo.exe</code>, choose a bitrate preset, the GOGO <code>-q</code>
+		quality value, and optional additional arguments. “Show GOGO commands”
+		reads help directly from the executable in use.
+	</p>
+	<p>
+		GOGO accepts only <code>.wav</code> and <code>.wave</code> inputs and writes
+		MP3. It does not write metadata, loudness normalization, artwork, or
+		chapters. The add-on still provides safe naming, queueing, progress,
+		cancellation, verification, timestamp preservation, and optional source
+		replacement. The encoder is started as a separate process.
 	</p>
 
 	<h2>Original-stream extraction and AAC remuxing</h2>

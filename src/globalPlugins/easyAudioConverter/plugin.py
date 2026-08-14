@@ -55,6 +55,7 @@ from . import (
 	_read_notification_preferences,
 	_read_settings,
 	_quality_labels,
+	resolve_gogo_path,
 	_validated_key,
 	download_release,
 	fetch_latest_release,
@@ -391,11 +392,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		progress_dialog = getattr(parallel_plugin, "_progress_dialog", None)
 		if progress_dialog is not None and hasattr(progress_dialog, "SetTitle"):
 			try:
-				progress_dialog.SetTitle(
-					_("Easy Audio Converter progress — separate job {id}").format(
-						id=parallel_plugin._parallel_task_id,
-					)
+				parallel_title = _(
+					"Converting — Easy Audio Converter — separate job {id}"
+				).format(
+					id=parallel_plugin._parallel_task_id,
 				)
+				if hasattr(progress_dialog, "set_title_prefix"):
+					progress_dialog.set_title_prefix(parallel_title)
+				else:
+					progress_dialog.SetTitle(parallel_title)
 			except Exception:
 				log.debugWarning(
 					"Easy Audio Converter: could not label a parallel progress window",
@@ -836,6 +841,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					)
 				)
 			return
+		if settings.target_format == "mp3" and settings.mp3_encoder == "gogo":
+			gogo_path = resolve_gogo_path(settings.gogo_path)
+			if not gogo_path.is_file():
+				gui.messageBox(
+					_(
+						"The configured or bundled GOGO executable is missing. Choose "
+						"another gogo.exe in Easy Audio Converter settings."
+					),
+					_("Easy Audio Converter"),
+					wx.OK | wx.ICON_ERROR,
+					gui.mainFrame,
+				)
+				if _event_sound_enabled("errorSound"):
+					_play_event_sound(ERROR_SOUND_PATH, "error")
+				queued_count = len(self._job_queue)
+				if queued_count:
+					self._job_queue.clear()
+					if self._progress_dialog is not None:
+						self._progress_dialog.set_queue_count(0)
+					ui.message(
+						_("Cleared {count} queued conversion jobs").format(
+							count=queued_count
+						)
+					)
+				return
 		self._current_job = job
 		self._job_settings = settings
 		self._job_source_root = source_root

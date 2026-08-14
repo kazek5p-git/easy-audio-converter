@@ -19,6 +19,11 @@ from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
+try:
+	from .gogo import build_gogo_command, is_gogo_wav, validate_gogo_options
+except ImportError:  # pragma: no cover - używane przez testy ładowane bez pakietu.
+	from gogo import build_gogo_command, is_gogo_wav, validate_gogo_options
+
 
 FORMAT_KEYS = (
 	"mp3",
@@ -64,7 +69,7 @@ FORMAT_EXTENSIONS = {
 }
 
 QUALITY_KEYS = ("economical", "standard", "high", "veryHigh")
-MP3_ENCODER_KEYS = ("lame", "fraunhofer")
+MP3_ENCODER_KEYS = ("lame", "fraunhofer", "gogo")
 METADATA_MODE_KEYS = ("none", "all", "selected")
 PARALLEL_JOB_COUNTS = (0, 1, 2, 4, 8, 16, 32)
 MAX_PARALLEL_JOBS = PARALLEL_JOB_COUNTS[-1]
@@ -343,6 +348,10 @@ class ConversionSettings:
 	target_format: str = "mp3"
 	quality: str = "high"
 	mp3_encoder: str = "lame"
+	gogo_path: str = ""
+	gogo_bitrate: int = 0
+	gogo_quality: int = 0
+	gogo_extra_arguments: str = ""
 	same_folder: bool = True
 	output_folder: str = ""
 	include_subfolders: bool = True
@@ -372,6 +381,17 @@ class ConversionSettings:
 			raise ValueError(f"Unsupported quality preset: {self.quality}")
 		if self.mp3_encoder not in MP3_ENCODER_KEYS:
 			raise ValueError(f"Unsupported MP3 encoder: {self.mp3_encoder}")
+		if self.mp3_encoder == "gogo" and self.target_format != "mp3":
+			raise ValueError("GOGO can only be used with MP3 output")
+		if self.mp3_encoder == "gogo":
+			validate_gogo_options(
+				path=self.gogo_path,
+				bitrate=self.gogo_bitrate,
+				quality=self.gogo_quality,
+				extra_arguments=self.gogo_extra_arguments,
+			)
+			if self.loudness_preset != "off":
+				raise ValueError("GOGO does not support loudness normalization")
 		try:
 			parallel_jobs = int(self.parallel_jobs)
 		except (TypeError, ValueError) as error:
@@ -844,6 +864,9 @@ def _build_base_codec_arguments(target_format: str, quality: str, mp3_encoder: s
 	if target_format in STREAM_COPY_FORMATS:
 		return ["-c:a", "copy"]
 	if target_format == "mp3":
+		if mp3_encoder == "gogo":
+			# GOGO jest zewnętrznym backendem i nie przyjmuje opcji FFmpeg.
+			return []
 		codec = "libmp3lame" if mp3_encoder == "lame" else "mp3_mf"
 		return ["-c:a", codec, "-b:a", ("96k", "160k", "224k", "320k")[index], "-write_xing", "1"]
 	if target_format == "wav":
@@ -938,6 +961,8 @@ def apply_advanced_codec_arguments(
 	"""Apply validated per-codec overrides without accepting raw command text."""
 	arguments = list(arguments)
 	if target_format in STREAM_COPY_FORMATS:
+		return arguments
+	if target_format == "mp3" and mp3_encoder == "gogo":
 		return arguments
 	if not options or not bool(options.get("enabled", False)):
 		return arguments
@@ -1433,6 +1458,13 @@ def _estimated_output_size(
 				int(duration * int(audio_bitrate_kbps) * 1000 / 8 * 1.02),
 			)
 		return None
+	if settings.target_format == "mp3" and settings.mp3_encoder == "gogo":
+		if duration and duration > 0 and int(settings.gogo_bitrate) > 0:
+			return max(
+				1,
+				int(duration * int(settings.gogo_bitrate) * 1000 / 8 * 1.02),
+			)
+		return None
 	if not duration or duration <= 0:
 		return source_size or None
 	arguments = build_codec_arguments(
@@ -1475,11 +1507,20 @@ def _relative_parent(source: Path, source_root: Path | None) -> Path:
 
 
 def _redact_ffmpeg_error(message: str, source: Path, output: Path) -> str:
+	return _redact_process_error(message, source, output, "FFmpeg")
+
+
+def _redact_process_error(
+	message: str,
+	source: Path,
+	output: Path,
+	process_name: str,
+) -> str:
 	cleaned = (message or "").strip()
 	for value, replacement in ((str(source), "<source>"), (str(output), "<output>")):
 		cleaned = cleaned.replace(value, replacement)
 	if not cleaned:
-		return "FFmpeg returned an error without details"
+		return f"{process_name} returned an error without details"
 	return cleaned[-2000:]
 
 
@@ -1992,6 +2033,14 @@ class Converter:
 	) -> ConversionSummary:
 		settings.validate()
 		self._require_ffmpeg()
+		if settings.target_format == "mp3" and settings.mp3_encoder == "gogo":
+			validate_gogo_options(
+				path=settings.gogo_path,
+				bitrate=settings.gogo_bitrate,
+				quality=settings.gogo_quality,
+				extra_arguments=settings.gogo_extra_arguments,
+				require_executable=True,
+			)
 		path_list = tuple(paths)
 		callbacks = callbacks or ConversionCallbacks()
 		root = Path(source_root) if source_root else None
@@ -2111,9 +2160,11 @@ class Converter:
 			if self._cancel_event.is_set():
 				summary.canceled = True
 				break
+			is_gogo = settings.target_format == "mp3" and settings.mp3_encoder == "gogo"
 			loudnorm_filter = ""
 			if (
-				settings.target_format not in STREAM_COPY_FORMATS
+				not is_gogo
+				and settings.target_format not in STREAM_COPY_FORMATS
 				and settings.loudness_preset != "off"
 			):
 				_safe_callback(
@@ -2156,45 +2207,69 @@ class Converter:
 				duration,
 			)
 			_safe_callback(callbacks.on_stage, index, summary.total, source.name, "converting")
-			stream_arguments = self._stream_mapping_arguments(
-				settings,
-				has_artwork=has_artwork,
-			)
-			command = [
-				str(self.ffmpeg_path),
-				"-nostdin",
-				"-hide_banner",
-				"-loglevel",
-				"error",
-				"-n",
-				"-i",
-				str(source),
-				# Pozwól każdemu kodekowi i filtrowi FFmpeg dobrać liczbę wątków.
-				"-threads",
-				"0",
-				*stream_arguments,
-				*self._metadata_arguments(settings, metadata),
-				"-map_chapters",
-				(
-					"0"
-					if (
-						settings.copy_chapters
-						and settings.target_format != ORIGINAL_AUDIO_COPY_FORMAT
+			if is_gogo:
+				# GOGO nie ma odpowiednika FFmpegowego ``-n``. Nie pozwól mu
+				# nadpisać wyniku, który pojawił się po zbudowaniu planu.
+				if output.exists():
+					self._record_failure(
+						summary,
+						source,
+						"The GOGO output path already exists; no file was overwritten.",
+						output=output,
 					)
-					else "-1"
-				),
-				*(["-af", loudnorm_filter] if loudnorm_filter else []),
-				*build_codec_arguments(
-					settings.target_format,
-					settings.quality,
-					settings.mp3_encoder,
-					settings.advanced_options,
-				),
-				"-progress",
-				"pipe:1",
-				"-nostats",
-				str(output),
-			]
+					if self._finish_at_boundary(summary):
+						break
+					continue
+				# GOGO nie obsługuje metadanych, filtrów ani kontenerów. Wtyczka
+				# nadal kontroluje nazwy, daty, weryfikację i usuwanie źródeł.
+				command = build_gogo_command(
+					settings.gogo_path,
+					str(source),
+					str(output),
+					bitrate=settings.gogo_bitrate,
+					quality=settings.gogo_quality,
+					extra_arguments=settings.gogo_extra_arguments,
+				)
+			else:
+				stream_arguments = self._stream_mapping_arguments(
+					settings,
+					has_artwork=has_artwork,
+				)
+				command = [
+					str(self.ffmpeg_path),
+					"-nostdin",
+					"-hide_banner",
+					"-loglevel",
+					"error",
+					"-n",
+					"-i",
+					str(source),
+					# Pozwól każdemu kodekowi i filtrowi FFmpeg dobrać liczbę wątków.
+					"-threads",
+					"0",
+					*stream_arguments,
+					*self._metadata_arguments(settings, metadata),
+					"-map_chapters",
+					(
+						"0"
+						if (
+							settings.copy_chapters
+							and settings.target_format != ORIGINAL_AUDIO_COPY_FORMAT
+						)
+						else "-1"
+					),
+					*(["-af", loudnorm_filter] if loudnorm_filter else []),
+					*build_codec_arguments(
+						settings.target_format,
+						settings.quality,
+						settings.mp3_encoder,
+						settings.advanced_options,
+					),
+					"-progress",
+					"pipe:1",
+					"-nostats",
+					str(output),
+				]
 
 			def report_progress(processed_seconds: float) -> None:
 				if duration and duration > 0:
@@ -2216,7 +2291,10 @@ class Converter:
 				)
 
 			encode_started = time.monotonic()
-			return_code, error_message = self._run_process(command, report_progress)
+			if is_gogo:
+				return_code, error_message = self._run_gogo_process(command)
+			else:
+				return_code, error_message = self._run_process(command, report_progress)
 			summary.timing.encode_seconds += max(0.0, time.monotonic() - encode_started)
 			finalize_started = time.monotonic()
 
@@ -2327,7 +2405,12 @@ class Converter:
 			self._record_failure(
 				summary,
 				source,
-				_redact_ffmpeg_error(error_message, source, output),
+				_redact_process_error(
+					error_message,
+					source,
+					output,
+					"GOGO" if is_gogo else "FFmpeg",
+				),
 			)
 			record_finalize_time()
 			if self._finish_at_boundary(summary):
@@ -2646,7 +2729,7 @@ class Converter:
 				for directory in input_directories
 			):
 				excluded_roots = (output_root,)
-		return collect_audio_files_detailed(
+		files, ignored, skipped_files = collect_audio_files_detailed(
 			path_list,
 			recursive=settings.include_subfolders,
 			excluded_roots=excluded_roots,
@@ -2656,11 +2739,29 @@ class Converter:
 				else (FORMAT_EXTENSIONS[settings.target_format],)
 			),
 		)
+		if settings.target_format == "mp3" and settings.mp3_encoder == "gogo":
+			# GOGO-no-coda jest enkoderem WAV -> MP3. Nie próbujemy przekazywać
+			# innych kontenerów do procesu, bo jego komunikaty są mało czytelne.
+			gogo_files: list[Path] = []
+			for source in files:
+				if is_gogo_wav(source):
+					gogo_files.append(source)
+				else:
+					ignored += 1
+					if len(skipped_files) < MAX_SKIPPED_FILE_DETAILS:
+						skipped_files.append(
+							SkippedFile(str(source), "gogoRequiresWav")
+						)
+			return gogo_files, ignored, skipped_files
+		return files, ignored, skipped_files
 
 	@staticmethod
 	def _requires_source_metadata(settings: ConversionSettings) -> bool:
 		if (
 			settings.target_format != ORIGINAL_AUDIO_COPY_FORMAT
+			and not (
+				settings.target_format == "mp3" and settings.mp3_encoder == "gogo"
+			)
 			and settings.metadata_mode == "selected"
 			and settings.metadata_fields
 		):
@@ -3058,6 +3159,24 @@ class Converter:
 			process.wait()
 			error_thread.join(timeout=2)
 			return int(process.returncode or 0), "".join(error_lines)
+		finally:
+			self._clear_process(process)
+
+	def _run_gogo_process(self, command: list[str]) -> tuple[int, str]:
+		"""Uruchom GOGO bez powłoki i zachowaj jego wyjście diagnostyczne."""
+		process = self._start_process(
+			command,
+			stdout=subprocess.PIPE,
+			stderr=subprocess.PIPE,
+		)
+		try:
+			stdout, stderr = process.communicate()
+			if self._cancel_event.is_set() and process.poll() is None:
+				try:
+					process.terminate()
+				except OSError:
+					pass
+			return int(process.returncode or 0), (stderr or stdout or "")
 		finally:
 			self._clear_process(process)
 

@@ -30,6 +30,8 @@ from . import (
 	ERROR_SOUND_PATH,
 	FLAC_COMPRESSION_LEVELS,
 	FORMAT_KEYS,
+	GOGO_BITRATE_PRESETS,
+	GOGO_QUALITY_VALUES,
 	LOUDNESS_PRESET_KEYS,
 	MAX_PROFILE_DOCUMENT_BYTES,
 	METADATA_FIELD_KEYS,
@@ -56,6 +58,8 @@ from . import (
 	_metadata_field_labels,
 	_metadata_mode_labels,
 	_mp3_encoder_labels,
+	read_gogo_help,
+	validate_gogo_options,
 	_open_support_page,
 	_output_name_preview,
 	_parallel_job_labels,
@@ -64,6 +68,7 @@ from . import (
 	_read_busy_conversion_mode,
 	_read_notification_preferences,
 	_read_settings,
+	resolve_gogo_path,
 	_safe_int,
 	_save_user_conversion_profiles,
 	_stream_copy_description,
@@ -80,6 +85,64 @@ from . import (
 	validate_output_name_template,
 )
 from .conversion_dialogs import _play_completion_sound, _play_event_sound
+
+
+def _gogo_bitrate_labels() -> dict[int, str]:
+	return {
+		0: _("Define manually in GOGO arguments"),
+		64: _("64 kb/s joint stereo"),
+		128: _("128 kb/s joint stereo"),
+		160: _("160 kb/s joint stereo"),
+		192: _("192 kb/s joint stereo"),
+		256: _("256 kb/s stereo"),
+		320: _("320 kb/s stereo"),
+	}
+
+
+def _gogo_quality_labels() -> list[str]:
+	return [
+		_("GOGO Q {value} — highest quality").format(value=value)
+		if value == 0
+		else _("GOGO Q {value} — fastest at Q9").format(value=value)
+		if value == 9
+		else _("GOGO Q {value}").format(value=value)
+		for value in GOGO_QUALITY_VALUES
+	]
+
+
+class GogoHelpDialog(wx.Dialog):
+	"""Wyświetl pomoc zwróconą przez zewnętrzny proces GOGO."""
+
+	def __init__(self, parent, executable: str):
+		super().__init__(
+			parent,
+			title=_("GOGO commands"),
+			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
+		)
+		panel = wx.Panel(self)
+		sizer = wx.BoxSizer(wx.VERTICAL)
+		try:
+			help_text = read_gogo_help(executable)
+		except Exception as error:
+			help_text = _("Could not read GOGO help:\n{error}").format(error=error)
+		self.text = wx.TextCtrl(
+			panel,
+			value=help_text,
+			style=wx.TE_MULTILINE | wx.TE_READONLY | getattr(wx, "HSCROLL", 0),
+		)
+		sizer.Add(self.text, 1, wx.ALL | wx.EXPAND, 8)
+		buttons = wx.StdDialogButtonSizer()
+		buttons.AddButton(wx.Button(panel, wx.ID_CLOSE))
+		buttons.Realize()
+		sizer.Add(buttons, 0, wx.ALL | wx.ALIGN_RIGHT, 8)
+		panel.SetSizer(sizer)
+		outer = wx.BoxSizer(wx.VERTICAL)
+		outer.Add(panel, 1, wx.EXPAND)
+		self.SetSizerAndFit(outer)
+		self.SetSize((720, 520))
+		self.SetMinSize((500, 320))
+		self.CentreOnParent()
+		self.Bind(wx.EVT_BUTTON, lambda event: self.EndModal(wx.ID_CLOSE), id=wx.ID_CLOSE)
 
 
 class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
@@ -117,6 +180,44 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		)
 		self.mp3_encoder.SetSelection(MP3_ENCODER_KEYS.index(settings.mp3_encoder))
 		self.stream_copy_note = helper.addItem(wx.StaticText(self, label=""))
+		self.gogo_path = helper.addLabeledControl(
+			_("GOGO executable (gogo.exe):"),
+			wx.TextCtrl,
+		)
+		self.gogo_path.SetValue(settings.gogo_path)
+		self.gogo_browse_button = helper.addItem(
+			wx.Button(self, label=_("Browse for GOGO executable..."))
+		)
+		gogo_bitrate_labels = _gogo_bitrate_labels()
+		self.gogo_bitrate = helper.addLabeledControl(
+			_("GOGO bitrate:"),
+			wx.Choice,
+			choices=[gogo_bitrate_labels[key] for key in GOGO_BITRATE_PRESETS],
+		)
+		self.gogo_bitrate.SetSelection(
+			GOGO_BITRATE_PRESETS.index(settings.gogo_bitrate)
+			if settings.gogo_bitrate in GOGO_BITRATE_PRESETS
+			else 0
+		)
+		self.gogo_quality = helper.addLabeledControl(
+			_("GOGO quality:"),
+			wx.Choice,
+			choices=_gogo_quality_labels(),
+		)
+		self.gogo_quality.SetSelection(
+			settings.gogo_quality
+			if settings.gogo_quality in GOGO_QUALITY_VALUES
+			else 0
+		)
+		self.gogo_extra_arguments = helper.addLabeledControl(
+			_("Additional GOGO arguments:"),
+			wx.TextCtrl,
+		)
+		self.gogo_extra_arguments.SetValue(settings.gogo_extra_arguments)
+		self.gogo_help_button = helper.addItem(
+			wx.Button(self, label=_("Show GOGO commands"))
+		)
+		self.gogo_note = helper.addItem(wx.StaticText(self, label=""))
 
 		self.same_folder = helper.addItem(
 			# Translators: Convert next to each source instead of using one destination folder.
@@ -212,11 +313,14 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		self.metadata_overrides_summary = helper.addItem(wx.StaticText(self, label=""))
 
 		self.target_format.Bind(wx.EVT_CHOICE, self._update_control_state)
+		self.mp3_encoder.Bind(wx.EVT_CHOICE, self._update_control_state)
 		self.same_folder.Bind(wx.EVT_CHECKBOX, self._update_control_state)
 		self.metadata_mode.Bind(wx.EVT_CHOICE, self._update_control_state)
 		self.metadata_overrides_button.Bind(wx.EVT_BUTTON, self._on_metadata_overrides)
 		self.output_name_template.Bind(wx.EVT_TEXT, self._update_name_preview)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
+		self.gogo_browse_button.Bind(wx.EVT_BUTTON, self._on_gogo_browse)
+		self.gogo_help_button.Bind(wx.EVT_BUTTON, self._on_gogo_help)
 		self._update_control_state()
 		self._update_name_preview()
 		self._update_metadata_overrides_summary()
@@ -231,10 +335,32 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		target_format = FORMAT_KEYS[self.target_format.GetSelection()]
 		stream_copy = target_format in STREAM_COPY_FORMATS
 		is_mp3 = target_format == "mp3"
+		is_gogo = is_mp3 and MP3_ENCODER_KEYS[self.mp3_encoder.GetSelection()] == "gogo"
 		self.quality.Enable(not stream_copy)
 		self.mp3_encoder.Enable(is_mp3)
+		for control in (
+			self.gogo_path,
+			self.gogo_browse_button,
+			self.gogo_bitrate,
+			self.gogo_quality,
+			self.gogo_extra_arguments,
+			self.gogo_help_button,
+		):
+			control.Enable(is_gogo)
 		self.stream_copy_note.SetLabel(_stream_copy_description(target_format))
 		self.stream_copy_note.Show(stream_copy)
+		self.gogo_note.SetLabel(
+			_(
+				"GOGO encodes WAV/WAVE files to MP3 without metadata or loudness "
+				"processing. The add-on includes GOGO-no-coda; leave the executable "
+				"field empty to use it, or choose another gogo.exe."
+			)
+			if is_gogo
+			else ""
+		)
+		self.gogo_note.Show(is_gogo)
+		if is_gogo:
+			self.gogo_note.Wrap(max(360, self.GetClientSize().GetWidth() - 20))
 		if stream_copy:
 			self.stream_copy_note.Wrap(max(360, self.GetClientSize().GetWidth() - 20))
 		use_destination = not self.same_folder.IsChecked()
@@ -307,9 +433,42 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		finally:
 			dialog.Destroy()
 
+	def _on_gogo_browse(self, event):
+		current = self.gogo_path.GetValue().strip()
+		dialog = wx.FileDialog(
+			self,
+			_("Choose the GOGO executable"),
+			defaultDir=str(resolve_gogo_path(current).parent),
+			wildcard=_("GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|All files (*.*)|*.*"),
+			style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+		)
+		try:
+			if dialog.ShowModal() == wx.ID_OK:
+				self.gogo_path.SetValue(dialog.GetPath())
+		finally:
+			dialog.Destroy()
+
+	def _on_gogo_help(self, event):
+		path = self.gogo_path.GetValue().strip()
+		dialog = GogoHelpDialog(self, path)
+		try:
+			dialog.ShowModal()
+		finally:
+			dialog.Destroy()
+
 	def isValid(self) -> bool:
 		try:
 			validate_output_name_template(self.output_name_template.GetValue())
+			if (
+				FORMAT_KEYS[self.target_format.GetSelection()] == "mp3"
+				and MP3_ENCODER_KEYS[self.mp3_encoder.GetSelection()] == "gogo"
+			):
+				validate_gogo_options(
+					path=self.gogo_path.GetValue().strip(),
+					bitrate=GOGO_BITRATE_PRESETS[self.gogo_bitrate.GetSelection()],
+					quality=GOGO_QUALITY_VALUES[self.gogo_quality.GetSelection()],
+					extra_arguments=self.gogo_extra_arguments.GetValue(),
+				)
 		except ValueError as error:
 			gui.messageBox(
 				str(error),
@@ -327,6 +486,10 @@ class _EasyAudioConverterStandardSettingsPage(SettingsPanel):
 		conf["targetFormat"] = FORMAT_KEYS[self.target_format.GetSelection()]
 		conf["quality"] = QUALITY_KEYS[self.quality.GetSelection()]
 		conf["mp3Encoder"] = MP3_ENCODER_KEYS[self.mp3_encoder.GetSelection()]
+		conf["gogoPath"] = self.gogo_path.GetValue().strip()
+		conf["gogoBitrate"] = GOGO_BITRATE_PRESETS[self.gogo_bitrate.GetSelection()]
+		conf["gogoQuality"] = GOGO_QUALITY_VALUES[self.gogo_quality.GetSelection()]
+		conf["gogoExtraArguments"] = self.gogo_extra_arguments.GetValue()
 		conf["sameFolder"] = self.same_folder.IsChecked()
 		conf["outputFolder"] = self.output_folder.GetValue().strip() or _default_output_folder()
 		conf["includeSubfolders"] = self.include_subfolders.IsChecked()
@@ -354,6 +517,9 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 		conf = config.conf[CONFIG_SECTION]
 		helper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		self._target_format = settings.target_format
+		self._is_gogo = (
+			settings.target_format == "mp3" and settings.mp3_encoder == "gogo"
+		)
 		self.stream_copy_note = helper.addItem(wx.StaticText(self, label=""))
 
 		loudness_labels = _loudness_preset_labels()
@@ -535,9 +701,10 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 		self.stream_copy_note.Show(stream_copy)
 		if stream_copy:
 			self.stream_copy_note.Wrap(max(360, self.GetClientSize().GetWidth() - 20))
-		self.loudness_preset.Enable(not stream_copy)
+		self.loudness_preset.Enable(not stream_copy and not self._is_gogo)
 		custom = (
 			not stream_copy
+			and not self._is_gogo
 			and
 			LOUDNESS_PRESET_KEYS[max(0, self.loudness_preset.GetSelection())] == "custom"
 		)
@@ -562,9 +729,10 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 	def onSave(self):
 		conf = config.conf[CONFIG_SECTION]
 		target_format = _validated_key(conf.get("targetFormat"), FORMAT_KEYS, "mp3")
+		is_gogo = target_format == "mp3" and conf.get("mp3Encoder") == "gogo"
 		conf["loudnessPreset"] = (
 			"off"
-			if target_format in STREAM_COPY_FORMATS
+			if target_format in STREAM_COPY_FORMATS or is_gogo
 			else LOUDNESS_PRESET_KEYS[max(0, self.loudness_preset.GetSelection())]
 		)
 		conf["loudnessTargetI"] = self.loudness_target_i.GetValue()
@@ -1067,6 +1235,9 @@ class JobProcessingOptionsDialog(wx.Dialog):
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		helper = guiHelper.BoxSizerHelper(panel, sizer=sizer)
 		self._target_format = settings.target_format
+		self._is_gogo = (
+			settings.target_format == "mp3" and settings.mp3_encoder == "gogo"
+		)
 		self.stream_copy_note = helper.addItem(
 			wx.StaticText(panel, label=_stream_copy_description(settings.target_format))
 		)
@@ -1160,9 +1331,10 @@ class JobProcessingOptionsDialog(wx.Dialog):
 
 	def _update_control_state(self, event=None):
 		stream_copy = self._target_format in STREAM_COPY_FORMATS
-		self.loudness_preset.Enable(not stream_copy)
+		self.loudness_preset.Enable(not stream_copy and not self._is_gogo)
 		custom = (
 			not stream_copy
+			and not self._is_gogo
 			and
 			LOUDNESS_PRESET_KEYS[max(0, self.loudness_preset.GetSelection())] == "custom"
 		)
@@ -1181,7 +1353,7 @@ class JobProcessingOptionsDialog(wx.Dialog):
 			settings,
 			loudness_preset=(
 				"off"
-				if stream_copy
+				if stream_copy or self._is_gogo
 				else LOUDNESS_PRESET_KEYS[
 					max(0, self.loudness_preset.GetSelection())
 				]
@@ -1269,6 +1441,32 @@ class ConversionOptionsDialog(wx.Dialog):
 			wx.Choice,
 			choices=[encoder_labels[key] for key in MP3_ENCODER_KEYS],
 		)
+		self.gogo_path = helper.addLabeledControl(
+			_("GOGO executable (gogo.exe):"),
+			wx.TextCtrl,
+		)
+		self.gogo_browse_button = helper.addItem(
+			wx.Button(panel, label=_("Browse for GOGO executable..."))
+		)
+		gogo_bitrate_labels = _gogo_bitrate_labels()
+		self.gogo_bitrate = helper.addLabeledControl(
+			_("GOGO bitrate:"),
+			wx.Choice,
+			choices=[gogo_bitrate_labels[key] for key in GOGO_BITRATE_PRESETS],
+		)
+		self.gogo_quality = helper.addLabeledControl(
+			_("GOGO quality:"),
+			wx.Choice,
+			choices=_gogo_quality_labels(),
+		)
+		self.gogo_extra_arguments = helper.addLabeledControl(
+			_("Additional GOGO arguments:"),
+			wx.TextCtrl,
+		)
+		self.gogo_help_button = helper.addItem(
+			wx.Button(panel, label=_("Show GOGO commands"))
+		)
+		self.gogo_note = helper.addItem(wx.StaticText(panel, label=""))
 
 		self.same_folder = helper.addItem(
 			wx.CheckBox(panel, label=_("Save converted files next to the source files"))
@@ -1363,6 +1561,11 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.target_format.Bind(wx.EVT_CHOICE, self._on_target_changed)
 		self.quality.Bind(wx.EVT_CHOICE, self._on_setting_changed)
 		self.mp3_encoder.Bind(wx.EVT_CHOICE, self._on_setting_changed)
+		self.mp3_encoder.Bind(wx.EVT_CHOICE, self._update_control_state)
+		self.gogo_path.Bind(wx.EVT_TEXT, self._on_setting_changed)
+		self.gogo_bitrate.Bind(wx.EVT_CHOICE, self._on_setting_changed)
+		self.gogo_quality.Bind(wx.EVT_CHOICE, self._on_setting_changed)
+		self.gogo_extra_arguments.Bind(wx.EVT_TEXT, self._on_setting_changed)
 		self.same_folder.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.output_folder.Bind(wx.EVT_TEXT, self._on_setting_changed)
 		self.output_name_template.Bind(wx.EVT_TEXT, self._on_setting_changed)
@@ -1372,6 +1575,8 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.replace_source_files.Bind(wx.EVT_CHECKBOX, self._on_setting_changed)
 		self.metadata_mode.Bind(wx.EVT_CHOICE, self._on_setting_changed)
 		self.browse_button.Bind(wx.EVT_BUTTON, self._on_browse)
+		self.gogo_browse_button.Bind(wx.EVT_BUTTON, self._on_gogo_browse)
+		self.gogo_help_button.Bind(wx.EVT_BUTTON, self._on_gogo_help)
 		self.metadata_fields_button.Bind(wx.EVT_BUTTON, self._on_metadata_fields)
 		self.metadata_overrides_button.Bind(wx.EVT_BUTTON, self._on_metadata_overrides)
 		self.processing_options_button.Bind(wx.EVT_BUTTON, self._on_processing_options)
@@ -1416,6 +1621,18 @@ class ConversionOptionsDialog(wx.Dialog):
 			self.target_format.SetSelection(FORMAT_KEYS.index(settings.target_format))
 			self.quality.SetSelection(QUALITY_KEYS.index(settings.quality))
 			self.mp3_encoder.SetSelection(MP3_ENCODER_KEYS.index(settings.mp3_encoder))
+			self.gogo_path.SetValue(settings.gogo_path)
+			self.gogo_bitrate.SetSelection(
+				GOGO_BITRATE_PRESETS.index(settings.gogo_bitrate)
+				if settings.gogo_bitrate in GOGO_BITRATE_PRESETS
+				else 0
+			)
+			self.gogo_quality.SetSelection(
+				settings.gogo_quality
+				if settings.gogo_quality in GOGO_QUALITY_VALUES
+				else 0
+			)
+			self.gogo_extra_arguments.SetValue(settings.gogo_extra_arguments)
 			self.same_folder.SetValue(settings.same_folder)
 			self.output_folder.SetValue(settings.output_folder or _default_output_folder())
 			self.output_name_template.SetValue(settings.output_name_template)
@@ -1439,11 +1656,18 @@ class ConversionOptionsDialog(wx.Dialog):
 		advanced_options = dict(self._advanced_options)
 		if stream_copy:
 			advanced_options["enabled"] = False
+		selected_encoder = MP3_ENCODER_KEYS[max(0, self.mp3_encoder.GetSelection())]
+		if target_format == "mp3" and selected_encoder == "gogo":
+			advanced_options["enabled"] = False
 		settings = replace(
 			self._processing_settings,
 			target_format=target_format,
 			quality=QUALITY_KEYS[max(0, self.quality.GetSelection())],
-			mp3_encoder=MP3_ENCODER_KEYS[max(0, self.mp3_encoder.GetSelection())],
+			mp3_encoder=selected_encoder,
+			gogo_path=self.gogo_path.GetValue().strip(),
+			gogo_bitrate=GOGO_BITRATE_PRESETS[max(0, self.gogo_bitrate.GetSelection())],
+			gogo_quality=GOGO_QUALITY_VALUES[max(0, self.gogo_quality.GetSelection())],
+			gogo_extra_arguments=self.gogo_extra_arguments.GetValue(),
 			same_folder=self.same_folder.IsChecked(),
 			output_folder=self.output_folder.GetValue().strip() or _default_output_folder(),
 			include_subfolders=self.include_subfolders.IsChecked(),
@@ -1456,7 +1680,13 @@ class ConversionOptionsDialog(wx.Dialog):
 			advanced_options=advanced_options,
 			output_name_template=self.output_name_template.GetValue().strip(),
 			loudness_preset=(
-				"off" if stream_copy else self._processing_settings.loudness_preset
+				"off"
+				if stream_copy
+				or (
+					target_format == "mp3"
+					and MP3_ENCODER_KEYS[max(0, self.mp3_encoder.GetSelection())] == "gogo"
+				)
+				else self._processing_settings.loudness_preset
 			),
 			copy_artwork=(
 				self._processing_settings.copy_artwork and preserve_extra_streams
@@ -1485,8 +1715,33 @@ class ConversionOptionsDialog(wx.Dialog):
 		target_format = FORMAT_KEYS[max(0, self.target_format.GetSelection())]
 		stream_copy = target_format in STREAM_COPY_FORMATS
 		original_stream = target_format == ORIGINAL_AUDIO_COPY_FORMAT
+		is_gogo = (
+			target_format == "mp3"
+			and MP3_ENCODER_KEYS[max(0, self.mp3_encoder.GetSelection())] == "gogo"
+		)
 		self.quality.Enable(not stream_copy)
 		self.mp3_encoder.Enable(target_format == "mp3")
+		for control in (
+			self.gogo_path,
+			self.gogo_browse_button,
+			self.gogo_bitrate,
+			self.gogo_quality,
+			self.gogo_extra_arguments,
+			self.gogo_help_button,
+		):
+			control.Enable(is_gogo)
+		self.gogo_note.SetLabel(
+			_(
+				"GOGO encodes WAV/WAVE files to MP3 without metadata or loudness "
+				"processing. The add-on includes GOGO-no-coda; leave the executable "
+				"field empty to use it, or choose another gogo.exe."
+			)
+			if is_gogo
+			else ""
+		)
+		self.gogo_note.Show(is_gogo)
+		if is_gogo:
+			self.gogo_note.Wrap(max(360, self.GetClientSize().GetWidth() - 20))
 		use_destination = not self.same_folder.IsChecked()
 		self.output_folder.Enable(use_destination)
 		self.browse_button.Enable(use_destination)
@@ -1508,6 +1763,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.advanced_status.SetLabel(
 			_("Advanced codec overrides are not used for stream copy")
 			if stream_copy
+			else _("Advanced codec overrides are not used by GOGO") if is_gogo
 			else (
 				_("Advanced codec overrides: enabled")
 				if advanced_enabled
@@ -1542,6 +1798,13 @@ class ConversionOptionsDialog(wx.Dialog):
 				else _(
 					"No re-encoding: quality, loudness, and advanced codec "
 					"settings are not used.",
+				)
+			)
+		elif is_gogo:
+			self.processing_status.SetLabel(
+				_(
+					"GOGO processing: WAV/WAVE input only; metadata, loudness, "
+					"artwork, and chapters are not written."
 				)
 			)
 		else:
@@ -1597,6 +1860,32 @@ class ConversionOptionsDialog(wx.Dialog):
 			if dialog.ShowModal() == wx.ID_OK:
 				self.output_folder.SetValue(dialog.GetPath())
 
+		finally:
+			dialog.Destroy()
+
+	def _on_gogo_browse(self, event) -> None:
+		current = self.gogo_path.GetValue().strip()
+		dialog = wx.FileDialog(
+			self,
+			_("Choose the GOGO executable"),
+			defaultDir=str(resolve_gogo_path(current).parent),
+			wildcard=_(
+				"GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|"
+				"All files (*.*)|*.*"
+			),
+			style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+		)
+		try:
+			if dialog.ShowModal() == wx.ID_OK:
+				self.gogo_path.SetValue(dialog.GetPath())
+		finally:
+			dialog.Destroy()
+
+	def _on_gogo_help(self, event) -> None:
+		path = self.gogo_path.GetValue().strip()
+		dialog = GogoHelpDialog(self, path)
+		try:
+			dialog.ShowModal()
 		finally:
 			dialog.Destroy()
 

@@ -51,6 +51,15 @@ from .converter import (
 	resolve_parallel_jobs,
 	validate_output_name_template,
 )
+from .gogo import (
+	GOGO_BITRATE_PRESETS,
+	GOGO_QUALITY_VALUES,
+	bundled_gogo_path,
+	build_gogo_command,
+	read_gogo_help,
+	resolve_gogo_path,
+	validate_gogo_options,
+)
 from .profiles import (
 	MAX_PROFILE_DOCUMENT_BYTES,
 	NamedConversionProfile,
@@ -82,7 +91,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.8.2"
+ADDON_VERSION = "1.9.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
@@ -99,6 +108,10 @@ CONFIG_SPEC = {
 	"targetFormat": "string(default='mp3')",
 	"quality": "string(default='high')",
 	"mp3Encoder": "string(default='lame')",
+	"gogoPath": "string(default='')",
+	"gogoBitrate": "integer(default=0, min=0, max=320)",
+	"gogoQuality": "integer(default=0, min=0, max=9)",
+	"gogoExtraArguments": "string(default='')",
 	"sameFolder": "boolean(default=True)",
 	"outputFolder": "string(default='')",
 	"includeSubfolders": "boolean(default=True)",
@@ -221,10 +234,18 @@ def _read_settings() -> ConversionSettings:
 	if parallel_jobs not in PARALLEL_JOB_COUNTS:
 		parallel_jobs = 0
 	profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
+	gogo_bitrate = _safe_int(conf.get("gogoBitrate"), 0)
+	if gogo_bitrate not in GOGO_BITRATE_PRESETS:
+		gogo_bitrate = 0
+	gogo_quality = max(0, min(9, _safe_int(conf.get("gogoQuality"), 0)))
 	return ConversionSettings(
 		target_format=target_format,
 		quality=_validated_key(conf.get("quality"), QUALITY_KEYS, "high"),
 		mp3_encoder=_validated_key(conf.get("mp3Encoder"), MP3_ENCODER_KEYS, "lame"),
+		gogo_path=str(conf.get("gogoPath") or "").strip(),
+		gogo_bitrate=gogo_bitrate,
+		gogo_quality=gogo_quality,
+		gogo_extra_arguments=str(conf.get("gogoExtraArguments") or "")[:2048],
 		same_folder=bool(conf.get("sameFolder", True)),
 		output_folder=str(conf.get("outputFolder") or _default_output_folder()),
 		include_subfolders=bool(conf.get("includeSubfolders", True)),
@@ -260,6 +281,10 @@ def _write_conversion_settings(settings: ConversionSettings) -> None:
 	conf["targetFormat"] = settings.target_format
 	conf["quality"] = settings.quality
 	conf["mp3Encoder"] = settings.mp3_encoder
+	conf["gogoPath"] = settings.gogo_path
+	conf["gogoBitrate"] = int(settings.gogo_bitrate)
+	conf["gogoQuality"] = int(settings.gogo_quality)
+	conf["gogoExtraArguments"] = settings.gogo_extra_arguments
 	conf["sameFolder"] = settings.same_folder
 	conf["outputFolder"] = settings.output_folder or _default_output_folder()
 	conf["includeSubfolders"] = settings.include_subfolders
@@ -514,6 +539,7 @@ def _mp3_encoder_labels() -> dict[str, str]:
 	return {
 		"lame": _("LAME MP3"),
 		"fraunhofer": _("Fraunhofer / Windows Media Foundation MP3"),
+		"gogo": _("GOGO-no-coda MP3 (bundled WAV encoder)"),
 	}
 
 

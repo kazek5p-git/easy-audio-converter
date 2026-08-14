@@ -103,6 +103,10 @@ def conversion_settings_to_mapping(settings: ConversionSettings) -> dict[str, An
 		"targetFormat": settings.target_format,
 		"quality": settings.quality,
 		"mp3Encoder": settings.mp3_encoder,
+		"gogoPath": settings.gogo_path,
+		"gogoBitrate": settings.gogo_bitrate,
+		"gogoQuality": settings.gogo_quality,
+		"gogoExtraArguments": settings.gogo_extra_arguments,
 		"sameFolder": settings.same_folder,
 		"outputFolder": settings.output_folder,
 		"includeSubfolders": settings.include_subfolders,
@@ -168,6 +172,12 @@ def conversion_settings_from_mapping(
 			MP3_ENCODER_KEYS,
 			base.mp3_encoder,
 		),
+		gogo_path=str(raw.get("gogoPath") or base.gogo_path).strip(),
+		gogo_bitrate=max(0, min(320, _safe_int(raw.get("gogoBitrate"), base.gogo_bitrate))),
+		gogo_quality=max(0, min(9, _safe_int(raw.get("gogoQuality"), base.gogo_quality))),
+		gogo_extra_arguments=str(
+			raw.get("gogoExtraArguments") or base.gogo_extra_arguments
+		)[:2048],
 		same_folder=same_folder,
 		output_folder=output_folder,
 		include_subfolders=_validated_bool(

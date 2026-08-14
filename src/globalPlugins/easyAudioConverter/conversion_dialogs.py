@@ -371,9 +371,11 @@ class ConversionProgressDialog(wx.Dialog):
 		on_report: Callable[[], None],
 		on_results: Callable[[], None],
 	):
+		self._progress_title = _("Converting — Easy Audio Converter")
+		self._last_overall_percent = 0
 		super().__init__(
 			parent,
-			title=_("Easy Audio Converter progress"),
+			title=f"0% — {self._progress_title}",
 			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
 		)
 		self._on_cancel_callback = on_cancel
@@ -444,6 +446,18 @@ class ConversionProgressDialog(wx.Dialog):
 		self.results_button.Disable()
 		self.clear_queue_button.Disable()
 
+	def _update_progress_title(self, percent: int | None = None) -> None:
+		"""Ustaw tytuł okna z aktualnym postępem całej konwersji."""
+		if percent is not None:
+			self._last_overall_percent = max(0, min(100, int(percent)))
+		title = f"{self._last_overall_percent}% — {self._progress_title}"
+		self.SetTitle(title)
+
+	def set_title_prefix(self, title: str) -> None:
+		"""Ustaw opis okna, zachowując dopisywanie procentu postępu."""
+		self._progress_title = str(title or "")
+		self._update_progress_title()
+
 	def show_window(self) -> None:
 		if not self.IsShown():
 			self.Show()
@@ -491,6 +505,7 @@ class ConversionProgressDialog(wx.Dialog):
 				)
 			)
 		overall_percent = int(max(0.0, min(1.0, overall_fraction)) * 100)
+		self._update_progress_title(overall_percent)
 		self.overall_gauge.SetValue(overall_percent * 10)
 		self.overall_status.SetLabel(
 			_("Overall progress: {percent}%").format(percent=overall_percent)
@@ -554,6 +569,7 @@ class ConversionProgressDialog(wx.Dialog):
 		self.remaining_status.SetLabel(_("Estimated time remaining: 0:00"))
 		self.parallel_status.SetLabel(_("Parallel workers: finished"))
 		if completed:
+			self._update_progress_title(100)
 			self.file_gauge.SetValue(1000)
 			self.overall_gauge.SetValue(1000)
 			self.file_status.SetLabel(_("Current file progress: 100%"))
@@ -605,6 +621,8 @@ def _friendly_failure_message(message: str) -> str:
 	"""Translate common FFmpeg and filesystem failures into actionable text."""
 	last_line = message.splitlines()[-1].strip() if message else ""
 	lowered = last_line.casefold()
+	if "the gogo output path already exists; no file was overwritten" in lowered:
+		return _("The GOGO output path already exists; no file was overwritten.")
 	if "could not remove source file after successful conversion" in message.casefold():
 		return _(
 			"The converted output was kept, but the source file could not be removed."
@@ -632,6 +650,9 @@ def _skipped_reason_label(reason: str) -> str:
 		"noAudioStream": _("No readable audio stream was found"),
 		"requiresAac": _(
 			"The first audio stream is not AAC, so it cannot be remuxed to M4A"
+		),
+		"gogoRequiresWav": _(
+			"GOGO can encode only WAV/WAVE source files"
 		),
 	}.get(reason, _("Skipped"))
 

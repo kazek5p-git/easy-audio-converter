@@ -124,7 +124,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.8.2", self.module.ADDON_VERSION)
+		self.assertEqual("1.9.0", self.module.ADDON_VERSION)
 		self.assertIn("Do not close or restart NVDA", self.module.CONVERSION_LIFECYCLE_WARNING)
 		self.assertIn("Cancel button", self.module.CONVERSION_LIFECYCLE_WARNING)
 		dialog = self.module.EasyAudioConverterSettingsDialog
@@ -963,6 +963,27 @@ class PluginImportTests(unittest.TestCase):
 			messages,
 		)
 
+	def test_progress_window_title_includes_overall_percent(self):
+		dialog = self.module.ConversionProgressDialog.__new__(
+			self.module.ConversionProgressDialog
+		)
+		dialog._progress_title = "Konwertowanie — Easy Audio Converter"
+		dialog._last_overall_percent = 0
+		titles = []
+		dialog.SetTitle = titles.append
+
+		dialog._update_progress_title(53)
+		self.assertEqual(["53% — Konwertowanie — Easy Audio Converter"], titles)
+
+		dialog.set_title_prefix("Konwertowanie — Easy Audio Converter — osobne zadanie 2")
+		self.assertEqual(
+			[
+				"53% — Konwertowanie — Easy Audio Converter",
+				"53% — Konwertowanie — Easy Audio Converter — osobne zadanie 2",
+			],
+			titles,
+		)
+
 	def test_cancel_and_stop_apply_to_all_active_controllers(self):
 		calls = []
 
@@ -1234,6 +1255,15 @@ class PluginImportTests(unittest.TestCase):
 		self.assertIn(r"D:\in\broken.wav", report)
 		self.assertIn("Access to the source or destination was denied.", report)
 		self.assertIn(r"D:\in\already.mp3", report)
+
+	def test_gogo_existing_output_error_is_friendly(self):
+		message = self.module._friendly_failure_message(
+			"The GOGO output path already exists; no file was overwritten."
+		)
+		self.assertEqual(
+			"The GOGO output path already exists; no file was overwritten.",
+			message,
+		)
 
 	def test_plan_and_results_reports_explain_source_replacement(self):
 		plan = self.module.ConversionPlan(

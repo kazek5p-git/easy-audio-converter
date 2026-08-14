@@ -1,141 +1,173 @@
-# Easy Audio Converter translation.
-# Edit and save this file with Poedit; then run the compile command.
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.8.2\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-12 11:37+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: bs\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.9.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: bs\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:92
 msgid "...and {count} more files"
 msgstr "...i {count} još fajlova"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:713
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:734
 msgid "...and {count} more skipped files"
 msgstr "... i {count} još preskočenih fajlova"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:94
+msgid "128 kb/s joint stereo"
+msgstr "128 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "16 bit"
 msgstr "16 bit"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:362
+#: src/globalPlugins/easyAudioConverter/__init__.py:387
 msgid "16 files at a time"
 msgstr "16 fajlova po jednom"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:95
+msgid "160 kb/s joint stereo"
+msgstr "160 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96
+msgid "192 kb/s joint stereo"
+msgstr "192 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:384
 msgid "2 files at a time"
 msgstr "2 fajlova po jednom"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "24 bit"
 msgstr "24 bita"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:97
+msgid "256 kb/s stereo"
+msgstr "256 kb/s stereo"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "32 bit"
 msgstr "32 bita"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:363
+#: src/globalPlugins/easyAudioConverter/__init__.py:388
 msgid "32 files at a time"
 msgstr "32 fajlova po jednom"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:360
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:98
+msgid "320 kb/s stereo"
+msgstr "320 kb/s stereo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:385
 msgid "4 files at a time"
 msgstr "4 fajlova po jednom"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:361
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:93
+msgid "64 kb/s joint stereo"
+msgstr "64 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:386
 msgid "8 files at a time"
 msgstr "8 fajlova po jednom"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1764
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2053
 msgid "A built-in profile already uses this name."
 msgstr "Ugrađeni profil već koristi ovo ime."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:464
+#: src/globalPlugins/easyAudioConverter/__init__.py:489
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:468
+#: src/globalPlugins/easyAudioConverter/__init__.py:493
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:467
+#: src/globalPlugins/easyAudioConverter/__init__.py:492
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:466
+#: src/globalPlugins/easyAudioConverter/__init__.py:491
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple Lossless)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:472
+#: src/globalPlugins/easyAudioConverter/__init__.py:497
 msgid "AMR narrowband"
 msgstr "AMR uskopojasni"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:473
+#: src/globalPlugins/easyAudioConverter/__init__.py:498
 msgid "AMR wideband"
 msgstr "AMR širokopojasni"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:613
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:631
 msgid "Access to the source or destination was denied."
 msgstr "Pristup izvoru ili odredištu je bio odbijen."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1825
+#: src/globalPlugins/easyAudioConverter/plugin.py:1855
 msgid "Active conversions: {active}. Queued jobs: {count}."
 msgstr "Active conversions: {active}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1914
+#: src/globalPlugins/easyAudioConverter/plugin.py:1944
 msgid "Active conversions: {count}."
 msgstr "Active conversions: {count}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:538
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:553
 msgid "Adaptive workers: {active} active, target {target}"
 msgstr "Adaptivni radnici: {active} aktivni, ciljni {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:350
+#: src/globalPlugins/easyAudioConverter/__init__.py:375
 msgid "Add new jobs to the queue"
 msgstr "Add new jobs to the queue"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:805
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:213 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1463
+msgid "Additional GOGO arguments:"
+msgstr "Additional GOGO arguments:"
+
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:826
 msgid "Additional skipped files: {count}"
 msgstr "Dodatni preskočeni fajlovi: {count}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1509
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1766
+msgid "Advanced codec overrides are not used by GOGO"
+msgstr "Advanced codec overrides are not used by GOGO"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1764
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "Napredna poništavanja kodeka se ne koriste za kopiranje toka"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1514
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1770
 msgid "Advanced codec overrides: disabled"
 msgstr "Napredni kodek override: onemogućeno"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1512
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1768
 msgid "Advanced codec overrides: enabled"
 msgstr "Napredni kodek override: omogućeno"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:273
+#: src/globalPlugins/easyAudioConverter/plugin.py:274
 msgid "Advanced codec settings..."
 msgstr "Napredna podešavanja kodeka..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:646
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:814
 msgid "Advanced settings"
 msgstr "Napredna podešavanja"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:542
+#: src/globalPlugins/easyAudioConverter/__init__.py:568
 msgid "Album"
 msgstr "Album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:569
 msgid "Album artist"
 msgstr "Izvođač albuma"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:807
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:975
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr "Svi FLAC nivoi su bez gubitaka. Nivo 0 je najbrži; nivo 12 daje najjaču kompresiju, ali je vrlo spor."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:629
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:647
 msgid "Already uses the target format"
 msgstr "Već koristi target format"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:549
+#: src/globalPlugins/easyAudioConverter/plugin.py:554
 msgid "An update check is already in progress"
 msgstr "Provjera ažuriranja je već u toku"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:642
+#: src/globalPlugins/easyAudioConverter/plugin.py:647
 msgid "An update download is already in progress"
 msgstr "Preuzimanje ažuriranja je već u toku"
 
@@ -143,19 +175,19 @@ msgstr "Preuzimanje ažuriranja je već u toku"
 msgid "Analyzing loudness, first pass"
 msgstr "Analiziranje glasnoće, prvi prolaz"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:433
+#: src/globalPlugins/easyAudioConverter/__init__.py:458
 msgid "Archive FLAC"
 msgstr "Arhiva FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:567
 msgid "Artist"
 msgstr "Umjetnik"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:368
 msgid "At every file"
 msgstr "U svakom dosjeu"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:342
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "At progress milestones"
 msgstr "Na prekretnicama napretka"
 
@@ -171,47 +203,47 @@ msgstr "Informacije o audio datoteci"
 msgid "Audio information copied"
 msgstr "Audio informacije su kopirane"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1642
+#: src/globalPlugins/easyAudioConverter/plugin.py:1672
 msgid "Audio information is already being read"
 msgstr "Audio informacije se već čitaju"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1687
+#: src/globalPlugins/easyAudioConverter/plugin.py:1717
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "Audio informacije su spremne. Kodek {codec}, trajanje {duration}, brzina uzorkovanja {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:390
+#: src/globalPlugins/easyAudioConverter/__init__.py:415
 msgid "Audiobook MP3"
 msgstr "Audio knjiga MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:357
+#: src/globalPlugins/easyAudioConverter/__init__.py:382
 msgid "Automatic (dynamic load balancing)"
 msgstr "Automatski (dinamičko balansiranje opterećenja)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1137
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1308
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
 msgstr "Automatski način rada dinamički prilagođava nezavisne datoteke koristeći CPU i opterećenje memorije."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:444
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:610
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
 msgstr "Automatski način rada dinamički prilagođava nezavisne datoteke koristeći CPU i opterećenje memorije. GPU ubrzanje se ne koristi za audio kodiranje."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:496
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:662
 msgid "Automatic progress announcements:"
 msgstr "Automatske najave napretka:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:504
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:670
 msgid "Automatically check for add-on updates"
 msgstr "Automatski provjerite ima li dodatnih ažuriranja"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:145
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:246
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:557
+#: src/globalPlugins/easyAudioConverter/__init__.py:583
 msgid "BPM"
 msgstr "BPM"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:674
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:842
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Bitrate u kbps (0 koristi kvalitetni preset):"
 
@@ -219,11 +251,15 @@ msgstr "Bitrate u kbps (0 koristi kvalitetni preset):"
 msgid "Bitrate: {value}"
 msgstr "Brzina prijenosa: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:559
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "Emitovanje: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:135 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1281
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:189 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1449
+msgid "Browse for GOGO executable..."
+msgstr "Browse for GOGO executable..."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:236 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1479
 msgid "Browse..."
 msgstr "Pregledaj..."
 
@@ -231,39 +267,39 @@ msgstr "Pregledaj..."
 msgid "Building the conversion plan"
 msgstr "Izrada plana konverzije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:564 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:417 src/globalPlugins/easyAudioConverter/plugin.py:268
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:580 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:419 src/globalPlugins/easyAudioConverter/plugin.py:269
 msgid "Cancel conversion"
 msgstr "Otkaži konverziju"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1765
+#: src/globalPlugins/easyAudioConverter/plugin.py:1795
 msgid "Cancel the current audio conversion"
 msgstr "Otkažite trenutnu audio konverziju"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1778
+#: src/globalPlugins/easyAudioConverter/plugin.py:1808
 msgid "Canceling the conversion"
 msgstr "Otkazivanje konverzije"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1781
+#: src/globalPlugins/easyAudioConverter/plugin.py:1811
 msgid "Canceling {count} active conversions"
 msgstr "Canceling {count} active conversions"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:574
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:590
 msgid "Canceling..."
 msgstr "Otkazujem..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:605 src/installTasks.py:59
+#: src/globalPlugins/easyAudioConverter/__init__.py:631 src/installTasks.py:59
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Nije moguće otvoriti stranicu za podršku. Ručno otvorite ovu adresu: {url}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1721
+#: src/globalPlugins/easyAudioConverter/plugin.py:1751
 msgid "Change the conversion quality"
 msgstr "Promijenite kvalitetu konverzije"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1707
+#: src/globalPlugins/easyAudioConverter/plugin.py:1737
 msgid "Change the target audio format"
 msgstr "Promijenite ciljni audio format"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:687
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:855
 msgid "Channels:"
 msgstr "Kanali:"
 
@@ -275,75 +311,79 @@ msgstr "Kanali: {value}"
 msgid "Chapters: {value}"
 msgstr "Poglavlja: {value}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1937
+#: src/globalPlugins/easyAudioConverter/plugin.py:1967
 msgid "Check for Easy Audio Converter updates"
 msgstr "Provjerite ima li ažuriranja Easy Audio Converter-a"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:274
+#: src/globalPlugins/easyAudioConverter/plugin.py:275
 msgid "Check for updates..."
 msgstr "Provjerite za novosti..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:552
+#: src/globalPlugins/easyAudioConverter/plugin.py:557
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Provjera ažuriranja Easy Audio Convertera"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1420 src/globalPlugins/easyAudioConverter/plugin.py:1596 src/globalPlugins/easyAudioConverter/plugin.py:261
+#: src/globalPlugins/easyAudioConverter/plugin.py:1450 src/globalPlugins/easyAudioConverter/plugin.py:1626 src/globalPlugins/easyAudioConverter/plugin.py:262
 msgid "Choose a folder to convert"
 msgstr "Odaberite folder za konverziju"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1354 src/globalPlugins/easyAudioConverter/plugin.py:1585 src/globalPlugins/easyAudioConverter/plugin.py:260
+#: src/globalPlugins/easyAudioConverter/plugin.py:1384 src/globalPlugins/easyAudioConverter/plugin.py:1615 src/globalPlugins/easyAudioConverter/plugin.py:261
 msgid "Choose files to convert"
 msgstr "Choose files to convert"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:944
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1112
 msgid "Choose metadata fields"
 msgstr "Izaberite polja metapodataka"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1321
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1519
 msgid "Choose metadata fields..."
 msgstr "Izaberi polja metapodataka..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1758 src/globalPlugins/easyAudioConverter/settings_dialogs.py:300 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1592
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:440 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1870
+msgid "Choose the GOGO executable"
+msgstr "Choose the GOGO executable"
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:1788 src/globalPlugins/easyAudioConverter/settings_dialogs.py:426 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1855
 msgid "Choose the destination folder"
 msgstr "Odaberite odredišni folder"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1836 src/globalPlugins/easyAudioConverter/plugin.py:270
+#: src/globalPlugins/easyAudioConverter/plugin.py:1866 src/globalPlugins/easyAudioConverter/plugin.py:271
 msgid "Clear queued conversion jobs"
 msgstr "Obrišite poslove konverzije na čekanju"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:419
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:421
 msgid "Clear queued jobs"
 msgstr "Obrišite poslove na čekanju"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1850 src/globalPlugins/easyAudioConverter/plugin.py:834
+#: src/globalPlugins/easyAudioConverter/plugin.py:1880 src/globalPlugins/easyAudioConverter/plugin.py:839 src/globalPlugins/easyAudioConverter/plugin.py:864
 msgid "Cleared {count} queued conversion jobs"
 msgstr "Očišćeni {count} poslovi konverzije u redu čekanja"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:212 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:561 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:834
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:212 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:577 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:855
 msgid "Close"
 msgstr "Zatvori"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:662
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:830
 msgid "Codec profile to edit:"
 msgstr "Profil kodeka za uređivanje:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:694
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:862
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Nivo specifičan za kodek (-1 koristi preset):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:549
+#: src/globalPlugins/easyAudioConverter/__init__.py:575
 msgid "Comment"
 msgstr "Komentar"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:556
+#: src/globalPlugins/easyAudioConverter/__init__.py:582
 msgid "Compilation"
 msgstr "Kompilacija"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:544
+#: src/globalPlugins/easyAudioConverter/__init__.py:570
 msgid "Composer"
 msgstr "Kompozitor"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1450
+#: src/globalPlugins/easyAudioConverter/plugin.py:1480
 msgid "Confirm folder conversion"
 msgstr "Potvrdite konverziju foldera"
 
@@ -351,19 +391,19 @@ msgstr "Potvrdite konverziju foldera"
 msgid "Container: {value}"
 msgstr "Kontejner: {value}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1144
+#: src/globalPlugins/easyAudioConverter/plugin.py:1174
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Konverzija je otkazana. Završeno {done} od {total} fajlova."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1162
+#: src/globalPlugins/easyAudioConverter/plugin.py:1192
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Konverzija završena. Uspjelo: {done}. Neuspjelo: {failed}. Preskočeno: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1171
+#: src/globalPlugins/easyAudioConverter/plugin.py:1201
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Konverzija završena: {done} uspjela, {failed} nije uspjela."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:806
+#: src/globalPlugins/easyAudioConverter/plugin.py:811
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "Posao konverzije je dodan u red čekanja. Pozicija u redu čekanja: {position}."
 
@@ -371,59 +411,59 @@ msgstr "Posao konverzije je dodan u red čekanja. Pozicija u redu čekanja: {pos
 msgid "Conversion plan"
 msgstr "Plan konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1239
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1411
 msgid "Conversion profile:"
 msgstr "Profil konverzije:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1723
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2012
 msgid "Conversion profiles exported"
 msgstr "Izvezeni profili konverzije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:926
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:947
 msgid "Conversion report copied"
 msgstr "Izvještaj o konverziji kopiran"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:677
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:698
 msgid "Conversion results"
 msgstr "Rezultati konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1352
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1550
 msgid "Convert"
 msgstr "Pređite"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1447
+#: src/globalPlugins/easyAudioConverter/plugin.py:1477
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Pretvoriti sve podržane audio datoteke u {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1608
+#: src/globalPlugins/easyAudioConverter/plugin.py:1638
 msgid "Convert every supported audio file in the current folder"
 msgstr "Konvertujte sve podržane audio datoteke u trenutnoj fascikli"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:259
+#: src/globalPlugins/easyAudioConverter/plugin.py:260
 msgid "Convert selected files or folders"
 msgstr "Konvertujte odabrane fajlove ili foldere"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1544
+#: src/globalPlugins/easyAudioConverter/plugin.py:1574
 msgid "Convert selected files or folders with one-time options"
 msgstr "Konvertujte odabrane fajlove ili foldere sa jednokratnim opcijama"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:258
+#: src/globalPlugins/easyAudioConverter/plugin.py:259
 msgid "Convert selected files or folders with options..."
 msgstr "Konvertujte odabrane fajlove ili foldere sa opcijama..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:262
+#: src/globalPlugins/easyAudioConverter/plugin.py:263
 msgid "Convert the current folder"
 msgstr "Konvertujte trenutni folder"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1214
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1386
 msgid "Convert with options"
 msgstr "Konvertujte sa opcijama"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:780
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:801
 msgid "Converted output kept at:\n{output}"
 msgstr "Konvertovani izlaz se čuva na:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:702
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:723
 msgid "Converted output kept at: {output}"
 msgstr "Konvertovani izlaz se čuva na: {output}"
 
@@ -431,31 +471,39 @@ msgstr "Konvertovani izlaz se čuva na: {output}"
 msgid "Converting audio, second pass"
 msgstr "Pretvaranje zvuka, drugi prolaz"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:902
+#: src/globalPlugins/easyAudioConverter/plugin.py:932
 msgid "Converting {index} of {total}: {name}"
 msgstr "Pretvaranje {index} od {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:444
+#: src/globalPlugins/easyAudioConverter/plugin.py:449
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "Pretvaranje {index} od {total}: {name}. Trenutno vrijeme datoteke {processed}; proteklo {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:455
+#: src/globalPlugins/easyAudioConverter/plugin.py:460
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Pretvaranje {index} od {total}: {name}. Trenutna datoteka {filePercent}%, ukupno {overallPercent}%, proteklo {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:523
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:374
+msgid "Converting — Easy Audio Converter"
+msgstr "Converting — Easy Audio Converter"
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:395
+msgid "Converting — Easy Audio Converter — separate job {id}"
+msgstr "Converting — Easy Audio Converter — separate job {id}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:549
 msgid "Copy all text metadata"
 msgstr "Kopiraj sve tekstualne metapodatke"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:402 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1116
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:568 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1287
 msgid "Copy chapter markers"
 msgstr "Kopirajte oznake poglavlja"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1112
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1283
 msgid "Copy embedded cover artwork when supported"
 msgstr "Kopirajte ugrađenu naslovnu sliku kada je podržano"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:398
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:564
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "Kopirajte ugrađenu naslovnu sliku kada je cilj podržava"
 
@@ -463,19 +511,19 @@ msgstr "Kopirajte ugrađenu naslovnu sliku kada je cilj podržava"
 msgid "Copy information"
 msgstr "Kopiraj informacije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:833
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:854
 msgid "Copy report"
 msgstr "Kopiraj izvještaj"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:524
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Copy selected metadata fields"
 msgstr "Kopirajte odabrana polja metapodataka"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:550
+#: src/globalPlugins/easyAudioConverter/__init__.py:576
 msgid "Copyright"
 msgstr "Autorska prava"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:581
+#: src/globalPlugins/easyAudioConverter/plugin.py:586
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Nisam mogao provjeriti ima li ažuriranja.\n\n{error}"
 
@@ -483,103 +531,111 @@ msgstr "Nisam mogao provjeriti ima li ažuriranja.\n\n{error}"
 msgid "Could not copy the audio information"
 msgstr "Nije moguće kopirati audio informacije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:920
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:941
 msgid "Could not copy the conversion report."
 msgstr "Nisam mogao kopirati izvještaj o konverziji."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1717
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2006
 msgid "Could not export profiles:\n{error}"
 msgstr "Nije moguće izvesti profile:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1678
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1967
 msgid "Could not import profiles:\n{error}"
 msgstr "Nije moguće uvesti profile:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:517
+#: src/globalPlugins/easyAudioConverter/plugin.py:522
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Nije moguće otvoriti postavke Easy Audio Converter. Pogledajte NVDA dnevnik za detalje."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:737
+#: src/globalPlugins/easyAudioConverter/plugin.py:742
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Nisam mogao otvoriti NVDA dodatni instalacioni program. Ažuriranje je sačuvano na:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:907
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:928
 msgid "Could not open the output folder."
 msgstr "Nisam mogao otvoriti izlazni folder."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1672
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:127
+msgid "Could not read GOGO help:\n{error}"
+msgstr "Could not read GOGO help:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:1702
 msgid "Could not read audio information:\n{error}"
 msgstr "Nije moguće pročitati audio informacije:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:929
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1097
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Nije moguće sačuvati postavke Easy Audio Converter. Pogledajte NVDA dnevnik za detalje."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:559
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:575
 msgid "Current file progress: 100%"
 msgstr "Trenutni napredak fajla: 100%"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:393
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:395
 msgid "Current file progress: waiting"
 msgstr "Trenutni napredak u dosjeu: čekanje"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:487
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:501
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Trenutni napredak fajla: {percent}% ({processed} od {duration})"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:479
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:493
 msgid "Current file time: {processed}"
 msgstr "Trenutno vrijeme fajla: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:560
 msgid "Custom EBU R128 target"
 msgstr "Prilagođena EBU R128 meta"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:371 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1086
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:537 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1257
 msgid "Custom integrated loudness in LUFS:"
 msgstr "Prilagođena integrisana glasnoća u LUFS:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:390 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1105
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:556 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1276
 msgid "Custom loudness range in LU:"
 msgstr "Prilagođeni raspon glasnoće u LU:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:380 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1096
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:546 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1267
 msgid "Custom true peak in dBTP:"
 msgstr "Prilagođeni pravi vrh u dBTP-u:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:546
+#: src/globalPlugins/easyAudioConverter/__init__.py:572
 msgid "Date or year"
 msgstr "Datum ili godina"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1120
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1291
 msgid "Deeply verify every output file"
 msgstr "Duboko provjerite svaki izlazni fajl"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:408
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:574
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "Duboko provjerite izlaz tako što ćete ga dekodirati i uporediti trajanje"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1814
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:92
+msgid "Define manually in GOGO arguments"
+msgstr "Define manually in GOGO arguments"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2103
 msgid "Delete conversion profile"
 msgstr "Obriši profil konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1245
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1417
 msgid "Delete profile"
 msgstr "Obriši profil"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1813
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2102
 msgid "Delete the profile “{name}”?"
 msgstr "Obriši profil \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:558
+#: src/globalPlugins/easyAudioConverter/__init__.py:584
 msgid "Description"
 msgstr "Opis"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:129 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1277
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:230 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1475
 msgid "Destination folder:"
 msgstr "Odredišni folder:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1755
+#: src/globalPlugins/easyAudioConverter/plugin.py:1785
 msgid "Destination folder: {folder}"
 msgstr "Odredišni folder: {folder}"
 
@@ -587,43 +643,43 @@ msgstr "Odredišni folder: {folder}"
 msgid "Destination: {destination}"
 msgstr "Odredište: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:806
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:827
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "Detalji su ograničeni na prve {limit} preskočene datoteke."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:819
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:840
 msgid "Details:"
 msgstr "Detalji:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:556
 msgid "Disabled"
 msgstr "Onemogućeno"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:548
+#: src/globalPlugins/easyAudioConverter/__init__.py:574
 msgid "Disc number"
 msgstr "Broj diska"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:91
+#: src/globalPlugins/easyAudioConverter/__init__.py:100
 msgid "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 msgstr "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:548
 msgid "Do not copy metadata"
 msgstr "Ne kopirajte metapodatke"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:621
+#: src/globalPlugins/easyAudioConverter/plugin.py:626
 msgid "Download and install"
 msgstr "Preuzmite i instalirajte"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:700
+#: src/globalPlugins/easyAudioConverter/plugin.py:705
 msgid "Downloaded {done:.1f} MB"
 msgstr "Preuzeto {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:693
+#: src/globalPlugins/easyAudioConverter/plugin.py:698
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Preuzeto {done:.1f} od {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:652
+#: src/globalPlugins/easyAudioConverter/plugin.py:657
 msgid "Downloading Easy Audio Converter update"
 msgstr "Preuzimanje ažuriranja Easy Audio Converter"
 
@@ -631,67 +687,59 @@ msgstr "Preuzimanje ažuriranja Easy Audio Converter"
 msgid "Duration: {value}"
 msgstr "Trajanje: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:469
+#: src/globalPlugins/easyAudioConverter/__init__.py:494
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:908 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:921 src/globalPlugins/easyAudioConverter/plugin.py:126 src/globalPlugins/easyAudioConverter/plugin.py:1125 src/globalPlugins/easyAudioConverter/plugin.py:291 src/globalPlugins/easyAudioConverter/plugin.py:821 src/globalPlugins/easyAudioConverter/plugin.py:1675 src/globalPlugins/easyAudioConverter/plugin.py:518 src/globalPlugins/easyAudioConverter/plugin.py:758 src/globalPlugins/easyAudioConverter/plugin.py:796 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1757 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1765 src/globalPlugins/easyAudioConverter/settings_dialogs.py:316 src/globalPlugins/easyAudioConverter/settings_dialogs.py:930 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1628 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1679 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1718 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1731 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1795 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1832
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:929 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:942 src/globalPlugins/easyAudioConverter/plugin.py:127 src/globalPlugins/easyAudioConverter/plugin.py:1155 src/globalPlugins/easyAudioConverter/plugin.py:292 src/globalPlugins/easyAudioConverter/plugin.py:826 src/globalPlugins/easyAudioConverter/plugin.py:1705 src/globalPlugins/easyAudioConverter/plugin.py:523 src/globalPlugins/easyAudioConverter/plugin.py:763 src/globalPlugins/easyAudioConverter/plugin.py:852 src/globalPlugins/easyAudioConverter/plugin.py:801 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2046 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2054 src/globalPlugins/easyAudioConverter/settings_dialogs.py:475 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1098 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1917 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1968 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2007 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2020 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2084 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2121
 msgid "Easy Audio Converter"
 msgstr "Jednostavan audio konverter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:592
+#: src/globalPlugins/easyAudioConverter/plugin.py:597
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Easy Audio Converter je ažuriran. Instalirana verzija: {version}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:376
-msgid "Easy Audio Converter progress"
-msgstr "Napredak Easy Audio Converter-a"
-
-#: src/globalPlugins/easyAudioConverter/plugin.py:395
-msgid "Easy Audio Converter progress — separate job {id}"
-msgstr "Easy Audio Converter progress — separate job {id}"
-
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:729
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:750
 msgid "Easy Audio Converter results"
 msgstr "Rezultati Easy Audio Converter-a"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:852
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1020
 msgid "Easy Audio Converter settings"
 msgstr "Easy Audio Converter postavke"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:726 src/globalPlugins/easyAudioConverter/plugin.py:584 src/globalPlugins/easyAudioConverter/plugin.py:595 src/globalPlugins/easyAudioConverter/plugin.py:740
+#: src/globalPlugins/easyAudioConverter/plugin.py:731 src/globalPlugins/easyAudioConverter/plugin.py:589 src/globalPlugins/easyAudioConverter/plugin.py:600 src/globalPlugins/easyAudioConverter/plugin.py:745
 msgid "Easy Audio Converter update"
 msgstr "Ažuriranje Easy Audio Converter-a"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:633 src/globalPlugins/easyAudioConverter/plugin.py:617
+#: src/globalPlugins/easyAudioConverter/plugin.py:638 src/globalPlugins/easyAudioConverter/plugin.py:622
 msgid "Easy Audio Converter update available"
 msgstr "Dostupno ažuriranje Easy Audio Converter-a"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:604
+#: src/globalPlugins/easyAudioConverter/plugin.py:609
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Dostupan je Easy Audio Converter {newVersion}. Imaš verziju {currentVersion}.\n\nŽeliš li sada preuzeti i instalirati ažuriranje?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:628
+#: src/globalPlugins/easyAudioConverter/plugin.py:633
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Easy Audio Converter {version} je dostupan, ali izdanje ne sadrži direktan dodatni paket. Otvoriti stranicu za izdanje?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:506
+#: src/globalPlugins/easyAudioConverter/__init__.py:531
 msgid "Economical"
 msgstr "Ekonomičan"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:991
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1159
 msgid "Edit metadata overrides"
 msgstr "Uređivanje metapodataka nadjačava"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:210 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1324
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:311 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1522
 msgid "Edit metadata overrides..."
 msgstr "Uređivanje metapodataka nadjačava..."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:401
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:403
 msgid "Elapsed time: 0:00"
 msgstr "Prošlo vrijeme: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:499
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:514
 msgid "Elapsed time: {elapsed}"
 msgstr "Proteklo vrijeme: {elapsed}"
 
@@ -699,23 +747,23 @@ msgstr "Proteklo vrijeme: {elapsed}"
 msgid "Embedded artwork: {value}"
 msgstr "Ugrađena ilustracija: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:670
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:838
 msgid "Enable advanced overrides for this codec"
 msgstr "Omogućite napredna preklapanja za ovaj kodek"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:560
+#: src/globalPlugins/easyAudioConverter/__init__.py:586
 msgid "Encoder"
 msgstr "Encoder"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:661
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:682
 msgid "Encoding and output writing: {value}"
 msgstr "Encoding and output writing: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1744
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2033
 msgid "Enter a name for this conversion profile:"
 msgstr "Unesite naziv za ovaj profil konverzije:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1001
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1169
 msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
 msgstr "Unesite vrijednosti za zamjenu izvornih oznaka za svaku konvertovanu datoteku. Ostavite polje prazno da zadržite izvornu vrijednost."
 
@@ -723,75 +771,75 @@ msgstr "Unesite vrijednosti za zamjenu izvornih oznaka za svaku konvertovanu dat
 msgid "Estimated output size: {size}"
 msgstr "Procijenjena veličina izlaza: {size}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:554
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:569
 msgid "Estimated time remaining: 0:00"
 msgstr "Procijenjeno preostalo vrijeme: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:405
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:407
 msgid "Estimated time remaining: calculating"
 msgstr "Procijenjeno preostalo vrijeme: izračunavanje"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:503
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:518
 msgid "Estimated time remaining: {remaining}"
 msgstr "Procijenjeno preostalo vrijeme: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:267
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:393
 msgid "Example album"
 msgstr "Primjer albuma"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:266
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:392
 msgid "Example artist"
 msgstr "Primjer umjetnika"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:274
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:400
 msgid "Example filename: {name}"
 msgstr "Primjer naziva fajla: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:265
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:391
 msgid "Example title"
 msgstr "Primjer naslova"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1697
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1986
 msgid "Export conversion profiles"
 msgstr "Izvezite profile konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1247
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1419
 msgid "Export profiles..."
 msgstr "Izvezi profile..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:474
+#: src/globalPlugins/easyAudioConverter/__init__.py:499
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "Izdvoj originalni audio stream (bez ponovnog kodiranja)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:460
+#: src/globalPlugins/easyAudioConverter/__init__.py:485
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:618
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:786
 msgid "FLAC 0 — fastest encoding"
 msgstr "FLAC 0 — najbrže kodiranje"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:620
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:788
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr "FLAC 12 — maksimalna kompresija, vrlo sporo"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:622
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:790
 msgid "FLAC {level}"
 msgstr "FLAC {level}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:696
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:717
 msgid "Failed files:"
 msgstr "Neuspjeli fajlovi:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:785
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:806
 msgid "Failed: {name}"
 msgstr "Neuspjeh: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:627
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:795
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr "Brzo, -f (FFmpeg nivo 0)"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:631
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:649
 msgid "File or folder is unavailable"
 msgstr "Datoteka ili folder nije dostupan"
 
@@ -799,11 +847,11 @@ msgstr "Datoteka ili folder nije dostupan"
 msgid "File size: {value}"
 msgstr "Veličina fajla: {value}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:470
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:484
 msgid "File {index} of {total}: {name}"
 msgstr "File {index} od {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1526
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1782
 msgid "Filename preview: {name}"
 msgstr "Pregled naziva fajla: {name}"
 
@@ -811,27 +859,27 @@ msgstr "Pregled naziva fajla: {name}"
 msgid "Files to convert: {count}"
 msgstr "Fajlovi za konverziju: {count}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:868
+#: src/globalPlugins/easyAudioConverter/plugin.py:898
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Fajlovi za konverziju: {count}. Preskočeno: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:806
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:974
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "Za LAME MP3, nivo 0 je najsporiji i najviši kvalitet algoritma; 9 je najbrže."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:811
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:979
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Za Ogg Vorbis, nivoi od 0 do 10 biraju rastući kvalitet promjenjivog bitrate-a."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:812
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:980
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Za Opus, nivoi od 0 do 10 biraju rastuću složenost enkodera."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:873
+#: src/globalPlugins/easyAudioConverter/plugin.py:903
 msgid "Found {count} files to convert"
 msgstr "Pronađene datoteke {count} za konverziju"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:541
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
@@ -843,27 +891,75 @@ msgstr "Slobodan prostor na disku: {size}"
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:545
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:108
+msgid "GOGO Q {value}"
+msgstr "GOGO Q {value}"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:106
+msgid "GOGO Q {value} — fastest at Q9"
+msgstr "GOGO Q {value} — fastest at Q9"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:104
+msgid "GOGO Q {value} — highest quality"
+msgstr "GOGO Q {value} — highest quality"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:193 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1453
+msgid "GOGO bitrate:"
+msgstr "GOGO bitrate:"
+
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:654
+msgid "GOGO can encode only WAV/WAVE source files"
+msgstr "GOGO can encode only WAV/WAVE source files"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:119
+msgid "GOGO commands"
+msgstr "GOGO commands"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:353 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1734
+msgid "GOGO encodes WAV/WAVE files to MP3 without metadata or loudness processing. The add-on includes GOGO-no-coda; leave the executable field empty to use it, or choose another gogo.exe."
+msgstr "GOGO encodes WAV/WAVE files to MP3 without metadata or loudness processing. The add-on includes GOGO-no-coda; leave the executable field empty to use it, or choose another gogo.exe."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:184 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1445
+msgid "GOGO executable (gogo.exe):"
+msgstr "GOGO executable (gogo.exe):"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:442 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1872
+msgid "GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|All files (*.*)|*.*"
+msgstr "GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|All files (*.*)|*.*"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1805
+msgid "GOGO processing: WAV/WAVE input only; metadata, loudness, artwork, and chapters are not written."
+msgstr "GOGO processing: WAV/WAVE input only; metadata, loudness, artwork, and chapters are not written."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:203 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1458
+msgid "GOGO quality:"
+msgstr "GOGO quality:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
+msgid "GOGO-no-coda MP3 (bundled WAV encoder)"
+msgstr "GOGO-no-coda MP3 (bundled WAV encoder)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:571
 msgid "Genre"
 msgstr "Žanr"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:559
+#: src/globalPlugins/easyAudioConverter/__init__.py:585
 msgid "Grouping"
 msgstr "Grupisanje"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:422
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:424
 msgid "Hide"
 msgstr "Sakrij se"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:508
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "High"
 msgstr "Visoko"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:629
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:797
 msgid "High, -h (FFmpeg level 2)"
 msgstr "Visoko, -h (FFmpeg nivo 2)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:561
+#: src/globalPlugins/easyAudioConverter/__init__.py:587
 msgid "ISRC"
 msgstr "ISRC"
 
@@ -871,27 +967,27 @@ msgstr "ISRC"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Ako vam je Easy Audio Converter koristan i želite podržati moj rad, možete me častiti kafom.\n\nŽelite li sada otvoriti stranicu za podršku?"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1646
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1935
 msgid "Import conversion profiles"
 msgstr "Uvezite profile konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1246
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1418
 msgid "Import profiles..."
 msgstr "Uvezi profile..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1688
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1977
 msgid "Imported {count} conversion profiles"
 msgstr "Uvezeni {count} profili konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:155 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1289
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:256 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1487
 msgid "Include subfolders when converting a folder"
 msgstr "Uključite podfoldere prilikom konvertovanja fascikle"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:263
+#: src/globalPlugins/easyAudioConverter/plugin.py:264
 msgid "Information about the selected audio file..."
 msgstr "Informacije o odabranom audio fajlu..."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:655
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:676
 msgid "Input recognition: {value}"
 msgstr "Input recognition: {value}"
 
@@ -899,11 +995,11 @@ msgstr "Input recognition: {value}"
 msgid "Input size: {size}"
 msgstr "Veličina unosa: {size}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:280 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1532
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:406 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1788
 msgid "Invalid filename template: {error}"
 msgstr "Nevažeći šablon naziva fajla: {error}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1647 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1699
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1936 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1988
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "JSON datoteke profila (*.json)|*.json|Sve datoteke (*.*)|*.*"
 
@@ -911,43 +1007,43 @@ msgstr "JSON datoteke profila (*.json)|*.json|Sve datoteke (*.*)|*.*"
 msgid "KB"
 msgstr "KB"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
 msgid "Keep the source channel count"
 msgstr "Zadrži broj izvornih kanala"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:683
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:851
 msgid "Keep the source sample rate"
 msgstr "Zadrži izvornu frekvenciju uzorkovanja"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "LAME MP3"
 msgstr "JADNI MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:552
+#: src/globalPlugins/easyAudioConverter/__init__.py:578
 msgid "Language"
 msgstr "Jezik"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:621
+#: src/globalPlugins/easyAudioConverter/plugin.py:626
 msgid "Later"
 msgstr "Kasnije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:701
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:869
 msgid "Lossless compression profile:"
 msgstr "Profil kompresije bez gubitaka:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:658
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:679
 msgid "Loudness analysis: {value}"
 msgstr "Loudness analysis: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:361 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1076
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:527 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1247
 msgid "Loudness normalization:"
 msgstr "Normalizacija glasnoće:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:551
+#: src/globalPlugins/easyAudioConverter/__init__.py:577
 msgid "Lyrics"
 msgstr "Tekst"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:463
+#: src/globalPlugins/easyAudioConverter/__init__.py:488
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
@@ -955,35 +1051,35 @@ msgstr "M4A (AAC)"
 msgid "MB"
 msgstr "MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:471
+#: src/globalPlugins/easyAudioConverter/__init__.py:496
 msgid "MP2"
 msgstr "MP2"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:458
+#: src/globalPlugins/easyAudioConverter/__init__.py:483
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:114 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1268
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:177 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1440
 msgid "MP3 encoder:"
 msgstr "MP3 enkoder:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1917
+#: src/globalPlugins/easyAudioConverter/plugin.py:1947
 msgid "Main conversion"
 msgstr "Main conversion"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:635
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:803
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr "Maksimum, -hhx6 (FFmpeg nivo 8)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:188 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1316
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:289 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1514
 msgid "Metadata export:"
 msgstr "Izvoz metapodataka:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:199
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:300
 msgid "Metadata fields to copy:"
 msgstr "Polja metapodataka za kopiranje:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:227 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1503
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:331 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1758
 msgid "Metadata overrides: {count} fields"
 msgstr "Metapodaci nadjačavaju: {count} polja"
 
@@ -991,163 +1087,163 @@ msgstr "Metapodaci nadjačavaju: {count} polja"
 msgid "Metadata:"
 msgstr "metapodaci:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
 msgid "Mono"
 msgstr "Mono"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532
+#: src/globalPlugins/easyAudioConverter/__init__.py:558
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "Muzika i streaming: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:819
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:987
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "Ne koriste se nikakve napredne postavke kodeka jer se audio tok kopira bez ponovnog kodiranja."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:336
+#: src/globalPlugins/easyAudioConverter/__init__.py:361
 msgid "No completion notification"
 msgstr "Nema obavijesti o završetku"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1771 src/globalPlugins/easyAudioConverter/plugin.py:1791 src/globalPlugins/easyAudioConverter/plugin.py:1894
+#: src/globalPlugins/easyAudioConverter/plugin.py:1801 src/globalPlugins/easyAudioConverter/plugin.py:1821 src/globalPlugins/easyAudioConverter/plugin.py:1924
 msgid "No conversion is in progress"
 msgstr "Nijedna konverzija nije u toku"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1869
+#: src/globalPlugins/easyAudioConverter/plugin.py:1899
 msgid "No conversion progress is available"
 msgstr "Nema napretka u konverziji"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1259
+#: src/globalPlugins/easyAudioConverter/plugin.py:1289
 msgid "No conversion results are available"
 msgstr "Nema dostupnih rezultata konverzije"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1280 src/globalPlugins/easyAudioConverter/plugin.py:1290
+#: src/globalPlugins/easyAudioConverter/plugin.py:1310 src/globalPlugins/easyAudioConverter/plugin.py:1320
 msgid "No failed files are available to retry"
 msgstr "Nema dostupnih neuspjelih datoteka za ponovni pokušaj"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:867
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:888
 msgid "No file details are available."
 msgstr "Nema dostupnih detalja o dosjeu."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1156
+#: src/globalPlugins/easyAudioConverter/plugin.py:1186
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Nijedna datoteka ne zahtijeva konverziju. Preskočeno: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1542
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1798
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "Nema ponovnog kodiranja: kvalitet, glasnoća i napredne postavke kodeka se ne koriste."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1536
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1792
 msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 msgstr "Nema ponovnog kodiranja: kvalitet, glasnoća, izvorni metapodaci, ilustracija, poglavlja i napredne postavke kodeka se ne koriste. I dalje se primjenjuju eksplicitne zamjene metapodataka."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:632
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:650
 msgid "No readable audio stream was found"
 msgstr "Nije pronađen nijedan čitljiv audio prijenos"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1160
+#: src/globalPlugins/easyAudioConverter/plugin.py:1190
 msgid "No supported audio files were found"
 msgstr "Nisu pronađeni podržani audio fajlovi"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:628
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:796
 msgid "Normal (FFmpeg level 1)"
 msgstr "Normalno (FFmpeg nivo 1)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:641
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:809
 msgid "Not used by this codec"
 msgstr "Ovaj kodek ga ne koristi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:461
+#: src/globalPlugins/easyAudioConverter/__init__.py:486
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1815
+#: src/globalPlugins/easyAudioConverter/plugin.py:1845
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "Jedna konverzija je aktivna. Poslovi na čekanju: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:358
+#: src/globalPlugins/easyAudioConverter/__init__.py:383
 msgid "One file at a time"
 msgstr "Jedan po jedan fajl"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1819
+#: src/globalPlugins/easyAudioConverter/plugin.py:1849
 msgid "One separate conversion is active. Queued jobs: {count}."
 msgstr "One separate conversion is active. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1387
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1592
 msgid "One-time settings"
 msgstr "Jednokratna podešavanja"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:369
 msgid "Only on demand"
 msgstr "Samo na zahtjev"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1521
+#: src/globalPlugins/easyAudioConverter/plugin.py:1551
 msgid "Open Easy Audio Converter settings"
 msgstr "Otvorite postavke Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1532
+#: src/globalPlugins/easyAudioConverter/plugin.py:1562
 msgid "Open advanced codec settings"
 msgstr "Otvorite napredna podešavanja kodeka"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:832
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:853
 msgid "Open output folder"
 msgstr "Otvorite izlaznu fasciklu"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1946
+#: src/globalPlugins/easyAudioConverter/plugin.py:1976
 msgid "Open the author's support page"
 msgstr "Otvorite stranicu za podršku autora"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:603
+#: src/globalPlugins/easyAudioConverter/__init__.py:629
 msgid "Opening the support page"
 msgstr "Otvaranje stranice za podršku"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:462
+#: src/globalPlugins/easyAudioConverter/__init__.py:487
 msgid "Opus"
 msgstr "Opus"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:138 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1284
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:239 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1482
 msgid "Output filename template:"
 msgstr "Izlazni šablon imena datoteke:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:694
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:715
 msgid "Output files:"
 msgstr "Izlazne datoteke:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:621
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:639
 msgid "Output verification failed because its duration differs from the source."
 msgstr "Provjera izlaza nije uspjela jer se njeno trajanje razlikuje od izvora."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:769
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:790
 msgid "Output:\n{output}"
 msgstr "Izlaz:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:560
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:576
 msgid "Overall progress: 100%"
 msgstr "Ukupni napredak: 100%"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:397
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:399
 msgid "Overall progress: waiting"
 msgstr "Ukupni napredak: čekanje"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:496
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:511
 msgid "Overall progress: {percent}%"
 msgstr "Ukupni napredak: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:707
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:875
 msgid "PCM bit depth:"
 msgstr "PCM dubina bita:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:414 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1125
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:580 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1296
 msgid "Parallel conversion jobs:"
 msgstr "Paralelni poslovi konverzije:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:555
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:570
 msgid "Parallel workers: finished"
 msgstr "Paralelni radnici: završeno"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:412
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:414
 msgid "Parallel workers: waiting"
 msgstr "Paralelni radnici: čekaju"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:545
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:560
 msgid "Parallel workers: {active} active of {target}"
 msgstr "Paralelni radnici: {active} aktivni od {target}"
 
@@ -1159,103 +1255,103 @@ msgstr "Put: {path}"
 msgid "Planned output files:"
 msgstr "Planirani izlazni fajlovi:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:479
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:645
 msgid "Play a sound when a conversion fails"
 msgstr "Pustite zvuk kada konverzija ne uspije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:486
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:652
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "Pustite zvuk kada je konverzija otkazana ili zaustavljena"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:412
+#: src/globalPlugins/easyAudioConverter/__init__.py:437
 msgid "Podcast Opus"
 msgstr "Podcast Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:531
+#: src/globalPlugins/easyAudioConverter/__init__.py:557
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "Podcast: -16 LUFS, -1,5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:309 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:388 src/globalPlugins/easyAudioConverter/plugin.py:861
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:309 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:390 src/globalPlugins/easyAudioConverter/plugin.py:891
 msgid "Preparing the conversion"
 msgstr "Priprema konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:168 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1301
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:269 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1499
 msgid "Preserve source file creation and modification dates"
 msgstr "Sačuvajte datume kreiranja i izmjene izvornog fajla"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:161 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1294
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:262 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1492
 msgid "Preserve the source folder structure in the destination"
 msgstr "Sačuvajte strukturu izvornog foldera na odredištu"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:667
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:688
 msgid "Probe cache hits: {count}; misses: {misses}"
 msgstr "Probe cache hits: {count}; misses: {misses}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:349
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:512
 msgid "Processing and notifications"
 msgstr "Obrada i obavještenja"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1063
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1231
 msgid "Processing options"
 msgstr "Opcije obrade"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1330
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1528
 msgid "Processing options..."
 msgstr "Opcije obrade..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1552
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1815
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "Obrada: glasnoća {loudness}; umetničko delo {artwork}; poglavlja {chapters}; verifikacija {verification}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1824
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2113
 msgid "Profile deleted"
 msgstr "Profil obrisan"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1803
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2092
 msgid "Profile saved: {name}"
 msgstr "Profil sačuvan: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:553
+#: src/globalPlugins/easyAudioConverter/__init__.py:579
 msgid "Publisher"
 msgstr "Izdavač"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1730
+#: src/globalPlugins/easyAudioConverter/plugin.py:1760
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "Kvalitet se ne koristi prilikom kopiranja zvuka bez ponovnog kodiranja"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:105 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1262
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:168 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1434
 msgid "Quality:"
 msgstr "kvaliteta:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1737
+#: src/globalPlugins/easyAudioConverter/plugin.py:1767
 msgid "Quality: {quality}"
 msgstr "Kvalitet: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1831
+#: src/globalPlugins/easyAudioConverter/plugin.py:1861
 msgid "Queued conversion jobs: {count}."
 msgstr "Poslovi konverzije na čekanju: {count}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:408
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:410
 msgid "Queued jobs: 0"
 msgstr "Poslova na čekanju: 0"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:527
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:542
 msgid "Queued jobs: {count}"
 msgstr "Poslovi na čekanju: {count}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1930
+#: src/globalPlugins/easyAudioConverter/plugin.py:1960
 msgid "Queued jobs: {count}."
 msgstr "Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1742
+#: src/globalPlugins/easyAudioConverter/plugin.py:1772
 msgid "Quickly choose the destination folder"
 msgstr "Brzo odaberite odredišni folder"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1565
+#: src/globalPlugins/easyAudioConverter/plugin.py:1595
 msgid "Quickly convert selected files or folders"
 msgstr "Brzo konvertujte odabrane datoteke ili fascikle"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1645
+#: src/globalPlugins/easyAudioConverter/plugin.py:1675
 msgid "Reading audio file information"
 msgstr "Čitanje informacija o audio datoteci"
 
@@ -1263,43 +1359,43 @@ msgstr "Čitanje informacija o audio datoteci"
 msgid "Reading audio information"
 msgstr "Čitanje audio informacija"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:613
+#: src/globalPlugins/easyAudioConverter/plugin.py:618
 msgid "Release notes:"
 msgstr "Bilješke o izlasku:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:477
+#: src/globalPlugins/easyAudioConverter/__init__.py:502
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC u M4A (bez ponovnog kodiranja)"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:776
+#: src/globalPlugins/easyAudioConverter/plugin.py:781
 msgid "Replace source files"
 msgstr "Zamijenite izvorne datoteke"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:176 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1307
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:277 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1505
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr "Zamijenite izvorne datoteke nakon uspješne konverzije (trajno briše originale)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1780
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2069
 msgid "Replace the existing profile “{name}”?"
 msgstr "Zamijeniti postojeći profil \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:770
+#: src/globalPlugins/easyAudioConverter/plugin.py:775
 msgid "Replacing source files cannot be undone. After each output is created and checked successfully, its source file will be permanently deleted. Source files will be kept if conversion or verification fails. Continue?"
 msgstr "Zamjena izvornih datoteka ne može se poništiti. Nakon što se svaki izlaz kreira i uspješno provjeri, njegov izvorni fajl će biti trajno izbrisan. Izvorni fajlovi će se zadržati ako konverzija ili verifikacija ne uspije. Nastaviti?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1888
+#: src/globalPlugins/easyAudioConverter/plugin.py:1918
 msgid "Report audio conversion status"
 msgstr "Prijavi status audio konverzije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:420 src/globalPlugins/easyAudioConverter/plugin.py:265
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:422 src/globalPlugins/easyAudioConverter/plugin.py:266
 msgid "Report conversion status"
 msgstr "Prijavi status konverzije"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1807 src/globalPlugins/easyAudioConverter/plugin.py:269
+#: src/globalPlugins/easyAudioConverter/plugin.py:1837 src/globalPlugins/easyAudioConverter/plugin.py:270
 msgid "Report queued conversion jobs"
 msgstr "Izvještaj o poslovima konverzije u redu čekanja"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:831
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:852
 msgid "Retry failed files"
 msgstr "Ponovo pokušaj neuspjelih fajlova"
 
@@ -1315,11 +1411,11 @@ msgstr "Pregledajte plan u nastavku. Procjene veličine su približne. Nijedan i
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr "Pregledajte plan u nastavku. Procjene veličine su približne. Izvorne datoteke će biti trajno izbrisane nakon što se njihovi rezultati uspješno završe."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:351
+#: src/globalPlugins/easyAudioConverter/__init__.py:376
 msgid "Run new jobs in separate progress windows"
 msgstr "Run new jobs in separate progress windows"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:681
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:849
 msgid "Sample rate:"
 msgstr "Frekvencija uzorkovanja:"
 
@@ -1327,79 +1423,83 @@ msgstr "Frekvencija uzorkovanja:"
 msgid "Sample rate: {value}"
 msgstr "Brzina uzorkovanja: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1745 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1781
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2034 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2070
 msgid "Save conversion profile"
 msgstr "Profil konverzije sačuvanih podataka"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:123 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1274
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:224 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1472
 msgid "Save converted files next to the source files"
 msgstr "Sačuvajte konvertovane datoteke pored izvornih datoteka"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1244
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1416
 msgid "Save profile..."
 msgstr "Sačuvaj profil..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1638
+#: src/globalPlugins/easyAudioConverter/plugin.py:1668
 msgid "Select exactly one audio file"
 msgstr "Odaberite tačno jednu audio datoteku"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:952
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1120
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Odaberite polja za tekstualne metapodatke za kopiranje za ovu konverziju."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1234
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1406
 msgid "Selected items: {count}"
 msgstr "Izabrani predmeti: {count}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1919
+#: src/globalPlugins/easyAudioConverter/plugin.py:1949
 msgid "Separate conversion {index}"
 msgstr "Separate conversion {index}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:436
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:602
 msgid "Separate progress windows run independently and may use more CPU and memory."
 msgstr "Separate progress windows run independently and may use more CPU and memory."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:272
+#: src/globalPlugins/easyAudioConverter/plugin.py:273
 msgid "Settings..."
 msgstr "Postavke..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:451
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:218 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1467
+msgid "Show GOGO commands"
+msgstr "Show GOGO commands"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:617
 msgid "Show a conversion plan before starting"
 msgstr "Prikažite plan konverzije prije početka"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:264
+#: src/globalPlugins/easyAudioConverter/plugin.py:265
 msgid "Show conversion progress"
 msgstr "Napredak konverzije emisija"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:266
+#: src/globalPlugins/easyAudioConverter/plugin.py:267
 msgid "Show last conversion results"
 msgstr "Prikaži rezultate posljednje konverzije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:421
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:423
 msgid "Show results"
 msgstr "Rezultati emisije"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1631
+#: src/globalPlugins/easyAudioConverter/plugin.py:1661
 msgid "Show technical information about the selected audio file"
 msgstr "Prikaži tehničke informacije o odabranoj audio datoteci"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1855
+#: src/globalPlugins/easyAudioConverter/plugin.py:1885
 msgid "Show the audio conversion progress window"
 msgstr "Prikaži prozor za napredak audio konverzije"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1143
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1314
 msgid "Show the conversion plan before starting"
 msgstr "Prikažite plan konverzije prije početka"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1876
+#: src/globalPlugins/easyAudioConverter/plugin.py:1906
 msgid "Show the last audio conversion results"
 msgstr "Prikaži posljednje rezultate audio konverzije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:636
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:657
 msgid "Skipped"
 msgstr "Preskočeno"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:707
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:728
 msgid "Skipped files:"
 msgstr "Preskočeni fajlovi:"
 
@@ -1407,51 +1507,51 @@ msgstr "Preskočeni fajlovi:"
 msgid "Skipped inputs: {count}"
 msgstr "Preskočeni ulazi: {count}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:793
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:814
 msgid "Skipped: {name}"
 msgstr "Preskočeno: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:563
+#: src/globalPlugins/easyAudioConverter/__init__.py:589
 msgid "Sort album"
 msgstr "Sortiraj album"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:562
+#: src/globalPlugins/easyAudioConverter/__init__.py:588
 msgid "Sort artist"
 msgstr "Sortiraj umjetnika"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:564
+#: src/globalPlugins/easyAudioConverter/__init__.py:590
 msgid "Sort title"
 msgstr "Sortiraj naslov"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:335
+#: src/globalPlugins/easyAudioConverter/__init__.py:360
 msgid "Sound only"
 msgstr "Samo zvuk"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:775
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:796
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Izvor:\n{source}\n\nGreška:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:755
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:776
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Izvor:\n{source}\n\nIzlaz:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:794
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:815
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Izvor:\n{source}\n\nRazlog:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:333
+#: src/globalPlugins/easyAudioConverter/__init__.py:358
 msgid "Speech and sound"
 msgstr "Govor i zvuk"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:334
+#: src/globalPlugins/easyAudioConverter/__init__.py:359
 msgid "Speech only"
 msgstr "Samo govor"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:507
+#: src/globalPlugins/easyAudioConverter/__init__.py:532
 msgid "Standard"
 msgstr "Standard"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:87
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:150
 msgid "Standard settings"
 msgstr "Standardna podešavanja"
 
@@ -1459,55 +1559,55 @@ msgstr "Standardna podešavanja"
 msgid "Start conversion"
 msgstr "Započni konverziju"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:405
+#: src/globalPlugins/easyAudioConverter/plugin.py:410
 msgid "Started a separate conversion window for the new job."
 msgstr "Started a separate conversion window for the new job."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:653
+#: src/globalPlugins/easyAudioConverter/plugin.py:658
 msgid "Starting the download..."
 msgstr "Počinjem preuzimanje..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1250
+#: src/globalPlugins/easyAudioConverter/plugin.py:1280
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "Pokretanje sljedeće konverzije u redu čekanja. Preostali poslovi: {count}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
 msgid "Stereo"
 msgstr "Stereo"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:418
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:420
 msgid "Stop after current file"
 msgstr "Zaustavi nakon trenutnog fajla"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:267
+#: src/globalPlugins/easyAudioConverter/plugin.py:268
 msgid "Stop after the current file"
 msgstr "Zaustavite se nakon trenutnog fajla"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1785
+#: src/globalPlugins/easyAudioConverter/plugin.py:1815
 msgid "Stop the conversion after the current file"
 msgstr "Zaustavite konverziju nakon trenutnog fajla"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1149
+#: src/globalPlugins/easyAudioConverter/plugin.py:1179
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "Zaustavljeno nakon trenutnog fajla. Završeno {done} od {total} fajlova."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:579
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:595
 msgid "Stopping after this file..."
 msgstr "Zaustavljanje nakon ovog fajla..."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:678 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:741
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:699 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:762
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Uspjelo: {done}. Neuspjeh: {failed}. Preskočeno: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:754 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:768
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:775 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:789
 msgid "Success: {name}"
 msgstr "Uspjeh: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:467
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:633
 msgid "Successful completion notification:"
 msgstr "Obavještenje o uspješnom završetku:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:690
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:711
 msgid "Successful files:"
 msgstr "Uspješni dosijei:"
 
@@ -1515,7 +1615,7 @@ msgstr "Uspješni dosijei:"
 msgid "Support Easy Audio Converter"
 msgstr "Podrška Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:275 src/globalPlugins/easyAudioConverter/settings_dialogs.py:508
+#: src/globalPlugins/easyAudioConverter/plugin.py:276 src/globalPlugins/easyAudioConverter/settings_dialogs.py:674
 msgid "Support the author"
 msgstr "Podržite autora"
 
@@ -1523,127 +1623,135 @@ msgstr "Podržite autora"
 msgid "TB"
 msgstr "TB"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1256
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:159 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1428
 msgid "Target format:"
 msgstr "Ciljni format:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1717
+#: src/globalPlugins/easyAudioConverter/plugin.py:1747
 msgid "Target format: {format}"
 msgstr "Ciljni format: {format}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:491
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:657
 msgid "Test cancel sound"
 msgstr "Test otkazivanja zvuka"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:483
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:649
 msgid "Test error sound"
 msgstr "Testirajte zvuk greške"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:475
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:641
 msgid "Test success sound"
 msgstr "Zvuk uspjeha testa"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:820
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:625
+msgid "The GOGO output path already exists; no file was overwritten."
+msgstr "The GOGO output path already exists; no file was overwritten."
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:825
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Nedostaje komponenta FFmpeg u paketu. Ponovo instalirajte Easy Audio Converter."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:826
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:994
 msgid "The codec-specific level is not used by this format."
 msgstr "Nivo specifičan za kodek se ne koristi u ovom formatu."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1119
+#: src/globalPlugins/easyAudioConverter/plugin.py:848
+msgid "The configured or bundled GOGO executable is missing. Choose another gogo.exe in Easy Audio Converter settings."
+msgstr "The configured or bundled GOGO executable is missing. Choose another gogo.exe in Easy Audio Converter settings."
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:1149
 msgid "The conversion could not start"
 msgstr "Konverzija nije mogla početi"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1124
+#: src/globalPlugins/easyAudioConverter/plugin.py:1154
 msgid "The conversion could not start:\n{error}"
 msgstr "Konverzija nije mogla započeti:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1843 src/globalPlugins/easyAudioConverter/plugin.py:1833
+#: src/globalPlugins/easyAudioConverter/plugin.py:1873 src/globalPlugins/easyAudioConverter/plugin.py:1863
 msgid "The conversion queue is empty"
 msgstr "Red za konverziju je prazan"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:686
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:707
 msgid "The conversion was canceled."
 msgstr "Konverzija je otkazana."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1798
+#: src/globalPlugins/easyAudioConverter/plugin.py:1828
 msgid "The conversion will stop after the current file"
 msgstr "Konverzija će se zaustaviti nakon trenutnog fajla"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:609
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:627
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr "Konvertirani izlaz je sačuvan, ali izvorni fajl nije mogao biti uklonjen."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1674
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1963
 msgid "The file does not contain valid conversion profiles."
 msgstr "Datoteka ne sadrži važeće profile konverzije."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:489
+#: src/globalPlugins/easyAudioConverter/__init__.py:514
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "Prvi AAC audio stream će biti remuksiran u M4A bez ponovnog kodiranja. Izvori čiji prvi audio stream nije AAC se preskaču."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:633
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:651
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "Prvi audio stream nije AAC, tako da se ne može remuksovati u M4A"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:483
+#: src/globalPlugins/easyAudioConverter/__init__.py:508
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "Prvi audio stream će se izdvojiti bez ponovnog kodiranja. Njegov kodek i kvalitet ostaju nepromijenjeni, a izlazna ekstenzija se bira automatski."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:619
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:637
 msgid "The input does not contain a readable audio stream."
 msgstr "Ulaz ne sadrži čitljiv audio tok."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:617
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:635
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "Ulazna datoteka je oštećena ili koristi nepodržano kodiranje."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:688
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:709
 msgid "The job was stopped after the current file."
 msgstr "Posao je zaustavljen nakon trenutnog fajla."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1658
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1947
 msgid "The profile file is too large."
 msgstr "Fajl profila je prevelik."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1756
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2045
 msgid "The profile name cannot be empty."
 msgstr "Ime profila ne može biti prazno."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:793
+#: src/globalPlugins/easyAudioConverter/plugin.py:798
 msgid "The separate conversion could not start:\n{error}"
 msgstr "The separate conversion could not start:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:623
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:641
 msgid "The source file dates could not be preserved."
 msgstr "Datumi izvorne datoteke nisu mogli biti sačuvani."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:723
+#: src/globalPlugins/easyAudioConverter/plugin.py:728
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "Ažuriranje nije bilo moguće preuzeti niti potvrditi.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:732
+#: src/globalPlugins/easyAudioConverter/plugin.py:737
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "Ažuriranje je spremno. Otvaranje NVDA dodatka instalacionog programa."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1801
+#: src/globalPlugins/easyAudioConverter/plugin.py:1831
 msgid "The {count} active conversions will stop after their current files"
 msgstr "The {count} active conversions will stop after their current files"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1693
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1982
 msgid "There are no user profiles to export"
 msgstr "Nema korisničkih profila za izvoz"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:615
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:633
 msgid "There is not enough free disk space."
 msgstr "Nema dovoljno slobodnog prostora na disku."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:651
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:672
 msgid "Timing:"
 msgstr "Timing:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:540
+#: src/globalPlugins/easyAudioConverter/__init__.py:566
 msgid "Title"
 msgstr "Naslov"
 
@@ -1651,43 +1759,43 @@ msgstr "Naslov"
 msgid "Total audio duration: {duration}"
 msgstr "Ukupno trajanje zvuka: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:555
+#: src/globalPlugins/easyAudioConverter/__init__.py:581
 msgid "Total discs"
 msgstr "Totalni diskovi"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:554
+#: src/globalPlugins/easyAudioConverter/__init__.py:580
 msgid "Total tracks"
 msgstr "Total tracks"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:652
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:673
 msgid "Total wall time: {value}"
 msgstr "Total wall time: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:547
+#: src/globalPlugins/easyAudioConverter/__init__.py:573
 msgid "Track number"
 msgstr "Broj pjesme"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:624 src/globalPlugins/easyAudioConverter/plugin.py:724 src/globalPlugins/easyAudioConverter/plugin.py:1673 src/globalPlugins/easyAudioConverter/plugin.py:582
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:642 src/globalPlugins/easyAudioConverter/plugin.py:729 src/globalPlugins/easyAudioConverter/plugin.py:1703 src/globalPlugins/easyAudioConverter/plugin.py:587
 msgid "Unknown error"
 msgstr "Nepoznata greška"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:630
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:648
 msgid "Unsupported file type"
 msgstr "Nepodržani tip datoteke"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:719
+#: src/globalPlugins/easyAudioConverter/plugin.py:724
 msgid "Update download canceled"
 msgstr "Preuzimanje ažuriranja otkazano"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:615 src/globalPlugins/easyAudioConverter/settings_dialogs.py:637 src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:783 src/globalPlugins/easyAudioConverter/settings_dialogs.py:805 src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "Use the quality preset"
 msgstr "Koristite kvalitetni preset"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1335
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1533
 msgid "Use these settings for future quick conversions"
 msgstr "Koristite ove postavke za buduće brze konverzije"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:664
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:685
 msgid "Verification and finalization: {value}"
 msgstr "Verification and finalization: {value}"
 
@@ -1695,35 +1803,35 @@ msgstr "Verification and finalization: {value}"
 msgid "Verifying the output by decoding it"
 msgstr "Provjera izlaza dekodiranjem"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:509
+#: src/globalPlugins/easyAudioConverter/__init__.py:534
 msgid "Very high"
 msgstr "Vrlo visoko"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:631
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:799
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr "Vrlo visoko + ekstra 1, -hhx1 (FFmpeg nivo 4)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:632
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:800
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr "Vrlo visoko + extra 2, -hhx2 (FFmpeg nivo 5)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:633
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:801
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr "Vrlo visoko + extra 3, -hhx3 (FFmpeg nivo 6)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:634
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:802
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr "Vrlo visoko + extra 4, -hhx4 (FFmpeg nivo 7)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:630
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:798
 msgid "Very high, -hh (FFmpeg level 3)"
 msgstr "Vrlo visoko, -hh (FFmpeg nivo 3)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:459
+#: src/globalPlugins/easyAudioConverter/__init__.py:484
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:465
+#: src/globalPlugins/easyAudioConverter/__init__.py:490
 msgid "WMA"
 msgstr "WMA"
 
@@ -1739,19 +1847,19 @@ msgstr "Upozorenje: procijenjeni izlaz je veći od dostupnog prostora na disku."
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "Upozorenje: {count} datoteke će biti konvertovane iz formata sa gubicima u drugi format sa gubicima, što može smanjiti kvalitet."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:470
+#: src/globalPlugins/easyAudioConverter/__init__.py:495
 msgid "WavPack"
 msgstr "WavPack"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:813
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:981
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr "WavPack profili koriste FFmpeg nivoe od 0 do 8. Nivo 8 odgovara -hhx6 i izuzetno je spor."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:425
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:591
 msgid "When another conversion is active:"
 msgstr "When another conversion is active:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:457
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:623
 msgid "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 msgstr "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 
@@ -1759,15 +1867,15 @@ msgstr "When the plan is disabled, ordinary conversions use a fast path and skip
 msgid "bytes"
 msgstr "bajtova"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:507 src/globalPlugins/easyAudioConverter/plugin.py:475
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:522 src/globalPlugins/easyAudioConverter/plugin.py:480
 msgid "calculating"
 msgstr "Izračunavanje"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1444
+#: src/globalPlugins/easyAudioConverter/plugin.py:1474
 msgid "excluding subfolders"
 msgstr "isključujući podmape"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1442
+#: src/globalPlugins/easyAudioConverter/plugin.py:1472
 msgid "including subfolders"
 msgstr "uključujući podfoldere"
 
@@ -1775,11 +1883,11 @@ msgstr "uključujući podfoldere"
 msgid "no"
 msgstr "br"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1557 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1558 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1559
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1820 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1821 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1822
 msgid "off"
 msgstr "off"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1557 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1558 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1559
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1820 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1821 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1822
 msgid "on"
 msgstr "on"
 
@@ -1787,7 +1895,7 @@ msgstr "on"
 msgid "source folders"
 msgstr "izvorne fascikle"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:34 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:60 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:158 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:159 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:161 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:167 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:170 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:175 src/globalPlugins/easyAudioConverter/plugin.py:1691 src/globalPlugins/easyAudioConverter/plugin.py:1695 src/globalPlugins/easyAudioConverter/plugin.py:1700
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:34 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:60 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:158 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:159 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:161 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:167 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:170 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:175 src/globalPlugins/easyAudioConverter/plugin.py:1721 src/globalPlugins/easyAudioConverter/plugin.py:1725 src/globalPlugins/easyAudioConverter/plugin.py:1730
 msgid "unknown"
 msgstr "nepoznato"
 
@@ -1795,43 +1903,43 @@ msgstr "nepoznato"
 msgid "yes"
 msgstr "da"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1479 src/globalPlugins/easyAudioConverter/plugin.py:1504
+#: src/globalPlugins/easyAudioConverter/plugin.py:1509 src/globalPlugins/easyAudioConverter/plugin.py:1534
 msgid "{count} selected folders"
 msgstr "{count} odabrani folderi"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1923
+#: src/globalPlugins/easyAudioConverter/plugin.py:1953
 msgid "{label}: {status}"
 msgstr "{label}: {status}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:877
+#: src/globalPlugins/easyAudioConverter/plugin.py:907
 msgid "{message}. Starting with {workers} adaptive conversion workers."
 msgstr "{message}. Počevši od {workers} adaptivnih radnika za konverziju."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:881
+#: src/globalPlugins/easyAudioConverter/plugin.py:911
 msgid "{message}. Using {workers} parallel conversion workers."
 msgstr "{message}. Korištenje {workers} paralelnih konverzijskih radnika."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:498
+#: src/globalPlugins/easyAudioConverter/__init__.py:523
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (ekstenzija odabrana iz izvornog audio kodeka)"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:517
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:532
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. Fajl {index} od {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:467
+#: src/globalPlugins/easyAudioConverter/plugin.py:472
 msgid "{stage}. {status} Estimated time remaining {remaining}."
 msgstr "{stage}. {status} Estimated time remaining {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1908
+#: src/globalPlugins/easyAudioConverter/plugin.py:1938
 msgid "{status} Queued jobs: {count}."
 msgstr "{status} Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1901
+#: src/globalPlugins/easyAudioConverter/plugin.py:1931
 msgid "{status}. Queued jobs: {count}."
 msgstr "{status}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:173 src/globalPlugins/easyAudioConverter/plugin.py:1698
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:173 src/globalPlugins/easyAudioConverter/plugin.py:1728
 msgid "{value} Hz"
 msgstr "{value} Hz"
 

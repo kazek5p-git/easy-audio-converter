@@ -4,7 +4,7 @@
 
 Każde wydanie dodatku musi zawierać dwa pliki pakietu:
 
-- plik wersjonowany, na przykład `easyAudioConverter-1.8.2.nvda-addon`;
+- plik wersjonowany, na przykład `easyAudioConverter-1.9.0.nvda-addon`;
 - plik o stałej nazwie `easyAudioConverter.nvda-addon`.
 
 Stały plik umożliwia używanie niezmiennego adresu na stronach projektu:

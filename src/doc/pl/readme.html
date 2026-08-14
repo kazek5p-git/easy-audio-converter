@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.8.2.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.9.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -195,6 +195,23 @@
 		folderowej konwersji WAV do MP3. MP3 zaznaczony bezpośrednio nadal można
 		świadomie przekodować; domyślnie źródło pozostanie nietknięte, a wynik
 		otrzyma bezpieczną nową nazwę.
+	</p>
+	<h2>Opcjonalny enkoder GOGO-no-coda</h2>
+	<p>
+		Na pierwszej zakładce ustawień można wybrać kodek „GOGO-no-coda MP3
+		(dołączony enkoder WAV)”. Dodatek zawiera niezmodyfikowany plik
+		<code>gogo.exe</code>, więc pozostawienie pola ścieżki pustego używa wersji
+		dołączonej. Możesz także wskazać własny plik <code>gogo.exe</code>,
+		wybierz preset przepływności, parametr jakości GOGO <code>-q</code> oraz,
+		jeśli jest potrzebny, dodatkowe argumenty. Przycisk „Pokaż polecenia GOGO”
+		odczytuje pomoc bezpośrednio z używanego programu.
+	</p>
+	<p>
+		GOGO przyjmuje wyłącznie pliki <code>.wav</code> i <code>.wave</code> oraz
+		zapisuje MP3. Nie zapisuje metadanych, normalizacji głośności, okładek ani
+		rozdziałów. Dodatek nadal zapewnia bezpieczne nazwy, kolejkę, postęp,
+		anulowanie, weryfikację, zachowanie dat i opcjonalne usuwanie źródeł.
+		Enkoder jest uruchamiany jako oddzielny proces.
 	</p>
 
 	<h2>Wyodrębnianie oryginalnego strumienia i remuksowanie AAC</h2>

@@ -20,7 +20,7 @@ GITHUB_REPOSITORY_URL = "https://github.com/kazek5p-git/easy-audio-converter"
 GITHUB_RELEASE_API_URL = (
 	"https://api.github.com/repos/kazek5p-git/easy-audio-converter/releases/latest"
 )
-USER_AGENT = "EasyAudioConverter-NVDA-Updater/1.8.2"
+USER_AGENT = "EasyAudioConverter-NVDA-Updater/1.9.0"
 MAX_RELEASE_RESPONSE_BYTES = 2 * 1024 * 1024
 
 

@@ -33,6 +33,7 @@ from converter import (  # noqa: E402
 	SystemResourceUsage,
 	apply_advanced_codec_arguments,
 	build_codec_arguments,
+	build_gogo_command,
 	build_loudnorm_filter,
 	build_metadata_arguments,
 	collect_audio_files,
@@ -50,6 +51,12 @@ from converter import (  # noqa: E402
 	resolve_parallel_jobs,
 	recommended_parallel_jobs,
 	sanitize_windows_filename,
+)
+from gogo import (  # noqa: E402
+	bundled_gogo_path,
+	parse_gogo_extra_arguments,
+	resolve_gogo_path,
+	validate_gogo_options,
 )
 
 
@@ -107,6 +114,47 @@ class ConversionSettingsTests(unittest.TestCase):
 	def test_fraunhofer_selects_media_foundation(self):
 		arguments = build_codec_arguments("mp3", "high", "fraunhofer")
 		self.assertIn("mp3_mf", arguments)
+
+	def test_gogo_is_a_separate_mp3_backend(self):
+		self.assertEqual([], build_codec_arguments("mp3", "high", "gogo"))
+		settings = ConversionSettings(
+			target_format="mp3",
+			mp3_encoder="gogo",
+			gogo_bitrate=128,
+			gogo_quality=0,
+		)
+		settings.validate()
+		with self.assertRaises(ValueError):
+			ConversionSettings(
+				target_format="opus",
+				mp3_encoder="gogo",
+			).validate()
+
+	def test_empty_gogo_path_uses_the_bundled_encoder(self):
+		bundled = bundled_gogo_path()
+		self.assertTrue(bundled.is_file())
+		self.assertEqual(bundled, resolve_gogo_path(""))
+		command = build_gogo_command(
+			"",
+			r"D:\input.wav",
+			r"D:\output.mp3",
+			bitrate=128,
+			quality=0,
+		)
+		self.assertEqual(str(bundled), command[0])
+
+	def test_gogo_arguments_are_split_without_shell_expansion(self):
+		self.assertEqual(
+			("-b", "128", "-m", "j", "-x", "hello world"),
+			parse_gogo_extra_arguments('-b 128 -m j -x "hello world"'),
+		)
+		with self.assertRaises(ValueError):
+			validate_gogo_options(
+				path="",
+				bitrate=128,
+				quality=0,
+				extra_arguments='-x "unterminated',
+			)
 
 	def test_invalid_settings_are_rejected(self):
 		with self.assertRaises(ValueError):
@@ -225,6 +273,41 @@ class StreamCopyFormatTests(unittest.TestCase):
 		with self.assertRaises(StreamCopySourceError) as context:
 			output_extension_for(AAC_M4A_COPY_FORMAT, "")
 		self.assertEqual("noAudioStream", context.exception.reason)
+
+
+class GogoBackendTests(unittest.TestCase):
+	def test_gogo_command_uses_presets_and_keeps_paths_as_arguments(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			executable = root / "gogo.exe"
+			source = root / "zażółć.wav"
+			destination = root / "wynik.mp3"
+			executable.write_bytes(b"placeholder")
+			source.write_bytes(b"wav")
+			command = build_gogo_command(
+				executable,
+				source,
+				destination,
+				bitrate=256,
+				quality=3,
+				extra_arguments='-x "hello world"',
+			)
+			self.assertEqual(
+				[
+					str(executable),
+					"-b",
+					"256",
+					"-m",
+					"s",
+					"-q",
+					"3",
+					"-x",
+					"hello world",
+					str(source),
+					str(destination),
+				],
+				command,
+			)
 
 
 class MetadataTests(unittest.TestCase):
@@ -546,7 +629,71 @@ class _ParallelFakeConverter(_FakeConverter):
 			return 0, ""
 		finally:
 			with self._active_lock:
-				type(self)._active -= 1
+					type(self)._active -= 1
+
+
+class _GogoFakeConverter(_FakeConverter):
+	def _run_gogo_process(self, command):
+		self.commands.append(list(command))
+		Path(command[-1]).write_bytes(b"gogo mp3")
+		return 0, ""
+
+
+class GogoConversionTests(unittest.TestCase):
+	def test_gogo_conversion_accepts_wav_and_skips_other_audio(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			wav = root / "song.wav"
+			mp3 = root / "already.mp3"
+			wav.write_bytes(b"wav")
+			mp3.write_bytes(b"mp3")
+			gogo = root / "gogo.exe"
+			gogo.write_bytes(b"placeholder")
+			converter = _GogoFakeConverter(root / "missing-ffmpeg.exe")
+			settings = ConversionSettings(
+				target_format="mp3",
+				mp3_encoder="gogo",
+				gogo_path=str(gogo),
+				show_preflight=False,
+				same_folder=False,
+				output_folder=str(root / "out"),
+				parallel_jobs=1,
+			)
+			summary = converter.run([root], settings)
+			self.assertEqual(1, summary.succeeded)
+			self.assertEqual(2, summary.ignored)
+			self.assertEqual("-q", converter.commands[0][1])
+			self.assertEqual("0", converter.commands[0][2])
+			self.assertEqual(str(wav), converter.commands[0][-2])
+			self.assertEqual("song.mp3", Path(summary.outputs[0]).name)
+
+	def test_gogo_does_not_overwrite_an_output_created_after_planning(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "song.wav"
+			gogo = root / "gogo.exe"
+			source.write_bytes(b"wav")
+			gogo.write_bytes(b"placeholder")
+			output_folder = root / "out"
+			output_folder.mkdir()
+			(output_folder / "song.mp3").write_bytes(b"existing")
+			converter = _GogoFakeConverter(root / "missing-ffmpeg.exe")
+			settings = ConversionSettings(
+				target_format="mp3",
+				mp3_encoder="gogo",
+				gogo_path=str(gogo),
+				same_folder=False,
+				output_folder=str(output_folder),
+				parallel_jobs=1,
+			)
+			plan = converter.create_plan([source], settings)
+			planned_output = Path(plan.items[0].output_path)
+			planned_output.write_bytes(b"existing")
+			summary = converter.run([source], settings, plan=plan)
+			self.assertEqual(0, summary.succeeded)
+			self.assertEqual(1, summary.failed)
+			self.assertEqual(b"existing", planned_output.read_bytes())
+			self.assertEqual(b"existing", (output_folder / "song.mp3").read_bytes())
 
 
 class ConversionPlanningTests(unittest.TestCase):

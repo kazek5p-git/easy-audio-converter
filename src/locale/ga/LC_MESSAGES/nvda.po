@@ -1,141 +1,173 @@
-# Easy Audio Converter translation.
-# Edit and save this file with Poedit; then run the compile command.
+# Easy Audio Converter translation catalog.
+# Generated for NVDA; placeholders were validated automatically.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.8.2\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-12 11:37+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: ga\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.9.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-07-25 00:00+0200\nPO-Revision-Date: 2026-07-25 00:00+0200\nLanguage-Team: generated\nLanguage: ga\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter generate_locales.py\nX-Poedit-Basepath: ../../../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:92
 msgid "...and {count} more files"
 msgstr "...agus {count} níos mó comhad"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:713
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:734
 msgid "...and {count} more skipped files"
 msgstr "... agus {count} níos mó comhaid scipeáilte"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:94
+msgid "128 kb/s joint stereo"
+msgstr "128 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "16 bit"
 msgstr "16 giotán"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:362
+#: src/globalPlugins/easyAudioConverter/__init__.py:387
 msgid "16 files at a time"
 msgstr "16 comhaid ag an am"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:95
+msgid "160 kb/s joint stereo"
+msgstr "160 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96
+msgid "192 kb/s joint stereo"
+msgstr "192 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:384
 msgid "2 files at a time"
 msgstr "2 comhaid ag an am"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "24 bit"
 msgstr "24 giotán"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:97
+msgid "256 kb/s stereo"
+msgstr "256 kb/s stereo"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "32 bit"
 msgstr "32 giotán"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:363
+#: src/globalPlugins/easyAudioConverter/__init__.py:388
 msgid "32 files at a time"
 msgstr "32 comhaid ag an am"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:360
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:98
+msgid "320 kb/s stereo"
+msgstr "320 kb/s stereo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:385
 msgid "4 files at a time"
 msgstr "4 comhaid ag an am"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:361
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:93
+msgid "64 kb/s joint stereo"
+msgstr "64 kb/s joint stereo"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:386
 msgid "8 files at a time"
 msgstr "8 comhaid ag an am"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1764
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2053
 msgid "A built-in profile already uses this name."
 msgstr "Baineann próifíl ionsuite úsáid as an ainm seo cheana féin."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:464
+#: src/globalPlugins/easyAudioConverter/__init__.py:489
 msgid "AAC"
 msgstr "AAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:468
+#: src/globalPlugins/easyAudioConverter/__init__.py:493
 msgid "AC-3"
 msgstr "AC-3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:467
+#: src/globalPlugins/easyAudioConverter/__init__.py:492
 msgid "AIFF"
 msgstr "AIFF"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:466
+#: src/globalPlugins/easyAudioConverter/__init__.py:491
 msgid "ALAC (Apple Lossless)"
 msgstr "ALAC (Apple Lossless)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:472
+#: src/globalPlugins/easyAudioConverter/__init__.py:497
 msgid "AMR narrowband"
 msgstr "banda caol AMR"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:473
+#: src/globalPlugins/easyAudioConverter/__init__.py:498
 msgid "AMR wideband"
 msgstr "AMR leathanbhanda"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:613
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:631
 msgid "Access to the source or destination was denied."
 msgstr "Diúltaíodh rochtain ar an bhfoinse nó ar an gceann scríbe."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1825
+#: src/globalPlugins/easyAudioConverter/plugin.py:1855
 msgid "Active conversions: {active}. Queued jobs: {count}."
 msgstr "Active conversions: {active}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1914
+#: src/globalPlugins/easyAudioConverter/plugin.py:1944
 msgid "Active conversions: {count}."
 msgstr "Active conversions: {count}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:538
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:553
 msgid "Adaptive workers: {active} active, target {target}"
 msgstr "Oibrithe oiriúnaithe: {active} gníomhach, sprioc {target}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:350
+#: src/globalPlugins/easyAudioConverter/__init__.py:375
 msgid "Add new jobs to the queue"
 msgstr "Add new jobs to the queue"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:805
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:213 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1463
+msgid "Additional GOGO arguments:"
+msgstr "Additional GOGO arguments:"
+
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:826
 msgid "Additional skipped files: {count}"
 msgstr "Comhaid bhreise scipeáilte: {count}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1509
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1766
+msgid "Advanced codec overrides are not used by GOGO"
+msgstr "Advanced codec overrides are not used by GOGO"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1764
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr "Ní úsáidtear sáruithe CODEC chun cinn le haghaidh cóip srutha"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1514
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1770
 msgid "Advanced codec overrides: disabled"
 msgstr "Sáruithe codec casta: díchumasaithe"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1512
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1768
 msgid "Advanced codec overrides: enabled"
 msgstr "Sáruithe codec chun cinn: cumasaithe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:273
+#: src/globalPlugins/easyAudioConverter/plugin.py:274
 msgid "Advanced codec settings..."
 msgstr "Ardsocruithe codec..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:646
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:814
 msgid "Advanced settings"
 msgstr "Socruithe casta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:542
+#: src/globalPlugins/easyAudioConverter/__init__.py:568
 msgid "Album"
 msgstr "Albam"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:543
+#: src/globalPlugins/easyAudioConverter/__init__.py:569
 msgid "Album artist"
 msgstr "Ealaíontóir an albaim"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:807
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:975
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr "Tá gach leibhéal FLAC gan chailliúint. Is é Leibhéal 0 an ceann is tapúla; Tugann leibhéal 12 an comhbhrú is láidre ach tá sé an-mhall."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:629
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:647
 msgid "Already uses the target format"
 msgstr "Úsáideann an spriocfhormáid cheana féin"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:549
+#: src/globalPlugins/easyAudioConverter/plugin.py:554
 msgid "An update check is already in progress"
 msgstr "Tá seiceáil nuashonraithe ar siúl cheana féin"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:642
+#: src/globalPlugins/easyAudioConverter/plugin.py:647
 msgid "An update download is already in progress"
 msgstr "Tá íosluchtú nuashonraithe ar siúl cheana féin"
 
@@ -143,19 +175,19 @@ msgstr "Tá íosluchtú nuashonraithe ar siúl cheana féin"
 msgid "Analyzing loudness, first pass"
 msgstr "Anailís a dhéanamh ar treise, an chéad pas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:433
+#: src/globalPlugins/easyAudioConverter/__init__.py:458
 msgid "Archive FLAC"
 msgstr "Cartlann FLAC"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:541
+#: src/globalPlugins/easyAudioConverter/__init__.py:567
 msgid "Artist"
 msgstr "Ealaíontóir"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:343
+#: src/globalPlugins/easyAudioConverter/__init__.py:368
 msgid "At every file"
 msgstr "Ag gach comhad"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:342
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "At progress milestones"
 msgstr "Ag garspriocanna dul chun cinn"
 
@@ -171,47 +203,47 @@ msgstr "Faisnéise comhaid fuaime"
 msgid "Audio information copied"
 msgstr "Cóipeáladh faisnéis fuaime"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1642
+#: src/globalPlugins/easyAudioConverter/plugin.py:1672
 msgid "Audio information is already being read"
 msgstr "Tá eolas fuaime á léamh cheana féin"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1687
+#: src/globalPlugins/easyAudioConverter/plugin.py:1717
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr "Eolas fuaime réidh. Codec {codec}, ré {duration}, ráta samplach {sampleRate}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:390
+#: src/globalPlugins/easyAudioConverter/__init__.py:415
 msgid "Audiobook MP3"
 msgstr "Closleabhar MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:357
+#: src/globalPlugins/easyAudioConverter/__init__.py:382
 msgid "Automatic (dynamic load balancing)"
 msgstr "Uathoibríoch (cothromú ualaigh dinimiciúil)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1137
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1308
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
 msgstr "Déanann mód uathoibríoch comhaid neamhspleácha a choigeartú go dinimiciúil ag baint úsáide as LAP agus ualach cuimhne."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:444
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:610
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
 msgstr "Déanann mód uathoibríoch comhaid neamhspleácha a choigeartú go dinimiciúil ag baint úsáide as LAP agus ualach cuimhne. Ní úsáidtear luasghéarú GPU le haghaidh ionchódú fuaime."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:496
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:662
 msgid "Automatic progress announcements:"
 msgstr "Fógraí uathoibríocha ar dhul chun cinn:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:504
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:670
 msgid "Automatically check for add-on updates"
 msgstr "Seiceáil go huathoibríoch le haghaidh nuashonruithe breiseán"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:145
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:246
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:557
+#: src/globalPlugins/easyAudioConverter/__init__.py:583
 msgid "BPM"
 msgstr "BPM"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:674
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:842
 msgid "Bitrate in kbps (0 uses the quality preset):"
 msgstr "Ráta giotán i kbps (úsáideann 0 an réamhshocrú cáilíochta):"
 
@@ -219,11 +251,15 @@ msgstr "Ráta giotán i kbps (úsáideann 0 an réamhshocrú cáilíochta):"
 msgid "Bitrate: {value}"
 msgstr "Ráta giotán: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:533
+#: src/globalPlugins/easyAudioConverter/__init__.py:559
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr "Craoladh: -23 LUFS, -2 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:135 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1281
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:189 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1449
+msgid "Browse for GOGO executable..."
+msgstr "Browse for GOGO executable..."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:236 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1479
 msgid "Browse..."
 msgstr "Brabhsáil..."
 
@@ -231,39 +267,39 @@ msgstr "Brabhsáil..."
 msgid "Building the conversion plan"
 msgstr "Tógáil an phlean comhshó"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:564 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:417 src/globalPlugins/easyAudioConverter/plugin.py:268
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:580 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:419 src/globalPlugins/easyAudioConverter/plugin.py:269
 msgid "Cancel conversion"
 msgstr "Cealaigh comhshó"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1765
+#: src/globalPlugins/easyAudioConverter/plugin.py:1795
 msgid "Cancel the current audio conversion"
 msgstr "Cealaigh an tiontú fuaime reatha"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1778
+#: src/globalPlugins/easyAudioConverter/plugin.py:1808
 msgid "Canceling the conversion"
 msgstr "An tiontú a chur ar ceal"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1781
+#: src/globalPlugins/easyAudioConverter/plugin.py:1811
 msgid "Canceling {count} active conversions"
 msgstr "Canceling {count} active conversions"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:574
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:590
 msgid "Canceling..."
 msgstr "Á chealú..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:605 src/installTasks.py:59
+#: src/globalPlugins/easyAudioConverter/__init__.py:631 src/installTasks.py:59
 msgid "Cannot open the support page. Open this address manually: {url}"
 msgstr "Ní féidir an leathanach tacaíochta a oscailt. Oscail an seoladh seo de láimh: {url}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1721
+#: src/globalPlugins/easyAudioConverter/plugin.py:1751
 msgid "Change the conversion quality"
 msgstr "Athraigh an caighdeán chomhshó"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1707
+#: src/globalPlugins/easyAudioConverter/plugin.py:1737
 msgid "Change the target audio format"
 msgstr "Athraigh an sprioc formáid fuaime"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:687
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:855
 msgid "Channels:"
 msgstr "Cainéal:"
 
@@ -275,75 +311,79 @@ msgstr "Cainéil: {value}"
 msgid "Chapters: {value}"
 msgstr "Caibidlí: {value}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1937
+#: src/globalPlugins/easyAudioConverter/plugin.py:1967
 msgid "Check for Easy Audio Converter updates"
 msgstr "Seiceáil le haghaidh nuashonruithe Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:274
+#: src/globalPlugins/easyAudioConverter/plugin.py:275
 msgid "Check for updates..."
 msgstr "Seiceáil le haghaidh nuashonruithe..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:552
+#: src/globalPlugins/easyAudioConverter/plugin.py:557
 msgid "Checking for Easy Audio Converter updates"
 msgstr "Seiceáil le haghaidh nuashonruithe Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1420 src/globalPlugins/easyAudioConverter/plugin.py:1596 src/globalPlugins/easyAudioConverter/plugin.py:261
+#: src/globalPlugins/easyAudioConverter/plugin.py:1450 src/globalPlugins/easyAudioConverter/plugin.py:1626 src/globalPlugins/easyAudioConverter/plugin.py:262
 msgid "Choose a folder to convert"
 msgstr "Roghnaigh fillteán le tiontú"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1354 src/globalPlugins/easyAudioConverter/plugin.py:1585 src/globalPlugins/easyAudioConverter/plugin.py:260
+#: src/globalPlugins/easyAudioConverter/plugin.py:1384 src/globalPlugins/easyAudioConverter/plugin.py:1615 src/globalPlugins/easyAudioConverter/plugin.py:261
 msgid "Choose files to convert"
 msgstr "Choose files to convert"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:944
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1112
 msgid "Choose metadata fields"
 msgstr "Roghnaigh réimsí meiteashonraí"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1321
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1519
 msgid "Choose metadata fields..."
 msgstr "Roghnaigh réimsí meiteashonraí..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1758 src/globalPlugins/easyAudioConverter/settings_dialogs.py:300 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1592
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:440 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1870
+msgid "Choose the GOGO executable"
+msgstr "Choose the GOGO executable"
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:1788 src/globalPlugins/easyAudioConverter/settings_dialogs.py:426 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1855
 msgid "Choose the destination folder"
 msgstr "Roghnaigh an fillteán ceann scríbe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1836 src/globalPlugins/easyAudioConverter/plugin.py:270
+#: src/globalPlugins/easyAudioConverter/plugin.py:1866 src/globalPlugins/easyAudioConverter/plugin.py:271
 msgid "Clear queued conversion jobs"
 msgstr "Glan jabanna tiontaithe scuaine"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:419
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:421
 msgid "Clear queued jobs"
 msgstr "Poist scuaine soiléir"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1850 src/globalPlugins/easyAudioConverter/plugin.py:834
+#: src/globalPlugins/easyAudioConverter/plugin.py:1880 src/globalPlugins/easyAudioConverter/plugin.py:839 src/globalPlugins/easyAudioConverter/plugin.py:864
 msgid "Cleared {count} queued conversion jobs"
 msgstr "Glanadh {count} poist tiontaithe ciúáilte"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:212 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:561 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:834
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:212 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:577 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:855
 msgid "Close"
 msgstr "Dún"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:662
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:830
 msgid "Codec profile to edit:"
 msgstr "Próifíl codec le cur in eagar:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:694
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:862
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr "Leibhéal codec-shonrach (úsáideann -1 an réamhshocrú):"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:549
+#: src/globalPlugins/easyAudioConverter/__init__.py:575
 msgid "Comment"
 msgstr "Nóta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:556
+#: src/globalPlugins/easyAudioConverter/__init__.py:582
 msgid "Compilation"
 msgstr "Tiomsú"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:544
+#: src/globalPlugins/easyAudioConverter/__init__.py:570
 msgid "Composer"
 msgstr "Cumadóir"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1450
+#: src/globalPlugins/easyAudioConverter/plugin.py:1480
 msgid "Confirm folder conversion"
 msgstr "Deimhnigh comhshó fillteán"
 
@@ -351,19 +391,19 @@ msgstr "Deimhnigh comhshó fillteán"
 msgid "Container: {value}"
 msgstr "Coimeádán: {value}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1144
+#: src/globalPlugins/easyAudioConverter/plugin.py:1174
 msgid "Conversion canceled. Completed {done} of {total} files."
 msgstr "Cealaíodh an comhshó. Comhlánaithe {done} de {total}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1162
+#: src/globalPlugins/easyAudioConverter/plugin.py:1192
 msgid "Conversion complete. Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "Comhshó críochnaithe. D'éirigh leis: {done}. Theip: {failed}. Scipeáilte: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1171
+#: src/globalPlugins/easyAudioConverter/plugin.py:1201
 msgid "Conversion complete: {done} succeeded, {failed} failed."
 msgstr "Comhshó críochnaithe: {done} d'éirigh leis, {failed} theip."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:806
+#: src/globalPlugins/easyAudioConverter/plugin.py:811
 msgid "Conversion job added to the queue. Queue position: {position}."
 msgstr "Post tiontaithe curtha leis an scuaine. Suíomh scuaine: {position}."
 
@@ -371,59 +411,59 @@ msgstr "Post tiontaithe curtha leis an scuaine. Suíomh scuaine: {position}."
 msgid "Conversion plan"
 msgstr "Plean comhshó"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1239
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1411
 msgid "Conversion profile:"
 msgstr "Próifíl tiontaithe:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1723
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2012
 msgid "Conversion profiles exported"
 msgstr "Easpórtáladh próifílí tiontúcháin"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:926
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:947
 msgid "Conversion report copied"
 msgstr "Tuairisc chomhshó cóipeáilte"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:677
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:698
 msgid "Conversion results"
 msgstr "Torthaí comhshó"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1352
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1550
 msgid "Convert"
 msgstr "Tiontaigh"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1447
+#: src/globalPlugins/easyAudioConverter/plugin.py:1477
 msgid "Convert all supported audio files in {folder}, {scope}?"
 msgstr "Tiontaigh gach comhad fuaime a dtacaítear leis in {folder}, {scope}?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1608
+#: src/globalPlugins/easyAudioConverter/plugin.py:1638
 msgid "Convert every supported audio file in the current folder"
 msgstr "Tiontaigh gach comhad fuaime tacaithe san fhillteán reatha"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:259
+#: src/globalPlugins/easyAudioConverter/plugin.py:260
 msgid "Convert selected files or folders"
 msgstr "Tiontaigh comhaid nó fillteáin roghnaithe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1544
+#: src/globalPlugins/easyAudioConverter/plugin.py:1574
 msgid "Convert selected files or folders with one-time options"
 msgstr "Tiontaigh comhaid nó fillteáin roghnaithe le roghanna aonuaire"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:258
+#: src/globalPlugins/easyAudioConverter/plugin.py:259
 msgid "Convert selected files or folders with options..."
 msgstr "Tiontaigh comhaid nó fillteáin roghnaithe le roghanna..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:262
+#: src/globalPlugins/easyAudioConverter/plugin.py:263
 msgid "Convert the current folder"
 msgstr "Tiontaigh an fillteán reatha"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1214
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1386
 msgid "Convert with options"
 msgstr "Tiontaigh le roghanna"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:780
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:801
 msgid "Converted output kept at:\n{output}"
 msgstr "Aschur tiontaithe coinnithe ag:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:702
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:723
 msgid "Converted output kept at: {output}"
 msgstr "Aschur tiontaithe coinnithe ag: {output}"
 
@@ -431,31 +471,39 @@ msgstr "Aschur tiontaithe coinnithe ag: {output}"
 msgid "Converting audio, second pass"
 msgstr "Fuaime a thiontú, an dara pas"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:902
+#: src/globalPlugins/easyAudioConverter/plugin.py:932
 msgid "Converting {index} of {total}: {name}"
 msgstr "{index} á thiontú de {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:444
+#: src/globalPlugins/easyAudioConverter/plugin.py:449
 msgid "Converting {index} of {total}: {name}. Current file time {processed}; elapsed {elapsed}."
 msgstr "Ag tiontú {index} de {total}: {name}. Am reatha an chomhaid {processed}; caite {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:455
+#: src/globalPlugins/easyAudioConverter/plugin.py:460
 msgid "Converting {index} of {total}: {name}. Current file {filePercent}%, overall {overallPercent}%, elapsed {elapsed}."
 msgstr "Ag tiontú {index} de {total}: {name}. Comhad reatha {filePercent}%, iomlán {overallPercent}%, caite {elapsed}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:523
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:374
+msgid "Converting — Easy Audio Converter"
+msgstr "Converting — Easy Audio Converter"
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:395
+msgid "Converting — Easy Audio Converter — separate job {id}"
+msgstr "Converting — Easy Audio Converter — separate job {id}"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:549
 msgid "Copy all text metadata"
 msgstr "Cóipeáil gach meiteashonraí téacs"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:402 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1116
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:568 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1287
 msgid "Copy chapter markers"
 msgstr "Cóipeáil marcóirí caibidle"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1112
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1283
 msgid "Copy embedded cover artwork when supported"
 msgstr "Cóipeáil saothar ealaíne clúdaigh leabaithe nuair a thacaítear leis"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:398
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:564
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr "Cóipeáil saothar ealaíne clúdaigh leabaithe nuair a thacaíonn an sprioc leis"
 
@@ -463,19 +511,19 @@ msgstr "Cóipeáil saothar ealaíne clúdaigh leabaithe nuair a thacaíonn an sp
 msgid "Copy information"
 msgstr "Cóip faisnéise"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:833
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:854
 msgid "Copy report"
 msgstr "Cóipeáil tuairisc"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:524
+#: src/globalPlugins/easyAudioConverter/__init__.py:550
 msgid "Copy selected metadata fields"
 msgstr "Cóipeáil réimsí meiteashonraí roghnaithe"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:550
+#: src/globalPlugins/easyAudioConverter/__init__.py:576
 msgid "Copyright"
 msgstr "Cóipcheart"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:581
+#: src/globalPlugins/easyAudioConverter/plugin.py:586
 msgid "Could not check for updates.\n\n{error}"
 msgstr "Níorbh fhéidir nuashonruithe a sheiceáil.\n\n{error}"
 
@@ -483,103 +531,111 @@ msgstr "Níorbh fhéidir nuashonruithe a sheiceáil.\n\n{error}"
 msgid "Could not copy the audio information"
 msgstr "Níorbh fhéidir an fhaisnéis fuaime a chóipeáil"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:920
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:941
 msgid "Could not copy the conversion report."
 msgstr "Níorbh fhéidir an tuairisc chomhshó a chóipeáil."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1717
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2006
 msgid "Could not export profiles:\n{error}"
 msgstr "Níorbh fhéidir próifílí a easpórtáil:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1678
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1967
 msgid "Could not import profiles:\n{error}"
 msgstr "Níorbh fhéidir próifílí a iompórtáil:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:517
+#: src/globalPlugins/easyAudioConverter/plugin.py:522
 msgid "Could not open Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Níorbh fhéidir socruithe Easy Audio Converter a oscailt. Féach ar loga an NVDA le haghaidh sonraí."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:737
+#: src/globalPlugins/easyAudioConverter/plugin.py:742
 msgid "Could not open the NVDA add-on installer. The update was saved to:\n{path}"
 msgstr "Níorbh fhéidir suiteálaí breiseán NVDA a oscailt. Sábháladh an nuashonrú chuig:\n{path}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:907
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:928
 msgid "Could not open the output folder."
 msgstr "Níorbh fhéidir an fillteán aschurtha a oscailt."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1672
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:127
+msgid "Could not read GOGO help:\n{error}"
+msgstr "Could not read GOGO help:\n{error}"
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:1702
 msgid "Could not read audio information:\n{error}"
 msgstr "Níorbh fhéidir faisnéis fuaime a léamh:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:929
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1097
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr "Níorbh fhéidir socruithe Easy Audio Converter a shábháil. Féach ar loga an NVDA le haghaidh sonraí."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:559
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:575
 msgid "Current file progress: 100%"
 msgstr "Dul chun cinn reatha an chomhaid: 100%"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:393
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:395
 msgid "Current file progress: waiting"
 msgstr "Dul chun cinn reatha an chomhaid: ag fanacht"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:487
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:501
 msgid "Current file progress: {percent}% ({processed} of {duration})"
 msgstr "Dul chun cinn reatha an chomhaid: {percent}% ({processed} de {duration})"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:479
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:493
 msgid "Current file time: {processed}"
 msgstr "Am reatha an chomhaid: {processed}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:534
+#: src/globalPlugins/easyAudioConverter/__init__.py:560
 msgid "Custom EBU R128 target"
 msgstr "Sprioc saincheaptha EBU R128"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:371 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1086
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:537 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1257
 msgid "Custom integrated loudness in LUFS:"
 msgstr "Treise comhtháite saincheaptha i LUFS:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:390 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1105
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:556 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1276
 msgid "Custom loudness range in LU:"
 msgstr "Raon treise saincheaptha i LU:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:380 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1096
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:546 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1267
 msgid "Custom true peak in dBTP:"
 msgstr "Fíor bhuaic saincheaptha in dBTP:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:546
+#: src/globalPlugins/easyAudioConverter/__init__.py:572
 msgid "Date or year"
 msgstr "Dáta nó bliain"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1120
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1291
 msgid "Deeply verify every output file"
 msgstr "Fíoraigh go domhain gach comhad aschuir"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:408
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:574
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr "Fíoraigh an t-aschur go domhain trína dhíchódú agus trína fhad a chur i gcomparáid"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1814
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:92
+msgid "Define manually in GOGO arguments"
+msgstr "Define manually in GOGO arguments"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2103
 msgid "Delete conversion profile"
 msgstr "Scrios próifíl chomhshó"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1245
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1417
 msgid "Delete profile"
 msgstr "Scrios próifíl"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1813
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2102
 msgid "Delete the profile “{name}”?"
 msgstr "Scrios an phróifíl \"{name}\"?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:558
+#: src/globalPlugins/easyAudioConverter/__init__.py:584
 msgid "Description"
 msgstr "Cur síos"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:129 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1277
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:230 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1475
 msgid "Destination folder:"
 msgstr "Fillteán sprice:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1755
+#: src/globalPlugins/easyAudioConverter/plugin.py:1785
 msgid "Destination folder: {folder}"
 msgstr "Fillteán sprice: {folder}"
 
@@ -587,43 +643,43 @@ msgstr "Fillteán sprice: {folder}"
 msgid "Destination: {destination}"
 msgstr "Ceann Scríbe: {destination}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:806
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:827
 msgid "Details are limited to the first {limit} skipped files."
 msgstr "Tá sonraí teoranta do na chéad chomhaid scipeáilte {limit}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:819
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:840
 msgid "Details:"
 msgstr "Sonraí:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:530
+#: src/globalPlugins/easyAudioConverter/__init__.py:556
 msgid "Disabled"
 msgstr "faoi mhíchumas"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:548
+#: src/globalPlugins/easyAudioConverter/__init__.py:574
 msgid "Disc number"
 msgstr "Uimhir diosca"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:91
+#: src/globalPlugins/easyAudioConverter/__init__.py:100
 msgid "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 msgstr "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:522
+#: src/globalPlugins/easyAudioConverter/__init__.py:548
 msgid "Do not copy metadata"
 msgstr "Ná cóipeáil meiteashonraí"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:621
+#: src/globalPlugins/easyAudioConverter/plugin.py:626
 msgid "Download and install"
 msgstr "Íoslódáil agus suiteáil"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:700
+#: src/globalPlugins/easyAudioConverter/plugin.py:705
 msgid "Downloaded {done:.1f} MB"
 msgstr "Íoslódáilte {done:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:693
+#: src/globalPlugins/easyAudioConverter/plugin.py:698
 msgid "Downloaded {done:.1f} of {total:.1f} MB"
 msgstr "Íoslódáilte {done:.1f} de {total:.1f} MB"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:652
+#: src/globalPlugins/easyAudioConverter/plugin.py:657
 msgid "Downloading Easy Audio Converter update"
 msgstr "Nuashonrú Easy Audio Converter a íoslódáil"
 
@@ -631,67 +687,59 @@ msgstr "Nuashonrú Easy Audio Converter a íoslódáil"
 msgid "Duration: {value}"
 msgstr "Fad: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:469
+#: src/globalPlugins/easyAudioConverter/__init__.py:494
 msgid "E-AC-3"
 msgstr "E-AC-3"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:908 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:921 src/globalPlugins/easyAudioConverter/plugin.py:126 src/globalPlugins/easyAudioConverter/plugin.py:1125 src/globalPlugins/easyAudioConverter/plugin.py:291 src/globalPlugins/easyAudioConverter/plugin.py:821 src/globalPlugins/easyAudioConverter/plugin.py:1675 src/globalPlugins/easyAudioConverter/plugin.py:518 src/globalPlugins/easyAudioConverter/plugin.py:758 src/globalPlugins/easyAudioConverter/plugin.py:796 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1757 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1765 src/globalPlugins/easyAudioConverter/settings_dialogs.py:316 src/globalPlugins/easyAudioConverter/settings_dialogs.py:930 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1628 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1679 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1718 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1731 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1795 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1832
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:929 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:942 src/globalPlugins/easyAudioConverter/plugin.py:127 src/globalPlugins/easyAudioConverter/plugin.py:1155 src/globalPlugins/easyAudioConverter/plugin.py:292 src/globalPlugins/easyAudioConverter/plugin.py:826 src/globalPlugins/easyAudioConverter/plugin.py:1705 src/globalPlugins/easyAudioConverter/plugin.py:523 src/globalPlugins/easyAudioConverter/plugin.py:763 src/globalPlugins/easyAudioConverter/plugin.py:852 src/globalPlugins/easyAudioConverter/plugin.py:801 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2046 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2054 src/globalPlugins/easyAudioConverter/settings_dialogs.py:475 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1098 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1917 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1968 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2007 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2020 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2084 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2121
 msgid "Easy Audio Converter"
 msgstr "Tiontaire Fuaime Éasca"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:592
+#: src/globalPlugins/easyAudioConverter/plugin.py:597
 msgid "Easy Audio Converter is up to date. Installed version: {version}."
 msgstr "Tá Easy Audio Converter cothrom le dáta. Leagan suiteáilte: {version}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:376
-msgid "Easy Audio Converter progress"
-msgstr "Dul chun cinn Éasca Tiontaire Fuaime"
-
-#: src/globalPlugins/easyAudioConverter/plugin.py:395
-msgid "Easy Audio Converter progress — separate job {id}"
-msgstr "Easy Audio Converter progress — separate job {id}"
-
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:729
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:750
 msgid "Easy Audio Converter results"
 msgstr "Torthaí Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:852
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1020
 msgid "Easy Audio Converter settings"
 msgstr "Socruithe Tiontaire Fuaime Éasca"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:726 src/globalPlugins/easyAudioConverter/plugin.py:584 src/globalPlugins/easyAudioConverter/plugin.py:595 src/globalPlugins/easyAudioConverter/plugin.py:740
+#: src/globalPlugins/easyAudioConverter/plugin.py:731 src/globalPlugins/easyAudioConverter/plugin.py:589 src/globalPlugins/easyAudioConverter/plugin.py:600 src/globalPlugins/easyAudioConverter/plugin.py:745
 msgid "Easy Audio Converter update"
 msgstr "Nuashonrú Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:633 src/globalPlugins/easyAudioConverter/plugin.py:617
+#: src/globalPlugins/easyAudioConverter/plugin.py:638 src/globalPlugins/easyAudioConverter/plugin.py:622
 msgid "Easy Audio Converter update available"
 msgstr "Nuashonrú Easy Audio Converter ar fáil"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:604
+#: src/globalPlugins/easyAudioConverter/plugin.py:609
 msgid "Easy Audio Converter {newVersion} is available. You have version {currentVersion}.\n\nDo you want to download and install the update now?"
 msgstr "Tá Easy Audio Converter {newVersion} ar fáil. Tá leagan {currentVersion} agat.\n\nAn bhfuil fonn ort an nuashonrú a íoslódáil agus a shuiteáil anois?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:628
+#: src/globalPlugins/easyAudioConverter/plugin.py:633
 msgid "Easy Audio Converter {version} is available, but the release does not contain a direct add-on package. Open the release page?"
 msgstr "Tá Easy Audio Converter {version} ar fáil, ach níl pacáiste breiseán díreach sa scaoileadh. Oscail an leathanach scaoilte?"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:506
+#: src/globalPlugins/easyAudioConverter/__init__.py:531
 msgid "Economical"
 msgstr "eacnamaíoch"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:991
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1159
 msgid "Edit metadata overrides"
 msgstr "Cuir sáruithe ar mheiteashonraí in eagar"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:210 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1324
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:311 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1522
 msgid "Edit metadata overrides..."
 msgstr "Cuir sárshonraí in eagar..."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:401
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:403
 msgid "Elapsed time: 0:00"
 msgstr "Am caite: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:499
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:514
 msgid "Elapsed time: {elapsed}"
 msgstr "Am caite: {elapsed}"
 
@@ -699,23 +747,23 @@ msgstr "Am caite: {elapsed}"
 msgid "Embedded artwork: {value}"
 msgstr "Saothar ealaíne leabaithe: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:670
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:838
 msgid "Enable advanced overrides for this codec"
 msgstr "Cumasaigh sáruithe chun cinn don codec seo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:560
+#: src/globalPlugins/easyAudioConverter/__init__.py:586
 msgid "Encoder"
 msgstr "Ionchódóir"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:661
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:682
 msgid "Encoding and output writing: {value}"
 msgstr "Encoding and output writing: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1744
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2033
 msgid "Enter a name for this conversion profile:"
 msgstr "Iontráil ainm don phróifíl tiontaithe seo:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1001
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1169
 msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
 msgstr "Cuir isteach luachanna chun clibeanna foinse a athsholáthar do gach comhad a tiontaithe. Fág réimse folamh chun a bhunluach a choinneáil."
 
@@ -723,75 +771,75 @@ msgstr "Cuir isteach luachanna chun clibeanna foinse a athsholáthar do gach com
 msgid "Estimated output size: {size}"
 msgstr "Méid an aschuir mheasta: {size}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:554
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:569
 msgid "Estimated time remaining: 0:00"
 msgstr "Am measta atá fágtha: 0:00"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:405
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:407
 msgid "Estimated time remaining: calculating"
 msgstr "An t-am measta atá fágtha: ríomh"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:503
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:518
 msgid "Estimated time remaining: {remaining}"
 msgstr "An t-am measta atá fágtha: {remaining}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:267
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:393
 msgid "Example album"
 msgstr "Albam samplach"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:266
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:392
 msgid "Example artist"
 msgstr "Ealaíontóir samplach"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:274
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:400
 msgid "Example filename: {name}"
 msgstr "Ainm comhaid samplach: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:265
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:391
 msgid "Example title"
 msgstr "Teideal samplach"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1697
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1986
 msgid "Export conversion profiles"
 msgstr "Easpórtáil próifílí tiontaithe"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1247
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1419
 msgid "Export profiles..."
 msgstr "Easpórtáil próifílí..."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:474
+#: src/globalPlugins/easyAudioConverter/__init__.py:499
 msgid "Extract original audio stream (no re-encoding)"
 msgstr "Bain an bunsruth fuaime amach (gan athchódú)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:460
+#: src/globalPlugins/easyAudioConverter/__init__.py:485
 msgid "FLAC"
 msgstr "FLAC"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:618
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:786
 msgid "FLAC 0 — fastest encoding"
 msgstr "FLAC 0 - ionchódú is tapúla"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:620
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:788
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr "FLAC 12 - comhbhrú uasta, an-mhall"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:622
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:790
 msgid "FLAC {level}"
 msgstr "FLAC {level}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:696
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:717
 msgid "Failed files:"
 msgstr "Comhaid theipthe:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:785
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:806
 msgid "Failed: {name}"
 msgstr "Theip: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:627
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:795
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr "Tapa, -f (leibhéal FFmpeg 0)"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:631
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:649
 msgid "File or folder is unavailable"
 msgstr "Níl comhad nó fillteán ar fáil"
 
@@ -799,11 +847,11 @@ msgstr "Níl comhad nó fillteán ar fáil"
 msgid "File size: {value}"
 msgstr "Méid comhaid: {value}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:470
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:484
 msgid "File {index} of {total}: {name}"
 msgstr "Comhad {index} de {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1526
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1782
 msgid "Filename preview: {name}"
 msgstr "Réamhamharc ainm comhaid: {name}"
 
@@ -811,27 +859,27 @@ msgstr "Réamhamharc ainm comhaid: {name}"
 msgid "Files to convert: {count}"
 msgstr "Comhaid le tiontú: {count}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:868
+#: src/globalPlugins/easyAudioConverter/plugin.py:898
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr "Comhaid le tiontú: {count}. Scipeáilte: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:806
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:974
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr "Maidir le LAME MP3, is é leibhéal 0 an caighdeán algartam is moille agus is airde; Is é 9 an ceann is tapúla."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:811
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:979
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr "Maidir le Ogg Vorbis, roghnaíonn leibhéil 0 go 10 cáilíocht giotán athraitheach a mhéadú."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:812
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:980
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr "Maidir le Opus, roghnaíonn leibhéil 0 go 10 castacht ionchódóra a mhéadú."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:873
+#: src/globalPlugins/easyAudioConverter/plugin.py:903
 msgid "Found {count} files to convert"
 msgstr "Aimsíodh {count} comhaid le tiontú"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:516
+#: src/globalPlugins/easyAudioConverter/__init__.py:541
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr "Fraunhofer / Windows Media Foundation MP3"
 
@@ -843,27 +891,75 @@ msgstr "Spás diosca saor in aisce: {size}"
 msgid "GB"
 msgstr "GB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:545
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:108
+msgid "GOGO Q {value}"
+msgstr "GOGO Q {value}"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:106
+msgid "GOGO Q {value} — fastest at Q9"
+msgstr "GOGO Q {value} — fastest at Q9"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:104
+msgid "GOGO Q {value} — highest quality"
+msgstr "GOGO Q {value} — highest quality"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:193 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1453
+msgid "GOGO bitrate:"
+msgstr "GOGO bitrate:"
+
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:654
+msgid "GOGO can encode only WAV/WAVE source files"
+msgstr "GOGO can encode only WAV/WAVE source files"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:119
+msgid "GOGO commands"
+msgstr "GOGO commands"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:353 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1734
+msgid "GOGO encodes WAV/WAVE files to MP3 without metadata or loudness processing. The add-on includes GOGO-no-coda; leave the executable field empty to use it, or choose another gogo.exe."
+msgstr "GOGO encodes WAV/WAVE files to MP3 without metadata or loudness processing. The add-on includes GOGO-no-coda; leave the executable field empty to use it, or choose another gogo.exe."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:184 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1445
+msgid "GOGO executable (gogo.exe):"
+msgstr "GOGO executable (gogo.exe):"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:442 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1872
+msgid "GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|All files (*.*)|*.*"
+msgstr "GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|All files (*.*)|*.*"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1805
+msgid "GOGO processing: WAV/WAVE input only; metadata, loudness, artwork, and chapters are not written."
+msgstr "GOGO processing: WAV/WAVE input only; metadata, loudness, artwork, and chapters are not written."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:203 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1458
+msgid "GOGO quality:"
+msgstr "GOGO quality:"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:542
+msgid "GOGO-no-coda MP3 (bundled WAV encoder)"
+msgstr "GOGO-no-coda MP3 (bundled WAV encoder)"
+
+#: src/globalPlugins/easyAudioConverter/__init__.py:571
 msgid "Genre"
 msgstr "Seánra"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:559
+#: src/globalPlugins/easyAudioConverter/__init__.py:585
 msgid "Grouping"
 msgstr "Grúpáil"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:422
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:424
 msgid "Hide"
 msgstr "Folaigh"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:508
+#: src/globalPlugins/easyAudioConverter/__init__.py:533
 msgid "High"
 msgstr "Ard"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:629
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:797
 msgid "High, -h (FFmpeg level 2)"
 msgstr "Ard, -h (FFmpeg leibhéal 2)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:561
+#: src/globalPlugins/easyAudioConverter/__init__.py:587
 msgid "ISRC"
 msgstr "ISRC"
 
@@ -871,27 +967,27 @@ msgstr "ISRC"
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr "Má tá Easy Audio Converter úsáideach duit agus gur mhaith leat tacú le mo chuid oibre, is féidir leat caife a cheannach dom.\n\nAr mhaith leat an leathanach tacaíochta a oscailt anois?"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1646
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1935
 msgid "Import conversion profiles"
 msgstr "Iompórtáil próifílí tiontaithe"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1246
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1418
 msgid "Import profiles..."
 msgstr "Iompórtáil próifílí..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1688
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1977
 msgid "Imported {count} conversion profiles"
 msgstr "Iompórtáladh próifílí tiontaithe {count}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:155 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1289
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:256 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1487
 msgid "Include subfolders when converting a folder"
 msgstr "Cuir fofhillteáin san áireamh agus fillteán á thiontú"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:263
+#: src/globalPlugins/easyAudioConverter/plugin.py:264
 msgid "Information about the selected audio file..."
 msgstr "Faisnéis faoin gcomhad fuaime roghnaithe..."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:655
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:676
 msgid "Input recognition: {value}"
 msgstr "Input recognition: {value}"
 
@@ -899,11 +995,11 @@ msgstr "Input recognition: {value}"
 msgid "Input size: {size}"
 msgstr "Méid ionchuir: {size}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:280 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1532
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:406 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1788
 msgid "Invalid filename template: {error}"
 msgstr "Teimpléad ainm comhaid neamhbhailí: {error}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1647 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1699
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1936 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1988
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "Comhaid phróifíle JSON (*.json)|*.json|Gach comhad (*.*)|*.*"
 
@@ -911,43 +1007,43 @@ msgstr "Comhaid phróifíle JSON (*.json)|*.json|Gach comhad (*.*)|*.*"
 msgid "KB"
 msgstr "KB"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
 msgid "Keep the source channel count"
 msgstr "Coinnigh líon na gcainéal foinseacha"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:683
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:851
 msgid "Keep the source sample rate"
 msgstr "Coinnigh an ráta samplach foinse"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:515
+#: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "LAME MP3"
 msgstr "Lame MP3"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:552
+#: src/globalPlugins/easyAudioConverter/__init__.py:578
 msgid "Language"
 msgstr "Teanga"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:621
+#: src/globalPlugins/easyAudioConverter/plugin.py:626
 msgid "Later"
 msgstr "Níos déanaí"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:701
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:869
 msgid "Lossless compression profile:"
 msgstr "Próifíl comhbhrúite gan chaillteanas:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:658
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:679
 msgid "Loudness analysis: {value}"
 msgstr "Loudness analysis: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:361 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1076
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:527 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1247
 msgid "Loudness normalization:"
 msgstr "normalú glórach:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:551
+#: src/globalPlugins/easyAudioConverter/__init__.py:577
 msgid "Lyrics"
 msgstr "Liricí"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:463
+#: src/globalPlugins/easyAudioConverter/__init__.py:488
 msgid "M4A (AAC)"
 msgstr "M4A (AAC)"
 
@@ -955,35 +1051,35 @@ msgstr "M4A (AAC)"
 msgid "MB"
 msgstr "MB"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:471
+#: src/globalPlugins/easyAudioConverter/__init__.py:496
 msgid "MP2"
 msgstr "MP2color"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:458
+#: src/globalPlugins/easyAudioConverter/__init__.py:483
 msgid "MP3"
 msgstr "MP3"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:114 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1268
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:177 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1440
 msgid "MP3 encoder:"
 msgstr "Ionchódóir MP3:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1917
+#: src/globalPlugins/easyAudioConverter/plugin.py:1947
 msgid "Main conversion"
 msgstr "Main conversion"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:635
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:803
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr "Uasmhéid, -hhx6 (FFmpeg leibhéal 8)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:188 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1316
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:289 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1514
 msgid "Metadata export:"
 msgstr "Easpórtáil meiteashonraí:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:199
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:300
 msgid "Metadata fields to copy:"
 msgstr "Réimsí meiteashonraí le cóipeáil:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:227 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1503
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:331 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1758
 msgid "Metadata overrides: {count} fields"
 msgstr "Sáraítear meiteashonraí: réimsí {count}"
 
@@ -991,163 +1087,163 @@ msgstr "Sáraítear meiteashonraí: réimsí {count}"
 msgid "Metadata:"
 msgstr "Meiteashonraí:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
 msgid "Mono"
 msgstr "Mono"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:532
+#: src/globalPlugins/easyAudioConverter/__init__.py:558
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr "Ceol agus sruthú: -14 LUFS, -1 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:819
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:987
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr "Ní úsáidtear aon ardsocruithe codec toisc go ndéantar an sruth fuaime a chóipeáil gan athchódú."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:336
+#: src/globalPlugins/easyAudioConverter/__init__.py:361
 msgid "No completion notification"
 msgstr "Gan aon fhógra críochnaithe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1771 src/globalPlugins/easyAudioConverter/plugin.py:1791 src/globalPlugins/easyAudioConverter/plugin.py:1894
+#: src/globalPlugins/easyAudioConverter/plugin.py:1801 src/globalPlugins/easyAudioConverter/plugin.py:1821 src/globalPlugins/easyAudioConverter/plugin.py:1924
 msgid "No conversion is in progress"
 msgstr "Níl aon chomhshó ar siúl"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1869
+#: src/globalPlugins/easyAudioConverter/plugin.py:1899
 msgid "No conversion progress is available"
 msgstr "Níl aon dul chun cinn comhshó ar fáil"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1259
+#: src/globalPlugins/easyAudioConverter/plugin.py:1289
 msgid "No conversion results are available"
 msgstr "Níl aon torthaí comhshó ar fáil"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1280 src/globalPlugins/easyAudioConverter/plugin.py:1290
+#: src/globalPlugins/easyAudioConverter/plugin.py:1310 src/globalPlugins/easyAudioConverter/plugin.py:1320
 msgid "No failed files are available to retry"
 msgstr "Níl aon chomhad teipthe ar fáil le triail a bhaint as"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:867
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:888
 msgid "No file details are available."
 msgstr "Níl aon sonraí comhaid ar fáil."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1156
+#: src/globalPlugins/easyAudioConverter/plugin.py:1186
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr "Níl aon chomhaid ag teastáil ó chomhshó. Scipeáilte: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1542
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1798
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr "Gan aon ath-ionchódú: ní úsáidtear socruithe cáilíochta, treise ná ardsocruithe CODEC."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1536
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1792
 msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 msgstr "Gan aon athchódú: ní úsáidtear cáilíocht, treise, meiteashonraí foinse, saothar ealaíne, caibidlí agus ardsocruithe CODEC. Cuirtear sáruithe meiteashonraí soiléire i bhfeidhm fós."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:632
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:650
 msgid "No readable audio stream was found"
 msgstr "Níor aimsíodh aon sruth fuaime inléite"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1160
+#: src/globalPlugins/easyAudioConverter/plugin.py:1190
 msgid "No supported audio files were found"
 msgstr "Níor aimsíodh aon chomhaid fuaime a dtacaítear leo"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:628
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:796
 msgid "Normal (FFmpeg level 1)"
 msgstr "Gnáth (FFmpeg leibhéal 1)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:641
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:809
 msgid "Not used by this codec"
 msgstr "Níl sé in úsáid ag an codec seo"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:461
+#: src/globalPlugins/easyAudioConverter/__init__.py:486
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1815
+#: src/globalPlugins/easyAudioConverter/plugin.py:1845
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr "Tá comhshó amháin gníomhach. Poist chiúnaithe: {count}."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:358
+#: src/globalPlugins/easyAudioConverter/__init__.py:383
 msgid "One file at a time"
 msgstr "Comhad amháin ag an am"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1819
+#: src/globalPlugins/easyAudioConverter/plugin.py:1849
 msgid "One separate conversion is active. Queued jobs: {count}."
 msgstr "One separate conversion is active. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1387
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1592
 msgid "One-time settings"
 msgstr "Socruithe aonuaire"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:344
+#: src/globalPlugins/easyAudioConverter/__init__.py:369
 msgid "Only on demand"
 msgstr "Ach amháin ar éileamh"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1521
+#: src/globalPlugins/easyAudioConverter/plugin.py:1551
 msgid "Open Easy Audio Converter settings"
 msgstr "Oscail socruithe Easy Audio Converter"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1532
+#: src/globalPlugins/easyAudioConverter/plugin.py:1562
 msgid "Open advanced codec settings"
 msgstr "Oscail socruithe ardleibhéil codec"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:832
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:853
 msgid "Open output folder"
 msgstr "Oscail fillteán aschuir"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1946
+#: src/globalPlugins/easyAudioConverter/plugin.py:1976
 msgid "Open the author's support page"
 msgstr "Oscail leathanach tacaíochta an údair"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:603
+#: src/globalPlugins/easyAudioConverter/__init__.py:629
 msgid "Opening the support page"
 msgstr "Ag oscailt an leathanach tacaíochta"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:462
+#: src/globalPlugins/easyAudioConverter/__init__.py:487
 msgid "Opus"
 msgstr "Opus"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:138 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1284
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:239 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1482
 msgid "Output filename template:"
 msgstr "Teimpléad ainm comhaid aschuir:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:694
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:715
 msgid "Output files:"
 msgstr "Comhaid aschuir:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:621
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:639
 msgid "Output verification failed because its duration differs from the source."
 msgstr "Theip ar fhíorú aschuir toisc go bhfuil a ré éagsúil leis an bhfoinse."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:769
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:790
 msgid "Output:\n{output}"
 msgstr "Aschur:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:560
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:576
 msgid "Overall progress: 100%"
 msgstr "Dul chun cinn foriomlán: 100%"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:397
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:399
 msgid "Overall progress: waiting"
 msgstr "Dul chun cinn foriomlán: fanacht"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:496
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:511
 msgid "Overall progress: {percent}%"
 msgstr "Dul chun cinn foriomlán: {percent}%"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:707
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:875
 msgid "PCM bit depth:"
 msgstr "Doimhneacht giotán PCM:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:414 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1125
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:580 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1296
 msgid "Parallel conversion jobs:"
 msgstr "Poist comhshó comhthreomhar:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:555
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:570
 msgid "Parallel workers: finished"
 msgstr "Oibrithe comhthreomhara: críochnaithe"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:412
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:414
 msgid "Parallel workers: waiting"
 msgstr "Oibrithe comhthreomhara: ag fanacht"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:545
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:560
 msgid "Parallel workers: {active} active of {target}"
 msgstr "Oibrithe comhthreomhara: {active} gníomhach de {target}"
 
@@ -1159,103 +1255,103 @@ msgstr "Conair: {path}"
 msgid "Planned output files:"
 msgstr "Comhaid aschuir phleanáilte:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:479
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:645
 msgid "Play a sound when a conversion fails"
 msgstr "Seinn fuaim nuair a theipeann ar chomhshó"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:486
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:652
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr "Seinn fuaim nuair a chuirtear tiontú ar ceal nó nuair a stoptar é"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:412
+#: src/globalPlugins/easyAudioConverter/__init__.py:437
 msgid "Podcast Opus"
 msgstr "Podchraoladh Opus"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:531
+#: src/globalPlugins/easyAudioConverter/__init__.py:557
 msgid "Podcast: -16 LUFS, -1.5 dBTP"
 msgstr "Podchraoladh: -16 LUFS, -1.5 dBTP"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:309 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:388 src/globalPlugins/easyAudioConverter/plugin.py:861
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:309 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:390 src/globalPlugins/easyAudioConverter/plugin.py:891
 msgid "Preparing the conversion"
 msgstr "Ullmhú an chomhshó"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:168 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1301
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:269 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1499
 msgid "Preserve source file creation and modification dates"
 msgstr "Caomhnaigh dátaí cruthaithe agus modhnaithe an chomhaid foinse"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:161 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1294
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:262 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1492
 msgid "Preserve the source folder structure in the destination"
 msgstr "Caomhnaigh an struchtúr fillteán foinse sa cheann scríbe"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:667
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:688
 msgid "Probe cache hits: {count}; misses: {misses}"
 msgstr "Probe cache hits: {count}; misses: {misses}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:349
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:512
 msgid "Processing and notifications"
 msgstr "Próiseáil agus fógraí"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1063
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1231
 msgid "Processing options"
 msgstr "Roghanna próiseála"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1330
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1528
 msgid "Processing options..."
 msgstr "Roghanna próiseála..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1552
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1815
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr "Próiseáil: treise {loudness}; saothar ealaíne {artwork}; caibidlí {chapters}; fíorú {verification}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1824
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2113
 msgid "Profile deleted"
 msgstr "Próifíl scriosta"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1803
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2092
 msgid "Profile saved: {name}"
 msgstr "Próifíl sábhálta: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:553
+#: src/globalPlugins/easyAudioConverter/__init__.py:579
 msgid "Publisher"
 msgstr "Foilsitheoir"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1730
+#: src/globalPlugins/easyAudioConverter/plugin.py:1760
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr "Ní úsáidtear cáilíocht agus fuaim á chóipeáil gan athchódú"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:105 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1262
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:168 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1434
 msgid "Quality:"
 msgstr "Cáilíocht:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1737
+#: src/globalPlugins/easyAudioConverter/plugin.py:1767
 msgid "Quality: {quality}"
 msgstr "Cáilíocht: {quality}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1831
+#: src/globalPlugins/easyAudioConverter/plugin.py:1861
 msgid "Queued conversion jobs: {count}."
 msgstr "Poist tiontaithe ciúáilte: {count}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:408
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:410
 msgid "Queued jobs: 0"
 msgstr "Poist ciúáilte: 0"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:527
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:542
 msgid "Queued jobs: {count}"
 msgstr "Poist chiúnaithe: {count}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1930
+#: src/globalPlugins/easyAudioConverter/plugin.py:1960
 msgid "Queued jobs: {count}."
 msgstr "Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1742
+#: src/globalPlugins/easyAudioConverter/plugin.py:1772
 msgid "Quickly choose the destination folder"
 msgstr "Go tapa roghnaigh an fillteán ceann scríbe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1565
+#: src/globalPlugins/easyAudioConverter/plugin.py:1595
 msgid "Quickly convert selected files or folders"
 msgstr "Tiontaigh go tapa comhaid nó fillteáin roghnaithe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1645
+#: src/globalPlugins/easyAudioConverter/plugin.py:1675
 msgid "Reading audio file information"
 msgstr "Léamh faisnéise comhaid fuaime"
 
@@ -1263,43 +1359,43 @@ msgstr "Léamh faisnéise comhaid fuaime"
 msgid "Reading audio information"
 msgstr "Léamh faisnéise fuaime"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:613
+#: src/globalPlugins/easyAudioConverter/plugin.py:618
 msgid "Release notes:"
 msgstr "Nótaí scaoilte:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:477
+#: src/globalPlugins/easyAudioConverter/__init__.py:502
 msgid "Remux AAC to M4A (no re-encoding)"
 msgstr "Remux AAC go M4A (gan athchódú)"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:776
+#: src/globalPlugins/easyAudioConverter/plugin.py:781
 msgid "Replace source files"
 msgstr "Athsholáthar comhaid foinse"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:176 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1307
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:277 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1505
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr "Athsholáthar comhaid foinse tar éis tiontaithe rathúil (scriostar na bunchóipeanna go buan)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1780
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2069
 msgid "Replace the existing profile “{name}”?"
 msgstr "An próifíl atá ann cheana \"{name}\" a chur in ionad?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:770
+#: src/globalPlugins/easyAudioConverter/plugin.py:775
 msgid "Replacing source files cannot be undone. After each output is created and checked successfully, its source file will be permanently deleted. Source files will be kept if conversion or verification fails. Continue?"
 msgstr "Ní féidir athsholáthar na gcomhad foinse a chealú. Tar éis gach aschur a chruthú agus a sheiceáil go rathúil, beidh a comhad foinse a scriosadh go buan. Coinneofar comhaid foinse má theipeann ar chomhshó nó fíorú. Lean ort?"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1888
+#: src/globalPlugins/easyAudioConverter/plugin.py:1918
 msgid "Report audio conversion status"
 msgstr "Tuairiscigh stádas comhshó fuaime"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:420 src/globalPlugins/easyAudioConverter/plugin.py:265
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:422 src/globalPlugins/easyAudioConverter/plugin.py:266
 msgid "Report conversion status"
 msgstr "Tuairiscigh stádas comhshó"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1807 src/globalPlugins/easyAudioConverter/plugin.py:269
+#: src/globalPlugins/easyAudioConverter/plugin.py:1837 src/globalPlugins/easyAudioConverter/plugin.py:270
 msgid "Report queued conversion jobs"
 msgstr "Tuairiscigh poist tiontaithe scuaine"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:831
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:852
 msgid "Retry failed files"
 msgstr "Déan iarracht comhaid theipthe arís"
 
@@ -1315,11 +1411,11 @@ msgstr "Déan athbhreithniú ar an bplean thíos. Is meastachán méide iad. Ní
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr "Déan athbhreithniú ar an bplean thíos. Is meastachán méide iad. Scriosfar comhaid foinse go buan tar éis a n-aschur a bheith críochnaithe go rathúil."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:351
+#: src/globalPlugins/easyAudioConverter/__init__.py:376
 msgid "Run new jobs in separate progress windows"
 msgstr "Run new jobs in separate progress windows"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:681
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:849
 msgid "Sample rate:"
 msgstr "Ráta samplach:"
 
@@ -1327,79 +1423,83 @@ msgstr "Ráta samplach:"
 msgid "Sample rate: {value}"
 msgstr "Ráta samplach: {value}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1745 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1781
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2034 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2070
 msgid "Save conversion profile"
 msgstr "Sábháil próifíl chomhshó"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:123 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1274
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:224 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1472
 msgid "Save converted files next to the source files"
 msgstr "Sábháil comhaid a chomhshó in aice leis na comhaid foinse"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1244
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1416
 msgid "Save profile..."
 msgstr "Sábháil próifíl..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1638
+#: src/globalPlugins/easyAudioConverter/plugin.py:1668
 msgid "Select exactly one audio file"
 msgstr "Roghnaigh go díreach comhad fuaime amháin"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:952
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1120
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr "Roghnaigh na réimsí meiteashonraí téacs le cóipeáil don chomhshó seo."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1234
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1406
 msgid "Selected items: {count}"
 msgstr "Míreanna roghnaithe: {count}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1919
+#: src/globalPlugins/easyAudioConverter/plugin.py:1949
 msgid "Separate conversion {index}"
 msgstr "Separate conversion {index}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:436
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:602
 msgid "Separate progress windows run independently and may use more CPU and memory."
 msgstr "Separate progress windows run independently and may use more CPU and memory."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:272
+#: src/globalPlugins/easyAudioConverter/plugin.py:273
 msgid "Settings..."
 msgstr "Socruithe..."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:451
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:218 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1467
+msgid "Show GOGO commands"
+msgstr "Show GOGO commands"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:617
 msgid "Show a conversion plan before starting"
 msgstr "Taispeáin plean tiontaithe sula dtosaíonn tú"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:264
+#: src/globalPlugins/easyAudioConverter/plugin.py:265
 msgid "Show conversion progress"
 msgstr "Taispeáin dul chun cinn an chomhshó"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:266
+#: src/globalPlugins/easyAudioConverter/plugin.py:267
 msgid "Show last conversion results"
 msgstr "Taispeáin na torthaí comhshó deireanacha"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:421
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:423
 msgid "Show results"
 msgstr "Taispeáin torthaí"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1631
+#: src/globalPlugins/easyAudioConverter/plugin.py:1661
 msgid "Show technical information about the selected audio file"
 msgstr "Taispeáin faisnéis theicniúil faoin gcomhad fuaime roghnaithe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1855
+#: src/globalPlugins/easyAudioConverter/plugin.py:1885
 msgid "Show the audio conversion progress window"
 msgstr "Taispeáin an fhuinneog ar dhul chun cinn an chomhshó fuaime"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1143
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1314
 msgid "Show the conversion plan before starting"
 msgstr "Taispeáin an plean tiontaithe sula dtosaíonn tú"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1876
+#: src/globalPlugins/easyAudioConverter/plugin.py:1906
 msgid "Show the last audio conversion results"
 msgstr "Taispeáin na torthaí comhshó fuaime deireanacha"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:636
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:657
 msgid "Skipped"
 msgstr "Scipeáilte"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:707
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:728
 msgid "Skipped files:"
 msgstr "Comhaid scipeáilte:"
 
@@ -1407,51 +1507,51 @@ msgstr "Comhaid scipeáilte:"
 msgid "Skipped inputs: {count}"
 msgstr "Ionchuir scipeála: {count}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:793
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:814
 msgid "Skipped: {name}"
 msgstr "Scipeáilte: {name}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:563
+#: src/globalPlugins/easyAudioConverter/__init__.py:589
 msgid "Sort album"
 msgstr "Sórtáil albam"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:562
+#: src/globalPlugins/easyAudioConverter/__init__.py:588
 msgid "Sort artist"
 msgstr "Sórtáil ealaíontóir"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:564
+#: src/globalPlugins/easyAudioConverter/__init__.py:590
 msgid "Sort title"
 msgstr "Teideal sórtála"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:335
+#: src/globalPlugins/easyAudioConverter/__init__.py:360
 msgid "Sound only"
 msgstr "Fuaim amháin"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:775
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:796
 msgid "Source:\n{source}\n\nError:\n{error}"
 msgstr "Foinse:\n{source}\n\nEarráid:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:755
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:776
 msgid "Source:\n{source}\n\nOutput:\n{output}"
 msgstr "Foinse:\n{source}\n\nAschur:\n{output}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:794
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:815
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr "Foinse:\n{source}\n\nCúis:\n{reason}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:333
+#: src/globalPlugins/easyAudioConverter/__init__.py:358
 msgid "Speech and sound"
 msgstr "Urlabhra agus fuaim"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:334
+#: src/globalPlugins/easyAudioConverter/__init__.py:359
 msgid "Speech only"
 msgstr "Urlabhra amháin"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:507
+#: src/globalPlugins/easyAudioConverter/__init__.py:532
 msgid "Standard"
 msgstr "Caighdeán"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:87
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:150
 msgid "Standard settings"
 msgstr "Socruithe caighdeánacha"
 
@@ -1459,55 +1559,55 @@ msgstr "Socruithe caighdeánacha"
 msgid "Start conversion"
 msgstr "Tosaigh comhshó"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:405
+#: src/globalPlugins/easyAudioConverter/plugin.py:410
 msgid "Started a separate conversion window for the new job."
 msgstr "Started a separate conversion window for the new job."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:653
+#: src/globalPlugins/easyAudioConverter/plugin.py:658
 msgid "Starting the download..."
 msgstr "Ag tosú an íoslódála..."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1250
+#: src/globalPlugins/easyAudioConverter/plugin.py:1280
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr "Ag tosú leis an gcéad tiontú scuaine eile. Poist fágtha: {count}."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:689
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
 msgid "Stereo"
 msgstr "Steirió"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:418
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:420
 msgid "Stop after current file"
 msgstr "Stop tar éis an comhad reatha"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:267
+#: src/globalPlugins/easyAudioConverter/plugin.py:268
 msgid "Stop after the current file"
 msgstr "Stop tar éis an comhad reatha"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1785
+#: src/globalPlugins/easyAudioConverter/plugin.py:1815
 msgid "Stop the conversion after the current file"
 msgstr "Stop an chomhshó tar éis an comhad reatha"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1149
+#: src/globalPlugins/easyAudioConverter/plugin.py:1179
 msgid "Stopped after the current file. Completed {done} of {total} files."
 msgstr "Stopadh tar éis an chomhaid reatha. Comhlánaithe {done} de {total}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:579
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:595
 msgid "Stopping after this file..."
 msgstr "Ag stopadh tar éis an chomhaid seo..."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:678 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:741
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:699 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:762
 msgid "Succeeded: {done}. Failed: {failed}. Skipped: {skipped}."
 msgstr "D'éirigh leis: {done}. Theip: {failed}. Scipeáilte: {skipped}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:754 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:768
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:775 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:789
 msgid "Success: {name}"
 msgstr "Rath: {name}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:467
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:633
 msgid "Successful completion notification:"
 msgstr "Fógra críochnaithe rathúil:"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:690
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:711
 msgid "Successful files:"
 msgstr "Comhaid rathúla:"
 
@@ -1515,7 +1615,7 @@ msgstr "Comhaid rathúla:"
 msgid "Support Easy Audio Converter"
 msgstr "Tacaíocht Tiontaire Fuaime Éasca"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:275 src/globalPlugins/easyAudioConverter/settings_dialogs.py:508
+#: src/globalPlugins/easyAudioConverter/plugin.py:276 src/globalPlugins/easyAudioConverter/settings_dialogs.py:674
 msgid "Support the author"
 msgstr "Tacaigh leis an údar"
 
@@ -1523,127 +1623,135 @@ msgstr "Tacaigh leis an údar"
 msgid "TB"
 msgstr "TB"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1256
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:159 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1428
 msgid "Target format:"
 msgstr "Formáid sprice:"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1717
+#: src/globalPlugins/easyAudioConverter/plugin.py:1747
 msgid "Target format: {format}"
 msgstr "Formáid sprice: {format}"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:491
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:657
 msgid "Test cancel sound"
 msgstr "Tástáil cealú fuaime"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:483
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:649
 msgid "Test error sound"
 msgstr "Fuaim earráid tástála"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:475
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:641
 msgid "Test success sound"
 msgstr "Fuaim tástáil rath"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:820
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:625
+msgid "The GOGO output path already exists; no file was overwritten."
+msgstr "The GOGO output path already exists; no file was overwritten."
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:825
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr "Tá an chomhpháirt FFmpeg cuachta in easnamh. Athshuiteáil Tiontaire Fuaime Éasca."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:826
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:994
 msgid "The codec-specific level is not used by this format."
 msgstr "Ní úsáideann an fhormáid seo an leibhéal codec-shonrach."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1119
+#: src/globalPlugins/easyAudioConverter/plugin.py:848
+msgid "The configured or bundled GOGO executable is missing. Choose another gogo.exe in Easy Audio Converter settings."
+msgstr "The configured or bundled GOGO executable is missing. Choose another gogo.exe in Easy Audio Converter settings."
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:1149
 msgid "The conversion could not start"
 msgstr "Níorbh fhéidir an tiontú a thosú"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1124
+#: src/globalPlugins/easyAudioConverter/plugin.py:1154
 msgid "The conversion could not start:\n{error}"
 msgstr "Níorbh fhéidir an tiontú a thosú:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1843 src/globalPlugins/easyAudioConverter/plugin.py:1833
+#: src/globalPlugins/easyAudioConverter/plugin.py:1873 src/globalPlugins/easyAudioConverter/plugin.py:1863
 msgid "The conversion queue is empty"
 msgstr "Tá an scuaine tiontaithe folamh"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:686
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:707
 msgid "The conversion was canceled."
 msgstr "Cuireadh an tiontú ar ceal."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1798
+#: src/globalPlugins/easyAudioConverter/plugin.py:1828
 msgid "The conversion will stop after the current file"
 msgstr "Beidh an chomhshó stop tar éis an comhad atá ann faoi láthair"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:609
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:627
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr "Coinníodh an t-aschur tiontaithe, ach níorbh fhéidir an comhad foinse a bhaint."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1674
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1963
 msgid "The file does not contain valid conversion profiles."
 msgstr "Níl próifílí tiontaithe bailí sa chomhad."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:489
+#: src/globalPlugins/easyAudioConverter/__init__.py:514
 msgid "The first AAC audio stream will be remuxed into M4A without re-encoding. Sources whose first audio stream is not AAC are skipped."
 msgstr "Déanfar an chéad sruth fuaime AAC a athchur isteach i M4A gan athchódú. Déantar scipeáil ar fhoinsí nach é AAC an chéad sruth fuaime acu."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:633
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:651
 msgid "The first audio stream is not AAC, so it cannot be remuxed to M4A"
 msgstr "Ní AAC an chéad shruth fuaime, agus mar sin ní féidir é a athmhuiteáil chuig M4A"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:483
+#: src/globalPlugins/easyAudioConverter/__init__.py:508
 msgid "The first audio stream will be extracted without re-encoding. Its codec and quality remain unchanged, and the output extension is selected automatically."
 msgstr "Bainfear an chéad sruth fuaime gan athchódú. Fanann a codec agus a cháilíocht gan athrú, agus roghnaítear an síneadh aschuir go huathoibríoch."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:619
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:637
 msgid "The input does not contain a readable audio stream."
 msgstr "Níl sruth fuaime inléite san ionchur."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:617
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:635
 msgid "The input file is damaged or uses an unsupported encoding."
 msgstr "Tá damáiste déanta don chomhad ionchuir nó úsáideann sé ionchódú gan tacaíocht."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:688
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:709
 msgid "The job was stopped after the current file."
 msgstr "Stopadh an post tar éis an chomhaid reatha."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1658
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1947
 msgid "The profile file is too large."
 msgstr "Tá an comhad próifíle ró-mhór."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1756
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2045
 msgid "The profile name cannot be empty."
 msgstr "Ní féidir ainm na próifíle a bheith folamh."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:793
+#: src/globalPlugins/easyAudioConverter/plugin.py:798
 msgid "The separate conversion could not start:\n{error}"
 msgstr "The separate conversion could not start:\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:623
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:641
 msgid "The source file dates could not be preserved."
 msgstr "Níorbh fhéidir dátaí an chomhaid fhoinsle a chaomhnú."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:723
+#: src/globalPlugins/easyAudioConverter/plugin.py:728
 msgid "The update could not be downloaded or verified.\n\n{error}"
 msgstr "Níorbh fhéidir an nuashonrú a íoslódáil ná a fhíorú.\n\n{error}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:732
+#: src/globalPlugins/easyAudioConverter/plugin.py:737
 msgid "The update is ready. Opening the NVDA add-on installer."
 msgstr "Tá an nuashonrú réidh. Suiteálaí breiseán NVDA á oscailt."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1801
+#: src/globalPlugins/easyAudioConverter/plugin.py:1831
 msgid "The {count} active conversions will stop after their current files"
 msgstr "The {count} active conversions will stop after their current files"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1693
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1982
 msgid "There are no user profiles to export"
 msgstr "Níl aon phróifílí úsáideora le heaspórtáil"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:615
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:633
 msgid "There is not enough free disk space."
 msgstr "Níl dóthain spáis diosca saor ann."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:651
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:672
 msgid "Timing:"
 msgstr "Timing:"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:540
+#: src/globalPlugins/easyAudioConverter/__init__.py:566
 msgid "Title"
 msgstr "Teideal"
 
@@ -1651,43 +1759,43 @@ msgstr "Teideal"
 msgid "Total audio duration: {duration}"
 msgstr "Fad fuaime iomlán: {duration}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:555
+#: src/globalPlugins/easyAudioConverter/__init__.py:581
 msgid "Total discs"
 msgstr "Dioscaí iomlána"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:554
+#: src/globalPlugins/easyAudioConverter/__init__.py:580
 msgid "Total tracks"
 msgstr "Rianta iomlána"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:652
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:673
 msgid "Total wall time: {value}"
 msgstr "Total wall time: {value}"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:547
+#: src/globalPlugins/easyAudioConverter/__init__.py:573
 msgid "Track number"
 msgstr "Uimhir an amhráin"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:624 src/globalPlugins/easyAudioConverter/plugin.py:724 src/globalPlugins/easyAudioConverter/plugin.py:1673 src/globalPlugins/easyAudioConverter/plugin.py:582
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:642 src/globalPlugins/easyAudioConverter/plugin.py:729 src/globalPlugins/easyAudioConverter/plugin.py:1703 src/globalPlugins/easyAudioConverter/plugin.py:587
 msgid "Unknown error"
 msgstr "Earráid anaithnid"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:630
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:648
 msgid "Unsupported file type"
 msgstr "Cineál comhaid gan tacaíocht"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:719
+#: src/globalPlugins/easyAudioConverter/plugin.py:724
 msgid "Update download canceled"
 msgstr "Nuashonraigh íoslódáil curtha ar ceal"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:615 src/globalPlugins/easyAudioConverter/settings_dialogs.py:637 src/globalPlugins/easyAudioConverter/settings_dialogs.py:709
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:783 src/globalPlugins/easyAudioConverter/settings_dialogs.py:805 src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "Use the quality preset"
 msgstr "Bain úsáid as an réamhshocrú cáilíochta"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1335
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1533
 msgid "Use these settings for future quick conversions"
 msgstr "Bain úsáid as na socruithe seo le haghaidh tiontaithe tapa amach anseo"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:664
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:685
 msgid "Verification and finalization: {value}"
 msgstr "Verification and finalization: {value}"
 
@@ -1695,35 +1803,35 @@ msgstr "Verification and finalization: {value}"
 msgid "Verifying the output by decoding it"
 msgstr "An t-aschur a fhíorú trína dhíchódú"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:509
+#: src/globalPlugins/easyAudioConverter/__init__.py:534
 msgid "Very high"
 msgstr "An-ard"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:631
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:799
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr "An-ard + 1 breise, -hhx1 (FFmpeg leibhéal 4)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:632
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:800
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr "An-ard + breise 2, -hhx2 (FFmpeg leibhéal 5)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:633
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:801
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr "An-ard + 3 breise, -hhx3 (leibhéal FFmpeg 6)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:634
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:802
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr "An-ard + 4 breise, -hhx4 (leibhéal FFmpeg 7)"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:630
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:798
 msgid "Very high, -hh (FFmpeg level 3)"
 msgstr "An-ard, -hh (FFmpeg leibhéal 3)"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:459
+#: src/globalPlugins/easyAudioConverter/__init__.py:484
 msgid "WAV"
 msgstr "WAV"
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:465
+#: src/globalPlugins/easyAudioConverter/__init__.py:490
 msgid "WMA"
 msgstr "WMA"
 
@@ -1739,19 +1847,19 @@ msgstr "Rabhadh: tá an t-aschur measta níos mó ná an spás diosca atá ar f�
 msgid "Warning: {count} files will be converted from a lossy format to another lossy format, which can reduce quality."
 msgstr "Rabhadh: Tiontófar comhaid {count} ó fhormáid chaillteanas go formáid chaillteanais eile, ar féidir leis an gcaighdeán a laghdú."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:470
+#: src/globalPlugins/easyAudioConverter/__init__.py:495
 msgid "WavPack"
 msgstr "Pacáiste Wav"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:813
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:981
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr "Úsáideann próifílí WavPack leibhéil FFmpeg 0 go 8. Freagraíonn Leibhéal 8 do -hhx6 agus tá sé thar a bheith mall."
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:425
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:591
 msgid "When another conversion is active:"
 msgstr "When another conversion is active:"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:457
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:623
 msgid "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 msgstr "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
 
@@ -1759,15 +1867,15 @@ msgstr "When the plan is disabled, ordinary conversions use a fast path and skip
 msgid "bytes"
 msgstr "bearta"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:507 src/globalPlugins/easyAudioConverter/plugin.py:475
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:522 src/globalPlugins/easyAudioConverter/plugin.py:480
 msgid "calculating"
 msgstr "Ríomh"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1444
+#: src/globalPlugins/easyAudioConverter/plugin.py:1474
 msgid "excluding subfolders"
 msgstr "gan fofhillteáin a áireamh"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1442
+#: src/globalPlugins/easyAudioConverter/plugin.py:1472
 msgid "including subfolders"
 msgstr "lena n-áirítear fofhillteáin"
 
@@ -1775,11 +1883,11 @@ msgstr "lena n-áirítear fofhillteáin"
 msgid "no"
 msgstr "níl"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1557 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1558 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1559
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1820 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1821 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1822
 msgid "off"
 msgstr "as"
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1557 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1558 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1559
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1820 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1821 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1822
 msgid "on"
 msgstr "ar"
 
@@ -1787,7 +1895,7 @@ msgstr "ar"
 msgid "source folders"
 msgstr "fillteáin foinse"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:34 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:60 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:158 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:159 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:161 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:167 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:170 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:175 src/globalPlugins/easyAudioConverter/plugin.py:1691 src/globalPlugins/easyAudioConverter/plugin.py:1695 src/globalPlugins/easyAudioConverter/plugin.py:1700
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:34 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:60 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:158 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:159 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:161 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:167 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:170 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:175 src/globalPlugins/easyAudioConverter/plugin.py:1721 src/globalPlugins/easyAudioConverter/plugin.py:1725 src/globalPlugins/easyAudioConverter/plugin.py:1730
 msgid "unknown"
 msgstr "anaithnid"
 
@@ -1795,43 +1903,43 @@ msgstr "anaithnid"
 msgid "yes"
 msgstr "tá"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1479 src/globalPlugins/easyAudioConverter/plugin.py:1504
+#: src/globalPlugins/easyAudioConverter/plugin.py:1509 src/globalPlugins/easyAudioConverter/plugin.py:1534
 msgid "{count} selected folders"
 msgstr "{count} fillteáin roghnaithe"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1923
+#: src/globalPlugins/easyAudioConverter/plugin.py:1953
 msgid "{label}: {status}"
 msgstr "{label}: {status}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:877
+#: src/globalPlugins/easyAudioConverter/plugin.py:907
 msgid "{message}. Starting with {workers} adaptive conversion workers."
 msgstr "{message}. Ag tosú le {workers} oibrithe oiriúnaithe tiontaithe."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:881
+#: src/globalPlugins/easyAudioConverter/plugin.py:911
 msgid "{message}. Using {workers} parallel conversion workers."
 msgstr "{message}. Ag baint úsáide as {workers} oibrithe tiontaithe comhthreomhara."
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:498
+#: src/globalPlugins/easyAudioConverter/__init__.py:523
 msgid "{name} (extension selected from the source audio codec)"
 msgstr "{name} (síneadh roghnaithe ón bhfoinse fuaime codec)"
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:517
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:532
 msgid "{stage}. File {index} of {total}: {name}"
 msgstr "{stage}. Comhad {index} de {total}: {name}"
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:467
+#: src/globalPlugins/easyAudioConverter/plugin.py:472
 msgid "{stage}. {status} Estimated time remaining {remaining}."
 msgstr "{stage}. {status} Estimated time remaining {remaining}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1908
+#: src/globalPlugins/easyAudioConverter/plugin.py:1938
 msgid "{status} Queued jobs: {count}."
 msgstr "{status} Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1901
+#: src/globalPlugins/easyAudioConverter/plugin.py:1931
 msgid "{status}. Queued jobs: {count}."
 msgstr "{status}. Queued jobs: {count}."
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:173 src/globalPlugins/easyAudioConverter/plugin.py:1698
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:173 src/globalPlugins/easyAudioConverter/plugin.py:1728
 msgid "{value} Hz"
 msgstr "{value} Hz"
 

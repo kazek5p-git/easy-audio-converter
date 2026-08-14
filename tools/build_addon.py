@@ -50,12 +50,14 @@ def build() -> Path:
 		SOURCE_ROOT / "installTasks.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "__init__.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "converter.py",
+		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "gogo.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "plugin.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "settings_dialogs.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "conversion_dialogs.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "profiles.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "updater.py",
 		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "bin" / "ffmpeg.exe",
+		SOURCE_ROOT / "globalPlugins" / "easyAudioConverter" / "bin" / "gogo.exe",
 		SOURCE_ROOT
 		/ "globalPlugins"
 		/ "easyAudioConverter"
@@ -75,6 +77,7 @@ def build() -> Path:
 		SOURCE_ROOT / "doc" / "en" / "readme.html",
 		SOURCE_ROOT / "doc" / "pl" / "readme.html",
 		SOURCE_ROOT / "licenses" / "COPYING-GPL-3.txt",
+		SOURCE_ROOT / "licenses" / "THIRD_PARTY_NOTICES.txt",
 	)
 	missing = [str(path) for path in required if not path.is_file()]
 	if missing:
@@ -110,16 +113,19 @@ def build() -> Path:
 			"installTasks.py",
 			"globalPlugins/easyAudioConverter/__init__.py",
 			"globalPlugins/easyAudioConverter/converter.py",
+			"globalPlugins/easyAudioConverter/gogo.py",
 			"globalPlugins/easyAudioConverter/plugin.py",
 			"globalPlugins/easyAudioConverter/settings_dialogs.py",
 			"globalPlugins/easyAudioConverter/conversion_dialogs.py",
 			"globalPlugins/easyAudioConverter/profiles.py",
 			"globalPlugins/easyAudioConverter/updater.py",
 			"globalPlugins/easyAudioConverter/bin/ffmpeg.exe",
+			"globalPlugins/easyAudioConverter/bin/gogo.exe",
 			"globalPlugins/easyAudioConverter/sounds/notification_complete.wav",
 			"globalPlugins/easyAudioConverter/sounds/notification_error.wav",
 			"globalPlugins/easyAudioConverter/sounds/notification_cancel.wav",
 			"locale/EasyAudioConverter.pot",
+			"licenses/THIRD_PARTY_NOTICES.txt",
 		):
 			if expected not in names:
 				raise RuntimeError(f"Missing archive member: {expected}")
