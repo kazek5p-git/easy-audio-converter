@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.9.1 - 2026-08-15
+
+- Fixed add-on termination when NVDA is restarted or reloaded without active
+  independent conversion jobs.
+- Fixed cleanup so every independent job queue is cleared during termination.
+- Kept the built-in update mechanism unchanged.
+
 ## 1.9.0 - 2026-08-14
 
 - Added the overall conversion percentage at the start of the progress-window

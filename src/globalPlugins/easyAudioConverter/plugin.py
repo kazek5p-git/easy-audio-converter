@@ -244,7 +244,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 								exc_info=True,
 							)
 					setattr(parallel_plugin, attribute, None)
-			getattr(parallel_plugin, "_job_queue", deque()).clear()
+				getattr(parallel_plugin, "_job_queue", deque()).clear()
 			if hasattr(self, "_parallel_plugins"):
 				self._parallel_plugins.clear()
 		finally:

@@ -124,7 +124,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.9.0", self.module.ADDON_VERSION)
+		self.assertEqual("1.9.1", self.module.ADDON_VERSION)
 		self.assertIn("Do not close or restart NVDA", self.module.CONVERSION_LIFECYCLE_WARNING)
 		self.assertIn("Cancel button", self.module.CONVERSION_LIFECYCLE_WARNING)
 		dialog = self.module.EasyAudioConverterSettingsDialog
@@ -926,6 +926,48 @@ class PluginImportTests(unittest.TestCase):
 		}
 		self.assertTrue(plugin._is_busy())
 		self.assertEqual(1, len(plugin._conversion_controllers()))
+
+	def test_terminate_without_parallel_jobs_is_safe(self):
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._job_queue = deque()
+		plugin._converter = None
+		plugin._worker = None
+		plugin._parallel_plugins = {}
+		plugin._update_timer = None
+		plugin._update_cancel_event = None
+		plugin._settings_dialog = None
+		plugin._progress_dialog = None
+		plugin._results_dialog = None
+		plugin._audio_info_dialog = None
+		plugin._update_progress_dialog = None
+		plugin._remove_menu = lambda: None
+
+		plugin.terminate()
+
+		self.assertTrue(plugin._terminated)
+
+	def test_terminate_clears_every_parallel_job_queue(self):
+		parallel_plugins = [
+			types.SimpleNamespace(_job_queue=deque([object()]), _converter=None, _worker=None),
+			types.SimpleNamespace(_job_queue=deque([object()]), _converter=None, _worker=None),
+		]
+		plugin = self.module.GlobalPlugin.__new__(self.module.GlobalPlugin)
+		plugin._job_queue = deque()
+		plugin._converter = None
+		plugin._worker = None
+		plugin._parallel_plugins = dict(enumerate(parallel_plugins, start=1))
+		plugin._update_timer = None
+		plugin._update_cancel_event = None
+		plugin._settings_dialog = None
+		plugin._progress_dialog = None
+		plugin._results_dialog = None
+		plugin._audio_info_dialog = None
+		plugin._update_progress_dialog = None
+		plugin._remove_menu = lambda: None
+
+		plugin.terminate()
+
+		self.assertTrue(all(not parallel_plugin._job_queue for parallel_plugin in parallel_plugins))
 
 	def test_separate_controller_gets_its_own_window_title_and_is_retained(self):
 		class Dialog:
