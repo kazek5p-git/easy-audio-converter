@@ -653,7 +653,7 @@ msgstr "Detalles:"
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:556
 msgid "Disabled"
-msgstr "Discapacitado"
+msgstr "Deshabilitado"
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:574
 msgid "Disc number"

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.2 - 2026-08-16
+
+- Fixed the Spanish translation of the `Disabled` state in the Spanish and
+  Colombian Spanish catalogs.
+- Replaced the bundled GOGO-no-coda executable with an unpacked, functionally
+  identical binary to reduce false-positive antivirus detections caused by the
+  legacy UPX-packed executable.
+
 ## 1.9.1 - 2026-08-15
 
 - Fixed add-on termination when NVDA is restarted or reloaded without active

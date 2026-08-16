@@ -90,9 +90,10 @@ separate codec installation is required.
 ### GOGO-no-coda
 
 GOGO is an optional backend for users who need its WAV-to-MP3 encoding path.
-The add-on includes the unmodified `gogo.exe`, so leaving the executable field
-empty uses the bundled encoder. Users may select another compatible copy and
-configure the bitrate preset, `-q` quality, or additional GOGO arguments.
+The add-on includes the legacy GOGO-no-coda 3.13 executable in an unpacked
+form, so leaving the executable field empty uses the bundled encoder. Users may
+select another compatible copy and configure the bitrate preset, `-q` quality,
+or additional GOGO arguments.
 Only `.wav` and `.wave` inputs are sent to GOGO; metadata, loudness
 normalization, artwork, and chapters are intentionally not written by this
 encoder. Easy Audio Converter still controls output naming, progress,
