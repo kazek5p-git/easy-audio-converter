@@ -161,6 +161,7 @@ Before a release, run:
 ```powershell
 python -m unittest discover -s tests -v
 python tools/validate_codecs.py
+python tools/validate_rate_control.py
 python tools/stress_test.py --files 250
 python tools/poedit_catalog.py validate
 python tools/build_addon.py

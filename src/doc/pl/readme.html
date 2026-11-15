@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Easy Audio Converter</h1>
-	<p>Autor: Kazimierz Parzych. Wersja 1.9.2.</p>
+	<p>Autor: Kazimierz Parzych. Wersja 1.10.0.</p>
 	<p>
 		Easy Audio Converter konwertuje zaznaczone pliki i foldery bez
 		wychodzenia z Eksploratora Windows. Konwersja działa w tle przy użyciu
@@ -302,6 +302,44 @@
 		odpowiadające im, bezpieczne poziomy od 0 do 8. Wszystkie te tryby są
 		bezstratne; wyższy poziom zmienia rozmiar i czas kodowania, a nie jakość
 		dźwięku. Niepasujące kontrolki są wyłączane.
+	</p>
+	<p>
+		W MP3 wybierz również „Profil enkodera MP3 do edycji”. LAME, GOGO
+		i Fraunhofer mają oddzielne ustawienia; edycja profilu nie przełącza
+		enkodera wybranego do konwersji. Przycisk „Zaawansowane ustawienia kodeków”
+		w oknie „Konwertuj z opcjami” otwiera ten sam edytor dla jednego zadania.
+		Zmiany można zachować w nazwanym profilu. „Anuluj” nie zapisuje zmian.
+	</p>
+	<ul>
+		<li>LAME i GOGO: CBR, ABR oraz VBR. Jakość VBR od 0 (najwyższa)
+			do 9 (najmniejsze pliki) jest niezależna od jakości algorytmu.
+			Domyślna jakość VBR wynosi 2. W GOGO można ustawić minimum
+			i maksimum dla VBR i ABR; podczas ciszy VBR może zejść poniżej minimum.
+			LAME używany przez FFmpeg nie udostępnia tych granic.</li>
+		<li>Fraunhofer przez Windows Media Foundation: CBR. Ten interfejs
+			nie udostępnia trybów VBR ani ABR. Windows potrafi dobrać inną
+			przepływność dla części kombinacji częstotliwości i kanałów. Jawnie
+			wybrany CBR sprawdza przepływność wyniku; w razie różnicy zgłasza błąd,
+			usuwa niezgodny wynik i zachowuje źródło nawet przy włączonym zastępowaniu.</li>
+		<li>Vorbis: VBR według jakości od 0 do 10 albo ABR z przepływnością
+			docelową i opcjonalnymi granicami. Wyższa jakość VBR daje większe pliki.</li>
+		<li>Opus: CBR, VBR i CVBR (ograniczone VBR), zawsze z docelową
+			przepływnością. CVBR nie udostępnia dowolnych granic minimum i maksimum.</li>
+		<li>AAC i M4A: CBR według docelowej przepływności albo VBR według
+			jakości od 0,1 do 5 (domyślnie 2). Wyższa wartość zwiększa jakość
+			i rozmiar. CBR AAC nie oznacza równych rozmiarów wszystkich ramek.</li>
+		<li>LAME, AC-3 i E-AC-3: flagi copyright oraz original mają wybory
+			„Domyślnie dla enkodera”, „Nie” i „Tak”. Są to bity nagłówka,
+			nie tagi tekstowe ani zabezpieczenie przed kopiowaniem.</li>
+	</ul>
+	<p>
+		CRC służy do wykrywania błędów danych, nie do potwierdzania autorstwa.
+		Dołączone interfejsy enkoderów nie udostępniają jego przełącznika.
+		Sumy kontrolne wymagane przez format, na przykład Ogg lub FLAC, powstają
+		automatycznie. Tryb „Domyślnie” zachowuje dotychczasowe zachowanie.
+		Minimum i maksimum równe 0 pozostawiają decyzję enkoderowi; nie mogą
+		być sprzeczne, a cel ABR musi mieścić się w zadanych granicach.
+		Dodatkowe polecenia GOGO nie mogą nadpisywać opcji wybranych w edytorze.
 	</p>
 
 	<h2>Aktualizacje</h2>

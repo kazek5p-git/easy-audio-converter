@@ -40,6 +40,29 @@ converter, profiles = _load_module()
 
 
 class ProfileSerializationTests(unittest.TestCase):
+	def test_rate_control_options_round_trip(self):
+		for encoder, values in (
+			("lame", {"rateMode": "vbr", "vbrQuality": 2.5, "copyright": 1, "original": 0}),
+			("gogo", {"rateMode": "abr", "minBitrate": 96, "maxBitrate": 192}),
+		):
+			with self.subTest(encoder=encoder):
+				settings = converter.ConversionSettings(mp3_encoder=encoder, advanced_options={
+					"enabled": True, "bitrate": 160, "sampleRate": 44100,
+					"channels": 2, "codecLevel": 3, "bitDepth": 0, **values,
+				})
+				document = profiles.dump_user_profiles([profiles.NamedConversionProfile("Próba", settings)])
+				loaded = profiles.load_user_profiles(document)
+				self.assertEqual(settings, loaded[0].settings)
+
+	def test_import_rejects_unsupported_options_without_silently_dropping_them(self):
+		with self.assertRaises(ValueError):
+			profiles.conversion_settings_from_mapping({
+				"targetFormat": "mp3", "mp3Encoder": "fraunhofer",
+				"advancedOptions": {"enabled": True, "rateMode": "vbr"},
+			})
+		with self.assertRaises(ValueError):
+			profiles.conversion_settings_from_mapping({"advancedOptions": {"enabled": True, "crc": 1}})
+
 	def test_complete_settings_round_trip(self):
 		settings = converter.ConversionSettings(
 			target_format="opus",

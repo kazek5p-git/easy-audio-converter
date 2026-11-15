@@ -8,6 +8,8 @@ import json
 from dataclasses import dataclass
 from typing import Any, Iterable, Mapping
 
+from .codec_options import RATE_DEFAULTS, rate_options_from_mapping
+
 from .converter import (
 	ADVANCED_BIT_DEPTHS,
 	ADVANCED_CHANNEL_COUNTS,
@@ -86,7 +88,7 @@ def _advanced_options_from_mapping(
 	bit_depth = _safe_int(raw.get("bitDepth"), 0)
 	if bit_depth not in ADVANCED_BIT_DEPTHS:
 		bit_depth = 0
-	return {
+	result = {
 		"enabled": enabled,
 		"bitrate": bitrate,
 		"sampleRate": sample_rate,
@@ -94,6 +96,13 @@ def _advanced_options_from_mapping(
 		"codecLevel": codec_level,
 		"bitDepth": bit_depth,
 	}
+	# Stare profile zachowują swój kształt. Nowych błędnych opcji nie ignorujemy.
+	if any(key in raw for key in RATE_DEFAULTS):
+		values = rate_options_from_mapping(raw)
+		result.update({key: values[key] for key in RATE_DEFAULTS if key in raw})
+	if "crc" in raw:
+		result["crc"] = raw["crc"]
+	return result
 
 
 def conversion_settings_to_mapping(settings: ConversionSettings) -> dict[str, Any]:

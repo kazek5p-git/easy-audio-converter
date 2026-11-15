@@ -44,6 +44,7 @@ from . import (
 	STREAM_COPY_FORMATS,
 	WAVPACK_COMPRESSION_PROFILES,
 	ConversionSettings,
+	NamedConversionProfile,
 	_add_labeled_spin_double,
 	_builtin_conversion_profiles,
 	_busy_conversion_mode_labels,
@@ -85,6 +86,9 @@ from . import (
 	validate_output_name_template,
 )
 from .conversion_dialogs import _play_completion_sound, _play_event_sound
+from .codec_options import RATE_DEFAULTS, codec_capabilities, codec_profile_key, get_codec_profile, validate_rate_options
+from .converter import build_codec_arguments
+from .gogo import gogo_codec_arguments
 
 
 def _gogo_bitrate_labels() -> dict[int, str]:
@@ -768,6 +772,7 @@ class _EasyAudioConverterProcessingSettingsPage(SettingsPanel):
 
 def _default_advanced_profile() -> dict[str, Any]:
 	return {
+		**RATE_DEFAULTS,
 		"enabled": False,
 		"bitrate": 0,
 		"sampleRate": 0,
@@ -813,7 +818,7 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 	# Translators: Name of the advanced settings tab.
 	title = _("Advanced settings")
 
-	_BITRATE_FORMATS = {"mp3", "opus", "m4a", "aac", "wma", "ac3", "eac3", "mp2", "amr", "amrwb"}
+	_BITRATE_FORMATS = {"mp3", "ogg", "opus", "m4a", "aac", "wma", "ac3", "eac3", "mp2", "amr", "amrwb"}
 	_NUMERIC_LEVEL_FORMATS = {"mp3", "ogg", "opus"}
 	_LOSSLESS_COMPRESSION_FORMATS = {"flac", "wavpack"}
 	_BIT_DEPTH_FORMATS = {"wav", "aiff"}
@@ -823,6 +828,7 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 		conf = config.conf[CONFIG_SECTION]
 		self._profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
 		self._current_format = _validated_key(conf.get("targetFormat"), FORMAT_KEYS, "mp3")
+		self._current_encoder = _validated_key(conf.get("mp3Encoder"), MP3_ENCODER_KEYS, "lame")
 		helper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		format_labels = _format_labels()
 		self.codec = helper.addLabeledControl(
@@ -832,11 +838,18 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			choices=[format_labels[key] for key in FORMAT_KEYS],
 		)
 		self.codec.SetSelection(FORMAT_KEYS.index(self._current_format))
+		self.encoder = helper.addLabeledControl(
+			_("MP3 encoder profile to edit:"), wx.Choice,
+			choices=[_mp3_encoder_labels()[key] for key in MP3_ENCODER_KEYS],
+		)
+		self.encoder.SetSelection(MP3_ENCODER_KEYS.index(self._current_encoder))
 
 		self.enabled = helper.addItem(
 			# Translators: Enables advanced overrides for the selected target codec.
 			wx.CheckBox(self, label=_("Enable advanced overrides for this codec")),
 		)
+		self.rate_mode = helper.addLabeledControl(_("Bitrate mode:"), wx.Choice, choices=[])
+		self._rate_modes = ("auto",)
 		self.bitrate = helper.addLabeledControl(
 			# Translators: Zero keeps the bitrate selected by the quality preset.
 			_("Bitrate in kbps (0 uses the quality preset):"),
@@ -845,6 +858,22 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			max=1536,
 			initial=0,
 		)
+		self.vbr_quality = _add_labeled_spin_double(
+			helper, self, _("VBR quality (-1 uses the default):"),
+			minimum=-1, maximum=10, initial=-1, increment=1,
+		)
+		self.min_bitrate = helper.addLabeledControl(
+			_("Minimum bitrate in kbps (0 uses the encoder default):"),
+			wx.SpinCtrl, min=0, max=512, initial=0,
+		)
+		self.max_bitrate = helper.addLabeledControl(
+			_("Maximum bitrate in kbps (0 uses the encoder default):"),
+			wx.SpinCtrl, min=0, max=512, initial=0,
+		)
+		flag_choices = [_("Encoder default"), _("No"), _("Yes")]
+		self.copyright = helper.addLabeledControl(_("Copyright flag:"), wx.Choice, choices=flag_choices)
+		self.original = helper.addLabeledControl(_("Original flag:"), wx.Choice, choices=flag_choices)
+		self.rate_help = helper.addItem(wx.StaticText(self, label=""))
 		self.sample_rate = helper.addLabeledControl(
 			_("Sample rate:"),
 			wx.Choice,
@@ -879,11 +908,13 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 		self.level_help = helper.addItem(wx.StaticText(self, label=""))
 
 		self.codec.Bind(wx.EVT_CHOICE, self._on_codec_changed)
+		self.encoder.Bind(wx.EVT_CHOICE, self._on_codec_changed)
+		self.rate_mode.Bind(wx.EVT_CHOICE, self._update_control_state)
 		self.enabled.Bind(wx.EVT_CHECKBOX, self._update_control_state)
 		self._load_profile(self._current_format)
 
 	def _profile(self, format_key: str) -> dict[str, Any]:
-		return dict(_default_advanced_profile(), **self._profiles.get(format_key, {}))
+		return dict(_default_advanced_profile(), **get_codec_profile(self._profiles, format_key, self._current_encoder))
 
 	def _store_current_profile(self) -> None:
 		codec_level = self.codec_level.GetValue()
@@ -894,7 +925,9 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 				if 0 <= selection < len(self._lossless_compression_values)
 				else -1
 			)
-		self._profiles[self._current_format] = {
+		caps = codec_capabilities(self._current_format, self._current_encoder)
+		mode = self._rate_modes[max(0, self.rate_mode.GetSelection())]
+		self._profiles[codec_profile_key(self._current_format, self._current_encoder)] = {
 			"enabled": (
 				self.enabled.IsChecked()
 				and self._current_format not in STREAM_COPY_FORMATS
@@ -904,10 +937,34 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			"channels": ADVANCED_CHANNEL_COUNTS[self.channels.GetSelection()],
 			"codecLevel": codec_level,
 			"bitDepth": ADVANCED_BIT_DEPTHS[self.bit_depth.GetSelection()],
+			"rateMode": mode,
+			"vbrQuality": self.vbr_quality.GetValue() if mode == "vbr" and self._current_format != "opus" else -1,
+			"minBitrate": self.min_bitrate.GetValue() if mode in caps.limit_modes else 0,
+			"maxBitrate": self.max_bitrate.GetValue() if mode in caps.limit_modes else 0,
+			"copyright": self.copyright.GetSelection() - 1 if caps.flags else -1,
+			"original": self.original.GetSelection() - 1 if caps.flags else -1,
 		}
 
 	def _load_profile(self, format_key: str) -> None:
 		profile = self._profile(format_key)
+		caps = codec_capabilities(format_key, self._current_encoder)
+		self._rate_modes = caps.modes
+		labels = {
+			"auto": _("Default (keep existing settings)"),
+			"cbr": _("CBR — constant bitrate"),
+			"abr": _("ABR — average bitrate"),
+			"vbr": _("VBR — variable bitrate"),
+			"cvbr": _("CVBR — constrained variable bitrate"),
+		}
+		self.rate_mode.SetItems([labels[key] for key in caps.modes])
+		self.rate_mode.SetSelection(caps.modes.index(profile["rateMode"]) if profile["rateMode"] in caps.modes else 0)
+		self.vbr_quality.SetRange(-1, caps.quality_max)
+		self.vbr_quality.SetIncrement(0.1 if format_key in {"aac", "m4a"} else 1)
+		self.vbr_quality.SetValue(profile["vbrQuality"])
+		self.min_bitrate.SetValue(profile["minBitrate"])
+		self.max_bitrate.SetValue(profile["maxBitrate"])
+		self.copyright.SetSelection(profile["copyright"] + 1)
+		self.original.SetSelection(profile["original"] + 1)
 		self.enabled.SetValue(
 			bool(profile["enabled"]) and format_key not in STREAM_COPY_FORMATS
 		)
@@ -953,18 +1010,31 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 	def _on_codec_changed(self, event):
 		self._store_current_profile()
 		self._current_format = FORMAT_KEYS[self.codec.GetSelection()]
+		self._current_encoder = MP3_ENCODER_KEYS[self.encoder.GetSelection()]
 		self._load_profile(self._current_format)
 
 	def _update_control_state(self, event=None):
-
+		caps = codec_capabilities(self._current_format, self._current_encoder)
+		mode = self._rate_modes[max(0, self.rate_mode.GetSelection())]
 		stream_copy = self._current_format in STREAM_COPY_FORMATS
+		self.encoder.Enable(self._current_format == "mp3" and not getattr(self, "_locked_codec", False))
 		self.enabled.Enable(not stream_copy)
 		enabled = self.enabled.IsChecked() and not stream_copy
-		self.bitrate.Enable(enabled and self._current_format in self._BITRATE_FORMATS)
+		self.rate_mode.Enable(enabled and len(caps.modes) > 1)
+		self.bitrate.Enable(enabled and self._current_format in self._BITRATE_FORMATS and (
+			self._current_format == "opus" or (mode != "vbr" and (self._current_format != "ogg" or mode == "abr"))
+		))
+		self.vbr_quality.Enable(enabled and mode == "vbr" and self._current_format != "opus")
+		self.min_bitrate.Enable(enabled and mode in caps.limit_modes)
+		self.max_bitrate.Enable(enabled and mode in caps.limit_modes)
+		self.copyright.Enable(enabled and caps.flags)
+		self.original.Enable(enabled and caps.flags)
 		self.sample_rate.Enable(enabled and self._current_format not in {"amr", "amrwb", "opus"})
 		self.channels.Enable(enabled and self._current_format not in {"amr", "amrwb"})
 		self.codec_level.Enable(
 			enabled and self._current_format in self._NUMERIC_LEVEL_FORMATS
+			and not (self._current_format == "mp3" and self._current_encoder == "fraunhofer")
+			and not (self._current_format == "ogg" and mode != "auto")
 		)
 		self.lossless_compression.Enable(
 			enabled and self._current_format in self._LOSSLESS_COMPRESSION_FORMATS
@@ -983,6 +1053,10 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 				"to -hhx6 and is extremely slow."
 			),
 		}
+		if self._current_format == "mp3" and self._current_encoder == "gogo":
+			level_descriptions["mp3"] = _("GOGO algorithm quality: 0 is highest, 9 is fastest. This is separate from VBR quality. Advanced choices override the standard GOGO bitrate and quality; conflicting additional arguments must be removed.")
+		elif self._current_format == "mp3" and self._current_encoder == "fraunhofer":
+			level_descriptions["mp3"] = _("The codec-specific level is not used by this format.")
 		self.level_help.SetLabel(
 			_(
 				"No advanced codec settings are used because the audio stream "
@@ -995,6 +1069,50 @@ class _EasyAudioConverterAdvancedSettingsPage(SettingsPanel):
 			)
 		)
 		self.level_help.Wrap(max(300, self.GetClientSize().GetWidth() - 20))
+		information = []
+		if self._current_format == "mp3":
+			if self._current_encoder == "lame":
+				information.append(_("LAME: VBR quality 0 is best, 9 is smallest. Default: 2. The FFmpeg interface does not expose VBR limits or CRC."))
+			elif self._current_encoder == "gogo":
+				information.append(_("GOGO: VBR quality 0 is best, 9 is smallest. Default: 2. VBR limits do not prevent silence from using a lower bitrate. Copyright, original and CRC switches are unavailable."))
+			else:
+				information.append(_("Fraunhofer through Media Foundation supports CBR only. VBR, ABR, bitrate limits and stream flags are unavailable."))
+				information.append(_("Windows may select a different bitrate for some sample-rate and channel combinations. Explicit CBR mode verifies the result and reports a mismatch without deleting the source."))
+		elif self._current_format == "ogg":
+			information.append(_("Vorbis: VBR quality 0 to 10 increases quality and size. ABR uses a target bitrate and optional limits. Ogg CRC is automatic."))
+		elif self._current_format == "opus":
+			information.append(_("Opus supports CBR, VBR and constrained VBR with a target bitrate, but not arbitrary minimum and maximum limits. Ogg CRC is automatic."))
+		elif self._current_format in {"aac", "m4a"}:
+			information.append(_("AAC: VBR quality 0.1 to 5 increases quality and size. Default: 2. CBR targets a bitrate, not equal frame sizes. No bitrate limits or CRC switch."))
+		elif not stream_copy:
+			information.append(_("No configurable CRC switch is available for this encoder. Checksums required by the format are handled automatically."))
+		if caps.flags:
+			information.append(_("Copyright and original are stream header flags, not metadata tags or copy protection. Encoder default leaves each flag unchanged."))
+		self.rate_help.SetLabel(" ".join(information))
+		self.rate_help.Wrap(max(300, self.GetClientSize().GetWidth() - 20))
+		self.Layout()
+
+	def isValid(self, settings: ConversionSettings | None = None):
+		self._store_current_profile()
+		base = settings or _read_settings()
+		for key, profile in self._profiles.items():
+			format_key, _separator, encoder = key.partition(":")
+			encoder = encoder or "lame"
+			try:
+				validate_rate_options(format_key, encoder, profile)
+				if format_key == "mp3" and encoder == "gogo":
+					gogo_codec_arguments(base.gogo_bitrate, base.gogo_quality, base.gogo_extra_arguments, profile)
+				else:
+					build_codec_arguments(format_key, base.quality, encoder, profile)
+			except ValueError as error:
+				self._current_format, self._current_encoder = format_key, encoder
+				self.codec.SetSelection(FORMAT_KEYS.index(format_key))
+				self.encoder.SetSelection(MP3_ENCODER_KEYS.index(encoder))
+				self._load_profile(format_key)
+				gui.messageBox(str(error), _("Advanced codec settings"), wx.OK | wx.ICON_ERROR, self)
+				self.rate_mode.SetFocus()
+				return False
+		return True
 
 	def onSave(self):
 		self._store_current_profile()
@@ -1083,6 +1201,16 @@ class EasyAudioConverterSettingsDialog(wx.Dialog):
 			self.notebook.SetSelection(self.STANDARD_TAB)
 			wx.CallAfter(self.standard_page.output_name_template.SetFocus)
 			return
+		base = replace(
+			_read_settings(), quality=QUALITY_KEYS[max(0, self.standard_page.quality.GetSelection())],
+			gogo_bitrate=GOGO_BITRATE_PRESETS[max(0, self.standard_page.gogo_bitrate.GetSelection())],
+			gogo_quality=GOGO_QUALITY_VALUES[max(0, self.standard_page.gogo_quality.GetSelection())],
+			gogo_extra_arguments=self.standard_page.gogo_extra_arguments.GetValue(),
+		)
+		if not self.advanced_page.isValid(base):
+			self.notebook.SetSelection(self.ADVANCED_TAB)
+			wx.CallAfter(self.advanced_page.rate_mode.SetFocus)
+			return
 		try:
 			self.standard_page.onSave()
 			self.advanced_page.onSave()
@@ -1101,6 +1229,45 @@ class EasyAudioConverterSettingsDialog(wx.Dialog):
 			)
 			return
 		self.EndModal(wx.ID_OK)
+
+
+class CodecOptionsDialog(wx.Dialog):
+	"""Ten sam edytor kodeka dla jednego zadania, bez zapisu konfiguracji NVDA."""
+
+	def __init__(self, parent, settings: ConversionSettings):
+		super().__init__(parent, title=_("Advanced codec settings"), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
+		self._settings = settings
+		outer = wx.BoxSizer(wx.VERTICAL)
+		container = scrolledpanel.ScrolledPanel(self, style=wx.TAB_TRAVERSAL)
+		self.page = _EasyAudioConverterAdvancedSettingsPage(container)
+		self.page._profiles = {codec_profile_key(settings.target_format, settings.mp3_encoder): dict(settings.advanced_options)}
+		self.page._current_format = settings.target_format
+		self.page._current_encoder = settings.mp3_encoder
+		self.page.codec.SetSelection(FORMAT_KEYS.index(settings.target_format))
+		self.page.encoder.SetSelection(MP3_ENCODER_KEYS.index(settings.mp3_encoder))
+		self.page._locked_codec = True
+		self.page.codec.Enable(False)
+		self.page._load_profile(settings.target_format)
+		sizer = wx.BoxSizer(wx.VERTICAL)
+		sizer.Add(self.page, 1, wx.ALL | wx.EXPAND, 8)
+		container.SetSizer(sizer)
+		container.SetupScrolling(scroll_x=False)
+		outer.Add(container, 1, wx.ALL | wx.EXPAND, 8)
+		outer.Add(self.CreateButtonSizer(wx.OK | wx.CANCEL), 0, wx.ALL | wx.ALIGN_RIGHT, 8)
+		self.SetSizer(outer)
+		self.SetMinSize((660, 500))
+		self.SetSize((820, 680))
+		self.CentreOnParent()
+		self.Bind(wx.EVT_BUTTON, self._on_ok, id=wx.ID_OK)
+		wx.CallAfter(self.page.enabled.SetFocus)
+
+	def _on_ok(self, event):
+		if self.page.isValid(self._settings):
+			self.EndModal(wx.ID_OK)
+
+	def get_options(self):
+		self.page._store_current_profile()
+		return self.page._profile(self._settings.target_format)
 
 
 class MetadataFieldsDialog(wx.Dialog):
@@ -1389,6 +1556,8 @@ class ConversionOptionsDialog(wx.Dialog):
 		self._updating = True
 		self._one_time_settings = initial_settings
 		self._advanced_options = dict(initial_settings.advanced_options)
+		self._advanced_profiles = _load_advanced_profiles()
+		self._advanced_key = codec_profile_key(initial_settings.target_format, initial_settings.mp3_encoder)
 		self._metadata_fields = tuple(initial_settings.metadata_fields)
 		self._metadata_overrides = dict(initial_settings.metadata_overrides)
 		self._processing_settings = initial_settings
@@ -1397,7 +1566,8 @@ class ConversionOptionsDialog(wx.Dialog):
 		self._user_profiles = _load_user_conversion_profiles(initial_settings)
 		self._profile_entries: list[tuple[str, NamedConversionProfile | None]] = []
 
-		panel = wx.Panel(self)
+		panel = self.content_panel = scrolledpanel.ScrolledPanel(self, style=wx.TAB_TRAVERSAL)
+		panel.SetMinSize((1, 1))
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		helper = guiHelper.BoxSizerHelper(panel, sizer=sizer)
 		helper.addItem(
@@ -1523,6 +1693,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		)
 		self.metadata_overrides_summary = helper.addItem(wx.StaticText(panel, label=""))
 		self.advanced_status = helper.addItem(wx.StaticText(panel, label=""))
+		self.codec_options_button = helper.addItem(wx.Button(panel, label=_("Advanced codec settings...")))
 		self.processing_status = helper.addItem(wx.StaticText(panel, label=""))
 		self.processing_options_button = helper.addItem(
 			wx.Button(panel, label=_("Processing options..."))
@@ -1535,17 +1706,19 @@ class ConversionOptionsDialog(wx.Dialog):
 		)
 
 		buttons = wx.StdDialogButtonSizer()
-		buttons.AddButton(wx.Button(panel, wx.ID_OK))
-		buttons.AddButton(wx.Button(panel, wx.ID_CANCEL))
+		buttons.AddButton(wx.Button(self, wx.ID_OK))
+		buttons.AddButton(wx.Button(self, wx.ID_CANCEL))
 		buttons.Realize()
-		sizer.Add(buttons, 0, wx.ALL | wx.ALIGN_RIGHT, 8)
 		panel.SetSizer(sizer)
+		panel.SetupScrolling(scroll_x=False)
 		outer = wx.BoxSizer(wx.VERTICAL)
-		outer.Add(panel, 1, wx.EXPAND)
-		self.SetSizerAndFit(outer)
-		self.SetMinSize((780, self.GetSize().height))
+		outer.Add(panel, 1, wx.ALL | wx.EXPAND, 8)
+		outer.Add(buttons, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.ALIGN_RIGHT, 8)
+		self.SetSizer(outer)
+		self.SetMinSize((660, 500))
+		self.SetSize((820, 680))
 		self.CentreOnParent()
-		ok_button = self.FindWindowById(wx.ID_OK)
+		ok_button = wx.FindWindowById(wx.ID_OK, self)
 		if ok_button is not None:
 			ok_button.SetLabel(_("Convert"))
 			ok_button.SetDefault()
@@ -1560,8 +1733,7 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.export_profiles_button.Bind(wx.EVT_BUTTON, self._on_export_profiles)
 		self.target_format.Bind(wx.EVT_CHOICE, self._on_target_changed)
 		self.quality.Bind(wx.EVT_CHOICE, self._on_setting_changed)
-		self.mp3_encoder.Bind(wx.EVT_CHOICE, self._on_setting_changed)
-		self.mp3_encoder.Bind(wx.EVT_CHOICE, self._update_control_state)
+		self.mp3_encoder.Bind(wx.EVT_CHOICE, self._on_target_changed)
 		self.gogo_path.Bind(wx.EVT_TEXT, self._on_setting_changed)
 		self.gogo_bitrate.Bind(wx.EVT_CHOICE, self._on_setting_changed)
 		self.gogo_quality.Bind(wx.EVT_CHOICE, self._on_setting_changed)
@@ -1580,8 +1752,10 @@ class ConversionOptionsDialog(wx.Dialog):
 		self.metadata_fields_button.Bind(wx.EVT_BUTTON, self._on_metadata_fields)
 		self.metadata_overrides_button.Bind(wx.EVT_BUTTON, self._on_metadata_overrides)
 		self.processing_options_button.Bind(wx.EVT_BUTTON, self._on_processing_options)
+		self.codec_options_button.Bind(wx.EVT_BUTTON, self._on_codec_options)
 		self.Bind(wx.EVT_BUTTON, self._on_convert, id=wx.ID_OK)
 		self._update_control_state()
+		wx.CallAfter(self.profile.SetFocus)
 
 	def _rebuild_profile_choice(self, selected_name: str | None = None) -> None:
 		self._profile_entries = [("oneTime", None)]
@@ -1644,12 +1818,13 @@ class ConversionOptionsDialog(wx.Dialog):
 			self._metadata_fields = tuple(settings.metadata_fields)
 			self._metadata_overrides = dict(settings.metadata_overrides)
 			self._advanced_options = dict(settings.advanced_options)
+			self._advanced_key = codec_profile_key(settings.target_format, settings.mp3_encoder)
 			self._processing_settings = settings
 			self._update_control_state()
 		finally:
 			self._updating = False
 
-	def _capture_settings(self) -> ConversionSettings:
+	def _capture_settings(self, *, validate: bool = True) -> ConversionSettings:
 		target_format = FORMAT_KEYS[max(0, self.target_format.GetSelection())]
 		stream_copy = target_format in STREAM_COPY_FORMATS
 		preserve_extra_streams = target_format != ORIGINAL_AUDIO_COPY_FORMAT
@@ -1657,13 +1832,11 @@ class ConversionOptionsDialog(wx.Dialog):
 		if stream_copy:
 			advanced_options["enabled"] = False
 		selected_encoder = MP3_ENCODER_KEYS[max(0, self.mp3_encoder.GetSelection())]
-		if target_format == "mp3" and selected_encoder == "gogo":
-			advanced_options["enabled"] = False
 		settings = replace(
 			self._processing_settings,
 			target_format=target_format,
 			quality=QUALITY_KEYS[max(0, self.quality.GetSelection())],
-			mp3_encoder=selected_encoder,
+			mp3_encoder=selected_encoder if target_format == "mp3" else "lame",
 			gogo_path=self.gogo_path.GetValue().strip(),
 			gogo_bitrate=GOGO_BITRATE_PRESETS[max(0, self.gogo_bitrate.GetSelection())],
 			gogo_quality=GOGO_QUALITY_VALUES[max(0, self.gogo_quality.GetSelection())],
@@ -1695,7 +1868,8 @@ class ConversionOptionsDialog(wx.Dialog):
 				self._processing_settings.copy_chapters and preserve_extra_streams
 			),
 		)
-		settings.validate()
+		if validate:
+			settings.validate()
 		return settings
 
 	def get_settings(self) -> ConversionSettings:
@@ -1760,10 +1934,10 @@ class ConversionOptionsDialog(wx.Dialog):
 			)
 		)
 		advanced_enabled = bool(self._advanced_options.get("enabled", False))
+		self.codec_options_button.Enable(not stream_copy)
 		self.advanced_status.SetLabel(
 			_("Advanced codec overrides are not used for stream copy")
 			if stream_copy
-			else _("Advanced codec overrides are not used by GOGO") if is_gogo
 			else (
 				_("Advanced codec overrides: enabled")
 				if advanced_enabled
@@ -1822,6 +1996,8 @@ class ConversionOptionsDialog(wx.Dialog):
 					verification=_("on") if self._processing_settings.verify_output else _("off"),
 				)
 			)
+		self.content_panel.Layout()
+		self.content_panel.FitInside()
 		self.Layout()
 
 	def _on_setting_changed(self, event) -> None:
@@ -1831,13 +2007,23 @@ class ConversionOptionsDialog(wx.Dialog):
 
 	def _on_target_changed(self, event) -> None:
 		target_format = FORMAT_KEYS[max(0, self.target_format.GetSelection())]
-		self._advanced_options = _load_advanced_profiles().get(
-			target_format,
-			_default_advanced_profile(),
-		)
+		encoder = MP3_ENCODER_KEYS[max(0, self.mp3_encoder.GetSelection())]
+		self._advanced_profiles[self._advanced_key] = dict(self._advanced_options)
+		self._advanced_key = codec_profile_key(target_format, encoder)
+		self._advanced_options = get_codec_profile(self._advanced_profiles, target_format, encoder)
 		self._update_control_state()
 		self._mark_as_one_time()
 		event.Skip()
+
+	def _on_codec_options(self, event):
+		dialog = CodecOptionsDialog(self, self._capture_settings(validate=False))
+		try:
+			if dialog.ShowModal() == wx.ID_OK:
+				self._advanced_options = dialog.get_options()
+				self._update_control_state()
+				self._mark_as_one_time()
+		finally:
+			dialog.Destroy()
 
 	def _on_profile_changed(self, event) -> None:
 		selection = self.profile.GetSelection()

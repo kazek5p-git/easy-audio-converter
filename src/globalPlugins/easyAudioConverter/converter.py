@@ -20,9 +20,11 @@ from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
 try:
-	from .gogo import build_gogo_command, is_gogo_wav, validate_gogo_options
+	from .gogo import build_gogo_command, gogo_codec_arguments, is_gogo_wav, validate_gogo_options
+	from .codec_options import apply_rate_arguments, validate_rate_options
 except ImportError:  # pragma: no cover - używane przez testy ładowane bez pakietu.
-	from gogo import build_gogo_command, is_gogo_wav, validate_gogo_options
+	from gogo import build_gogo_command, gogo_codec_arguments, is_gogo_wav, validate_gogo_options
+	from codec_options import apply_rate_arguments, validate_rate_options
 
 
 FORMAT_KEYS = (
@@ -381,6 +383,7 @@ class ConversionSettings:
 			raise ValueError(f"Unsupported quality preset: {self.quality}")
 		if self.mp3_encoder not in MP3_ENCODER_KEYS:
 			raise ValueError(f"Unsupported MP3 encoder: {self.mp3_encoder}")
+		validate_rate_options(self.target_format, self.mp3_encoder, self.advanced_options)
 		if self.mp3_encoder == "gogo" and self.target_format != "mp3":
 			raise ValueError("GOGO can only be used with MP3 output")
 		if self.mp3_encoder == "gogo":
@@ -392,6 +395,10 @@ class ConversionSettings:
 			)
 			if self.loudness_preset != "off":
 				raise ValueError("GOGO does not support loudness normalization")
+			gogo_codec_arguments(
+				self.gogo_bitrate, self.gogo_quality,
+				self.gogo_extra_arguments, self.advanced_options,
+			)
 		try:
 			parallel_jobs = int(self.parallel_jobs)
 		except (TypeError, ValueError) as error:
@@ -432,6 +439,8 @@ class ConversionSettings:
 			raise ValueError("The true peak target must be between -9 and 0 dBTP")
 		if not 1.0 <= float(self.loudness_target_lra) <= 50.0:
 			raise ValueError("The loudness range target must be between 1 and 50 LU")
+		if self.advanced_options.get("enabled") and self.mp3_encoder != "gogo":
+			build_codec_arguments(self.target_format, self.quality, self.mp3_encoder, self.advanced_options)
 
 
 @dataclass
@@ -970,6 +979,7 @@ def apply_advanced_codec_arguments(
 	bitrate = max(0, _integer_option(options, "bitrate"))
 	bitrate_limits = {
 		"mp3": 320,
+		"ogg": 512,
 		"opus": 512,
 		"m4a": 512,
 		"aac": 512,
@@ -980,7 +990,9 @@ def apply_advanced_codec_arguments(
 		"amr": 13,
 		"amrwb": 24,
 	}
-	if bitrate and target_format in bitrate_limits:
+	if bitrate and target_format in bitrate_limits and (
+		target_format != "ogg" or options.get("rateMode") == "abr"
+	):
 		bitrate = min(bitrate, bitrate_limits[target_format])
 		if target_format == "amr":
 			rate = _nearest_rate(bitrate, (4.75, 5.15, 5.9, 6.7, 7.4, 7.95, 10.2, 12.2))
@@ -1030,7 +1042,7 @@ def apply_advanced_codec_arguments(
 			_replace_argument(arguments, "-c:a", f"pcm_s{bit_depth}le")
 		elif target_format == "aiff":
 			_replace_argument(arguments, "-c:a", f"pcm_s{bit_depth}be")
-	return arguments
+	return apply_rate_arguments(arguments, target_format, mp3_encoder, options)
 
 
 def build_codec_arguments(
@@ -1041,6 +1053,9 @@ def build_codec_arguments(
 ) -> list[str]:
 	"""Return preset arguments with optional validated advanced overrides."""
 	base_arguments = _build_base_codec_arguments(target_format, quality, mp3_encoder)
+	if target_format == "ogg" and advanced_options and advanced_options.get("enabled") and advanced_options.get("rateMode") == "abr":
+		# Odpowiedniki nominalne dotychczasowych presetów Vorbis dla stereo.
+		base_arguments.extend(("-b:a", ("96k", "128k", "192k", "320k")[QUALITY_KEYS.index(quality)]))
 	return apply_advanced_codec_arguments(
 		base_arguments,
 		target_format,
@@ -1459,10 +1474,14 @@ def _estimated_output_size(
 			)
 		return None
 	if settings.target_format == "mp3" and settings.mp3_encoder == "gogo":
-		if duration and duration > 0 and int(settings.gogo_bitrate) > 0:
+		options = settings.advanced_options if settings.advanced_options.get("enabled") else {}
+		if options.get("rateMode") == "vbr":
+			return None
+		bitrate = int(options.get("bitrate", 0)) or int(settings.gogo_bitrate)
+		if duration and duration > 0 and bitrate > 0:
 			return max(
 				1,
-				int(duration * int(settings.gogo_bitrate) * 1000 / 8 * 1.02),
+				int(duration * bitrate * 1000 / 8 * 1.02),
 			)
 		return None
 	if not duration or duration <= 0:
@@ -2229,6 +2248,7 @@ class Converter:
 					bitrate=settings.gogo_bitrate,
 					quality=settings.gogo_quality,
 					extra_arguments=settings.gogo_extra_arguments,
+					advanced_options=settings.advanced_options,
 				)
 			else:
 				stream_arguments = self._stream_mapping_arguments(
@@ -2315,6 +2335,29 @@ class Converter:
 					valid_output = output.is_file() and output.stat().st_size > 0
 				except OSError as error:
 					error_message = str(error)
+			if (
+				valid_output and settings.target_format == "mp3"
+				and settings.mp3_encoder == "fraunhofer"
+				and settings.advanced_options.get("enabled")
+				and settings.advanced_options.get("rateMode") == "cbr"
+			):
+				# Media Foundation potrafi zaakceptować żądanie, a następnie wybrać
+				# inny bitrate. Sprawdzamy wynik przed uznaniem sukcesu/usunięciem źródła.
+				expected_rate = int(command[command.index("-b:a") + 1].rstrip("k"))
+				actual_rate = self._probe_media_info(output, include_metadata=False).bitrate_kbps
+				if self._cancel_event.is_set():
+					summary.canceled = True
+					self._remove_partial_output(output)
+					record_finalize_time()
+					break
+				if actual_rate != expected_rate:
+					valid_output = False
+					error_message = (
+						f"Media Foundation nie zachowało żądanej przepływności CBR: "
+						f"wybrano {expected_rate} kb/s, wynik: {actual_rate or 'nieznany'} kb/s. "
+						"Zmień przepływność, częstotliwość lub liczbę kanałów albo wybierz LAME. "
+						"Plik źródłowy pozostawiono bez zmian."
+					)
 			if valid_output:
 				if settings.verify_output:
 					_safe_callback(

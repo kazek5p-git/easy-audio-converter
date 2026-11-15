@@ -639,6 +639,26 @@ class _GogoFakeConverter(_FakeConverter):
 		return 0, ""
 
 
+class MediaFoundationConversionTests(unittest.TestCase):
+	def test_media_foundation_bitrate_mismatch_keeps_source(self):
+		with tempfile.TemporaryDirectory() as temporary:
+			root = Path(temporary)
+			source = root / "próba.wav"
+			source.write_bytes(b"wav")
+			converter = _FakeConverter(root / "ffmpeg.exe", bitrate_kbps=96)
+			settings = ConversionSettings(
+				mp3_encoder="fraunhofer", same_folder=False,
+				output_folder=str(root / "out"), parallel_jobs=1, replace_source_files=True,
+				advanced_options={"enabled": True, "rateMode": "cbr", "bitrate": 32},
+			)
+			summary = converter.run([source], settings)
+			self.assertEqual(1, summary.failed)
+			self.assertEqual(0, summary.succeeded)
+			self.assertTrue(source.is_file())
+			self.assertFalse(list((root / "out").glob("*.mp3")))
+			self.assertIn("96 kb/s", summary.failures[0].message)
+
+
 class GogoConversionTests(unittest.TestCase):
 	def test_gogo_conversion_accepts_wav_and_skips_other_audio(self):
 		with tempfile.TemporaryDirectory() as temporary:

@@ -173,6 +173,27 @@ Automated tests do not replace testing the actual wx interface with NVDA:
     NVDA. Dziennik ma kończyć się wpisem `NVDA exit`, bez zdarzenia `APPCRASH`
     ani informacji o uszkodzeniu sterty.
 
+## Rozszerzone opcje kodeków i okna wersji 1.10
+
+`python -B -X utf8 tools/validate_rate_control.py` sprawdza 70 rzeczywistych
+konwersji, nagłówki strumieni, granice bitrate oraz ochronę źródła przy
+niezgodnym wyniku Media Foundation.
+
+`python -B -X utf8 tools/validate_wx_layout.py --nvda-source <katalog źródeł NVDA>`
+sprawdza rozmiary rzeczywistych, niewidocznych okien wx. Wymaga lokalnego
+wxPython i zgodnych źródeł NVDA. Nie sprawdza syntezatora ani zainstalowanego
+dodatku. Opcja `--interactive` otwiera okna i steruje ich fokusem; wymaga
+aktualnej zgody na test pulpitu. Test działa z konfiguracją w pamięci i
+zapisuje raport w `docs/test-results/nvda-codec-dialogs.json`. W tym trybie
+nazwy pól są odczytywane przez MSAA, nie z mowy NVDA.
+
+Skrypt `tools/validate_nvda_codec_dialogs.py` można też jawnie uruchomić przez
+`runpy.run_path(...)["start"]()` w konsoli NVDA po uzgodnieniu testu.
+W tym wariancie używa rzeczywistych usług NVDA i rejestruje tylko mowę
+dotyczącą własnych okien; nie tworzy instancji globalnej wtyczki i nie zapisuje
+rzeczywistej konfiguracji. W tej sesji nie potwierdzono uruchomienia tego
+wariantu. Szczegółowe wyniki i ograniczenia zawiera `OPCJE_KODEKOW.md`.
+
 ## Translation validation
 
 ```powershell

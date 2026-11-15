@@ -4,6 +4,7 @@ import importlib
 import sys
 import types
 import unittest
+from unittest.mock import patch
 from collections import deque
 from pathlib import Path
 
@@ -26,6 +27,166 @@ class _Config:
 
 
 class PluginImportTests(unittest.TestCase):
+	def _codec_page(self, target="mp3", encoder="lame", profiles=None):
+		"""Model kontrolek: bez okien, fokusu systemowego i działającego NVDA."""
+		module = sys.modules["easyAudioConverter.settings_dialogs"]
+		page = module._EasyAudioConverterAdvancedSettingsPage.__new__(module._EasyAudioConverterAdvancedSettingsPage)
+
+		class Control:
+			def __init__(self):
+				self.value, self.selection, self.items, self.enabled = 0, 0, [], True
+			def SetValue(self, value):
+				self.value = value
+			def GetValue(self):
+				return self.value
+			def IsChecked(self):
+				return bool(self.value)
+			def SetSelection(self, selection):
+				self.selection = selection
+			def GetSelection(self):
+				return self.selection
+			def SetItems(self, items):
+				self.items = list(items)
+			def Clear(self):
+				self.items = []
+			def AppendItems(self, items):
+				self.items.extend(items)
+			def SetRange(self, *args):
+				pass
+			def SetIncrement(self, *args):
+				pass
+			def Enable(self, value):
+				self.enabled = value
+			def SetLabel(self, value):
+				self.value = value
+			def Wrap(self, width):
+				pass
+			def SetFocus(self):
+				pass
+
+		for name in ("codec", "encoder", "enabled", "rate_mode", "bitrate", "vbr_quality", "min_bitrate", "max_bitrate", "copyright", "original", "rate_help", "sample_rate", "channels", "codec_level", "lossless_compression", "bit_depth", "level_help"):
+			setattr(page, name, Control())
+		page._profiles = profiles or {}
+		page._current_format, page._current_encoder = target, encoder
+		page.codec.SetSelection(self.module.FORMAT_KEYS.index(target))
+		page.encoder.SetSelection(self.module.MP3_ENCODER_KEYS.index(encoder))
+		page.GetClientSize = lambda: types.SimpleNamespace(GetWidth=lambda: 800)
+		page.Layout = lambda: None
+		page._load_profile(target)
+		return page
+
+	def test_codec_controls_match_capabilities_without_opening_windows(self):
+		for target in self.module.FORMAT_KEYS:
+			page = self._codec_page(target)
+			page.enabled.SetValue(True)
+			page._update_control_state()
+			self.assertEqual(target == "mp3", page.encoder.enabled)
+			self.assertEqual(target in {"mp3", "ac3", "eac3"}, page.copyright.enabled)
+			self.assertFalse(page.min_bitrate.enabled)
+			if target in {"flac", "wavpack", "wav", "alac", "aiff", "copyAudio", "aacM4a"}:
+				self.assertFalse(page.rate_mode.enabled)
+		for encoder in ("lame", "gogo", "fraunhofer"):
+			page = self._codec_page(encoder=encoder)
+			page.enabled.SetValue(True)
+			self.assertEqual(encoder != "fraunhofer", "vbr" in page._rate_modes)
+			if "vbr" in page._rate_modes:
+				page.rate_mode.SetSelection(page._rate_modes.index("vbr"))
+			page._update_control_state()
+			self.assertEqual(encoder == "gogo", page.min_bitrate.enabled)
+			self.assertEqual(encoder == "lame", page.original.enabled)
+			self.assertEqual(encoder != "fraunhofer", page.codec_level.enabled)
+
+	def test_switching_encoders_retains_separate_profiles(self):
+		page = self._codec_page()
+		page.enabled.SetValue(True)
+		page.rate_mode.SetSelection(page._rate_modes.index("vbr"))
+		page.vbr_quality.SetValue(3)
+		page.copyright.SetSelection(2)
+		page.encoder.SetSelection(self.module.MP3_ENCODER_KEYS.index("gogo"))
+		page._on_codec_changed(None)
+		self.assertFalse(page.enabled.IsChecked())
+		self.assertEqual(-1, page.vbr_quality.GetValue())
+		page.enabled.SetValue(True)
+		page.rate_mode.SetSelection(page._rate_modes.index("abr"))
+		page.min_bitrate.SetValue(96)
+		page.max_bitrate.SetValue(192)
+		page.encoder.SetSelection(self.module.MP3_ENCODER_KEYS.index("lame"))
+		page._on_codec_changed(None)
+		self.assertEqual(3, page.vbr_quality.GetValue())
+		self.assertEqual(2, page.copyright.GetSelection())
+		self.assertEqual(96, page._profiles["mp3:gogo"]["minBitrate"])
+		self.assertEqual("vbr", page._profiles["mp3:lame"]["rateMode"])
+
+	def test_changing_rate_mode_clears_inactive_limits_and_quality(self):
+		page = self._codec_page(encoder="gogo")
+		page.enabled.SetValue(True)
+		page.min_bitrate.SetValue(96)
+		page.max_bitrate.SetValue(192)
+		page.vbr_quality.SetValue(3)
+		page.rate_mode.SetSelection(page._rate_modes.index("cbr"))
+		page._store_current_profile()
+		options = page._profiles["mp3:gogo"]
+		self.assertEqual(0, options["minBitrate"])
+		self.assertEqual(0, options["maxBitrate"])
+		self.assertEqual(-1, options["vbrQuality"])
+
+	def test_advanced_configuration_round_trip_keeps_new_fields(self):
+		class Config(dict):
+			spec = {}
+		conf = Config({self.module.CONFIG_SECTION: {}})
+		settings = self.module.ConversionSettings(mp3_encoder="gogo", advanced_options={
+			"enabled": True, "rateMode": "vbr", "vbrQuality": 3,
+			"minBitrate": 96, "maxBitrate": 192,
+		})
+		with patch.object(sys.modules["config"], "conf", conf):
+			self.module._write_conversion_settings(settings)
+			read = self.module._read_settings()
+			self.assertEqual("gogo", read.mp3_encoder)
+			for key, value in settings.advanced_options.items():
+				self.assertEqual(value, read.advanced_options[key])
+			self.assertIn("mp3:gogo", self.module._load_advanced_profiles())
+			conf[self.module.CONFIG_SECTION]["mp3Encoder"] = "lame"
+			self.assertFalse(self.module._read_settings().advanced_options.get("enabled", False))
+
+	def test_invalid_advanced_options_do_not_partially_save_settings(self):
+		calls = []
+		dialog = self.module.EasyAudioConverterSettingsDialog.__new__(self.module.EasyAudioConverterSettingsDialog)
+		choice = types.SimpleNamespace(GetSelection=lambda: 0)
+		dialog.standard_page = types.SimpleNamespace(
+			isValid=lambda: True, quality=choice, gogo_bitrate=choice, gogo_quality=choice,
+			gogo_extra_arguments=types.SimpleNamespace(GetValue=lambda: ""),
+			onSave=lambda: calls.append("zapis"),
+		)
+		dialog.advanced_page = types.SimpleNamespace(
+			isValid=lambda settings: False,
+			rate_mode=types.SimpleNamespace(SetFocus=lambda: calls.append("fokus")),
+		)
+		dialog.notebook = types.SimpleNamespace(SetSelection=lambda tab: calls.append(tab))
+		with patch("easyAudioConverter.settings_dialogs._read_settings", return_value=self.module.ConversionSettings()), patch.object(sys.modules["wx"], "CallAfter", lambda f: f(), create=True):
+			dialog._on_ok(None)
+		self.assertEqual([dialog.ADVANCED_TAB, "fokus"], calls)
+
+	def test_invalid_codec_page_reports_validation_error(self):
+		page = self._codec_page(encoder="gogo")
+		page.enabled.SetValue(True)
+		page.rate_mode.SetSelection(page._rate_modes.index("vbr"))
+		page.min_bitrate.SetValue(192)
+		page.max_bitrate.SetValue(96)
+		with patch.object(sys.modules["gui"], "messageBox", create=True) as message, patch.object(sys.modules["wx"], "OK", 1, create=True), patch.object(sys.modules["wx"], "ICON_ERROR", 2, create=True):
+			self.assertFalse(page.isValid(self.module.ConversionSettings()))
+			self.assertIn("Minimalna", message.call_args.args[0])
+			self.assertEqual("Advanced codec settings", message.call_args.args[1])
+
+	def test_builtin_profiles_do_not_inherit_gogo_for_other_formats(self):
+		base = self.module.ConversionSettings(mp3_encoder="gogo")
+		for profile in self.module._builtin_conversion_profiles(base):
+			profile.settings.validate()
+
+	def test_codec_editor_validation_does_not_block_on_unrelated_filename(self):
+		page = self._codec_page()
+		page.enabled.SetValue(True)
+		self.assertTrue(page.isValid(self.module.ConversionSettings(output_name_template="{nieznane}")))
+
 	@classmethod
 	def setUpClass(cls):
 		cls._original_modules = {}
@@ -124,7 +285,7 @@ class PluginImportTests(unittest.TestCase):
 
 	def test_module_imports_with_the_documented_nvda_api_surface(self):
 		self.assertEqual("Easy Audio Converter", self.module.ADDON_NAME)
-		self.assertEqual("1.9.2", self.module.ADDON_VERSION)
+		self.assertEqual("1.10.0", self.module.ADDON_VERSION)
 		self.assertIn("Do not close or restart NVDA", self.module.CONVERSION_LIFECYCLE_WARNING)
 		self.assertIn("Cancel button", self.module.CONVERSION_LIFECYCLE_WARNING)
 		dialog = self.module.EasyAudioConverterSettingsDialog
@@ -164,6 +325,37 @@ class PluginImportTests(unittest.TestCase):
 			"Remux AAC to M4A (no re-encoding)",
 			self.module._format_labels()[self.module.AAC_M4A_COPY_FORMAT],
 		)
+
+	def test_decimal_control_accessibility_exposes_the_explicit_name(self):
+		window = types.SimpleNamespace(GetName=lambda: "Jakość VBR")
+		accessible = self.module._NamedControlAccessible(window)
+		self.assertEqual((sys.modules["wx"].ACC_OK, "Jakość VBR"), accessible.GetName(0))
+		with patch.object(sys.modules["wx"], "ACC_NOT_IMPLEMENTED", 3, create=True):
+			self.assertEqual((3, ""), accessible.GetName(1))
+
+	def test_profile_save_handler_creates_a_named_profile(self):
+		dialogs = sys.modules["easyAudioConverter.settings_dialogs"]
+		dialog = dialogs.ConversionOptionsDialog.__new__(dialogs.ConversionOptionsDialog)
+		settings = self.module.ConversionSettings(mp3_encoder="gogo", advanced_options={
+			"enabled": True, "rateMode": "vbr", "minBitrate": 96, "maxBitrate": 192,
+		})
+		dialog._capture_settings = lambda: settings
+		dialog.profile = types.SimpleNamespace(GetSelection=lambda: 0)
+		dialog._profile_entries = []
+		dialog._builtin_profiles = []
+		dialog._user_profiles = []
+		selected = []
+		dialog._rebuild_profile_choice = selected.append
+		entry = types.SimpleNamespace(
+			ShowModal=lambda: sys.modules["wx"].ID_OK,
+			GetValue=lambda: "Profil testowy",
+			Destroy=lambda: None,
+		)
+		with patch.object(sys.modules["wx"], "TextEntryDialog", return_value=entry, create=True), patch.object(dialogs, "_save_user_conversion_profiles") as save:
+			dialog._on_save_profile(None)
+		save.assert_called_once_with(dialog._user_profiles)
+		self.assertEqual(["Profil testowy"], selected)
+		self.assertEqual(settings, dialog._user_profiles[0].settings)
 
 	def test_all_script_actions_are_exposed(self):
 		expected = {
@@ -716,7 +908,7 @@ class PluginImportTests(unittest.TestCase):
 				self.name = name
 				self.valid = valid
 
-			def isValid(self):
+			def isValid(self, *args):
 				calls.append(("validate", self.name))
 				return self.valid
 
@@ -727,6 +919,10 @@ class PluginImportTests(unittest.TestCase):
 			self.module.EasyAudioConverterSettingsDialog
 		)
 		dialog.standard_page = Page("standard")
+		dialog.standard_page.quality = types.SimpleNamespace(GetSelection=lambda: 2)
+		dialog.standard_page.gogo_bitrate = types.SimpleNamespace(GetSelection=lambda: 0)
+		dialog.standard_page.gogo_quality = types.SimpleNamespace(GetSelection=lambda: 0)
+		dialog.standard_page.gogo_extra_arguments = types.SimpleNamespace(GetValue=lambda: "")
 		dialog.advanced_page = Page("advanced")
 		dialog.processing_page = Page("processing")
 		dialog.EndModal = lambda result: calls.append(("close", result))
@@ -734,7 +930,8 @@ class PluginImportTests(unittest.TestCase):
 		original_save = getattr(conf, "save", None)
 		conf.save = lambda: calls.append(("save", "configuration"))
 		try:
-			dialog._on_ok(None)
+			with patch("easyAudioConverter.settings_dialogs._read_settings", return_value=self.module.ConversionSettings()):
+				dialog._on_ok(None)
 		finally:
 			if original_save is None:
 				del conf.save
@@ -743,6 +940,7 @@ class PluginImportTests(unittest.TestCase):
 		self.assertEqual(
 			[
 				("validate", "standard"),
+				("validate", "advanced"),
 				("save", "standard"),
 				("save", "advanced"),
 				("save", "processing"),
@@ -811,12 +1009,23 @@ class PluginImportTests(unittest.TestCase):
 				self.parent = parent
 				self.label = label
 
-		class SpinCtrlDouble:
+		class TextCtrl:
+			def SetName(self, name):
+				self.name = name
+
+			def GetName(self):
+				return self.name
+
+			def SetAccessible(self, accessible):
+				self.accessible = accessible
+
+		class SpinCtrlDouble(TextCtrl):
 			def __init__(self, parent, **kwargs):
 				self.parent = parent
 				self.kwargs = kwargs
 				self.digits = None
 				self.name = ""
+				self.child = TextCtrl()
 
 			def SetDigits(self, digits):
 				self.digits = digits
@@ -824,12 +1033,16 @@ class PluginImportTests(unittest.TestCase):
 			def SetName(self, name):
 				self.name = name
 
+			def GetChildren(self):
+				return [self.child]
+
 		wx_module = sys.modules["wx"]
 		missing = object()
 		replacements = {
 			"BoxSizer": Sizer,
 			"StaticText": StaticText,
 			"SpinCtrlDouble": SpinCtrlDouble,
+			"TextCtrl": TextCtrl,
 			"HORIZONTAL": 1,
 			"ALIGN_CENTER_VERTICAL": 2,
 			"RIGHT": 4,
@@ -859,6 +1072,9 @@ class PluginImportTests(unittest.TestCase):
 				else:
 					setattr(wx_module, name, original)
 		self.assertEqual("Custom loudness", control.name)
+		self.assertEqual("Custom loudness", control.child.name)
+		self.assertEqual([control.child], control._named_children)
+		self.assertIs(control.child.accessible, control.child._named_accessible)
 		self.assertEqual(1, control.digits)
 		self.assertEqual(1, len(added))
 		self.assertEqual(-16.0, control.kwargs["initial"])

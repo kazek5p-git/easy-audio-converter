@@ -14,6 +14,12 @@ import os
 import shlex
 import subprocess
 from pathlib import Path
+from typing import Any, Mapping
+
+try:
+	from .codec_options import rate_options_from_mapping, validate_rate_options
+except ImportError:  # Testy samodzielnego modułu, bez środowiska NVDA.
+	from codec_options import rate_options_from_mapping, validate_rate_options
 
 
 GOGO_BITRATE_PRESETS = (0, 64, 128, 160, 192, 256, 320)
@@ -128,6 +134,7 @@ def build_gogo_command(
 	bitrate: int = 0,
 	quality: int = 0,
 	extra_arguments: str = "",
+	advanced_options: Mapping[str, Any] | None = None,
 ) -> list[str]:
 	"""Zbuduj polecenie GOGO jako listę argumentów procesu.
 
@@ -146,13 +153,60 @@ def build_gogo_command(
 	destination_path = Path(destination)
 	return [
 		str(resolved_executable),
-		*gogo_bitrate_arguments(int(bitrate)),
-		"-q",
-		str(int(quality)),
+		*gogo_codec_arguments(bitrate, quality, extra_arguments, advanced_options),
 		*parse_gogo_extra_arguments(extra_arguments),
 		str(source_path),
 		str(destination_path),
 	]
+
+
+def gogo_codec_arguments(
+	bitrate: int, quality: int, extra_arguments: str,
+	options: Mapping[str, Any] | None = None,
+) -> list[str]:
+	"""Łączy ustawienia GOGO, wykrywając sprzeczne dodatkowe polecenia."""
+	if not options or not options.get("enabled"):
+		return [*gogo_bitrate_arguments(bitrate), "-q", str(quality)]
+	validate_rate_options("mp3", "gogo", options)
+	values = rate_options_from_mapping(options)
+	mode = values["rateMode"]
+	controlled = set()
+	if mode != "auto" or options.get("bitrate", 0):
+		controlled.update(("-b", "-a", "-v", "-vb"))
+	if options.get("codecLevel", -1) >= 0:
+		controlled.add("-q")
+	if options.get("sampleRate", 0):
+		controlled.add("-d")
+	if options.get("channels", 0):
+		controlled.add("-m")
+	if any(token.lower() in controlled for token in parse_gogo_extra_arguments(extra_arguments)):
+		raise ValueError("Dodatkowe polecenia GOGO kolidują z ustawieniami zaawansowanymi. Usuń powtórzone opcje.")
+	rate = int(options.get("bitrate", 0)) or bitrate
+	arguments = []
+	if mode == "vbr":
+		vbr_quality = values["vbrQuality"]
+		arguments.extend(("-v", str(int(2 if vbr_quality == -1 else vbr_quality))))
+	else:
+		if rate:
+			arguments.extend(("-b", str(rate), "-m", "s" if rate >= 256 else "j"))
+		if mode == "abr":
+			arguments.append("-a")
+	if mode in ("abr", "vbr") and (values["minBitrate"] or values["maxBitrate"]):
+		low, high = values["minBitrate"], values["maxBitrate"]
+		if mode == "abr" and ((low and (rate or 128) < low) or (high and (rate or 128) > high)):
+			raise ValueError("Docelowa przepływność ABR musi mieścić się między minimum i maksimum.")
+		arguments.extend(("-vb", str(low), str(high)))
+	level = options.get("codecLevel", -1)
+	arguments.extend(("-q", str(quality if level < 0 else level)))
+	if options.get("sampleRate", 0):
+		arguments.extend(("-d", f"{int(options['sampleRate']) / 1000:g}"))
+	if options.get("channels", 0):
+		# Jawny wybór kanałów ma pierwszeństwo przed trybem stereo presetu.
+		if "-m" in arguments:
+			index = arguments.index("-m")
+			del arguments[index:index + 2]
+		arguments.extend(("-m", "m" if options["channels"] == 1 else "j"))
+	return arguments
 
 
 def read_gogo_help(

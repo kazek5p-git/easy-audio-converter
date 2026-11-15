@@ -39,6 +39,8 @@ zapisu `snake_case`.
 - `settings_dialogs.py` zawiera strony ustawień oraz dialogi profili i opcji;
 - `conversion_dialogs.py` zawiera okna planu, postępu, wyników i informacji;
 - `converter.py` pozostaje niezależnym od NVDA silnikiem FFmpeg;
+- `codec_options.py` opisuje możliwości dołączonych enkoderów, waliduje tryby
+  przepływności i flagi oraz przygotowuje argumenty sterowania bitrate;
 - `profiles.py` obsługuje bezpieczny zapis profili;
 - `updater.py` obsługuje sprawdzanie, pobieranie i weryfikację aktualizacji.
 

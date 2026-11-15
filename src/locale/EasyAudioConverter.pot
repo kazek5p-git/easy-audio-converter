@@ -1,7 +1,7 @@
 # Easy Audio Converter translation template.
 # Open this file in Poedit to create a new translation.
 msgid ""
-msgstr "Project-Id-Version: Easy Audio Converter 1.9.2\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-08-14 02:57+0200\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
+msgstr "Project-Id-Version: Easy Audio Converter 1.10.0\nReport-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\nPOT-Creation-Date: 2026-11-15 04:00+0100\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Easy Audio Converter poedit_catalog.py\nX-Poedit-Basepath: ../..\nX-Poedit-KeywordsList: _\nX-Poedit-SearchPath-0: src\n"
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:92
 msgid "...and {count} more files"
@@ -11,68 +11,76 @@ msgstr ""
 msgid "...and {count} more skipped files"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:94
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:97
 msgid "128 kb/s joint stereo"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:905
 msgid "16 bit"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:387
+#: src/globalPlugins/easyAudioConverter/__init__.py:385
 msgid "16 files at a time"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:95
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:98
 msgid "160 kb/s joint stereo"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:99
 msgid "192 kb/s joint stereo"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:384
+#: src/globalPlugins/easyAudioConverter/__init__.py:382
 msgid "2 files at a time"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:905
 msgid "24 bit"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:97
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:100
 msgid "256 kb/s stereo"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:905
 msgid "32 bit"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:388
+#: src/globalPlugins/easyAudioConverter/__init__.py:386
 msgid "32 files at a time"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:98
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:101
 msgid "320 kb/s stereo"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:385
+#: src/globalPlugins/easyAudioConverter/__init__.py:383
 msgid "4 files at a time"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:93
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:96
 msgid "64 kb/s joint stereo"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:386
+#: src/globalPlugins/easyAudioConverter/__init__.py:384
 msgid "8 files at a time"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2053
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2232
 msgid "A built-in profile already uses this name."
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:489
 msgid "AAC"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1085
+msgid "AAC: VBR quality 0.1 to 5 increases quality and size. Default: 2. CBR targets a bitrate, not equal frame sizes. No bitrate limits or CRC switch."
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:954
+msgid "ABR — average bitrate"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:493
@@ -111,11 +119,11 @@ msgstr ""
 msgid "Adaptive workers: {active} active, target {target}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:375
+#: src/globalPlugins/easyAudioConverter/__init__.py:373
 msgid "Add new jobs to the queue"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:213 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1463
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:216 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1631
 msgid "Additional GOGO arguments:"
 msgstr ""
 
@@ -123,27 +131,27 @@ msgstr ""
 msgid "Additional skipped files: {count}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1766
-msgid "Advanced codec overrides are not used by GOGO"
-msgstr ""
-
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1764
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1934
 msgid "Advanced codec overrides are not used for stream copy"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1770
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1939
 msgid "Advanced codec overrides: disabled"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1768
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1937
 msgid "Advanced codec overrides: enabled"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:274
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1237 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1111
+msgid "Advanced codec settings"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/plugin.py:274 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1694
 msgid "Advanced codec settings..."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:814
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:818
 msgid "Advanced settings"
 msgstr ""
 
@@ -155,7 +163,7 @@ msgstr ""
 msgid "Album artist"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:975
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1044
 msgid "All FLAC levels are lossless. Level 0 is fastest; level 12 gives the strongest compression but is very slow."
 msgstr ""
 
@@ -175,7 +183,7 @@ msgstr ""
 msgid "Analyzing loudness, first pass"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:458
+#: src/globalPlugins/easyAudioConverter/__init__.py:457
 msgid "Archive FLAC"
 msgstr ""
 
@@ -183,11 +191,11 @@ msgstr ""
 msgid "Artist"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:368
+#: src/globalPlugins/easyAudioConverter/__init__.py:366
 msgid "At every file"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:367
+#: src/globalPlugins/easyAudioConverter/__init__.py:365
 msgid "At progress milestones"
 msgstr ""
 
@@ -211,31 +219,31 @@ msgstr ""
 msgid "Audio information ready. Codec {codec}, duration {duration}, sample rate {sampleRate}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:415
+#: src/globalPlugins/easyAudioConverter/__init__.py:413
 msgid "Audiobook MP3"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:382
+#: src/globalPlugins/easyAudioConverter/__init__.py:380
 msgid "Automatic (dynamic load balancing)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1308
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1474
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:610
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:613
 msgid "Automatic mode dynamically adjusts independent files using CPU and memory load. GPU acceleration is not used for audio encoding."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:662
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:665
 msgid "Automatic progress announcements:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:670
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:673
 msgid "Automatically check for add-on updates"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:246
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:249
 msgid "Available fields: {source}, {title}, {artist}, {album}, {track}, {disc}, {index}, {format}."
 msgstr ""
 
@@ -243,8 +251,12 @@ msgstr ""
 msgid "BPM"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:842
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:854
 msgid "Bitrate in kbps (0 uses the quality preset):"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:850
+msgid "Bitrate mode:"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:163
@@ -255,16 +267,24 @@ msgstr ""
 msgid "Broadcast: -23 LUFS, -2 dBTP"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:189 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1449
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:192 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1617
 msgid "Browse for GOGO executable..."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:236 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1479
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:239 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1647
 msgid "Browse..."
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:304
 msgid "Building the conversion plan"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:953
+msgid "CBR — constant bitrate"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:956
+msgid "CVBR — constrained variable bitrate"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:580 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:419 src/globalPlugins/easyAudioConverter/plugin.py:269
@@ -299,7 +319,7 @@ msgstr ""
 msgid "Change the target audio format"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:855
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:883
 msgid "Channels:"
 msgstr ""
 
@@ -331,19 +351,19 @@ msgstr ""
 msgid "Choose files to convert"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1112
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1278
 msgid "Choose metadata fields"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1519
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1687
 msgid "Choose metadata fields..."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:440 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1870
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:443 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2049
 msgid "Choose the GOGO executable"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:1788 src/globalPlugins/easyAudioConverter/settings_dialogs.py:426 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1855
+#: src/globalPlugins/easyAudioConverter/plugin.py:1788 src/globalPlugins/easyAudioConverter/settings_dialogs.py:429 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2034
 msgid "Choose the destination folder"
 msgstr ""
 
@@ -363,11 +383,11 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:830
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:835
 msgid "Codec profile to edit:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:862
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:890
 msgid "Codec-specific level (-1 uses the preset):"
 msgstr ""
 
@@ -411,11 +431,11 @@ msgstr ""
 msgid "Conversion plan"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1411
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1579
 msgid "Conversion profile:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2012
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2191
 msgid "Conversion profiles exported"
 msgstr ""
 
@@ -427,7 +447,7 @@ msgstr ""
 msgid "Conversion results"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1550
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1719
 msgid "Convert"
 msgstr ""
 
@@ -455,7 +475,7 @@ msgstr ""
 msgid "Convert the current folder"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1386
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1552
 msgid "Convert with options"
 msgstr ""
 
@@ -495,15 +515,15 @@ msgstr ""
 msgid "Copy all text metadata"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:568 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1287
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:571 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1453
 msgid "Copy chapter markers"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1283
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1449
 msgid "Copy embedded cover artwork when supported"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:564
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:567
 msgid "Copy embedded cover artwork when the target supports it"
 msgstr ""
 
@@ -523,6 +543,14 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1089
+msgid "Copyright and original are stream header flags, not metadata tags or copy protection. Encoder default leaves each flag unchanged."
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:873
+msgid "Copyright flag:"
+msgstr ""
+
 #: src/globalPlugins/easyAudioConverter/plugin.py:586
 msgid "Could not check for updates.\n\n{error}"
 msgstr ""
@@ -535,11 +563,11 @@ msgstr ""
 msgid "Could not copy the conversion report."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2006
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2185
 msgid "Could not export profiles:\n{error}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1967
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2146
 msgid "Could not import profiles:\n{error}"
 msgstr ""
 
@@ -555,7 +583,7 @@ msgstr ""
 msgid "Could not open the output folder."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:127
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:130
 msgid "Could not read GOGO help:\n{error}"
 msgstr ""
 
@@ -563,7 +591,7 @@ msgstr ""
 msgid "Could not read audio information:\n{error}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1097
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1224
 msgid "Could not save Easy Audio Converter settings. See the NVDA log for details."
 msgstr ""
 
@@ -587,15 +615,15 @@ msgstr ""
 msgid "Custom EBU R128 target"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:537 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1257
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:540 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1423
 msgid "Custom integrated loudness in LUFS:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:556 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1276
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:559 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1442
 msgid "Custom loudness range in LU:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:546 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1267
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:549 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1433
 msgid "Custom true peak in dBTP:"
 msgstr ""
 
@@ -603,27 +631,31 @@ msgstr ""
 msgid "Date or year"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1291
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1457
 msgid "Deeply verify every output file"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:574
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:577
 msgid "Deeply verify output by decoding it and comparing duration"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:92
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:952
+msgid "Default (keep existing settings)"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:95
 msgid "Define manually in GOGO arguments"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2103
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2282
 msgid "Delete conversion profile"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1417
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1585
 msgid "Delete profile"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2102
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2281
 msgid "Delete the profile “{name}”?"
 msgstr ""
 
@@ -631,7 +663,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:230 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1475
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:233 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1643
 msgid "Destination folder:"
 msgstr ""
 
@@ -659,7 +691,7 @@ msgstr ""
 msgid "Disc number"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:100
+#: src/globalPlugins/easyAudioConverter/__init__.py:102
 msgid "Do not close or restart NVDA while conversion is running. To stop safely, use the Cancel button."
 msgstr ""
 
@@ -691,7 +723,7 @@ msgstr ""
 msgid "E-AC-3"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:929 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:942 src/globalPlugins/easyAudioConverter/plugin.py:127 src/globalPlugins/easyAudioConverter/plugin.py:1155 src/globalPlugins/easyAudioConverter/plugin.py:292 src/globalPlugins/easyAudioConverter/plugin.py:826 src/globalPlugins/easyAudioConverter/plugin.py:1705 src/globalPlugins/easyAudioConverter/plugin.py:523 src/globalPlugins/easyAudioConverter/plugin.py:763 src/globalPlugins/easyAudioConverter/plugin.py:852 src/globalPlugins/easyAudioConverter/plugin.py:801 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2046 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2054 src/globalPlugins/easyAudioConverter/settings_dialogs.py:475 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1098 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1917 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1968 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2007 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2020 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2084 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2121
+#: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:929 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:942 src/globalPlugins/easyAudioConverter/plugin.py:127 src/globalPlugins/easyAudioConverter/plugin.py:1155 src/globalPlugins/easyAudioConverter/plugin.py:292 src/globalPlugins/easyAudioConverter/plugin.py:826 src/globalPlugins/easyAudioConverter/plugin.py:1705 src/globalPlugins/easyAudioConverter/plugin.py:523 src/globalPlugins/easyAudioConverter/plugin.py:763 src/globalPlugins/easyAudioConverter/plugin.py:852 src/globalPlugins/easyAudioConverter/plugin.py:801 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2225 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2233 src/globalPlugins/easyAudioConverter/settings_dialogs.py:478 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1225 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2096 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2147 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2186 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2199 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2263 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2300
 msgid "Easy Audio Converter"
 msgstr ""
 
@@ -703,7 +735,7 @@ msgstr ""
 msgid "Easy Audio Converter results"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1020
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1137
 msgid "Easy Audio Converter settings"
 msgstr ""
 
@@ -727,11 +759,11 @@ msgstr ""
 msgid "Economical"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1159
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1325
 msgid "Edit metadata overrides"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:311 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1522
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:314 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1690
 msgid "Edit metadata overrides..."
 msgstr ""
 
@@ -747,7 +779,7 @@ msgstr ""
 msgid "Embedded artwork: {value}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:838
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:848
 msgid "Enable advanced overrides for this codec"
 msgstr ""
 
@@ -755,15 +787,19 @@ msgstr ""
 msgid "Encoder"
 msgstr ""
 
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:872
+msgid "Encoder default"
+msgstr ""
+
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:682
 msgid "Encoding and output writing: {value}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2033
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2212
 msgid "Enter a name for this conversion profile:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1169
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1335
 msgid "Enter values to replace source tags for every converted file. Leave a field empty to keep its source value."
 msgstr ""
 
@@ -783,27 +819,27 @@ msgstr ""
 msgid "Estimated time remaining: {remaining}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:393
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:396
 msgid "Example album"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:392
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:395
 msgid "Example artist"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:400
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:403
 msgid "Example filename: {name}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:391
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:394
 msgid "Example title"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1986
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2165
 msgid "Export conversion profiles"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1419
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1587
 msgid "Export profiles..."
 msgstr ""
 
@@ -815,15 +851,15 @@ msgstr ""
 msgid "FLAC"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:786
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:790
 msgid "FLAC 0 — fastest encoding"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:788
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:792
 msgid "FLAC 12 — maximum compression, very slow"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:790
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:794
 msgid "FLAC {level}"
 msgstr ""
 
@@ -835,7 +871,7 @@ msgstr ""
 msgid "Failed: {name}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:795
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:799
 msgid "Fast, -f (FFmpeg level 0)"
 msgstr ""
 
@@ -851,7 +887,7 @@ msgstr ""
 msgid "File {index} of {total}: {name}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1782
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1951
 msgid "Filename preview: {name}"
 msgstr ""
 
@@ -863,15 +899,15 @@ msgstr ""
 msgid "Files to convert: {count}. Skipped: {skipped}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:974
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1043
 msgid "For LAME MP3, level 0 is the slowest and highest algorithm quality; 9 is fastest."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:979
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1048
 msgid "For Ogg Vorbis, levels 0 to 10 select increasing variable-bitrate quality."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:980
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1049
 msgid "For Opus, levels 0 to 10 select increasing encoder complexity."
 msgstr ""
 
@@ -883,6 +919,10 @@ msgstr ""
 msgid "Fraunhofer / Windows Media Foundation MP3"
 msgstr ""
 
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1078
+msgid "Fraunhofer through Media Foundation supports CBR only. VBR, ABR, bitrate limits and stream flags are unavailable."
+msgstr ""
+
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:55
 msgid "Free disk space: {size}"
 msgstr ""
@@ -891,19 +931,23 @@ msgstr ""
 msgid "GB"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:108
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:111
 msgid "GOGO Q {value}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:106
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:109
 msgid "GOGO Q {value} — fastest at Q9"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:104
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:107
 msgid "GOGO Q {value} — highest quality"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:193 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1453
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1056
+msgid "GOGO algorithm quality: 0 is highest, 9 is fastest. This is separate from VBR quality. Advanced choices override the standard GOGO bitrate and quality; conflicting additional arguments must be removed."
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:196 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1621
 msgid "GOGO bitrate:"
 msgstr ""
 
@@ -911,32 +955,36 @@ msgstr ""
 msgid "GOGO can encode only WAV/WAVE source files"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:119
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:122
 msgid "GOGO commands"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:353 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1734
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:356 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1903
 msgid "GOGO encodes WAV/WAVE files to MP3 without metadata or loudness processing. The add-on includes GOGO-no-coda; leave the executable field empty to use it, or choose another gogo.exe."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:184 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1445
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:187 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1613
 msgid "GOGO executable (gogo.exe):"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:442 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1872
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:445 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2051
 msgid "GOGO executable (gogo.exe)|gogo.exe|Executable files (*.exe)|*.exe|All files (*.*)|*.*"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1805
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1974
 msgid "GOGO processing: WAV/WAVE input only; metadata, loudness, artwork, and chapters are not written."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:203 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1458
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:206 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1626
 msgid "GOGO quality:"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:542
 msgid "GOGO-no-coda MP3 (bundled WAV encoder)"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1076
+msgid "GOGO: VBR quality 0 is best, 9 is smallest. Default: 2. VBR limits do not prevent silence from using a lower bitrate. Copyright, original and CRC switches are unavailable."
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:571
@@ -955,7 +1003,7 @@ msgstr ""
 msgid "High"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:797
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:801
 msgid "High, -h (FFmpeg level 2)"
 msgstr ""
 
@@ -967,19 +1015,19 @@ msgstr ""
 msgid "If Easy Audio Converter is useful to you and you want to support my work, you can buy me a coffee.\n\nDo you want to open the support page now?"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1935
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2114
 msgid "Import conversion profiles"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1418
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1586
 msgid "Import profiles..."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1977
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2156
 msgid "Imported {count} conversion profiles"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:256 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1487
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:259 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1655
 msgid "Include subfolders when converting a folder"
 msgstr ""
 
@@ -995,11 +1043,11 @@ msgstr ""
 msgid "Input size: {size}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:406 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1788
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:409 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1957
 msgid "Invalid filename template: {error}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1936 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1988
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2115 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2167
 msgid "JSON profile files (*.json)|*.json|All files (*.*)|*.*"
 msgstr ""
 
@@ -1007,16 +1055,20 @@ msgstr ""
 msgid "KB"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:885
 msgid "Keep the source channel count"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:851
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:879
 msgid "Keep the source sample rate"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:540
 msgid "LAME MP3"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1074
+msgid "LAME: VBR quality 0 is best, 9 is smallest. Default: 2. The FFmpeg interface does not expose VBR limits or CRC."
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:578
@@ -1027,7 +1079,7 @@ msgstr ""
 msgid "Later"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:869
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:897
 msgid "Lossless compression profile:"
 msgstr ""
 
@@ -1035,7 +1087,7 @@ msgstr ""
 msgid "Loudness analysis: {value}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:527 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1247
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:530 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1413
 msgid "Loudness normalization:"
 msgstr ""
 
@@ -1059,7 +1111,11 @@ msgstr ""
 msgid "MP3"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:177 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1440
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:841
+msgid "MP3 encoder profile to edit:"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:180 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1608
 msgid "MP3 encoder:"
 msgstr ""
 
@@ -1067,19 +1123,23 @@ msgstr ""
 msgid "Main conversion"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:803
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:869
+msgid "Maximum bitrate in kbps (0 uses the encoder default):"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:807
 msgid "Maximum, -hhx6 (FFmpeg level 8)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:289 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1514
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:292 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1682
 msgid "Metadata export:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:300
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:303
 msgid "Metadata fields to copy:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:331 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1758
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:334 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1927
 msgid "Metadata overrides: {count} fields"
 msgstr ""
 
@@ -1087,7 +1147,11 @@ msgstr ""
 msgid "Metadata:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:865
+msgid "Minimum bitrate in kbps (0 uses the encoder default):"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:885
 msgid "Mono"
 msgstr ""
 
@@ -1095,12 +1159,20 @@ msgstr ""
 msgid "Music and streaming: -14 LUFS, -1 dBTP"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:987
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:872
+msgid "No"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1060
 msgid "No advanced codec settings are used because the audio stream is copied without re-encoding."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:361
+#: src/globalPlugins/easyAudioConverter/__init__.py:359
 msgid "No completion notification"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1087
+msgid "No configurable CRC switch is available for this encoder. Checksums required by the format are handled automatically."
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/plugin.py:1801 src/globalPlugins/easyAudioConverter/plugin.py:1821 src/globalPlugins/easyAudioConverter/plugin.py:1924
@@ -1127,11 +1199,11 @@ msgstr ""
 msgid "No files need conversion. Skipped: {skipped}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1798
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1967
 msgid "No re-encoding: quality, loudness, and advanced codec settings are not used."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1792
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1961
 msgid "No re-encoding: quality, loudness, source metadata, artwork, chapters, and advanced codec settings are not used. Explicit metadata overrides are still applied."
 msgstr ""
 
@@ -1143,11 +1215,11 @@ msgstr ""
 msgid "No supported audio files were found"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:796
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:800
 msgid "Normal (FFmpeg level 1)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:809
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:813
 msgid "Not used by this codec"
 msgstr ""
 
@@ -1159,7 +1231,7 @@ msgstr ""
 msgid "One conversion is active. Queued jobs: {count}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:383
+#: src/globalPlugins/easyAudioConverter/__init__.py:381
 msgid "One file at a time"
 msgstr ""
 
@@ -1167,11 +1239,11 @@ msgstr ""
 msgid "One separate conversion is active. Queued jobs: {count}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1592
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1761
 msgid "One-time settings"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:369
+#: src/globalPlugins/easyAudioConverter/__init__.py:367
 msgid "Only on demand"
 msgstr ""
 
@@ -1199,7 +1271,15 @@ msgstr ""
 msgid "Opus"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:239 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1482
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1083
+msgid "Opus supports CBR, VBR and constrained VBR with a target bitrate, but not arbitrary minimum and maximum limits. Ogg CRC is automatic."
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:874
+msgid "Original flag:"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:242 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1650
 msgid "Output filename template:"
 msgstr ""
 
@@ -1227,11 +1307,11 @@ msgstr ""
 msgid "Overall progress: {percent}%"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:875
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:903
 msgid "PCM bit depth:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:580 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1296
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:583 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1462
 msgid "Parallel conversion jobs:"
 msgstr ""
 
@@ -1255,15 +1335,15 @@ msgstr ""
 msgid "Planned output files:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:645
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:648
 msgid "Play a sound when a conversion fails"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:652
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:655
 msgid "Play a sound when a conversion is canceled or stopped"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:437
+#: src/globalPlugins/easyAudioConverter/__init__.py:435
 msgid "Podcast Opus"
 msgstr ""
 
@@ -1275,11 +1355,11 @@ msgstr ""
 msgid "Preparing the conversion"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:269 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1499
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:272 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1667
 msgid "Preserve source file creation and modification dates"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:262 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1492
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:265 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1660
 msgid "Preserve the source folder structure in the destination"
 msgstr ""
 
@@ -1287,27 +1367,27 @@ msgstr ""
 msgid "Probe cache hits: {count}; misses: {misses}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:512
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:515
 msgid "Processing and notifications"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1231
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1397
 msgid "Processing options"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1528
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1697
 msgid "Processing options..."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1815
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1984
 msgid "Processing: loudness {loudness}; artwork {artwork}; chapters {chapters}; verification {verification}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2113
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2292
 msgid "Profile deleted"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2092
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2271
 msgid "Profile saved: {name}"
 msgstr ""
 
@@ -1319,7 +1399,7 @@ msgstr ""
 msgid "Quality is not used when copying audio without re-encoding"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:168 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1434
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:171 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1602
 msgid "Quality:"
 msgstr ""
 
@@ -1371,11 +1451,11 @@ msgstr ""
 msgid "Replace source files"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:277 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1505
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:280 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1673
 msgid "Replace source files after successful conversion (permanently deletes originals)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2069
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2248
 msgid "Replace the existing profile “{name}”?"
 msgstr ""
 
@@ -1411,11 +1491,11 @@ msgstr ""
 msgid "Review the plan below. Size estimates are approximate. Source files will be permanently deleted after their outputs are completed successfully."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:376
+#: src/globalPlugins/easyAudioConverter/__init__.py:374
 msgid "Run new jobs in separate progress windows"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:849
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
 msgid "Sample rate:"
 msgstr ""
 
@@ -1423,15 +1503,15 @@ msgstr ""
 msgid "Sample rate: {value}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2034 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2070
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2213 src/globalPlugins/easyAudioConverter/settings_dialogs.py:2249
 msgid "Save conversion profile"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:224 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1472
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:227 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1640
 msgid "Save converted files next to the source files"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1416
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1584
 msgid "Save profile..."
 msgstr ""
 
@@ -1439,11 +1519,11 @@ msgstr ""
 msgid "Select exactly one audio file"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1120
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1286
 msgid "Select the text metadata fields to copy for this conversion."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1406
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1574
 msgid "Selected items: {count}"
 msgstr ""
 
@@ -1451,7 +1531,7 @@ msgstr ""
 msgid "Separate conversion {index}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:602
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:605
 msgid "Separate progress windows run independently and may use more CPU and memory."
 msgstr ""
 
@@ -1459,11 +1539,11 @@ msgstr ""
 msgid "Settings..."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:218 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1467
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:221 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1635
 msgid "Show GOGO commands"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:617
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:620
 msgid "Show a conversion plan before starting"
 msgstr ""
 
@@ -1487,7 +1567,7 @@ msgstr ""
 msgid "Show the audio conversion progress window"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1314
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1480
 msgid "Show the conversion plan before starting"
 msgstr ""
 
@@ -1523,7 +1603,7 @@ msgstr ""
 msgid "Sort title"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:360
+#: src/globalPlugins/easyAudioConverter/__init__.py:358
 msgid "Sound only"
 msgstr ""
 
@@ -1539,11 +1619,11 @@ msgstr ""
 msgid "Source:\n{source}\n\nReason:\n{reason}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:358
+#: src/globalPlugins/easyAudioConverter/__init__.py:356
 msgid "Speech and sound"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/__init__.py:359
+#: src/globalPlugins/easyAudioConverter/__init__.py:357
 msgid "Speech only"
 msgstr ""
 
@@ -1551,7 +1631,7 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:150
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:153
 msgid "Standard settings"
 msgstr ""
 
@@ -1571,7 +1651,7 @@ msgstr ""
 msgid "Starting the next queued conversion. Jobs remaining: {count}."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:857
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:885
 msgid "Stereo"
 msgstr ""
 
@@ -1603,7 +1683,7 @@ msgstr ""
 msgid "Success: {name}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:633
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:636
 msgid "Successful completion notification:"
 msgstr ""
 
@@ -1615,7 +1695,7 @@ msgstr ""
 msgid "Support Easy Audio Converter"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/plugin.py:276 src/globalPlugins/easyAudioConverter/settings_dialogs.py:674
+#: src/globalPlugins/easyAudioConverter/plugin.py:276 src/globalPlugins/easyAudioConverter/settings_dialogs.py:677
 msgid "Support the author"
 msgstr ""
 
@@ -1623,7 +1703,7 @@ msgstr ""
 msgid "TB"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:159 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1428
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:162 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1596
 msgid "Target format:"
 msgstr ""
 
@@ -1631,15 +1711,15 @@ msgstr ""
 msgid "Target format: {format}"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:657
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:660
 msgid "Test cancel sound"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:649
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:652
 msgid "Test error sound"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:641
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:644
 msgid "Test success sound"
 msgstr ""
 
@@ -1651,7 +1731,7 @@ msgstr ""
 msgid "The bundled FFmpeg component is missing. Reinstall Easy Audio Converter."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:994
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1058 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1067
 msgid "The codec-specific level is not used by this format."
 msgstr ""
 
@@ -1683,7 +1763,7 @@ msgstr ""
 msgid "The converted output was kept, but the source file could not be removed."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1963
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2142
 msgid "The file does not contain valid conversion profiles."
 msgstr ""
 
@@ -1711,11 +1791,11 @@ msgstr ""
 msgid "The job was stopped after the current file."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1947
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2126
 msgid "The profile file is too large."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2045
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2224
 msgid "The profile name cannot be empty."
 msgstr ""
 
@@ -1739,7 +1819,7 @@ msgstr ""
 msgid "The {count} active conversions will stop after their current files"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1982
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:2161
 msgid "There are no user profiles to export"
 msgstr ""
 
@@ -1787,12 +1867,20 @@ msgstr ""
 msgid "Update download canceled"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:783 src/globalPlugins/easyAudioConverter/settings_dialogs.py:805 src/globalPlugins/easyAudioConverter/settings_dialogs.py:877
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:787 src/globalPlugins/easyAudioConverter/settings_dialogs.py:809 src/globalPlugins/easyAudioConverter/settings_dialogs.py:905
 msgid "Use the quality preset"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1533
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1702
 msgid "Use these settings for future quick conversions"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:861
+msgid "VBR quality (-1 uses the default):"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:955
+msgid "VBR — variable bitrate"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:685
@@ -1807,24 +1895,28 @@ msgstr ""
 msgid "Very high"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:799
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:803
 msgid "Very high + extra 1, -hhx1 (FFmpeg level 4)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:800
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:804
 msgid "Very high + extra 2, -hhx2 (FFmpeg level 5)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:801
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:805
 msgid "Very high + extra 3, -hhx3 (FFmpeg level 6)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:802
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:806
 msgid "Very high + extra 4, -hhx4 (FFmpeg level 7)"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:798
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:802
 msgid "Very high, -hh (FFmpeg level 3)"
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1081
+msgid "Vorbis: VBR quality 0 to 10 increases quality and size. ABR uses a target bitrate and optional limits. Ogg CRC is automatic."
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/__init__.py:484
@@ -1851,16 +1943,24 @@ msgstr ""
 msgid "WavPack"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:981
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1050
 msgid "WavPack profiles use FFmpeg levels 0 to 8. Level 8 corresponds to -hhx6 and is extremely slow."
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:591
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:594
 msgid "When another conversion is active:"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:623
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:626
 msgid "When the plan is disabled, ordinary conversions use a fast path and skip the preliminary input scan when it is not needed."
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1079
+msgid "Windows may select a different bitrate for some sample-rate and channel combinations. Explicit CBR mode verifies the result and reports a mismatch without deleting the source."
+msgstr ""
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:872
+msgid "Yes"
 msgstr ""
 
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:36 src/globalPlugins/easyAudioConverter/conversion_dialogs.py:38
@@ -1883,11 +1983,11 @@ msgstr ""
 msgid "no"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1820 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1821 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1822
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1989 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1990 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1991
 msgid "off"
 msgstr ""
 
-#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1820 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1821 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1822
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1989 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1990 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1991
 msgid "on"
 msgstr ""
 

@@ -1946,3 +1946,107 @@ msgstr "{value} ჰც"
 #: src/globalPlugins/easyAudioConverter/conversion_dialogs.py:165
 msgid "{value} kbps"
 msgstr "{value} kbps"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1083
+msgid "AAC: VBR quality 0.1 to 5 increases quality and size. Default: 2. CBR targets a bitrate, not equal frame sizes. No bitrate limits or CRC switch."
+msgstr "AAC: VBR quality 0.1 to 5 increases quality and size. Default: 2. CBR targets a bitrate, not equal frame sizes. No bitrate limits or CRC switch."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:953
+msgid "ABR — average bitrate"
+msgstr "ABR — average bitrate"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1233 src/globalPlugins/easyAudioConverter/settings_dialogs.py:1107
+msgid "Advanced codec settings"
+msgstr "Advanced codec settings"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:849
+msgid "Bitrate mode:"
+msgstr "Bitrate mode:"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:952
+msgid "CBR — constant bitrate"
+msgstr "CBR — constant bitrate"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:955
+msgid "CVBR — constrained variable bitrate"
+msgstr "CVBR — constrained variable bitrate"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1087
+msgid "Copyright and original are stream header flags, not metadata tags or copy protection. Encoder default leaves each flag unchanged."
+msgstr "Copyright and original are stream header flags, not metadata tags or copy protection. Encoder default leaves each flag unchanged."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:872
+msgid "Copyright flag:"
+msgstr "Copyright flag:"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:951
+msgid "Default (keep existing settings)"
+msgstr "Default (keep existing settings)"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:871
+msgid "Encoder default"
+msgstr "Encoder default"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1077
+msgid "Fraunhofer through Media Foundation supports CBR only. VBR, ABR, bitrate limits and stream flags are unavailable."
+msgstr "Fraunhofer through Media Foundation supports CBR only. VBR, ABR, bitrate limits and stream flags are unavailable."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1055
+msgid "GOGO algorithm quality: 0 is highest, 9 is fastest. This is separate from VBR quality. Advanced choices override the standard GOGO bitrate and quality; conflicting additional arguments must be removed."
+msgstr "GOGO algorithm quality: 0 is highest, 9 is fastest. This is separate from VBR quality. Advanced choices override the standard GOGO bitrate and quality; conflicting additional arguments must be removed."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1075
+msgid "GOGO: VBR quality 0 is best, 9 is smallest. Default: 2. VBR limits do not prevent silence from using a lower bitrate. Copyright, original and CRC switches are unavailable."
+msgstr "GOGO: VBR quality 0 is best, 9 is smallest. Default: 2. VBR limits do not prevent silence from using a lower bitrate. Copyright, original and CRC switches are unavailable."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1073
+msgid "LAME: VBR quality 0 is best, 9 is smallest. Default: 2. The FFmpeg interface does not expose VBR limits or CRC."
+msgstr "LAME: VBR quality 0 is best, 9 is smallest. Default: 2. The FFmpeg interface does not expose VBR limits or CRC."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:840
+msgid "MP3 encoder profile to edit:"
+msgstr "MP3 encoder profile to edit:"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:868
+msgid "Maximum bitrate in kbps (0 uses the encoder default):"
+msgstr "Maximum bitrate in kbps (0 uses the encoder default):"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:864
+msgid "Minimum bitrate in kbps (0 uses the encoder default):"
+msgstr "Minimum bitrate in kbps (0 uses the encoder default):"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:871
+msgid "No"
+msgstr "No"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1085
+msgid "No configurable CRC switch is available for this encoder. Checksums required by the format are handled automatically."
+msgstr "No configurable CRC switch is available for this encoder. Checksums required by the format are handled automatically."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1081
+msgid "Opus supports CBR, VBR and constrained VBR with a target bitrate, but not arbitrary minimum and maximum limits. Ogg CRC is automatic."
+msgstr "Opus supports CBR, VBR and constrained VBR with a target bitrate, but not arbitrary minimum and maximum limits. Ogg CRC is automatic."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:873
+msgid "Original flag:"
+msgstr "Original flag:"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:860
+msgid "VBR quality (-1 uses the default):"
+msgstr "VBR quality (-1 uses the default):"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:954
+msgid "VBR — variable bitrate"
+msgstr "VBR — variable bitrate"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1079
+msgid "Vorbis: VBR quality 0 to 10 increases quality and size. ABR uses a target bitrate and optional limits. Ogg CRC is automatic."
+msgstr "Vorbis: VBR quality 0 to 10 increases quality and size. ABR uses a target bitrate and optional limits. Ogg CRC is automatic."
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:871
+msgid "Yes"
+msgstr "Yes"
+
+#: src/globalPlugins/easyAudioConverter/settings_dialogs.py:1078
+msgid "Windows may select a different bitrate for some sample-rate and channel combinations. Explicit CBR mode verifies the result and reports a mismatch without deleting the source."
+msgstr "Windows may select a different bitrate for some sample-rate and channel combinations. Explicit CBR mode verifies the result and reports a mismatch without deleting the source."

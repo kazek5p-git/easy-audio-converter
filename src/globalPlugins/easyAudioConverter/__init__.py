@@ -61,6 +61,7 @@ from .gogo import (
 	validate_gogo_options,
 )
 from .profiles import (
+	_advanced_options_from_mapping,
 	MAX_PROFILE_DOCUMENT_BYTES,
 	NamedConversionProfile,
 	dump_user_profiles,
@@ -70,6 +71,7 @@ from .profiles import (
 	remove_user_profile,
 	upsert_user_profile,
 )
+from .codec_options import codec_profile_key, get_codec_profile
 from .updater import (
 	GITHUB_REPOSITORY_URL,
 	ReleaseInfo,
@@ -91,7 +93,7 @@ except NameError:
 
 
 ADDON_NAME = "Easy Audio Converter"
-ADDON_VERSION = "1.9.2"
+ADDON_VERSION = "1.10.0"
 CONFIG_SECTION = "easyAudioConverter"
 SUPPORT_URL = "https://buycoffee.to/kazimierz-parzych"
 COMPLETION_SOUND_PATH = Path(__file__).resolve().parent / "sounds" / "notification_complete.wav"
@@ -170,16 +172,12 @@ def _load_advanced_profiles(value: Any = None) -> dict[str, dict[str, Any]]:
 		return {}
 	profiles: dict[str, dict[str, Any]] = {}
 	for format_key, raw_profile in raw_profiles.items():
-		if format_key not in FORMAT_KEYS or not isinstance(raw_profile, dict):
+		if format_key not in (*FORMAT_KEYS, *(f"mp3:{key}" for key in MP3_ENCODER_KEYS)) or not isinstance(raw_profile, dict):
 			continue
-		profiles[format_key] = {
-			"enabled": bool(raw_profile.get("enabled", False)),
-			"bitrate": _safe_int(raw_profile.get("bitrate"), 0),
-			"sampleRate": _safe_int(raw_profile.get("sampleRate"), 0),
-			"channels": _safe_int(raw_profile.get("channels"), 0),
-			"codecLevel": _safe_int(raw_profile.get("codecLevel"), -1),
-			"bitDepth": _safe_int(raw_profile.get("bitDepth"), 0),
-		}
+		try:
+			profiles[format_key] = _advanced_options_from_mapping(raw_profile, {})
+		except ValueError:
+			log.error("Easy Audio Converter: nieprawidłowy profil kodeka %s", format_key)
 	return profiles
 
 
@@ -222,6 +220,9 @@ def _read_settings() -> ConversionSettings:
 	_ensure_config()
 	conf = config.conf[CONFIG_SECTION]
 	target_format = _validated_key(conf.get("targetFormat"), FORMAT_KEYS, "mp3")
+	mp3_encoder = _validated_key(conf.get("mp3Encoder"), MP3_ENCODER_KEYS, "lame")
+	if target_format != "mp3" and mp3_encoder == "gogo":
+		mp3_encoder = "lame"
 	metadata_fields = conf.get("metadataFields", DEFAULT_METADATA_FIELDS)
 	if isinstance(metadata_fields, str):
 		metadata_fields = [field.strip() for field in metadata_fields.split(",")]
@@ -241,7 +242,7 @@ def _read_settings() -> ConversionSettings:
 	return ConversionSettings(
 		target_format=target_format,
 		quality=_validated_key(conf.get("quality"), QUALITY_KEYS, "high"),
-		mp3_encoder=_validated_key(conf.get("mp3Encoder"), MP3_ENCODER_KEYS, "lame"),
+		mp3_encoder=mp3_encoder,
 		gogo_path=str(conf.get("gogoPath") or "").strip(),
 		gogo_bitrate=gogo_bitrate,
 		gogo_quality=gogo_quality,
@@ -255,7 +256,9 @@ def _read_settings() -> ConversionSettings:
 		metadata_mode=_validated_key(conf.get("metadataMode"), METADATA_MODE_KEYS, "all"),
 		metadata_fields=metadata_fields,
 		metadata_overrides=_load_metadata_overrides(conf.get("metadataOverrides", "{}")),
-		advanced_options=profiles.get(target_format, {}),
+		advanced_options=get_codec_profile(
+			profiles, target_format, mp3_encoder,
+		),
 		output_name_template=str(conf.get("outputNameTemplate") or "{source}")[:240],
 		loudness_preset=_validated_key(
 			conf.get("loudnessPreset"),
@@ -305,14 +308,9 @@ def _write_conversion_settings(settings: ConversionSettings) -> None:
 	conf["showPreflight"] = settings.show_preflight
 	conf["parallelJobs"] = int(settings.parallel_jobs)
 	profiles = _load_advanced_profiles(conf.get("advancedProfiles", "{}"))
-	profiles[settings.target_format] = {
-		"enabled": bool(settings.advanced_options.get("enabled", False)),
-		"bitrate": _safe_int(settings.advanced_options.get("bitrate"), 0),
-		"sampleRate": _safe_int(settings.advanced_options.get("sampleRate"), 0),
-		"channels": _safe_int(settings.advanced_options.get("channels"), 0),
-		"codecLevel": _safe_int(settings.advanced_options.get("codecLevel"), -1),
-		"bitDepth": _safe_int(settings.advanced_options.get("bitDepth"), 0),
-	}
+	profiles[codec_profile_key(settings.target_format, settings.mp3_encoder)] = (
+		_advanced_options_from_mapping(settings.advanced_options, {})
+	)
 	conf["advancedProfiles"] = json.dumps(
 		profiles,
 		ensure_ascii=True,
@@ -438,6 +436,7 @@ def _builtin_conversion_profiles(
 			replace(
 				base,
 				target_format="opus",
+				mp3_encoder="lame",
 				quality="standard",
 				metadata_mode="all",
 				loudness_preset="podcast",
@@ -459,6 +458,7 @@ def _builtin_conversion_profiles(
 			replace(
 				base,
 				target_format="flac",
+				mp3_encoder="lame",
 				quality="high",
 				metadata_mode="all",
 				loudness_preset="off",
@@ -591,6 +591,15 @@ def _metadata_field_labels() -> dict[str, str]:
 	}
 
 
+class _NamedControlAccessible(wx.Accessible):
+	"""Udostępnia jawną nazwę pola liczbowego także przez Windows MSAA."""
+
+	def GetName(self, child_id):
+		if child_id == 0:
+			return wx.ACC_OK, self.Window.GetName()
+		return wx.ACC_NOT_IMPLEMENTED, ""
+
+
 def _add_labeled_spin_double(
 	helper: guiHelper.BoxSizerHelper,
 	parent: wx.Window,
@@ -613,6 +622,16 @@ def _add_labeled_spin_double(
 	)
 	control.SetDigits(1)
 	control.SetName(label.replace("&", "").rstrip(":"))
+	control._named_accessible = _NamedControlAccessible(control)
+	control.SetAccessible(control._named_accessible)
+	# W wxWidgets fokus otrzymuje wewnętrzne pole tekstowe, nie cały SpinCtrlDouble.
+	control._named_children = []
+	for child in control.GetChildren():
+		if isinstance(child, wx.TextCtrl):
+			child.SetName(control.GetName())
+			child._named_accessible = _NamedControlAccessible(child)
+			child.SetAccessible(child._named_accessible)
+			control._named_children.append(child)
 	row.Add(label_control, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 8)
 	row.Add(control, 0)
 	helper.addItem(row)

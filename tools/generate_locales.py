@@ -1033,6 +1033,37 @@ PROTECTED_TOKEN_PATTERN = re.compile(
 )
 
 
+POLISH.update({
+	"Windows may select a different bitrate for some sample-rate and channel combinations. Explicit CBR mode verifies the result and reports a mismatch without deleting the source.": "Windows może dobrać inną przepływność dla niektórych częstotliwości i liczby kanałów. Jawnie wybrany tryb CBR sprawdza wynik i zgłasza rozbieżność, zachowując plik źródłowy.",
+	"MP3 encoder profile to edit:": "Profil enkodera MP3 do edycji:",
+	"Bitrate mode:": "Tryb przepływności:",
+	"VBR quality (-1 uses the default):": "Jakość VBR (-1 oznacza ustawienie domyślne):",
+	"Minimum bitrate in kbps (0 uses the encoder default):": "Minimalna przepływność w kb/s (0 oznacza ustawienie enkodera):",
+	"Maximum bitrate in kbps (0 uses the encoder default):": "Maksymalna przepływność w kb/s (0 oznacza ustawienie enkodera):",
+	"Encoder default": "Domyślnie dla enkodera",
+	"No": "Nie",
+	"Yes": "Tak",
+	"Copyright flag:": "Flaga praw autorskich (copyright):",
+	"Original flag:": "Flaga oryginału (original):",
+	"Default (keep existing settings)": "Domyślnie (zachowaj dotychczasowe ustawienia)",
+	"CBR — constant bitrate": "CBR — stała przepływność",
+	"ABR — average bitrate": "ABR — średnia przepływność",
+	"VBR — variable bitrate": "VBR — zmienna przepływność",
+	"CVBR — constrained variable bitrate": "CVBR — ograniczona zmienna przepływność",
+	"Advanced codec settings": "Zaawansowane ustawienia kodeka",
+	"Advanced codec settings...": "Zaawansowane ustawienia kodeka...",
+	"LAME: VBR quality 0 is best, 9 is smallest. Default: 2. The FFmpeg interface does not expose VBR limits or CRC.": "LAME: jakość VBR 0 jest najwyższa, 9 daje najmniejsze pliki. Domyślnie: 2. Interfejs FFmpeg nie udostępnia granic VBR ani przełącznika CRC.",
+	"GOGO: VBR quality 0 is best, 9 is smallest. Default: 2. VBR limits do not prevent silence from using a lower bitrate. Copyright, original and CRC switches are unavailable.": "GOGO: jakość VBR 0 jest najwyższa, 9 daje najmniejsze pliki. Domyślnie: 2. Podczas ciszy VBR może zejść poniżej ustawionego minimum. Przełączniki copyright, original i CRC są niedostępne.",
+	"GOGO algorithm quality: 0 is highest, 9 is fastest. This is separate from VBR quality. Advanced choices override the standard GOGO bitrate and quality; conflicting additional arguments must be removed.": "Jakość algorytmu GOGO: 0 jest najwyższa, 9 jest najszybsza. To inne ustawienie niż jakość VBR. Opcje zaawansowane mają pierwszeństwo przed standardową przepływnością i jakością GOGO. Sprzeczne dodatkowe polecenia trzeba usunąć.",
+	"Fraunhofer through Media Foundation supports CBR only. VBR, ABR, bitrate limits and stream flags are unavailable.": "Fraunhofer przez Media Foundation obsługuje tylko CBR. VBR, ABR, granice przepływności i flagi strumienia są niedostępne.",
+	"Vorbis: VBR quality 0 to 10 increases quality and size. ABR uses a target bitrate and optional limits. Ogg CRC is automatic.": "Vorbis: jakość VBR od 0 do 10 zwiększa jakość i rozmiar. ABR korzysta z docelowej przepływności i opcjonalnych granic. CRC kontenera Ogg jest obliczane automatycznie.",
+	"Opus supports CBR, VBR and constrained VBR with a target bitrate, but not arbitrary minimum and maximum limits. Ogg CRC is automatic.": "Opus obsługuje CBR, VBR i ograniczone VBR z docelową przepływnością, ale bez dowolnych granic minimum i maksimum. CRC kontenera Ogg jest obliczane automatycznie.",
+	"AAC: VBR quality 0.1 to 5 increases quality and size. Default: 2. CBR targets a bitrate, not equal frame sizes. No bitrate limits or CRC switch.": "AAC: jakość VBR od 0,1 do 5 zwiększa jakość i rozmiar. Domyślnie: 2. CBR określa docelową przepływność, a nie równe rozmiary ramek. Brak granic przepływności i przełącznika CRC.",
+	"No configurable CRC switch is available for this encoder. Checksums required by the format are handled automatically.": "Ten enkoder nie udostępnia przełącznika CRC. Sumy kontrolne wymagane przez format są obsługiwane automatycznie.",
+	"Copyright and original are stream header flags, not metadata tags or copy protection. Encoder default leaves each flag unchanged.": "Copyright i original to flagi nagłówka strumienia, a nie tagi ani ochrona przed kopiowaniem. Wybór domyślny pozostawia daną flagę zgodną z ustawieniem enkodera.",
+})
+
+
 def extract_messages() -> list[str]:
 	messages: set[str] = set()
 	for path in SOURCE_ROOT.rglob("*.py"):
@@ -1255,7 +1286,7 @@ def write_po(locale: str, catalog: dict[str, str], messages: list[str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.po"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.9.2\n"
+		"Project-Id-Version: Easy Audio Converter 1.10.0\n"
 		"Report-Msgid-Bugs-To: https://github.com/kazek5p-git/easy-audio-converter/issues\n"
 		"POT-Creation-Date: 2026-07-25 00:00+0200\n"
 		"PO-Revision-Date: 2026-07-25 00:00+0200\n"
@@ -1297,7 +1328,7 @@ def compile_mo(locale: str, catalog: dict[str, str]) -> Path:
 	directory.mkdir(parents=True, exist_ok=True)
 	path = directory / "nvda.mo"
 	header = (
-		"Project-Id-Version: Easy Audio Converter 1.9.2\n"
+		"Project-Id-Version: Easy Audio Converter 1.10.0\n"
 		f"Language: {locale}\n"
 		"MIME-Version: 1.0\n"
 		"Content-Type: text/plain; charset=UTF-8\n"

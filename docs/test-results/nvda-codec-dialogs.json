@@ -1,0 +1,232 @@
+{
+  "state": "completed",
+  "host": "osobny proces wx z modelami usług NVDA",
+  "nvda": "niedostępna w osobnym procesie; odczyt MSAA zamiast rejestracji mowy",
+  "wx": "4.2.5 msw (phoenix) wxWidgets 3.2.9",
+  "checks": [
+    {
+      "ok": true,
+      "description": "Otwarto rzeczywiste okno ustawień dodatku"
+    },
+    {
+      "ok": true,
+      "description": "Trzy zakładki ustawień"
+    },
+    {
+      "focus": "Tryb przepływności:",
+      "value": "VBR — zmienna przepływność",
+      "role": "46"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności: Tryb"
+    },
+    {
+      "focus": "Jakość VBR (-1 oznacza ustawienie domyślne)",
+      "value": "3.0",
+      "role": "42"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności: VBR"
+    },
+    {
+      "focus": "Minimalna przepływność w kb/s (0 oznacza ustawienie enkodera):",
+      "value": "96",
+      "role": "42"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności: Minimalna"
+    },
+    {
+      "focus": "Maksymalna przepływność w kb/s (0 oznacza ustawienie enkodera):",
+      "value": "192",
+      "role": "42"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności: Maksymalna"
+    },
+    {
+      "ok": true,
+      "description": "Fokus przed próbą Tab jest we własnym oknie"
+    },
+    {
+      "ok": true,
+      "description": "Nawigacja Tab przez wx pomija niedostępny bitrate w VBR"
+    },
+    {
+      "ok": true,
+      "description": "LAME: bez granic, dostępne flagi"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności flagi copyright"
+    },
+    {
+      "ok": true,
+      "description": "Fraunhofer: tylko domyślny i CBR"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka ogg"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka opus"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka aac"
+    },
+    {
+      "ok": true,
+      "description": "Ułamkowa jakość AAC aac"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka m4a"
+    },
+    {
+      "ok": true,
+      "description": "Ułamkowa jakość AAC m4a"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka flac"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka wavpack"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka ac3"
+    },
+    {
+      "ok": true,
+      "description": "Tryb kodeka eac3"
+    },
+    {
+      "ok": true,
+      "description": "GOGO zachowuje osobny profil po zmianach kodeka"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności pola głośności LUFS"
+    },
+    {
+      "focus": "Własna głośność zintegrowana w LUFS",
+      "value": "-16.0"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności pola głośności dBTP"
+    },
+    {
+      "focus": "Własny szczyt rzeczywisty w dBTP",
+      "value": "-1.5"
+    },
+    {
+      "ok": true,
+      "description": "Nazwa dostępności pola głośności LU"
+    },
+    {
+      "focus": "Własny zakres głośności w LU",
+      "value": "11.0"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "OK zapisuje wszystkie profile tylko do konfiguracji testowej"
+    },
+    {
+      "ok": true,
+      "description": "Ponowne otwarcie odtwarza granice GOGO"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Anuluj nie zmienia zapisanej konfiguracji"
+    },
+    {
+      "ok": true,
+      "description": "Otwarto okno konwersji jednorazowej"
+    },
+    {
+      "ok": true,
+      "description": "Dostępna nazwa przycisku edytora kodeka"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Edytor jednorazowy blokuje zmianę kodeka"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "OK przenosi opcje do zadania"
+    },
+    {
+      "ok": true,
+      "description": "Edytor jednorazowy nie zmienia ustawień domyślnych"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Błędne granice otwierają rzeczywisty komunikat walidacji"
+    },
+    {
+      "validation_message": "Minimalna przepływność nie może przekraczać maksymalnej."
+    },
+    {
+      "ok": true,
+      "description": "Błąd nie zamyka edytora i nie zmienia opcji zadania"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Anuluj w edytorze zachowuje opcje zadania"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    },
+    {
+      "ok": true,
+      "description": "Nazwany profil zachowuje nowe opcje"
+    },
+    {
+      "ok": true,
+      "description": "Akcja dotyczy własnego okna próby"
+    }
+  ],
+  "speech": []
+}
