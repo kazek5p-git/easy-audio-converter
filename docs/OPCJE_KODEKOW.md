@@ -178,6 +178,13 @@ Rozmiar: 41 148 379 bajtów. SHA-256 obu paczek:
 Punkt przywrócenia kodu: commit `6105ada`; przed zadaniem drzewo było czyste.
 Użytkownik zlecił zatwierdzenie i publikację jako aktualizacji. Wydanie ma
 oznaczenie `v1.10.0`; opis znajduje się w `release-notes-1.10.0.md`.
+Opublikowano 15 listopada 2026 z commita `3543bc2` jako wydanie stabilne
+i najnowsze, z obydwoma plikami `.nvda-addon`. Metadane GitHub potwierdziły
+rozmiar i zgodne sumy SHA-256 obu plików przed publikacją.
+Po publikacji niezmieniony kod aktualizatora z wersji 1.9.2 pobrał metadane
+1.10.0 i rozpoznał je jako nowsze wydanie. Pobranie strumieniowe pod stałym
+adresem `releases/latest/download/easyAudioConverter.nvda-addon` zwróciło
+41 148 379 bajtów i zgodną sumę SHA-256; nie tworzono dodatkowej kopii na dysku.
 Działająca instalacja NVDA pozostała niezmieniona. Powrót po ewentualnej
 instalacji polega na użyciu zachowanej paczki 1.9.2. Nowe opcje i osobne
 profile MP3 nie będą w niej obsługiwane; warto zachować eksport profili.
